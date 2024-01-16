@@ -2,7 +2,12 @@ import { useContext, createContext, useEffect, useState } from "react";
 import NodeRenderer from "./NodeRenderer";
 const ManywaysContext = createContext(null);
 
-const ManywaysProvider = ({ children, slug, classNamePrefix = "mw" }) => {
+const ManywaysProvider = ({
+  children,
+  slug,
+  classNamePrefix = "mw",
+  mode = "scroll",
+}) => {
   let [nodes, setNodes] = useState([]);
   let [responseId, setResponseId] = useState(false);
   let [treeConfig, setTreeConfig] = useState({});
@@ -82,6 +87,7 @@ const ManywaysProvider = ({ children, slug, classNamePrefix = "mw" }) => {
         shareJourney,
         copyLink,
         classNamePrefix,
+        mode,
       }}
     >
       <div className={`${classNamePrefix}-${slug}`}>
