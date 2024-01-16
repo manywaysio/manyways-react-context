@@ -3,6 +3,7 @@ import validator from "@rjsf/validator-ajv8";
 import Form from "@rjsf/core";
 import NextAndBack from "./NextAndBack";
 import ManywaysRadioWidget from "./CustomInputs/ManywaysRadioWidget";
+import MediaContent from "./CustomInputs/MediaContent";
 
 const NodeRenderer = (props) => {
   const {
@@ -73,6 +74,9 @@ const NodeRenderer = (props) => {
           `}
             widgets={{
               RadioWidget: ManywaysRadioWidget,
+            }}
+            fields={{
+              MediaContent: MediaContent,
             }}
             key={currentNode?.id || 1123456789}
             onSubmit={goForward}

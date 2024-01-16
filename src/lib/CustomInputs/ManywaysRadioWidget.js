@@ -1,5 +1,4 @@
 const ManywaysRadioWidget = ({ schema, onChange, ...props }) => {
-  console.log(props);
   return (
     <div>
       {schema?.enum.map((opt, idx) => {
