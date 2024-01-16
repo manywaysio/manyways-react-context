@@ -1,0 +1,69 @@
+.mw-logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.is-full-screen-true {
+  min-height: 100vh;
+}
+
+.has-background-true {
+  background-size: cover;
+}
+
+.mw-form {
+  max-width: 65ch;
+  width: 100%;
+}
+
+.layout-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.layout-content-left, .layout-content-right {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  justify-content: center;
+
+}
+
+.layout-content-left .mw-foreground-image-wrapper {
+  /* 2 col */
+  grid-column: 2 / 2;
+  grid-row: 1 / 1;
+}
+
+.layout-content-left .mw-n {
+  /* 2 col */
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
+.layout-content-right .mw-foreground-image-wrapper {
+  /* 2 col */
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
+.layout-content-right .mw-n {
+  /* 2 col */
+  grid-column: 2 / 2;
+  grid-row: 2 / 2;
+}
+
+
+
+.mw-foreground-image-wrapper {
+
+}
+
+.mw-foreground-image {
+  max-width: 100%;
+}

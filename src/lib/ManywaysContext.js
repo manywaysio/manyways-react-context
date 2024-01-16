@@ -25,6 +25,7 @@ const ManywaysProvider = ({
         setNodes([data?.current_node]);
         setCurrentNodeId(data?.node_id);
         setResponseId(data?.id);
+        setTreeConfig(data?.revision);
       });
   };
 
@@ -91,6 +92,12 @@ const ManywaysProvider = ({
       }}
     >
       <div className={`${classNamePrefix}-${slug}`}>
+        {treeConfig?.run_mode?.logo && (
+          <img
+            className={`${classNamePrefix}-logo`}
+            src={treeConfig?.run_mode?.logo}
+          />
+        )}
         <NodeRenderer />
         {children}
       </div>
