@@ -2,6 +2,7 @@ import { useManyways } from "./ManywaysContext";
 import validator from "@rjsf/validator-ajv8";
 import Form from "@rjsf/core";
 import NextAndBack from "./NextAndBack";
+import ManywaysRadioWidget from "./CustomInputs/ManywaysRadioWidget";
 
 const NodeRenderer = (props) => {
   const {
@@ -58,6 +59,7 @@ const NodeRenderer = (props) => {
           {!!foregroundImage && (
             <div className={`${classNamePrefix}-foreground-image-wrapper`}>
               <img
+                alt={currentNode?.title}
                 className={`${classNamePrefix}-foreground-image`}
                 src={foregroundImage}
               />
@@ -69,6 +71,9 @@ const NodeRenderer = (props) => {
             className={`${classNamePrefix}-form 
           has-response-${!!theResponse}
           `}
+            widgets={{
+              RadioWidget: ManywaysRadioWidget,
+            }}
             key={currentNode?.id || 1123456789}
             onSubmit={goForward}
             schema={currentNode?.form_schema || {}}
