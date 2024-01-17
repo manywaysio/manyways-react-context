@@ -59,7 +59,7 @@ const ManywaysRadioWidget = ({
                 onChange={handleChange}
                 onBlur={handleBlur}
                 onFocus={handleFocus}
-                aria-describedby={ariaDescribedByIds}
+                aria-describedby={ariaDescribedByIds(id)}
               />
               <label
                 htmlFor={optionId(id, i)}
