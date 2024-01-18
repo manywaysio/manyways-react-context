@@ -3,7 +3,7 @@ import {
   ariaDescribedByIds,
   enumOptionsIsSelected,
   enumOptionsValueForIndex,
-  optionId
+  optionId,
 } from "@rjsf/utils";
 
 const ManywaysRadioWidget = ({
@@ -17,29 +17,37 @@ const ManywaysRadioWidget = ({
   onBlur,
   onFocus,
   onChange,
-  id
+  id,
 }) => {
   const { enumOptions, enumDisabled, inline, emptyValue } = options;
 
   const handleBlur = useCallback(
     ({ target: { value } }) =>
       onBlur(id, enumOptionsValueForIndex(value, enumOptions, emptyValue)),
-    [onBlur, id]
+    [onBlur, id, enumOptions, emptyValue]
   );
 
   const handleFocus = useCallback(
     ({ target: { value } }) =>
       onFocus(id, enumOptionsValueForIndex(value, enumOptions, emptyValue)),
-    [onFocus, id]
+    [onFocus, id, enumOptions, emptyValue]
   );
+
   return (
-    <div className="field-radio-group" id={id}>
+    <div
+      className={`field-radio-group 
+      ${!!schema.enum_icons && "field-group-has-images"} 
+      ${inline ? "field-layout-inline" : "field-layout-default"}`}
+      id={id}
+    >
       {Array.isArray(enumOptions) &&
         enumOptions.map((option, i) => {
           const checked = enumOptionsIsSelected(option.value, value);
+
           const itemDisabled =
             Array.isArray(enumDisabled) &&
             enumDisabled.indexOf(option.value) !== -1;
+
           const disabledCls =
             disabled || itemDisabled || readonly ? "disabled" : "";
 
@@ -50,40 +58,34 @@ const ManywaysRadioWidget = ({
               <input
                 type="radio"
                 id={optionId(id, i)}
-                checked={checked}
                 name={id}
                 required={required}
                 value={String(i)}
                 disabled={disabled || itemDisabled || readonly}
+                checked={checked}
                 autoFocus={autofocus && i === 0}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 onFocus={handleFocus}
                 aria-describedby={ariaDescribedByIds(id)}
               />
-              <label
-                htmlFor={optionId(id, i)}
-                className={`${
-                  inline ? "radio-inline" : "radio"
-                } ${disabledCls}`}
-              >
+              <label htmlFor={optionId(id, i)} className={`${disabledCls}`}>
                 {!!schema.enum_icons?.[i] && (
-                  <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} />
+                  <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} /> // Update with more appropriate alt txt?
                 )}
                 {option.label}
               </label>
             </>
           );
 
-          return inline ? (
-            <span key={i}>{radio}</span>
-          ) : (
-            <div key={i}>{radio}</div>
+          return (
+            <div key={i} className={`${inline ? "radio-inline" : "radio"}`}>
+              {radio}
+            </div>
           );
         })}
     </div>
   );
 };
-
 
 export default ManywaysRadioWidget;

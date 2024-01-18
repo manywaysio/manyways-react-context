@@ -57,35 +57,37 @@ const NodeRenderer = (props) => {
               : {}
           }
         >
-          {!!foregroundImage && (
-            <div className={`${classNamePrefix}-foreground-image-wrapper`}>
-              <img
-                alt={currentNode?.title}
-                className={`${classNamePrefix}-foreground-image`}
-                src={foregroundImage}
-              />
-            </div>
-          )}
-          <Form
-            disabled={!!theResponse}
-            formData={theResponse?.response || {}}
-            className={`${classNamePrefix}-form 
+          <div className={`${classNamePrefix}-container`}> 
+            {!!foregroundImage && (
+              <div className={`${classNamePrefix}-foreground-image-wrapper`}>
+                <img
+                  alt={currentNode?.title}
+                  className={`${classNamePrefix}-foreground-image`}
+                  src={foregroundImage}
+                />
+              </div>
+            )}
+            <Form
+              disabled={!!theResponse}
+              formData={theResponse?.response || {}}
+              className={`${classNamePrefix}-form 
           has-response-${!!theResponse}
           `}
-            widgets={{
-              RadioWidget: ManywaysRadioWidget,
-            }}
-            fields={{
-              MediaContent: MediaContent,
-            }}
-            key={currentNode?.id || 1123456789}
-            onSubmit={goForward}
-            schema={currentNode?.form_schema || {}}
-            validator={validator}
-            uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}
-          >
-            <NextAndBack currentNode={currentNode} />
-          </Form>
+              widgets={{
+                RadioWidget: ManywaysRadioWidget,
+              }}
+              fields={{
+                MediaContent: MediaContent,
+              }}
+              key={currentNode?.id || 1123456789}
+              onSubmit={goForward}
+              schema={currentNode?.form_schema || {}}
+              validator={validator}
+              uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}
+            >
+              <NextAndBack currentNode={currentNode} />
+            </Form>
+          </div>
         </div>
       );
     });

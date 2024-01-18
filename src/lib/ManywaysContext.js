@@ -91,12 +91,18 @@ const ManywaysProvider = ({
         mode,
       }}
     >
-      <div className={`${classNamePrefix}-${slug}`}>
+    
+      <div className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode}`}>
         {treeConfig?.run_mode?.logo && (
-          <img
-            className={`${classNamePrefix}-logo`}
-            src={treeConfig?.run_mode?.logo}
-          />
+          <header>
+            <div className={`${classNamePrefix}-container`}>
+              <img
+                className={`${classNamePrefix}-logo`}
+                src={treeConfig?.run_mode?.logo}
+                alt="logo"
+              />
+            </div>
+          </header>
         )}
         <NodeRenderer />
         {children}
