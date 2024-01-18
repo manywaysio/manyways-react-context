@@ -91,8 +91,19 @@ const ManywaysProvider = ({
         mode,
       }}
     >
-    
       <div className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode}`}>
+        {/* Renders when in scroll mode with a global background set */}
+        {mode === "scroll" &&
+        treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
+          <div
+            className={`${classNamePrefix}-global-bg-image`}
+            style={{
+              backgroundImage: `url(${treeConfig?.run_mode?.ui_variables?.backgroundImage})`,
+            }}
+          >
+          </div>
+        ) : null}
+        {/* Adds a header when a logo is added */}
         {treeConfig?.run_mode?.logo && (
           <header>
             <div className={`${classNamePrefix}-container`}>

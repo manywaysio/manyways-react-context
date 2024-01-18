@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 :root {
   --content-width: 1200px;
   --header-height: 60px;
-  --base-font-size: 18px;
-  --padding: 2rem;
+  --base-font-size: 16px;
+  --font-family: "Open Sans", sans-serif;
 }
 
 html,
@@ -13,6 +15,8 @@ body {
   max-width: 100%;
   max-height: 100%;
   overflow-x: hidden;
+  font-family: var(--font-family);
+  font-weight: 400;
 }
 
 .mw-scroll,
@@ -22,19 +26,13 @@ body {
   position: relative;
 }
 
-.mw-scroll header {
+header {
   position: absolute;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
   height: var(--header-height);
-  padding: 1rem;
-}
-
-.mw-slideshow header {
-  position: fixed;
-  width: 100%;
-  height: var(--header-height);
+  padding: 1rem 0;
 }
 
 .mw-container {
@@ -52,14 +50,30 @@ body {
   object-fit: contain;
 }
 
+.mw-global-bg-image {
+  position: fixed;
+  top: 0;
+  left:0;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .mw-scroll .is-full-screen-false.mw-node:first-of-type {
   height: fit-content;
   margin: auto;
 }
 
-.mw-slideshow .mw-container,
+.mw-slideshow .mw-node {
+  min-height: 100vh;
+  display:flex;
+}
+
 .is-full-screen-true .mw-container {
   min-height: 100vh;
+  display:flex;
 }
 
 .is-full-screen-false .mw-container {
@@ -141,13 +155,88 @@ body {
   max-width: 100%;
 }
 
-.field-group-has-images input[type='radio']{
+/* buttons */ 
+
+.mw-container button {
+  font-size: .9rem;
+  font-weight: 500;
+  border-radius: 25px;
+  padding: .5em 1.1em;
+  background-color: #FFFFFF;
+  border: 1px solid #000;
+  color: #000000;
+  transition: ease-in-out 200ms all;
+}
+
+.mw-container button:hover {
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+
+}
+
+.mw-back {
+  margin-right: .5rem;
+}
+
+/* Form elements and inputs */
+
+
+.mw-node fieldset {
+  margin:0;
+}
+
+.mw-node legend {
+  font-size: 1.6rem;
+}
+
+.mw-node .field-description {
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  opacity: .8;
+}
+
+.mw-node .form-group {
+  margin-bottom: 1rem;
+}
+
+.mw-node .form-group label {
+  display: block;
+  font-size: .87rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.mw-node .field-string .field-description, 
+.mw-node .field-integer .field-description {
+  font-size: .8rem;
+  opacity: .8;
+  margin: .2em 0 .8em 0;
+}
+
+.mw-node .form-group.field-string input, 
+.mw-node .form-group.field-integer input, 
+.mw-node .form-group textarea, 
+.mw-node select  {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #dacfcf;
+  border-radius: .25rem;
+  padding: .7em .8em;
+  width: calc(100% - 1.7rem);
+  max-width: calc(100% - 1.7rem);
+  font-size: .8rem;
+  resize: vertical;
+}
+
+.mw-node .field-group-has-images input[type='radio']{
   opacity:0;
   height:1px;
   width:1px;
 }
 
-.field-group-has-images label {
+.mw-node .field-group-has-images label {
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
@@ -157,15 +246,15 @@ body {
   padding: 1rem;
 }
 
-.field-group-has-images input[type='radio']:checked + label {
+.mw-node .field-group-has-images input[type='radio']:checked + label {
   background-color: #f2f2f2;
 }
 
-.field-group-has-images label:hover {
+.mw-node .field-group-has-images label:hover {
   cursor: pointer;
 }
 
-.field-group-has-images img {
+.mw-node .field-group-has-images img {
   height: 100px;
   width: 100px;
   object-fit: contain;

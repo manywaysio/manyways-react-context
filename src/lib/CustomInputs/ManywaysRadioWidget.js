@@ -32,7 +32,7 @@ const ManywaysRadioWidget = ({
       onFocus(id, enumOptionsValueForIndex(value, enumOptions, emptyValue)),
     [onFocus, id, enumOptions, emptyValue]
   );
-
+  
   return (
     <div
       className={`field-radio-group 
@@ -71,7 +71,7 @@ const ManywaysRadioWidget = ({
               />
               <label htmlFor={optionId(id, i)} className={`${disabledCls}`}>
                 {!!schema.enum_icons?.[i] && (
-                  <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} /> // Update with more appropriate alt txt?
+                  <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} /> 
                 )}
                 {option.label}
               </label>
