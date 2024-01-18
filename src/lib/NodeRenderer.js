@@ -30,7 +30,8 @@ const NodeRenderer = (props) => {
 
       // UI VARIABLES
       let UIVariables = currentNode?.ui_variables || {};
-      let globalUIVariables = treeConfig?.run_mode?.ui_variables || {};
+      let globalUIVariables =
+        mode === "slideshow" ? treeConfig?.run_mode?.ui_variables || {} : {};
       let impliedUIVariables = {
         ...globalUIVariables,
         ...UIVariables,
@@ -57,7 +58,7 @@ const NodeRenderer = (props) => {
               : {}
           }
         >
-          <div className={`${classNamePrefix}-container`}> 
+          <div className={`${classNamePrefix}-container`}>
             {!!foregroundImage && (
               <div className={`${classNamePrefix}-foreground-image-wrapper`}>
                 <img
