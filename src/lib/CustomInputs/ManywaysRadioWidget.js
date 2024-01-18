@@ -32,12 +32,12 @@ const ManywaysRadioWidget = ({
       onFocus(id, enumOptionsValueForIndex(value, enumOptions, emptyValue)),
     [onFocus, id, enumOptions, emptyValue]
   );
-  
+
   return (
     <div
       className={`field-radio-group 
-      ${!!schema.enum_icons && "field-group-has-images"} 
-      ${inline ? "field-layout-inline" : "field-layout-default"}`}
+      field-group-images-${!!schema.enum_icons}
+      ${inline ? "field-layout-inline" : "field-layout-block"}`}
       id={id}
     >
       {Array.isArray(enumOptions) &&
