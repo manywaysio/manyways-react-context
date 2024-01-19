@@ -1,10 +1,14 @@
+/* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+/* Variables */
 :root {
-  --content-width: 1280px;
+  --content-width: 1200px;
   --header-height: 80px;
   --base-font-size: 16px;
   --font-family: "Open Sans", sans-serif;
+
+    /* Colors */
   --color-dark: #222222;
   --color-text: #222222;
   --color-medium: #e0ded1;
@@ -12,13 +16,15 @@
   --color-select: #3158f1;
   --color-select-light: #f5f6ff;
   --color-select-dark: #3158f1;
-  /* To do */
+
+  /* Buttons --> to do */
   --button-text: #222222;
   --button-background: #222222;
   --button-bacgkround-hover: #222222;
   --button-text-hover: #222222;
 }
 
+/* Box model reset */
 html {
   box-sizing: border-box;
 }
@@ -29,6 +35,7 @@ html {
   box-sizing: inherit;
 }
 
+/* Body and typography */
 html,
 body {
   scroll-behavior: smooth;
@@ -42,15 +49,19 @@ body {
   font-weight: 400;
 }
 
+a, a:visited {
+  color: var(--color-text)
+}
+
+p {
+  color: var(--color-text)
+}
+
+/* Containers */
 .mw-journey-container {
   position: relative;
   max-width: 100%;
   width: 100%;
-}
-
-.mw-scroll {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
 }
 
 .mw-journey-container header {
@@ -64,10 +75,6 @@ body {
   padding: .75rem 0;
 }
 
-.mw-slideshow header {
-  position: relative;
-}
-
 .mw-container {
   position: relative;
   width: 100%;
@@ -77,10 +84,32 @@ body {
   padding: 0 1rem;
 }
 
+.is-full-screen-true .mw-container {
+  min-height: 100vh;
+  display: flex;
+}
+
 .mw-logo {
   height: 100%;
   width: auto;
   object-fit: contain;
+}
+
+.mw-form {
+  max-width: 65ch;
+  width: 100%;
+}
+
+.mw-form #root {
+  max-width: 100%;
+  border: 0;
+  padding: 0;
+}
+
+/* Scroll mode */
+.mw-scroll {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 }
 
 .mw-global-bg-image {
@@ -94,11 +123,17 @@ body {
   background-repeat: no-repeat;
 }
 
-.mw-slideshow .mw-node{
+.mw-scroll .mw-first-node-true.is-full-screen-true {
   margin-top: calc(var(--header-height) * -1);
 }
 
-.mw-scroll .mw-first-node-true.is-full-screen-true {
+/* Slideshow mode */
+
+.mw-slideshow header {
+  position: relative;
+}
+
+.mw-slideshow .mw-node{
   margin-top: calc(var(--header-height) * -1);
 }
 
@@ -107,25 +142,11 @@ body {
   display: flex;
 }
 
-.is-full-screen-true .mw-container {
-  min-height: 100vh;
-  display: flex;
-}
-
 .has-background-true {
   background-size: cover;
 }
 
-.mw-form {
-  max-width: 65ch;
-  width: 100%;
-}
-
-.mw-form #root {
-  max-width: 100%;
-  border: 0;
-  padding: 0;
-}
+/* Layouts - Center/Left/Right */
 
 .layout-center .mw-container {
   display: flex;
@@ -197,27 +218,7 @@ body {
   grid-row: 2 / 2;
 }
 
-.mw-foreground-image-wrapper {
-  max-width: 100%;
-  overflow: hidden;
-  object-fit: contain;
-}
-
-.mw-foreground-image {
-  max-width: 100%;
-  aspect-ratio: 4/3;
-  object-fit:cover;
-}
-
-@media only screen and (min-width: 1025px) {
-  .mw-foreground-image {
-    max-width: 100%;
-    aspect-ratio:auto;
-    object-fit:contain;
-  }
-}
-
-/* buttons */
+/* Buttons */
 
 .mw-container button {
   font-size: 1rem;
@@ -242,7 +243,6 @@ body {
 }
 
 /* Form elements and inputs */
-
 
 .mw-node fieldset {
   margin: 0;
@@ -367,7 +367,6 @@ body {
   display: inline-block;
   width: 100px;
 }
-
 
 .mw-node .field-group-images-false .checkbox,
 .mw-node .field-group-images-false .radio label {
@@ -504,8 +503,8 @@ body {
 
 /* Adjust  */
 
-.checkbox,
-.checkbox-inline {
+.mw-container .checkbox,
+.mw-container .checkbox-inline {
   display: inline-block;
   position: relative;
   padding-left: 30px;
@@ -516,8 +515,12 @@ body {
   user-select: none;
 }
 
-.checkbox input,
-.checkbox-inline input {
+.mw-container .checkbox {
+  display: block;
+}
+
+.mw-container .checkbox input,
+.mw-container .checkbox-inline input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -525,27 +528,27 @@ body {
   width: 0;
 }
 
-.checkbox input:checked~.checkbox-checkmark,
-.checkbox-inline input:checked~.checkbox-checkmark {
+.mw-container .checkbox input:checked~.checkbox-checkmark,
+.mw-container .checkbox-inline input:checked~.checkbox-checkmark {
   background-color: var(--color-select-dark);
 
 }
 
-.checkbox .input:checked~.checkbox-checkmark:after,
-.checkbox-inline .input:checked~.checkbox-checkmark:after {
+.mw-container .checkbox .input:checked~.checkbox-checkmark:after,
+.mw-container .checkbox-inline .input:checked~.checkbox-checkmark:after {
   opacity: 1;
 }
 
-.mw-node .field-group-images-false .checkbox {
+.mw-container .field-group-images-false .checkbox {
   padding-left: 2.4rem;
 }
 
-.mw-node .field-group-images-false .checkbox-inline {
+.mw-container .field-group-images-false .checkbox-inline {
   padding-left: 2rem;
 }
 
-.checkbox .checkbox-checkmark,
-.checkbox-inline input~.checkbox-checkmark {
+.mw-container .checkbox .checkbox-checkmark,
+.mw-container .checkbox-inline input~.checkbox-checkmark {
   position: absolute;
   top: .65em;
   left: .6em;
@@ -557,14 +560,14 @@ body {
   border-radius: 11px;
 }
 
-.checkbox input~.checkbox-checkmark {
+.mw-container .checkbox input~.checkbox-checkmark {
   top: .9em;
   left: .8em;
   border-radius: 3px;
 }
 
-.checkbox .checkbox-checkmark:after,
-.checkbox-inline .checkbox-checkmark:after {
+.mw-container .checkbox .checkbox-checkmark:after,
+.mw-container .checkbox-inline .checkbox-checkmark:after {
   content: "";
   position: absolute;
   left: 6px;
@@ -578,7 +581,7 @@ body {
   transition: opacity 100ms ease;
 }
 
-.selected .checkbox-checkmark:after {
+.mw-container .selected .checkbox-checkmark:after {
   opacity: 1;
 }
 
@@ -591,8 +594,8 @@ body {
   border-color: var(--color-select);
 }
 
-.checkbox.selected .checkbox-checkmark,
-.checkbox-inline.selected input~.checkbox-checkmark {
+.mw-container .checkbox.selected .checkbox-checkmark,
+.mw-container .checkbox-inline.selected input~.checkbox-checkmark {
   border-color: var(--color-select-dark);
 }
 
@@ -607,4 +610,24 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.mw-foreground-image-wrapper {
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.mw-foreground-image {
+  max-width: 100%;
+  aspect-ratio: 4/3;
+  object-fit:cover;
+}
+
+@media only screen and (min-width: 1025px) {
+  .mw-foreground-image {
+    max-width: 100%;
+    aspect-ratio:auto;
+    object-fit:contain;
+  }
 }
