@@ -4,11 +4,12 @@
 /* Variables */
 :root {
   --content-width: 1200px;
+  --content-width-form: 65ch;
   --header-height: 80px;
   --base-font-size: 16px;
   --font-family: "Open Sans", sans-serif;
 
-    /* Colors */
+  /* Colors */
   --color-dark: #222222;
   --color-text: #222222;
   --color-medium: #e0ded1;
@@ -16,6 +17,11 @@
   --color-select: #3158f1;
   --color-select-light: #f5f6ff;
   --color-select-dark: #3158f1;
+
+  /* Grid spacing */
+  --spacing-large: 3rem ;
+  --spacing-small: 1rem ;
+  --spacing-grids: 5px ;
 
   /* Buttons --> to do */
   --button-text: #222222;
@@ -49,7 +55,8 @@ body {
   font-weight: 400;
 }
 
-a, a:visited {
+a,
+a:visited {
   color: var(--color-text)
 }
 
@@ -96,7 +103,7 @@ p {
 }
 
 .mw-form {
-  max-width: 65ch;
+  max-width: var(--content-width-form);
   width: 100%;
 }
 
@@ -133,7 +140,7 @@ p {
   position: relative;
 }
 
-.mw-slideshow .mw-node{
+.mw-slideshow .mw-node {
   margin-top: calc(var(--header-height) * -1);
 }
 
@@ -160,7 +167,7 @@ p {
 .layout-content-left .mw-container,
 .layout-content-right .mw-container {
   display: grid;
-  gap: 1rem;
+  gap: var(--spacing-small);
   grid-template-columns: 1fr;
   align-content: center;
   justify-content: center;
@@ -168,14 +175,14 @@ p {
   padding-bottom: 2rem;
 }
 
-.layout-content-left .mw-form, 
-.layout-content-right .mw-form{
-  display:flex;
+.layout-content-left .mw-form,
+.layout-content-right .mw-form {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
   width: 100%;
-  margin:auto;
+  margin: auto;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -183,7 +190,7 @@ p {
   .layout-content-left .mw-container,
   .layout-content-right .mw-container {
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: var(--spacing-large);
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
@@ -295,7 +302,7 @@ p {
   font-size: 1rem;
 }
 
-.mw-node select{
+.mw-node select {
   display: block;
   padding: .7em .8em;
   border: none;
@@ -304,7 +311,7 @@ p {
   font-size: 1rem;
 }
 
-.mw-node .select-wrapper{
+.mw-node .select-wrapper {
   display: block;
   background-color: #fff;
   border: 1px solid var(--color-medium);
@@ -335,7 +342,7 @@ p {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 5px;
+  gap: var(--spacing-grids);
   height: 100%;
 }
 
@@ -430,7 +437,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: var(--spacing-small);
   align-items: center;
   background-color: #fff;
   border: 1px solid var(--color-medium);
@@ -452,7 +459,7 @@ p {
 .mw-node .field-group-images-true.field-layout-block {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 5px;
+  gap: var(--spacing-grids);
 }
 
 .mw-node .field-group-images-true img {
@@ -461,12 +468,12 @@ p {
   object-fit: contain;
 }
 
-@media only screen and (min-width: 750px){
+@media only screen and (min-width: 750px) {
   .mw-node .field-group-images-true.field-layout-inline label {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 1rem;
+    gap: var(--spacing-small);
     align-items: center;
     background-color: #fff;
     border: 1px solid var(--color-medium);
@@ -486,13 +493,13 @@ p {
 .mw-node .field-checkbox-group.field-group-images-true {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: var(--spacing-grids);
 }
 
 .mw-node .field-checkbox-group.field-group-images-true.field-layout-inline {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 5px;
+  gap: var(--spacing-grids);
 }
 
 @media only screen and (min-width: 750px) {
@@ -621,13 +628,13 @@ p {
 .mw-foreground-image {
   max-width: 100%;
   aspect-ratio: 4/3;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 @media only screen and (min-width: 1025px) {
   .mw-foreground-image {
     max-width: 100%;
-    aspect-ratio:auto;
-    object-fit:contain;
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 }
