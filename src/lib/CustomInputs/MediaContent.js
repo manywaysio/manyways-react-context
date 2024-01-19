@@ -1,10 +1,9 @@
 const MediaContent = ({ schema, ...props }) => {
   return (
-    <div>
-      xx
+    <div className="media-content">
       <div dangerouslySetInnerHTML={{ __html: schema?.text }} />
-      <div>
-        <img src={schema?.media} />
+      <div className='image-container'>
+        <img src={schema?.media} alt={schema?.mediaAlt ? schema?.mediaAlt : ''}/>
       </div>
     </div>
   );

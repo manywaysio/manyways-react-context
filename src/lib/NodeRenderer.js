@@ -4,6 +4,7 @@ import Form from "@rjsf/core";
 import NextAndBack from "./NextAndBack";
 import ManywaysRadioWidget from "./CustomInputs/ManywaysRadioWidget";
 import MediaContent from "./CustomInputs/MediaContent";
+import ManywaysCheckboxWidget from "./CustomInputs/ManywaysCheckboxWidget";
 
 const NodeRenderer = (props) => {
   const {
@@ -25,7 +26,7 @@ const NodeRenderer = (props) => {
         return n.id === currentNodeId;
       }
     })
-    .map((currentNode) => {
+    .map((currentNode, idx) => {
       let theResponse = responses.find((r) => r.node_id === currentNode?.id);
 
       // UI VARIABLES
@@ -40,16 +41,20 @@ const NodeRenderer = (props) => {
       let { backgroundImage, nodeLayout, foregroundImage, isFullScreen } =
         impliedUIVariables;
 
+      const isFirstNode = idx === 0 ? true : false  
+
       return (
         <div
-          className={`${classNamePrefix}-node 
+          className={`${classNamePrefix}-node
           is-current-node-${currentNodeId === currentNode?.id} 
           has-response-${!!theResponse}
           layout-${nodeLayout || "center"}
           is-full-screen-${!!isFullScreen}
           has-background-${!!backgroundImage}
           has-foreground-${!!foregroundImage}
+          ${classNamePrefix}-first-node-${isFirstNode}
           `}
+          id={`${classNamePrefix}-node-${currentNode?.id}`}
           style={
             !!backgroundImage
               ? {
@@ -76,6 +81,7 @@ const NodeRenderer = (props) => {
           `}
               widgets={{
                 RadioWidget: ManywaysRadioWidget,
+                CheckboxesWidget:  ManywaysCheckboxWidget
               }}
               fields={{
                 MediaContent: MediaContent,

@@ -91,7 +91,7 @@ const ManywaysProvider = ({
         mode,
       }}
     >
-      <div className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode}`}>
+      <div className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container`}>
         {/* Renders when in scroll mode with a global background set */}
         {mode === "scroll" &&
         treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
