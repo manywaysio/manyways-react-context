@@ -6,6 +6,7 @@ import ManywaysRadioWidget from "./CustomInputs/ManywaysRadioWidget";
 import MediaContent from "./CustomInputs/MediaContent";
 import ManywaysCheckboxWidget from "./CustomInputs/ManywaysCheckboxWidget";
 import ManywaysSelectWidget from "./CustomInputs/ManywaysSelectWidget";
+import Footer from "./Footer";
 
 const NodeRenderer = (props) => {
   const {
@@ -46,6 +47,7 @@ const NodeRenderer = (props) => {
 
       return (
         <div
+          key={idx}
           className={`${classNamePrefix}-node
           is-current-node-${currentNodeId === currentNode?.id} 
           has-response-${!!theResponse}
@@ -98,6 +100,9 @@ const NodeRenderer = (props) => {
               <NextAndBack currentNode={currentNode} />
             </Form>
           </div>
+          {
+            mode === 'slideshow' ? <Footer /> : null
+          }
         </div>
       );
     });

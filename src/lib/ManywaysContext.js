@@ -1,5 +1,6 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import NodeRenderer from "./NodeRenderer";
+import Footer from "./Footer";
 const ManywaysContext = createContext(null);
 
 const ManywaysProvider = ({
@@ -72,8 +73,13 @@ const ManywaysProvider = ({
     shareJourney,
     copyLink;
 
-  const journeyHasHeader = treeConfig?.run_mode?.ui_variables?.backgroundImage ? true : false
-    
+
+  const globalSettings = {
+    backgroundImage: treeConfig?.run_mode?.ui_variables?.backgroundImage ? treeConfig?.run_mode?.ui_variables?.backgroundImage : false,
+    header: treeConfig?.run_mode?.logo ? true : false ,
+    footer: treeConfig?.run_mode?.customFooter ? true : false
+  }  
+
   return (
     <ManywaysContext.Provider
       value={{
@@ -94,20 +100,20 @@ const ManywaysProvider = ({
         mode,
       }}
     >
-      <div className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${journeyHasHeader}`}>
+      <div
+        className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${globalSettings.header}`}
+      >
         {/* Renders when in scroll mode with a global background set */}
-        {mode === "scroll" &&
-        journeyHasHeader ? (
+        {mode === "scroll" && globalSettings.backgroundImage ? (
           <div
             className={`${classNamePrefix}-global-bg-image`}
             style={{
-              backgroundImage: `url(${treeConfig?.run_mode?.ui_variables?.backgroundImage})`,
+              backgroundImage: `url(${globalSettings.backgroundImage})`,
             }}
-          >
-          </div>
+          ></div>
         ) : null}
         {/* Adds a header when a logo is added */}
-        {treeConfig?.run_mode?.logo && (
+        {globalSettings.header && (
           <header>
             <div className={`${classNamePrefix}-container`}>
               <img
@@ -120,6 +126,9 @@ const ManywaysProvider = ({
         )}
         <NodeRenderer />
         {children}
+        {
+            mode === 'scroll' ? <Footer /> : null
+          }
       </div>
     </ManywaysContext.Provider>
   );

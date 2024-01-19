@@ -80,10 +80,27 @@ Custom mesca styles
 .mw-node .text-container {
   z-index: 1;
   padding:20px 45px;
+  color: #fff;
+  max-width: 70%;
+}
+
+.mw-node .text-container p {
+  color: #fff;
 }
 
 .mw-node .image-container {
   z-index: -1;
+  position: relative;
+}
+
+.mw-node .image-container:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left:0;
+  background: linear-gradient(98deg, rgba(0,0,0,.6) 00%, rgba(255,255,255,0) 100%);
 }
 
 .mw-node .image-container img {
