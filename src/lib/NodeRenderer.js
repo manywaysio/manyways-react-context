@@ -53,7 +53,8 @@ const NodeRenderer = (props) => {
           is-full-screen-${!!isFullScreen}
           has-background-${!!backgroundImage}
           has-foreground-${!!foregroundImage}
-          ${classNamePrefix}-first-node-${isFirstNode}
+          is-first-node-${isFirstNode}
+          ${classNamePrefix}-node-${currentNodeId}
           `}
           id={`${classNamePrefix}-node-${currentNode?.id}`}
           style={

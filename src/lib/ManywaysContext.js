@@ -71,6 +71,9 @@ const ManywaysProvider = ({
     setLocale,
     shareJourney,
     copyLink;
+
+  const journeyHasHeader = treeConfig?.run_mode?.ui_variables?.backgroundImage ? true : false
+    
   return (
     <ManywaysContext.Provider
       value={{
@@ -91,10 +94,10 @@ const ManywaysProvider = ({
         mode,
       }}
     >
-      <div className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container`}>
+      <div className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${journeyHasHeader}`}>
         {/* Renders when in scroll mode with a global background set */}
         {mode === "scroll" &&
-        treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
+        journeyHasHeader ? (
           <div
             className={`${classNamePrefix}-global-bg-image`}
             style={{
