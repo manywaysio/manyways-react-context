@@ -75,9 +75,9 @@ const ManywaysProvider = ({
 
 
   const globalSettings = {
-    backgroundImage: treeConfig?.run_mode?.ui_variables?.backgroundImage ? treeConfig?.run_mode?.ui_variables?.backgroundImage : false,
-    header: treeConfig?.run_mode?.logo ? true : false ,
-    footer: treeConfig?.run_mode?.customFooter ? true : false
+    backgroundImage: treeConfig?.run_mode?.ui_variables?.backgroundImage ? treeConfig?.run_mode?.ui_variables?.backgroundImage : null,
+    header: treeConfig?.run_mode?.logo ? treeConfig?.run_mode?.logo : null ,
+    footer: treeConfig?.run_mode?.customFooter ? treeConfig?.run_mode?.customFooter  : null
   }  
 
   return (
@@ -101,7 +101,7 @@ const ManywaysProvider = ({
       }}
     >
       <div
-        className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${globalSettings.header}`}
+        className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!globalSettings.header}`}
       >
         {/* Renders when in scroll mode with a global background set */}
         {mode === "scroll" && globalSettings.backgroundImage ? (
@@ -118,7 +118,7 @@ const ManywaysProvider = ({
             <div className={`${classNamePrefix}-container`}>
               <img
                 className={`${classNamePrefix}-logo`}
-                src={treeConfig?.run_mode?.logo}
+                src={globalSettings.header}
                 alt="logo"
               />
             </div>
