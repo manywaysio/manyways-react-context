@@ -4,7 +4,7 @@
 /* Variables */
 :root {
   --content-width: 1200px;
-  --content-width-form: 65ch;
+  --content-width-form: 1000px;
   --header-height: 80px;
   --base-font-size: 16px;
   --font-family: "Open Sans", sans-serif;
@@ -28,6 +28,8 @@
   /* Border */
   --border-width: 1px ;
   --border-radius: 0px ;
+  --border-radius-button: 0px ;
+  --border-color: #000000 ;
 
   /* Buttons --> to do */
   --button-text: #222222;

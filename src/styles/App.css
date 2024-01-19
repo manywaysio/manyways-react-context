@@ -28,6 +28,8 @@
   /* Border */
   --border-width: 1px ;
   --border-radius: .25rem;
+  --border-radius-button: 25px;
+  --border-color: var(--color-medium) ;
 
   /* Buttons --> to do */
   --button-text: #222222;
@@ -300,7 +302,7 @@ p {
 .mw-node .form-group textarea {
   display: block;
   background-color: #fff;
-  border: var(--border-width) solid var(--color-medium);
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   padding: .7em .8em;
   width: 100%;
@@ -320,7 +322,7 @@ p {
 .mw-node .select-wrapper {
   display: block;
   background-color: #fff;
-  border: var(--border-width) solid var(--color-medium);
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   padding-right: 10px;
   width: 100%;
@@ -385,7 +387,7 @@ p {
 .mw-node .field-group-images-false .radio label {
   align-items: center;
   background-color: #fff;
-  border: var(--border-width) solid var(--color-medium);
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   padding: .7em .8em;
   font-size: .9rem;
@@ -401,7 +403,7 @@ p {
   align-items: center;
   background-color: #fff;
   border: var(--border-width) solid var(--color-dark);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-button);
   padding: .4rem 1.3rem;
   font-size: .9rem;
   margin-right: .3rem;
@@ -412,7 +414,7 @@ p {
   align-items: center;
   background-color: #fff;
   border: var(--border-width) solid var(--color-dark);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-button);
   padding: .4rem 1.3rem;
   font-size: .9rem;
   margin-right: .3rem;
@@ -446,7 +448,7 @@ p {
   gap: var(--spacing-small);
   align-items: center;
   background-color: #fff;
-  border: var(--border-width) solid var(--color-medium);
+  border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   padding: .2rem;
   height: 100%;
@@ -482,7 +484,7 @@ p {
     gap: var(--spacing-small);
     align-items: center;
     background-color: #fff;
-    border: var(--border-width) solid var(--color-medium);
+    border: var(--border-width) solid var(--border-color);
     border-radius: var(--border-radius);
     padding: .85rem;
     height: 100%;
