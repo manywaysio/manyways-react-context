@@ -504,8 +504,8 @@ body {
 
 /* Adjust  */
 
-.mw-node .checkbox,
-.mw-node .checkbox-inline {
+.checkbox,
+.checkbox-inline {
   display: inline-block;
   position: relative;
   padding-left: 30px;
@@ -516,8 +516,8 @@ body {
   user-select: none;
 }
 
-.mw-node .checkbox input,
-.mw-node .checkbox-inline input {
+.checkbox input,
+.checkbox-inline input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -525,14 +525,14 @@ body {
   width: 0;
 }
 
-.mw-node .checkbox input:checked~.checkbox-checkmark,
-.mw-node .checkbox-inline input:checked~.checkbox-checkmark {
+.checkbox input:checked~.checkbox-checkmark,
+.checkbox-inline input:checked~.checkbox-checkmark {
   background-color: var(--color-select-dark);
 
 }
 
-.mw-node .checkbox .input:checked~.checkbox-checkmark:after,
-.mw-node .checkbox-inline .input:checked~.checkbox-checkmark:after {
+.checkbox .input:checked~.checkbox-checkmark:after,
+.checkbox-inline .input:checked~.checkbox-checkmark:after {
   opacity: 1;
 }
 
@@ -544,8 +544,8 @@ body {
   padding-left: 2rem;
 }
 
-.mw-node .checkbox .checkbox-checkmark,
-.mw-node .checkbox-inline input~.checkbox-checkmark {
+.checkbox .checkbox-checkmark,
+.checkbox-inline input~.checkbox-checkmark {
   position: absolute;
   top: .65em;
   left: .6em;
@@ -557,14 +557,14 @@ body {
   border-radius: 11px;
 }
 
-.mw-node .checkbox input~.checkbox-checkmark {
+.checkbox input~.checkbox-checkmark {
   top: .9em;
   left: .8em;
   border-radius: 3px;
 }
 
-.mw-node .checkbox .checkbox-checkmark:after,
-.mw-node .checkbox-inline .checkbox-checkmark:after {
+.checkbox .checkbox-checkmark:after,
+.checkbox-inline .checkbox-checkmark:after {
   content: "";
   position: absolute;
   left: 6px;
@@ -578,7 +578,7 @@ body {
   transition: opacity 100ms ease;
 }
 
-.mw-node .selected .checkbox-checkmark:after {
+.selected .checkbox-checkmark:after {
   opacity: 1;
 }
 
@@ -591,8 +591,8 @@ body {
   border-color: var(--color-select);
 }
 
-.mw-node .checkbox.selected .checkbox-checkmark,
-.mw-node .checkbox-inline.selected input~.checkbox-checkmark {
+.checkbox.selected .checkbox-checkmark,
+.checkbox-inline.selected input~.checkbox-checkmark {
   border-color: var(--color-select-dark);
 }
 
