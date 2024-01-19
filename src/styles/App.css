@@ -22,6 +22,12 @@
   --spacing-large: 3rem ;
   --spacing-small: 1rem ;
   --spacing-grids: 5px ;
+  --container-padding-x: 1rem ;
+  --container-padding-y: 0 ;
+
+  /* Border */
+  --border-width: 1px ;
+  --border-radius: .25rem;
 
   /* Buttons --> to do */
   --button-text: #222222;
@@ -88,7 +94,7 @@ p {
   max-width: var(--content-width);
   height: 100%;
   margin: auto;
-  padding: 0 1rem;
+  padding: var(--container-padding-y) var(--container-padding-x);
 }
 
 .is-full-screen-true .mw-container {
@@ -233,7 +239,7 @@ p {
   border-radius: 25px;
   padding: .5em 1.1em;
   background-color: #FFFFFF;
-  border: 1px solid var(--color-dark);
+  border: var(--border-width) solid var(--color-dark);
   color: var(--color-dark);
   transition: ease-in-out 200ms all;
 }
@@ -294,8 +300,8 @@ p {
 .mw-node .form-group textarea {
   display: block;
   background-color: #fff;
-  border: 1px solid var(--color-medium);
-  border-radius: .25rem;
+  border: var(--border-width) solid var(--color-medium);
+  border-radius: var(--border-radius);
   padding: .7em .8em;
   width: 100%;
   max-width: 100%;
@@ -306,7 +312,7 @@ p {
   display: block;
   padding: .7em .8em;
   border: none;
-  border-radius: .25rem;
+  border-radius: var(--border-radius);
   width: 100%;
   font-size: 1rem;
 }
@@ -314,8 +320,8 @@ p {
 .mw-node .select-wrapper {
   display: block;
   background-color: #fff;
-  border: 1px solid var(--color-medium);
-  border-radius: .25rem;
+  border: var(--border-width) solid var(--color-medium);
+  border-radius: var(--border-radius);
   padding-right: 10px;
   width: 100%;
   max-width: 100%;
@@ -379,8 +385,8 @@ p {
 .mw-node .field-group-images-false .radio label {
   align-items: center;
   background-color: #fff;
-  border: 1px solid var(--color-medium);
-  border-radius: .25rem;
+  border: var(--border-width) solid var(--color-medium);
+  border-radius: var(--border-radius);
   padding: .7em .8em;
   font-size: .9rem;
   margin-bottom: .3rem;
@@ -394,8 +400,8 @@ p {
 .mw-node .field-group-images-false .checkbox-inline {
   align-items: center;
   background-color: #fff;
-  border: 1px solid var(--color-dark);
-  border-radius: 25px;
+  border: var(--border-width) solid var(--color-dark);
+  border-radius: var(--border-radius);
   padding: .4rem 1.3rem;
   font-size: .9rem;
   margin-right: .3rem;
@@ -405,8 +411,8 @@ p {
 .mw-node .field-group-images-false .radio-inline label {
   align-items: center;
   background-color: #fff;
-  border: 1px solid var(--color-dark);
-  border-radius: 25px;
+  border: var(--border-width) solid var(--color-dark);
+  border-radius: var(--border-radius);
   padding: .4rem 1.3rem;
   font-size: .9rem;
   margin-right: .3rem;
@@ -440,8 +446,8 @@ p {
   gap: var(--spacing-small);
   align-items: center;
   background-color: #fff;
-  border: 1px solid var(--color-medium);
-  border-radius: 6px;
+  border: var(--border-width) solid var(--color-medium);
+  border-radius: var(--border-radius);
   padding: .2rem;
   height: 100%;
   transition: ease-in-out 100ms all;
@@ -476,8 +482,8 @@ p {
     gap: var(--spacing-small);
     align-items: center;
     background-color: #fff;
-    border: 1px solid var(--color-medium);
-    border-radius: 6px;
+    border: var(--border-width) solid var(--color-medium);
+    border-radius: var(--border-radius);
     padding: .85rem;
     height: 100%;
     transition: ease-in-out 100ms all;

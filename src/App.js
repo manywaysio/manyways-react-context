@@ -1,4 +1,5 @@
-import "./App.css";
+import "./styles/App.css";
+import "./styles/Mesca.css";
 import { ManywaysProvider } from "./lib/ManywaysContext";
 
 function App() {
