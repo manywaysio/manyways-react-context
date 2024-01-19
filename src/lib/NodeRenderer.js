@@ -5,6 +5,7 @@ import NextAndBack from "./NextAndBack";
 import ManywaysRadioWidget from "./CustomInputs/ManywaysRadioWidget";
 import MediaContent from "./CustomInputs/MediaContent";
 import ManywaysCheckboxWidget from "./CustomInputs/ManywaysCheckboxWidget";
+import ManywaysSelectWidget from "./CustomInputs/ManywaysSelectWidget";
 
 const NodeRenderer = (props) => {
   const {
@@ -81,7 +82,8 @@ const NodeRenderer = (props) => {
           `}
               widgets={{
                 RadioWidget: ManywaysRadioWidget,
-                CheckboxesWidget:  ManywaysCheckboxWidget
+                CheckboxesWidget:  ManywaysCheckboxWidget,
+                SelectWidget:  ManywaysSelectWidget
               }}
               fields={{
                 MediaContent: MediaContent,

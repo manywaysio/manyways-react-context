@@ -12,6 +12,11 @@
   --color-select: #3158f1;
   --color-select-light: #f5f6ff;
   --color-select-dark: #3158f1;
+  /* To do */
+  --button-text: #222222;
+  --button-background: #222222;
+  --button-bacgkround-hover: #222222;
+  --button-text-hover: #222222;
 }
 
 html {
@@ -279,8 +284,7 @@ body {
 
 .mw-node .form-group.field-string input,
 .mw-node .form-group.field-integer input,
-.mw-node .form-group textarea,
-.mw-node select {
+.mw-node .form-group textarea {
   display: block;
   background-color: #fff;
   border: 1px solid var(--color-medium);
@@ -289,6 +293,32 @@ body {
   width: 100%;
   max-width: 100%;
   font-size: 1rem;
+}
+
+.mw-node select{
+  display: block;
+  padding: .7em .8em;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.mw-node .select-wrapper{
+  display: block;
+  background-color: #fff;
+  border: 1px solid var(--color-medium);
+  border-radius: .25rem;
+  padding-right: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.mw-node select:focus-within {
+  outline: none;
+}
+
+.mw-node .select-wrapper:focus-within {
+  outline: 1px solid var(--color-select);
 }
 
 .mw-node textarea {
