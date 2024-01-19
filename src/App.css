@@ -148,13 +148,13 @@ body {
 }
 
 .layout-content-left .mw-form, 
-.layout-content-right .mw-form
- {
+.layout-content-right .mw-form{
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
   width: 100%;
+  margin:auto;
 }
 
 @media only screen and (min-width: 1025px) {
@@ -299,6 +299,7 @@ body {
   display: block;
   padding: .7em .8em;
   border: none;
+  border-radius: .25rem;
   width: 100%;
   font-size: 1rem;
 }
@@ -503,8 +504,8 @@ body {
 
 /* Adjust  */
 
-.checkbox,
-.checkbox-inline {
+.mw-node .checkbox,
+.mw-node .checkbox-inline {
   display: inline-block;
   position: relative;
   padding-left: 30px;
@@ -515,8 +516,8 @@ body {
   user-select: none;
 }
 
-.checkbox input,
-.checkbox-inline input {
+.mw-node .checkbox input,
+.mw-node .checkbox-inline input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -524,14 +525,14 @@ body {
   width: 0;
 }
 
-.checkbox input:checked~.checkbox-checkmark,
-.checkbox-inline input:checked~.checkbox-checkmark {
+.mw-node .checkbox input:checked~.checkbox-checkmark,
+.mw-node .checkbox-inline input:checked~.checkbox-checkmark {
   background-color: var(--color-select-dark);
 
 }
 
-.checkbox .input:checked~.checkbox-checkmark:after,
-.checkbox-inline .input:checked~.checkbox-checkmark:after {
+.mw-node .checkbox .input:checked~.checkbox-checkmark:after,
+.mw-node .checkbox-inline .input:checked~.checkbox-checkmark:after {
   opacity: 1;
 }
 
@@ -543,8 +544,8 @@ body {
   padding-left: 2rem;
 }
 
-.checkbox .checkbox-checkmark,
-.checkbox-inline input~.checkbox-checkmark {
+.mw-node .checkbox .checkbox-checkmark,
+.mw-node .checkbox-inline input~.checkbox-checkmark {
   position: absolute;
   top: .65em;
   left: .6em;
@@ -556,14 +557,14 @@ body {
   border-radius: 11px;
 }
 
-.checkbox input~.checkbox-checkmark {
+.mw-node .checkbox input~.checkbox-checkmark {
   top: .9em;
   left: .8em;
   border-radius: 3px;
 }
 
-.checkbox .checkbox-checkmark:after,
-.checkbox-inline .checkbox-checkmark:after {
+.mw-node .checkbox .checkbox-checkmark:after,
+.mw-node .checkbox-inline .checkbox-checkmark:after {
   content: "";
   position: absolute;
   left: 6px;
@@ -577,7 +578,7 @@ body {
   transition: opacity 100ms ease;
 }
 
-.selected .checkbox-checkmark:after {
+.mw-node .selected .checkbox-checkmark:after {
   opacity: 1;
 }
 
@@ -590,8 +591,8 @@ body {
   border-color: var(--color-select);
 }
 
-.checkbox.selected .checkbox-checkmark,
-.checkbox-inline.selected input~.checkbox-checkmark {
+.mw-node .checkbox.selected .checkbox-checkmark,
+.mw-node .checkbox-inline.selected input~.checkbox-checkmark {
   border-color: var(--color-select-dark);
 }
 
