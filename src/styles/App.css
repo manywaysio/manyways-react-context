@@ -1,6 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+
 /* Variables */
 :root {
   --content-width: 1200px;
@@ -305,6 +306,7 @@ header .mw-container {
 
 .mw-node .form-group {
   margin: 1rem 0;
+  max-width: var(--content-width-form);
 }
 
 .mw-node label {
@@ -655,7 +657,7 @@ header .mw-container {
   max-width: 100%;
 }
 
-.mw-node .image-container img {
+.mw-node .image-container img, .mw-node .text-container img {
   width: 100%;
   height: 100%;
   object-fit: contain;

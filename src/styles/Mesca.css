@@ -1,5 +1,7 @@
 /* Fonts */
 @import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+/* @import url('https://fonts.cdnfonts.com/css/nimbus-sans-l'); */
+
 
 /* Variables */
 :root {
@@ -49,18 +51,26 @@ Custom mesca styles
 ***************************/
 /* 
 -webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale; */
+-moz-osx-font-smoothing: grayscale; 
+*/
 
 body {
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: .3px;
+  line-height: 1.6;
 }
 
 h1 {
   font-size: 48px;
   font-weight: 700;
   margin: 0;
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  */
+}
+
+a {
+  color: var(--color-accent);
 }
 
 .mw-node label{
@@ -74,7 +84,9 @@ h1 {
 
 .mesca-page-header.media-content {
   position: relative;
-  height: 200px;
+  min-height: 210px;
+  height: 100%;
+  margin-bottom: 45px;
 }
 
 .mesca-page-header:before {
@@ -107,13 +119,12 @@ h1 {
 
 .mesca-page-header .text-container p {
   color: #fff;
-  line-height: 1.6;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .mesca-page-header .image-container {
   z-index: -1;
-  position: relative;
+  position: absolute;
 }
 
 .mesca-page-header .image-container:after {
@@ -144,17 +155,50 @@ h1 {
   object-fit: contain;
 }
 
+.results-container h2{
+  font-size: 32px;
+  font-weight: 700;
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+}
+
+.results-container h2 .selected-rebate{
+  font-size: 32px;
+  font-weight: 300;
+  border-radius: 4px;
+  border: 1.5px solid #dedede;
+  padding: 10px 15px 3px 15px;
+  margin-left: 10px;
+}
+
+.results-container p {
+  font-weight: 300;
+}
+
+.results-by-province {
+  background-color: #f6f6f6;
+  padding: 20px 40px;
+}
+
+.text-container h3 {
+  font-size: 32px;
+  margin-bottom:15px;
+}
+
+.content-half .text-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+
 /* //Footer  */
 
 .footer p, .footer a{
   font-size: .78rem;
-  line-height: 1.2rem;
+  line-height: 1.6;
 }
 
 .footer p {
   color: rgba(0,0,0,.75);
-}
-
-.footer a {
-  color: var(--color-accent);
 }
