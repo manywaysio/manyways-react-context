@@ -6,23 +6,24 @@
   --content-width: 1000px;
   --content-width-form: 980px;
   --header-height: 80px;
-  --base-font-size: 18px;
-  --base-font-size-mobile: 18px;
-  --font-family: 'Helvetica Neue', sans-serif;;
+  --font-size-base: 18px;
+  --font-size-base-mobile: 18px;
+  --font-family: 'Helvetica Neue', sans-serif;
 
   /* Colors */
-  --color-dark: #222222;
-  --color-text: #222222;
+  --color-dark: #000000;
+  --color-text: #000000;
   --color-medium: #e0ded1;
   --color-light: #F6F6F6;
+  --color-accent: #FF0000;
   --color-select: #FF0000;
   --color-select-light: #ffffff;
   --color-select-dark: #FF0000;
 
   /* Grid spacing */
-  --spacing-large: 3rem ;
-  --spacing-small: 1rem ;
-  --spacing-grids: 20px ;
+  --grid-gap-large: 3rem ;
+  --grid-gap-default: 2rem;
+  --grid-gap-small: .5rem ;
   --container-padding-x: 0 ; 
   --container-padding-y: 0 ;
   --content-padding-x: 1.5rem ;
@@ -32,6 +33,7 @@
   --border-width: 1px ;
   --border-radius: 0px ;
   --border-radius-button: 0px ;
+  --border-radius-input: 0px ;
   --border-color: #000000 ;
   --border-outline: 2px;
 
@@ -45,9 +47,24 @@
 /************************** 
 Custom mesca styles  
 ***************************/
+/* 
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale; */
+
+body {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: .3px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
 
 .mw-node label{
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .mw-node .mw-container {
@@ -57,7 +74,7 @@ Custom mesca styles
 
 .mw-node .media-content {
   position: relative;
-  height: 194px;
+  height: 200px;
 }
 
 .mw-node .media-content:before {
@@ -73,19 +90,25 @@ Custom mesca styles
   position: absolute;
   height: 100%;
   width: 100%;
-  left: 0;
   top: 0;
+  left: 0;
 }
 
 .mw-node .text-container {
   z-index: 1;
-  padding:20px 45px;
+  padding:20px 40px;
   color: #fff;
-  max-width: 70%;
+  max-width: 600px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .mw-node .text-container p {
   color: #fff;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
 .mw-node .image-container {
@@ -100,9 +123,38 @@ Custom mesca styles
   width: 100%;
   top: 0;
   left:0;
-  background: linear-gradient(98deg, rgba(0,0,0,.6) 00%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,.6) 30%, rgba(255,255,255,0) 100%);
 }
 
 .mw-node .image-container img {
   object-fit: cover;
+}
+
+/* Buttons */
+
+.mw-node .field-group-images-true.field-layout-inline label{
+  text-align: center;
+  justify-content: center;
+  padding: .5rem .85rem;
+}
+
+.mw-node .field-group-images-true.field-layout-inline img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* //Footer  */
+
+.footer p, .footer a{
+  font-size: .78rem;
+  line-height: 1.2rem;
+}
+
+.footer p {
+  color: rgba(0,0,0,.75);
+}
+
+.footer a {
+  color: var(--color-accent);
 }

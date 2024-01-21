@@ -73,12 +73,15 @@ const ManywaysProvider = ({
     shareJourney,
     copyLink;
 
-
   const globalSettings = {
-    backgroundImage: treeConfig?.run_mode?.ui_variables?.backgroundImage ? treeConfig?.run_mode?.ui_variables?.backgroundImage : null,
-    header: treeConfig?.run_mode?.logo ? treeConfig?.run_mode?.logo : null ,
-    footer: treeConfig?.run_mode?.customFooter ? treeConfig?.run_mode?.customFooter  : null
-  }  
+    backgroundImage: treeConfig?.run_mode?.ui_variables?.backgroundImage
+      ? treeConfig?.run_mode?.ui_variables?.backgroundImage
+      : null,
+    header: treeConfig?.run_mode?.logo ? treeConfig?.run_mode?.logo : null,
+    footer: treeConfig?.run_mode?.customFooter
+      ? treeConfig?.run_mode?.customFooter
+      : null,
+  };
 
   return (
     <ManywaysContext.Provider
@@ -126,9 +129,7 @@ const ManywaysProvider = ({
         )}
         <NodeRenderer />
         {children}
-        {
-            mode === 'scroll' ? <Footer /> : null
-          }
+        {mode === "scroll" && <Footer />}
       </div>
     </ManywaysContext.Provider>
   );
