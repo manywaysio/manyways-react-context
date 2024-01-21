@@ -10,8 +10,8 @@ const Footer = () => {
     return (
       <div className="footer">
         <div className={`${classNamePrefix}-container-footer`}>
-          {treeConfig?.run_mode?.customFooter && 
-          <div className="footer-content" dangerouslySetInnerHTML={{ __html: treeConfig?.run_mode?.customFooter }} />
+          {treeConfig?.run_mode?.footer && 
+          <div className="footer-content" dangerouslySetInnerHTML={{ __html: treeConfig?.run_mode?.footer }} />
           }
         </div>
       </div>

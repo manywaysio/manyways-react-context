@@ -78,8 +78,8 @@ const ManywaysProvider = ({
       ? treeConfig?.run_mode?.ui_variables?.backgroundImage
       : null,
     header: treeConfig?.run_mode?.logo ? treeConfig?.run_mode?.logo : null,
-    footer: treeConfig?.run_mode?.customFooter
-      ? treeConfig?.run_mode?.customFooter
+    footer: treeConfig?.run_mode?.footer
+      ? treeConfig?.run_mode?.footer
       : null,
   };
 
