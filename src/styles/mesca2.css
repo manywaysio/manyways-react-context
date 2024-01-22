@@ -102,7 +102,8 @@ a {
 
 .mw-journey-container header {
   position: fixed;
-  top:20px;
+  top:0px;
+  padding-top: 30px;
   background-color: #fff;
 }
 
@@ -171,6 +172,7 @@ a {
 
 .is-first-node-true {
   margin-top: var(--header-height);
+  padding-top: 35px;
 }
 
 /* Buttons */
@@ -190,6 +192,7 @@ a {
 /* Form Fields */
 
 .mw-node .form-group {
+  margin-top: 0;
 }
 
 .mw-node-model-number .form-group.field.field-string {
@@ -248,7 +251,7 @@ a {
 
 .result-card {
   background-color: #f6f6f6;
-  padding: 20px 40px;
+  padding: 35px 40px;
 }
 
 .product-details {
@@ -337,6 +340,10 @@ a {
 }
 
 /* //Footer  */
+
+.footer {
+  margin-top: 45px;
+}
 
 .footer p, .footer a{
   font-size: 14px;
