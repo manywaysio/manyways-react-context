@@ -7,6 +7,7 @@ import MediaContent from "./CustomInputs/MediaContent";
 import ManywaysCheckboxWidget from "./CustomInputs/ManywaysCheckboxWidget";
 import ManywaysSelectWidget from "./CustomInputs/ManywaysSelectWidget";
 import Footer from "./Footer";
+import { slugify } from "./utils/helpers";
 
 const NodeRenderer = (props) => {
   const {
@@ -56,7 +57,7 @@ const NodeRenderer = (props) => {
           has-background-${!!backgroundImage}
           has-foreground-${!!foregroundImage}
           is-first-node-${isFirstNode}
-          ${classNamePrefix}-node-${currentNodeId}
+          ${classNamePrefix}-node-${slugify(currentNode?.title)}
           `}
           id={`${classNamePrefix}-node-${currentNode?.id}`}
           style={
