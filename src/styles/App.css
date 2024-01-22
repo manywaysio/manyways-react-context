@@ -377,6 +377,17 @@ header .mw-container {
 
 .mw-node .select-wrapper:focus-within {
   outline: 1px solid var(--color-select);
+  border-color: var(--color-select);
+}
+
+.mw-node .form-group.field-string input:focus {
+  border-color: var(--color-select);
+}
+
+.mw-node .form-group.field-string input:focus-within {
+  outline: 1px solid var(--color-select);
+  border-color: var(--color-select);
+  border-radius: var(--border-radius-input);
 }
 
 .mw-node textarea {

@@ -1,16 +1,16 @@
 /* Fonts */
 @import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
-@import url('https://fonts.cdnfonts.com/css/nimbus-sans-l');
+/* @import url('https://fonts.cdnfonts.com/css/nimbus-sans-l'); */
 
 
 /* Variables */
 :root {
-  --content-width: 1000px;
+  --content-width: 980px;
   --content-width-form: 980px;
   --header-height: 80px;
   --font-size-base: 18px;
   --font-size-base-mobile: 18px;
-  --font-family: 'Helvetica Neue', sans-serif;
+  --font-family: 'HelveticaNeue', 'Helvetica Neue', 'Helvetica', sans-serif;
 
   /* Colors */
   --color-dark: #000000;
@@ -59,16 +59,16 @@ body {
   font-weight: 300;
   letter-spacing: .3px;
   line-height: 1.6;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;  */
+  -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale; 
 }
 
 h1 {
   font-size: 48px;
   font-weight: 700;
   margin: 0;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;  */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
 }
 
 a {
@@ -77,7 +77,8 @@ a {
 
 /* sr only  */
 
-.mw-node-find-by .control-label {
+.mw-node-find-by .control-label, 
+.mw-node-model-number .control-label {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -172,6 +173,26 @@ a {
   object-fit: contain;
 }
 
+/* Form Fields */
+
+.mw-node-model-number .form-group.field.field-string {
+  display: inline-block;
+  width: calc(100%/2 - 10px);
+}
+
+#root_indoor {
+  display: block;
+  margin-left: 20px;
+}
+
+#root_outdoor__description {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#root_outdoor__description:after {
+  content: '';
+}
 
 /* Content boxes */
 
@@ -216,13 +237,33 @@ a {
 .product-details {
   display: grid;
   grid-template-columns: 1fr;
-  align-items: center;
+  gap: var(--grid-gap-default);
+}
+
+.product-details .button {
+  display:flex;
+  align-items:center;
+  justify-content: flex-end;
 }
 
 .product-details button {
   background-color: var(--button-background);
   border-color: var(--button-background);
   color: #fff;
+}
+
+.result-card .external-link {
+  background-color: #000;
+  display: inline-block;
+  color: #fff;
+  padding: .5em 1.1em;
+  text-decoration: none;
+}
+
+.result-card .external-link::after {
+  content: '\f026';
+  font-family: 'Font Awesome 6 Free';
+  margin-left: 10px;
 }
 
 .result-card h6 {
@@ -288,5 +329,28 @@ a {
 
 .footer p {
   color: rgba(0,0,0,.75);
+}
+
+.footer .powered-by {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  font-size: 18px;
+  color: #666666;
+  font-weight: 300;
+  margin-top: 65px;
+  margin-bottom: 65px;
+} 
+
+.footer .powered-by img {
+  margin-left: 10px;
+  width: auto;
+  height: 32px;
+}
+
+.footer .where-to-buy {
+  background-color: var(--button-background);
+  height: 180px;
+  width: 100%;
 }
 
