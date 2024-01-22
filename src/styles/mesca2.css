@@ -40,10 +40,10 @@
   --border-outline: 2.5px;
 
   /* Buttons --> to do */
-  --button-text: #222222;
+  --button-text: #000000;
   --button-background: #C40001;
-  --button-bacgkround-hover: #222222;
-  --button-text-hover: #222222;
+  --button-bacgkround-hover: #000000;
+  --button-text-hover: #000000;
 }
 
 /************************** 
@@ -70,6 +70,7 @@ h1 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; 
 }
+
 
 a {
   color: var(--color-accent);
@@ -208,6 +209,8 @@ a {
 #root_outdoor__description {
   font-size: 18px;
   font-weight: 500;
+  color: var(--color-text);
+  opacity: 1;
 }
 
 #root_outdoor__description:after {
@@ -308,11 +311,13 @@ a {
 
 .text-container h3 {
   font-size: 32px;
-  margin-bottom:15px;
+  line-height: 1.2;
+  margin-bottom:30px;
 }
 
 .content-half .text-container {
   display: grid;
+  gap: var(--grid-gap-default);
   grid-template-columns: 2fr 1fr;
 }
 
