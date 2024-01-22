@@ -15,6 +15,10 @@ window.manyways.restart = function () {
   alert("should restart");
 };
 
+window.manyways.share = function () {
+  alert("should share");
+};
+
 // var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
 // var eventer = window[eventMethod];
 // var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
