@@ -1,6 +1,7 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import NodeRenderer from "./NodeRenderer";
 import Footer from "./Footer";
+import Header from "./Header";
 const ManywaysContext = createContext(null);
 
 const ManywaysProvider = ({
@@ -94,10 +95,12 @@ const ManywaysProvider = ({
       }}
     >
       <div
-        className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig?.run_mode?.logo}`}
+        className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
+          ?.run_mode?.logo}`}
       >
         {/* Renders when in scroll mode with a global background set */}
-        {mode === "scroll" && treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
+        {mode === "scroll" &&
+        treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
           <div
             className={`${classNamePrefix}-global-bg-image`}
             style={{
@@ -106,17 +109,9 @@ const ManywaysProvider = ({
           ></div>
         ) : null}
         {/* Adds a header when a logo is added */}
-        {treeConfig?.run_mode?.logo && (
-          <header>
-            <div className={`${classNamePrefix}-container`}>
-              <img
-                className={`${classNamePrefix}-logo`}
-                src={treeConfig?.run_mode?.logo}
-                alt="logo"
-              />
-            </div>
-          </header>
-        )}
+        {treeConfig?.run_mode?.logo || treeConfig?.run_mode?.header ? (
+          <Header />
+        ) : null}
         <NodeRenderer />
         {children}
         {mode === "scroll" && <Footer />}

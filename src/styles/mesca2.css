@@ -7,7 +7,7 @@
 :root {
   --content-width: 980px;
   --content-width-form: 980px;
-  --header-height: 80px;
+  --header-height: 250px;
   --font-size-base: 18px;
   --font-size-base-mobile: 18px;
   --font-family: 'HelveticaNeue', 'Helvetica Neue', 'Helvetica', sans-serif;
@@ -29,7 +29,7 @@
   --container-padding-x: 0 ; 
   --container-padding-y: 0 ;
   --content-padding-x: 1.5rem ;
-  --content-padding-y: 1rem ;
+  --content-padding-y: 0 ;
 
   /* Border */
   --border-width: 1px ;
@@ -100,10 +100,17 @@ a {
   margin-top: 0;
 }
 
-.mesca-page-header.media-content {
+.mw-journey-container header {
+  position: fixed;
+  top:20px;
+  background-color: #fff;
+}
+
+.mesca-page-header {
   position: relative;
   min-height: 210px;
   height: 100%;
+  max-height: var(--content-width);
   margin-bottom: 45px;
 }
 
@@ -157,6 +164,13 @@ a {
 
 .mesca-page-header .image-container img {
   object-fit: cover;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.is-first-node-true {
+  margin-top: var(--header-height);
 }
 
 /* Buttons */
@@ -174,6 +188,9 @@ a {
 }
 
 /* Form Fields */
+
+.mw-node .form-group {
+}
 
 .mw-node-model-number .form-group.field.field-string {
   display: inline-block;
@@ -295,6 +312,7 @@ a {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
+
 
 
 @media only screen and (min-width: 750px) {
