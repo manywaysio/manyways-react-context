@@ -1,5 +1,33 @@
 /* Fonts */
-@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+@font-face {
+  font-family: 'HelveticaNeueCondensed-CondensedRegular';
+  src: url('https://cdn.agilitycms.com/mesca/helveticaneuecondensed-condensedregular.eot');
+  src: url('https://cdn.agilitycms.com/mesca/helveticaneuecondensed-condensedregular.eot?#iefix') format('embedded-opentype'),
+    url('https://cdn.agilitycms.com/mesca/helveticaneuecondensed-condensedregular.woff') format('woff'),
+    url('https://cdn.agilitycms.com/mesca/helveticaneuecondensed-condensedregular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'HelveticaNeueCondensedBold';
+  src: url('https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot');
+  src: url('https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot?#iefix') format('embedded-opentype'),
+    url('https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.woff') format('woff'),
+    url('https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l');
+  src: url('https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l#iefix') format('embedded-opentype'),
+    url('https://cdn.agilitycms.com/mesca/icomoon.ttf?yzo55l') format('truetype'),
+    url('https://cdn.agilitycms.com/mesca/icomoon.woff?yzo55l') format('woff'),
+    url('https://cdn.agilitycms.com/mesca/icomoon.svg?yzo55l#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /* @import url('https://fonts.cdnfonts.com/css/nimbus-sans-l'); */
 
 
@@ -10,7 +38,7 @@
   --header-height: 250px;
   --font-size-base: 18px;
   --font-size-base-mobile: 18px;
-  --font-family: 'HelveticaNeue', 'Helvetica Neue', 'Helvetica', sans-serif;
+  --font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* Colors */
   --color-dark: #000000;

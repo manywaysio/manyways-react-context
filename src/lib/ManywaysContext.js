@@ -46,8 +46,13 @@ const ManywaysProvider = ({
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        setNodes([...nodes, data]);
+        let final_json = data?.form_schema;
+        try {
+          final_json = JSON.parse(data?.content?.replace(/=>/g, ":"));
+        } catch (e) {
+          console.log(e);
+        }
+        setNodes([...nodes, { ...data, form_schema: final_json }]);
         setResponses([...responses, theResponse]);
         setCurrentNodeId(data?.id);
       });

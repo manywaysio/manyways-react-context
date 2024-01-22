@@ -707,3 +707,7 @@ header .mw-container {
   }
 }
 
+.singleChoiceField-true, .next-and-back-hidden-true {
+  display: none;
+}
+

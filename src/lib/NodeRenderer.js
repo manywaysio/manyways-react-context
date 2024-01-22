@@ -8,6 +8,27 @@ import ManywaysCheckboxWidget from "./CustomInputs/ManywaysCheckboxWidget";
 import ManywaysSelectWidget from "./CustomInputs/ManywaysSelectWidget";
 import Footer from "./Footer";
 import { slugify } from "./utils/helpers";
+import Select from "react-select";
+
+const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
+  if (formSchema.properties) {
+    const properties = Object.keys(formSchema.properties).filter((key) => {
+      return formSchema.properties[key].type !== "null" && key;
+    });
+    if (properties.length === 1) {
+      const property = formSchema.properties[properties[0]];
+      if (
+        property.type === "string" &&
+        property.enum &&
+        uiSchema[properties[0]] &&
+        uiSchema[properties[0]]["ui:widget"] === "radio"
+      ) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
 
 const NodeRenderer = (props) => {
   const {
@@ -44,7 +65,12 @@ const NodeRenderer = (props) => {
       let { backgroundImage, nodeLayout, foregroundImage, isFullScreen } =
         impliedUIVariables;
 
-      const isFirstNode = idx === 0 ? true : false  
+      const isFirstNode = idx === 0 ? true : false;
+
+      const singleChoiceField = isFormWithOneChoiceFieldOnly(
+        currentNode?.form_schema,
+        currentNode?.ui_schema
+      );
 
       return (
         <div
@@ -86,8 +112,28 @@ const NodeRenderer = (props) => {
           `}
               widgets={{
                 RadioWidget: ManywaysRadioWidget,
-                CheckboxesWidget:  ManywaysCheckboxWidget,
-                SelectWidget:  ManywaysSelectWidget
+                CheckboxesWidget: ManywaysCheckboxWidget,
+                SelectWidget: ManywaysSelectWidget,
+                Select: ({ value, onChange, ...props }) => {
+                  console.log(props);
+                  let temp_opts = [{ value: "xxx", label: "XXX" }];
+                  return (
+                    <Select
+                      onChange={(v) => {
+                        console.log(v);
+                        onChange(v.value);
+                      }}
+                      value={temp_opts.find((o) => o.value === value)}
+                      options={temp_opts}
+                    />
+                  );
+                },
+              }}
+              onChange={(e) => {
+                if (!!singleChoiceField) {
+                  console.log("single ", e.formData);
+                  goForward(e);
+                }
               }}
               fields={{
                 MediaContent: MediaContent,
@@ -98,12 +144,13 @@ const NodeRenderer = (props) => {
               validator={validator}
               uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}
             >
-              <NextAndBack currentNode={currentNode} />
+              <NextAndBack
+                currentNode={currentNode}
+                className={`singleChoiceField-${singleChoiceField}`}
+              />
             </Form>
           </div>
-          {
-            mode === 'slideshow' ? <Footer /> : null
-          }
+          {mode === "slideshow" ? <Footer /> : null}
         </div>
       );
     });
