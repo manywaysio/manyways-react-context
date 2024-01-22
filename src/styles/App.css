@@ -7,10 +7,9 @@
   --content-width: 1200px;
   --content-width-form: 65ch;
   --header-height: 80px;
-  --font-size-base: 16px;
-  --font-size-base-mobile: 16px;
+  --font-size-base: 1rem;
+  --font-size-base-mobile: 1rem;
   --font-family: "Open Sans", sans-serif;
-  font-size: var(--font-size-base);
 
   /* Colors */
   --color-dark: #222222;
@@ -488,12 +487,14 @@ header .mw-container {
 .mw-node .field-group-images-true input[type='radio']+label {
   transition: ease-in-out 200ms all;
   outline: var(--border-outline) solid transparent;
+  outline-offset: calc(var(--border-outline) * -1);
 }
 
 .mw-node .field-group-images-true input[type='radio']:checked+label {
   background-color: var(--color-select-light);
   border-color: var(--color-select);
   outline: var(--border-outline) solid var(--color-select);
+  outline-offset: calc(var(--border-outline) * -1);
 }
 
 .mw-node .field-group-images-true label:hover {
