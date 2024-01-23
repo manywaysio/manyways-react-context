@@ -245,10 +245,11 @@ a {
 
 .mw-container button,
 .mw-container .button {
-  padding: .75em 1.3em;
+  padding: .5em 1.3em;
   line-height: 1.5;
   font-weight: 700;
 }
+
 
 .button-primary {
   background-color: var(--button-background);
@@ -325,20 +326,23 @@ a {
 
 }
 
-.form-group .css-qbdosj-Input {
-  padding-top: 5px;
-  padding-bottom: 3px;
+.mw__value-container.css-1fdsijx-ValueContainer {
+  padding: 5px;
 }
 
-.form-group .css-1jqq78o-placeholder,
-.form-group .css-1dimb5e-singleValue {
+.mw__control.css-1im77uy-control {
+  border-color: #000;
+}
+
+.mw__placeholder ,
+.mw__single-value, 
+.mw__input-container {
   padding-left: 10px;
 }
 
-.form-group .css-1hb7zxy-IndicatorsContainer {
+.mw__indicators {
   padding-right: 0px;
 }
-
 
 ul.error-detail .text-danger {
   color: var(--button-background);
@@ -569,6 +573,11 @@ ul.error-detail .text-danger {
 
 }
 
+.mw-node-province-territory-rebates .mw-next-and-back,
+.mw-node-rebates .mw-next-and-back {
+  display:none;
+}
+
 /* //Footer  */
 
 .mw-container-footer {
@@ -590,7 +599,7 @@ ul.error-detail .text-danger {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 85px;
 }
 
 .button.find-a-dealer,

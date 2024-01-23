@@ -114,7 +114,7 @@ const NodeRenderer = (props) => {
                 RadioWidget: ManywaysRadioWidget,
                 CheckboxesWidget: ManywaysCheckboxWidget,
                 SelectWidget: ManywaysSelectWidget,
-                Select: ({ value, onChange, ...props }) => {
+                Select: ({ value, onChange, disabled, ...props }) => {
                   console.log(props);
                   let temp_opts = [{ value: "xxx", label: "XXX" }, {value: "Alberta", label: "Alberta"}];
                   return (
@@ -123,8 +123,23 @@ const NodeRenderer = (props) => {
                         console.log(v);
                         onChange(v.value);
                       }}
+                      isDisabled={disabled}
                       value={temp_opts.find((o) => o.value === value)}
                       options={temp_opts}
+                      classNamePrefix={classNamePrefix}
+                      theme = {(theme) => ({
+                        ...theme, 
+                          borderRadius: 0,
+                          colors: {
+                            ...theme.colors,
+                              text: '#000',
+                              font:'#000',
+                              primary25: '#f6f6f6',
+                              primary: '#000',
+                              color: 'black',
+                            },
+                      })
+                      }
                     />
                   );
                 },

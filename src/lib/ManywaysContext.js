@@ -128,15 +128,15 @@ const ManywaysProvider = ({
         {mode === "scroll" && isLoading && (
           <div className="loader-container">
             <div className="loader">
-              <svg class="circular-loader" viewBox="25 25 50 50">
+              <svg className="circular-loader" viewBox="25 25 50 50">
                 <circle
-                  class="loader-path"
+                  className="loader-path"
                   cx="50"
                   cy="50"
                   r="20"
                   fill="none"
                   stroke="#939393"
-                  stroke-width="4"
+                  strokeWidth="4"
                 />
               </svg>
             </div>
