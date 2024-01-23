@@ -1,0 +1,117 @@
+/* Scroll mode */
+.mw-scroll {
+    padding: var(--container-padding-y) var(--container-padding-x);
+  }
+  
+  .mw-global-bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* .mw-scroll .is-first-node-true.is-full-screen-true {
+    margin-top: calc(var(--header-height) * -1);
+  }
+   */
+  
+
+   
+  /* Slideshow mode */
+  
+  .mw-slideshow header {
+    position: relative;
+  }
+  
+  .mw-slideshow.has-header-true .mw-node {
+    margin-top: calc(var(--header-height) * -1);
+  }
+  
+  .mw-slideshow .mw-node {
+    min-height: 100vh;
+    display: flex;
+  }
+  
+  .has-background-true {
+    background-size: cover;
+  }
+  
+
+
+/* Layouts - Center/Left/Right */
+
+.layout-center .mw-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: var(--content-width);
+  }
+  
+  .layout-content-left .mw-container,
+  .layout-content-right .mw-container {
+    display: grid;
+    gap: var(--grid-gap-small);
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .layout-content-left .mw-form,
+  .layout-content-right .mw-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin: auto;
+  }
+  
+  
+  @media only screen and (min-width: 1025px) {
+  
+    .layout-content-left .mw-container,
+    .layout-content-right .mw-container {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--grid-gap-large);
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  
+    .layout-content-left .mw-foreground-image-wrapper {
+      /* 2 col */
+      grid-column: 2 / 2;
+      grid-row: 1 / 1;
+    }
+  
+    .layout-content-left .mw-n {
+      /* 2 col */
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+    }
+  
+    .layout-content-left .mw-form {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+  
+  .layout-content-right .mw-foreground-image-wrapper {
+    /* 2 col */
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+  }
+  
+  .layout-content-right .mw-n {
+    /* 2 col */
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+  }
+  
