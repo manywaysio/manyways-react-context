@@ -121,7 +121,7 @@ h1 {
   line-height: 1.2;
 }
 
-a {
+a, a:visited {
   color: var(--color-accent);
 }
 
