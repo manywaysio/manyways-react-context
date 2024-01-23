@@ -148,7 +148,7 @@ a {
 
 .mesca-page-header {
   position: relative;
-  min-height: 270px;
+  min-height: 320px;
   height: 100%;
   max-width: var(--content-width);
   margin-bottom: 25px;
@@ -214,7 +214,7 @@ a {
 }
 
 .is-first-node-true {
-  padding-top: 360px;
+  padding-top: 400px;
 }
 
 .mw-node-find-by .form-group {
@@ -224,6 +224,23 @@ a {
 .mw-node-province-or-territory {
   margin-top: 15px;
 }
+
+@media only screen and (min-width: 420px) {
+
+  .mw-journey-container header {
+    min-height: 200px;
+  }
+
+  .is-first-node-true {
+    padding-top: 320px;
+  }
+
+  .mesca-page-header {
+    min-height: 240px;
+  }
+
+}
+
 
 @media only screen and (min-width: 750px) {
 
