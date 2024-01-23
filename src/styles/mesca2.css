@@ -217,7 +217,7 @@ a {
   padding-top: 360px;
 }
 
-.mw-node-find-by .form-group{
+.mw-node-find-by .form-group {
   margin-bottom: 0;
 }
 
@@ -330,7 +330,8 @@ a {
   padding-bottom: 3px;
 }
 
-.form-group .css-1jqq78o-placeholder, .form-group .css-1dimb5e-singleValue {
+.form-group .css-1jqq78o-placeholder,
+.form-group .css-1dimb5e-singleValue {
   padding-left: 10px;
 }
 
@@ -572,11 +573,12 @@ ul.error-detail .text-danger {
 
 .mw-container-footer {
   max-width: 100%;
-  margin:auto;
+  margin: auto;
   padding: 0;
-}  
+}
 
-.mw-container-footer p, .mw-container-footer .powered-by  {
+.mw-container-footer p,
+.mw-container-footer .powered-by {
   max-width: var(--content-width);
   padding: var(--content-padding-y) var(--content-padding-x);
 }
@@ -591,9 +593,9 @@ ul.error-detail .text-danger {
   margin-top: 50px;
 }
 
-.button.find-a-dealer, 
+.button.find-a-dealer,
 .button.share,
-.button.restart, 
+.button.restart,
 .button.check-model {
   position: relative;
   display: flex;
@@ -628,7 +630,7 @@ ul.error-detail .text-danger {
 
 .button.find-a-dealer:hover:after {
   background-color: white;
-} 
+}
 
 .button.share:after {
   content: ' ';
@@ -647,7 +649,7 @@ ul.error-detail .text-danger {
 
 .button.share:hover:after {
   background-color: white;
-} 
+}
 
 .button.restart:after {
   content: ' ';
@@ -666,7 +668,7 @@ ul.error-detail .text-danger {
 
 .button.restart:hover:after {
   background-color: white;
-} 
+}
 
 
 .button.check-model:after {
@@ -675,7 +677,7 @@ ul.error-detail .text-danger {
   height: 20px;
   width: 20px;
   margin-left: 8px;
-  background-color: #ffffff ;
+  background-color: #ffffff;
   -webkit-mask-image: url("../assets/icons/circle-check-solid.svg");
   mask-image: url("../assets/icons/circle-check-solid.svg");
   mask-repeat: no-repeat;
@@ -686,7 +688,7 @@ ul.error-detail .text-danger {
 
 .button.check-model:hover:after {
   background-color: #ffffff;
-} 
+}
 
 .footer {
   margin-top: 45px;
@@ -739,7 +741,7 @@ ul.error-detail .text-danger {
   line-height: 29px;
   letter-spacing: 0.01em;
   margin: 0;
-  text-shadow: 0px 0px 5px rgba(0,0,0,.2);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
 }
 
 .footer .where-to-buy label {
@@ -748,6 +750,14 @@ ul.error-detail .text-danger {
   line-height: 27px;
   letter-spacing: 0.01em;
   color: #fff;
+}
+
+.footer .findDealerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:center;
+  margin-top: 8px;
 }
 
 .footer input {
@@ -760,57 +770,79 @@ ul.error-detail .text-danger {
   font-size: 1rem;
   font-weight: 300;
   line-height: 1;
-  margin-top: 5px;
-  margin-bottom: 10px;
   width: 100%;
+  height: 45px;
 }
 
 .footer button {
   font-family: var(--font-family);
   font-size: 1rem;
-  font-weight: 500;
   line-height: 1;
   letter-spacing: 0.01em;
   border-radius: var(--border-radius-button);
   padding: .7em .8em;
   background-color: var(--color-dark);
   border: var(--border-width) solid var(--color-dark);
-  outline: var(--border-width) solid var(--color-dark);
+  outline: 0 solid var(--color-dark);
   box-shadow: none;
   color: #fff;
   transition: ease-in-out 200ms all;
   text-decoration: none;
   width: 100%;
+  height: 45px;
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
 }
 
-.footer button:after {
-  content: '\f025';
-  font-family: 'Font Awesome 6 Free';
-  margin-left: 10px;
+.findDealerForm button:after {
+  content: ' ';
+  position: relative;
+  height: 18px;
+  width: 18px;
+  margin-left: 8px;
+  background-color: var(--color-select-dark);
+  -webkit-mask-image: url("../assets/icons/play-sharp-solid.svg");
+  mask-image: url("../assets/icons/play-sharp-solid.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  transition: ease-in-out 200ms all;
+}
+
+.findDealerForm button:hover {
+  cursor: pointer;
+  opacity: .8;
 }
 
 @media only screen and (min-width: 750px) {
 
   .mw-container-footer {
     max-width: var(--content-width);
-    margin:auto;
-    padding: var(--content-padding-y)  var(--content-padding-x);
+    margin: auto;
+    padding: var(--content-padding-y) var(--content-padding-x);
   }
 
-  .mw-container-footer p, .mw-container-footer .powered-by  {
+  .mw-container-footer p,
+  .mw-container-footer .powered-by {
     max-width: 100%;
     padding: 0;
-  }
-  
-
-  .restart-options .text-container {
-    flex-direction: row;
   }
 
   .results-container .result.grid-2 {
     grid-template-columns: 1fr 1fr;
 
   }
+
+
+    .footer .findDealerForm {
+      flex-direction: row;
+    }
+
+    .footer .findDealerForm button{
+      margin-top: 0;
+    } 
 
   .footer .where-to-buy {
     grid-template-columns: 1fr 1fr;
@@ -824,3 +856,8 @@ ul.error-detail .text-danger {
 
 }
 
+@media only screen and (min-width: 1025px) {
+  .restart-options .text-container {
+    flex-direction: row;
+  }
+}
