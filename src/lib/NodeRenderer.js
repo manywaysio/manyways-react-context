@@ -116,7 +116,7 @@ const NodeRenderer = (props) => {
                 SelectWidget: ManywaysSelectWidget,
                 Select: ({ value, onChange, ...props }) => {
                   console.log(props);
-                  let temp_opts = [{ value: "xxx", label: "XXX" }];
+                  let temp_opts = [{ value: "xxx", label: "XXX" }, {value: "Alberta", label: "Alberta"}];
                   return (
                     <Select
                       onChange={(v) => {

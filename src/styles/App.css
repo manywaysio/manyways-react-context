@@ -276,18 +276,22 @@ header .mw-container {
 
 /* Buttons */
 
-.mw-container button {
+.mw-container button, .mw-container .button {
+  font-family: var(--font-family);
   font-size: 1rem;
   font-weight: 500;
   border-radius: var(--border-radius-button);
   padding: .5em 1.1em;
   background-color: #FFFFFF;
   border: var(--border-width) solid var(--color-dark);
+  box-shadow: none;
   color: var(--color-dark);
   transition: ease-in-out 200ms all;
+  text-decoration: none;
 }
 
-.mw-container button:hover {
+.mw-container button:hover,
+.mw-container .button:hover  {
   cursor: pointer;
   background-color: var(--color-text);
   color: #fff;
@@ -390,6 +394,47 @@ header .mw-container {
   border-radius: var(--border-radius-input);
 }
 
+
+
+/* React Select */
+
+.form-group .css-1u9des2-indicatorSeparator {
+  display: none;
+}
+
+.form-group .css-13cymwt-control {
+  background-color: #fff;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-input);
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-group .css-13cymwt-control:focus,
+.form-group .css-13cymwt-control:hover  {
+  outline: 1px solid var(--color-select);
+  border-color: var(--color-select);
+  border-radius: var(--border-radius-input);
+}
+
+.panel-danger {
+  display: none;
+}
+
+ul.error-detail {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul.error-detail li {
+  color: red;
+}
+
+ul.error-detail li:before {
+  content: "*";
+}
+
 .mw-node textarea {
   resize: vertical;
 }
@@ -403,13 +448,14 @@ header .mw-container {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--grid-gap-default);
+  gap: var(--grid-gap-small);
   height: 100%;
 }
 
 @media only screen and (min-width: 750px) {
   .mw-node .field-group-images-true.field-layout-inline {
     grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--grid-gap-default);
   }
 }
 
@@ -676,6 +722,10 @@ header .mw-container {
 
 
 /* Media */
+
+img {
+  max-width: 100%;
+}
 
 .mw-node .image-container {
   max-width: 100%;
