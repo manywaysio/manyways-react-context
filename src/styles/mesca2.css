@@ -410,9 +410,8 @@ ul.error-detail .text-danger {
 
 .result-card .external-link {
   background-color: #000;
-  display: inline-block;
   color: #fff;
-  padding: .5em 1.1em;
+  padding: .5em 1.2em;
   text-decoration: none;
   opacity: 1;
   line-height: 27px;
@@ -420,16 +419,26 @@ ul.error-detail .text-danger {
   font-weight: 500;
   margin-top: 15px;
   transition: ease-in-out 200ms all;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .result-card .button.external-link:hover {
   opacity: .8;
 }
 
-.result-card .button.external-link::after {
-  content: '\f08e';
-  font-family: 'Font Awesome 6 Free';
-  margin-left: 10px;
+.button.external-link:after {
+  content: ' ';
+  position: relative;
+  height: 20px;
+  width: 14px;
+  margin-left: 8px;
+  background-image: url("../assets/icons/arrow-up-right-from-square-solid.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .result-card h6 {
@@ -463,12 +472,22 @@ ul.error-detail .text-danger {
 
 .result-card .rebate-status.available {
   color: #3BB41D;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .result-card .rebate-status.available::before {
-  content: '\f058';
-  font-family: 'Font Awesome 6 Free';
-  margin-right: 3px;
+  content: ' ';
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+  margin-top: -2px;
+  background-image: url("../assets/icons/circle-check-regular.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .text-container h3 {
@@ -572,13 +591,102 @@ ul.error-detail .text-danger {
   margin-top: 50px;
 }
 
-.button.find-a-dealer:after,
-.button.check-model:after,
-.button.restart:after,
-.button.share:after {
-  content: 'i';
-  margin-left: 10px;
+.button.find-a-dealer, 
+.button.share,
+.button.restart, 
+.button.check-model {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.button.check-model {
+  background-color: var(--button-background);
+  border-color: var(--button-background);
+  color: #fff;
+}
+
+.button.check-model:hover {
+  border-color: #000;
+}
+
+.button.find-a-dealer:after {
+  content: ' ';
+  position: relative;
+  height: 20px;
+  width: 14px;
+  margin-left: 8px;
+  background-color: black;
+  -webkit-mask-image: url("../assets/icons/location-pin.svg");
+  mask-image: url("../assets/icons/location-pin.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  transition: ease-in-out 200ms all;
+}
+
+.button.find-a-dealer:hover:after {
+  background-color: white;
+} 
+
+.button.share:after {
+  content: ' ';
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin-left: 8px;
+  background-color: black;
+  -webkit-mask-image: url("../assets/icons/share-nodes-regular.svg");
+  mask-image: url("../assets/icons/share-nodes-regular.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  transition: ease-in-out 200ms all;
+}
+
+.button.share:hover:after {
+  background-color: white;
+} 
+
+.button.restart:after {
+  content: ' ';
+  position: relative;
+  height: 18px;
+  width: 18px;
+  margin-left: 8px;
+  background-color: black;
+  -webkit-mask-image: url("../assets/icons/arrows-rotate-solid.svg");
+  mask-image: url("../assets/icons/arrows-rotate-solid.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  transition: ease-in-out 200ms all;
+}
+
+.button.restart:hover:after {
+  background-color: white;
+} 
+
+
+.button.check-model:after {
+  content: ' ';
+  position: relative;
+  height: 20px;
+  width: 20px;
+  margin-left: 8px;
+  background-color: #ffffff ;
+  -webkit-mask-image: url("../assets/icons/circle-check-solid.svg");
+  mask-image: url("../assets/icons/circle-check-solid.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  transition: ease-in-out 200ms all;
+}
+
+.button.check-model:hover:after {
+  background-color: #ffffff;
+} 
 
 .footer {
   margin-top: 45px;
