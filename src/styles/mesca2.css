@@ -756,7 +756,7 @@ ul.error-detail .text-danger {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items:center;
+  align-items: center;
   margin-top: 8px;
 }
 
@@ -790,7 +790,7 @@ ul.error-detail .text-danger {
   text-decoration: none;
   width: 100%;
   height: 45px;
-  display:inline-flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   margin-top: 8px;
@@ -813,7 +813,6 @@ ul.error-detail .text-danger {
 
 .findDealerForm button:hover {
   cursor: pointer;
-  opacity: .8;
 }
 
 @media only screen and (min-width: 750px) {
@@ -836,13 +835,13 @@ ul.error-detail .text-danger {
   }
 
 
-    .footer .findDealerForm {
-      flex-direction: row;
-    }
+  .footer .findDealerForm {
+    flex-direction: row;
+  }
 
-    .footer .findDealerForm button{
-      margin-top: 0;
-    } 
+  .footer .findDealerForm button {
+    margin-top: 0;
+  }
 
   .footer .where-to-buy {
     grid-template-columns: 1fr 1fr;
