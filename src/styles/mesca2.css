@@ -151,7 +151,7 @@ a {
   min-height: 270px;
   height: 100%;
   max-width: var(--content-width);
-  margin-bottom: 45px;
+  margin-bottom: 25px;
 }
 
 .mesca-page-header:before {
@@ -217,6 +217,10 @@ a {
   padding-top: 360px;
 }
 
+.mw-node-find-by .form-group{
+  margin-bottom: 0;
+}
+
 .mw-node-province-or-territory {
   margin-top: 15px;
 }
@@ -228,7 +232,7 @@ a {
   }
 
   .is-first-node-true {
-    padding-top: 290px;
+    padding-top: 270px;
   }
 
   .mesca-page-header {
@@ -243,6 +247,7 @@ a {
 .mw-container .button {
   padding: .75em 1.3em;
   line-height: 1.5;
+  font-weight: 700;
 }
 
 .button-primary {
@@ -320,6 +325,24 @@ a {
 
 }
 
+.form-group .css-qbdosj-Input {
+  padding-top: 5px;
+  padding-bottom: 3px;
+}
+
+.form-group .css-1jqq78o-placeholder, .form-group .css-1dimb5e-singleValue {
+  padding-left: 10px;
+}
+
+.form-group .css-1hb7zxy-IndicatorsContainer {
+  padding-right: 0px;
+}
+
+
+ul.error-detail .text-danger {
+  color: var(--button-background);
+}
+
 /* Content boxes */
 
 .results-container h2 {
@@ -332,7 +355,7 @@ a {
 
 .results-container h2 .selected-rebate {
   font-size: 32px;
-  font-weight: 300;
+  font-weight: 400;
   border-radius: 4px;
   border: 1.5px solid #dedede;
   padding: 3px 15px 3px 15px;
@@ -528,6 +551,17 @@ a {
 
 /* //Footer  */
 
+.mw-container-footer {
+  max-width: 100%;
+  margin:auto;
+  padding: 0;
+}  
+
+.mw-container-footer p, .mw-container-footer .powered-by  {
+  max-width: var(--content-width);
+  padding: var(--content-padding-y) var(--content-padding-x);
+}
+
 .restart-options .text-container {
   display: flex;
   flex-direction: column;
@@ -646,6 +680,18 @@ a {
 
 @media only screen and (min-width: 750px) {
 
+  .mw-container-footer {
+    max-width: var(--content-width);
+    margin:auto;
+    padding: var(--content-padding-y)  var(--content-padding-x);
+  }
+
+  .mw-container-footer p, .mw-container-footer .powered-by  {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+
   .restart-options .text-container {
     flex-direction: row;
   }
@@ -666,3 +712,4 @@ a {
 
 
 }
+

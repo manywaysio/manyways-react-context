@@ -15,6 +15,8 @@ const ManywaysProvider = ({
   let [treeConfig, setTreeConfig] = useState({});
   let [currentNodeId, setCurrentNodeId] = useState(false);
   let [responses, setResponses] = useState([]);
+  let [isLoading, setIsLoading] = useState(true);
+
   let currentNode =
     setCurrentNodeId !== false
       ? nodes.find((n) => n.id === currentNodeId)
@@ -119,6 +121,23 @@ const ManywaysProvider = ({
         ) : null}
         <NodeRenderer />
         {children}
+        {mode === "scroll" && isLoading && (
+          <div className="loader-container">
+            <div className="loader">
+              <svg class="circular-loader" viewBox="25 25 50 50">
+                <circle
+                  class="loader-path"
+                  cx="50"
+                  cy="50"
+                  r="20"
+                  fill="none"
+                  stroke="#939393"
+                  stroke-width="4"
+                />
+              </svg>
+            </div>
+          </div>
+        )}
         {mode === "scroll" && <Footer />}
       </div>
     </ManywaysContext.Provider>
