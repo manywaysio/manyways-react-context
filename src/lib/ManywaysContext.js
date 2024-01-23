@@ -23,6 +23,7 @@ const ManywaysProvider = ({
       : false;
 
   const getInitialData = () => {
+    setIsLoading(true)
     fetch(`https://apiv2.manyways.io/response_sessions/${slug}/begin`)
       .then((response) => response.json())
       .then((data) => {
@@ -30,10 +31,12 @@ const ManywaysProvider = ({
         setCurrentNodeId(data?.node_id);
         setResponseId(data?.id);
         setTreeConfig(data?.revision);
-      });
+        setIsLoading(false)
+      }); 
   };
 
   const goForward = async ({ formData }) => {
+    setIsLoading(true)
     let theResponse = {
       node_id: currentNode?.id,
       response: formData,
@@ -57,6 +60,7 @@ const ManywaysProvider = ({
         setNodes([...nodes, { ...data, form_schema: final_json }]);
         setResponses([...responses, theResponse]);
         setCurrentNodeId(data?.id);
+        setIsLoading(false)
       });
   };
 
