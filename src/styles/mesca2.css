@@ -1,14 +1,23 @@
 /* Fonts */
 @font-face {
-  font-family: 'HelveticaNeueCondensed-CondensedRegular';
-  src: url('https://cdn.agilitycms.com/mesca/helveticaneuecondensed-condensedregular.eot');
-  src: url('https://cdn.agilitycms.com/mesca/helveticaneuecondensed-condensedregular.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.agilitycms.com/mesca/helveticaneuecondensed-condensedregular.woff') format('woff'),
-    url('https://cdn.agilitycms.com/mesca/helveticaneuecondensed-condensedregular.ttf') format('truetype');
+  font-family: 'HelveticaNeue-Regular';
+  src:  url('https://cdn.agilitycms.com/mesca/helveticaneue.eot');
+  src:  url('https://cdn.agilitycms.com/mesca/helveticaneue.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.agilitycms.com/mesca/helveticaneue.woff') format('woff'),
+        url('https://cdn.agilitycms.com/mesca/helveticaneue.ttf')  format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'HelveticaNeue-Bold';
+  src: url('https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot');
+  src: url('https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot?#iefix') format('embedded-opentype'),
+    url('https://cdn.agilitycms.com/mesca/helveticaneue-bold.woff') format('woff'),
+    url('https://cdn.agilitycms.com/mesca/helveticaneue-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: 'HelveticaNeueCondensedBold';
@@ -39,7 +48,8 @@
   --header-height: 250px;
   --font-size-base: 18px;
   --font-size-base-mobile: 18px;
-  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family: "HelveticaNeue-Regular", Helvetica, Arial, sans-serif;
+  --font-family-bold: "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
 
   /* Colors */
   --color-dark: #000000;
@@ -66,7 +76,7 @@
   --border-radius-button: 0px;
   --border-radius-input: 0px;
   --border-color: #000000;
-  --border-outline: 2.5px;
+  --border-outline: 2px;
 
   /* Buttons */
   --button-text: #000000;
@@ -88,6 +98,8 @@ body {
   font-weight: 300;
   letter-spacing: .3px;
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -101,6 +113,7 @@ h6 {
 }
 
 h1 {
+  font-family: var(--font-family-bold);
   font-size: 48px;
   font-weight: 700;
   margin: 0;
@@ -110,6 +123,11 @@ h1 {
 
 a {
   color: var(--color-accent);
+}
+
+strong {
+  font-family: var(--font-family-bold);
+  font-weight: 500;
 }
 
 /* sr only  */
@@ -128,7 +146,11 @@ a {
 }
 
 
-.mw-node label {
+.mw-node .form-group>label {
+  font-family: var(--font-family);
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0.01em;
   font-size: 1rem;
 }
 
@@ -183,10 +205,11 @@ a {
 }
 
 .mesca-page-header .text-container p {
+  font-family: var(--font-family);
   color: #fff;
   margin-bottom: 10px;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 27px;
   letter-spacing: 0.01em;
 }
@@ -262,6 +285,7 @@ a {
 
 .mw-container button,
 .mw-container .button {
+  font-family: var(--font-family-bold);
   padding: .5em 1.3em;
   line-height: 1.5;
   font-weight: 700;
@@ -298,6 +322,13 @@ a {
 }
 
 /* Form Fields */
+
+.mw-node .field-group-images-true input[type='radio']:hover+label {
+  background-color: var(--color-light);
+  border-color: var(--color-select);
+  outline: var(--border-outline) solid var(--color-select);
+  outline-offset: calc(var(--border-outline) * -1);
+}
 
 .mw-node .form-group {
   margin-top: 0;
@@ -369,19 +400,20 @@ ul.error-detail .text-danger {
 
 .results-container h2 {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 700;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .results-container h2 .selected-rebate {
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
   border-radius: 4px;
   border: 1.5px solid #dedede;
   padding: 3px 15px 3px 15px;
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 .results-container p {
@@ -464,6 +496,7 @@ ul.error-detail .text-danger {
 }
 
 .result-card h6 {
+  font-family: var(--font-family-bold);
   font-weight: 700;
   margin: 0;
   text-transform: uppercase;
@@ -486,6 +519,7 @@ ul.error-detail .text-danger {
 
 
 .result-card .rebate-status {
+  font-family: var(--font-family-bold);
   font-size: 21px;
   font-weight: 700;
   line-height: 26px;
@@ -514,7 +548,7 @@ ul.error-detail .text-danger {
 
 .text-container h3 {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: 30px;
 }
@@ -536,6 +570,7 @@ ul.error-detail .text-danger {
 
 @media only screen and (min-width: 750px) {
 
+
   .results-container .result.grid-2 {
     grid-template-columns: 1fr 1fr;
   }
@@ -551,6 +586,15 @@ ul.error-detail .text-danger {
 }
 
 @media only screen and (min-width: 1025px) {
+
+  .results-container h2 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .results-container h2 .selected-rebate {
+    margin-left: 10px;
+  }
 
   .product-details {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -803,6 +847,7 @@ ul.error-detail .text-danger {
 .footer button {
   font-family: var(--font-family);
   font-size: 1rem;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: 0.01em;
   border-radius: var(--border-radius-button);

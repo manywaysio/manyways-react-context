@@ -115,7 +115,7 @@ const NodeRenderer = (props) => {
                 CheckboxesWidget: ManywaysCheckboxWidget,
                 SelectWidget: ManywaysSelectWidget,
                 Select: ({ value, onChange, disabled, ...props }) => {
-                  console.log(props);
+                  // console.log(props);
                   let temp_opts = [{ value: "xxx", label: "XXX" }, {value: "Alberta", label: "Alberta"}];
                   return (
                     <Select
