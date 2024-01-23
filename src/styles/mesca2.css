@@ -623,6 +623,7 @@ ul.error-detail .text-danger {
 }
 
 .footer .where-to-buy h4 {
+  font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", sans-serif;
   color: #fff;
   text-transform: uppercase;
   font-size: 24px;
@@ -630,6 +631,7 @@ ul.error-detail .text-danger {
   line-height: 29px;
   letter-spacing: 0.01em;
   margin: 0;
+  text-shadow: 0px 0px 5px rgba(0,0,0,.2);
 }
 
 .footer .where-to-buy label {
@@ -648,8 +650,9 @@ ul.error-detail .text-danger {
   padding: .7em .8em;
   max-width: 100%;
   font-size: 1rem;
+  font-weight: 300;
   line-height: 1;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
   width: 100%;
 }
