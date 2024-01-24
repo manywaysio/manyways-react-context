@@ -204,6 +204,7 @@ strong {
   align-items: flex-start;
 }
 
+.mesca-page-header .text-container h4, 
 .mesca-page-header .text-container p {
   font-family: var(--font-family);
   color: #fff;
@@ -211,7 +212,7 @@ strong {
   font-size: 18px;
   font-weight: 700;
   line-height: 27px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.03em;
 }
 
 .mesca-page-header .image-container {
@@ -780,7 +781,7 @@ ul.error-detail .text-danger {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 14px;
   color: #666666;
   font-weight: 300;
   margin-top: 65px;
@@ -803,7 +804,7 @@ ul.error-detail .text-danger {
 }
 
 .footer .where-to-buy h4 {
-  font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: 'HelveticaNeueCondensedBold', "Helvetica Neue", "Helvetica", sans-serif;
   color: #fff;
   text-transform: uppercase;
   font-size: 24px;

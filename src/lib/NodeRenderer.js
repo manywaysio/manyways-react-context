@@ -125,6 +125,7 @@ const NodeRenderer = (props) => {
                       }}
                       isDisabled={disabled}
                       value={temp_opts.find((o) => o.value === value)}
+                      placeholder={props.placeholder}
                       options={temp_opts}
                       classNamePrefix={classNamePrefix}
                       theme = {(theme) => ({
