@@ -146,6 +146,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--grid-gap-small);
+    grid-gap: var(--grid-gap-small);
     height: 100%;
   }
   
@@ -153,6 +154,7 @@
     .mw-node .field-group-images-true.field-layout-inline {
       grid-template-columns: 1fr 1fr 1fr;
       gap: var(--grid-gap-default);
+      grid-gap: var(--grid-gap-default);
     }
   }
   
@@ -271,6 +273,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--grid-gap-default);
+    grid-gap: var(--grid-gap-default);
   }
   
   .mw-node .field-group-images-true img {
@@ -311,6 +314,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--grid-gap-default);
+    grid-gap: var(--grid-gap-default);
   }
   
   @media only screen and (min-width: 750px) {

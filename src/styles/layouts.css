@@ -57,6 +57,7 @@
   .layout-content-right .mw-container {
     display: grid;
     gap: var(--grid-gap-small);
+    grid-gap: var(--grid-gap-small);
     grid-template-columns: 1fr;
     align-content: center;
     justify-content: center;
@@ -81,6 +82,7 @@
     .layout-content-right .mw-container {
       grid-template-columns: 1fr 1fr;
       gap: var(--grid-gap-large);
+      grid-gap: var(--grid-gap-large);
       padding-top: 3rem;
       padding-bottom: 3rem;
     }
