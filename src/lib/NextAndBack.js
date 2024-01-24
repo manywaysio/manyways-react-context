@@ -11,7 +11,7 @@ const NextAndBack = ({ currentNode = {}, className }) => {
         mode === "scroll" && !!theResponse
       } ${classNamePrefix}-next-and-back`}
     >
-      <button
+      {/* <button
         className={`${classNamePrefix}-back`}
         onClick={(e) => {
           e.preventDefault();
@@ -19,9 +19,9 @@ const NextAndBack = ({ currentNode = {}, className }) => {
         }}
       >
         Back
-      </button>
+      </button> */}
       <button className={`${classNamePrefix}-next`} type="submit">
-        Submit
+        Next
       </button>
     </div>
   );
