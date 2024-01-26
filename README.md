@@ -1,6 +1,6 @@
 #manyways
 
-## Running the SDK
+## Running the SDK.
 
 #### Initialization
 
