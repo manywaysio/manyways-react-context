@@ -88,10 +88,6 @@
 /************************** 
 Custom mesca styles  
 ***************************/
-/* 
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale; 
-*/
 
 body {
   font-size: 1rem;
@@ -160,11 +156,11 @@ strong {
 }
 
 .mw-journey-container header {
-  position: absolute;
+  position: relative;
   top: 0px;
   padding-top: 30px;
   background-color: #fff;
-  min-height: 350px;
+  /* min-height: 350px; */
   height: auto;
 }
 
@@ -237,10 +233,6 @@ strong {
   max-width: 100%;
 }
 
-.is-first-node-true {
-  padding-top: 400px;
-}
-
 .mw-node-find-by .form-group {
   margin-bottom: 0;
 }
@@ -255,10 +247,6 @@ strong {
     min-height: 200px;
   }
 
-  .is-first-node-true {
-    padding-top: 320px;
-  }
-
   .mesca-page-header {
     min-height: 240px;
   }
@@ -270,10 +258,6 @@ strong {
 
   .mw-journey-container header {
     min-height: var(--header-height);
-  }
-
-  .is-first-node-true {
-    padding-top: 270px;
   }
 
   .mesca-page-header {
