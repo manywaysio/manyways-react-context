@@ -10,13 +10,18 @@ root.render(
   </React.StrictMode>
 );
 
+window.exports = window.exports || {};
+
 window.manyways = {};
 window.manyways.restart = function () {
-  alert("should restart");
+  window.location.reload();
 };
 
 window.manyways.share = function () {
-  alert("should share");
+  navigator.share({
+    title: "MESCA - Rebate Finder",
+    url: window.location.href,
+  });
 };
 
 // var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";

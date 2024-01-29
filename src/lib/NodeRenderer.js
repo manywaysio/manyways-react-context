@@ -107,7 +107,9 @@ const NodeRenderer = (props) => {
             <Form
               disabled={!!theResponse}
               formData={theResponse?.response || {}}
-              className={`${classNamePrefix}-form 
+              className={`${classNamePrefix}-form ${classNamePrefix}-node-${slugify(
+                currentNode?.title
+              )}-form
           has-response-${!!theResponse}
           `}
               widgets={{
@@ -115,8 +117,16 @@ const NodeRenderer = (props) => {
                 CheckboxesWidget: ManywaysCheckboxWidget,
                 SelectWidget: ManywaysSelectWidget,
                 Select: ({ value, onChange, disabled, ...props }) => {
-                  // console.log(props);
-                  let temp_opts = [{ value: "xxx", label: "XXX" }, {value: "Alberta", label: "Alberta"}];
+                  const { options } = props;
+                  console.log(props);
+                  let temp_opts = [
+                    { value: "xxx", label: "XXX" },
+                    { value: "Alberta", label: "Alberta" },
+                  ];
+                  const theOptions =
+                    !!options?.enumOptions && !!options?.enumOptions?.length > 0
+                      ? options?.enumOptions
+                      : temp_opts;
                   return (
                     <Select
                       onChange={(v) => {
@@ -124,23 +134,22 @@ const NodeRenderer = (props) => {
                         onChange(v.value);
                       }}
                       isDisabled={disabled}
-                      value={temp_opts.find((o) => o.value === value)}
+                      value={theOptions.find((o) => o.value === value)}
                       placeholder={props.placeholder}
-                      options={temp_opts}
+                      options={theOptions}
                       classNamePrefix={classNamePrefix}
-                      theme = {(theme) => ({
-                        ...theme, 
-                          borderRadius: 0,
-                          colors: {
-                            ...theme.colors,
-                              text: '#000',
-                              font:'#000',
-                              primary25: '#f6f6f6',
-                              primary: '#000',
-                              color: 'black',
-                            },
-                      })
-                      }
+                      theme={(theme) => ({
+                        ...theme,
+                        borderRadius: 0,
+                        colors: {
+                          ...theme.colors,
+                          text: "#000",
+                          font: "#000",
+                          primary25: "#f6f6f6",
+                          primary: "#000",
+                          color: "black",
+                        },
+                      })}
                     />
                   );
                 },

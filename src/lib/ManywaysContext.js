@@ -23,7 +23,7 @@ const ManywaysProvider = ({
       : false;
 
   const getInitialData = () => {
-    setIsLoading(true)
+    setIsLoading(true);
     fetch(`https://apiv2.manyways.io/response_sessions/${slug}/begin`)
       .then((response) => response.json())
       .then((data) => {
@@ -31,14 +31,26 @@ const ManywaysProvider = ({
         setCurrentNodeId(data?.node_id);
         setResponseId(data?.id);
         setTreeConfig(data?.revision);
-        setIsLoading(false)
-      }); 
+        setIsLoading(false);
+        setTimeout(() => {
+          // hack for tabs
+          document.querySelectorAll(".mw-node-find-by-form").forEach((el) => {
+            el.addEventListener("click", function () {
+              if (el.classList.contains("has-response-true")) {
+                window.manyways.restart();
+              } else {
+                return false;
+              }
+            });
+          });
+        }, 400);
+      });
   };
 
   const goForward = async ({ formData }) => {
-    setIsLoading(true)
+    setIsLoading(true);
     let theResponse = {
-      node_id: currentNode?.id,
+      // node_id: currentNode?.id,
       response: formData,
     };
 
@@ -53,14 +65,17 @@ const ManywaysProvider = ({
       .then((data) => {
         let final_json = data?.form_schema;
         try {
-          final_json = JSON.parse(data?.content?.replace(/=>/g, ":"));
+          final_json = data?.content;
         } catch (e) {
           console.log(e);
         }
         setNodes([...nodes, { ...data, form_schema: final_json }]);
-        setResponses([...responses, theResponse]);
+        setResponses([
+          ...responses,
+          { node_id: currentNode?.id, ...theResponse },
+        ]);
         setCurrentNodeId(data?.id);
-        setIsLoading(false)
+        setIsLoading(false);
       });
   };
 
