@@ -2,6 +2,7 @@ import { useContext, createContext, useEffect, useState } from "react";
 import NodeRenderer from "./NodeRenderer";
 import Footer from "./Footer";
 import Header from "./Header";
+import { slugify } from "./utils/helpers";
 const ManywaysContext = createContext(null);
 
 const ManywaysProvider = ({
@@ -122,7 +123,9 @@ const ManywaysProvider = ({
     >
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
-          ?.run_mode?.logo}`}
+          ?.run_mode?.logo} ${nodes
+          .map((n) => `mw-${slugify(n.title)}`)
+          .join(" ")}`}
       >
         {/* Renders when in scroll mode with a global background set */}
         {mode === "scroll" &&
