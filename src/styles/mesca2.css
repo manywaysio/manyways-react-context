@@ -153,6 +153,7 @@ strong {
   margin-top: 0;
 }
 
+
 .mw-journey-container header {
   position: relative;
   top: 0px;
@@ -282,6 +283,14 @@ strong {
   transition: ease-in-out 200ms all;
 }
 
+.mw-container button.button-primary {
+  background-color: var(--button-background);
+  border-color: var(--button-background);
+  color: #fff;
+  opacity: 1;
+  transition: ease-in-out 200ms all;
+}
+
 .button-primary:hover {
   border: 1px solid var(--color-dark);
   background-color: var(--color-dark);
@@ -388,6 +397,7 @@ ul.error-detail .text-danger {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-top: 0;
 }
 
 .results-container h2 .selected-rebate {
@@ -397,6 +407,18 @@ ul.error-detail .text-danger {
   border: 1.5px solid #dedede;
   padding: 3px 15px 3px 15px;
   margin-left: 0px;
+}
+
+.provice-rebates-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:flex-start;
+}
+
+.provice-rebates-header .button {
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 
 .results-container p {
@@ -432,14 +454,6 @@ ul.error-detail .text-danger {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-}
-
-.product-details button.button-primary {
-  background-color: var(--button-background);
-  border-color: var(--button-background);
-  color: #fff;
-  opacity: 1;
-  transition: ease-in-out 200ms all;
 }
 
 .product-details button.button-primary:hover {
@@ -555,6 +569,17 @@ ul.error-detail .text-danger {
 
 @media only screen and (min-width: 750px) {
 
+  .provice-rebates-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-start;
+  }
+
+  .provice-rebates-header .button {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
 
   .results-container .result.grid-2 {
     grid-template-columns: 1fr 1fr;
@@ -580,6 +605,8 @@ ul.error-detail .text-danger {
   .results-container h2 .selected-rebate {
     margin-left: 10px;
   }
+
+
 
   .product-details {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -621,6 +648,16 @@ ul.error-detail .text-danger {
 
 .mw-node-province-territory-rebates .mw-next-and-back,
 .mw-node-rebates .mw-next-and-back {
+  display:none;
+}
+
+
+/* Hide form when results show  */
+.mw-journey-container.mw-rebate-results .mw-node-find-by, 
+.mw-journey-container.mw-rebate-results .mw-node-model-number, 
+.mw-journey-container.mw-rebate-results .mw-node-province-or-territory-form, 
+.mw-journey-container.mw-province-territory-rebates .mw-node-find-by, 
+.mw-journey-container.mw-province-territory-rebates .mw-node-province-or-territory-form {
   display:none;
 }
 
