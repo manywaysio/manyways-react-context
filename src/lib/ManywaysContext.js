@@ -128,8 +128,18 @@ const ManywaysProvider = ({
     await getInitialData({ callback: setQueueData, callbackArgs: nodeData });
   };
 
+  const restart = async () => {
+    setNodes([]);
+    setResponses([]);
+    setCurrentNodeId(false);
+    setTreeConfig({});
+    setIsLoading(true);
+    await getInitialData();
+  };
+
   useEffect(() => {
     window.manyways.restartInQueue = restartInQueue;
+    window.manyways.restart = restart;
     getInitialData();
   }, [slug]);
 
