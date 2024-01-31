@@ -23,6 +23,10 @@ const ManywaysProvider = ({
       ? nodes.find((n) => n.id === currentNodeId)
       : false;
 
+  let umamidata = {
+    website: treeConfig?.analytics_config?.umami_id,
+  };
+
   const getInitialData = async (props = {}) => {
     const { callback = () => {}, callbackArgs = {} } = props;
     setIsLoading(true);
@@ -35,6 +39,7 @@ const ManywaysProvider = ({
         setTreeConfig(data?.revision);
         setIsLoading(false);
         callback({ data, nodes: [data?.current_node], callbackArgs });
+
         setTimeout(() => {
           // hack for tabs
           document
@@ -61,6 +66,12 @@ const ManywaysProvider = ({
       response: formData,
     };
 
+    // window.umami.track("Response Submit", {
+    //   title: currentNode?.title,
+    //   nodeId: currentNode?.id,
+    //   response: formData,
+    // });
+
     await fetch(`https://apiv2.manyways.io/response_sessions/${responseId}`, {
       method: "POST",
       headers: {
@@ -70,6 +81,13 @@ const ManywaysProvider = ({
     })
       .then((response) => response.json())
       .then((data) => {
+        window.umami.track((props) => ({
+          ...props,
+          url: `/${slugify(data.title)}`,
+          nodeId: data?.id,
+          title: data.title,
+        }));
+
         let final_json = data?.form_schema;
         try {
           final_json = data?.content;
@@ -137,11 +155,30 @@ const ManywaysProvider = ({
     await getInitialData();
   };
 
+  const setUpUmami = () => {
+    if (!!treeConfig?.analytics_config?.umami_id) {
+      var el = document.createElement("script");
+      el.setAttribute(
+        "src",
+        "https://umami-analytics-nine-xi.vercel.app/script.js"
+      );
+      el.setAttribute(
+        "data-website-id",
+        treeConfig?.analytics_config?.umami_id
+      );
+      document.body.appendChild(el);
+    }
+  };
+
   useEffect(() => {
     window.manyways.restartInQueue = restartInQueue;
     window.manyways.restart = restart;
     getInitialData();
   }, [slug]);
+
+  useEffect(() => {
+    setUpUmami();
+  }, [treeConfig]);
 
   let getResponseByNodeID,
     journeyNodes,

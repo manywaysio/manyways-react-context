@@ -11,11 +11,13 @@ window.exports = window.exports || {};
 window.manyways = {};
 window.manyways.restart = function (e) {
   !!e && e.preventDefault();
+  window.umami.track("reload");
   window.location.reload();
 };
 
 window.manyways.share = function (e) {
   !!e && e.preventDefault();
+  window.umami.track("Share");
   navigator.share({
     title: "MESCA - Rebate Finder",
     url: window.location.href,
