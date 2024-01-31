@@ -158,9 +158,8 @@ strong {
 .mw-journey-container header {
   position: relative;
   top: 0px;
-  padding-top: 30px;
+  padding: 30px 0;
   background-color: #fff;
-  /* min-height: 350px; */
   height: auto;
 }
 
@@ -169,7 +168,6 @@ strong {
   min-height: 320px;
   height: 100%;
   max-width: var(--content-width);
-  margin-bottom: 25px;
 }
 
 .mesca-page-header:before {
@@ -298,6 +296,10 @@ strong {
 }
 
 /* Form Fields */
+
+.mw-form {
+  margin-top:15px;
+}
 
 .mw-node .field-group-images-true.field-layout-inline label {
   text-align: left;
