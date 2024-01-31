@@ -41,7 +41,13 @@ const ManywaysProvider = ({
             .querySelectorAll(".mw-node-find-by-form .field-radio-group label")
             .forEach((el) => {
               el.addEventListener("click", function () {
-                window.manyways.restartInQueue([{ result: el.innerText }]);
+                if (!!el.closest(".has-response-false")) {
+                  console.log("no response. should be forwarded");
+                  return false;
+                } else {
+                  console.log("response exists. should be restarted in queue");
+                  // window.manyways.restartInQueue([{ result: el.innerText }]);
+                }
               });
             });
         }, 400);
