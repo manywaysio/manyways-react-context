@@ -23,9 +23,10 @@ const ManywaysProvider = ({
       ? nodes.find((n) => n.id === currentNodeId)
       : false;
 
-  const getInitialData = () => {
+  const getInitialData = async (props = {}) => {
+    const { callback = () => {}, callbackArgs = {} } = props;
     setIsLoading(true);
-    fetch(`https://apiv2.manyways.io/response_sessions/${slug}/begin`)
+    await fetch(`https://apiv2.manyways.io/response_sessions/${slug}/begin`)
       .then((response) => response.json())
       .then((data) => {
         setNodes([data?.current_node]);
@@ -33,17 +34,16 @@ const ManywaysProvider = ({
         setResponseId(data?.id);
         setTreeConfig(data?.revision);
         setIsLoading(false);
+        callback({ data, nodes: [data?.current_node], callbackArgs });
         setTimeout(() => {
           // hack for tabs
-          document.querySelectorAll(".mw-node-find-by-form").forEach((el) => {
-            el.addEventListener("click", function () {
-              if (el.classList.contains("has-response-true")) {
-                window.manyways.restart();
-              } else {
-                return false;
-              }
+          document
+            .querySelectorAll(".mw-node-find-by-form .field-radio-group label")
+            .forEach((el) => {
+              el.addEventListener("click", function () {
+                window.manyways.restartInQueue([{ result: el.innerText }]);
+              });
             });
-          });
         }, 400);
       });
   };
@@ -89,8 +89,41 @@ const ManywaysProvider = ({
     }
   };
 
+  const setQueueData = async ({ data, nodes, callbackArgs }) => {
+    await fetch(`https://apiv2.manyways.io/response_sessions/${data?.id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ responses: callbackArgs }),
+    })
+      .then((response) => response.json())
+      .then((d) => {
+        console.log("setQueueData", d, data, callbackArgs, nodes);
+        let final_json = d?.form_schema;
+        try {
+          final_json = d?.content;
+        } catch (e) {
+          console.log(e);
+        }
+        setNodes([...nodes, { ...d, form_schema: final_json }]);
+        setResponses([...responses]);
+        setCurrentNodeId(d?.id);
+        setIsLoading(false);
+      });
+  };
+
+  const restartInQueue = async (nodeData) => {
+    setNodes([]);
+    setResponses([]);
+    setCurrentNodeId(false);
+    setTreeConfig({});
+    setIsLoading(true);
+    await getInitialData({ callback: setQueueData, callbackArgs: nodeData });
+  };
+
   useEffect(() => {
-    console.log("init");
+    window.manyways.restartInQueue = restartInQueue;
     getInitialData();
   }, [slug]);
 

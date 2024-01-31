@@ -4,20 +4,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("manyways-root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<App />);
 
 window.exports = window.exports || {};
 
 window.manyways = {};
-window.manyways.restart = function () {
+window.manyways.restart = function (e) {
+  !!e && e.preventDefault();
   window.location.reload();
 };
 
-window.manyways.share = function () {
+window.manyways.share = function (e) {
+  !!e && e.preventDefault();
   navigator.share({
     title: "MESCA - Rebate Finder",
     url: window.location.href,

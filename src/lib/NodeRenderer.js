@@ -156,7 +156,6 @@ const NodeRenderer = (props) => {
               }}
               onChange={(e) => {
                 if (!!singleChoiceField) {
-                  console.log("single ", e.formData);
                   goForward(e);
                 }
               }}
