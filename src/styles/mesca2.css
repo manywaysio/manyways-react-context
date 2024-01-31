@@ -681,22 +681,22 @@ ul.error-detail .text-danger {
   display:none;
 }
 
-.mw-journey-container.mw-model-number .radio-inline .selected-false, 
-.mw-journey-container.mw-ahri-number .radio-inline .selected-false, 
-.mw-journey-container.mw-province-or-territory .selected-false {
+.mw-journey-container.mw-model-number .radio-inline.selected-false, 
+.mw-journey-container.mw-ahri-number .radio-inline.selected-false, 
+.mw-journey-container.mw-province-or-territory .radio-inline.selected-false {
   display:none;
 }
 
-.field-radio-group {
-  margin-bottom: 20px;
+.mw-node-find-by-form .field-radio-group {
+  margin-bottom: 25px;
 }
 
 @media only screen and (min-width: 740px) {
 
-.mw-journey-container.mw-model-number .radio-inline .selected-false, 
-.mw-journey-container.mw-ahri-number .radio-inline .selected-false, 
-.mw-journey-container.mw-province-or-territory .selected-false {
-  display:flex;
+.mw-journey-container.mw-model-number .radio-inline.selected-false, 
+.mw-journey-container.mw-ahri-number .radio-inline.selected-false, 
+.mw-journey-container.mw-province-or-territory .radio-inline.selected-false {
+  display:block;
 }
 
 .field-radio-group {
