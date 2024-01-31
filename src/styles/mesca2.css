@@ -762,6 +762,7 @@ ul.error-detail .text-danger {
   background-color: var(--button-background);
   border-color: var(--button-background);
   color: #fff;
+  text-align:center;
 }
 
 .button.check-model:hover {
