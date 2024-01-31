@@ -1,10 +1,10 @@
 /* Fonts */
 @font-face {
   font-family: 'HelveticaNeue-Regular';
-  src:  url('https://cdn.agilitycms.com/mesca/helveticaneue.eot');
-  src:  url('https://cdn.agilitycms.com/mesca/helveticaneue.eot?#iefix') format('embedded-opentype'),
-        url('https://cdn.agilitycms.com/mesca/helveticaneue.woff') format('woff'),
-        url('https://cdn.agilitycms.com/mesca/helveticaneue.ttf')  format('truetype');
+  src: url('https://cdn.agilitycms.com/mesca/helveticaneue.eot');
+  src: url('https://cdn.agilitycms.com/mesca/helveticaneue.eot?#iefix') format('embedded-opentype'),
+    url('https://cdn.agilitycms.com/mesca/helveticaneue.woff') format('woff'),
+    url('https://cdn.agilitycms.com/mesca/helveticaneue.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -115,7 +115,8 @@ h1 {
   line-height: 1.2;
 }
 
-a, a:visited {
+a,
+a:visited {
   color: var(--color-accent);
 }
 
@@ -199,7 +200,7 @@ strong {
   align-items: flex-start;
 }
 
-.mesca-page-header .text-container h4, 
+.mesca-page-header .text-container h4,
 .mesca-page-header .text-container p {
   font-family: var(--font-family);
   color: #fff;
@@ -379,8 +380,8 @@ strong {
   border-color: #000;
 }
 
-.mw__placeholder ,
-.mw__single-value, 
+.mw__placeholder,
+.mw__single-value,
 .mw__input-container {
   padding-left: 10px;
 }
@@ -390,13 +391,19 @@ strong {
 }
 
 ul.error-detail {
-  position: absolute;
-  top: 40px;
-  left: 0;
+  position: relative;
 }
 
 ul.error-detail .text-danger {
   color: var(--button-background);
+}
+
+@media only screen and (min-width: 750px) {
+  ul.error-detail {
+    position: absolute;
+    top: 40px;
+    left: 0;
+  }
 }
 
 /* Content boxes */
@@ -424,7 +431,7 @@ ul.error-detail .text-danger {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items:flex-start;
+  align-items: flex-start;
 }
 
 .provice-rebates-header .button {
@@ -454,7 +461,7 @@ ul.error-detail .text-danger {
   padding: 35px 40px;
 }
 
-.product-details.result-card p{
+.product-details.result-card p {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -592,7 +599,7 @@ ul.error-detail .text-danger {
   .provice-rebates-header {
     flex-direction: row;
     justify-content: space-between;
-    align-items:flex-start;
+    align-items: flex-start;
   }
 
   .provice-rebates-header .button {
@@ -668,40 +675,41 @@ ul.error-detail .text-danger {
 
 .mw-node-province-territory-rebates .mw-next-and-back,
 .mw-node-rebates .mw-next-and-back {
-  display:none;
+  display: none;
 }
 
 
 /* Hide form when results show  */
-.mw-journey-container.mw-rebate-results .mw-node-find-by, 
-.mw-journey-container.mw-rebate-results .mw-node-model-number, 
-.mw-journey-container.mw-rebate-results .mw-node-province-or-territory-form, 
-.mw-journey-container.mw-province-territory-rebates .mw-node-find-by, 
+.mw-journey-container.mw-rebate-results .mw-node-find-by,
+.mw-journey-container.mw-rebate-results .mw-node-model-number,
+.mw-journey-container.mw-rebate-results .mw-node-ahri-number-form,
+.mw-journey-container.mw-rebate-results .mw-node-province-or-territory-form,
+.mw-journey-container.mw-province-territory-rebates .mw-node-find-by,
 .mw-journey-container.mw-province-territory-rebates .mw-node-province-or-territory-form {
-  display:none;
+  display: none;
 }
 
-.mw-journey-container.mw-model-number .radio-inline.selected-false, 
-.mw-journey-container.mw-ahri-number .radio-inline.selected-false, 
+.mw-journey-container.mw-model-number .radio-inline.selected-false,
+.mw-journey-container.mw-ahri-number .radio-inline.selected-false,
 .mw-journey-container.mw-province-or-territory .radio-inline.selected-false {
-  display:none;
+  display: none;
 }
 
-.mw-node-find-by-form .field-radio-group {
-  margin-bottom: 25px;
+.field-radio-group {
+  margin-bottom: 45px;
 }
 
 @media only screen and (min-width: 740px) {
 
-.mw-journey-container.mw-model-number .radio-inline.selected-false, 
-.mw-journey-container.mw-ahri-number .radio-inline.selected-false, 
-.mw-journey-container.mw-province-or-territory .radio-inline.selected-false {
-  display:block;
-}
+  .mw-journey-container.mw-model-number .radio-inline.selected-false,
+  .mw-journey-container.mw-ahri-number .radio-inline.selected-false,
+  .mw-journey-container.mw-province-or-territory .radio-inline.selected-false {
+    display: block;
+  }
 
-.field-radio-group {
-  margin-bottom: 35px;
-}
+  .field-radio-group {
+    margin-bottom: 35px;
+  }
 
 }
 
