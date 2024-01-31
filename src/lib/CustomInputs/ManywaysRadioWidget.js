@@ -69,7 +69,7 @@ const ManywaysRadioWidget = ({
                 onFocus={handleFocus}
                 aria-describedby={ariaDescribedByIds(id)}
               />
-              <label htmlFor={optionId(id, i)} className={`${disabledCls}`}>
+              <label htmlFor={optionId(id, i)} className={`${disabledCls} selected-${checked}`}>
                 {!!schema.enum_icons?.[i] && (
                   <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} /> 
                 )}

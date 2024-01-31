@@ -296,10 +296,12 @@ strong {
   background-color: var(--color-dark);
 }
 
+/* Form Fields */
+
 .mw-node .field-group-images-true.field-layout-inline label {
   text-align: left;
   justify-content: flex-start;
-  padding: .5rem .85rem;
+  padding: .3rem .5rem;
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 27px;
@@ -310,10 +312,9 @@ strong {
   max-height: 48px;
   width: auto;
   object-fit: contain;
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
-
-/* Form Fields */
 
 .mw-node .field-group-images-true input[type='radio']:hover+label {
   background-color: var(--color-light);
@@ -352,6 +353,7 @@ strong {
   .mw-node-model-number .form-group.field.field-string {
     display: inline-block;
     width: calc(100%/2 - 10px);
+    position: relative;
   }
 
   #root_indoor {
@@ -360,8 +362,11 @@ strong {
   }
 
   .mw-node-model-number .form-group.field.field-string:nth-child(2) {
-
     margin-left: 20px;
+  }
+
+  .mw-node .field-group-images-true.field-layout-inline label {
+    padding: .5rem .85rem;
   }
 
 }
@@ -382,6 +387,12 @@ strong {
 
 .mw__indicators {
   padding-right: 0px;
+}
+
+ul.error-detail {
+  position: absolute;
+  top: 40px;
+  left: 0;
 }
 
 ul.error-detail .text-danger {
@@ -443,11 +454,16 @@ ul.error-detail .text-danger {
   padding: 35px 40px;
 }
 
+.product-details.result-card p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .product-details {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--grid-gap-default);
-  grid-gap: var(--grid-gap-default);
+  gap: 20px;
+  grid-gap: 20px;
 }
 
 .product-details .button-container {
@@ -567,6 +583,10 @@ ul.error-detail .text-danger {
   max-width: 100%;
 }
 
+.mw-node-rebate-results-form .mw-next-and-back {
+  display: none;
+}
+
 @media only screen and (min-width: 750px) {
 
   .provice-rebates-header {
@@ -587,6 +607,8 @@ ul.error-detail .text-danger {
 
   .product-details {
     grid-template-columns: 1fr 1fr;
+    gap: var(--grid-gap-default);
+    grid-gap: var(--grid-gap-default);
   }
 
   .product-details .button-container {
@@ -605,8 +627,6 @@ ul.error-detail .text-danger {
   .results-container h2 .selected-rebate {
     margin-left: 10px;
   }
-
-
 
   .product-details {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -661,7 +681,31 @@ ul.error-detail .text-danger {
   display:none;
 }
 
-/* //Footer  */
+.mw-journey-container.mw-model-number .radio-inline .selected-false, 
+.mw-journey-container.mw-ahri-number .radio-inline .selected-false, 
+.mw-journey-container.mw-province-or-territory .selected-false {
+  display:none;
+}
+
+.field-radio-group {
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 740px) {
+
+.mw-journey-container.mw-model-number .radio-inline .selected-false, 
+.mw-journey-container.mw-ahri-number .radio-inline .selected-false, 
+.mw-journey-container.mw-province-or-territory .selected-false {
+  display:flex;
+}
+
+.field-radio-group {
+  margin-bottom: 35px;
+}
+
+}
+
+/* Footer  */
 
 .mw-container-footer {
   max-width: 100%;
@@ -683,7 +727,7 @@ ul.error-detail .text-danger {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 85px;
+  margin-top: 65px;
 }
 
 .button.find-a-dealer,
