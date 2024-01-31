@@ -380,6 +380,10 @@ strong {
   border-color: #000;
 }
 
+.mw__input {
+  font-size: 18px;
+}
+
 .mw__placeholder,
 .mw__single-value,
 .mw__input-container {
