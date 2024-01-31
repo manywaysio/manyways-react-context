@@ -276,15 +276,7 @@ strong {
   font-weight: 500;
 }
 
-
-.button-primary {
-  background-color: var(--button-background);
-  border: 1px solid var(--button-background);
-  color: #fff;
-  transition: ease-in-out 200ms all;
-}
-
-.mw-container button.button-primary {
+.mw-container .button-primary {
   background-color: var(--button-background);
   border-color: var(--button-background);
   color: #fff;
