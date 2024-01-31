@@ -60,16 +60,29 @@ const ManywaysProvider = ({
   };
 
   const goForward = async ({ formData }) => {
+    if (!!isLoading) {
+      console.log("is loading aborting go forward");
+      return false;
+    }
     setIsLoading(true);
     let theResponse = {
       // node_id: currentNode?.id,
       response: formData,
     };
 
-    // window.umami.track("Response Submit", {
+    // window.umami.track({
     //   title: currentNode?.title,
-    //   nodeId: currentNode?.id,
-    //   response: formData,
+    //   data: {
+    //     nodeId: currentNode?.id,
+    //     response: JSON.stringify(formData),
+    //   },
+    //   hostname: window.location.hostname,
+    //   language: navigator.language,
+    //   referrer: document.referrer,
+    //   screen: `${window.screen.width}x${window.screen.height}`,
+    //   url: window.location.pathname,
+    //   website: treeConfig?.analytics_config?.umami_id,
+    //   name: "Node Response",
     // });
 
     await fetch(`https://apiv2.manyways.io/response_sessions/${responseId}`, {
@@ -84,7 +97,6 @@ const ManywaysProvider = ({
         window.umami.track((props) => ({
           ...props,
           url: `/${slugify(data.title)}`,
-          nodeId: data?.id,
           title: data.title,
         }));
 
