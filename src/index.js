@@ -3,8 +3,18 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById("manyways-root"));
-root.render(<App />);
+class ManywaysWrapper extends HTMLElement {
+  connectedCallback() {
+    const mountPoint = document.createElement("div");
+    this.attachShadow({ mode: "open" }).appendChild(mountPoint);
+
+    const slug = this.getAttribute("slug") || "mesca-rebates";
+    const root = ReactDOM.createRoot(mountPoint);
+    root.render(<App slug={slug} />);
+  }
+}
+
+customElements.define("manyways-wrapper", ManywaysWrapper);
 
 window.exports = window.exports || {};
 

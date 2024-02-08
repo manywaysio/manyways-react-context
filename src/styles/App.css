@@ -1,18 +1,17 @@
 
 /* Box model reset */
-html {
+manyways-wrapper {
   box-sizing: border-box;
 }
 
-*,
+manyways-wrapper *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
 /* Body and typography */
-html,
-body {
+manyways-wrapper {
   scroll-behavior: smooth;
   margin: 0;
   font-size: var(--font-size-base);
@@ -24,16 +23,16 @@ body {
   font-weight: 400;
 }
 
-a,
-a:visited {
+manyways-wrapper a,
+manyways-wrapper a:visited {
   color: var(--color-text)
 }
 
-p {
+manyways-wrapper p {
   color: var(--color-text)
 }
 
-.sr-only {
+manyways-wrapper .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
