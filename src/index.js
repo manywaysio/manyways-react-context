@@ -1,10 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+// import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById("manyways-root"));
-root.render(<App />);
+console.log("MANYWAYS! ");
+
+class ManywaysWrapper extends HTMLElement {
+  connectedCallback() {
+    const mountPoint = document.createElement("div");
+    this.attachShadow({ mode: "open" }).appendChild(mountPoint);
+
+    const slug = this.getAttribute("slug") || "mesca-rebates";
+    const root = ReactDOM.createRoot(mountPoint);
+    root.render(<App slug={slug} />);
+  }
+}
+
+customElements.define("manyways-wrapper", ManywaysWrapper);
 
 window.exports = window.exports || {};
 
@@ -45,4 +57,4 @@ window.manyways.share = function (e) {
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();

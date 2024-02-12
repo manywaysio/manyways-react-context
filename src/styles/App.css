@@ -1,6 +1,6 @@
 
 /* Box model reset */
-html {
+manyways-wrapper {
   box-sizing: border-box;
 }
 
@@ -11,7 +11,6 @@ html {
 }
 
 /* Body and typography */
-html,
 body {
   scroll-behavior: smooth;
   margin: 0;
@@ -109,6 +108,3 @@ header .mw-container {
   margin:auto;
   padding: var(--content-padding-y)  var(--content-padding-x);
 }
-
-
-

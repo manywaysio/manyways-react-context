@@ -1,17 +1,36 @@
-import "./styles/variables.css";
-import "./styles/App.css";
-import "./styles/layouts.css";
-import "./styles/buttons.css";
-import "./styles/media.css";
-import "./styles/forms.css";
-import "./styles/loader.css";
+import styles from "./styles/App.css";
 
-import "./styles/mesca2.css";
+import vars from "./styles/variables.css";
+import layoutStyles from "./styles/layouts.css";
+import buttonStyles from "./styles/buttons.css";
+import mediaStyles from "./styles/media.css";
+import formStyles from "./styles/forms.css";
+import loaderStyles from "./styles/loader.css";
+import mescaStyles from "./styles/mesca2.css";
+
+// import all styles as a var called css
 
 import { ManywaysProvider } from "./lib/ManywaysContext";
 
 function App() {
-  return <ManywaysProvider slug="rebates" mode="scroll"></ManywaysProvider>;
+  const stylesToString = `
+  ${styles}  
+  ${vars}
+    ${layoutStyles}
+    ${buttonStyles}
+    ${mediaStyles}
+    ${formStyles}
+    ${loaderStyles}
+    ${mescaStyles}
+  `;
+
+  console.log(vars);
+
+  return (
+    <ManywaysProvider slug="rebates" mode="scroll">
+      <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
+    </ManywaysProvider>
+  );
 }
 
 export default App;
