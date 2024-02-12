@@ -4,14 +4,14 @@ manyways-wrapper {
   box-sizing: border-box;
 }
 
-manyways-wrapper *,
+*,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
 /* Body and typography */
-manyways-wrapper {
+body {
   scroll-behavior: smooth;
   margin: 0;
   font-size: var(--font-size-base);
@@ -23,16 +23,16 @@ manyways-wrapper {
   font-weight: 400;
 }
 
-manyways-wrapper a,
-manyways-wrapper a:visited {
+a,
+a:visited {
   color: var(--color-text)
 }
 
-manyways-wrapper p {
+p {
   color: var(--color-text)
 }
 
-manyways-wrapper .sr-only {
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -108,6 +108,3 @@ header .mw-container {
   margin:auto;
   padding: var(--content-padding-y)  var(--content-padding-x);
 }
-
-
-

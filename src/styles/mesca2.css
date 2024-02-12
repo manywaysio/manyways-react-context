@@ -42,7 +42,7 @@
 
 
 /* Variables */
-:root {
+.mw-journey-container {
   --content-width: 980px;
   --content-width-form: 980px;
   --header-height: 250px;
