@@ -30,6 +30,77 @@ const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   return false;
 };
 
+const selectStyles = {
+  clearIndicator: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  container: (baseStyles, state) => {
+    console.log("controlxx", baseStyles);
+    return { ...baseStyles };
+  },
+  control: (baseStyles, state) => {
+    console.log("control", baseStyles);
+    return { ...baseStyles };
+  },
+  dropdownIndicator: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  group: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  groupHeading: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  indicatorsContainer: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  indicatorSeparator: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  input: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  loadingIndicator: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  loadingMessage: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  menu: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  menuList: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  menuPortal: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  multiValue: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  multiValueLabel: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  multiValueRemove: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  noOptionsMessage: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  option: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  placeholder: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  singleValue: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  valueContainer: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+};
+
 const NodeRenderer = (props) => {
   const {
     nodes,
@@ -118,7 +189,6 @@ const NodeRenderer = (props) => {
                 SelectWidget: ManywaysSelectWidget,
                 Select: ({ value, onChange, disabled, ...props }) => {
                   const { options } = props;
-                  console.log(props);
                   let temp_opts = [
                     { value: "xxx", label: "XXX" },
                     { value: "Alberta", label: "Alberta" },
@@ -130,26 +200,14 @@ const NodeRenderer = (props) => {
                   return (
                     <Select
                       onChange={(v) => {
-                        console.log(v);
                         onChange(v.value);
                       }}
+                      styles={selectStyles}
                       isDisabled={disabled}
                       value={theOptions.find((o) => o.value === value)}
                       placeholder={props.placeholder}
                       options={theOptions}
-                      classNamePrefix={classNamePrefix}
-                      theme={(theme) => ({
-                        ...theme,
-                        borderRadius: 0,
-                        colors: {
-                          ...theme.colors,
-                          text: "#000",
-                          font: "#000",
-                          primary25: "#f6f6f6",
-                          primary: "#000",
-                          color: "black",
-                        },
-                      })}
+                      classNamePrefix="select-mw"
                     />
                   );
                 },
