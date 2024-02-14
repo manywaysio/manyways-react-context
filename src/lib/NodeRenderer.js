@@ -35,20 +35,20 @@ const selectStyles = {
     return { ...baseStyles };
   },
   container: (baseStyles, state) => {
-    console.log("controlxx", baseStyles);
     return { ...baseStyles };
   },
   control: (baseStyles, state) => {
-    console.log("control", baseStyles);
     return { ...baseStyles };
   },
   dropdownIndicator: (baseStyles, state) => {
     return { ...baseStyles };
   },
   group: (baseStyles, state) => {
+    console.log("group", baseStyles);
     return { ...baseStyles };
   },
   groupHeading: (baseStyles, state) => {
+    console.log("group heading", baseStyles);
     return { ...baseStyles };
   },
   indicatorsContainer: (baseStyles, state) => {
@@ -61,42 +61,55 @@ const selectStyles = {
     return { ...baseStyles };
   },
   loadingIndicator: (baseStyles, state) => {
+    console.log("loading", baseStyles);
     return { ...baseStyles };
   },
   loadingMessage: (baseStyles, state) => {
+    console.log("loading message", baseStyles);
     return { ...baseStyles };
   },
   menu: (baseStyles, state) => {
+    console.log("menu", baseStyles, state);
     return { ...baseStyles };
   },
   menuList: (baseStyles, state) => {
+    console.log("menu list", baseStyles, state);
     return { ...baseStyles };
   },
   menuPortal: (baseStyles, state) => {
+    console.log("menu portal", baseStyles);
     return { ...baseStyles };
   },
   multiValue: (baseStyles, state) => {
+    console.log("multival", baseStyles);
     return { ...baseStyles };
   },
   multiValueLabel: (baseStyles, state) => {
+    console.log("multivallabel", baseStyles);
     return { ...baseStyles };
   },
   multiValueRemove: (baseStyles, state) => {
+    console.log("multivalueremove", baseStyles);
     return { ...baseStyles };
   },
   noOptionsMessage: (baseStyles, state) => {
+    console.log("nooptionsmessage", baseStyles);
     return { ...baseStyles };
   },
   option: (baseStyles, state) => {
+    console.log("option", baseStyles);
     return { ...baseStyles };
   },
   placeholder: (baseStyles, state) => {
+    console.log("placehodler", baseStyles);
     return { ...baseStyles };
   },
   singleValue: (baseStyles, state) => {
+    console.log("simple value", baseStyles);
     return { ...baseStyles };
   },
   valueContainer: (baseStyles, state) => {
+    console.log("valuecontainer", baseStyles);
     return { ...baseStyles };
   },
 };
@@ -189,6 +202,7 @@ const NodeRenderer = (props) => {
                 SelectWidget: ManywaysSelectWidget,
                 Select: ({ value, onChange, disabled, ...props }) => {
                   const { options } = props;
+                  console.log(selectStyles)
                   let temp_opts = [
                     { value: "xxx", label: "XXX" },
                     { value: "Alberta", label: "Alberta" },
