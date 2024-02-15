@@ -24,8 +24,6 @@ function App() {
     ${mescaStyles}
   `;
 
-  console.log(vars);
-
   return (
     <ManywaysProvider slug="rebates" mode="scroll">
       <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>

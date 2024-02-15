@@ -301,6 +301,10 @@ strong {
   font-size: 18px;
 }
 
+.mw-node .field-group-images-true.field-layout-inline label.disabled {
+  cursor: pointer;
+}
+
 .mw-node .field-group-images-true.field-layout-inline img {
   max-height: 48px;
   width: auto;
@@ -975,6 +979,7 @@ ul.error-detail .text-danger {
 
   .footer .findDealerForm button {
     margin-top: 0;
+    margin-left: 2px;
   }
 
   .footer .where-to-buy {
@@ -993,4 +998,5 @@ ul.error-detail .text-danger {
   .restart-options .text-container {
     flex-direction: row;
   }
+  
 }
