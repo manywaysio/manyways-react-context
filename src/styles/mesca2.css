@@ -900,7 +900,7 @@ ul.error-detail .text-danger {
   outline: 0 solid var(--border-color);
   padding: .7em .8em;
   max-width: 100%;
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 300;
   line-height: 1;
   width: 100%;
@@ -910,7 +910,7 @@ ul.error-detail .text-danger {
 .footer button {
   font-family: var(--font-family);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
   letter-spacing: 0.01em;
   border-radius: var(--border-radius-button);
