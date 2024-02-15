@@ -564,7 +564,8 @@
   text-align: center;
 }
 
-.css-1f43avz-a11yText-A11yText {
+.css-1f43avz-a11yText-A11yText, .css-7pg0cj-a11yText,
+.css-b62m3t-container > span {
   position: absolute;
   width: 1px;
   height: 1px;
