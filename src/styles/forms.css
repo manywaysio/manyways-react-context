@@ -498,7 +498,7 @@
 .select-mw__indicator {
   box-sizing: border-box;
   display: flex;
-  padding: 8px;
+  padding: 8px 12px;
   transition: color 150ms;
   opacity: 1;
 }

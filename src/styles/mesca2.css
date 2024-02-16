@@ -250,7 +250,7 @@ strong {
 }
 
 .mw-node-province-or-territory {
-  margin-top: 15px;
+  margin-top: 0px;
 }
 
 @media only screen and (min-width: 750px) {
@@ -322,6 +322,14 @@ strong {
 
 .mw-node .form-group {
   margin-top: 0;
+}
+
+.mw-node-find-by-form .form-group {
+  margin-bottom: 0;
+}
+
+.results-container {
+  margin-bottom: 20px;
 }
 
 #root_outdoor__description {
@@ -439,12 +447,12 @@ ul.error-detail .text-danger {
 
 .result-card {
   background-color: #f6f6f6;
-  padding: 35px 40px;
+  padding: 35px 35px;
 }
 
 .product-details.result-card p {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .product-details {
@@ -463,6 +471,10 @@ ul.error-detail .text-danger {
 .product-details button.button-primary:hover {
   background-color: var(--color-dark);
   border-color: var(--color-dark);
+}
+
+.result-card p:first-letter {
+  text-transform: uppercase;
 }
 
 .result-card .external-link {
@@ -883,6 +895,7 @@ ul.error-detail .text-danger {
 }
 
 .footer .where-to-buy label {
+  font-family: var(--font-family-bold);
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
@@ -903,17 +916,17 @@ ul.error-detail .text-danger {
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius-input);
   outline: 0 solid var(--border-color);
-  padding: .7em .8em;
+  padding: .8em .8em;
   max-width: 100%;
   font-size: 18px;
   font-weight: 300;
   line-height: 1;
   width: 100%;
-  height: 45px;
+  height: 50px;
 }
 
 .footer button {
-  font-family: var(--font-family);
+  font-family: var(--font-family-bold);
   font-size: 18px;
   font-weight: 500;
   line-height: 1;
@@ -928,7 +941,7 @@ ul.error-detail .text-danger {
   transition: ease-in-out 200ms all;
   text-decoration: none;
   width: 100%;
-  height: 45px;
+  height: 50px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
