@@ -162,7 +162,7 @@ strong {
 .mw-journey-container header {
   position: relative;
   top: 0px;
-  padding: 30px 0 10px 0;
+  padding: 0px 0 10px 0;
   background-color: #fff;
   height: auto;
   z-index: 0;
@@ -220,7 +220,7 @@ strong {
   line-height: 27px;
   letter-spacing: 0.03em;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
-  
+
 }
 
 .mesca-page-header .image-container {
@@ -256,7 +256,7 @@ strong {
 @media only screen and (min-width: 750px) {
 
   .mw-journey-container header {
-    padding: 30px 0 30px 0;
+    padding: 0px 0 30px 0;
   }
 
 }
@@ -288,7 +288,7 @@ strong {
 /* Form Fields */
 
 .mw-form {
-  margin-top:15px;
+  margin-top: 15px;
 }
 
 .mw-node .field-group-images-true.field-layout-inline label {
@@ -565,14 +565,15 @@ ul.error-detail .text-danger {
   padding-bottom: 35px;
 }
 
-.video-container .video-container-inner  {
+.video-container .video-container-inner {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* 16:9 */
   height: 0;
   overflow: hidden;
 }
 
-.video-container .video-container-inner  iframe {
+.video-container .video-container-inner iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -743,7 +744,7 @@ ul.error-detail .text-danger {
   background-color: var(--button-background);
   border-color: var(--button-background);
   color: #fff;
-  text-align:center;
+  text-align: center;
 }
 
 .button.check-model:hover {
@@ -998,5 +999,20 @@ ul.error-detail .text-danger {
   .restart-options .text-container {
     flex-direction: row;
   }
-  
+
+}
+
+/* React select overrides */
+
+.css-1f43avz-a11yText-A11yText, .css-7pg0cj-a11yText,
+.css-b62m3t-container > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
