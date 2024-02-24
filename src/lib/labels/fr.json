@@ -1,0 +1,18 @@
+{
+  "next": "Au suivant",
+  "back": "Retour",
+  "close": "Fermer",
+  "copy": "Copiez le lien pour continuer plus tard",
+  "copied": "Le lien a été copié dans le presse-papiers",
+  "poweredBy": "réalisé avec Manyways",
+  "restart": "Redémarrer",
+  "loading": "Chargement",
+  "validEmail": "Une adresse email valide est requise",
+  "en": "Anglais",
+  "fr": "Français",
+  "showDebugger": "Afficher le débogueur",
+  "share": "Partager",
+  "shareThisGuide": "Partager ce guide",
+  "cookieDisclaimer": "Ce site web utilise des cookies pour améliorer l'expérience de l'utilisateur.",
+  "cookieDisclaimerAccept": "J'accepte"
+}

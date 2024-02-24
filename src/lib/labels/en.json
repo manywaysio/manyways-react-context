@@ -1,0 +1,18 @@
+{
+  "next": "Next",
+  "back": "Back",
+  "close": "Close",
+  "copy": "Copy link to continue later",
+  "copied": "Link has been copied to clipboard",
+  "poweredBy": "powered by Manyways",
+  "restart": "Restart",
+  "loading": "Loading",
+  "validEmail": "Valid email address is required",
+  "en": "English",
+  "fr": "French",
+  "showDebugger": "Show Debugger",
+  "share": "Share",
+  "shareThisGuide": "Share this guide",
+  "cookieDisclaimer": "This website uses cookies to enhance the user experience.",
+  "cookieDisclaimerAccept": "I accept"
+}

@@ -3,7 +3,7 @@ import NodeRenderer from "./NodeRenderer";
 import Footer from "./Footer";
 import Header from "./Header";
 import { mergeNodetoLocaleNoSubNode, slugify } from "./utils/helpers";
-import { merge } from "lodash";
+import labels from './labels/index'
 
 const ManywaysContext = createContext(null);
 
@@ -215,6 +215,7 @@ const ManywaysProvider = ({
         treeConfig,
         journeyNodes,
         locale,
+        labels: labels[locale],
         setLocale,
         shareJourney,
         copyLink,

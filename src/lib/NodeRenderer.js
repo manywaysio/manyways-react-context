@@ -229,6 +229,7 @@ const NodeRenderer = (props) => {
                 currentNode={currentNode}
                 className={`singleChoiceField-${singleChoiceField}`}
               />
+
             </Form>
           </div>
           {mode === "slideshow" ? <Footer /> : null}
