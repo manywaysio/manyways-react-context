@@ -1,7 +1,7 @@
 import { useManyways } from "./ManywaysContext";
 
 const NextAndBack = ({ currentNode = {}, className }) => {
-  const { goBack, responses, classNamePrefix, mode } = useManyways();
+  const { goBack, responses, classNamePrefix, mode, labels } = useManyways();
 
   let theResponse = responses.find((r) => r.node_id === currentNode?.id);
 
@@ -18,10 +18,10 @@ const NextAndBack = ({ currentNode = {}, className }) => {
           goBack();
         }}
       >
-        Back
+      {labels ? labels.back : 'Back'}
       </button> */}
       <button className={`${classNamePrefix}-next`} type="submit">
-        Next
+        {labels ? labels.next : 'Next'}
       </button>
     </div>
   );

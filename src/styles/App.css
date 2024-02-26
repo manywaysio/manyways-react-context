@@ -23,13 +23,18 @@ body {
   font-weight: 400;
 }
 
+a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 a,
 a:visited {
-  color: var(--color-text)
+  color: var(--color-text);
 }
 
 p {
-  color: var(--color-text)
+  color: var(--color-text);
 }
 
 .sr-only {

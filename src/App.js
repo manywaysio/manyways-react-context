@@ -25,7 +25,7 @@ function App() {
   `;
 
   return (
-    <ManywaysProvider slug="rebates" mode="scroll">
+    <ManywaysProvider slug="rebates" mode="scroll" >
       <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
     </ManywaysProvider>
   );

@@ -2,7 +2,9 @@ import { useContext, createContext, useEffect, useState } from "react";
 import NodeRenderer from "./NodeRenderer";
 import Footer from "./Footer";
 import Header from "./Header";
-import { slugify } from "./utils/helpers";
+import { mergeNodetoLocaleNoSubNode, slugify } from "./utils/helpers";
+import labels from './labels/index'
+
 const ManywaysContext = createContext(null);
 
 const ManywaysProvider = ({
@@ -10,6 +12,7 @@ const ManywaysProvider = ({
   slug,
   classNamePrefix = "mw",
   mode = "scroll",
+  locale = "en"
 }) => {
   let [nodes, setNodes] = useState([]);
   let [responseId, setResponseId] = useState(false);
@@ -194,15 +197,15 @@ const ManywaysProvider = ({
 
   let getResponseByNodeID,
     journeyNodes,
-    locale,
+    // locale,
     setLocale,
     shareJourney,
-    copyLink;
+    copyLink; 
 
   return (
     <ManywaysContext.Provider
       value={{
-        nodes,
+        nodes: nodes.map(n => mergeNodetoLocaleNoSubNode(n, locale)),
         currentNodeId,
         currentNode,
         goBack,
@@ -212,6 +215,7 @@ const ManywaysProvider = ({
         treeConfig,
         journeyNodes,
         locale,
+        labels: labels[locale],
         setLocale,
         shareJourney,
         copyLink,
