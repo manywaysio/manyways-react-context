@@ -12,7 +12,7 @@ import mescaStyles from "./styles/mesca2.css";
 
 import { ManywaysProvider } from "./lib/ManywaysContext";
 
-function App() {
+function App({ locale, slug, mode = "scroll" }) {
   const stylesToString = `
   ${styles}  
   ${vars}
@@ -25,7 +25,7 @@ function App() {
   `;
 
   return (
-    <ManywaysProvider slug="rebates" mode="scroll" >
+    <ManywaysProvider slug={slug} locale={locale} mode={mode}>
       <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
     </ManywaysProvider>
   );
