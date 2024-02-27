@@ -11,7 +11,8 @@ import { slugify } from "./utils/helpers";
 import Select from "react-select";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
-  if (formSchema.properties) {
+  console.log(formSchema, uiSchema);
+  if (!!formSchema?.properties) {
     const properties = Object.keys(formSchema.properties).filter((key) => {
       return formSchema.properties[key].type !== "null" && key;
     });
@@ -20,8 +21,8 @@ const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
       if (
         property.type === "string" &&
         property.enum &&
-        uiSchema[properties[0]] &&
-        uiSchema[properties[0]]["ui:widget"] === "radio"
+        uiSchema?.[properties?.[0]] &&
+        uiSchema[properties?.[0]]["ui:widget"] === "radio"
       ) {
         return true;
       }
@@ -229,7 +230,6 @@ const NodeRenderer = (props) => {
                 currentNode={currentNode}
                 className={`singleChoiceField-${singleChoiceField}`}
               />
-
             </Form>
           </div>
           {mode === "slideshow" ? <Footer /> : null}

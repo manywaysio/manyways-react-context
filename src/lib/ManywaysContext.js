@@ -3,7 +3,7 @@ import NodeRenderer from "./NodeRenderer";
 import Footer from "./Footer";
 import Header from "./Header";
 import { mergeNodetoLocaleNoSubNode, slugify } from "./utils/helpers";
-import labels from './labels/index'
+import labels from "./labels/index";
 
 const ManywaysContext = createContext(null);
 
@@ -12,7 +12,7 @@ const ManywaysProvider = ({
   slug,
   classNamePrefix = "mw",
   mode = "scroll",
-  locale = "en"
+  locale = "en",
 }) => {
   let [nodes, setNodes] = useState([]);
   let [responseId, setResponseId] = useState(false);
@@ -97,11 +97,13 @@ const ManywaysProvider = ({
     })
       .then((response) => response.json())
       .then((data) => {
-        window.umami.track((props) => ({
-          ...props,
-          url: `/${slugify(data.title)}`,
-          title: data.title,
-        }));
+        if (!!window.umami?.track) {
+          window.umami.track((props) => ({
+            ...props,
+            url: `/${slugify(data.title)}`,
+            title: data.title,
+          }));
+        }
 
         let final_json = data?.form_schema;
         try {
@@ -171,6 +173,7 @@ const ManywaysProvider = ({
   };
 
   const setUpUmami = () => {
+    window.umami = window.umami || {};
     if (!!treeConfig?.analytics_config?.umami_id) {
       var el = document.createElement("script");
       el.setAttribute(
@@ -200,12 +203,12 @@ const ManywaysProvider = ({
     // locale,
     setLocale,
     shareJourney,
-    copyLink; 
+    copyLink;
 
   return (
     <ManywaysContext.Provider
       value={{
-        nodes: nodes.map(n => mergeNodetoLocaleNoSubNode(n, locale)),
+        nodes: nodes.map((n) => mergeNodetoLocaleNoSubNode(n, locale)),
         currentNodeId,
         currentNode,
         goBack,

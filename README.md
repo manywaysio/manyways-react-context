@@ -71,3 +71,5 @@ import { useManyways } from "@manyways/run";
 | setLocale           | Set the current language                                                                      |
 | shareJourney        | Open the share journey panel                                                                  |
 | copyLink            | Copies the link to continue later to the clipboard                                            |
+
+<manyways-wrapper slug="cruise-selector" externalStylesheet="path/to/c.css"></manyways-wrapper>
