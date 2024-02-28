@@ -69,9 +69,16 @@ const ManywaysRadioWidget = ({
                 onFocus={handleFocus}
                 aria-describedby={ariaDescribedByIds(id)}
               />
-              <label htmlFor={optionId(id, i)} className={`${disabledCls}`}>
+              <label
+                tabIndex={1}
+                htmlFor={optionId(id, i)}
+                className={`${disabledCls}`}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleChange();
+                }}
+              >
                 {!!schema.enum_icons?.[i] && (
-                  <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} /> 
+                  <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} />
                 )}
                 {option.label}
               </label>
@@ -79,7 +86,12 @@ const ManywaysRadioWidget = ({
           );
 
           return (
-            <div key={i} className={`${inline ? "radio-inline" : "radio"} selected-${checked}`}>
+            <div
+              key={i}
+              className={`${
+                inline ? "radio-inline" : "radio"
+              } selected-${checked}`}
+            >
               {radio}
             </div>
           );

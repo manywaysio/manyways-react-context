@@ -367,6 +367,7 @@
 }
 
 
+.mw-node .field-group-images-true.field-layout-inline label:focus,
 .mw-node .field-group-images-true.field-layout-block label.selected,
 .mw-node .field-group-images-true.field-layout-inline label.selected,
 .mw-node .field-group-images-false.field-layout-block label.selected,
