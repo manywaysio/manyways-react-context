@@ -9,6 +9,7 @@ import ManywaysSelectWidget from "./CustomInputs/ManywaysSelectWidget";
 import Footer from "./Footer";
 import { slugify } from "./utils/helpers";
 import Select from "react-select";
+import { useState } from "react";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (formSchema.properties) {
@@ -187,6 +188,7 @@ const NodeRenderer = (props) => {
                 SelectWidget: ManywaysSelectWidget,
                 Select: ({ value, onChange, disabled, ...props }) => {
                   const { options } = props;
+                  const [menuIsOpen, setMenuIsOpen] = useState(true);
 
                   let temp_opts = [
                     { value: "xxx", label: "XXX" },
@@ -197,17 +199,41 @@ const NodeRenderer = (props) => {
                       ? options?.enumOptions
                       : temp_opts;
                   return (
-                    <Select
-                      onChange={(v) => {
-                        onChange(v.value);
-                      }}
-                      styles={selectStyles}
-                      isDisabled={disabled}
-                      value={theOptions.find((o) => o.value === value)}
-                      placeholder={props.placeholder}
-                      options={theOptions}
-                      classNamePrefix="select-mw"
-                    />
+                    <>
+                      <Select
+                        onChange={(v) => {
+                          console.log(v);
+                          onChange(v.value);
+                          setMenuIsOpen(false);
+                        }}
+                        onMenuOpen={() => {
+                          // onChange(null);
+                          // console.log(
+                          //   document
+                          //     .querySelector("manyways-wrapper")
+                          //     .shadowRoot.getElementById("react-select-2-listbox")
+                          // );
+                        }}
+                        onFocus={() => {
+                          console.log("focus");
+                          setMenuIsOpen(true);
+                        }}
+                        onBlur={() => {
+                          console.log("blur");
+                          // setMenuIsOpen(false);
+                        }}
+                        menuIsOpen={menuIsOpen}
+                        closeMenuOnSelect={false}
+                        closeMenuOnScroll={false}
+                        defaultMenuIsOpen={true}
+                        styles={selectStyles}
+                        // isDisabled={disabled}
+                        // value={theOptions.find((o) => o.value === value)}
+                        placeholder={props.placeholder}
+                        options={theOptions}
+                        classNamePrefix="select-mw"
+                      />
+                    </>
                   );
                 },
               }}
@@ -229,7 +255,6 @@ const NodeRenderer = (props) => {
                 currentNode={currentNode}
                 className={`singleChoiceField-${singleChoiceField}`}
               />
-
             </Form>
           </div>
           {mode === "slideshow" ? <Footer /> : null}
