@@ -384,6 +384,12 @@
 
 /* React Select */
 
+.css-b62m3t-container {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
 .mw-form .form-group {
   position: relative;
 }
@@ -395,6 +401,7 @@
 .select-mw-container {
   box-sizing: border-box;
   position: relative;
+  z-index: 10;
 }
 
 .select-mw__control {

@@ -188,7 +188,7 @@ const NodeRenderer = (props) => {
                 SelectWidget: ManywaysSelectWidget,
                 Select: ({ value, onChange, disabled, ...props }) => {
                   const { options } = props;
-                  const [menuIsOpen, setMenuIsOpen] = useState(true);
+                  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
                   let temp_opts = [
                     { value: "xxx", label: "XXX" },
@@ -200,6 +200,23 @@ const NodeRenderer = (props) => {
                       : temp_opts;
                   return (
                     <>
+                      {!!menuIsOpen && (
+                        <div
+                          style={{
+                            position: "fixed",
+                            top: "0",
+                            left: "0",
+                            width: "100%",
+                            height: "100%",
+                            zIndex: "1",
+                            backgroundColor: "red",
+                            opacity: "0",
+                          }}
+                          onClick={(e) => {
+                            setMenuIsOpen(false);
+                          }}
+                        ></div>
+                      )}
                       <Select
                         onChange={(v) => {
                           console.log(v);
@@ -218,14 +235,16 @@ const NodeRenderer = (props) => {
                           console.log("focus");
                           setMenuIsOpen(true);
                         }}
+                        onMen
+                        onDropdownClose={() => {
+                          console.log("dd close");
+                        }}
+                        blurInputOnSelect={true}
                         onBlur={() => {
                           console.log("blur");
                           // setMenuIsOpen(false);
                         }}
                         menuIsOpen={menuIsOpen}
-                        closeMenuOnSelect={false}
-                        closeMenuOnScroll={false}
-                        defaultMenuIsOpen={true}
                         styles={selectStyles}
                         // isDisabled={disabled}
                         // value={theOptions.find((o) => o.value === value)}
