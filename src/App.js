@@ -7,6 +7,7 @@ import mediaStyles from "./styles/media.css";
 import formStyles from "./styles/forms.css";
 import loaderStyles from "./styles/loader.css";
 import mescaStyles from "./styles/mesca2.css";
+import eptStyles from "./styles/ept.css";
 
 // import all styles as a var called css
 
@@ -21,7 +22,7 @@ function App({ locale, slug, mode = "scroll" }) {
     ${mediaStyles}
     ${formStyles}
     ${loaderStyles}
-    ${mescaStyles}
+    ${eptStyles}
   `;
 
   return (

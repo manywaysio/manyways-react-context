@@ -145,8 +145,9 @@ const NodeRenderer = (props) => {
       return (
         <div
           key={idx}
-          className={`${classNamePrefix}-node
-          is-current-node-${currentNodeId === currentNode?.id} 
+          className={`node-transition
+          ${classNamePrefix}-node
+          ${currentNodeId === currentNode?.id ? "" : "is-current-node-false"}
           has-response-${!!theResponse}
           layout-${nodeLayout || "center"}
           is-full-screen-${!!isFullScreen}
@@ -162,8 +163,7 @@ const NodeRenderer = (props) => {
                   backgroundImage: `url(${backgroundImage})`,
                 }
               : {}
-          }
-        >
+          }>
           <div className={`${classNamePrefix}-container`}>
             {!!foregroundImage && (
               <div className={`${classNamePrefix}-foreground-image-wrapper`}>
@@ -224,8 +224,7 @@ const NodeRenderer = (props) => {
               onSubmit={goForward}
               schema={currentNode?.form_schema || {}}
               validator={validator}
-              uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}
-            >
+              uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}>
               <NextAndBack
                 currentNode={currentNode}
                 className={`singleChoiceField-${singleChoiceField}`}

@@ -1,45 +1,50 @@
 /* Fonts */
 @font-face {
-  font-family: 'HelveticaNeue-Regular';
-  src: url('https://cdn.agilitycms.com/mesca/helveticaneue.eot');
-  src: url('https://cdn.agilitycms.com/mesca/helveticaneue.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.agilitycms.com/mesca/helveticaneue.woff') format('woff'),
-    url('https://cdn.agilitycms.com/mesca/helveticaneue.ttf') format('truetype');
+  font-family: "HelveticaNeue-Regular";
+  src: url("https://cdn.agilitycms.com/mesca/helveticaneue.eot");
+  src: url("https://cdn.agilitycms.com/mesca/helveticaneue.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.agilitycms.com/mesca/helveticaneue.woff") format("woff"),
+    url("https://cdn.agilitycms.com/mesca/helveticaneue.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HelveticaNeue-Bold';
-  src: url('https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot');
-  src: url('https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.agilitycms.com/mesca/helveticaneue-bold.woff') format('woff'),
-    url('https://cdn.agilitycms.com/mesca/helveticaneue-bold.ttf') format('truetype');
+  font-family: "HelveticaNeue-Bold";
+  src: url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot");
+  src: url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.woff") format("woff"),
+    url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HelveticaNeueCondensedBold';
-  src: url('https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot');
-  src: url('https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.woff') format('woff'),
-    url('https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.ttf') format('truetype');
+  font-family: "HelveticaNeueCondensedBold";
+  src: url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot");
+  src: url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.woff")
+      format("woff"),
+    url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.ttf")
+      format("truetype");
 }
 
 @font-face {
-  font-family: 'icomoon';
-  src: url('https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l');
-  src: url('https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l#iefix') format('embedded-opentype'),
-    url('https://cdn.agilitycms.com/mesca/icomoon.ttf?yzo55l') format('truetype'),
-    url('https://cdn.agilitycms.com/mesca/icomoon.woff?yzo55l') format('woff'),
-    url('https://cdn.agilitycms.com/mesca/icomoon.svg?yzo55l#icomoon') format('svg');
+  font-family: "icomoon";
+  src: url("https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l");
+  src: url("https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.agilitycms.com/mesca/icomoon.ttf?yzo55l") format("truetype"),
+    url("https://cdn.agilitycms.com/mesca/icomoon.woff?yzo55l") format("woff"),
+    url("https://cdn.agilitycms.com/mesca/icomoon.svg?yzo55l#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 /* @import url('https://fonts.cdnfonts.com/css/nimbus-sans-l'); */
-
 
 /* Variables */
 .mw-journey-container {
@@ -55,16 +60,16 @@
   --color-dark: #000000;
   --color-text: #000000;
   --color-medium: #e0ded1;
-  --color-light: #F6F6F6;
-  --color-accent: #FF0000;
-  --color-select: #FF0000;
+  --color-light: #f6f6f6;
+  --color-accent: #ff0000;
+  --color-select: #ff0000;
   --color-select-light: #ffffff;
-  --color-select-dark: #FF0000;
+  --color-select-dark: #ff0000;
 
   /* Grid spacing */
   --grid-gap-large: 3rem;
   --grid-gap-default: 1.8rem;
-  --grid-gap-small: .5rem;
+  --grid-gap-small: 0.5rem;
   --container-padding-x: 0;
   --container-padding-y: 0;
   --content-padding-x: 0;
@@ -80,9 +85,9 @@
 
   /* Buttons */
   --button-text: #000000;
-  --button-background: #C40001;
-  --button-bacgkround-hover: #C40001;
-  --button-text-hover: #FFFFFF;
+  --button-background: #c40001;
+  --button-bacgkround-hover: #c40001;
+  --button-text-hover: #ffffff;
 }
 
 /************************** 
@@ -92,7 +97,7 @@ Custom mesca styles
 body {
   font-size: 18px;
   font-weight: 300;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   line-height: 1.6;
 }
 
@@ -144,20 +149,19 @@ strong {
   border-width: 0;
 }
 
-.mw-node .form-group>label {
+.mw-node .form-group > label {
   font-size: 18px;
   font-family: var(--font-family);
   font-weight: 700;
   line-height: 27px;
   letter-spacing: 0.01em;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
-.mw-node .mw-container {
+/* .mw-node .mw-container {
   justify-content: flex-start;
   margin-top: 0;
-}
-
+} */
 
 .mw-journey-container header {
   position: relative;
@@ -175,7 +179,7 @@ strong {
 }
 
 .mesca-page-header:before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: var(--color-select);
   width: 4px;
@@ -219,8 +223,7 @@ strong {
   font-weight: 500;
   line-height: 27px;
   letter-spacing: 0.03em;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
-
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .mesca-page-header .image-container {
@@ -229,13 +232,18 @@ strong {
 }
 
 .mesca-page-header .image-container:after {
-  content: '';
+  content: "";
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, .6) 0%, rgba(0, 0, 0, .6) 30%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .mesca-page-header .image-container img {
@@ -254,11 +262,9 @@ strong {
 }
 
 @media only screen and (min-width: 750px) {
-
   .mw-journey-container header {
     padding: 0px 0 30px 0;
   }
-
 }
 
 /* Buttons */
@@ -266,7 +272,7 @@ strong {
 .mw-container button,
 .mw-container .button {
   font-family: var(--font-family-bold);
-  padding: .5em 1.3em;
+  padding: 0.5em 1.3em;
   line-height: 1.5;
   font-weight: 500;
   font-size: 18px;
@@ -287,18 +293,18 @@ strong {
 
 /* Form Fields */
 
-.mw-form {
+/* .mw-form {
   margin-top: 15px;
-}
+} */
 
 .mw-form .required {
-  display:none;
+  display: none;
 }
 
 .mw-node .field-group-images-true.field-layout-inline label {
   text-align: left;
   justify-content: flex-start;
-  padding: .3rem .5rem;
+  padding: 0.3rem 0.5rem;
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 27px;
@@ -317,7 +323,7 @@ strong {
   margin-left: 10px;
 }
 
-.mw-node .field-group-images-true input[type='radio']:hover+label {
+.mw-node .field-group-images-true input[type="radio"]:hover + label {
   background-color: var(--color-light);
   border-color: var(--color-select);
   outline: var(--border-outline) solid var(--color-select);
@@ -344,7 +350,7 @@ strong {
 }
 
 #root_outdoor__description:after {
-  content: '';
+  content: "";
 }
 
 .mw__control--menu-is-open .mw__dropdown-indicator {
@@ -352,7 +358,6 @@ strong {
 }
 
 @media only screen and (min-width: 750px) {
-
   .mw-node .field-group-images-true.field-layout-inline label {
     justify-content: center;
     text-align: center;
@@ -365,7 +370,7 @@ strong {
 
   .mw-node-model-number .form-group.field.field-string {
     display: inline-block;
-    width: calc(100%/2 - 10px);
+    width: calc(100% / 2 - 10px);
     position: relative;
   }
 
@@ -376,15 +381,12 @@ strong {
 
   .mw-node-model-number .form-group.field.field-string:nth-child(2) {
     margin-left: 20px;
-
   }
 
   .mw-node .field-group-images-true.field-layout-inline label {
-    padding: .5rem .85rem;
+    padding: 0.5rem 0.85rem;
   }
-
 }
-
 
 ul.error-detail {
   position: relative;
@@ -446,7 +448,6 @@ ul.error-detail .text-danger {
   max-width: 100vw;
 }
 
-
 .results-container .result.grid-2 {
   display: grid;
   grid-template-columns: 1fr;
@@ -489,7 +490,7 @@ ul.error-detail .text-danger {
 .result-card .external-link {
   background-color: #000;
   color: #fff;
-  padding: .5em 1.2em;
+  padding: 0.5em 1.2em;
   text-decoration: none;
   opacity: 1;
   line-height: 27px;
@@ -504,11 +505,11 @@ ul.error-detail .text-danger {
 }
 
 .result-card .button.external-link:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .button.external-link:after {
-  content: ' ';
+  content: " ";
   position: relative;
   height: 20px;
   width: 14px;
@@ -541,7 +542,6 @@ ul.error-detail .text-danger {
   margin: 0;
 }
 
-
 .result-card .rebate-status {
   font-family: var(--font-family-bold);
   font-size: 21px;
@@ -551,14 +551,14 @@ ul.error-detail .text-danger {
 }
 
 .result-card .rebate-status.available {
-  color: #3BB41D;
+  color: #3bb41d;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 .result-card .rebate-status.available::before {
-  content: ' ';
+  content: " ";
   position: relative;
   height: 20px;
   width: 20px;
@@ -607,7 +607,6 @@ ul.error-detail .text-danger {
 }
 
 @media only screen and (min-width: 750px) {
-
   .provice-rebates-header {
     flex-direction: row;
     justify-content: space-between;
@@ -618,7 +617,6 @@ ul.error-detail .text-danger {
     margin-top: 5px;
     margin-bottom: 0;
   }
-
 
   .results-container .result.grid-2 {
     grid-template-columns: 1fr 1fr;
@@ -633,11 +631,9 @@ ul.error-detail .text-danger {
   .product-details .button-container {
     justify-content: flex-start;
   }
-
 }
 
 @media only screen and (min-width: 1025px) {
-
   .results-container h2 {
     flex-direction: row;
     align-items: center;
@@ -663,33 +659,31 @@ ul.error-detail .text-danger {
     grid-template-columns: 4fr 5fr;
   }
 
-  .content-first .text-container>div:first-of-type {
+  .content-first .text-container > div:first-of-type {
     grid-column: 2 / 2;
     grid-row: 1 / 1;
   }
 
-  .content-second .text-container>div:first-of-type {
+  .content-second .text-container > div:first-of-type {
     grid-column: 1 / 1;
     grid-row: 1 / 1;
   }
 
-  .content-first .text-container>div:nth-of-type(2) {
+  .content-first .text-container > div:nth-of-type(2) {
     grid-column: 1 / 1;
     grid-row: 1 / 1;
   }
 
-  .content-second .text-container>div:nth-of-type(2) {
+  .content-second .text-container > div:nth-of-type(2) {
     grid-column: 2 / 2;
     grid-row: 1 / 1;
   }
-
 }
 
 .mw-node-province-territory-rebates .mw-next-and-back,
 .mw-node-rebates .mw-next-and-back {
   display: none;
 }
-
 
 /* Hide form when results show  */
 .mw-journey-container.mw-rebate-results .mw-node-find-by,
@@ -712,7 +706,6 @@ ul.error-detail .text-danger {
 }
 
 @media only screen and (min-width: 740px) {
-
   .mw-journey-container.mw-model-number .radio-inline.selected-false,
   .mw-journey-container.mw-ahri-number .radio-inline.selected-false,
   .mw-journey-container.mw-province-or-territory .radio-inline.selected-false {
@@ -722,7 +715,6 @@ ul.error-detail .text-danger {
   .field-radio-group {
     margin-bottom: 35px;
   }
-
 }
 
 /* Footer  */
@@ -773,7 +765,7 @@ ul.error-detail .text-danger {
 }
 
 .button.find-a-dealer:after {
-  content: ' ';
+  content: " ";
   position: relative;
   height: 20px;
   width: 14px;
@@ -792,7 +784,7 @@ ul.error-detail .text-danger {
 }
 
 .button.share:after {
-  content: ' ';
+  content: " ";
   position: relative;
   height: 20px;
   width: 20px;
@@ -811,7 +803,7 @@ ul.error-detail .text-danger {
 }
 
 .button.restart:after {
-  content: ' ';
+  content: " ";
   position: relative;
   height: 18px;
   width: 18px;
@@ -829,9 +821,8 @@ ul.error-detail .text-danger {
   background-color: white;
 }
 
-
 .button.check-model:after {
-  content: ' ';
+  content: " ";
   position: relative;
   height: 20px;
   width: 20px;
@@ -858,11 +849,10 @@ ul.error-detail .text-danger {
   font-size: 14px;
   line-height: 1.5;
   font-weight: 300;
-
 }
 
 .footer p {
-  color: rgba(0, 0, 0, .75);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .footer .powered-by {
@@ -892,7 +882,7 @@ ul.error-detail .text-danger {
 }
 
 .footer .where-to-buy h4 {
-  font-family: 'HelveticaNeueCondensedBold', "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "HelveticaNeueCondensedBold", "Helvetica Neue", "Helvetica", sans-serif;
   color: #fff;
   text-transform: uppercase;
   font-size: 24px;
@@ -900,7 +890,7 @@ ul.error-detail .text-danger {
   line-height: 29px;
   letter-spacing: 0.01em;
   margin: 0;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 .footer .where-to-buy label {
@@ -925,7 +915,7 @@ ul.error-detail .text-danger {
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius-input);
   outline: 0 solid var(--border-color);
-  padding: .8em .8em;
+  padding: 0.8em 0.8em;
   max-width: 100%;
   font-size: 18px;
   font-weight: 300;
@@ -941,7 +931,7 @@ ul.error-detail .text-danger {
   line-height: 1;
   letter-spacing: 0.01em;
   border-radius: var(--border-radius-button);
-  padding: .7em .8em;
+  padding: 0.7em 0.8em;
   background-color: var(--color-dark);
   border: var(--border-width) solid var(--color-dark);
   outline: 0 solid var(--color-dark);
@@ -958,7 +948,7 @@ ul.error-detail .text-danger {
 }
 
 .findDealerForm button:after {
-  content: ' ';
+  content: " ";
   position: relative;
   height: 18px;
   width: 18px;
@@ -977,7 +967,6 @@ ul.error-detail .text-danger {
 }
 
 @media only screen and (min-width: 750px) {
-
   .mw-container-footer {
     max-width: var(--content-width);
     margin: auto;
@@ -992,9 +981,7 @@ ul.error-detail .text-danger {
 
   .results-container .result.grid-2 {
     grid-template-columns: 1fr 1fr;
-
   }
-
 
   .footer .findDealerForm {
     flex-direction: row;
@@ -1013,8 +1000,6 @@ ul.error-detail .text-danger {
   .footer button {
     width: auto;
   }
-
-
 }
 
 @media only screen and (min-width: 1025px) {
@@ -1025,12 +1010,12 @@ ul.error-detail .text-danger {
   .restart-options-fr .text-container {
     flex-direction: column;
   }
-
 }
 
 /* React select overrides */
 
-.css-1f43avz-a11yText-A11yText, .css-7pg0cj-a11yText,
+.css-1f43avz-a11yText-A11yText,
+.css-7pg0cj-a11yText,
 .css-b62m3t-container > span {
   position: absolute;
   width: 1px;

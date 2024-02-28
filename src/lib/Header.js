@@ -6,17 +6,13 @@ const Header = () => {
 
   const content = mergeNodetoLocaleNoSubNode(treeConfig?.run_mode, locale);
 
-  console.log(treeConfig);
+  console.log("Header treeConfig", treeConfig);
 
   return (
     <header>
       <div className={`${classNamePrefix}-container`}>
         {content?.logo && (
-          <img
-            className={`${classNamePrefix}-logo`}
-            src={content?.logo}
-            alt="logo"
-          />
+          <img className={`${classNamePrefix}-logo`} src={content?.logo} alt="logo" />
         )}
         {content?.header && (
           <div

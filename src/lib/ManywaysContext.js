@@ -22,9 +22,7 @@ const ManywaysProvider = ({
   let [isLoading, setIsLoading] = useState(true);
 
   let currentNode =
-    setCurrentNodeId !== false
-      ? nodes.find((n) => n.id === currentNodeId)
-      : false;
+    setCurrentNodeId !== false ? nodes.find((n) => n.id === currentNodeId) : false;
 
   let umamidata = {
     website: treeConfig?.analytics_config?.umami_id,
@@ -112,10 +110,7 @@ const ManywaysProvider = ({
           console.log(e);
         }
         setNodes([...nodes, { ...data, form_schema: final_json }]);
-        setResponses([
-          ...responses,
-          { node_id: currentNode?.id, ...theResponse },
-        ]);
+        setResponses([...responses, { node_id: currentNode?.id, ...theResponse }]);
         setCurrentNodeId(data?.id);
         setIsLoading(false);
       });
@@ -176,14 +171,8 @@ const ManywaysProvider = ({
     window.umami = window.umami || {};
     if (!!treeConfig?.analytics_config?.umami_id) {
       var el = document.createElement("script");
-      el.setAttribute(
-        "src",
-        "https://umami-analytics-nine-xi.vercel.app/script.js"
-      );
-      el.setAttribute(
-        "data-website-id",
-        treeConfig?.analytics_config?.umami_id
-      );
+      el.setAttribute("src", "https://umami-analytics-nine-xi.vercel.app/script.js");
+      el.setAttribute("data-website-id", treeConfig?.analytics_config?.umami_id);
       document.body.appendChild(el);
     }
   };
@@ -224,28 +213,23 @@ const ManywaysProvider = ({
         copyLink,
         classNamePrefix,
         mode,
-      }}
-    >
+      }}>
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
-          ?.run_mode?.logo} ${nodes
-          .map((n) => `mw-${slugify(n.title)}`)
-          .join(" ")}`}
-      >
+          ?.run_mode?.logo} ${nodes.map((n) => `mw-${slugify(n.title)}`).join(" ")}`}>
         {/* Renders when in scroll mode with a global background set */}
-        {mode === "scroll" &&
-        treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
+        {mode === "scroll" && treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
           <div
             className={`${classNamePrefix}-global-bg-image`}
             style={{
               backgroundImage: `url(${treeConfig?.run_mode?.ui_variables?.backgroundImage})`,
-            }}
-          ></div>
+            }}></div>
         ) : null}
         {/* Adds a header when a logo is added */}
-        {treeConfig?.run_mode?.logo || treeConfig?.run_mode?.header ? (
+        {/* {treeConfig?.run_mode?.logo || treeConfig?.run_mode?.header ? (
           <Header />
-        ) : null}
+        ) : null} */}
+        <Header />
         <NodeRenderer />
         {children}
         {mode === "scroll" && isLoading && (
