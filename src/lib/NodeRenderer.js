@@ -261,8 +261,8 @@ const NodeRenderer = (props) => {
                         }}
                         menuIsOpen={menuIsOpen}
                         styles={selectStyles}
-                        // isDisabled={disabled}
-                        // value={theOptions.find((o) => o.value === value)}
+                        isDisabled={disabled}
+                        value={theOptions.find((o) => o.value === value)}
                         placeholder={props.placeholder}
                         options={theOptions}
                         classNamePrefix="select-mw"
