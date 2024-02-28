@@ -110,6 +110,7 @@ const NodeRenderer = (props) => {
     goForward,
     mode,
     treeConfig,
+    locale,
   } = useManyways();
 
   return nodes
@@ -125,6 +126,7 @@ const NodeRenderer = (props) => {
 
       // UI VARIABLES
       let UIVariables = currentNode?.ui_variables || {};
+      let { translations = {} } = currentNode;
       let globalUIVariables =
         mode === "slideshow" ? treeConfig?.run_mode?.ui_variables || {} : {};
       let impliedUIVariables = {
@@ -141,6 +143,19 @@ const NodeRenderer = (props) => {
         currentNode?.form_schema,
         currentNode?.ui_schema
       );
+
+      function transformErrors(errors) {
+        return errors.map((error) => {
+          if (!translations[locale]) {
+            return error;
+          }
+          if (!!translations[locale].errors?.[error.property]?.[error.name]) {
+            error.message =
+              translations[locale].errors?.[error.property]?.[error.name];
+          }
+          return error;
+        });
+      }
 
       return (
         <div
@@ -264,6 +279,7 @@ const NodeRenderer = (props) => {
               fields={{
                 MediaContent: MediaContent,
               }}
+              transformErrors={transformErrors}
               key={currentNode?.id || 1123456789}
               onSubmit={goForward}
               schema={currentNode?.form_schema || {}}
