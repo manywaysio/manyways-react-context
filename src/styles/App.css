@@ -66,7 +66,7 @@ a:visited {
 .mw-container {
   position: relative;
   width: 100%;
-  max-width: var(--content-width);
+  max-width: 1210px;
   height: 100%;
   margin: auto;
   /* padding: var(--content-padding-y) var(--content-padding-x); */

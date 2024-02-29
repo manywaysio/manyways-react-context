@@ -33,23 +33,24 @@ const ManywaysRadioWidget = ({
     [onFocus, id, enumOptions, emptyValue]
   );
 
+  console.log("enumOptions", enumOptions);
+
   return (
     <div
       className={`field-radio-group 
       field-group-images-${!!schema.enum_icons}
-      ${inline ? "field-layout-inline" : "field-layout-block"}`}
-      id={id}
-    >
+      ${inline ? "field-layout-inline" : "field-layout-block"} ${
+        !!enumOptions && enumOptions.length > 6 ? "enum-grid" : ""
+      }`}
+      id={id}>
       {Array.isArray(enumOptions) &&
         enumOptions.map((option, i) => {
           const checked = enumOptionsIsSelected(option.value, value);
 
           const itemDisabled =
-            Array.isArray(enumDisabled) &&
-            enumDisabled.indexOf(option.value) !== -1;
+            Array.isArray(enumDisabled) && enumDisabled.indexOf(option.value) !== -1;
 
-          const disabledCls =
-            disabled || itemDisabled || readonly ? "disabled" : "";
+          const disabledCls = disabled || itemDisabled || readonly ? "disabled" : "";
 
           const handleChange = () => onChange(option.value);
 
@@ -69,9 +70,13 @@ const ManywaysRadioWidget = ({
                 onFocus={handleFocus}
                 aria-describedby={ariaDescribedByIds(id)}
               />
-              <label htmlFor={optionId(id, i)} className={`${disabledCls}`}>
+              <label
+                htmlFor={optionId(id, i)}
+                className={`${disabledCls} ${
+                  !!enumOptions && enumOptions.length > 6 ? "enum-grid-item" : ""
+                }`}>
                 {!!schema.enum_icons?.[i] && (
-                  <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} /> 
+                  <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} />
                 )}
                 {option.label}
               </label>
@@ -79,7 +84,9 @@ const ManywaysRadioWidget = ({
           );
 
           return (
-            <div key={i} className={`${inline ? "radio-inline" : "radio"} selected-${checked}`}>
+            <div
+              key={i}
+              className={`${inline ? "radio-inline" : "radio"} selected-${checked}`}>
               {radio}
             </div>
           );

@@ -18,7 +18,8 @@
 
 .mw-node .form-group {
   margin: 1rem 0;
-  max-width: var(--content-width-form);
+  max-width: 700px;
+  width: 100%;
 }
 
 .mw-node label {
@@ -160,6 +161,7 @@
   line-height: 140%; /* 25.2px */
   letter-spacing: -0.18px;
   font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease; /* Add this line */
 }
 
 .mw-node .field-group-images-false.field-layout-inline .checkbox,

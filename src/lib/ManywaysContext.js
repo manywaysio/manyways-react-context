@@ -6,6 +6,7 @@ import { mergeNodetoLocaleNoSubNode, slugify } from "./utils/helpers";
 import labels from "./labels/index";
 import Carp from "../icons/Carp";
 import ProgressBar from "./ProgressBar";
+import CharlotteModal from "./CharlotteModal";
 
 const ManywaysContext = createContext(null);
 
@@ -22,6 +23,7 @@ const ManywaysProvider = ({
   let [currentNodeId, setCurrentNodeId] = useState(false);
   let [responses, setResponses] = useState([]);
   let [isLoading, setIsLoading] = useState(true);
+  const [charlotteModalOpen, setCharlotteModalOpen] = useState(false);
 
   let currentNode =
     setCurrentNodeId !== false ? nodes.find((n) => n.id === currentNodeId) : false;
@@ -232,6 +234,7 @@ const ManywaysProvider = ({
             }}></div>
         ) : null}
         <Header />
+        {charlotteModalOpen && <CharlotteModal />}
         <NodeRenderer />
         {children}
         {mode === "scroll" && isLoading && (
