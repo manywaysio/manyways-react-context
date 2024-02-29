@@ -33,6 +33,17 @@ h2 {
   letter-spacing: -0.8px;
 }
 
+h3 {
+  color: white;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.8px;
+}
+
 p {
   font-size: 18px;
   font-family: "Inter", sans-serif;
@@ -65,14 +76,44 @@ p {
   background-size: cover;
 }
 
-.node-transition {
+.background-shade {
   top: 0;
   z-index: 1;
-  opacity: 10%;
   height: 100vh;
   width: 100%;
   left: 0;
   position: absolute;
+}
+
+.node-transition-start {
+  opacity: 15%;
+  background-color: black;
+}
+
+.node-transition-explanation {
+  opacity: 50%;
+  background-color: black;
+}
+
+.node-transition-when-it-comes-to-travel,
+.node-transition-have-you-taken-a-cruise,
+.node-transition-cruise-lines,
+.node-transition-do-you-get-seasick,
+.node-transition-type-of-cruise,
+.node-transition-parts-of-the-world,
+.node-transition-traveling-with,
+.node-transition-traveling-how-long,
+.node-transition-which-seasons {
+  opacity: 25%;
+  background-color: black;
+}
+
+.node-transition-relax-and-adventure,
+.node-transition-dream-getaway,
+.node-transition-charlotte,
+.node-transition-dont-worry,
+.node-transition-results {
+  opacity: 65%;
   background-color: black;
 }
 
@@ -150,13 +191,6 @@ label.control-label {
 }
 
 .carp-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carp-holder {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -164,6 +198,16 @@ label.control-label {
   max-width: 100%;
   overflow: hidden;
   z-index: 4;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carp-holder {
+  width: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,4 +281,45 @@ label.control-label {
   .desktop-cruise {
     display: none !important;
   }
+}
+
+.progress-bar {
+  position: absolute;
+  height: 4px;
+  background-color: rgb(101, 101, 101);
+  /* opacity: 25%; */
+  margin-bottom: 30px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  z-index: 4;
+  z-index: 4;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.first-bar {
+  z-index: 5;
+  height: 100%;
+  width: 5px;
+  opacity: 50%;
+}
+
+.bar-filled {
+  background-color: white;
+}
+
+.progress-inner {
+  display: flex;
+  height: 4px;
+  width: 100%;
+}
+
+.bar-item {
+  width: 100%;
+  height: 100%;
 }

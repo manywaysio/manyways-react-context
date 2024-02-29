@@ -5,6 +5,7 @@ import Header from "./Header";
 import { mergeNodetoLocaleNoSubNode, slugify } from "./utils/helpers";
 import labels from "./labels/index";
 import Carp from "../icons/Carp";
+import ProgressBar from "./ProgressBar";
 
 const ManywaysContext = createContext(null);
 
@@ -196,7 +197,8 @@ const ManywaysProvider = ({
     copyLink;
 
   const isFirstNode = currentNode?.title === "Start" ? true : false;
-  console.log(isFirstNode);
+  const displayProgressBar =
+    currentNode?.title === "Start" || currentNode?.title === "explanation" ? false : true;
 
   return (
     <ManywaysContext.Provider
@@ -257,6 +259,9 @@ const ManywaysProvider = ({
               <Carp />
             </div>
           </div>
+        )}
+        {displayProgressBar && (
+          <ProgressBar currentNode={currentNode?.title.toLowerCase()} />
         )}
       </div>
     </ManywaysContext.Provider>

@@ -164,8 +164,9 @@ const NodeRenderer = (props) => {
                 }
               : {}
           }>
-          <div className={`node-transition`} />
-          {/* <div className={`node-transition-${slugify(currentNode?.title)}`}> */}
+          <div
+            className={`background-shade node-transition-${slugify(currentNode?.title)}`}
+          />
           <div className={`${classNamePrefix}-container`}>
             {!!foregroundImage && (
               <div className={`${classNamePrefix}-foreground-image-wrapper`}>
