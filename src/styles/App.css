@@ -83,11 +83,11 @@ a:visited {
   object-fit: contain;
 }
 
-.mw-node {
+/* .mw-node {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
+} */
 
 /* .mw-form {
   max-width: var(--content-width-form);

@@ -1,4 +1,7 @@
+import { useEffect } from "react";
+
 import styles from "./styles/App.css";
+import "./index.css";
 
 import vars from "./styles/variables.css";
 import layoutStyles from "./styles/layouts.css";
@@ -14,6 +17,13 @@ import eptStyles from "./styles/ept.css";
 import { ManywaysProvider } from "./lib/ManywaysContext";
 
 function App({ locale, slug, mode = "scroll" }) {
+  useEffect(() => {
+    document.body.style.margin = 0;
+    return () => {
+      document.body.style.margin = "";
+    };
+  }, []);
+
   const stylesToString = `
   ${styles}  
   ${vars}

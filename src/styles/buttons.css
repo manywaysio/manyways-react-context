@@ -6,18 +6,19 @@
   font-size: 14px;
   font-weight: 500;
   border-radius: var(--border-radius-button);
-  padding: 0.5em 1.1em;
-  border: var(--border-width) solid var(--color-dark);
+  padding: 8px 16px;
+  border: 1px solid white;
   box-shadow: none;
-  color: var(--color-dark);
+  color: white;
   transition: ease-in-out 200ms all;
   text-decoration: none;
+  background-color: transparent;
 }
 
 .mw-container button:hover,
 .mw-container .button:hover {
   cursor: pointer;
-  background-color: var(--color-text);
+  background-color: transparent;
   color: #fff;
 }
 

@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { mergeNodetoLocaleNoSubNode, slugify } from "./utils/helpers";
 import labels from "./labels/index";
+import Carp from "../icons/Carp";
 
 const ManywaysContext = createContext(null);
 
@@ -194,6 +195,9 @@ const ManywaysProvider = ({
     shareJourney,
     copyLink;
 
+  const isFirstNode = currentNode?.title === "Start" ? true : false;
+  console.log(isFirstNode);
+
   return (
     <ManywaysContext.Provider
       value={{
@@ -225,10 +229,6 @@ const ManywaysProvider = ({
               backgroundImage: `url(${treeConfig?.run_mode?.ui_variables?.backgroundImage})`,
             }}></div>
         ) : null}
-        {/* Adds a header when a logo is added */}
-        {/* {treeConfig?.run_mode?.logo || treeConfig?.run_mode?.header ? (
-          <Header />
-        ) : null} */}
         <Header />
         <NodeRenderer />
         {children}
@@ -250,6 +250,14 @@ const ManywaysProvider = ({
           </div>
         )}
         {mode === "scroll" && <Footer />}
+        {isFirstNode && (
+          <div className="carp-container">
+            <div className="carp-holder">
+              <p>in association with</p>
+              <Carp />
+            </div>
+          </div>
+        )}
       </div>
     </ManywaysContext.Provider>
   );
