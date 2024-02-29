@@ -259,6 +259,14 @@ strong {
   margin-bottom: 0;
 }
 
+.mw-node-model-number-form .form-group.field-string:first-of-type {
+  z-index: 2;
+}
+
+.mw-node-model-number-form .form-group.field-string:nth-of-type(2){
+  z-index: 1;
+}
+
 .mw-node-province-or-territory {
   margin-top: 0px;
 }
