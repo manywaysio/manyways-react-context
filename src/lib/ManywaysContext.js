@@ -33,7 +33,7 @@ const ManywaysProvider = ({
   const getInitialData = async (props = {}) => {
     const { callback = () => {}, callbackArgs = {} } = props;
     setIsLoading(true);
-    await fetch(`https://apiv2.manyways.io/response_sessions/${slug}/begin`)
+    await fetch(`https://mw-apiv2-prod.fly.dev/response_sessions/${slug}/begin`)
       .then((response) => response.json())
       .then((data) => {
         setNodes([data?.current_node]);
@@ -88,7 +88,7 @@ const ManywaysProvider = ({
     //   name: "Node Response",
     // });
 
-    await fetch(`https://apiv2.manyways.io/response_sessions/${responseId}`, {
+    await fetch(`https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -129,7 +129,7 @@ const ManywaysProvider = ({
   };
 
   const setQueueData = async ({ data, nodes, callbackArgs }) => {
-    await fetch(`https://apiv2.manyways.io/response_sessions/${data?.id}`, {
+    await fetch(`https://mw-apiv2-prod.fly.dev/response_sessions/${data?.id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
