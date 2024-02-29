@@ -113,6 +113,15 @@ h1 {
   margin: 0;
   letter-spacing: 0.01em;
   line-height: 1.2;
+  max-width: 100%;
+}
+
+/* Fix for really small screens */
+@media only screen and (max-width: 350px) {
+  h1 {
+    font-size: 38px;
+  }
+
 }
 
 p {
@@ -292,7 +301,7 @@ strong {
 }
 
 .mw-form .required {
-  display:none;
+  display: none;
 }
 
 .mw-node .field-group-images-true.field-layout-inline label {
@@ -756,16 +765,16 @@ ul.error-detail .text-danger {
 .button.check-model {
   position: relative;
   display: flex;
+  flex-wrap:wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .button.check-model {
-  flex-wrap: wrap;
   background-color: var(--button-background);
   border-color: var(--button-background);
   color: #fff;
-  text-align: center;
 }
 
 .button.check-model:hover {
@@ -867,6 +876,7 @@ ul.error-detail .text-danger {
 
 .footer .powered-by {
   display: flex;
+  flex-wrap:wrap;
   justify-content: center;
   align-items: center;
   font-size: 14px;
@@ -878,6 +888,8 @@ ul.error-detail .text-danger {
 
 .footer .powered-by img {
   margin-left: 10px;
+  margin-top:10px;
+  margin-bottom:10px;
   width: auto;
   height: 32px;
 }
@@ -1030,8 +1042,9 @@ ul.error-detail .text-danger {
 
 /* React select overrides */
 
-.css-1f43avz-a11yText-A11yText, .css-7pg0cj-a11yText,
-.css-b62m3t-container > span {
+.css-1f43avz-a11yText-A11yText,
+.css-7pg0cj-a11yText,
+.css-b62m3t-container>span {
   position: absolute;
   width: 1px;
   height: 1px;
