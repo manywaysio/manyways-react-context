@@ -3,7 +3,7 @@ import NodeRenderer from "./NodeRenderer";
 import Footer from "./Footer";
 import Header from "./Header";
 import { mergeNodetoLocaleNoSubNode, slugify } from "./utils/helpers";
-import labels from './labels/index'
+import labels from "./labels/index";
 
 const ManywaysContext = createContext(null);
 
@@ -12,7 +12,7 @@ const ManywaysProvider = ({
   slug,
   classNamePrefix = "mw",
   mode = "scroll",
-  locale = "en"
+  locale = "en",
 }) => {
   let [nodes, setNodes] = useState([]);
   let [responseId, setResponseId] = useState(false);
@@ -88,13 +88,16 @@ const ManywaysProvider = ({
     //   name: "Node Response",
     // });
 
-    await fetch(`https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(theResponse),
-    })
+    await fetch(
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(theResponse),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         window.umami.track((props) => ({
@@ -200,12 +203,12 @@ const ManywaysProvider = ({
     // locale,
     setLocale,
     shareJourney,
-    copyLink; 
+    copyLink;
 
   return (
     <ManywaysContext.Provider
       value={{
-        nodes: nodes.map(n => mergeNodetoLocaleNoSubNode(n, locale)),
+        nodes: nodes.map((n) => mergeNodetoLocaleNoSubNode(n, locale)),
         currentNodeId,
         currentNode,
         goBack,

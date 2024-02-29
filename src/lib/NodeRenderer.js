@@ -216,21 +216,39 @@ const NodeRenderer = (props) => {
                   return (
                     <>
                       {!!menuIsOpen && (
-                        <div
-                          style={{
-                            position: "fixed",
-                            top: "0",
-                            left: "0",
-                            width: "100%",
-                            height: "100%",
-                            zIndex: "1",
-                            backgroundColor: "red",
-                            opacity: "0",
-                          }}
-                          onClick={(e) => {
-                            setMenuIsOpen(false);
-                          }}
-                        ></div>
+                        <>
+                          <div
+                            style={{
+                              position: "fixed",
+                              top: "0",
+                              left: "0",
+                              width: "100%",
+                              height: "100%",
+                              zIndex: "1",
+                              backgroundColor: "red",
+                              opacity: "0",
+                            }}
+                            onClick={(e) => {
+                              setMenuIsOpen(false);
+                            }}
+                          ></div>
+                          <div
+                            style={{
+                              position: "absolute",
+                              top: "0",
+                              right: "0",
+                              width: "80px",
+                              height: "100%",
+                              zIndex: "20",
+                              backgroundColor: "red",
+                              opacity: "0",
+                              cursor: "pointer",
+                            }}
+                            onClick={(e) => {
+                              setMenuIsOpen(false);
+                            }}
+                          ></div>
+                        </>
                       )}
                       <Select
                         onChange={(v) => {

@@ -5,12 +5,12 @@ import App from "./App";
 
 console.log("MANYWAYS! ");
 
-document.addEventListener("DOMContentLoaded", function () {
+try {
   const script = document.createElement("script");
   script.src = "https://unpkg.com/share-api-polyfill/dist/share-min.js";
   script.async = true;
   document.head.appendChild(script);
-});
+} catch (error) {}
 
 class ManywaysWrapper extends HTMLElement {
   connectedCallback() {
