@@ -145,7 +145,7 @@ const NodeRenderer = (props) => {
       return (
         <div
           key={idx}
-          className={`node-transition
+          className={`
           ${classNamePrefix}-node
           ${currentNodeId === currentNode?.id ? "" : "is-current-node-false"}
           has-response-${!!theResponse}
@@ -164,6 +164,8 @@ const NodeRenderer = (props) => {
                 }
               : {}
           }>
+          <div className={`node-transition`} />
+          {/* <div className={`node-transition-${slugify(currentNode?.title)}`}> */}
           <div className={`${classNamePrefix}-container`}>
             {!!foregroundImage && (
               <div className={`${classNamePrefix}-foreground-image-wrapper`}>

@@ -58,7 +58,7 @@ a:visited {
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  height: var(--header-height);
+  /* height: var(--header-height); */
   padding: 0.75rem 0;
   z-index: 4;
 }

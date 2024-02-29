@@ -38,9 +38,42 @@ p {
   font-family: "Inter", sans-serif;
 }
 
-.mw-cruise-selector {
+.mw-node {
   height: 100vh;
+}
+
+.mw-node-start,
+.mw-node-explanation {
   background-image: url("https://manyways-demo.imgix.net/Organization_6297b5a37fcaa3000655bf9c/__AdobeStock_203035795.jpeg?w=1800");
+}
+
+.mw-node-when-it-comes-to-travel,
+.mw-node-relax-and-adventure,
+.mw-node-dream-getaway,
+.mw-node-charlotte,
+.mw-node-have-you-taken-a-cruise,
+.mw-node-cruise-lines,
+.mw-node-do-you-get-seasick,
+.mw-node-dont-worry,
+.mw-node-type-of-cruise,
+.mw-node-parts-of-the-world,
+.mw-node-traveling-with,
+.mw-node-traveling-how-long,
+.mw-node-which-seasons,
+.mw-node-results {
+  background-image: url("https://manyways-demo.imgix.net/Organization_6297b5a37fcaa3000655bf9c/ezgif-3-5c8bd1e86e.gif");
+  background-size: cover;
+}
+
+.node-transition {
+  top: 0;
+  z-index: 1;
+  opacity: 10%;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  background-color: black;
 }
 
 .mw-node {
@@ -50,6 +83,7 @@ p {
 }
 
 .mw-node .mw-container {
+  z-index: 4;
   width: 100%;
   height: 100%;
   display: flex;
@@ -67,11 +101,11 @@ p {
   align-items: center;
 }
 
-.node-transition {
+/* .node-transition {
   transition: opacity 0.5s ease, visibility 0.5s ease;
   opacity: 1;
   visibility: visible;
-}
+} */
 
 .is-current-node-false {
   display: none;
@@ -104,6 +138,17 @@ label.control-label {
   padding: 8px 16px 0 16px;
 }
 
+.header-item {
+  display: flex;
+  width: 231px;
+}
+
+@media (max-width: 1024px) {
+  .header-item {
+    width: auto;
+  }
+}
+
 .carp-container {
   width: 100%;
   display: flex;
@@ -134,4 +179,62 @@ label.control-label {
   line-height: 140%; /* 19.6px */
   letter-spacing: 1.4px;
   text-transform: uppercase;
+}
+
+.hamburger-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.char-photo-header {
+  height: 32px;
+  width: 32px;
+  border-radius: 999px;
+}
+
+.speaker-button {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 999px;
+  padding: 9.25px 11px;
+  cursor: pointer;
+}
+
+.char-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 999px;
+  padding: 3px 11px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.char-button p {
+  margin: 0;
+  padding-right: 10px;
+}
+
+.mobile-cruise {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  .mobile-cruise {
+    display: block !important;
+  }
+}
+
+.desktop-cruise {
+  display: block !important;
+}
+
+@media (max-width: 1024px) {
+  .desktop-cruise {
+    display: none !important;
+  }
 }
