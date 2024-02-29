@@ -628,6 +628,16 @@ ul.error-detail .text-danger {
 
 @media only screen and (min-width: 750px) {
 
+  .results-container h2 {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .results-container h2 .selected-rebate {
+    margin-left: 10px;
+  }
+
+
   .provice-rebates-header {
     flex-direction: row;
     justify-content: space-between;
@@ -656,16 +666,8 @@ ul.error-detail .text-danger {
 
 }
 
+
 @media only screen and (min-width: 1025px) {
-
-  .results-container h2 {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .results-container h2 .selected-rebate {
-    margin-left: 10px;
-  }
 
   .product-details {
     grid-template-columns: 1fr 1fr 1fr 1fr;
