@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import { mergeNodetoLocaleNoSubNode, slugify } from "./utils/helpers";
 import labels from "./labels/index";
+import { render } from "@testing-library/react";
 
 const ManywaysContext = createContext(null);
 
@@ -131,7 +132,39 @@ const ManywaysProvider = ({
     }
   };
 
+  const continueJourney = async (sessionId) => {
+    setIsLoading(true);
+    await fetch(
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${sessionId}?render_response_nodes=true`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        const { current_node, responses, revision, rendered_nodes } = data;
+        let _nodes = [...rendered_nodes, current_node].map((d) => {
+          let final_json = d?.form_schema;
+          try {
+            if (!!d?.content) {
+              final_json = d?.content;
+            }
+          } catch (e) {
+            console.log(e);
+          }
+          return { ...d, form_schema: final_json };
+        });
+
+        setNodes(_nodes);
+        setCurrentNodeId(current_node?.id);
+        setResponseId(sessionId);
+        setResponses(responses);
+        setTreeConfig(revision);
+        setIsLoading(false);
+      });
+  };
+
   const setQueueData = async ({ data, nodes, callbackArgs }) => {
+    // setNodes([]);
+    // setCurrentNodeId(1);
+    // setIsLoading(false);
     await fetch(`https://mw-apiv2-prod.fly.dev/response_sessions/${data?.id}`, {
       method: "POST",
       headers: {
@@ -141,17 +174,17 @@ const ManywaysProvider = ({
     })
       .then((response) => response.json())
       .then((d) => {
-        console.log("setQueueData", d, data, callbackArgs, nodes);
-        let final_json = d?.form_schema;
-        try {
-          final_json = d?.content;
-        } catch (e) {
-          console.log(e);
-        }
-        setNodes([...nodes, { ...d, form_schema: final_json }]);
-        setResponses([...responses.map((r, i) => ({ ...r, node_id: i.id }))]);
-        setCurrentNodeId(d?.id);
-        setIsLoading(false);
+        // let final_json = d?.form_schema;
+        // try {
+        //   final_json = d?.content;
+        // } catch (e) {
+        //   console.log(e);
+        // }
+        // setNodes([...nodes, { ...d, form_schema: final_json }]);
+        // setResponses([...responses.map((r, i) => ({ ...r, node_id: i.id }))]);
+        // setCurrentNodeId(d?.id);
+        // setIsLoading(false);
+        continueJourney(data?.id);
       });
   };
 

@@ -12,7 +12,7 @@ import Select from "react-select";
 import { useState } from "react";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
-  if (formSchema.properties) {
+  if (!!formSchema?.properties) {
     const properties = Object.keys(formSchema.properties).filter((key) => {
       return formSchema.properties[key].type !== "null" && key;
     });
