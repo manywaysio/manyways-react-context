@@ -60,7 +60,7 @@ a:visited {
   overflow: hidden;
   /* height: var(--header-height); */
   padding: 0.75rem 0;
-  z-index: 4;
+  z-index: 5;
 }
 
 .mw-container {

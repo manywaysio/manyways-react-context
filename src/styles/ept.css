@@ -6,19 +6,16 @@
   width: 0;
 }
 
-/* The scrollbar track (the part the thumb slides along) */
 ::-webkit-scrollbar-track {
-  background: transparent; /* or any other color */
+  background: transparent;
 }
 
-/* The scrollbar thumb (the draggable element) */
 ::-webkit-scrollbar-thumb {
-  background: transparent; /* or any other color */
+  background: transparent;
 }
 
-/* The scrollbar thumb when hovered */
 ::-webkit-scrollbar-thumb:hover {
-  background: transparent; /* or any other color */
+  background: transparent;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap");
@@ -67,6 +64,27 @@ h3 {
 p {
   font-size: 18px;
   font-family: "Inter", sans-serif;
+}
+
+.universal-wrapper {
+  display: block !important;
+  width: 100% !important;
+  max-width: 1700px !important;
+  margin: 0 auto !important;
+  padding: 0 43px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .universal-wrapper {
+    padding: 0 30px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .universal-wrapper {
+    padding: 0 16px !important;
+  }
 }
 
 .mw-node {
@@ -198,7 +216,13 @@ label.control-label {
   display: flex;
   justify-content: space-between;
   color: white;
-  padding: 8px 16px 0 16px;
+  padding-top: 37px;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding-top: 8px;
+  }
 }
 
 .header-item {
@@ -359,4 +383,40 @@ label.control-label {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   grid-column-gap: 24px;
+}
+
+.charlotte-modal-container {
+  top: 0;
+  z-index: 5;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.charlotte-modal-content {
+  background-color: black;
+  color: white;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.char-button-hold {
+  display: flex;
+  justify-content: end;
+}
+
+.char-button-hold button {
+  display: flex;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 999px;
+  padding: 10.5px 11px;
+  cursor: pointer;
 }
