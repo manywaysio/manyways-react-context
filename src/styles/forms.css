@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&display=swap");
 /* Form elements and inputs */
 
 .mw-node fieldset {
@@ -12,7 +13,7 @@
   font-size: 1rem;
   margin-top: 10px;
   margin-bottom: 25px;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .mw-node .form-group {
@@ -22,21 +23,21 @@
 
 .mw-node label {
   display: block;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 1.5rem;
 }
 
-.mw-node .form-group>label {
-  margin-bottom: .8em;
+.mw-node .form-group > label {
+  margin-bottom: 0.8em;
   font-size: 1rem;
 }
 
 .mw-node .field-string .field-description,
 .mw-node .field-integer .field-description {
-  font-size: .8rem;
-  opacity: .8;
-  margin: .2rem 0 .5rem 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin: 0.2rem 0 0.5rem 0;
 }
 
 .mw-node .form-group.field-string input,
@@ -46,7 +47,7 @@
   background-color: #fff;
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius-input);
-  padding: .7em .8em;
+  padding: 0.7em 0.8em;
   width: 100%;
   max-width: 100%;
   font-size: 1rem;
@@ -54,7 +55,7 @@
 
 .mw-node select {
   display: block;
-  padding: .7em .8em;
+  padding: 0.7em 0.8em;
   border: none;
   border-radius: var(--border-radius-input);
   width: 100%;
@@ -90,7 +91,6 @@
   border-radius: var(--border-radius-input);
 }
 
-
 .mw-node textarea {
   resize: vertical;
 }
@@ -123,8 +123,8 @@
   display: block;
 }
 
-.mw-node input[type='radio'],
-.mw-node input[type='checkbox'] {
+.mw-node input[type="radio"],
+.mw-node input[type="checkbox"] {
   opacity: 0;
   height: 1px;
   width: 1px;
@@ -142,18 +142,29 @@
 
 .mw-node .field-group-images-false .checkbox,
 .mw-node .field-group-images-false .radio label {
+  display: flex;
+  margin-bottom: 20px;
+  min-width: 75px;
+  padding: 16px 24px;
+  justify-content: center;
   align-items: center;
-  background-color: #fff;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius-input);
-  padding: .7em .8em;
-  font-size: .9rem;
-  margin-bottom: .3rem;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 51px;
+  border: 1px solid var(--white-50, rgba(255, 255, 255, 0.5));
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 25.2px */
+  letter-spacing: -0.18px;
+  font-family: "Inter", sans-serif;
 }
 
 .mw-node .field-group-images-false.field-layout-inline .checkbox,
 .mw-node .field-group-images-false.field-layout-inline .radio label {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .mw-node .field-group-images-false .checkbox-inline {
@@ -161,10 +172,10 @@
   background-color: #fff;
   border: var(--border-width) solid var(--color-dark);
   border-radius: var(--border-radius-button);
-  padding: .4rem 1.3rem;
-  font-size: .9rem;
-  margin-right: .3rem;
-  margin-bottom: .3rem;
+  padding: 0.4rem 1.3rem;
+  font-size: 0.9rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .mw-node .field-group-images-false .radio-inline label {
@@ -172,17 +183,17 @@
   background-color: #fff;
   border: var(--border-width) solid var(--color-dark);
   border-radius: var(--border-radius-button);
-  padding: .4rem 1.3rem;
-  font-size: .9rem;
-  margin-right: .3rem;
-  margin-bottom: .3rem;
+  padding: 0.4rem 1.3rem;
+  font-size: 0.9rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
   transition: ease-in-out 100ms all;
 }
 
 .mw-node .field-group-images-false .radio label:not(.disabled):hover,
 .mw-node .field-group-images-false .radio-inline label:not(.disabled):hover {
   cursor: pointer;
-  background-color: var(--color-light);
+  background-color: black;
 }
 
 .mw-node .radio label.disabled:hover,
@@ -192,7 +203,7 @@
   cursor: default;
 }
 
-.mw-node .field-group-images-false input[type='radio']:checked+label {
+.mw-node .field-group-images-false input[type="radio"]:checked + label {
   background-color: var(--color-select-light);
   border-color: var(--color-select);
   color: var(--color-dark);
@@ -207,17 +218,17 @@
   background-color: #fff;
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
-  padding: .2rem;
+  padding: 0.2rem;
   height: 100%;
 }
 
-.mw-node .field-group-images-true input[type='radio']+label {
+.mw-node .field-group-images-true input[type="radio"] + label {
   transition: ease-in-out 200ms all;
   outline: var(--border-outline) solid transparent;
   outline-offset: calc(var(--border-outline) * -1);
 }
 
-.mw-node .field-group-images-true input[type='radio']:checked+label {
+.mw-node .field-group-images-true input[type="radio"]:checked + label {
   background-color: var(--color-select-light);
   border-color: var(--color-select);
   outline: var(--border-outline) solid var(--color-select);
@@ -251,7 +262,7 @@
     background-color: #fff;
     border: var(--border-width) solid var(--border-color);
     border-radius: var(--border-radius);
-    padding: .85rem;
+    padding: 0.85rem;
     height: 100%;
     transition: ease-in-out 100ms all;
   }
@@ -309,14 +320,13 @@
   width: 0;
 }
 
-.mw-container .checkbox input:checked~.checkbox-checkmark,
-.mw-container .checkbox-inline input:checked~.checkbox-checkmark {
+.mw-container .checkbox input:checked ~ .checkbox-checkmark,
+.mw-container .checkbox-inline input:checked ~ .checkbox-checkmark {
   background-color: var(--color-select-dark);
-
 }
 
-.mw-container .checkbox .input:checked~.checkbox-checkmark:after,
-.mw-container .checkbox-inline .input:checked~.checkbox-checkmark:after {
+.mw-container .checkbox .input:checked ~ .checkbox-checkmark:after,
+.mw-container .checkbox-inline .input:checked ~ .checkbox-checkmark:after {
   opacity: 1;
 }
 
@@ -329,10 +339,10 @@
 }
 
 .mw-container .checkbox .checkbox-checkmark,
-.mw-container .checkbox-inline input~.checkbox-checkmark {
+.mw-container .checkbox-inline input ~ .checkbox-checkmark {
   position: absolute;
-  top: .65em;
-  left: .6em;
+  top: 0.65em;
+  left: 0.6em;
   height: 18px;
   width: 18px;
   background-color: #fff;
@@ -341,9 +351,9 @@
   border-radius: 11px;
 }
 
-.mw-container .checkbox input~.checkbox-checkmark {
-  top: .9em;
-  left: .8em;
+.mw-container .checkbox input ~ .checkbox-checkmark {
+  top: 0.9em;
+  left: 0.8em;
   border-radius: 3px;
 }
 
@@ -366,7 +376,6 @@
   opacity: 1;
 }
 
-
 .mw-node .field-group-images-true.field-layout-block label.selected,
 .mw-node .field-group-images-true.field-layout-inline label.selected,
 .mw-node .field-group-images-false.field-layout-block label.selected,
@@ -376,11 +385,9 @@
 }
 
 .mw-container .checkbox.selected .checkbox-checkmark,
-.mw-container .checkbox-inline.selected input~.checkbox-checkmark {
+.mw-container .checkbox-inline.selected input ~ .checkbox-checkmark {
   border-color: var(--color-select-dark);
 }
-
-
 
 /* React Select */
 
@@ -431,8 +438,8 @@
 }
 
 .select-mw--is-disabled .select-mw__control {
-  background-color: rgba(0,0,0,.1);
-  border-color: rgba(0,0,0,.2);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
 .select-mw--is-disabled .select-mw__control:hover {
@@ -445,7 +452,7 @@
   grid-area: 1/1/2/3;
   margin-left: 2px;
   margin-right: 2px;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .select-mw__input-container {
@@ -472,7 +479,6 @@
   white-space: pre;
 }
 
-
 .select-mw__single-value {
   box-sizing: border-box;
   color: hsl(0%, 0%, 0%);
@@ -485,14 +491,12 @@
   white-space: nowrap;
 }
 
-
 .select-mw__indicators {
   align-items: center;
   align-self: stretch;
   box-sizing: border-box;
   display: flex;
   flex-shrink: 0;
-
 }
 
 .select-mw__indicator {
@@ -504,7 +508,7 @@
 }
 
 .select-mw__indicator:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .select-mw__control--menu-is-open .select-mw__dropdown-indicator {
@@ -568,13 +572,11 @@
   text-align: center;
 }
 
-
 .control-label .required {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 
 .form-group .css-1u9des2-indicatorSeparator {
   display: none;
@@ -607,7 +609,7 @@ ul.error-detail {
 
 ul.error-detail .text-danger {
   color: red;
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 ul.error-detail li:before {

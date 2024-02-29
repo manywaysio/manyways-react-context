@@ -6,7 +6,7 @@
   font-size: 14px;
   font-weight: 500;
   border-radius: var(--border-radius-button);
-  padding: 8px 16px;
+  padding: 9px 17.4px;
   border: 1px solid white;
   box-shadow: none;
   color: white;
@@ -18,7 +18,7 @@
 .mw-container button:hover,
 .mw-container .button:hover {
   cursor: pointer;
-  background-color: transparent;
+  background-color: black;
   color: #fff;
 }
 
