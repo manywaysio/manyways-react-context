@@ -10,7 +10,9 @@ try {
   script.src = "https://unpkg.com/share-api-polyfill/dist/share-min.js";
   script.async = true;
   document.head.appendChild(script);
-} catch (error) {}
+} catch (error) {
+  console.log(error);
+}
 
 class ManywaysWrapper extends HTMLElement {
   connectedCallback() {
