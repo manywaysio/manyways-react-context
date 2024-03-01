@@ -12,7 +12,7 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
 
   return (
     <div className={`charlotte-modal-container ${charlotteModalOpen ? "show" : ""}`}>
-      <div className="charlotte-modal-content">
+      <div className={`charlotte-modal-content ${charlotteModalOpen ? "show" : ""}`}>
         <div className="char-button-hold">
           <button onClick={() => setCharlotteModalOpen(false)}>
             <Close />

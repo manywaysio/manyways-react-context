@@ -262,7 +262,7 @@ const ManywaysProvider = ({
             </div>
           </div>
         )}
-        {mode === "scroll" && <Footer />}
+        {/* {mode === "scroll" && <Footer />} */}
         {isFirstNode && (
           <div className="carp-container">
             <div className="carp-holder">
