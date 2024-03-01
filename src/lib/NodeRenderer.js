@@ -172,7 +172,10 @@ const NodeRenderer = (props) => {
               )}`}
             />
             <div className={`background-blur-${slugify(currentNode?.title)}`} />
-            <div className={`${classNamePrefix}-container`}>
+            <div
+              className={`${classNamePrefix}-container ${
+                currentNode?.title == "Parts of the world" ? "form-padding-top" : ""
+              }`}>
               {!!foregroundImage && (
                 <div className={`${classNamePrefix}-foreground-image-wrapper`}>
                   <img
