@@ -201,8 +201,6 @@ const ManywaysProvider = ({
     copyLink;
 
   const isFirstNode = currentNode?.title === "Start" ? true : false;
-  const displayProgressBar =
-    currentNode?.title === "Start" || currentNode?.title === "explanation" ? false : true;
 
   return (
     <ManywaysContext.Provider
@@ -273,9 +271,10 @@ const ManywaysProvider = ({
             </div>
           </div>
         )}
-        {displayProgressBar && (
-          <ProgressBar currentNode={currentNode?.title.toLowerCase()} />
-        )}
+        <ProgressBar
+          currentId={currentNode?.id}
+          currentNode={currentNode?.title.toLowerCase()}
+        />
       </div>
     </ManywaysContext.Provider>
   );

@@ -23,8 +23,6 @@ const ManywaysRadioWidget = ({
   const { enumOptions, enumDisabled, inline, emptyValue } = options;
   const { currentNodeId } = useManyways();
 
-  console.log("here", currentNodeId);
-
   const handleBlur = useCallback(
     ({ target: { value } }) =>
       onBlur(id, enumOptionsValueForIndex(value, enumOptions, emptyValue)),

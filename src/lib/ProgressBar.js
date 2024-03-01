@@ -1,4 +1,10 @@
-const ProgressBar = ({ currentNode }) => {
+const ProgressBar = ({ currentNode, currentId }) => {
+  console.log("Current node id", currentId);
+
+  if (currentId < 34) {
+    return null; // Or return an empty fragment <> if you prefer
+  }
+
   return (
     <div className="universal-wrapper progress-bar-container">
       <div className="progress-bar">
