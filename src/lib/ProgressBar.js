@@ -1,113 +1,33 @@
-const ProgressBar = ({ currentNode, currentId }) => {
-  console.log("Current node id", currentId);
+import React, { useState, useEffect } from "react";
 
-  if (currentId < 34) {
-    return null; // Or return an empty fragment <> if you prefer
-  }
+const ProgressBar = ({ initialCurrentId }) => {
+  const [currentId, setCurrentId] = useState(initialCurrentId);
+  const showProgressBar = initialCurrentId >= 34;
+
+  useEffect(() => {
+    if (typeof initialCurrentId === "number") {
+      setCurrentId(initialCurrentId);
+    }
+  }, [initialCurrentId]);
 
   return (
-    <div className="universal-wrapper progress-bar-container">
+    <div
+      className={`universal-wrapper progress-bar-container ${
+        showProgressBar ? "show" : ""
+      }`}>
       <div className="progress-bar">
-        <div
-          className={`first-bar ${
-            currentNode === "when it comes to travel" ||
-            currentNode === "relax and adventure" ||
-            currentNode === "dream getaway" ||
-            currentNode === "charlotte" ||
-            currentNode === "have you taken a cruise" ||
-            currentNode === "cruise lines" ||
-            currentNode === "do you get seasick" ||
-            currentNode === "type of cruise" ||
-            currentNode === "dont-worry" ||
-            currentNode === "parts of the world" ||
-            currentNode === "traveling with" ||
-            currentNode === "traveling how long" ||
-            currentNode === "which seasons" ||
-            currentNode === "results"
-              ? "bar-filled"
-              : ""
-          }`}></div>
+        <div className={`first-bar ${currentId >= 34 ? "bar-filled" : ""}`}></div>
         <div className="progress-inner">
-          <div
-            className={`bar-item ${
-              currentNode === "relax and adventure" ||
-              currentNode === "dream getaway" ||
-              currentNode === "charlotte" ||
-              currentNode === "have you taken a cruise" ||
-              currentNode === "cruise lines" ||
-              currentNode === "do you get seasick" ||
-              currentNode === "type of cruise" ||
-              currentNode === "dont-worry" ||
-              currentNode === "parts of the world" ||
-              currentNode === "traveling with" ||
-              currentNode === "traveling how long" ||
-              currentNode === "which seasons" ||
-              currentNode === "results"
-                ? "bar-filled"
-                : ""
-            }`}></div>
-          <div
-            className={`bar-item ${
-              currentNode === "have you taken a cruise" ||
-              currentNode === "cruise lines" ||
-              currentNode === "do you get seasick" ||
-              currentNode === "type of cruise" ||
-              currentNode === "dont-worry" ||
-              currentNode === "parts of the world" ||
-              currentNode === "traveling with" ||
-              currentNode === "traveling how long" ||
-              currentNode === "which seasons" ||
-              currentNode === "results"
-                ? "bar-filled"
-                : ""
-            }`}></div>
-          <div
-            className={`bar-item ${
-              currentNode === "type of cruise" ||
-              currentNode === "dont-worry" ||
-              currentNode === "parts of the world" ||
-              currentNode === "traveling with" ||
-              currentNode === "traveling how long" ||
-              currentNode === "which seasons" ||
-              currentNode === "results"
-                ? "bar-filled"
-                : ""
-            }`}></div>
-          <div
-            className={`bar-item ${
-              currentNode === "parts of the world" ||
-              currentNode === "traveling with" ||
-              currentNode === "traveling how long" ||
-              currentNode === "which seasons" ||
-              currentNode === "results"
-                ? "bar-filled"
-                : ""
-            }`}></div>
-          <div
-            className={`bar-item ${
-              currentNode === "traveling with" ||
-              currentNode === "traveling how long" ||
-              currentNode === "which seasons" ||
-              currentNode === "results"
-                ? "bar-filled"
-                : ""
-            }`}></div>
-          <div
-            className={`bar-item ${
-              currentNode === "traveling how long" ||
-              currentNode === "which seasons" ||
-              currentNode === "results"
-                ? "bar-filled"
-                : ""
-            }`}></div>
-          <div
-            className={`bar-item ${
-              currentNode === "which seasons" || currentNode === "results"
-                ? "bar-filled"
-                : ""
-            }`}></div>
-          <div
-            className={`last-bar ${currentNode === "results" ? "bar-filled" : ""}`}></div>
+          <div className={`bar-item ${currentId >= 35 ? "bar-filled" : ""}`}></div>
+          <div className={`bar-item ${currentId >= 38 ? "bar-filled" : ""}`}></div>
+          <div className={`bar-item ${currentId >= 39 ? "bar-filled" : ""}`}></div>
+          <div className={`bar-item ${currentId >= 41 ? "bar-filled" : ""}`}></div>
+          <div className={`bar-item ${currentId >= 42 ? "bar-filled" : ""}`}></div>
+          <div className={`bar-item ${currentId >= 43 ? "bar-filled" : ""}`}></div>
+          <div className={`bar-item ${currentId >= 44 ? "bar-filled" : ""}`}></div>
+          <div className={`bar-item ${currentId >= 45 ? "bar-filled" : ""}`}></div>
+          <div className={`bar-item ${currentId >= 46 ? "bar-filled" : ""}`}></div>
+          <div className={`last-bar ${currentId >= 47 ? "bar-filled" : ""}`}></div>
         </div>
       </div>
     </div>

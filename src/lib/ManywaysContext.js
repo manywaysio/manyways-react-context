@@ -271,10 +271,7 @@ const ManywaysProvider = ({
             </div>
           </div>
         )}
-        <ProgressBar
-          currentId={currentNode?.id}
-          currentNode={currentNode?.title.toLowerCase()}
-        />
+        <ProgressBar initialCurrentId={currentNode?.id} />
       </div>
     </ManywaysContext.Provider>
   );
