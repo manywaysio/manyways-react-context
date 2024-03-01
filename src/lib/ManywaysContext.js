@@ -7,6 +7,7 @@ import labels from "./labels/index";
 import Carp from "../icons/Carp";
 import ProgressBar from "./ProgressBar";
 import CharlotteModal from "./CharlotteModal";
+import MenuModal from "./MenuModal";
 
 const ManywaysContext = createContext(null);
 
@@ -24,6 +25,7 @@ const ManywaysProvider = ({
   let [responses, setResponses] = useState([]);
   let [isLoading, setIsLoading] = useState(true);
   const [charlotteModalOpen, setCharlotteModalOpen] = useState(false);
+  const [menuModalOpen, setMenuModalOpen] = useState(false);
 
   let currentNode =
     setCurrentNodeId !== false ? nodes.find((n) => n.id === currentNodeId) : false;
@@ -235,7 +237,10 @@ const ManywaysProvider = ({
         <Header
           charlotteModalOpen={charlotteModalOpen}
           setCharlotteModalOpen={setCharlotteModalOpen}
+          menuModalOpen={menuModalOpen}
+          setMenuModalOpen={setMenuModalOpen}
         />
+        <MenuModal menuModalOpen={menuModalOpen} />
         {/* {charlotteModalOpen && ( */}
         <CharlotteModal
           charlotteModalOpen={charlotteModalOpen}

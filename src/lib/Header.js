@@ -5,25 +5,44 @@ import Speaker from "../icons/Speaker.js";
 import charlotte from "../pictures/charlotte.png";
 import backgroundAudio from "../assets/audio/waves.mp3";
 
-const Header = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
+const Header = ({
+  charlotteModalOpen,
+  setCharlotteModalOpen,
+  menuModalOpen,
+  setMenuModalOpen,
+}) => {
   const [isMuted, setIsMuted] = useState(true);
 
   const toggleSound = (e) => {
     e.stopPropagation();
-    console.log("Before toggling, isMuted:", isMuted);
-    setIsMuted(!isMuted);
-    console.log("After toggling, isMuted:", !isMuted);
+    const wasMuted = isMuted;
+    setIsMuted(!wasMuted);
+
+    if (wasMuted) {
+      const audioElement = document.getElementById("backgroundAudio");
+      if (audioElement) {
+        audioElement.play().catch((error) => console.error("Playback failed:", error));
+      }
+    }
   };
 
   const handleToggleModal = () => {
     if (charlotteModalOpen) {
-      // Begin fade-out
       setTimeout(() => {
-        setCharlotteModalOpen(false); // Hide modal after transition
-      }, 500); // Ensure this matches your CSS transition time
+        setCharlotteModalOpen(false);
+      }, 300);
     } else {
-      // Immediately show modal, CSS transition for fade-in will handle the rest
       setCharlotteModalOpen(true);
+    }
+  };
+
+  const handleMenuToggleModal = () => {
+    if (menuModalOpen) {
+      setTimeout(() => {
+        setMenuModalOpen(false);
+      }, 100);
+    } else {
+      setMenuModalOpen(true);
     }
   };
 
@@ -34,10 +53,13 @@ const Header = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
         src={backgroundAudio}
         autoPlay
         loop
-        muted={isMuted}></audio>
+        muted={isMuted}
+        onCanPlayThrough={(e) => console.log("Audio can play through")}
+        // controls
+      ></audio>
       <div className="mt-8 header-container">
         <div className="header-item">
-          <button className="hamburger-button" onClick={() => console.log("clicked")}>
+          <button className="hamburger-button" onClick={handleMenuToggleModal}>
             <Hamburger />
           </button>
           <div className="mobile-cruise">

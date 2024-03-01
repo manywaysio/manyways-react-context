@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { useManyways } from "../ManywaysContext";
 import {
   ariaDescribedByIds,
   enumOptionsIsSelected,
@@ -20,6 +21,9 @@ const ManywaysRadioWidget = ({
   id,
 }) => {
   const { enumOptions, enumDisabled, inline, emptyValue } = options;
+  const { currentNodeId } = useManyways();
+
+  console.log("here", currentNodeId);
 
   const handleBlur = useCallback(
     ({ target: { value } }) =>
@@ -73,7 +77,9 @@ const ManywaysRadioWidget = ({
               <label
                 htmlFor={optionId(id, i)}
                 className={`${disabledCls} ${
-                  !!enumOptions && enumOptions.length > 6 ? "enum-grid-item" : ""
+                  currentNodeId == 43 && option.label.length > 20
+                    ? "enum-grid-item-minimize"
+                    : ""
                 }`}>
                 {!!schema.enum_icons?.[i] && (
                   <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} />
