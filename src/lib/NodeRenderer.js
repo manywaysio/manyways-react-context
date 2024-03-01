@@ -148,8 +148,7 @@ const NodeRenderer = (props) => {
         // <NodeComponent
         //   key={currentNode.id || idx}
         //   currentNode={currentNode}
-        //   isCurrent={currentNodeId === currentNode.id}
-        //   backgroundImage={currentNode.ui_variables?.backgroundImage}>
+        //   isCurrent={currentNodeId === currentNode.id}>
         <div
           className={`universal-wrapper background-node-${slugify(currentNode?.title)}`}>
           <div
