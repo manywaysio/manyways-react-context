@@ -33,6 +33,8 @@ h1 {
   font-size: 72px;
   font-family: "Playfair Display";
   font-weight: 500;
+  line-height: 79.2px;
+  margin: 0 !important;
 }
 
 @media (max-width: 768px) {
@@ -361,6 +363,7 @@ label.control-label {
 .char-button p {
   margin: 0;
   padding-right: 10px;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -557,8 +560,8 @@ label.control-label {
 }
 
 .char-image {
-  height: 100px;
-  width: 100px;
+  height: 100px !important;
+  width: 100px !important;
   border-radius: 999px;
   margin: 0 32px 0 24px;
 }
@@ -732,5 +735,57 @@ label.control-label {
 @media (max-width: 768px) {
   .form-padding-top {
     padding-top: 100px;
+  }
+}
+
+.char-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.char-page form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.char-page input {
+  width: 255px;
+  padding: 13px 17px 13px 40px;
+  border-radius: 6px;
+}
+
+.char-page span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.18px;
+  font-family: "Inter", sans-serif;
+  margin: 12px 0;
+}
+
+.char-page .char-image-container {
+  background-color: black;
+}
+
+.char-page .submit-button {
+  margin: 32px 0;
+}
+
+.char-page p {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.char-page .char-image-container p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .char-page .char-image-container {
+    padding: 12px;
   }
 }
