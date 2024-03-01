@@ -668,6 +668,34 @@ label.control-label {
   border-radius: 6px;
 }
 
+.menu-modal-container ul {
+  font-family: "Inter", sans-serif;
+  list-style: none;
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+
+.menu-modal-container li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: white;
+  transition: opacity 0.5s, visibility 0.5s;
+  opacity: 1;
+  font-weight: 400;
+}
+
+.manyways {
+  font-size: 10px !important;
+  margin-bottom: 0 !important;
+  opacity: 0.5 !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+}
+
+.menu-modal-container li:hover {
+  opacity: 0.5;
+}
+
 @media (max-width: 768px) {
   .menu-modal-container {
     top: 55px;
