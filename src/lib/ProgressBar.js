@@ -1,7 +1,6 @@
 const ProgressBar = ({ currentNode }) => {
-  console.log(currentNode);
   return (
-    <div className="progress-bar-container">
+    <div className="universal-wrapper progress-bar-container">
       <div className="progress-bar">
         <div
           className={`first-bar ${

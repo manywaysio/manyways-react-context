@@ -144,8 +144,10 @@ const NodeRenderer = (props) => {
 
       return (
         <div
-          key={idx}
-          className={`
+          className={`universal-wrapper background-node-${slugify(currentNode?.title)}`}>
+          <div
+            key={idx}
+            className={`
           ${classNamePrefix}-node
           ${currentNodeId === currentNode?.id ? "" : "is-current-node-false"}
           has-response-${!!theResponse}
@@ -156,85 +158,89 @@ const NodeRenderer = (props) => {
           is-first-node-${isFirstNode}
           ${classNamePrefix}-node-${slugify(currentNode?.title)}
           `}
-          id={`${classNamePrefix}-node-${currentNode?.id}`}
-          style={
-            !!backgroundImage
-              ? {
-                  backgroundImage: `url(${backgroundImage})`,
-                }
-              : {}
-          }>
-          <div
-            className={`background-shade node-transition-${slugify(currentNode?.title)}`}
-          />
-          <div className={`${classNamePrefix}-container`}>
-            {!!foregroundImage && (
-              <div className={`${classNamePrefix}-foreground-image-wrapper`}>
-                <img
-                  alt={currentNode?.title}
-                  className={`${classNamePrefix}-foreground-image`}
-                  src={foregroundImage}
-                />
-              </div>
-            )}
-            <Form
-              disabled={!!theResponse}
-              formData={theResponse?.response || {}}
-              className={`${classNamePrefix}-form ${classNamePrefix}-node-${slugify(
+            id={`${classNamePrefix}-node-${currentNode?.id}`}
+            style={
+              !!backgroundImage
+                ? {
+                    backgroundImage: `url(${backgroundImage})`,
+                  }
+                : {}
+            }>
+            <div
+              className={`background-shade node-transition-${slugify(
                 currentNode?.title
-              )}-form
+              )}`}
+            />
+            <div className={`background-blur-${slugify(currentNode?.title)}`} />
+            <div className={`${classNamePrefix}-container`}>
+              {!!foregroundImage && (
+                <div className={`${classNamePrefix}-foreground-image-wrapper`}>
+                  <img
+                    alt={currentNode?.title}
+                    className={`${classNamePrefix}-foreground-image`}
+                    src={foregroundImage}
+                  />
+                </div>
+              )}
+              <Form
+                disabled={!!theResponse}
+                formData={theResponse?.response || {}}
+                className={`${classNamePrefix}-form ${classNamePrefix}-node-${slugify(
+                  currentNode?.title
+                )}-form
           has-response-${!!theResponse}
           `}
-              widgets={{
-                RadioWidget: ManywaysRadioWidget,
-                CheckboxesWidget: ManywaysCheckboxWidget,
-                SelectWidget: ManywaysSelectWidget,
-                Select: ({ value, onChange, disabled, ...props }) => {
-                  const { options } = props;
+                widgets={{
+                  RadioWidget: ManywaysRadioWidget,
+                  CheckboxesWidget: ManywaysCheckboxWidget,
+                  SelectWidget: ManywaysSelectWidget,
+                  Select: ({ value, onChange, disabled, ...props }) => {
+                    const { options } = props;
 
-                  let temp_opts = [
-                    { value: "xxx", label: "XXX" },
-                    { value: "Alberta", label: "Alberta" },
-                  ];
-                  const theOptions =
-                    !!options?.enumOptions && !!options?.enumOptions?.length > 0
-                      ? options?.enumOptions
-                      : temp_opts;
-                  return (
-                    <Select
-                      onChange={(v) => {
-                        onChange(v.value);
-                      }}
-                      styles={selectStyles}
-                      isDisabled={disabled}
-                      value={theOptions.find((o) => o.value === value)}
-                      placeholder={props.placeholder}
-                      options={theOptions}
-                      classNamePrefix="select-mw"
-                    />
-                  );
-                },
-              }}
-              onChange={(e) => {
-                if (!!singleChoiceField) {
-                  goForward(e);
-                }
-              }}
-              fields={{
-                MediaContent: MediaContent,
-              }}
-              key={currentNode?.id || 1123456789}
-              onSubmit={goForward}
-              schema={currentNode?.form_schema || {}}
-              validator={validator}
-              uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}>
-              <NextAndBack
-                currentNode={currentNode}
-                className={`singleChoiceField-${singleChoiceField}`}
-              />
-            </Form>
+                    let temp_opts = [
+                      { value: "xxx", label: "XXX" },
+                      { value: "Alberta", label: "Alberta" },
+                    ];
+                    const theOptions =
+                      !!options?.enumOptions && !!options?.enumOptions?.length > 0
+                        ? options?.enumOptions
+                        : temp_opts;
+                    return (
+                      <Select
+                        onChange={(v) => {
+                          onChange(v.value);
+                        }}
+                        styles={selectStyles}
+                        isDisabled={disabled}
+                        value={theOptions.find((o) => o.value === value)}
+                        placeholder={props.placeholder}
+                        options={theOptions}
+                        classNamePrefix="select-mw"
+                      />
+                    );
+                  },
+                }}
+                onChange={(e) => {
+                  if (!!singleChoiceField) {
+                    goForward(e);
+                  }
+                }}
+                fields={{
+                  MediaContent: MediaContent,
+                }}
+                key={currentNode?.id || 1123456789}
+                onSubmit={goForward}
+                schema={currentNode?.form_schema || {}}
+                validator={validator}
+                uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}>
+                <NextAndBack
+                  currentNode={currentNode}
+                  className={`singleChoiceField-${singleChoiceField}`}
+                />
+              </Form>
+            </div>
+            {mode === "slideshow" ? <Footer /> : null}
           </div>
-          {mode === "slideshow" ? <Footer /> : null}
         </div>
       );
     });

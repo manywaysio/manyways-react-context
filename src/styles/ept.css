@@ -75,7 +75,7 @@ p {
   box-sizing: border-box !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .universal-wrapper {
     padding: 0 30px !important;
   }
@@ -91,25 +91,25 @@ p {
   height: 100vh;
 }
 
-.mw-node-start,
-.mw-node-explanation {
+.background-node-start,
+.background-node-explanation {
   background-image: url("https://manyways-demo.imgix.net/Organization_6297b5a37fcaa3000655bf9c/__AdobeStock_203035795.jpeg?w=1800");
 }
 
-.mw-node-when-it-comes-to-travel,
-.mw-node-relax-and-adventure,
-.mw-node-dream-getaway,
-.mw-node-charlotte,
-.mw-node-have-you-taken-a-cruise,
-.mw-node-cruise-lines,
-.mw-node-do-you-get-seasick,
-.mw-node-dont-worry,
-.mw-node-type-of-cruise,
-.mw-node-parts-of-the-world,
-.mw-node-traveling-with,
-.mw-node-traveling-how-long,
-.mw-node-which-seasons,
-.mw-node-results {
+.background-node-when-it-comes-to-travel,
+.background-node-relax-and-adventure,
+.background-node-dream-getaway,
+.background-node-charlotte,
+.background-node-have-you-taken-a-cruise,
+.background-node-cruise-lines,
+.background-node-do-you-get-seasick,
+.background-node-dont-worry,
+.background-node-type-of-cruise,
+.background-node-parts-of-the-world,
+.background-node-traveling-with,
+.background-node-traveling-how-long,
+.background-node-which-seasons,
+.background-node-results {
   background-image: url("https://manyways-demo.imgix.net/Organization_6297b5a37fcaa3000655bf9c/ezgif-3-5c8bd1e86e.gif");
   background-size: cover;
 }
@@ -123,8 +123,20 @@ p {
   position: absolute;
 }
 
+.background-blur-start,
+.background-blur-explanation {
+  top: 0;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+}
+
 .node-transition-start {
-  opacity: 15%;
+  opacity: 20%;
   background-color: black;
 }
 
@@ -219,7 +231,7 @@ label.control-label {
   padding-top: 37px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .header-container {
     padding-top: 8px;
   }
@@ -330,18 +342,19 @@ label.control-label {
   }
 }
 
-.progress-bar {
+.progress-bar-container {
   position: absolute;
-  height: 4px;
-  background-color: rgb(75, 75, 75);
-  /* opacity: 25%; */
-  margin-bottom: 30px;
   bottom: 0;
   left: 0;
+  overflow: hidden;
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
-  z-index: 4;
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: rgb(75, 75, 75);
+  margin-bottom: 30px;
   z-index: 4;
   width: 100%;
   display: flex;
@@ -397,14 +410,31 @@ label.control-label {
   align-items: center;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  transition: opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.charlotte-modal-container.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .charlotte-modal-content {
   background-color: black;
   color: white;
   padding: 48px;
+  margin: 0 24px;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .charlotte-modal-content {
+    height: 100%;
+    padding: 16px;
+    margin: 16px;
+  }
 }
 
 .char-button-hold {

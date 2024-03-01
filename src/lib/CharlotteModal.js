@@ -1,8 +1,10 @@
 import Close from "../icons/Close";
 
-const CharlotteModal = ({ setCharlotteModalOpen }) => {
+const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
+  console.log(charlotteModalOpen);
+
   return (
-    <div className="charlotte-modal-container">
+    <div className={`charlotte-modal-container ${charlotteModalOpen ? "show" : ""}`}>
       <div className="charlotte-modal-content">
         <div className="char-button-hold">
           <button onClick={() => setCharlotteModalOpen(false)}>

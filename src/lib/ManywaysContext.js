@@ -225,7 +225,6 @@ const ManywaysProvider = ({
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
           ?.run_mode?.logo} ${nodes.map((n) => `mw-${slugify(n.title)}`).join(" ")}`}>
-        {/* Renders when in scroll mode with a global background set */}
         {mode === "scroll" && treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
           <div
             className={`${classNamePrefix}-global-bg-image`}
@@ -233,10 +232,16 @@ const ManywaysProvider = ({
               backgroundImage: `url(${treeConfig?.run_mode?.ui_variables?.backgroundImage})`,
             }}></div>
         ) : null}
-        <Header setCharlotteModalOpen={setCharlotteModalOpen} />
-        {charlotteModalOpen && (
-          <CharlotteModal setCharlotteModalOpen={setCharlotteModalOpen} />
-        )}
+        <Header
+          charlotteModalOpen={charlotteModalOpen}
+          setCharlotteModalOpen={setCharlotteModalOpen}
+        />
+        {/* {charlotteModalOpen && ( */}
+        <CharlotteModal
+          charlotteModalOpen={charlotteModalOpen}
+          setCharlotteModalOpen={setCharlotteModalOpen}
+        />
+        {/* )} */}
         <NodeRenderer />
         {children}
         {mode === "scroll" && isLoading && (
