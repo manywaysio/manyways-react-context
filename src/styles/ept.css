@@ -80,6 +80,7 @@ h3 {
 p {
   font-size: 18px;
   font-family: "Inter", sans-serif;
+  line-height: 25.2px;
 }
 
 .universal-wrapper {
@@ -208,10 +209,19 @@ p {
   align-items: center;
 }
 
-/* .node-transition {
+/* .is-current-node-true,
+.is-current-node-false {
   transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.is-current-node-true {
   opacity: 1;
   visibility: visible;
+}
+
+.is-current-node-false {
+  opacity: 0;
+  visibility: hidden;
 } */
 
 .is-current-node-false {
@@ -387,7 +397,7 @@ label.control-label {
   overflow: hidden;
   width: 100%;
   max-width: 100%;
-  z-index: 4;
+  z-index: 5;
 }
 
 .progress-bar {
@@ -405,6 +415,7 @@ label.control-label {
   z-index: 5;
   height: 100%;
   width: 5px;
+  height: 4px;
 }
 
 .last-bar {
@@ -412,6 +423,7 @@ label.control-label {
   width: 100%;
   height: 100%;
   margin-right: 30px;
+  height: 4px;
 }
 
 .bar-filled {
@@ -447,7 +459,7 @@ label.control-label {
 
 .charlotte-modal-container {
   top: 0;
-  z-index: 5;
+  z-index: 6;
   height: 0;
   width: 100%;
   left: 0;

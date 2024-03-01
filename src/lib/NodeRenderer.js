@@ -10,6 +10,8 @@ import Footer from "./Footer";
 import { slugify } from "./utils/helpers";
 import Select from "react-select";
 
+import NodeComponent from "./NodeComponent";
+
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   console.log(formSchema, uiSchema);
   if (!!formSchema?.properties) {
@@ -143,13 +145,22 @@ const NodeRenderer = (props) => {
       );
 
       return (
+        // <NodeComponent
+        //   key={currentNode.id || idx}
+        //   currentNode={currentNode}
+        //   isCurrent={currentNodeId === currentNode.id}
+        //   backgroundImage={currentNode.ui_variables?.backgroundImage}>
         <div
           className={`universal-wrapper background-node-${slugify(currentNode?.title)}`}>
           <div
             key={idx}
             className={`
           ${classNamePrefix}-node
-          ${currentNodeId === currentNode?.id ? "" : "is-current-node-false"}
+          ${
+            currentNodeId === currentNode?.id
+              ? "is-current-node-true"
+              : "is-current-node-false"
+          }
           has-response-${!!theResponse}
           layout-${nodeLayout || "center"}
           is-full-screen-${!!isFullScreen}
@@ -176,15 +187,6 @@ const NodeRenderer = (props) => {
               className={`${classNamePrefix}-container ${
                 currentNode?.title == "Parts of the world" ? "form-padding-top" : ""
               }`}>
-              {!!foregroundImage && (
-                <div className={`${classNamePrefix}-foreground-image-wrapper`}>
-                  <img
-                    alt={currentNode?.title}
-                    className={`${classNamePrefix}-foreground-image`}
-                    src={foregroundImage}
-                  />
-                </div>
-              )}
               <Form
                 disabled={!!theResponse}
                 formData={theResponse?.response || {}}
@@ -242,9 +244,10 @@ const NodeRenderer = (props) => {
                 />
               </Form>
             </div>
-            {mode === "slideshow" ? <Footer /> : null}
+            {/* {mode === "slideshow" ? <Footer /> : null} */}
           </div>
         </div>
+        // </NodeComponent>
       );
     });
 };
