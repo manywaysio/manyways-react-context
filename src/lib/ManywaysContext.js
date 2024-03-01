@@ -241,12 +241,10 @@ const ManywaysProvider = ({
           setMenuModalOpen={setMenuModalOpen}
         />
         <MenuModal menuModalOpen={menuModalOpen} />
-        {/* {charlotteModalOpen && ( */}
         <CharlotteModal
           charlotteModalOpen={charlotteModalOpen}
           setCharlotteModalOpen={setCharlotteModalOpen}
         />
-        {/* )} */}
         <NodeRenderer />
         {children}
         {mode === "scroll" && isLoading && (

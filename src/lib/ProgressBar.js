@@ -20,8 +20,6 @@ const ProgressBar = ({ currentNode }) => {
             currentNode === "results"
               ? "bar-filled"
               : ""
-              ? "bar-filled"
-              : ""
           }`}></div>
         <div className="progress-inner">
           <div

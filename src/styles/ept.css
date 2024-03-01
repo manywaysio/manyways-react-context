@@ -58,6 +58,13 @@ h2 {
   letter-spacing: -0.8px;
 }
 
+@media (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+    letter-spacing: -0.64px;
+  }
+}
+
 h3 {
   color: white;
   text-align: center;
@@ -67,6 +74,13 @@ h3 {
   font-weight: 500;
   line-height: 110%;
   letter-spacing: -0.8px;
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 32px;
+    letter-spacing: -0.64px;
+  }
 }
 
 p {
@@ -386,6 +400,7 @@ label.control-label {
 }
 
 .progress-bar {
+  position: relative;
   height: 4px;
   background-color: rgb(75, 75, 75);
   margin-bottom: 30px;
@@ -525,6 +540,13 @@ label.control-label {
   display: flex;
   align-items: center;
   padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .char-image-container {
+    flex-direction: column;
+    padding: 0;
+  }
 }
 
 .char-image {

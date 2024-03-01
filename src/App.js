@@ -9,20 +9,27 @@ import buttonStyles from "./styles/buttons.css";
 import mediaStyles from "./styles/media.css";
 import formStyles from "./styles/forms.css";
 import loaderStyles from "./styles/loader.css";
-import mescaStyles from "./styles/mesca2.css";
 import eptStyles from "./styles/ept.css";
-
-// import all styles as a var called css
 
 import { ManywaysProvider } from "./lib/ManywaysContext";
 
 function App({ locale, slug, mode = "scroll" }) {
   useEffect(() => {
+    // document.body.style.overflowY = "hidden";
     document.body.style.margin = 0;
-    document.body.style.overflowY = "hidden";
+    const style = document.createElement("style");
+    style.type = "text/css";
+    style.innerHTML = `
+    ::-webkit-scrollbar { width: 0; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: transparent; }
+    ::-webkit-scrollbar-thumb:hover { background: transparent; }
+  `;
+    document.head.appendChild(style);
     return () => {
+      // document.body.style.overflowY = "";
       document.body.style.margin = "";
-      document.body.style.overflowY = "";
+      document.body.removeChild(style);
     };
   }, []);
 
