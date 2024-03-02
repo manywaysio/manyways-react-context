@@ -208,7 +208,7 @@
 .mw-node .field-group-images-false input[type="radio"]:checked + label {
   background-color: var(--color-select-light);
   border-color: var(--color-select);
-  color: var(--color-dark);
+  /* color: var(--color-dark); */
 }
 
 .mw-node .field-group-images-true label {

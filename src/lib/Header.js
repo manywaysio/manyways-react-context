@@ -4,6 +4,7 @@ import Hamburger from "../icons/Hamburger.js";
 import Speaker from "../icons/Speaker.js";
 import charlotte from "../pictures/charlotte.png";
 import backgroundAudio from "../assets/audio/waves.mp3";
+import CloseLarge from "../icons/CloseLarge.js";
 
 const Header = ({
   charlotteModalOpen,
@@ -60,7 +61,7 @@ const Header = ({
       <div className="mt-8 header-container">
         <div className="header-item">
           <button className="hamburger-button" onClick={handleMenuToggleModal}>
-            <Hamburger />
+            {menuModalOpen ? <CloseLarge className="close-icon" /> : <Hamburger />}
           </button>
           <div className="mobile-cruise">
             <CruiseIq />

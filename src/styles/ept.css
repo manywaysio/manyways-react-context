@@ -128,7 +128,7 @@ p {
 .background-node-cruise-lines,
 .background-node-do-you-get-seasick,
 .background-node-dont-worry,
-.background-node-type-of-cruise,
+.background-node-what-type,
 .background-node-parts-of-the-world,
 .background-node-traveling-with,
 .background-node-traveling-how-long,
@@ -173,7 +173,7 @@ p {
 .node-transition-have-you-taken-a-cruise,
 .node-transition-cruise-lines,
 .node-transition-do-you-get-seasick,
-.node-transition-type-of-cruise,
+.node-transition-what-type,
 .node-transition-parts-of-the-world,
 .node-transition-traveling-with,
 .node-transition-traveling-how-long,
@@ -339,6 +339,11 @@ label.control-label {
   border-radius: 999px;
   padding: 9.25px 11px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in;
+}
+
+.speaker-button:hover {
+  background-color: black;
 }
 
 .char-button {
@@ -352,6 +357,11 @@ label.control-label {
   padding: 3px 11px;
   cursor: pointer;
   margin-right: 16px;
+  transition: background-color 0.3s ease-in;
+}
+
+.char-button:hover {
+  background-color: black;
 }
 
 @media (max-width: 768px) {
@@ -685,6 +695,7 @@ label.control-label {
   transition: opacity 0.5s, visibility 0.5s;
   opacity: 1;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .manyways {
@@ -788,4 +799,8 @@ label.control-label {
   .char-page .char-image-container {
     padding: 12px;
   }
+}
+
+.close-icon {
+  font-size: 24px;
 }

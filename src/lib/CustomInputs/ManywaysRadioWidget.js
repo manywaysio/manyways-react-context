@@ -75,7 +75,7 @@ const ManywaysRadioWidget = ({
               <label
                 htmlFor={optionId(id, i)}
                 className={`${disabledCls} ${
-                  currentNodeId == 43 && option.label.length > 20
+                  currentNodeId == 43 && option.label.length > 19
                     ? "enum-grid-item-minimize"
                     : ""
                 }`}>
