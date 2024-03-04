@@ -9,7 +9,7 @@ import ManywaysSelectWidget from "./CustomInputs/ManywaysSelectWidget";
 import Footer from "./Footer";
 import { slugify } from "./utils/helpers";
 import Select from "react-select";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -205,6 +205,17 @@ const NodeRenderer = (props) => {
                   const { options } = props;
                   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+                  useEffect(() => {
+                    const _theOptions =
+                      !!options?.enumOptions &&
+                      !!options?.enumOptions?.length > 0
+                        ? options?.enumOptions
+                        : temp_opts;
+                    if (_theOptions?.length === 1) {
+                      onChange(_theOptions[0].value);
+                    }
+                  }, []);
+
                   let temp_opts = [
                     { value: "xxx", label: "XXX" },
                     { value: "Alberta", label: "Alberta" },
@@ -268,7 +279,6 @@ const NodeRenderer = (props) => {
                           console.log("focus");
                           setMenuIsOpen(true);
                         }}
-                        onMen
                         onDropdownClose={() => {
                           console.log("dd close");
                         }}
