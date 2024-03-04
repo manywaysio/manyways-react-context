@@ -123,10 +123,9 @@ const ManywaysProvider = ({
       });
   };
 
-  const goBack = async () => {
+  const goBack = async function () {
     let theLastResponse = responses[responses.length - 1];
     if (!!theLastResponse && !!theLastResponse?.node_id) {
-      console.log("going back to ", theLastResponse?.node_id);
       let _nodes = nodes.filter((n, idx) => idx < nodes.length - 1);
       setNodes(_nodes);
       setCurrentNodeId(theLastResponse?.node_id);
@@ -227,9 +226,14 @@ const ManywaysProvider = ({
   useEffect(() => {
     window.manyways.restartInQueue = restartInQueue;
     window.manyways.restart = restart;
-    window.manyways.back = goBack;
     getInitialData();
   }, [slug]);
+
+  useEffect(() => {
+    window.manyways.dispatcher.subscribe("graph/back", function (obj) {
+      goBack();
+    });
+  }, [currentNodeId]);
 
   useEffect(() => {
     setUpUmami();
