@@ -124,13 +124,27 @@ const ManywaysProvider = ({
   };
 
   const goBack = async function () {
-    let theLastResponse = responses[responses.length - 1];
-    if (!!theLastResponse && !!theLastResponse?.node_id) {
+    let currentNodeIndexInResponses = responses.findIndex(
+      (r) => r.node_id === currentNodeId
+    );
+    currentNodeIndexInResponses =
+      currentNodeIndexInResponses > -1
+        ? currentNodeIndexInResponses
+        : responses.length;
+    let theLastResponse = responses[currentNodeIndexInResponses - 1];
+    if (
+      !!theLastResponse &&
+      !!theLastResponse?.node_id &&
+      responses?.[0].node_id === theLastResponse?.node_id
+    ) {
+      restart();
+    } else if (!!theLastResponse && !!theLastResponse?.node_id) {
       let _nodes = nodes.filter((n, idx) => idx < nodes.length - 1);
       setNodes(_nodes);
       setCurrentNodeId(theLastResponse?.node_id);
     } else {
       console.log("cannot go back");
+      console.log("the last response", theLastResponse);
     }
   };
 
@@ -230,9 +244,13 @@ const ManywaysProvider = ({
   }, [slug]);
 
   useEffect(() => {
-    window.manyways.dispatcher.subscribe("graph/back", function (obj) {
-      goBack();
-    });
+    !!window?.manyways._garbage?.remove && window.manyways._garbage?.remove();
+    window.manyways._garbage = window.manyways.dispatcher.subscribe(
+      "graph/back",
+      function (obj) {
+        goBack();
+      }
+    );
   }, [currentNodeId]);
 
   useEffect(() => {
