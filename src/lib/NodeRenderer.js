@@ -9,8 +9,10 @@ import ManywaysSelectWidget from "./CustomInputs/ManywaysSelectWidget";
 import Footer from "./Footer";
 import { slugify } from "./utils/helpers";
 import Select from "react-select";
+import EPTResults from "./CustomInputs/EPTResults";
 
 import NodeComponent from "./NodeComponent";
+import { useEffect } from "react";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   console.log(formSchema, uiSchema);
@@ -111,8 +113,17 @@ const NodeRenderer = (props) => {
     currentNodeId,
     goForward,
     mode,
+    isLoading,
     treeConfig,
+    textFade,
+    setTextFade,
   } = useManyways();
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTextFade(false);
+    }, 500);
+  }, [currentNodeId]);
 
   return nodes
     .filter((n) => {
@@ -150,7 +161,10 @@ const NodeRenderer = (props) => {
         //   currentNode={currentNode}
         //   isCurrent={currentNodeId === currentNode.id}>
         <div
-          className={`universal-wrapper background-node-${slugify(currentNode?.title)}`}>
+          className={`fadetext-${textFade} universal-wrapper is-loading-${isLoading} background-node-${slugify(
+            currentNode?.title
+          )}`}
+        >
           <div
             key={idx}
             className={`
@@ -175,17 +189,28 @@ const NodeRenderer = (props) => {
                     backgroundImage: `url(${backgroundImage})`,
                   }
                 : {}
-            }>
+            }
+          >
             <div
               className={`background-shade node-transition-${slugify(
                 currentNode?.title
               )}`}
             />
             <div className={`background-blur-${slugify(currentNode?.title)}`} />
+            {currentNode?.title?.toLowerCase() == "start" && <EPTResults />}
             <div
               className={`${classNamePrefix}-container ${
-                currentNode?.title == "Parts of the world" ? "form-padding-top" : ""
-              }`}>
+                currentNode?.title == "Parts of the world"
+                  ? "form-padding-top"
+                  : ""
+              }`}
+              style={{
+                display:
+                  currentNode?.title?.toLowerCase() == "results"
+                    ? "none"
+                    : "block",
+              }}
+            >
               <Form
                 disabled={!!theResponse}
                 formData={theResponse?.response || {}}
@@ -206,7 +231,8 @@ const NodeRenderer = (props) => {
                       { value: "Alberta", label: "Alberta" },
                     ];
                     const theOptions =
-                      !!options?.enumOptions && !!options?.enumOptions?.length > 0
+                      !!options?.enumOptions &&
+                      !!options?.enumOptions?.length > 0
                         ? options?.enumOptions
                         : temp_opts;
                     return (
@@ -236,7 +262,10 @@ const NodeRenderer = (props) => {
                 onSubmit={goForward}
                 schema={currentNode?.form_schema || {}}
                 validator={validator}
-                uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}>
+                uiSchema={
+                  !!currentNode?.ui_schema ? currentNode?.ui_schema : {}
+                }
+              >
                 <NextAndBack
                   currentNode={currentNode}
                   className={`singleChoiceField-${singleChoiceField}`}

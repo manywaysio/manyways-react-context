@@ -1,0 +1,1094 @@
+[
+  {
+    "id": "Lyon & Provence",
+    "position": "26",
+    "name": "Lyon & Provence",
+    "cruiseType": "river",
+    "featuredImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/mar_content/video-thumbnails-existing-assets/CC_Banon_Provence_Lavender_SKY_Alamy_RM_3840_3x2.jpg",
+    "overviewText": "<p>Tap into your inner van Gogh at an Arles painting class. Discover Roman Provence at Les Arènes d’Arles and the Pont du Gard. Explore the world’s largest Gothic palace at Avignon’s grand Palace of the Popes. Excite your palate in Lyon, capital of French gastronomy. Savor local wines, hunt for truffles and see how chèvre cheese is made. Come witness the beauty that inspired artists like Cézanne and Chagall on this eight-day voyage along the Rhône.</p>",
+    "largeOverview": "<p>Tap into your inner van Gogh at an Arles painting class. Discover Roman Provence at Les Arènes d’Arles and the Pont du Gard. Explore the world’s largest Gothic palace at Avignon’s grand Palace of the Popes. Excite your palate in Lyon, capital of French gastronomy. Savor local wines, hunt for truffles and see how chèvre cheese is made. Come witness the beauty that inspired artists like Cézanne and Chagall on this eight-day voyage along the Rhône.</p>",
+    "smallOverview": "<p>Sail along the scenic Rhône River through the beautiful French countryside. Explore the narrow streets of Lyon’s Old Town, the colorful fields of Provence, Avignon’s Palace of the Popes and more.</p>",
+    "regions": [
+      "Europe"
+    ],
+    "countries": [
+      "France"
+    ],
+    "waterways": [
+      "Rhône"
+    ],
+    "packages": [
+      {
+        "ReleaseLevel": "15",
+        "id": "river-lyon-provence-2023-fromTo",
+        "PackageLookupId": "Europe-Avignon-Lyon-2023",
+        "PackageCode": "river-lyon-provence-2023-fromTo",
+        "Name": "Avignon to Lyon",
+        "Year": "2023",
+        "Featured": "false",
+        "ShowDiscount": "true",
+        "EnableOnlineBooking": "true",
+        "EnableSoldOut": "false",
+        "type": "CRU",
+        "price": {
+          "prices": [
+            "3799.00",
+            "3899.00",
+            "4699.00",
+            "4999.00",
+            "5399.00",
+            "5599.00",
+            "7699.00",
+            "9699.00"
+          ],
+          "priceRange": "3799.00 - 9699.00",
+          "shipCode": "HMD"
+        },
+        "duration": "8",
+        "guidedTours": "7",
+        "itineraryHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/mar_content/video-thumbnails-existing-assets/CC_Banon_Provence_Lavender_SKY_Alamy_RM_3840_3x2.jpg",
+        "itinerarySummary": "<p>Tap into your inner van Gogh at an Arles painting class. Discover Roman Provence at Les Arènes d’Arles and the Pont du Gard. Explore the world’s largest Gothic palace at Avignon’s grand Palace of the Popes. Excite your palate in Lyon, capital of French gastronomy. Savor local wines, hunt for truffles and see how chèvre cheese is made. Come witness the beauty that inspired artists like Cézanne and Chagall on this eight-day voyage along the Rhône.</p>",
+        "itineraryImages": [
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/avignon/Avignon_Palais_des_Papes_Spires_Entrance_5961.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/arles/Arles_Cafe_Van_Gogh_Tables_2118.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/viviers/Vernon_Towers_DSC01510.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/tournon/Tournon_Lamp.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/fr_france/frr01_scenic-sailing-rhone-river/CC_Longships_Buri_Tournon_Rhone_SKY_3840_16x9.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/vivienne/Vienne_Roman_Temple_Horiz_9312.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/lyon/CC_Lyon_Basilica_River_Alamy_RM.360.2x1.jpg"
+        ],
+        "extensionHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/lyon-and-provence/2024_Lyon_and_Provence_700_3x2.jpg",
+        "extensionBannerImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/lyon-and-provence/2024_Lyon_and_Provence_700_3x2.jpg",
+        "extensionsImage": "",
+        "mainEnlargedMap": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/lyon-and-provence/2024_Lyon_and_Provence_700_3x2.jpg",
+        "extensionsEnlargeMapImage": "",
+        "itineraryDays": [
+          {
+            "number": "1",
+            "title": "Avignon",
+            "description": "<p>Avignon&rsquo;s narrow streets are lined with churches and remarkable medieval buildings. This &ldquo;City of Popes&rdquo; was the papal seat for 70 years during the 14th century after the sitting pope abandoned Rome and fled here. The massive church-fortress Palais des Papes, or Palace of the Popes, was the center of the Christian world during that controversial period. It remains a work of Gothic splendor. Another of Avignon&rsquo;s notable structures reaches into the Rh&ocirc;ne, the ruins of the Pont d&rsquo;Avignon. The 12th-century bridge, immortalized in folk song and dance, once spanned the river.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/avignon/Avignon_Palais_des_Papes_Spires_Entrance_5961.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Avignon",
+            "destinationDescription": "<p>Stroll the medieval city; see the Place de l&rsquo;Horloge, Pont d&rsquo;Avignon and Palace of the Popes.</p>"
+          },
+          {
+            "number": "2",
+            "title": "Arles",
+            "description": "<p>In the last days of the Roman Empire, Arles was the capital of Roman Gaul and boasts many Gallo-Roman ruins including Les Ar&egrave;nes; this ancient amphitheater seats 20,000 and is still used today for bullfights and plays. The town has an energetic feel, attracting farmers from the countryside to the frequent and famous Proven&ccedil;al market. It also enjoys a rich artistic heritage; the Mediterranean sunlight here inspired legendary Impressionist Vincent van Gogh to paint a number of works. Many of Arles&rsquo;s sights are immortalized in his paintings.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/arles/Arles_Cafe_Van_Gogh_Tables_2118.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Arles",
+            "destinationDescription": "<p>Admire this cultural center&rsquo;s diverse architecture, Roman ruins and Romanesque monuments.</p>"
+          },
+          {
+            "number": "3",
+            "title": "Avignon",
+            "description": "<p>Avignon&rsquo;s narrow streets are lined with churches and remarkable medieval buildings. This &ldquo;City of Popes&rdquo; was the papal seat for 70 years during the 14th century after the sitting pope abandoned Rome and fled here. The massive church-fortress Palais des Papes, or Palace of the Popes, was the center of the Christian world during that controversial period. It remains a work of Gothic splendor. Another of Avignon&rsquo;s notable structures reaches into the Rh&ocirc;ne, the ruins of the Pont d&rsquo;Avignon. The 12th-century bridge, immortalized in folk song and dance, once spanned the river.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/avignon/Avignon_Palais_des_Papes_Spires_Entrance_5961.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Avignon",
+            "destinationDescription": "<p>Stroll the medieval city; see the Place de l&rsquo;Horloge, Pont d&rsquo;Avignon and Palace of the Popes.</p>"
+          },
+          {
+            "number": "4",
+            "title": "Viviers",
+            "description": "<p>The sleepy town of Viviers was founded during the 5th century. This former Roman settlement became a bishop&rsquo;s seat, and conflicts during ensuing centuries required the town to be fortified. With the Renaissance came a more stable period of wealth that allowed many new houses to be built, including a fine example of the era that still stands, the Maison des Chevaliers. Some buildings date back to the Middle Ages, and time seems to stand still along the cobblestone streets of its Old Town, dominated by the 12th-century St. Vincent Cathedral with its beautiful windows.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/viviers/Vernon_Towers_DSC01510.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Viviers",
+            "destinationDescription": "<p>Explore this charming riverside village&rsquo;s peaceful ambience amid its scenic mountain setting.</p>"
+          },
+          {
+            "number": "5",
+            "title": "Tournon",
+            "description": "<p>Tournon lies secluded between the river and the vineyard-blanketed granite slopes that nurture fine vintages. An ancient castle, built snugly into a rock, overlooks the riverside setting. A settlement has perched on this hill since Celtic times, but the stunning views from its overlook have never changed. The name of its neighboring wine-producing region, Tain-l&rsquo;Hermitage, comes from the hermit who planted vines here after returning from the Crusades. Today, his vines are awash in sunshine and produce a port-like wine and some stellar whites.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/tournon/Tournon_Lamp.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Tournon",
+            "destinationDescription": "<p>Ride on a nostalgic railway, the Train de l&rsquo;Ard&egrave;che, to take in the verdant Doux Valley.</p>"
+          },
+          {
+            "number": "6",
+            "title": "Lyon",
+            "description": "<p>Lyon straddles the Rh&ocirc;ne and Sa&ocirc;ne Rivers. After Paris, it is considered the country&rsquo;s most significant cultural center. Amid a cityscape of red-roofed buildings, tree-lined boulevards and riverside promenades, the cobblestone streets of Old Lyon host a rich collection of Renaissance architecture and intimate <em>traboules</em>, unique passageways through buildings that connect adjacent streets, all of it overlooked by the grand basilica atop Fourvi&egrave;re Hill. The city also boasts a wealth of outstanding museums, cultural treasures and excellent Lyonnaise eateries.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/lyon/CC_Lyon_Basilica_River_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Lyon",
+            "destinationDescription": "<p>Walk through town; see the Basilica of Notre Dame and the magnificent St. Jean Cathedral.</p>"
+          },
+          {
+            "number": "7",
+            "title": "Lyon",
+            "description": "<p>Lyon straddles the Rh&ocirc;ne and Sa&ocirc;ne Rivers. After Paris, it is considered the country&rsquo;s most significant cultural center. Amid a cityscape of red-roofed buildings, tree-lined boulevards and riverside promenades, the cobblestone streets of Old Lyon host a rich collection of Renaissance architecture and intimate <em>traboules</em>, unique passageways through buildings that connect adjacent streets, all of it overlooked by the grand basilica atop Fourvi&egrave;re Hill. The city also boasts a wealth of outstanding museums, cultural treasures and excellent Lyonnaise eateries.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/lyon/CC_Lyon_Basilica_River_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Lyon",
+            "destinationDescription": "<p>Walk through town; see the Basilica of Notre Dame and the magnificent St. Jean Cathedral.</p>"
+          },
+          {
+            "number": "8",
+            "title": "Lyon",
+            "description": "<p>Lyon straddles the Rh&ocirc;ne and Sa&ocirc;ne Rivers. After Paris, it is considered the country&rsquo;s most significant cultural center. Amid a cityscape of red-roofed buildings, tree-lined boulevards and riverside promenades, the cobblestone streets of Old Lyon host a rich collection of Renaissance architecture and intimate <em>traboules</em>, unique passageways through buildings that connect adjacent streets, all of it overlooked by the grand basilica atop Fourvi&egrave;re Hill. The city also boasts a wealth of outstanding museums, cultural treasures and excellent Lyonnaise eateries.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/lyon/CC_Lyon_Basilica_River_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Lyon",
+            "destinationDescription": "<p>Walk through town; see the Basilica of Notre Dame and the magnificent St. Jean Cathedral.</p>"
+          }
+        ]
+      }
+    ],
+    "years": [
+      "2023",
+      "2023",
+      "2024",
+      "2024",
+      "2025",
+      "2025"
+    ],
+    "durations": [
+      "8",
+      "8",
+      "8",
+      "8",
+      "8",
+      "8"
+    ],
+    "ship": {
+      "name": "Viking Heimdal",
+      "id": "HMD",
+      "AmadeusCode": "HM",
+      "SabreCode": "HMD",
+      "type": "Longship",
+      "decksHero": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/longship/heroes/Hero_Longship_5_1680_5x2.jpg",
+      "heroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/longship/heroes/Hero_Longship_5_1680_5x2.jpg",
+      "stateRooms": [
+        {
+          "id": "ES",
+          "name": "<p>Explorer Suite (ES)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 445 sq ft (includes private veranda)</p> <p>River-view suite with private wraparound balcony offering 270-degree views off a spacious, separate sitting room, and French balcony (floor-to-ceiling sliding glass door) in sleeping quarters</p> <p>12 PM Embarkation</p> <p>12 PM priority stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>Additional flat-screen TV in sitting area</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Welcome champagne; mini-bar with wine, beer &amp; soft drinks (replenished daily); daily fruit plate</p> <p>Binoculars</p> <p>Personal coffee machine with premium coffee &amp; tea selections</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Complimentary in-room breakfast service</p> <p>Complimentary laundry &amp; shoe shine services</p> <p>Silver Spirits beverage package included</p> <p>Private arrival/departure transfer in destination</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p> <p>Complimentary Viking Air Plus&nbsp;(US &amp; CA only)</p>"
+        },
+        {
+          "id": "AA",
+          "name": "<p>Veranda Suite (AA)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 275 sq ft (includes private veranda)</p> <p>River-view suite with full-size veranda off a spacious, separate sitting room, and French Balcony (floor-to-ceiling sliding glass door) in sleeping quarters</p> <p>12 PM Embarkation</p> <p>12 PM priority stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>Additional flat-screen TV in sitting area</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Welcome champagne; mini-bar with wine, beer &amp; soft drinks (replenished daily); daily fruit plate</p> <p>Binoculars</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Complimentary laundry &amp; shoe shine services</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p> <p>Complimentary Viking Air Plus&nbsp;(US &amp; CA only)</p>"
+        },
+        {
+          "id": "A",
+          "name": "<p>Veranda Stateroom (A, B)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 205 sq ft (includes private veranda)</p> <p>River-view stateroom with floor-to-ceiling sliding glass door opening to full-size veranda</p> <p>12 PM Embarkation</p> <p>3 PM stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        },
+        {
+          "id": "C",
+          "name": "<p>French Balcony Stateroom (C, D)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 135 sq ft</p> <p>River-view stateroom with French balcony (floor-to-ceiling sliding glass door)</p> <p>12 PM Embarkation</p> <p>3 PM stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        },
+        {
+          "id": "E",
+          "name": "<p>Standard Stateroom (E, F)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 150 sq ft</p> <p>River-view stateroom with half-height picture window</p> <p>12 PM Embarkation</p> <p>3 PM stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Private bathroom with accessible shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "Elegant Elbe",
+    "position": "19",
+    "name": "Elegant Elbe",
+    "cruiseType": "river",
+    "featuredImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/cruises/elegant-elbe/CC_Elbe_Torgau_Hartenfels_Castle_LG_TYPE_3840_3x2.jpg",
+    "overviewText": "<p>Discover Berlin’s modern chic, Potsdam’s rococo whimsy and Prague’s Gothic exuberance. Walk in Martin Luther’s footsteps in Wittenberg, birthplace of the Protestant Reformation. Admire delicate Meissen porcelain. Celebrate Dresden, a phoenix risen from the ashes of war. View Saxon Switzerland’s monoliths. See the Elbe Biosphere Reserve. The Elbe is one of Europe’s most unspoiled rivers and it awaits you—on our 10-day cruisetour.</p>",
+    "largeOverview": "<p>Discover Berlin’s modern chic, Potsdam’s rococo whimsy and Prague’s Gothic exuberance. Walk in Martin Luther’s footsteps in Wittenberg, birthplace of the Protestant Reformation. Admire delicate Meissen porcelain. Celebrate Dresden, a phoenix risen from the ashes of war. View Saxon Switzerland’s monoliths. See the Elbe Biosphere Reserve. The Elbe is one of Europe’s most unspoiled rivers and it awaits you—on our 10-day cruisetour.</p>",
+    "smallOverview": "<p>Discover East Germany’s dramatic landscape with a cruise along the Elbe River, visiting Potsdam, Wittenberg, Meissen, Dresden and Saxon Switzerland, with overnights in Berlin and Prague.</p>",
+    "regions": [
+      "Europe"
+    ],
+    "countries": [
+      "Germany",
+      "Czech Republic"
+    ],
+    "waterways": [
+      "Elbe"
+    ],
+    "packages": [
+      {
+        "ReleaseLevel": "15",
+        "id": "river-elegant-elbe-2023-fromTo",
+        "PackageLookupId": "Europe-Berlin-Prague-2023",
+        "PackageCode": "river-elegant-elbe-2023-fromTo",
+        "Name": "Berlin to Prague",
+        "Year": "2023",
+        "Featured": "false",
+        "ShowDiscount": "true",
+        "EnableOnlineBooking": "true",
+        "EnableSoldOut": "false",
+        "type": "CRU",
+        "price": {
+          "prices": [
+            "10499.00",
+            "4699.00",
+            "5399.00",
+            "5599.00",
+            "6099.00",
+            "6299.00"
+          ],
+          "priceRange": "10499.00 - 6299.00",
+          "shipCode": "BEY"
+        },
+        "duration": "10",
+        "guidedTours": "7",
+        "itineraryHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/cruises/elegant-elbe/CC_Elbe_Torgau_Hartenfels_Castle_LG_TYPE_3840_3x2.jpg",
+        "itinerarySummary": "<p>Discover Berlin’s modern chic, Potsdam’s rococo whimsy and Prague’s Gothic exuberance. Walk in Martin Luther’s footsteps in Wittenberg, birthplace of the Protestant Reformation. Admire delicate Meissen porcelain. Celebrate Dresden, a phoenix risen from the ashes of war. View Saxon Switzerland’s monoliths. See the Elbe Biosphere Reserve. The Elbe is one of Europe’s most unspoiled rivers and it awaits you—on our 10-day cruisetour.</p>",
+        "itineraryImages": [
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/berlin/Berlin_Brandenburg_Gate_Night.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/potsdam/CC_Postsdam.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/wittenberg/Wittenberg_Luther_Statue.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/meissen/CC_Meissen_Vert_TALL.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/dresden/Dresden_Albertinum_Side_DSC03103.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/de_germany/des01_scenic-sailing-saxon-switzerland/Longships_Astrild_Saxon_Switzerland_Sunrise_3840_16x9.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/excursion/rv/scenicsailing/scenic-sailing-elbe-river/Saxon-Switzerland_Elbe_River_Alamy_RM_3840_16x9.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/bad-schandau/Bad_Schandau_Town.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/prague/Prague_Rooftops_Panorama_Alamy_RM.360.2x1.jpg"
+        ],
+        "extensionHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/elegant-elbe/2023_Elegant_Elbe_700_3x2.png",
+        "extensionBannerImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/elegant-elbe/2023_Elegant_Elbe_700_3x2.png",
+        "extensionsImage": "",
+        "mainEnlargedMap": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/elegant-elbe/2023_Elegant_Elbe_700_3x2.png",
+        "extensionsEnlargeMapImage": "",
+        "itineraryDays": [
+          {
+            "number": "1",
+            "title": "Berlin",
+            "description": "<p>After a decades-long postwar rift, Germany&rsquo;s capital has been reunified and undergone a remarkable rebirth as a center of art, culture and great architecture. It is still riding the wave of its newfound energy, and exploring its streets feels akin to browsing a newly opened museum. Risen from the ashes of war, many of its buildings that once stood for division now embrace unity. Among them, the Reichstag parliament building embodies a new transparency with its glass dome, and the city&rsquo;s Museum Island celebrates self-expression and creativity.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/berlin/Berlin_Brandenburg_Gate_Night.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Berlin",
+            "destinationDescription": "<p>Discover Berlin&rsquo;s highlights, from the Reichstag and Brandenburg Gate to Checkpoint Charlie.</p>"
+          },
+          {
+            "number": "2",
+            "title": "Berlin",
+            "description": "<p>After a decades-long postwar rift, Germany&rsquo;s capital has been reunified and undergone a remarkable rebirth as a center of art, culture and great architecture. It is still riding the wave of its newfound energy, and exploring its streets feels akin to browsing a newly opened museum. Risen from the ashes of war, many of its buildings that once stood for division now embrace unity. Among them, the Reichstag parliament building embodies a new transparency with its glass dome, and the city&rsquo;s Museum Island celebrates self-expression and creativity.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/berlin/Berlin_Brandenburg_Gate_Night.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Berlin",
+            "destinationDescription": "<p>Discover Berlin&rsquo;s highlights, from the Reichstag and Brandenburg Gate to Checkpoint Charlie.</p>"
+          },
+          {
+            "number": "3",
+            "title": "Potsdam",
+            "description": "<p>Potsdam straddles one of the Elbe&rsquo;s main tributaries, the Havel River. It boasts a rich history that spans more than 1,000 years. From its humble beginning, Potsdam burgeoned into a royal city, hosting the residences of Prussian and German rulers until the early 1900s. A series of tumultuous events followed, but through it all, Potsdam maintained its prominent stature. And in 1990, with Germany&rsquo;s reunification, Potsdam was named Brandenburg&rsquo;s state capital. Today, the city&rsquo;s regal past lives on in its 16 well-preserved palaces and three elegantly landscaped parks.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/potsdam/CC_Postsdam.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Potsdam",
+            "destinationDescription": "<p>Visit the Sanssouci Palace, built by Prussian king Frederick the Great in the 18th century.</p>"
+          },
+          {
+            "number": "4",
+            "title": "Wittenberg",
+            "description": "<p>Wittenberg is an important center of culture and learning, known mostly as the birthplace of the Protestant Reformation. It was here that the Augustinian monk Martin Luther famously nailed his &ldquo;95 Theses&rdquo; against the selling of indulgences to the door of the palace church in 1517, launching the spread of a new religious movement throughout Europe. Wittenberg&rsquo;s incredibly preserved Old Town was spared destruction during World War II, and so its charming houses remain as they have for centuries, with those in the market square huddled around the beloved statue of Luther.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/wittenberg/Wittenberg_Luther_Statue.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Wittenberg",
+            "destinationDescription": "<p>Walk in Martin Luther&rsquo;s footsteps; see the church where he posted his &ldquo;95 Theses.&rdquo;</p>"
+          },
+          {
+            "number": "5",
+            "title": "Meissen",
+            "description": "<p>Surrounded by idyllic wine villages and set at a rocky spur on the Elbe, Meissen dates back more than a thousand years. The city is dominated by its 13th- and 14th-century Gothic cathedrals and Albrechtsburg Castle, perched on a low hill, considered one of the great achievements of German architecture. The introduction of porcelain here by Johann Friedrich B&ouml;ttger in the early 18th century made Meissen world famous. Meissenware has been produced here ever since. Across the city, the chimes of the Gothic Church of Our Lady&rsquo;s bells can be heard; they were the first church bells made of porcelain.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/meissen/CC_Meissen_Vert_TALL.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Meissen",
+            "destinationDescription": "<p>Learn about the history, craftsmanship and intricate detail of Meissen&rsquo;s famous porcelain.</p>"
+          },
+          {
+            "number": "6",
+            "title": "Dresden",
+            "description": "<p>Dresden is awash in artistic treasures and baroque splendor. The city is blessed with water meadows and green parks near the center, giving it a wide-open feeling and making it easy to focus on the beautiful sandstone buildings that line the river. It took Dresden more than 50 years to rebuild after it was devastated during Allied bombing. Most agree it was certainly worth the wait. The city has been lovingly restored to its original glory, from the ornate Frauenkirche (Church of Our Lady) and grand Semper Opera House to the shining Zwinger Palace.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/dresden/Dresden_Albertinum_Side_DSC03103.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Dresden",
+            "destinationDescription": "<p>Discover this elegant city&mdash;its Green Vault, Zwinger Palace, Semper Opera House and more.</p>"
+          },
+          {
+            "number": "7",
+            "title": "Scenic Sailing: Saxon Switzerland",
+            "description": "<p>Sail through the magnificent, soaring rock formations of Saxon Switzerland. This spectacular region earned its name from two Swiss painters who were reminded of their home while visiting. You will witness some of the wildest cliff formations imaginable, with nicknames such as Catapult, Locomotive and Wolf&rsquo;s Ravine. As you pass through, marvel at the Bastei, a 1,000-foot spectacle of tooth-like rocks connected by a footbridge. Sailing past these iconic monoliths is sure to be a highlight of your journey.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/de_germany/des01_scenic-sailing-saxon-switzerland/Longships_Astrild_Saxon_Switzerland_Sunrise_3840_16x9.jpg",
+            "isUnesco": "false",
+            "destinationName": "Scenic Sailing: Saxon Switzerland",
+            "destinationDescription": "<p>Capture panoramic Elbe views from the dramatic lookout of breathtaking Saxon Switzerland.</p>"
+          },
+          {
+            "number": "8",
+            "title": "Prague",
+            "description": "<p>Prague is known as the &ldquo;City of a Hundred Spires&rdquo; and it is easy to see why. The towering twin steeples of T&yacute;n Church and the beautiful baroque Church of St. Nicholas are among some of the city&rsquo;s most notable. Best explored on foot, Prague&rsquo;s Old Town is a maze of ancient cobblestone lanes with the Old Town Square at its core. Here, the medieval Astronomical Clock still chimes today and provides for its viewers a little theater with the &ldquo;Walk of the Apostles&rdquo; on the hour, every hour.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/prague/Prague_Rooftops_Panorama_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Prague",
+            "destinationDescription": "<p>Learn about the city&rsquo;s Jewish history, visit the Old Town and see the Astronomical Clock.</p>"
+          },
+          {
+            "number": "9",
+            "title": "Prague",
+            "description": "<p>Prague is known as the &ldquo;City of a Hundred Spires&rdquo; and it is easy to see why. The towering twin steeples of T&yacute;n Church and the beautiful baroque Church of St. Nicholas are among some of the city&rsquo;s most notable. Best explored on foot, Prague&rsquo;s Old Town is a maze of ancient cobblestone lanes with the Old Town Square at its core. Here, the medieval Astronomical Clock still chimes today and provides for its viewers a little theater with the &ldquo;Walk of the Apostles&rdquo; on the hour, every hour.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/prague/Prague_Rooftops_Panorama_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Prague",
+            "destinationDescription": "<p>Learn about the city&rsquo;s Jewish history, visit the Old Town and see the Astronomical Clock.</p>"
+          },
+          {
+            "number": "10",
+            "title": "Prague",
+            "description": "<p>Prague is known as the &ldquo;City of a Hundred Spires&rdquo; and it is easy to see why. The towering twin steeples of T&yacute;n Church and the beautiful baroque Church of St. Nicholas are among some of the city&rsquo;s most notable. Best explored on foot, Prague&rsquo;s Old Town is a maze of ancient cobblestone lanes with the Old Town Square at its core. Here, the medieval Astronomical Clock still chimes today and provides for its viewers a little theater with the &ldquo;Walk of the Apostles&rdquo; on the hour, every hour.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/prague/Prague_Rooftops_Panorama_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Prague",
+            "destinationDescription": "<p>Learn about the city&rsquo;s Jewish history, visit the Old Town and see the Astronomical Clock.</p>"
+          }
+        ]
+      }
+    ],
+    "years": [
+      "2023",
+      "2023",
+      "2024",
+      "2024",
+      "2025",
+      "2025"
+    ],
+    "durations": [
+      "10",
+      "10",
+      "10",
+      "10",
+      "10",
+      "10"
+    ],
+    "ship": {
+      "name": "Viking Beyla",
+      "id": "BEY",
+      "AmadeusCode": "BE",
+      "SabreCode": "BEY",
+      "type": "Elbe",
+      "decksHero": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/ships/elbe/Hero_Beyla_Magdeburg_Steiger_1680_5x2.jpg",
+      "heroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/ships/elbe/Hero_Beyla_Magdeburg_Steiger_1680_5x2.jpg",
+      "stateRooms": [
+        {
+          "id": "AA",
+          "name": "<p>Veranda Suite (AA)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 250 sq ft (includes private veranda)</p> <p>River-view suite with full-size veranda off a spacious, separate sitting room, and French Balcony (floor-to-ceiling sliding glass door) in sleeping quarters</p> <p>12 PM Embarkation</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>Additional flat-screen TV in sitting area</p> <p>110/220 volt outlets</p> <p>Large private bathroom with spacious glass-enclosed shower, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Welcome champagne; mini-bar with wine, beer &amp; soft drinks (replenished daily); daily fruit plate</p> <p>Binoculars</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Complimentary laundry &amp; shoe shine services</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        },
+        {
+          "id": "A",
+          "name": "<p>Veranda Stateroom (A, B)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 180 sq ft (includes private veranda)</p> <p>River-view stateroom with floor-to-ceiling sliding glass door opening to full-size veranda</p> <p>12 PM Embarkation</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets</p> <p>Private bathroom with spacious glass-enclosed shower, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        },
+        {
+          "id": "C",
+          "name": "<p>French Balcony Stateroom (C, D)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 122 sq ft</p> <p>River-view stateroom with French balcony (floor-to-ceiling sliding glass door)</p> <p>12 PM Embarkation</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets</p> <p>Private bathroom with spacious glass-enclosed shower, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        },
+        {
+          "id": "E",
+          "name": "<p>Standard Stateroom (E)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 140 sq ft</p> <p>River-view stateroom with half-height picture window</p> <p>12 PM Embarkation</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets</p> <p>Private bathroom with spacious glass-enclosed shower, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "Christmas on the Danube",
+    "position": "12",
+    "name": "Christmas on the Danube",
+    "cruiseType": "river",
+    "featuredImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/cruises/christmas-on-the-danube/Regensburg_Neupfarrplatz_Christmas_Market_3840_3x2.jpg",
+    "overviewText": "<p>Discover grand cities, medieval towns and quaint villages along the “Blue Danube,” highlighting three countries: Hungary, Austria and Germany. Stroll among the stalls at Budapest’s Christmas market and immerse yourself in the cheerful atmosphere of Vienna as you shop for handmade decorations. Visit the fairy-tale village of Regensburg, one of Europe’s best-preserved cities, and delight in the city’s joyful festivities.</p>",
+    "largeOverview": "<p>Discover grand cities, medieval towns and quaint villages along the “Blue Danube,” highlighting three countries: Hungary, Austria and Germany. Stroll among the stalls at Budapest’s Christmas market and immerse yourself in the cheerful atmosphere of Vienna as you shop for handmade decorations. Visit the fairy-tale village of Regensburg, one of Europe’s best-preserved cities, and delight in the city’s joyful festivities.</p>",
+    "smallOverview": "<p>Explore the heart of Europe and visit seasonal Christmas markets in three countries: Germany, Austria and Hungary. Discover grand cities, medieval towns and quaint villages along the “Blue Danube.”</p>",
+    "regions": [
+      "Europe"
+    ],
+    "countries": [
+      "Hungary",
+      "Austria",
+      "Germany"
+    ],
+    "waterways": [
+      "Danube"
+    ],
+    "packages": [
+      {
+        "ReleaseLevel": "15",
+        "id": "river-christmas-on-the-danube-2023-fromTo",
+        "PackageLookupId": "Europe-Budapest-Regensburg-2023",
+        "PackageCode": "river-christmas-on-the-danube-2023-fromTo",
+        "Name": "Budapest to Regensburg",
+        "Year": "2023",
+        "Featured": "false",
+        "ShowDiscount": "true",
+        "EnableOnlineBooking": "true",
+        "EnableSoldOut": "false",
+        "type": "CRU",
+        "price": {
+          "prices": [
+            "3599.00",
+            "3799.00",
+            "4299.00",
+            "4399.00",
+            "4799.00",
+            "4999.00",
+            "6699.00",
+            "8299.00"
+          ],
+          "priceRange": "3599.00 - 8299.00",
+          "shipCode": "ATL"
+        },
+        "duration": "8",
+        "guidedTours": "6",
+        "itineraryHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/cruises/christmas-on-the-danube/Regensburg_Neupfarrplatz_Christmas_Market_3840_3x2.jpg",
+        "itinerarySummary": "<p>Discover grand cities, medieval towns and quaint villages along the “Blue Danube,” highlighting three countries: Hungary, Austria and Germany. Stroll among the stalls at Budapest’s Christmas market and immerse yourself in the cheerful atmosphere of Vienna as you shop for handmade decorations. Visit the fairy-tale village of Regensburg, one of Europe’s best-preserved cities, and delight in the city’s joyful festivities.</p>",
+        "itineraryImages": [
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/budapest/CC_Budapest_Parliament_Pink_Alamy_RM.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/hu_hungary/hubud_budapest-holiday/Budapest_Christmas_Market_Ice_Rink_Tree_3840_16x9.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/at_austria/atd01_scenic-sailing-danube-bend/Visegrad_Danube_Bend_Ice_3840_16x9.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/at_austria/Vienna_Christmas_Markets_Sign_720.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/at_austria/atvie_vienna/vienna_schonbrunn_fountain_sculpture/Vienna_Schonbrunn_Fountain_Sculpture_3840_3x2.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/krems/CC_Wachau_Danube.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/uu_atsea/uuw02_scenic-sailing-wachau-valley/Weissenkirchen_Snowy_Valley_3840_16x9.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/de_germany/depas_passau-holiday/Passau_Danube_Snowy_Riverbank_3840_16x9.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/de_germany/regensburg-holiday/Regensburg_Christmas_Market_Candles_8136_3840_1x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/regensburg/Regensburg_Cathedral_Rooftops_Alamy_RM.360.2x1.jpg"
+        ],
+        "extensionHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/2022_Romantic_Danube_467_3x2.jpg",
+        "extensionBannerImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/2022_Romantic_Danube_467_3x2.jpg",
+        "extensionsImage": "",
+        "mainEnlargedMap": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/2022_Romantic_Danube_467_3x2.jpg",
+        "extensionsEnlargeMapImage": "",
+        "itineraryDays": [
+          {
+            "number": "1",
+            "title": "Budapest",
+            "description": "<p>Riverside beauty and a vibrant cultural scene blend together in Budapest to form one of Europe&rsquo;s most rewarding cities. Hungary&rsquo;s enchanting capital straddles the banks of the Danube, with traditional hillside Buda on one side and modern Pest on the other. By day, astounding art nouveau buildings, stalwart castles and glittering palaces set the stage for awe-inspiring strolls and long soaks in thermal spas. By night, a nostalgic glow settles in as the city&rsquo;s lights dance on Danube waters, the Chain Bridge uniting it all as a dramatic centerpiece.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/budapest/CC_Budapest_Parliament_Pink_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Budapest",
+            "destinationDescription": "<p>Explore Buda&rsquo;s Castle District and modern Pest, and sample delicious local food.</p>"
+          },
+          {
+            "number": "2",
+            "title": "Budapest",
+            "description": "<p>The Christmas season adds another layer of beauty to the already romantic charms of Budapest. Nestled in the heart of Pest lies V&ouml;r&ouml;smarty Square, home to the city&rsquo;s largest yuletide market. The enticing aroma of national specialties permeates the air as vendors display traditional and contemporary handicrafts. At the cozy St. Stephen&rsquo;s Basilica market, mulled wine keeps revelers warm as nightly light shows illuminate the church&rsquo;s facade. Across the Danube in Buda, Old-World allure mingles with festivities in Fő Square, where seasonal events and an outdoor ice rink entertain.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/hu_hungary/hubud_budapest-holiday/Budapest_Christmas_Market_Ice_Rink_Tree_3840_16x9.jpg",
+            "isUnesco": "false",
+            "destinationName": "Budapest",
+            "destinationDescription": "<p>Witness skaters on the outdoor ice rink and sample tasty seasonal delicacies.</p>"
+          },
+          {
+            "number": "3",
+            "title": "Vienna",
+            "description": "<p>The yuletide season transforms Vienna&rsquo;s beautiful squares into delightful Christmas markets. Festive lights illuminate the Old Town. The Sch&ouml;nbrunn market, set in front of the baroque Hapsburg summer palace, and Freyung market, nestled in the city center, are the perfect destinations for unique handmade decorations. Seasonal music and choral singing provide a merry ambience to holiday festivities in Am Hof Square, while the market at Belvedere Square mixes excellent shopping opportunities with views of the stately palace and adjacent lake to create a fairytale atmosphere.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/at_austria/Vienna_Christmas_Markets_Sign_720.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Vienna",
+            "destinationDescription": "<p>Immerse in the fairytale atmosphere of Vienna&rsquo;s markets and shop for unique gifts.</p>"
+          },
+          {
+            "number": "4",
+            "title": "Vienna",
+            "description": "<p>Renowned as the &ldquo;City of Waltzes,&rdquo; Austria&rsquo;s capital city of Vienna is Europe&rsquo;s center of classical music. Strauss and Mozart composed many of their finest pieces here. Vienna&rsquo;s musical history is matched by the elegant, graceful architecture that lines the Ringstrasse, the wide boulevard encircling the Inner City. Baroque, neo-Renaissance, Gothic-Romanesque and other splendidly styled structures, from the Hofburg Palace to the Vienna State Opera, take the breath away with their grand facades. Vienna has a more intimate side too: inviting footpaths lead through green parks and its famed Viennese caf&eacute;s sweeten any stay with coffee and the city&rsquo;s delectable Sachertorte.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/at_austria/atvie_vienna/vienna_schonbrunn_fountain_sculpture/Vienna_Schonbrunn_Fountain_Sculpture_3840_3x2.jpg",
+            "isUnesco": "false",
+            "destinationName": "Vienna",
+            "destinationDescription": "<p>Admire Vienna&rsquo;s architecture, linger at a caf&eacute; or visit the Hapsburgs&rsquo; Sch&ouml;nbrunn Palace.</p>"
+          },
+          {
+            "number": "5",
+            "title": "Krems",
+            "description": "<p>A small university town at the eastern end of the Danube&rsquo;s Wachau Valley, Krems is surrounded by terraced vineyards. In its heyday, during the 12th century, Krems held even more importance than Vienna for its iron, grain, salt and wine trade. As to the latter, the city has played a long and celebrated part in the popularity of the Wachau&rsquo;s wine culture; the valley&rsquo;s south slopes in Krems are bathed in sunlight all day and create some of the best Riesling and Veltliner wines in the world. The city&rsquo;s cobblestone streets, taverns, wine bars and coffeehouses have a timeless appeal.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/krems/CC_Wachau_Danube.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Krems",
+            "destinationDescription": "<p>Visit G&ouml;ttweig Abbey, admiring its ceiling frescoes, grand staircase, library and church.</p>"
+          },
+          {
+            "number": "6",
+            "title": "Passau",
+            "description": "<p>Centered around the beautiful St. Stephen&rsquo;s Cathedral, home to Europe&rsquo;s largest pipe organ, the romantic market stalls of the Christkindlmarkt are a delight to explore. An array of handmade goods, from tasty treats to ornaments, offer a wealth of opportunity to take home a unique artisan gifts created by local craftsmen. Periodically throughout the festive season, the cathedral hosts yuletide concerts; the sound of choirs singing can be heard as their voices echo through the courtyard and the town&rsquo;s narrow streets.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/de_germany/depas_passau-holiday/Passau_Danube_Snowy_Riverbank_3840_16x9.jpg",
+            "isUnesco": "false",
+            "destinationName": "Passau",
+            "destinationDescription": "<p>Enjoy an array of tasty treats at the market and soak up the atmosphere of a Bavarian yuletide.</p>"
+          },
+          {
+            "number": "7",
+            "title": "Regensburg",
+            "description": "<p>The UNESCO World Heritage city of Regensburg is transformed during the holiday season as its medieval streets are donned with festive cheer. Narrow passageways open to hidden courtyards with stalls laden with handcrafted wares, including dolls, pottery and silk paintings. The scent of home-baked spiced gingerbread, cinnamon and <em>gl&uuml;hwein</em> fills the air. The world-famous boys&rsquo; choir, the Regensburger Domspatzen, was formed at the city&rsquo;s cathedral in 975 and travels the globe, performing to admiring audiences internationally.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/de_germany/regensburg-holiday/Regensburg_Christmas_Market_Candles_8136_3840_1x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Regensburg",
+            "destinationDescription": "<p>Sample delicious traditional <em>Knackersemmel</em>, perhaps with a warming <em>gl&uuml;hwein</em>.</p>"
+          },
+          {
+            "number": "8",
+            "title": "Regensburg",
+            "description": "<p>Having escaped major damage during World War II, the picturesque town of Regensburg is one of Europe&rsquo;s best-preserved medieval cities, the oldest city along the Danube and a UNESCO World Heritage Site. The Old Stone Bridge, constructed in the 12th century, is a masterpiece of medieval engineering with its 16 arches. St. Peter&rsquo;s Cathedral is widely considered Bavaria&rsquo;s best Gothic architectural work. The Old Town&rsquo;s Neupfarrplatz square is a cross section of history&mdash;it was once a thriving Jewish quarter, a bustling marketplace and the site of Nazi book burnings.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/regensburg/Regensburg_Cathedral_Rooftops_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Regensburg",
+            "destinationDescription": "<p>Stroll the medieval, UNESCO-listed city&rsquo;s streets; enjoy sausages at the Alte Wurstk&uuml;che.</p>"
+          }
+        ]
+      }
+    ],
+    "years": [
+      "2023",
+      "2023",
+      "2024",
+      "2024",
+      "2025",
+      "2025"
+    ],
+    "durations": [
+      "8",
+      "8",
+      "8",
+      "8",
+      "8",
+      "8"
+    ],
+    "ship": {
+      "name": "Viking Atla",
+      "id": "ATL",
+      "AmadeusCode": "AT",
+      "SabreCode": "ATL",
+      "type": "Longship",
+      "decksHero": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/longship/heroes/Hero_Longship_5_1680_5x2.jpg",
+      "heroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/longship/heroes/Hero_Longship_5_1680_5x2.jpg",
+      "stateRooms": [
+        {
+          "id": "ES",
+          "name": "<p>Explorer Suite (ES)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 445 sq ft (includes private veranda)</p> <p>River-view suite with private wraparound balcony offering 270-degree views off a spacious, separate sitting room, and French balcony (floor-to-ceiling sliding glass door) in sleeping quarters</p> <p>12 PM Embarkation</p> <p>12 PM priority stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>Additional flat-screen TV in sitting area</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Welcome champagne; mini-bar with wine, beer &amp; soft drinks (replenished daily); daily fruit plate</p> <p>Binoculars</p> <p>Personal coffee machine with premium coffee &amp; tea selections</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Complimentary in-room breakfast service</p> <p>Complimentary laundry &amp; shoe shine services</p> <p>Silver Spirits beverage package included</p> <p>Private arrival/departure transfer in destination</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p> <p>Complimentary Viking Air Plus&nbsp;(US &amp; CA only)</p>"
+        },
+        {
+          "id": "AA",
+          "name": "<p>Veranda Suite (AA)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 275 sq ft (includes private veranda)</p> <p>River-view suite with full-size veranda off a spacious, separate sitting room, and French Balcony (floor-to-ceiling sliding glass door) in sleeping quarters</p> <p>12 PM Embarkation</p> <p>12 PM priority stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>Additional flat-screen TV in sitting area</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Welcome champagne; mini-bar with wine, beer &amp; soft drinks (replenished daily); daily fruit plate</p> <p>Binoculars</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Complimentary laundry &amp; shoe shine services</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p> <p>Complimentary Viking Air Plus&nbsp;(US &amp; CA only)</p>"
+        },
+        {
+          "id": "A",
+          "name": "<p>Veranda Stateroom (A, B)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 205 sq ft (includes private veranda)</p> <p>River-view stateroom with floor-to-ceiling sliding glass door opening to full-size veranda</p> <p>12 PM Embarkation</p> <p>3 PM stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        },
+        {
+          "id": "C",
+          "name": "<p>French Balcony Stateroom (C, D)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 135 sq ft</p> <p>River-view stateroom with French balcony (floor-to-ceiling sliding glass door)</p> <p>12 PM Embarkation</p> <p>3 PM stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        },
+        {
+          "id": "E",
+          "name": "<p>Standard Stateroom (E, F)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 150 sq ft</p> <p>River-view stateroom with half-height picture window</p> <p>12 PM Embarkation</p> <p>3 PM stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Private bathroom with accessible shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "Canada & the Atlantic Coastline",
+    "position": "53",
+    "name": "Canada & the Atlantic Coastline",
+    "cruiseType": "expedition",
+    "featuredImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/expeditions/cruises/canada-atlantic-coastline/Cape_Breton_Coast_3840_3x2.jpg",
+    "overviewText": "<p>Sail along the legendary St. Lawrence Seaway and the Atlantic coast of the US on a memorable voyage that combines scenic landscapes and storied cities. Led by a team of experts, explore the unspoiled wilderness near Trois-Rivières, Louisbourg and Lunenburg by land and water. Experience New York City’s expansive Central Park, an oasis in the middle of a bustling metropolis, and immerse yourself in the rich histories of Quebec City, Norfolk and Charleston.</p>",
+    "largeOverview": "<p>Sail along the legendary St. Lawrence Seaway and the Atlantic coast of the US on a memorable voyage that combines scenic landscapes and storied cities. Led by a team of experts, explore the unspoiled wilderness near Trois-Rivières, Louisbourg and Lunenburg by land and water. Experience New York City’s expansive Central Park, an oasis in the middle of a bustling metropolis, and immerse yourself in the rich histories of Quebec City, Norfolk and Charleston.</p>",
+    "smallOverview": "<p>Sail along the St. Lawrence Seaway and the Atlantic coast of the US on a memorable voyage. Explore unspoiled wilderness, New York City and the rich histories of Quebec City, Norfolk and Charleston.</p>",
+    "regions": [
+      "North America"
+    ],
+    "countries": [
+      "Canada",
+      "United States"
+    ],
+    "waterways": [
+      "Atlantic Ocean",
+      "Great Lakes"
+    ],
+    "packages": [
+      {
+        "ReleaseLevel": "15",
+        "id": "expedition-canada-atlantic-coastline-2023-fromTo",
+        "PackageLookupId": "North America-Toronto, Ontario-Ft. Lauderdale, Florida-2023",
+        "PackageCode": "expedition-canada-atlantic-coastline-2023-fromTo",
+        "Name": "Toronto, Ontario to Ft. Lauderdale, Florida",
+        "Year": "2023",
+        "Featured": "false",
+        "ShowDiscount": "true",
+        "EnableOnlineBooking": "true",
+        "EnableSoldOut": "false",
+        "type": "CRU",
+        "price": {
+          "prices": [
+            "13495.00",
+            "13795.00",
+            "13895.00",
+            "14195.00",
+            "14395.00",
+            "18895.00",
+            "20195.00",
+            "32395.00",
+            "40495.00"
+          ],
+          "priceRange": "13495.00 - 40495.00",
+          "shipCode": "XPO"
+        },
+        "duration": "16",
+        "guidedTours": "8",
+        "itineraryHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/expeditions/cruises/canada-atlantic-coastline/Cape_Breton_Coast_3840_3x2.jpg",
+        "itinerarySummary": "<p>Sail along the legendary St. Lawrence Seaway and the Atlantic coast of the US on a memorable voyage that combines scenic landscapes and storied cities. Led by a team of experts, explore the unspoiled wilderness near Trois-Rivières, Louisbourg and Lunenburg by land and water. Experience New York City’s expansive Central Park, an oasis in the middle of a bustling metropolis, and immerse yourself in the rich histories of Quebec City, Norfolk and Charleston.</p>",
+        "itineraryImages": [
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/toronto/Toronto_Harbourfront_Alamy_RM.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/scenic-cruising-seaway-locks-transit/Montreal_River_Cityscape_Alamy_RM.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/trois-rivieres/Shawinigan_Moose_Marsh.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/quebec/Quebec_Chateau_Frontenac_Trees.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/scenic-cruising-st-lawrence-river/CC_St_Lawrence_River_Perce_Village_Alamy_RM.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/cap-aux-meules/Magdalen_Islands_Seal_Pup.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/ca_canada/calou_explore-cape-breton-island/Cape_Breton_Coast_3008.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/ca_canada/calun_explore-coastal-nova-scotia/Lunenburg_Coastal_Townscape_3840.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/cruise-the-atlantic-ocean/STAR_Deck_Atlantic_Ocean.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/new-york/CC_New_York_Empire_State_Building_Dusk_Alamy_RM.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/us_unitedstates/usnfk_norfolk/Norfolk_USS_Wisconsin_Battleship_Alamy_RM_3840_2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/us_unitedstates/uschs_charleston-south-carolina/Charleston_Carriage_Tour_3840_16x9.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/ft-lauderdale/Ft_Lauderdale_Beachfront_Resorts.360.2x1.jpg"
+        ],
+        "extensionHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/expeditions/cruises/canada-and-the-atlantic-coastline/2024_map/2024_Canada_and_the_Atlantic_Coastline_700_3x2.png",
+        "extensionBannerImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/expeditions/cruises/canada-and-the-atlantic-coastline/2024_map/2024_Canada_and_the_Atlantic_Coastline_700_3x2.png",
+        "extensionsImage": "",
+        "mainEnlargedMap": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/expeditions/cruises/canada-and-the-atlantic-coastline/2024_map/2024_Canada_and_the_Atlantic_Coastline_700_3x2.png",
+        "extensionsEnlargeMapImage": "",
+        "itineraryDays": [
+          {
+            "number": "1",
+            "title": "Toronto, Ontario",
+            "description": "<p>Toronto is beloved by many as one of Canada&rsquo;s boldest and most innovative capitals. Hugging the shores of Lake Ontario and facing the picturesque Toronto Islands, it was founded by British loyalists fleeing the American Revolution in 1793. Today the city is a pleasure to explore on foot, whether strolling past the Victorian bay-and-gable homes of Rosedale, or the historic enclave of Wychwood Park, an Ontario Heritage Conservation district. The city&rsquo;s Distillery District is home to North America&rsquo;s largest preserved collection of Victorian industrial architecture.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/toronto/Toronto_Harbourfront_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Toronto, Ontario",
+            "destinationDescription": "<p>Savor the diversity of Toronto&rsquo;s food scene; see the city&rsquo;s sights by bike.</p>"
+          },
+          {
+            "number": "2",
+            "title": "Scenic Sailing: St. Lawrence Seaway Locks",
+            "description": "<p>A brilliant feat of engineering, the St. Lawrence Seaway comprises a series of locks, canals and channels that allow ships and goods to travel from the Atlantic Ocean up the St. Lawrence River to Lake Superior. Seven locks point the way between Montreal and Lake Ontario, detouring past rapids and several dams. The 27-mile Welland Canal lifts ships over the Niagara Escarpment to Lake Erie, sidestepping Niagara Falls. The Canadian-and American-operated waterway is known locally as &ldquo;Highway H2O&rdquo; for the traffic and trade it allows.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/scenic-cruising-seaway-locks-transit/Montreal_River_Cityscape_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Scenic Sailing: St. Lawrence Seaway Locks",
+            "destinationDescription": "<p>Admire the series of locks, canals and channels that comprise the St. Lawrence Seaway.</p>"
+          },
+          {
+            "number": "3",
+            "title": "Trois-Rivières, Quebec",
+            "description": "<p>Trois-Rivi&egrave;res is the cultural center of Quebec&rsquo;s Maurice region. This picturesque city was established in 1634, the second&mdash;after Quebec City, in 1608&mdash;to be permanently settled in New France. With its strategic location, it played an important role as all eyes looked west to trade fur with the First Nations peoples. &ldquo;Three Rivers,&rdquo; the city&rsquo;s anglicized name, is located at the point where two islands in the Saint-Maurice River break the waterway into three channels before it spills into the St. Lawrence. Today, stately century-old buildings form the core of the Old Town.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/trois-rivieres/Shawinigan_Moose_Marsh.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Trois-Rivières, Quebec",
+            "destinationDescription": "<p>Discover North America&rsquo;s geologic heart during a hike through La Mauricie National Park.</p>"
+          },
+          {
+            "number": "4",
+            "title": "Quebec City, Quebec",
+            "description": "<p>Quebec City is by many accounts the most French city in New France. The Old Town&rsquo;s centerpiece, the magnificent Ch&acirc;teau Frontenac, seems transported from the palatial landscapes of the Loire Valley, and its French-accented streets lead past white-stone buildings that evoke old-world medieval villages. The only remaining walled city in North America outside of Mexico, Quebec City was fortified in the 17th century soon after its founding in 1608. Its strategic setting on the rocky promontory of Cape Diamond gave troops a close view of the St. Lawrence.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/quebec/Quebec_Chateau_Frontenac_Trees.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Quebec City, Quebec",
+            "destinationDescription": "<p>Explore historic sites, including Ch&acirc;teau Frontenac, Place Royale and Parliament.</p>"
+          },
+          {
+            "number": "5",
+            "title": "Scenic Sailing: St. Lawrence River",
+            "description": "<p>Flowing through the fertile lowlands that link the US Great Lakes to the Atlantic Ocean, the St. Lawrence River is one of North America&rsquo;s most scenic waterways. Canada&rsquo;s second longest river features a number of great cultural capitals, including the stately facade of Ch&acirc;teau Frontenac, the gleaming skyline of Montreal and the pastoral island of &Icirc;le d&rsquo;Orl&eacute;ans. To the island&rsquo;s east, the river widens into the largest estuary in the world, passing small towns, gently rising hills and rocky banks. Farther east, the long &Icirc;le d&rsquo;Anticosti marks the mouth of the river.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/scenic-cruising-st-lawrence-river/CC_St_Lawrence_River_Perce_Village_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Scenic Sailing: St. Lawrence River",
+            "destinationDescription": "<p>Sail the St. Lawrence River, past the cultural capitals of Quebec City and Montreal.</p>"
+          },
+          {
+            "number": "6",
+            "title": "Cap-aux-Meules, Quebec",
+            "description": "<p>The village of Cap-aux-Meules&mdash;or Grindstone Cape&mdash;was named for the headland on Grindstone, one of Quebec&rsquo;s 13 Magdalen Islands. Its French moniker, rarely used in English, is nonetheless its official name. This is the second largest of the Magdalens by area, a low-lying expanse ringed by rugged shores that was inhabited by the Mi&rsquo;kmaq tribe when they came on a seasonal walrus hunt. The first European to step on this land was Jacques Cartier in 1534. Today, some islanders are descendants of shipwreck survivors and live in houses built out of wood retrieved from the waters.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/cap-aux-meules/Magdalen_Islands_Seal_Pup.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Cap-aux-Meules, Quebec",
+            "destinationDescription": "<p>Admire the region&rsquo;s natural beauty and look for seals and birdlife on Brion Island.</p>"
+          },
+          {
+            "number": "7",
+            "title": "Cape Breton Island (Louisbourg), Nova Scotia",
+            "description": "<p>Cape Breton Island sits at the confluence of the Gulf of St. Lawrence and the Atlantic Ocean. Hiking paths dot its terrain, inviting treks through its rolling farmlands, striking highlands and dense forests, while sheltered inlets call to kayakers and boaters to explore the rocky shoreline. The island is home for an array of birdlife, including cormorants, hawks and skuas. The fortified town of Louisbourg was one of France&rsquo;s strongholds in North America during the 18th century. Today, the partially reconstructed fortress and its former town are a National Historic Site.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/ca_canada/calou_explore-cape-breton-island/Cape_Breton_Coast_3008.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Cape Breton Island (Louisbourg), Nova Scotia",
+            "destinationDescription": "<p>Discover hidden inlets by kayak or admire scenic vistas while hiking historic trails.</p>"
+          },
+          {
+            "number": "8",
+            "title": "Lunenburg, Nova Scotia",
+            "description": "<p>Nova Scotia&rsquo;s coast still retains much of its unspoiled natural beauty. Rolling hills and boreal forests stretch to coastal cliffs that steeply drop to rugged shores dotted with sheltered bays and sea caves. The site of the first permanent European settlement north of Florida in the New World, it is rich in maritime heritage. The city of Lunenburg was once a busy shipbuilding center. Its historic Old Town is both a UNESCO World Heritage Site and a National Historic Site, considered the best surviving example of planned British colonial settlement in North America.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/ca_canada/calun_explore-coastal-nova-scotia/Lunenburg_Coastal_Townscape_3840.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Lunenburg, Nova Scotia",
+            "destinationDescription": "<p>Investigate Nova Scotia&rsquo;s shoreline and immerse in its untamed natural beauty.</p>"
+          },
+          {
+            "number": "9",
+            "title": "Sail the Atlantic Ocean",
+            "description": "<p>Sail the Atlantic Ocean, divided in half, north to south, by the Mid-Atlantic Ridge. Longer than the Rockies, the Himalayas and the Andes combined, this underwater mountain range is the longest on Earth.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/cruise-the-atlantic-ocean/STAR_Deck_Atlantic_Ocean.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Sail the Atlantic Ocean",
+            "destinationDescription": "<p>Dividing the &ldquo;Old World&rdquo; from the &ldquo;New World,&rdquo; sail the second-largest of the Earth&rsquo;s oceans.</p>"
+          },
+          {
+            "number": "10",
+            "title": "New York City, New York",
+            "description": "<p>New York City is at once romantic and exhilarating. From the robust streets of Lower Manhattan&rsquo;s financial district to the intimate warrens of Greenwich Village, the city overflows with culture, cuisine and architectural beauty. New York is for everyone. Music lovers marvel at Carnegie Hall or catch a 1920s-style jazz and blues show in Harlem. Romantics board a horse-drawn carriage in Central Park. Art lovers browse the Museum of Modern Art or the Guggenheim. And theatergoers attend the greatest shows in the world on Broadway, amid the glitter of Times Square.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/new-york/CC_New_York_Empire_State_Building_Dusk_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "New York City, New York",
+            "destinationDescription": "<p>See the Statue of Liberty, Empire State Building, 9/11 Memorial, Central Park and more.</p>"
+          },
+          {
+            "number": "11",
+            "title": "Sail the Atlantic Ocean",
+            "description": "<p>Sail the Atlantic Ocean, divided in half, north to south, by the Mid-Atlantic Ridge. Longer than the Rockies, the Himalayas and the Andes combined, this underwater mountain range is the longest on Earth.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/cruise-the-atlantic-ocean/STAR_Deck_Atlantic_Ocean.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Sail the Atlantic Ocean",
+            "destinationDescription": "<p>Dividing the &ldquo;Old World&rdquo; from the &ldquo;New World,&rdquo; sail the second-largest of the Earth&rsquo;s oceans.</p>"
+          },
+          {
+            "number": "12",
+            "title": "Norfolk, Virginia",
+            "description": "<p>With its striking setting on a wide natural harbor, Norfolk is home to the world&rsquo;s largest naval base. Dozens of vessels line seven miles of wharfs on the waterfront. The city&rsquo;s identity and history are intertwined with the US Navy and other military branches. Norfolk is also the resting place of General Douglas MacArthur, the much-decorated US Army commander. He and his wife are entombed at the MacArthur Memorial, a museum in Norfolk&rsquo;s former City Hall. This remarkable collection sheds light on the general&rsquo;s life with preserved uniforms, personal papers and memorabilia.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/us_unitedstates/usnfk_norfolk/Norfolk_USS_Wisconsin_Battleship_Alamy_RM_3840_2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Norfolk, Virginia",
+            "destinationDescription": "<p>Explore Norfolk&rsquo;s maritime heritage and America&rsquo;s colonial past in the &ldquo;Historic Triangle.&rdquo;</p>"
+          },
+          {
+            "number": "13",
+            "title": "Sail the Atlantic Ocean",
+            "description": "<p>Sail the Atlantic Ocean, divided in half, north to south, by the Mid-Atlantic Ridge. Longer than the Rockies, the Himalayas and the Andes combined, this underwater mountain range is the longest on Earth.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/cruise-the-atlantic-ocean/STAR_Deck_Atlantic_Ocean.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Sail the Atlantic Ocean",
+            "destinationDescription": "<p>Dividing the &ldquo;Old World&rdquo; from the &ldquo;New World,&rdquo; sail the second-largest of the Earth&rsquo;s oceans.</p>"
+          },
+          {
+            "number": "14",
+            "title": "Charleston, South Carolina",
+            "description": "<p>Charleston is a historic center of Southern culture. Founded in 1670, it sits between two estuaries and is fronted by a deep natural harbor. An important commercial port since colonial times, the city was also a leader in the secessionist movement; the capture of Fort Sumter by Confederate forces on April 14, 1862, marked the beginning of the Civil War. Today, Charleston is notable for its many well-preserved colonial homes and churches, charming streets and courtyards, and expansive parks and gardens. The Charleston Museum, founded in 1773, is the oldest museum in the US.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/us_unitedstates/uschs_charleston-south-carolina/Charleston_Carriage_Tour_3840_16x9.jpg",
+            "isUnesco": "false",
+            "destinationName": "Charleston, South Carolina",
+            "destinationDescription": "<p>Explore the waterways of Charleston by kayak and search for Low Country birdlife.</p>"
+          },
+          {
+            "number": "15",
+            "title": "Sail the Atlantic Ocean",
+            "description": "<p>Sail the Atlantic Ocean, divided in half, north to south, by the Mid-Atlantic Ridge. Longer than the Rockies, the Himalayas and the Andes combined, this underwater mountain range is the longest on Earth.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/cruise-the-atlantic-ocean/STAR_Deck_Atlantic_Ocean.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Sail the Atlantic Ocean",
+            "destinationDescription": "<p>Dividing the &ldquo;Old World&rdquo; from the &ldquo;New World,&rdquo; sail the second-largest of the Earth&rsquo;s oceans.</p>"
+          },
+          {
+            "number": "16",
+            "title": "Ft. Lauderdale, Florida",
+            "description": "<p>A beloved leisure destination for Floridians and visitors alike, the Ft. Lauderdale area exudes the carefree attitude of South Florida&rsquo;s coast. In Miami, a thriving Cuban culture infuses Old Havana and gleaming high-rises overlook Biscayne Bay. On the outlying barrier islands, South Beach is an intoxicating blend of seaside glamour and art deco pastel brilliance. Farther north, the seven-mile-long Ft. Lauderdale Beach provides a more leisurely ambience. Along Las Olas Boulevard, caf&eacute;s and boutiques invite lingering and endless browsing.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/ft-lauderdale/Ft_Lauderdale_Beachfront_Resorts.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Ft. Lauderdale, Florida",
+            "destinationDescription": "<p>Enjoy South Florida&rsquo;s carefree sun-loving coast and explore Miami&rsquo;s art deco brilliance.</p>"
+          }
+        ]
+      }
+    ],
+    "years": [
+      "2023",
+      "2023",
+      "2024",
+      "2024",
+      "2025",
+      "2025"
+    ],
+    "durations": [
+      "16",
+      "16",
+      "16",
+      "16",
+      "16",
+      "16"
+    ],
+    "ship": {
+      "name": "Viking Polaris",
+      "id": "XPO",
+      "AmadeusCode": "XPO",
+      "SabreCode": "XPO",
+      "type": "Vxp",
+      "decksHero": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/expeditions/ships/polar-ships/hero/OCTANTIS_Antarctica_Iceberg_Coast_3840_16x9.jpg",
+      "heroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/expeditions/ships/polar-ships/hero/OCTANTIS_Antarctica_Iceberg_Coast_3840_16x9.jpg",
+      "stateRooms": [
+        {
+          "id": "OS",
+          "name": "<p>Owner’s Suite (OS)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 1,238 sq ft (includes private lounge area)</p> <p>Panoramic ocean-view, multi-room suite with private Nordic Balcony, private garden lounge area with badenstamp, separate dining area/boardroom seating six, and private library, wine &amp; music collections curated by Chairman Torstein Hagen.</p> <p>Priority Embarkation</p> <p>11 AM priority stateroom access</p> <p>Expedition activity reservations 67 days prior to departure</p> <p>4 priority reservations at each alternative restaurant 100 days prior to departure</p> <p>First priority spa treatment bookings 100 days prior to departure</p> <p>King-size Viking Explorer Bed with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>55&quot; OLED flat-screen TV featuring MSNBC, FOX News, National Geographic and more</p> <p>Two additional 42&quot; flat-screen interactive LCD TVs with intuitive remote &amp; complimentary Movies on Demand in suite</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large master bathroom with spacious glass-enclosed shower, double-sink vanity, heated floor, anti-fog mirror &amp; hair dryer, plus guest bathroom</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Direct-dial satellite phone &amp; cell service</p> <p>Security safe</p> <p>Individual climate control</p> <p>Purified water refilled daily</p> <p>Welcome bottle of Veuve Clicquot champagne</p> <p>Mini-bar with alcoholic beverages, soft drinks, water &amp; premium snacks (replenished once daily)</p> <p>Binoculars</p> <p>Traditional Norwegian Marius-weave blanket</p> <p>Personal coffee machine with premium coffee &amp; tea selections</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>24-hour room service, including service from any restaurant during open hours</p> <p>Daily personalized tea or pre-dinner cocktail &amp; canap&eacute;s on request</p> <p>Dinner &amp; guided tour with ship officers (subject to availability)</p> <p>Complimentary laundry, dry cleaning, pressing &nbsp;&amp; shoe shine services</p> <p>Silver Spirits beverage package included</p> <p>Floor-to-ceiling drying closet</p> <p>Spacious walk-in closet with wooden hangers &amp; drawers</p> <p>Under-bed suitcase storage space</p> <p>Keepsake Viking expedition jacket (on polar itineraries)</p> <p>All Viking excursion gear needed for any relevant excursions</p>"
+        },
+        {
+          "id": "ES",
+          "name": "<p>Explorer Suite (ES)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 548 sq ft (includes Nordic balcony)</p> <p>Ocean-view two-room suite, 80% larger than junior suites, with private Nordic Balcony, private veranda, separate dining area for 4, additional storage and seating features, plus private access to Explorer Suites Garden.</p> <p>11 AM Embarkation</p> <p>11 AM priority stateroom access</p> <p>Expedition activity reservations 67 days prior to departure</p> <p>3 priority reservations at each alternative restaurant 90 days prior to departure</p> <p>Priority spa treatment bookings 90 days prior to departure</p> <p>King-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>55&quot; OLED flat-screen TV featuring MSNBC, FOX News, National Geographic and more</p> <p>Additional 42&quot; flat-screen interactive LCD TVs in living area</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, bathtub, double-sink vanity, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Direct-dial satellite phone &amp; cell service</p> <p>Security safe</p> <p>Individual climate control</p> <p>Purified water refilled daily</p> <p>Welcome bottle of champagne</p> <p>Mini-bar with alcoholic beverages, soft drinks, water &amp; snacks (replenished once daily)</p> <p>Binoculars</p> <p>Traditional Norwegian Marius-weave blanket</p> <p>Personal coffee machine with premium coffee &amp; tea selections</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>24-hour room service, including service from any restaurant during open hours</p> <p>Complimentary laundry, dry cleaning, pressing &nbsp;&amp; shoe shine services</p> <p>Silver Spirits beverage package included</p> <p>Floor-to-ceiling drying closet</p> <p>Spacious drawers &amp; closet with wooden hangers</p> <p>Under-bed suitcase storage space</p> <p>Keepsake Viking expedition jacket (on polar itineraries)</p> <p>All Viking excursion gear needed for any relevant excursions</p>"
+        },
+        {
+          "id": "NS",
+          "name": "<p>Nordic Junior Suite (NS)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 322 sq ft (includes Nordic balcony)</p> <p>Ocean-view stateroom with private Nordic Balcony: floor-to-ceiling distortion-free glass at your ship&rsquo;s edge, for optimal cozy viewing. Or lower the top panoramic glass for a sheltered, al fresco lookout. Plus, additional storage and seating features.</p> <p>Wheelchair Accessible (#4024, #4025)</p> <p>11 AM Embarkation</p> <p>11 AM priority stateroom access</p> <p>Expedition activity reservations 57 days prior to departure</p> <p>3 priority reservations at each alternative restaurant 80 days prior to departure</p> <p>Priority spa treatment bookings 80 days prior to departure</p> <p>King-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>55&quot; OLED flat-screen TV featuring MSNBC, FOX News, National Geographic and more</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, double-sink vanity, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Direct-dial satellite phone &amp; cell service</p> <p>Security safe</p> <p>Individual climate control</p> <p>Purified water refilled daily</p> <p>Welcome bottle of champagne</p> <p>Mini-bar with alcoholic beverages, soft drinks, water &amp; snacks (replenished once daily)</p> <p>Binoculars</p> <p>Traditional Norwegian Marius-weave blanket</p> <p>Personal coffee machine with premium coffee &amp; tea selections</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>24-hour room service</p> <p>Complimentary laundry, dry cleaning, pressing &nbsp;&amp; shoe shine services</p> <p>Floor-to-ceiling drying closet</p> <p>Spacious drawers &amp; closet with wooden hangers</p> <p>Under-bed suitcase storage space</p> <p>Keepsake Viking expedition jacket (on polar itineraries)</p> <p>All Viking excursion gear needed for any relevant excursions</p>"
+        },
+        {
+          "id": "NP",
+          "name": "<p>Nordic Penthouse (NP)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 269 sq ft (includes Nordic balcony)</p> <p>Ocean-view stateroom with private Nordic Balcony: floor-to-ceiling distortion-free glass at your ship&rsquo;s edge, for optimal cozy viewing. Or lower the top panoramic glass for a sheltered, al fresco lookout.</p> <p>11 AM Embarkation</p> <p>1 PM stateroom access</p> <p>Expedition activity reservations 57 days prior to departure</p> <p>2 priority reservations at each alternative restaurant 70 days prior to departure</p> <p>Priority spa treatment bookings 70 days prior to departure</p> <p>King-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>55&quot; OLED flat-screen TV featuring MSNBC, FOX News, National Geographic and more</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Direct-dial satellite phone &amp; cell service</p> <p>Security safe</p> <p>Individual climate control</p> <p>Purified water refilled daily</p> <p>Welcome bottle of champagne</p> <p>Mini-bar with alcoholic beverages, soft drinks, water &amp; snacks (replenished once daily)</p> <p>Binoculars</p> <p>Traditional Norwegian Marius-weave blanket</p> <p>Personal coffee machine with premium coffee &amp; tea selections</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>24-hour room service</p> <p>Complimentary pressing &amp; shoe shine services</p> <p>Floor-to-ceiling drying closet</p> <p>Spacious drawers &amp; closet with wooden hangers</p> <p>Under-bed suitcase storage space</p> <p>Keepsake Viking expedition jacket (on polar itineraries)</p> <p>All Viking excursion gear needed for any relevant excursions</p>"
+        },
+        {
+          "id": "DN1",
+          "name": "<p>Deluxe Nordic Balcony (DN)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 215 sq ft (includes Nordic balcony)</p> <p>Ocean-view stateroom with private Nordic Balcony: floor-to-ceiling distortion-free glass at your ship&rsquo;s edge, for optimal cozy viewing. Or lower the top panoramic glass for a sheltered, al fresco lookout.</p> <p>11 AM Embarkation</p> <p>2 PM stateroom access</p> <p>Expedition activity reservations 47 days prior to departure</p> <p>1 priority reservation at each alternative restaurant 60 days prior to departure</p> <p>Priority spa treatment bookings 60 days prior to departure</p> <p>King-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>55&quot; OLED flat-screen TV featuring MSNBC, FOX News, National Geographic and more</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Direct-dial satellite phone &amp; cell service</p> <p>Security safe</p> <p>Individual climate control</p> <p>Purified water refilled daily</p> <p>Mini-bar with soft drinks, water &amp; snacks (replenished once daily)</p> <p>Binoculars</p> <p>Traditional Norwegian Marius-weave blanket</p> <p>Personal coffee machine with premium coffee &amp; tea selections</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>24-hour room service</p> <p>Floor-to-ceiling drying closet</p> <p>Spacious drawers &amp; closet with wooden hangers</p> <p>Under-bed suitcase storage space</p> <p>Keepsake Viking expedition jacket (on polar itineraries)</p> <p>All Viking excursion gear needed for any relevant excursions</p>"
+        },
+        {
+          "id": "N1",
+          "name": "<p>Nordic Balcony (N)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 215 sq ft (includes Nordic balcony)</p> <p>Ocean-view stateroom with private Nordic Balcony: floor-to-ceiling distortion-free glass at your ship&rsquo;s edge, for optimal cozy viewing. Or lower the top panoramic glass for a sheltered, al fresco lookout.</p> <p>11 AM Embarkation</p> <p>3 PM stateroom access</p> <p>Expedition activity reservations 47 days prior to departure</p> <p>King-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>55&quot; OLED flat-screen TV featuring MSNBC, FOX News, National Geographic and more</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Direct-dial satellite phone &amp; cell service</p> <p>Security safe</p> <p>Individual climate control</p> <p>Purified water refilled daily</p> <p>Mini-bar with soft drinks, water &amp; snacks</p> <p>Binoculars</p> <p>Traditional Norwegian Marius-weave blanket</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>24-hour room service</p> <p>Floor-to-ceiling drying closet</p> <p>Spacious drawers &amp; closet with wooden hangers</p> <p>Under-bed suitcase storage space</p> <p>Keepsake Viking expedition jacket (on polar itineraries)</p> <p>All Viking excursion gear needed for any relevant excursions</p>"
+        }
+      ]
+    }
+  },
+  {
+    "id": "Danube Waltz",
+    "position": "18",
+    "name": "Danube Waltz",
+    "cruiseType": "river",
+    "featuredImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/mar_content/video-thumbnails-existing-assets/CC_Krems_Gottweig_Abbey_Clouds_SKY_Alamy_RM_3840_3x2.jpg",
+    "overviewText": "<p>Soak up soothing steam at a Budapest thermal bath. Learn to waltz at a Viennese dance school. Savor Austro-Hungarian cuisine in Vienna and Budapest. Admire the Wachau Valley’s beauty. Explore lesser-known Central European cities like Bratislava and Passau. Witness daily monastic life on an exclusive visit to Göttweig Abbey. This eight-day itinerary reveals the best of these places while cruising leisurely through spectacular scenery.</p>",
+    "largeOverview": "<p>Soak up soothing steam at a Budapest thermal bath. Learn to waltz at a Viennese dance school. Savor Austro-Hungarian cuisine in Vienna and Budapest. Admire the Wachau Valley’s beauty. Explore lesser-known Central European cities like Bratislava and Passau. Witness daily monastic life on an exclusive visit to Göttweig Abbey. This eight-day itinerary reveals the best of these places while cruising leisurely through spectacular scenery.</p>",
+    "smallOverview": "<p>Sail through Europe’s most enchanting countries, stopping to explore cultural capitals and fairy-tale villages along the way; admire the Wachau Valley’s beauty; and savor Austro-Hungarian cuisine.</p>",
+    "regions": [
+      "Europe"
+    ],
+    "countries": [
+      "Hungary",
+      "Slovakia",
+      "Austria",
+      "Germany"
+    ],
+    "waterways": [
+      "Danube"
+    ],
+    "packages": [
+      {
+        "ReleaseLevel": "15",
+        "id": "river-danube-waltz-2023-fromTo",
+        "PackageLookupId": "Europe-Budapest-Passau-2023",
+        "PackageCode": "river-danube-waltz-2023-fromTo",
+        "Name": "Budapest to Passau",
+        "Year": "2023",
+        "Featured": "false",
+        "ShowDiscount": "true",
+        "EnableOnlineBooking": "true",
+        "EnableSoldOut": "false",
+        "type": "CRU",
+        "price": {
+          "prices": [
+            "3799.00",
+            "3899.00",
+            "4299.00",
+            "4399.00",
+            "4599.00",
+            "4699.00",
+            "6999.00",
+            "8799.00"
+          ],
+          "priceRange": "3799.00 - 8799.00",
+          "shipCode": "AGR"
+        },
+        "duration": "8",
+        "guidedTours": "6",
+        "itineraryHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/mar_content/video-thumbnails-existing-assets/CC_Krems_Gottweig_Abbey_Clouds_SKY_Alamy_RM_3840_3x2.jpg",
+        "itinerarySummary": "<p>Soak up soothing steam at a Budapest thermal bath. Learn to waltz at a Viennese dance school. Savor Austro-Hungarian cuisine in Vienna and Budapest. Admire the Wachau Valley’s beauty. Explore lesser-known Central European cities like Bratislava and Passau. Witness daily monastic life on an exclusive visit to Göttweig Abbey. This eight-day itinerary reveals the best of these places while cruising leisurely through spectacular scenery.</p>",
+        "itineraryImages": [
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/budapest/CC_Budapest_Parliament_Pink_Alamy_RM.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/bratislava/Bratislava_River_Night.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/at_austria/atvie_vienna/vienna_schonbrunn_fountain_sculpture/Vienna_Schonbrunn_Fountain_Sculpture_3840_3x2.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/krems/CC_Wachau_Danube.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/linz/Linz_Hauptplatz_Square.360.2x1.jpg",
+          "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/passau/CC_Passau_Danube_River_Alamy_RM.360.2x1.jpg"
+        ],
+        "extensionHeroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/2022_Danube_Waltz_467_3x2.jpg",
+        "extensionBannerImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/2022_Danube_Waltz_467_3x2.jpg",
+        "extensionsImage": "",
+        "mainEnlargedMap": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/maps/2022_Danube_Waltz_467_3x2.jpg",
+        "extensionsEnlargeMapImage": "",
+        "itineraryDays": [
+          {
+            "number": "1",
+            "title": "Budapest",
+            "description": "<p>Riverside beauty and a vibrant cultural scene blend together in Budapest to form one of Europe&rsquo;s most rewarding cities. Hungary&rsquo;s enchanting capital straddles the banks of the Danube, with traditional hillside Buda on one side and modern Pest on the other. By day, astounding art nouveau buildings, stalwart castles and glittering palaces set the stage for awe-inspiring strolls and long soaks in thermal spas. By night, a nostalgic glow settles in as the city&rsquo;s lights dance on Danube waters, the Chain Bridge uniting it all as a dramatic centerpiece.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/budapest/CC_Budapest_Parliament_Pink_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Budapest",
+            "destinationDescription": "<p>Explore Buda&rsquo;s Castle District and modern Pest, and sample delicious local food.</p>"
+          },
+          {
+            "number": "2",
+            "title": "Budapest",
+            "description": "<p>Riverside beauty and a vibrant cultural scene blend together in Budapest to form one of Europe&rsquo;s most rewarding cities. Hungary&rsquo;s enchanting capital straddles the banks of the Danube, with traditional hillside Buda on one side and modern Pest on the other. By day, astounding art nouveau buildings, stalwart castles and glittering palaces set the stage for awe-inspiring strolls and long soaks in thermal spas. By night, a nostalgic glow settles in as the city&rsquo;s lights dance on Danube waters, the Chain Bridge uniting it all as a dramatic centerpiece.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/budapest/CC_Budapest_Parliament_Pink_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Budapest",
+            "destinationDescription": "<p>Explore Buda&rsquo;s Castle District and modern Pest, and sample delicious local food.</p>"
+          },
+          {
+            "number": "3",
+            "title": "Bratislava",
+            "description": "<p>The Slovakian capital of Bratislava is filled with lovingly restored baroque city palaces and leafy squares. The Little Carpathians rise steeply in the north and the enormous <em>hrad </em>(or castle) perches 300 feet above the Danube, lending the city a picturesque setting. Below the castle, the Old Town boasts elegant mansions, art nouveau houses and gracious pedestrian zones. Eleven Hungarian kings and eight queens were crowned in St. Martin&rsquo;s Cathedral, today a concert hall that plays a central role in the city&rsquo;s rich cultural offerings.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/bratislava/Bratislava_River_Night.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Bratislava",
+            "destinationDescription": "<p>Discover a city rich in history; view Hapsburg-era palaces and the stately Bratislava Castle.</p>"
+          },
+          {
+            "number": "4",
+            "title": "Vienna",
+            "description": "<p>Renowned as the &ldquo;City of Waltzes,&rdquo; Austria&rsquo;s capital city of Vienna is Europe&rsquo;s center of classical music. Strauss and Mozart composed many of their finest pieces here. Vienna&rsquo;s musical history is matched by the elegant, graceful architecture that lines the Ringstrasse, the wide boulevard encircling the Inner City. Baroque, neo-Renaissance, Gothic-Romanesque and other splendidly styled structures, from the Hofburg Palace to the Vienna State Opera, take the breath away with their grand facades. Vienna has a more intimate side too: inviting footpaths lead through green parks and its famed Viennese caf&eacute;s sweeten any stay with coffee and the city&rsquo;s delectable Sachertorte.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/at_austria/atvie_vienna/vienna_schonbrunn_fountain_sculpture/Vienna_Schonbrunn_Fountain_Sculpture_3840_3x2.jpg",
+            "isUnesco": "false",
+            "destinationName": "Vienna",
+            "destinationDescription": "<p>Admire Vienna&rsquo;s architecture, linger at a caf&eacute; or visit the Hapsburgs&rsquo; Sch&ouml;nbrunn Palace.</p>"
+          },
+          {
+            "number": "5",
+            "title": "Krems",
+            "description": "<p>A small university town at the eastern end of the Danube&rsquo;s Wachau Valley, Krems is surrounded by terraced vineyards. In its heyday, during the 12th century, Krems held even more importance than Vienna for its iron, grain, salt and wine trade. As to the latter, the city has played a long and celebrated part in the popularity of the Wachau&rsquo;s wine culture; the valley&rsquo;s south slopes in Krems are bathed in sunlight all day and create some of the best Riesling and Veltliner wines in the world. The city&rsquo;s cobblestone streets, taverns, wine bars and coffeehouses have a timeless appeal.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/krems/CC_Wachau_Danube.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Krems",
+            "destinationDescription": "<p>Visit G&ouml;ttweig Abbey, admiring its ceiling frescoes, grand staircase, library and church.</p>"
+          },
+          {
+            "number": "6",
+            "title": "Linz",
+            "description": "<p>Originally known as Lentia in its days as a 1st-century Roman castle-settlement, Linz is today&rsquo;s provincial capital of Upper Austria. The city&rsquo;s famous Linzer Torte, the jam-filled cake topped with almonds, hails from here and can be found in any number of caf&eacute;s. In the Old Town, narrow lanes lead to the Hauptplatz, once the largest town square in Austria. Handsome patrician houses, the 17th-century Town Hall and an impressive cathedral line the open space. The steepest mountain railway in Europe delivers visitors to <em>P&ouml;stlingberg </em>hill and its 18th-century pilgrimage church.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/linz/Linz_Hauptplatz_Square.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Linz",
+            "destinationDescription": "<p>Stroll the cultural center; see the Old Quarter&rsquo;s Hauptplatz, Market Hall and Mozarthaus.</p>"
+          },
+          {
+            "number": "7",
+            "title": "Passau",
+            "description": "<p>Founded by the Celts more than 2,000 years ago, Passau is one of Bavaria’s oldest cities. Known as the “City of Three Rivers,” it rests at the confluence of the Inn, Ilz and Danube Rivers. The city has long enjoyed its strategic position and grew to great economic and political power because of it. The legacy of its past prosperity lives on in graceful arcades, colorful houses with rococo facades and the glorious baroque St. Stephen’s Cathedral, home to one of Europe’s largest pipe organs. Passau is also where two nations meet; it is here that the German-Austrian border begins.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/passau/CC_Passau_Danube_River_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Passau",
+            "destinationDescription": "<p>Admire the patrician houses in the Old Town and see Passau’s ornately decorated cathedral.</p>"
+          },
+          {
+            "number": "8",
+            "title": "Passau",
+            "description": "<p>Founded by the Celts more than 2,000 years ago, Passau is one of Bavaria’s oldest cities. Known as the “City of Three Rivers,” it rests at the confluence of the Inn, Ilz and Danube Rivers. The city has long enjoyed its strategic position and grew to great economic and political power because of it. The legacy of its past prosperity lives on in graceful arcades, colorful houses with rococo facades and the glorious baroque St. Stephen’s Cathedral, home to one of Europe’s largest pipe organs. Passau is also where two nations meet; it is here that the German-Austrian border begins.</p>",
+            "image": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/ports/passau/CC_Passau_Danube_River_Alamy_RM.360.2x1.jpg",
+            "isUnesco": "false",
+            "destinationName": "Passau",
+            "destinationDescription": "<p>Admire the patrician houses in the Old Town and see Passau’s ornately decorated cathedral.</p>"
+          }
+        ]
+      }
+    ],
+    "years": [
+      "2023",
+      "2023",
+      "2024",
+      "2024",
+      "2025",
+      "2025"
+    ],
+    "durations": [
+      "8",
+      "8",
+      "8",
+      "8",
+      "8",
+      "8"
+    ],
+    "ship": {
+      "name": "Viking Aegir",
+      "id": "AGR",
+      "AmadeusCode": "AE",
+      "SabreCode": "VAE",
+      "type": "Longship",
+      "decksHero": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/longship/heroes/Hero_Longship_2_1680_5x2.jpg",
+      "heroImage": "https://aem-prod-publish.viking.com/content/dam/vikingcruises/en/magnolia-images/river/longship/heroes/Hero_Longship_2_1680_5x2.jpg",
+      "stateRooms": [
+        {
+          "id": "ES",
+          "name": "<p>Explorer Suite (ES)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 445 sq ft (includes private veranda)</p> <p>River-view suite with private wraparound balcony offering 270-degree views off a spacious, separate sitting room, and French balcony (floor-to-ceiling sliding glass door) in sleeping quarters</p> <p>12 PM Embarkation</p> <p>12 PM priority stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>Additional flat-screen TV in sitting area</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Welcome champagne; mini-bar with wine, beer &amp; soft drinks (replenished daily); daily fruit plate</p> <p>Binoculars</p> <p>Personal coffee machine with premium coffee &amp; tea selections</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Complimentary in-room breakfast service</p> <p>Complimentary laundry &amp; shoe shine services</p> <p>Silver Spirits beverage package included</p> <p>Private arrival/departure transfer in destination</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p> <p>Complimentary Viking Air Plus&nbsp;(US &amp; CA only)</p>"
+        },
+        {
+          "id": "AA",
+          "name": "<p>Veranda Suite (AA)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 275 sq ft (includes private veranda)</p> <p>River-view suite with full-size veranda off a spacious, separate sitting room, and French Balcony (floor-to-ceiling sliding glass door) in sleeping quarters</p> <p>12 PM Embarkation</p> <p>12 PM priority stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>Additional flat-screen TV in sitting area</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Large private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Welcome champagne; mini-bar with wine, beer &amp; soft drinks (replenished daily); daily fruit plate</p> <p>Binoculars</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Complimentary laundry &amp; shoe shine services</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p> <p>Complimentary Viking Air Plus&nbsp;(US &amp; CA only)</p>"
+        },
+        {
+          "id": "A",
+          "name": "<p>Veranda Stateroom (A, B)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 205 sq ft (includes private veranda)</p> <p>River-view stateroom with floor-to-ceiling sliding glass door opening to full-size veranda</p> <p>12 PM Embarkation</p> <p>3 PM stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        },
+        {
+          "id": "C",
+          "name": "<p>French Balcony Stateroom (C, D)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 135 sq ft</p> <p>River-view stateroom with French balcony (floor-to-ceiling sliding glass door)</p> <p>12 PM Embarkation</p> <p>3 PM stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Private bathroom with spacious glass-enclosed shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        },
+        {
+          "id": "E",
+          "name": "<p>Standard Stateroom (E, F)</p>",
+          "AbbrevName": "",
+          "features": "<p>Stateroom size: 150 sq ft</p> <p>River-view stateroom with half-height picture window</p> <p>12 PM Embarkation</p> <p>3 PM stateroom access</p> <p>Queen-size Viking Explorer Bed (optional twin-bed configuration) with luxury linens &amp; pillows</p> <p>Free Wi-Fi (connection speed may vary)</p> <p>Flat-screen TV with infotainment system featuring a selection of live TV channels, complimentary Movies On Demand and in-house programming</p> <p>110/220 volt outlets &amp; USB ports</p> <p>Private bathroom with accessible shower, heated floor, anti-fog mirror &amp; hair dryer</p> <p>Premium Freyja&reg; toiletries</p> <p>Plush robes &amp; slippers (upon request)</p> <p>Telephone, safe, refrigerator</p> <p>Individual climate control</p> <p>Bottled water replenished daily</p> <p>Stateroom steward &amp; twice-daily housekeeping</p> <p>Under-bed suitcase storage space</p> <p>Roomy wardrobe with wooden hangers</p>"
+        }
+      ]
+    }
+  }
+]

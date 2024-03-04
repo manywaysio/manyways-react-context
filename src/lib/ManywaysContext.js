@@ -26,9 +26,12 @@ const ManywaysProvider = ({
   let [isLoading, setIsLoading] = useState(true);
   const [charlotteModalOpen, setCharlotteModalOpen] = useState(false);
   const [menuModalOpen, setMenuModalOpen] = useState(false);
+  const [textFade, setTextFade] = useState(true);
 
   let currentNode =
-    setCurrentNodeId !== false ? nodes.find((n) => n.id === currentNodeId) : false;
+    setCurrentNodeId !== false
+      ? nodes.find((n) => n.id === currentNodeId)
+      : false;
 
   let umamidata = {
     website: treeConfig?.analytics_config?.umami_id,
@@ -71,6 +74,7 @@ const ManywaysProvider = ({
       console.log("is loading aborting go forward");
       return false;
     }
+    setTextFade(true);
     setIsLoading(true);
     let theResponse = {
       // node_id: currentNode?.id,
@@ -92,13 +96,16 @@ const ManywaysProvider = ({
     //   name: "Node Response",
     // });
 
-    await fetch(`https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(theResponse),
-    })
+    await fetch(
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(theResponse),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         if (!!window.umami?.track) {
@@ -116,7 +123,10 @@ const ManywaysProvider = ({
           console.log(e);
         }
         setNodes([...nodes, { ...data, form_schema: final_json }]);
-        setResponses([...responses, { node_id: currentNode?.id, ...theResponse }]);
+        setResponses([
+          ...responses,
+          { node_id: currentNode?.id, ...theResponse },
+        ]);
         setCurrentNodeId(data?.id);
         setIsLoading(false);
       });
@@ -177,8 +187,14 @@ const ManywaysProvider = ({
     window.umami = window.umami || {};
     if (!!treeConfig?.analytics_config?.umami_id) {
       var el = document.createElement("script");
-      el.setAttribute("src", "https://umami-analytics-nine-xi.vercel.app/script.js");
-      el.setAttribute("data-website-id", treeConfig?.analytics_config?.umami_id);
+      el.setAttribute(
+        "src",
+        "https://umami-analytics-nine-xi.vercel.app/script.js"
+      );
+      el.setAttribute(
+        "data-website-id",
+        treeConfig?.analytics_config?.umami_id
+      );
       document.body.appendChild(el);
     }
   };
@@ -221,16 +237,25 @@ const ManywaysProvider = ({
         copyLink,
         classNamePrefix,
         mode,
-      }}>
+        isLoading,
+        textFade,
+        setTextFade,
+      }}
+    >
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
-          ?.run_mode?.logo} ${nodes.map((n) => `mw-${slugify(n.title)}`).join(" ")}`}>
-        {mode === "scroll" && treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
+          ?.run_mode?.logo} ${nodes
+          .map((n) => `mw-${slugify(n.title)}`)
+          .join(" ")}`}
+      >
+        {mode === "scroll" &&
+        treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
           <div
             className={`${classNamePrefix}-global-bg-image`}
             style={{
               backgroundImage: `url(${treeConfig?.run_mode?.ui_variables?.backgroundImage})`,
-            }}></div>
+            }}
+          ></div>
         ) : null}
         <Header
           charlotteModalOpen={charlotteModalOpen}
@@ -245,23 +270,6 @@ const ManywaysProvider = ({
         />
         <NodeRenderer />
         {children}
-        {mode === "scroll" && isLoading && (
-          <div className="loader-container">
-            <div className="loader">
-              <svg className="circular-loader" viewBox="25 25 50 50">
-                <circle
-                  className="loader-path"
-                  cx="50"
-                  cy="50"
-                  r="20"
-                  fill="none"
-                  stroke="#939393"
-                  strokeWidth="4"
-                />
-              </svg>
-            </div>
-          </div>
-        )}
         {/* {mode === "scroll" && <Footer />} */}
         {isFirstNode && (
           <div className="carp-container">

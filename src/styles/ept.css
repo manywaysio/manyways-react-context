@@ -138,12 +138,26 @@ p {
   background-size: cover;
 }
 
+.fadetext-true form.mw-form {
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  transition-delay: 0s;
+}
+
+.fadetext-false form.mw-form {
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+  transition-delay: 0.3s;
+}
+
 .background-shade {
   top: 0;
   z-index: 1;
   height: 100vh;
   width: 100%;
   left: 0;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
   position: absolute;
 }
 
@@ -225,6 +239,7 @@ p {
   opacity: 0;
   visibility: hidden;
 } */
+
 
 .is-current-node-false {
   display: none;
@@ -424,6 +439,14 @@ label.control-label {
   align-items: center;
 }
 
+.bar-item {
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
 .first-bar {
   z-index: 5;
   height: 100%;
@@ -439,9 +462,11 @@ label.control-label {
   height: 4px;
 }
 
-.bar-filled {
+.bar-item.bar-filled {
   background-color: white;
   opacity: 50%;
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .progress-inner {
@@ -450,11 +475,7 @@ label.control-label {
   width: 100%;
 }
 
-.bar-item {
-  z-index: 5;
-  width: 100%;
-  height: 100%;
-}
+
 
 .enum-grid {
   display: grid;
@@ -803,4 +824,192 @@ label.control-label {
 
 .close-icon {
   font-size: 24px;
+}
+
+
+/* RESULTS */
+.results-holder {
+  margin: 0px -16px;
+  min-width: 100vw;;
+}
+
+.single-result-background {
+  height: 100vh;
+  max-height: 580px;
+  position: relative;
+}
+
+.inner-bg {
+  position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(3, 20, 24, 0.15), rgba(3, 20, 24, 0.15)), linear-gradient(356.78deg, rgba(0, 0, 0, 0.75) 3.88%, rgba(0, 0, 0, 0.75) 23.45%, rgba(0, 0, 0, 0.375) 49.64%, rgba(0, 0, 0, 0.3225) 59.98%, rgba(0, 0, 0, 0) 82.07%);
+}
+
+.inner-bg-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  text-align: left;
+}
+
+.single-result h2,
+.single-result h4, 
+.single-result p {
+  text-align: left;
+}
+
+.inner-bg-content h2 {
+  width: 100%;
+}
+
+.fullprice {
+  color: white;
+}
+.discountedprice {
+  color: white;
+}
+.apply-price {
+  display: block;
+  color: white;
+  border: white 1px solid;
+  border-radius: 15px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+  background-color: transparent;
+}
+
+.inner-bg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-column-gap: 24px;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+.inner-bg-content h4 {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.countries, .price {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 19.6px;
+}
+
+.overview-content {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.overview-content-mobile {
+  text-align: left;
+  font-size: 14px;
+}
+
+.inner-content-container {
+  text-align: left;
+    padding: 16px 24px;
+    font-size: 14px;
+}
+
+.overview-content-mobile p {
+  font-size: 14px;
+  line-height: 19.6px;
+}
+
+.big-button {
+  color: white;
+  border: 1px solid white;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  padding: 12px 24px;
+  margin: 24px 0;
+  display: inline-block;
+}
+
+.image-side-scene {
+  padding-left: 18%;
+}
+
+.iternary {
+  color: white;
+}
+
+.vessel-grid h4,
+.iternary h4 {
+  font-family: "Inter", sans-serif;
+}
+
+.vessel-grid p,
+.iternary p {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.iternary p {
+  padding-bottom: 14px;
+    border-bottom: 1px solid white;
+}
+
+.vessel-info {
+  background-color: black;
+  margin-top: 24px;
+}
+
+.viking-logo {
+  max-width: 160px;
+}
+
+.vessel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.staterooms-holder {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.staterooms-holder p {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.inner-content-container .input-icon-container, .inner-content-container .input-with-icon {
+  width: 100%;
+}
+
+
+
+@media screen and (min-device-width : 768px)  {
+}
+
+
+/* UTILS */
+/* HIDE ON MOBILE ONLY */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+/* HIDE ON TABLET AND ABOVE ONLY */
+@media (min-width: 768px) {
+  .hide-on-tablet {
+    display: none;
+  }
 }
