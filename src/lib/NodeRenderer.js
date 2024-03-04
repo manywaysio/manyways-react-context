@@ -157,9 +157,12 @@ const NodeRenderer = (props) => {
         });
       }
 
+      let currentNodeIndex = nodes.findIndex((n) => n.id === currentNode?.id);
+      let hasNextNode = !!nodes[currentNodeIndex + 1];
+
       return (
         <div
-          key={idx}
+          key={currentNode?.id}
           className={`${classNamePrefix}-node
           is-current-node-${currentNodeId === currentNode?.id} 
           has-response-${!!theResponse}
@@ -190,7 +193,7 @@ const NodeRenderer = (props) => {
               </div>
             )}
             <Form
-              disabled={!!theResponse}
+              disabled={!!hasNextNode}
               formData={theResponse?.response || {}}
               className={`${classNamePrefix}-form ${classNamePrefix}-node-${slugify(
                 currentNode?.title

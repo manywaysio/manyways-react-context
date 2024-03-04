@@ -1,27 +1,38 @@
 import { useManyways } from "./ManywaysContext";
 
 const NextAndBack = ({ currentNode = {}, className }) => {
-  const { goBack, responses, classNamePrefix, mode, labels } = useManyways();
+  const {
+    goBack,
+    currentNodeId,
+    responses,
+    classNamePrefix,
+    mode,
+    nodes,
+    labels,
+  } = useManyways();
+
+  let currentNodeIndex = nodes.findIndex((n) => n.id === currentNode?.id);
+  let hasNextNode = !!nodes[currentNodeIndex + 1];
 
   let theResponse = responses.find((r) => r.node_id === currentNode?.id);
 
   return (
     <div
       className={`${className} next-and-back-hidden-${
-        mode === "scroll" && !!theResponse
+        mode === "scroll" && !!hasNextNode
       } ${classNamePrefix}-next-and-back`}
     >
-      {/* <button
+      <button
         className={`${classNamePrefix}-back`}
         onClick={(e) => {
           e.preventDefault();
           goBack();
         }}
       >
-      {labels ? labels.back : 'Back'}
-      </button> */}
+        {labels ? labels.back : "Back"}
+      </button>
       <button className={`${classNamePrefix}-next`} type="submit">
-        {labels ? labels.next : 'Next'}
+        {labels ? labels.next : "Next"}
       </button>
     </div>
   );

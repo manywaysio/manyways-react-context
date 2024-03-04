@@ -70,7 +70,7 @@ const ManywaysProvider = ({
     }
     setIsLoading(true);
     let theResponse = {
-      // node_id: currentNode?.id,
+      node_id: currentNodeId,
       response: formData,
     };
 
@@ -126,6 +126,9 @@ const ManywaysProvider = ({
   const goBack = async () => {
     let theLastResponse = responses[responses.length - 1];
     if (!!theLastResponse && !!theLastResponse?.node_id) {
+      console.log("going back to ", theLastResponse?.node_id);
+      let _nodes = nodes.filter((n, idx) => idx < nodes.length - 1);
+      setNodes(_nodes);
       setCurrentNodeId(theLastResponse?.node_id);
     } else {
       console.log("cannot go back");
@@ -224,6 +227,7 @@ const ManywaysProvider = ({
   useEffect(() => {
     window.manyways.restartInQueue = restartInQueue;
     window.manyways.restart = restart;
+    window.manyways.back = goBack;
     getInitialData();
   }, [slug]);
 
