@@ -38,13 +38,16 @@ window.manyways.restart = function (e) {
 };
 
 window.manyways.share = function (e) {
-  !!e && e.preventDefault();
-  window.umami.track("Share");
-  navigator.share({
-    title: "MESCA - Rebate Finder",
-    url: window.location.href,
-  });
+  if (e?.type === 'click' || e?.keyCode === 13) {
+    !!e && e.preventDefault();
+    window.umami.track("Share");
+    navigator.share({
+      title: "MESCA - Rebate Finder",
+      url: window.location.href,
+    });
+  }
 };
+
 
 // var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
 // var eventer = window[eventMethod];
