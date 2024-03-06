@@ -834,6 +834,14 @@ label.control-label {
   min-width: 100vw;
   left: -15px;
   position: relative;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  transform: translateX(100vw)
+}
+
+.results-holder.ready-true {
+  opacity: 1;
+  transform: translateX(0)
 }
 
 @media screen and (min-width: 768px) {
@@ -1108,6 +1116,7 @@ letter-spacing: -0.64px;
   width: 100%;
   margin-bottom: 30px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .otherresult-img {
@@ -1196,6 +1205,18 @@ letter-spacing: -0.64px;
   .otheresult:nth-child(3n+2) {
     transform: translateY(-70px)
   }
+
+  .otheresult {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .otheresult:hover {
+    transform: scale(1.05);
+  }
+
+    .otheresult:nth-child(3n+2):hover {
+      transform: scale(1.05) translateY(-70px)
+    }
 }
 
 .mw-node-charlotte-form .mw-next {

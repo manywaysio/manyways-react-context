@@ -3,7 +3,13 @@ import _results from "./../../data-samples/results.json";
 import Phone from "./../../icons/Phone";
 import Envelope from "./../../icons/Envelope";
 import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Navigation,
+  EffectCreative,
+  Pagination,
+  Scrollbar,
+  A11y,
+} from "swiper/modules";
 
 const Price = ({ priceRange }) => {
   const discountedPrice = priceRange
@@ -260,6 +266,7 @@ const SingleEPTResult = ({
 
 let EPTResults = () => {
   const [results, setResults] = useState([]);
+  const [init, setInit] = useState(false);
   const getResults = async () => {
     // const response = await fetch(
     //   "https://carp.eptravel.ca/api/ept?howlong=Up%20to%209%20nights&"
@@ -277,7 +284,7 @@ let EPTResults = () => {
 
   return (
     <div
-      className="results-holder"
+      className={`results-holder ready-${init}`}
       style={{
         background: `black`,
         height: `100%`,
@@ -291,6 +298,24 @@ let EPTResults = () => {
         autoHeight={true}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
+        }}
+        onAfterInit={(swiper) => {
+          setInit(true);
+        }}
+        speed={800}
+        modules={[EffectCreative]}
+        effect="creative"
+        creativeEffect={{
+          prev: {
+            // will set `translateZ(-400px)` on previous slides
+            translate: [0, 0, -400],
+            opacity: 0,
+          },
+          next: {
+            // will set `translateX(100%)` on next slides
+            translate: ["100%", 0, 0],
+            opacity: 0,
+          },
         }}
       >
         <div
