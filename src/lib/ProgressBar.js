@@ -24,7 +24,7 @@ const ProgressBar = ({ initialCurrentId }) => {
     <div
       className={`universal-wrapper progress-bar-container ${
         showProgressBar ? "show" : ""
-      }`}
+      } current-${currentId}`}
     >
       <div className="progress-bar">
         <div

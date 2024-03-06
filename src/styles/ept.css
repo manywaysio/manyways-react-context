@@ -132,11 +132,15 @@ p {
 .background-node-parts-of-the-world,
 .background-node-traveling-with,
 .background-node-traveling-how-long,
-.background-node-which-seasons,
-.background-node-results {
+.background-node-which-seasons {
   background-image: url("https://manyways-demo.imgix.net/Organization_6297b5a37fcaa3000655bf9c/ezgif-3-5c8bd1e86e.gif");
   background-size: cover;
 }
+
+.background-node-results {
+  background: black;
+}
+
 
 .fadetext-true form.mw-form {
   opacity: 0;
@@ -159,6 +163,7 @@ p {
   opacity: 0;
   transition: all 0.5s ease-in-out;
   position: absolute;
+  transition: all 0.5s ease-in-out;
 }
 
 .background-blur-start,
@@ -1182,13 +1187,22 @@ letter-spacing: -0.64px;
   }
 
   .otherresults {
-    padding-top: 100px;
+    padding: 100px 0px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 60px;
   }
 
   .otheresult:nth-child(3n+2) {
-    transform: translateY(-100px)
+    transform: translateY(-70px)
   }
+}
+
+.mw-node-charlotte-form .mw-next {
+  display: none;
+
+}
+
+.current-37 {
+  display: none !important;
 }
