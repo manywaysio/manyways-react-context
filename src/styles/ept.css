@@ -830,7 +830,8 @@ label.control-label {
 /* RESULTS */
 .results-holder {
   margin: 0px -16px;
-  min-width: 100vw;;
+  min-width: 100vw;
+  margin-left: -31px;
 }
 
 .single-result-background {

@@ -10,6 +10,7 @@ import mediaStyles from "./styles/media.css";
 import formStyles from "./styles/forms.css";
 import loaderStyles from "./styles/loader.css";
 import eptStyles from "./styles/ept.css";
+import swiperStyles from "./styles/swiperbundle.css";
 
 import { ManywaysProvider } from "./lib/ManywaysContext";
 
@@ -42,6 +43,7 @@ function App({ locale, slug, mode = "scroll" }) {
     ${formStyles}
     ${loaderStyles}
     ${eptStyles}
+    ${swiperStyles}
   `;
 
   return (
