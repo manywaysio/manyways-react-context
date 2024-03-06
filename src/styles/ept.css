@@ -240,7 +240,6 @@ p {
   visibility: hidden;
 } */
 
-
 .is-current-node-false {
   display: none;
   opacity: 0;
@@ -474,8 +473,6 @@ label.control-label {
   height: 4px;
   width: 100%;
 }
-
-
 
 .enum-grid {
   display: grid;
@@ -826,11 +823,10 @@ label.control-label {
   font-size: 24px;
 }
 
-
 /* RESULTS */
 .results-holder {
   margin: 0px -16px;
-  min-width: 100vw;;
+  min-width: 100vw;
 }
 
 .single-result-background {
@@ -841,11 +837,19 @@ label.control-label {
 
 .inner-bg {
   position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, rgba(3, 20, 24, 0.15), rgba(3, 20, 24, 0.15)), linear-gradient(356.78deg, rgba(0, 0, 0, 0.75) 3.88%, rgba(0, 0, 0, 0.75) 23.45%, rgba(0, 0, 0, 0.375) 49.64%, rgba(0, 0, 0, 0.3225) 59.98%, rgba(0, 0, 0, 0) 82.07%);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(3, 20, 24, 0.15), rgba(3, 20, 24, 0.15)),
+    linear-gradient(
+      356.78deg,
+      rgba(0, 0, 0, 0.75) 3.88%,
+      rgba(0, 0, 0, 0.75) 23.45%,
+      rgba(0, 0, 0, 0.375) 49.64%,
+      rgba(0, 0, 0, 0.3225) 59.98%,
+      rgba(0, 0, 0, 0) 82.07%
+    );
 }
 
 .inner-bg-content {
@@ -863,14 +867,29 @@ label.control-label {
 }
 
 .single-result h2,
-.single-result h4, 
+.single-result h4,
 .single-result p {
   text-align: left;
 }
 
 .inner-bg-content h2 {
   width: 100%;
+  font-size: 72px;
+  margin-bottom: 6px;
 }
+
+@media (max-width: 768px) {
+.inner-bg-content h2 {
+font-family: "Playfair Display";
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+line-height: 110%;
+letter-spacing: -0.64px;
+}
+}
+
+
 
 .fullprice {
   color: white;
@@ -892,7 +911,7 @@ label.control-label {
 
 .inner-bg-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-column-gap: 24px;
   width: 100%;
   padding-bottom: 24px;
@@ -903,7 +922,8 @@ label.control-label {
   font-size: 12px;
 }
 
-.countries, .price {
+.countries,
+.price {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   line-height: 19.6px;
@@ -914,6 +934,10 @@ label.control-label {
   grid-column-end: 3;
 }
 
+.overview-content p {
+  font-size: 14px;
+}
+
 .overview-content-mobile {
   text-align: left;
   font-size: 14px;
@@ -921,8 +945,8 @@ label.control-label {
 
 .inner-content-container {
   text-align: left;
-    padding: 16px 24px;
-    font-size: 14px;
+  padding: 16px 24px;
+  font-size: 14px;
 }
 
 .overview-content-mobile p {
@@ -931,6 +955,8 @@ label.control-label {
 }
 
 .big-button {
+  padding: 16px 24px !important;
+  width: 
   color: white;
   border: 1px solid white;
   border-radius: 999px;
@@ -962,7 +988,7 @@ label.control-label {
 
 .iternary p {
   padding-bottom: 14px;
-    border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
 }
 
 .vessel-info {
@@ -989,15 +1015,13 @@ label.control-label {
   margin-top: 0px;
 }
 
-.inner-content-container .input-icon-container, .inner-content-container .input-with-icon {
+.inner-content-container .input-icon-container,
+.inner-content-container .input-with-icon {
   width: 100%;
 }
 
-
-
-@media screen and (min-device-width : 768px)  {
+@media screen and (min-device-width: 768px) {
 }
-
 
 /* UTILS */
 /* HIDE ON MOBILE ONLY */

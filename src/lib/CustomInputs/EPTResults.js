@@ -16,20 +16,16 @@ const Price = ({ priceRange }) => {
         className="fullprice"
         style={{
           textDecoration: discountApplied ? "line-through" : "none",
-        }}
-      >
+        }}>
         {priceRange}
       </div>
-      {discountApplied && (
-        <div className="discountedprice">{discountedPrice}</div>
-      )}
+      {discountApplied && <div className="discountedprice">{discountedPrice}</div>}
       {!discountApplied && (
         <button
           className="apply-price"
           onClick={() => {
             setDiscountApplied(!discountApplied);
-          }}
-        >
+          }}>
           Apply Discount
         </button>
       )}
@@ -73,8 +69,7 @@ const SingleEPTResult = ({
           backgroundImage: `url(${featuredImage})`,
           backgroundSize: `cover`,
           color: `white`,
-        }}
-      >
+        }}>
         <div className="inner-bg">
           <div className="inner-bg-content">
             <h2>{name}</h2>
@@ -83,9 +78,8 @@ const SingleEPTResult = ({
                 <div
                   dangerouslySetInnerHTML={{
                     __html: smallOverview,
-                  }}
-                ></div>
-                <a className="big-button">Let's Sail</a>
+                  }}></div>
+                <a className="big-button">Let's Sail!</a>
               </div>
               <div className="countries">
                 <h4 className="ept-subtitle">Countries</h4>
@@ -106,9 +100,8 @@ const SingleEPTResult = ({
           className="overview-content-mobile hide-on-tablet"
           dangerouslySetInnerHTML={{
             __html: smallOverview,
-          }}
-        ></div>
-        <a className="big-button">Let's Sail</a>
+          }}></div>
+        <a className="big-button">Let's Sail!</a>
       </div>
       <div className="image-side-scene">
         <img src={itineraryHeroImage} />
@@ -136,8 +129,7 @@ const SingleEPTResult = ({
                     <div
                       dangerouslySetInnerHTML={{
                         __html: destinationDescription,
-                      }}
-                    ></div>
+                      }}></div>
                   </div>
                 );
               }
@@ -160,10 +152,7 @@ const SingleEPTResult = ({
                 <h4>Staterooms</h4>
                 {ship.stateRooms.map((room, idx) => {
                   return (
-                    <div
-                      key={idx}
-                      dangerouslySetInnerHTML={{ __html: room.name }}
-                    ></div>
+                    <div key={idx} dangerouslySetInnerHTML={{ __html: room.name }}></div>
                   );
                 })}
               </div>
@@ -177,15 +166,14 @@ const SingleEPTResult = ({
       <div className="inner-content-container charlotte-modal-content show">
         <h2>Ready to turn your travel dreams into reality?</h2>
         <p>
-          We'd love to make it happen! Please provide your phone number or email
-          address below, and Charlotte will contact you to reserve your spot on
-          the perfect journey.
+          We'd love to make it happen! Please provide your phone number or email address
+          below, and Charlotte will contact you to reserve your spot on the perfect
+          journey.
         </p>
         <form>
           <p className="char-desc">
-            Please provide your phone number or email address below, and
-            Charlotte will contact you to assist you with any of your travel
-            questions!
+            Please provide your phone number or email address below, and Charlotte will
+            contact you to assist you with any of your travel questions!
           </p>
           <div className="input-icon-container">
             <Phone className="input-icon" />
@@ -237,8 +225,7 @@ let EPTResults = () => {
         minHeight: `100vh`,
         zIndex: 1000,
         marginTop: `56px`,
-      }}
-    >
+      }}>
       {results.map((r) => (
         <SingleEPTResult {...r} />
       ))}
