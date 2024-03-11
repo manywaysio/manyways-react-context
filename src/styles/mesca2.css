@@ -586,17 +586,17 @@ ul.error-detail .text-danger {
   margin: 0;
 }
 
-
+/* 
 .result-card .rebate-status {
+
+} */
+
+.result-card .rebate-status.available {
   font-family: var(--font-family-bold);
   font-size: 21px;
   font-weight: 500;
   line-height: 26px;
   letter-spacing: 0.01em;
-}
-
-.result-card .rebate-status.available {
-  /* color: #3BB41D; */
   color: #197b00;
   display: flex;
   justify-content: flex-start;
@@ -1092,7 +1092,7 @@ ul.error-detail .text-danger {
     grid-template-columns: 1fr 1fr 1fr;
 
   }
-  
+
   .restart-options .text-container {
     flex-direction: row;
   }
