@@ -240,6 +240,8 @@ const ManywaysProvider = ({
         isLoading,
         textFade,
         setTextFade,
+        charlotteModalOpen,
+        setCharlotteModalOpen,
       }}
     >
       <div

@@ -3,6 +3,7 @@ import _results from "./../../data-samples/results.json";
 import Phone from "./../../icons/Phone";
 import Envelope from "./../../icons/Envelope";
 import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
+import { useManyways } from "../ManywaysContext";
 import {
   Navigation,
   EffectCreative,
@@ -75,6 +76,8 @@ const SingleEPTResult = ({
     itineraryHeroImage,
     mainEnlargedMap,
   } = thePackage;
+
+  const { charlotteModalOpen, setCharlotteModalOpen } = useManyways();
   return (
     <div className="single-result" style={{ background: "black" }}>
       <div className="single-results-background-holder">
@@ -95,7 +98,15 @@ const SingleEPTResult = ({
                       __html: smallOverview,
                     }}
                   ></div>
-                  <a className="big-button">Let's Sail</a>
+                  <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setCharlotteModalOpen(true);
+                    }}
+                    className="big-button"
+                  >
+                    Let's Sail
+                  </a>
                 </div>
                 <div className="countries">
                   <h4 className="ept-subtitle">Countries</h4>
