@@ -263,7 +263,7 @@ strong {
   z-index: 2;
 }
 
-.mw-node-model-number-form .form-group.field-string:nth-of-type(2){
+.mw-node-model-number-form .form-group.field-string:nth-of-type(2) {
   z-index: 1;
 }
 
@@ -444,10 +444,12 @@ ul.error-detail .text-danger {
   font-weight: 700;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 0;
 }
+
 
 .results-container h2 .selected-rebate {
   font-size: 32px;
@@ -490,8 +492,11 @@ ul.error-detail .text-danger {
 
 .result-card {
   background-color: #f6f6f6;
-  padding: 35px 35px;
+  padding: 30px 30px;
+  display:flex;
+  flex-direction: column;
 }
+
 
 .product-details.result-card p {
   margin-top: 10px;
@@ -529,12 +534,14 @@ ul.error-detail .text-danger {
   line-height: 27px;
   letter-spacing: 0.01em;
   font-weight: 500;
-  margin-top: 15px;
+  margin-top: auto;
   transition: ease-in-out 200ms all;
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  align-self: flex-start;
+  font-size: 15px;
 }
 
 .result-card .button.external-link:hover {
@@ -569,6 +576,10 @@ ul.error-detail .text-danger {
   font-weight: 300;
   line-height: 27px;
   letter-spacing: 0.02em;
+}
+
+.rebate-details {
+  margin-bottom: 15px;
 }
 
 .rebate-details p {
@@ -649,10 +660,9 @@ ul.error-detail .text-danger {
     align-items: center;
   }
 
-  .results-container h2 .selected-rebate {
-    margin-left: 10px;
+  .results-container h2 .selected-rebate-label {
+    margin-right: 10px;
   }
-
 
   .provice-rebates-header {
     flex-direction: row;
@@ -667,7 +677,7 @@ ul.error-detail .text-danger {
 
 
   .results-container .result.grid-2 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .product-details {
@@ -724,16 +734,16 @@ ul.error-detail .text-danger {
 }
 
 .mw-node-province-territory-rebates .mw-next-and-back,
-.mw-node-rebates .mw-next-and-back {
+.mw-rebate-results-ahri .mw-next-and-back {
   display: none;
 }
 
 
 /* Hide form when results show  */
-.mw-journey-container.mw-rebate-results .mw-node-find-by,
-.mw-journey-container.mw-rebate-results .mw-node-model-number,
-.mw-journey-container.mw-rebate-results .mw-node-ahri-number-form,
-.mw-journey-container.mw-rebate-results .mw-node-province-or-territory-form,
+.mw-journey-container.mw-rebate-results-ahri .mw-node-find-by,
+.mw-journey-container.mw-rebate-results-ahri .mw-node-model-number,
+.mw-journey-container.mw-rebate-results-ahri .mw-node-ahri-number-form,
+.mw-journey-container.mw-rebate-results-ahri .mw-node-province-or-territory-form,
 .mw-journey-container.mw-province-territory-rebates .mw-node-find-by,
 .mw-journey-container.mw-province-territory-rebates .mw-node-province-or-territory-form {
   display: none;
@@ -794,7 +804,7 @@ ul.error-detail .text-danger {
 .button.check-model {
   position: relative;
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -905,7 +915,7 @@ ul.error-detail .text-danger {
 
 .footer .powered-by {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   font-size: 14px;
@@ -917,8 +927,8 @@ ul.error-detail .text-danger {
 
 .footer .powered-by img {
   margin-left: 10px;
-  margin-top:10px;
-  margin-bottom:10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: auto;
   height: 32px;
 }
@@ -953,7 +963,7 @@ ul.error-detail .text-danger {
   color: #fff;
 }
 
-.footer .findDealerForm {
+.findDealerForm {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -961,7 +971,7 @@ ul.error-detail .text-danger {
   margin-top: 8px;
 }
 
-.footer input {
+.findDealerForm input {
   background-color: #fff;
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius-input);
@@ -975,12 +985,20 @@ ul.error-detail .text-danger {
   height: 50px;
 }
 
-.footer input:focus {
+.findDealerForm input:focus {
   outline: 2px solid #616161;;
   outline-offset: -2px;
 }
 
-.footer button {
+.product-selection .findDealerForm input, .product-selection .findDealerForm button{
+  padding:.6em .5em .5em .5em;
+  height: 48px;
+  font-size: 18px;
+  width: 100%;
+  max-width: 190px;
+}
+
+.findDealerForm button {
   font-family: var(--font-family-bold);
   font-size: 18px;
   font-weight: 500;
@@ -1003,7 +1021,7 @@ ul.error-detail .text-danger {
   margin-top: 8px;
 }
 
-.footer button:focus {
+.findDealerForm button:focus {
   outline: 2px solid #616161;
   outline-offset: -2px;
 }
@@ -1028,6 +1046,11 @@ ul.error-detail .text-danger {
   cursor: pointer;
 }
 
+.product-selection .where-to-buy {
+  display: none;
+}
+
+
 @media only screen and (min-width: 750px) {
 
   .mw-container-footer {
@@ -1041,12 +1064,6 @@ ul.error-detail .text-danger {
     max-width: 100%;
     padding: 0;
   }
-
-  .results-container .result.grid-2 {
-    grid-template-columns: 1fr 1fr;
-
-  }
-
 
   .footer .findDealerForm {
     flex-direction: row;
@@ -1066,16 +1083,54 @@ ul.error-detail .text-danger {
     width: auto;
   }
 
-
 }
 
 @media only screen and (min-width: 1025px) {
+
+
+  .results-container .result.grid-2 {
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+  
   .restart-options .text-container {
     flex-direction: row;
   }
 
   .restart-options-fr .text-container {
     flex-direction: column;
+  }
+
+
+  .product-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+
+  .product-selection .where-to-buy {
+    display: block;
+  }
+
+  .product-selection h2 {
+    margin-bottom: 0;
+  }
+
+  .product-selection .findDealerForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3px;
+    gap: 3px;
+  }
+
+  .product-selection .where-to-buy button {
+    margin-top: 0;
+  }
+
+  .footer .where-to-buy {
+    display: none;
   }
 
 }
