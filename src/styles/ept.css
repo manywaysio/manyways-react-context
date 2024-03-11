@@ -514,6 +514,7 @@ label.control-label {
   height: 100vh;
   opacity: 1;
   visibility: visible;
+  z-index: 100000;
 }
 
 .charlotte-modal-content {
@@ -1006,6 +1007,15 @@ letter-spacing: -0.64px;
   font-size: 14px;
 }
 
+@media screen and (min-width: 1024px) {
+  .overview-content p, .countries, .price, .vessel-grid p,
+    .iternary p {
+        font-size: 18px !important;
+        font-family: "Inter", sans-serif;
+        line-height: 25.2px;
+  }
+}
+
 .overview-content-mobile {
   text-align: left;
   font-size: 14px;
@@ -1032,6 +1042,7 @@ letter-spacing: -0.64px;
   padding: 12px 24px;
   margin: 24px 0;
   display: inline-block;
+  cursor: pointer;
 }
 
 .image-side-scene {

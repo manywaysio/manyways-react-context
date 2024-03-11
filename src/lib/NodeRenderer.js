@@ -197,7 +197,7 @@ const NodeRenderer = (props) => {
               )}`}
             />
             <div className={`background-blur-${slugify(currentNode?.title)}`} />
-            {currentNode?.title?.toLowerCase() == "results" && <EPTResults />}
+            {currentNode?.title?.toLowerCase() == "start" && <EPTResults />}
             <div
               className={`${classNamePrefix}-container ${
                 currentNode?.title == "Parts of the world"
@@ -206,7 +206,7 @@ const NodeRenderer = (props) => {
               }`}
               style={{
                 display:
-                  currentNode?.title?.toLowerCase() == "results"
+                  currentNode?.title?.toLowerCase() == "start"
                     ? "none"
                     : "block",
               }}
