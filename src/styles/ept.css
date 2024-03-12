@@ -674,7 +674,7 @@ label.control-label {
 }
 
 .charlotte-modal-content button {
-  padding: 10px 11px;
+  padding: 10px 12.4px;
   border-radius: 999px;
   background-color: transparent;
   border: 1px solid white;
@@ -684,6 +684,7 @@ label.control-label {
 
 .charlotte-modal-content button:hover {
   border: 1px solid #008c93;
+  color: #008c93;
 }
 
 .charlotte-modal-content span {

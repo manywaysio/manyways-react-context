@@ -7,6 +7,8 @@ import backgroundAudio from "../assets/audio/waves.mp3";
 import CloseLarge from "../icons/CloseLarge.js";
 
 const Header = ({
+  // shareJourney,
+  // copyLink,
   charlotteModalOpen,
   setCharlotteModalOpen,
   menuModalOpen,

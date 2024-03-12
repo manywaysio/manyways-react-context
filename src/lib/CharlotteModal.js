@@ -14,9 +14,7 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
     <div className={`charlotte-modal-container ${charlotteModalOpen ? "show" : ""}`}>
       <div className={`charlotte-modal-content ${charlotteModalOpen ? "show" : ""}`}>
         <div className="char-button-hold">
-          <button onClick={() => setCharlotteModalOpen(false)}>
-            <Close />
-          </button>
+          <button onClick={() => setCharlotteModalOpen(false)}>{/* <Close /> */}✕</button>
         </div>
         <h3>Ask Charlotte</h3>
         <form onSubmit={handleSubmit}>

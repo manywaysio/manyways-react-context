@@ -20,7 +20,7 @@ const ManywaysRadioWidget = ({
   onChange,
   id,
 }) => {
-  const { enumOptions, enumDisabled, inline, emptyValue } = options;
+  const { enumOptions, enumDisabled, inline, emptyValue, goBack } = options;
   const { currentNodeId } = useManyways();
 
   const handleBlur = useCallback(
@@ -88,11 +88,13 @@ const ManywaysRadioWidget = ({
           );
 
           return (
-            <div
-              key={i}
-              className={`${inline ? "radio-inline" : "radio"} selected-${checked}`}>
-              {radio}
-            </div>
+            <>
+              <div
+                key={i}
+                className={`${inline ? "radio-inline" : "radio"} selected-${checked}`}>
+                {radio}
+              </div>
+            </>
           );
         })}
     </div>

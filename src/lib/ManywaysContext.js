@@ -11,6 +11,20 @@ import MenuModal from "./MenuModal";
 
 const ManywaysContext = createContext(null);
 
+// const restart = function (e) {
+//   !!e && e.preventDefault();
+//   window.umami.track("reload");
+//   window.location.reload();
+// };
+
+// const share = function (e) {
+//   !!e && e.preventDefault();
+//   window.umami.track("Share");
+//   navigator.share({
+//     url: window.location.href,
+//   });
+// };
+
 const ManywaysProvider = ({
   children,
   slug,
@@ -242,12 +256,18 @@ const ManywaysProvider = ({
             }}></div>
         ) : null}
         <Header
+          shareJourney={shareJourney}
+          copyLink={copyLink}
           charlotteModalOpen={charlotteModalOpen}
           setCharlotteModalOpen={setCharlotteModalOpen}
           menuModalOpen={menuModalOpen}
           setMenuModalOpen={setMenuModalOpen}
         />
-        <MenuModal menuModalOpen={menuModalOpen} />
+        <MenuModal
+          shareJourney={shareJourney}
+          copyLink={copyLink}
+          menuModalOpen={menuModalOpen}
+        />
         <CharlotteModal
           charlotteModalOpen={charlotteModalOpen}
           setCharlotteModalOpen={setCharlotteModalOpen}
