@@ -455,6 +455,10 @@ label.control-label {
   height: 100%;
   width: 5px;
   height: 4px;
+  background-color: white;
+  opacity: 50%;
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .last-bar {
@@ -766,6 +770,7 @@ label.control-label {
 .menu-modal-container.show {
   opacity: 1;
   visibility: visible;
+  z-index: 10000;
 }
 
 @media (min-width: 768px) {
@@ -991,6 +996,7 @@ label.control-label {
   color: white;
 }
 .apply-price {
+  transition: all 0.1s ease-in;
   display: block;
   color: white;
   border: white 1px solid;
@@ -999,7 +1005,13 @@ label.control-label {
   font-size: 18px;
   cursor: pointer;
   margin-top: 8px;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.apply-price:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #008c93;
+  border: 1px solid #008c93;
 }
 
 .inner-bg-grid {
@@ -1066,6 +1078,8 @@ label.control-label {
 }
 
 .big-button {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0);
   padding: 16px 24px !important;
   color: white;
   border: 1px solid white;
@@ -1080,6 +1094,7 @@ label.control-label {
 }
 
 .big-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
   color: #008c93;
   border: 1px solid #008c93;
 }
@@ -1152,9 +1167,9 @@ label.control-label {
   background-color: transparent;
   border: 1px solid white;
   width: 37px;
-  height: 33px;
+  height: 37px;
   color: white;
-  border-radius: 100px;
+  border-radius: 9999px;
   margin-left: 8px;
 }
 
@@ -1293,4 +1308,9 @@ label.control-label {
   color: white;
   margin-top: 0px;
   text-align: center !important;
+}
+
+.locked-scroll {
+  overflow: hidden;
+  max-height: 100vh;
 }
