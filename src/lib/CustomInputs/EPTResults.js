@@ -4,13 +4,7 @@ import Phone from "./../../icons/Phone";
 import Envelope from "./../../icons/Envelope";
 import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
 import { useManyways } from "../ManywaysContext";
-import {
-  Navigation,
-  EffectCreative,
-  Pagination,
-  Scrollbar,
-  A11y,
-} from "swiper/modules";
+import { Navigation, EffectCreative, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 const Price = ({ priceRange }) => {
   const discountedPrice = priceRange
@@ -25,20 +19,16 @@ const Price = ({ priceRange }) => {
         className="fullprice"
         style={{
           textDecoration: discountApplied ? "line-through" : "none",
-        }}
-      >
+        }}>
         {priceRange}
       </div>
-      {discountApplied && (
-        <div className="discountedprice">{discountedPrice}</div>
-      )}
+      {discountApplied && <div className="discountedprice">{discountedPrice}</div>}
       {!discountApplied && (
         <button
           className="apply-price"
           onClick={() => {
             setDiscountApplied(!discountApplied);
-          }}
-        >
+          }}>
           Apply Discount
         </button>
       )}
@@ -85,8 +75,7 @@ const SingleEPTResult = ({
           className="single-result-background"
           style={{
             color: `white`,
-          }}
-        >
+          }}>
           <img src={featuredImage} className="result-image" />
           <div className="inner-bg">
             <div className="inner-bg-content">
@@ -96,15 +85,13 @@ const SingleEPTResult = ({
                   <div
                     dangerouslySetInnerHTML={{
                       __html: smallOverview,
-                    }}
-                  ></div>
+                    }}></div>
                   <a
                     onClick={(e) => {
                       e.preventDefault();
                       setCharlotteModalOpen(true);
                     }}
-                    className="big-button"
-                  >
+                    className="big-button">
                     Let's Sail
                   </a>
                 </div>
@@ -130,8 +117,7 @@ const SingleEPTResult = ({
           className="overview-content-mobile hide-on-tablet"
           dangerouslySetInnerHTML={{
             __html: smallOverview,
-          }}
-        ></div>
+          }}></div>
         <a className="big-button hide-on-tablet">Let's Sail</a>
       </div>
 
@@ -162,8 +148,7 @@ const SingleEPTResult = ({
                     <div
                       dangerouslySetInnerHTML={{
                         __html: destinationDescription,
-                      }}
-                    ></div>
+                      }}></div>
                   </div>
                 );
               }
@@ -182,8 +167,7 @@ const SingleEPTResult = ({
                     return (
                       <div
                         key={idx}
-                        dangerouslySetInnerHTML={{ __html: room.name }}
-                      ></div>
+                        dangerouslySetInnerHTML={{ __html: room.name }}></div>
                     );
                   })}
                 </div>
@@ -204,15 +188,14 @@ const SingleEPTResult = ({
         <div className="inner-content-container charlotte-modal-content show">
           <h2>Ready to turn your travel dreams into reality?</h2>
           <p>
-            We'd love to make it happen! Please provide your phone number or
-            email address below, and Charlotte will contact you to reserve your
-            spot on the perfect journey.
+            We'd love to make it happen! Please provide your phone number or email address
+            below, and Charlotte will contact you to reserve your spot on the perfect
+            journey.
           </p>
           <form>
             <p className="char-desc">
-              Please provide your phone number or email address below, and
-              Charlotte will contact you to assist you with any of your travel
-              questions!
+              Please provide your phone number or email address below, and Charlotte will
+              contact you to assist you with any of your travel questions!
             </p>
             <div className="input-icon-container">
               <Phone className="input-icon" />
@@ -241,8 +224,7 @@ const SingleEPTResult = ({
         style={{
           textAlign: `center`,
           padding: `20px`,
-        }}
-      >
+        }}>
         Continue exploring your other recommendations
       </h2>
       <div className="otherresults">
@@ -260,8 +242,7 @@ const SingleEPTResult = ({
                     swiper.current.slideTo(i);
                   }, 800);
                 }}
-                className="otheresult"
-              >
+                className="otheresult">
                 <img className="otherresult-img" src={r.featuredImage} />
                 <div className="otherresult-title">
                   <h5>{r.name}</h5>
@@ -270,6 +251,11 @@ const SingleEPTResult = ({
             )
           );
         })}
+      </div>
+      <div>
+        <p className="reserved">
+          © 2024 Exclusive Partner Travels Corp. All rights reserved.
+        </p>
       </div>
     </div>
   );
@@ -302,8 +288,7 @@ let EPTResults = () => {
         minHeight: `100vh`,
         zIndex: 1000,
         position: `relative`,
-      }}
-    >
+      }}>
       <Swiper
         loop={true}
         autoHeight={true}
@@ -327,26 +312,18 @@ let EPTResults = () => {
             translate: ["100%", 0, 0],
             opacity: 0,
           },
-        }}
-      >
+        }}>
         <div
           style={{
             position: `absolute`,
             top: 20,
             right: 30,
             zIndex: 1000,
-          }}
-        >
-          <button
-            className="s-nextprev"
-            onClick={(e) => swiperRef.current.slidePrev()}
-          >
+          }}>
+          <button className="s-nextprev" onClick={(e) => swiperRef.current.slidePrev()}>
             &larr;
           </button>
-          <button
-            className="s-nextprev"
-            onClick={(e) => swiperRef.current.slideNext()}
-          >
+          <button className="s-nextprev" onClick={(e) => swiperRef.current.slideNext()}>
             &rarr;
           </button>
         </div>

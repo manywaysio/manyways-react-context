@@ -3,7 +3,7 @@
 .mw-container button,
 .mw-container .button {
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   border-radius: var(--border-radius-button);
   padding: 9px 17.4px;

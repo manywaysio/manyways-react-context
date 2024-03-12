@@ -16,7 +16,6 @@ import { ManywaysProvider } from "./lib/ManywaysContext";
 
 function App({ locale, slug, mode = "scroll" }) {
   useEffect(() => {
-    // document.body.style.overflowY = "hidden";
     document.body.style.margin = 0;
     const style = document.createElement("style");
     style.type = "text/css";
@@ -28,9 +27,8 @@ function App({ locale, slug, mode = "scroll" }) {
   `;
     document.head.appendChild(style);
     return () => {
-      // document.body.style.overflowY = "";
       document.body.style.margin = "";
-      document.body.removeChild(style);
+      document.head.removeChild(style);
     };
   }, []);
 

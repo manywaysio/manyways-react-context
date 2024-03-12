@@ -141,7 +141,6 @@ p {
   background: black;
 }
 
-
 .fadetext-true form.mw-form {
   opacity: 0;
   transition: all 0.4s ease-in-out;
@@ -263,7 +262,7 @@ label.control-label {
 .mw-next {
   text-align: center;
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
@@ -279,7 +278,7 @@ label.control-label {
 
 @media (max-width: 768px) {
   .header-container {
-    padding-top: 8px;
+    padding: 16px;
   }
 }
 
@@ -551,7 +550,12 @@ label.control-label {
   border-radius: 999px;
   padding: 10.5px 11px;
   cursor: pointer;
+  transition: all 0.1s ease-in;
 }
+
+/* .char-button-hold button:hover {
+  border: 1px solid #026f75;
+} */
 
 .input-icon-container {
   position: relative;
@@ -561,7 +565,7 @@ label.control-label {
 
 .input-icon {
   position: absolute;
-  top: 14.5px;
+  top: 18px;
   left: 10px;
   height: 20px;
   width: 20px;
@@ -569,6 +573,11 @@ label.control-label {
 
 .input-with-icon {
   padding-left: 40px;
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.18px;
 }
 
 .input-with-icon::placeholder {
@@ -578,6 +587,7 @@ label.control-label {
   font-weight: 500;
   line-height: 140%;
   letter-spacing: -0.18px;
+  padding-top: 20px;
 }
 
 .char-image-container {
@@ -665,6 +675,11 @@ label.control-label {
   background-color: transparent;
   border: 1px solid white;
   color: white;
+  transition: all 0.1s ease-in;
+}
+
+.charlotte-modal-content button:hover {
+  border: 1px solid #008c93;
 }
 
 .charlotte-modal-content span {
@@ -680,6 +695,13 @@ label.control-label {
 
 .charlotte-modal-content .submit-button {
   margin: 32px 0;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.charlotte-modal-content .submit-button:hover {
+  color: #008c93;
 }
 
 .char-desc {
@@ -837,7 +859,7 @@ label.control-label {
   position: relative;
   opacity: 0;
   transition: all 0.5s ease-in;
-  transform: translateX(100vw)
+  transform: translateX(100vw);
 }
 
 .results-holder.ready-true {
@@ -849,6 +871,10 @@ label.control-label {
   .results-holder {
     left: 0px;
     min-width: 100%;
+  }
+
+  .enum-grid-item-minimize {
+    padding: 6.4px 24px !important;
   }
 }
 
@@ -881,8 +907,8 @@ label.control-label {
     position: relative;
   }
   .single-result-background {
-      max-height: 90vh;
-    }
+    max-height: 90vh;
+  }
 
   .inner-bg {
     position: sticky;
@@ -948,17 +974,15 @@ label.control-label {
 }
 
 @media (max-width: 768px) {
-.inner-bg-content h2 {
-font-family: "Playfair Display";
-font-size: 32px;
-font-style: normal;
-font-weight: 500;
-line-height: 110%;
-letter-spacing: -0.64px;
+  .inner-bg-content h2 {
+    font-family: "Playfair Display";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    letter-spacing: -0.64px;
+  }
 }
-}
-
-
 
 .fullprice {
   color: white;
@@ -972,7 +996,7 @@ letter-spacing: -0.64px;
   border: white 1px solid;
   border-radius: 15px;
   padding: 8px 12px;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
   margin-top: 8px;
   background-color: transparent;
@@ -984,6 +1008,12 @@ letter-spacing: -0.64px;
   grid-column-gap: 24px;
   width: 100%;
   padding-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .inner-bg-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .inner-bg-content h4 {
@@ -1008,11 +1038,14 @@ letter-spacing: -0.64px;
 }
 
 @media screen and (min-width: 1024px) {
-  .overview-content p, .countries, .price, .vessel-grid p,
-    .iternary p {
-        font-size: 18px !important;
-        font-family: "Inter", sans-serif;
-        line-height: 25.2px;
+  .overview-content p,
+  .countries,
+  .price,
+  .vessel-grid p,
+  .iternary p {
+    font-size: 18px !important;
+    font-family: "Inter", sans-serif;
+    line-height: 25.2px;
   }
 }
 
@@ -1043,6 +1076,12 @@ letter-spacing: -0.64px;
   margin: 24px 0;
   display: inline-block;
   cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+
+.big-button:hover {
+  color: #008c93;
+  border: 1px solid #008c93;
 }
 
 .image-side-scene {
@@ -1074,6 +1113,12 @@ letter-spacing: -0.64px;
   margin-top: 24px;
 }
 
+@media (max-width: 768px) {
+  .vessel-info {
+    margin: 32px 0;
+  }
+}
+
 .viking-logo {
   max-width: 160px;
 }
@@ -1099,6 +1144,7 @@ letter-spacing: -0.64px;
 }
 
 .s-nextprev {
+  cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -1183,7 +1229,6 @@ letter-spacing: -0.64px;
   }
 }
 
-
 @media screen and (min-width: 1024px) {
   .image-side-scene {
     margin: 100px 0px;
@@ -1202,8 +1247,8 @@ letter-spacing: -0.64px;
   }
   .inner-content-container.charlotte-modal-content {
     grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
   }
 
   .otherresults {
@@ -1213,8 +1258,8 @@ letter-spacing: -0.64px;
     grid-gap: 60px;
   }
 
-  .otheresult:nth-child(3n+2) {
-    transform: translateY(-70px)
+  .otheresult:nth-child(3n + 2) {
+    transform: translateY(-70px);
   }
 
   .otheresult {
@@ -1225,16 +1270,27 @@ letter-spacing: -0.64px;
     transform: scale(1.05);
   }
 
-    .otheresult:nth-child(3n+2):hover {
-      transform: scale(1.05) translateY(-70px)
-    }
+  .otheresult:nth-child(3n + 2):hover {
+    transform: scale(1.05) translateY(-70px);
+  }
 }
 
 .mw-node-charlotte-form .mw-next {
   display: none;
-
 }
 
 .current-37 {
   display: none !important;
+}
+
+.reserved {
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.14px;
+  color: white;
+  margin-top: 0px;
+  text-align: center !important;
 }

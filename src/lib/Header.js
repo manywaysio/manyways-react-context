@@ -58,7 +58,7 @@ const Header = ({
         onCanPlayThrough={(e) => console.log("Audio can play through")}
         // controls
       ></audio>
-      <div className="mt-8 header-container">
+      <div className="header-container">
         <div className="header-item">
           <button className="hamburger-button" onClick={handleMenuToggleModal}>
             {menuModalOpen ? <CloseLarge className="close-icon" /> : <Hamburger />}
