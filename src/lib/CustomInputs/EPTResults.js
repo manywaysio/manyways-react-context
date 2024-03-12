@@ -6,6 +6,8 @@ import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
 import { useManyways } from "../ManywaysContext";
 import { Navigation, EffectCreative, Pagination, Scrollbar, A11y } from "swiper/modules";
 
+import EPTResultsFooter from "./EPTResultsFooter";
+
 const Price = ({ priceRange }) => {
   const discountedPrice = priceRange
     .split(" - ")
@@ -252,11 +254,7 @@ const SingleEPTResult = ({
           );
         })}
       </div>
-      <div>
-        <p className="reserved">
-          © 2024 Exclusive Partner Travels Corp. All rights reserved.
-        </p>
-      </div>
+      <EPTResultsFooter />
     </div>
   );
 };
