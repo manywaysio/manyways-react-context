@@ -74,6 +74,10 @@ const ManywaysProvider = ({
       response: formData,
     };
 
+    Object.keys(formData).forEach((key) => {
+      window.umami.track(formData[key]);
+    });
+
     // window.umami.track({
     //   title: currentNode?.title,
     //   data: {
