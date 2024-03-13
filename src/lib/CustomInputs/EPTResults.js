@@ -140,7 +140,7 @@ const SingleEPTResult = ({
           dangerouslySetInnerHTML={{
             __html: smallOverview,
           }}></div>
-        <a className="big-button hide-on-tablet">Let's Sail</a>
+        <a className="big-button hide-on-tablet">Let's Sail!</a>
       </div>
 
       <div className="image-side-scene">
