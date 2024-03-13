@@ -269,6 +269,9 @@ const SingleEPTResult = ({
                 className="otheresult">
                 <img className="otherresult-img" src={r.featuredImage} />
                 <div className="otherresult-title">
+                  <div className="fake-button">
+                    <p>View trip</p>
+                  </div>
                   <h5>{r.name}</h5>
                 </div>
               </div>

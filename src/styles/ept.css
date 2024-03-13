@@ -1271,8 +1271,28 @@ label.control-label {
 .otherresult-title h5 {
   font-size: 40px;
   text-align: left;
-  padding: 24px;
+  padding: 24px 24px 0 24px;
   font-weight: normal;
+  margin-bottom: 0;
+}
+
+.fake-button {
+  padding: 0 24px 24px 24px;
+  margin-bottom: 32px;
+}
+
+.fake-button p {
+  color: #fff;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.18px;
+  border: 1px solid white;
+  border-radius: 9999px;
+  width: fit-content;
+  padding: 8px 16px;
 }
 
 .results-holder {
