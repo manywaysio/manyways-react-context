@@ -70,6 +70,8 @@ const SingleEPTResult = ({
     mainEnlargedMap,
   } = thePackage;
 
+  console.log(ship);
+
   const { charlotteModalOpen, setCharlotteModalOpen } = useManyways();
   return (
     <div className="single-result" style={{ background: "black" }}>
@@ -144,7 +146,7 @@ const SingleEPTResult = ({
       </div>
 
       <div className="image-side-scene">
-        <img src={itineraryHeroImage} />
+        <img src={ship?.heroImage} />
       </div>
       <div className="inner-content-container">
         <h2>Itinerary & Excursions</h2>
