@@ -34,7 +34,13 @@ img {
     }
   }
   
-  .singleChoiceField-true, .next-and-back-hidden-true {
+  .singleChoiceField-true > .mw-next {
     display: none;
   }
   
+
+    .mw-node .field-group-images-false input[type=radio]:checked+label {
+      background-color: var(--color-select-light);
+      border-color: var(--color-select-light);
+      color: black;
+    }

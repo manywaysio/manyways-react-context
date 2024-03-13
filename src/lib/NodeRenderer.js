@@ -136,6 +136,9 @@ const NodeRenderer = (props) => {
     .map((currentNode, idx) => {
       let theResponse = responses.find((r) => r.node_id === currentNode?.id);
 
+      let currentNodeIndex = nodes.findIndex((n) => n.id === currentNode?.id);
+      let hasNextNode = !!nodes[currentNodeIndex + 1];
+
       // UI VARIABLES
       let UIVariables = currentNode?.ui_variables || {};
       let globalUIVariables =
@@ -163,16 +166,12 @@ const NodeRenderer = (props) => {
         <div
           className={`fadetext-${textFade} universal-wrapper is-loading-${isLoading} background-node-${slugify(
             currentNode?.title
-          )}`}>
+          )}`}
+        >
           <div
             key={idx}
-            className={`
-          ${classNamePrefix}-node
-          ${
-            currentNodeId === currentNode?.id
-              ? "is-current-node-true"
-              : "is-current-node-false"
-          }
+            className={`${classNamePrefix}-node
+          is-current-node-${currentNodeId === currentNode?.id} 
           has-response-${!!theResponse}
           layout-${nodeLayout || "center"}
           is-full-screen-${!!isFullScreen}
@@ -188,7 +187,8 @@ const NodeRenderer = (props) => {
                     backgroundImage: `url(${backgroundImage})`,
                   }
                 : {}
-            }>
+            }
+          >
             <div
               className={`background-shade node-transition-${slugify(
                 currentNode?.title
@@ -198,14 +198,19 @@ const NodeRenderer = (props) => {
             {currentNode?.title?.toLowerCase() == "results" && <EPTResults />}
             <div
               className={`${classNamePrefix}-container ${
-                currentNode?.title == "Parts of the world" ? "form-padding-top" : ""
+                currentNode?.title == "Parts of the world"
+                  ? "form-padding-top"
+                  : ""
               }`}
               style={{
                 display:
-                  currentNode?.title?.toLowerCase() == "results" ? "none" : "block",
-              }}>
+                  currentNode?.title?.toLowerCase() == "results"
+                    ? "none"
+                    : "block",
+              }}
+            >
               <Form
-                disabled={!!theResponse}
+                // disabled={!!hasNextNode}
                 formData={theResponse?.response || {}}
                 className={`${classNamePrefix}-form ${classNamePrefix}-node-${slugify(
                   currentNode?.title
@@ -224,7 +229,8 @@ const NodeRenderer = (props) => {
                       { value: "Alberta", label: "Alberta" },
                     ];
                     const theOptions =
-                      !!options?.enumOptions && !!options?.enumOptions?.length > 0
+                      !!options?.enumOptions &&
+                      !!options?.enumOptions?.length > 0
                         ? options?.enumOptions
                         : temp_opts;
                     return (
@@ -254,7 +260,10 @@ const NodeRenderer = (props) => {
                 onSubmit={goForward}
                 schema={currentNode?.form_schema || {}}
                 validator={validator}
-                uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}>
+                uiSchema={
+                  !!currentNode?.ui_schema ? currentNode?.ui_schema : {}
+                }
+              >
                 <NextAndBack
                   currentNode={currentNode}
                   className={`singleChoiceField-${singleChoiceField}`}
