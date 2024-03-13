@@ -263,7 +263,11 @@ const ManywaysProvider = ({
           menuModalOpen={menuModalOpen}
           setMenuModalOpen={setMenuModalOpen}
         />
-        <MenuModal share={share} copyLink={copyLink} menuModalOpen={menuModalOpen} />
+        <MenuModal
+          shareJourney={shareJourney}
+          copyLink={copyLink}
+          menuModalOpen={menuModalOpen}
+        />
         <CharlotteModal
           charlotteModalOpen={charlotteModalOpen}
           setCharlotteModalOpen={setCharlotteModalOpen}
