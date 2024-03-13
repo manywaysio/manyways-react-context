@@ -47,7 +47,7 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
           <img className="char-image" src={charlotte} alt="Charlotte" />
 
           <div>
-            <h4>Meet Charlotte</h4>
+            <h4>Meet your assigned agent</h4>
             <p>
               Charlotte has 20+ years experience in luxury event planning and service,
               having worked for A-list celebrities and designer fashion brands throughout

@@ -74,6 +74,25 @@ const SingleEPTResult = ({
   return (
     <div className="single-result" style={{ background: "black" }}>
       <div className="single-results-background-holder">
+        {/* <div
+          style={{
+            position: `absolute`,
+            top: "50%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
+            maxWidth: "1200px", // Adjust this value based on your layout
+            zIndex: 1000,
+          }}>
+          <button className="s-nextprev" onClick={() => swiper.current.slidePrev()}>
+            &larr;
+          </button>
+          <button className="s-nextprev" onClick={() => swiper.current.slideNext()}>
+            &rarr;
+          </button>
+        </div> */}
         <div
           className="single-result-background"
           style={{
@@ -144,7 +163,7 @@ const SingleEPTResult = ({
                 idx
               ) => {
                 return (
-                  <div className="iter-item" key={idx}>
+                  <div className="grid grid-cols-4 col-span-2 iter-item" key={idx}>
                     <h4>
                       DAY {number} &mdash; {title}
                     </h4>
@@ -156,11 +175,15 @@ const SingleEPTResult = ({
                 );
               }
             )}
-            {mainEnlargedMap && <img src={mainEnlargedMap} />}
+            <div className="enlarged-map">
+              {mainEnlargedMap && <img src={mainEnlargedMap} />}
+            </div>
             <div className="vessel-info">
               <div className="vessel-grid">
-                <img className="viking-logo" src="/viking.png" />
-                <div>
+                <div className="viking-logo">
+                  <img src="/viking.png" />
+                </div>
+                <div className="vessel-content">
                   <h4>Vessel</h4>
                   <p>{ship.name}</p>
                 </div>
@@ -189,10 +212,10 @@ const SingleEPTResult = ({
           <img src={featuredImage} />
         </div>
         <div className="inner-content-container charlotte-modal-content show">
-          <h2>Ready to turn your travel dreams into reality?</h2>
+          <h2>Book this trip at a member-only price</h2>
           <p>
-            We'd love to make it happen! Please provide your phone number or email address
-            below, and Charlotte will contact you to reserve your spot on the perfect
+            Turn this travel experience into reality; please provide your phone number or
+            email, and our cruise expert will help you to reserve a spot on the perfect
             journey.
           </p>
           <form className="results-char">
@@ -313,8 +336,9 @@ let EPTResults = () => {
           style={{
             position: `absolute`,
             top: "0%",
+            right: 20,
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "end",
             width: "100%",
             zIndex: 1000,
           }}>

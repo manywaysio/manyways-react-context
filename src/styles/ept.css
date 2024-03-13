@@ -936,16 +936,14 @@ label.control-label {
 
   .iternary-and-images {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 48px;
   }
   .iternary {
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column: span 3 / span 3;
   }
   .iternary-images {
-    grid-column-start: 4;
-    grid-column-end: 6;
+    grid-column: span 2 / span 2;
     gap: 16px;
   }
 }
@@ -1140,38 +1138,55 @@ label.control-label {
 
 .vessel-info {
   background-color: black;
-  margin-top: 24px;
-}
-
-@media (max-width: 768px) {
-  .vessel-info {
-    margin: 32px 0;
-  }
-
-  .vessel-grid {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
+  margin-top: 100px;
 }
 
 .vessel-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .viking-logo {
   max-width: 160px;
-  grid-column-start: 1;
-  grid-column-end: 1;
+  grid-column: span 2 / span 2;
+}
+
+.vessel-content {
+  grid-column: span 2 / span 2;
 }
 
 .staterooms-holder {
-  grid-column-start: 3;
-  grid-column-end: 4;
+  display: flex;
+  flex-direction: column;
+  grid-column: span 3 / span 3;
 }
 
 .staterooms-holder p {
   margin-bottom: 0px;
   margin-top: 0px;
+}
+
+@media (max-width: 1024px) {
+  .vessel-info {
+    margin: 56px 0;
+  }
+
+  .vessel-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  .viking-logo {
+    grid-column: span 1 / span 1;
+  }
+
+  .vessel-content {
+    grid-column: span 1 / span 1;
+  }
+
+  .staterooms-holder {
+    grid-column: span 1 / span 1;
+  }
 }
 
 .inner-content-container .input-icon-container,
@@ -1192,7 +1207,14 @@ label.control-label {
   color: white;
   border-radius: 9999px;
   margin-left: 8px;
+  transition: all 0.1s ease-in;
 }
+
+/* .s-nextprev:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #008c93;
+  border: 1px solid #008c93;
+} */
 
 .otherresults {
   padding: 0px 15px;
@@ -1386,6 +1408,18 @@ label.control-label {
 
   .content-box p {
     margin-bottom: 0;
+  }
+}
+
+.enlarged-map {
+  margin-top: 70px;
+  margin-right: 22px;
+}
+
+@media (max-width: 1024px) {
+  .enlarged-map {
+    margin-top: 0;
+    margin-right: 0;
   }
 }
 

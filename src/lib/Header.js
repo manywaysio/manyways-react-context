@@ -75,7 +75,7 @@ const Header = ({
 
         <div className="header-item">
           <button className="char-button" onClick={handleToggleModal}>
-            <p>Ask Charlotte</p>
+            <p>Speak to agent</p>
             <img className="char-photo-header" src={charlotte} alt="Charlotte" />
           </button>
           <button className="speaker-button" onClick={toggleSound}>
