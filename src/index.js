@@ -3,6 +3,15 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 // import reportWebVitals from "./reportWebVitals";
 
+try {
+  const script = document.createElement("script");
+  script.src = "https://unpkg.com/share-api-polyfill/dist/share-min.js";
+  script.async = true;
+  document.head.appendChild(script);
+} catch (error) {
+  console.log(error);
+}
+
 class ManywaysWrapper extends HTMLElement {
   connectedCallback() {
     const mountPoint = document.createElement("div");
@@ -22,13 +31,13 @@ window.exports = window.exports || {};
 window.manyways = {};
 window.manyways.restart = function (e) {
   !!e && e.preventDefault();
-  window.umami.track("reload");
+  !!window?.umami && !!window?.umami?.track && window.umami.track("restart");
   window.location.reload();
 };
 
 window.manyways.share = function (e) {
   !!e && e.preventDefault();
-  window.umami.track("Share");
+  !!window?.umami && !!window?.umami?.track && window.umami.track("Share");
   navigator.share({
     title: "MESCA - Rebate Finder",
     url: window.location.href,
