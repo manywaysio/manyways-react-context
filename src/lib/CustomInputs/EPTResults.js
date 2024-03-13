@@ -18,22 +18,20 @@ const Price = ({ priceRange }) => {
   return (
     <div>
       <div
-        className="fullprice"
+        className={`fullprice ${discountApplied ? "applied" : ""}`}
         style={{
           textDecoration: discountApplied ? "line-through" : "none",
         }}>
         {priceRange}
       </div>
       {discountApplied && <div className="discountedprice">{discountedPrice}</div>}
-      {!discountApplied && (
-        <button
-          className="apply-price"
-          onClick={() => {
-            setDiscountApplied(!discountApplied);
-          }}>
-          Apply Discount
-        </button>
-      )}
+      <button
+        className={`apply-price ${discountApplied ? "applied" : ""}`}
+        onClick={() => {
+          setDiscountApplied(true);
+        }}>
+        Apply Discount
+      </button>
     </div>
   );
 };
