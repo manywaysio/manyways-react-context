@@ -16,7 +16,7 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
         <div className="char-button-hold">
           <button onClick={() => setCharlotteModalOpen(false)}>{/* <Close /> */}✕</button>
         </div>
-        <h3>Ask Charlotte</h3>
+        <h3>Speak to our cruise experts</h3>
         <form onSubmit={handleSubmit}>
           <p className="char-desc">
             Please provide your phone number or email address below, and Charlotte will

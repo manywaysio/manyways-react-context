@@ -147,9 +147,9 @@ const SingleEPTResult = ({
         <img src={itineraryHeroImage} />
       </div>
       <div className="inner-content-container">
+        <h2>Itinerary & Excursions</h2>
         <div className="iternary-and-images">
           <div className="iternary">
-            <h2>Itinerary & Excursions</h2>
             {itineraryDays.map(
               (
                 {
@@ -211,7 +211,7 @@ const SingleEPTResult = ({
         <div className="image-final-scene">
           <img src={featuredImage} />
         </div>
-        <div className="inner-content-container charlotte-modal-content show">
+        <div className="results-char inner-content-container charlotte-modal-content show">
           <h2>Book this trip at a member-only price</h2>
           <p>
             Turn this travel experience into reality; please provide your phone number or

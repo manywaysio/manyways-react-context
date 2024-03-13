@@ -936,14 +936,14 @@ label.control-label {
 
   .iternary-and-images {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(20, minmax(0, 1fr));
     gap: 48px;
   }
   .iternary {
-    grid-column: span 3 / span 3;
+    grid-column: span 12 / span 12;
   }
   .iternary-images {
-    grid-column: span 2 / span 2;
+    grid-column: span 8 / span 8;
     gap: 16px;
   }
 }
@@ -1413,16 +1413,43 @@ label.control-label {
 
 .enlarged-map {
   margin-top: 70px;
-  margin-right: 22px;
 }
 
 @media (max-width: 1024px) {
   .enlarged-map {
     margin-top: 0;
-    margin-right: 0;
   }
 }
 
-/* .results-char {
-  
-} */
+.results-char input {
+  max-width: 255px;
+}
+
+.results-char {
+  align-items: start !important;
+}
+
+.results-char h2 {
+  margin: 0;
+}
+
+.results-char p {
+  margin: 32px 0;
+}
+
+.results-char.charlotte-modal-content.show {
+  padding-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .results-char input {
+    max-width: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .results-char.charlotte-modal-content.show {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+}
