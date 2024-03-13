@@ -101,6 +101,7 @@ p {
 .background-node-results {
   display: block !important;
   width: 100% !important;
+  background: black;
   /* max-width: 1700px !important; */
   margin: 0 auto !important;
   padding: 0 73px !important;
@@ -150,10 +151,6 @@ p {
   background-size: cover;
 }
 
-.background-node-results {
-  background: black;
-}
-
 .fadetext-true form.mw-form {
   opacity: 0;
   transition: all 0.4s ease-in-out;
@@ -167,6 +164,7 @@ p {
 }
 
 .background-shade {
+  /* overflow-x: hidden; */
   top: 0;
   z-index: 1;
   height: 100vh;
@@ -741,14 +739,15 @@ label.control-label {
   opacity: 0;
   visibility: hidden;
   color: white;
-  padding: 12px;
+  padding: 14px;
   border-radius: 6px;
 }
 
 .menu-modal-container ul {
   font-family: "Inter", sans-serif;
   list-style: none;
-  padding: 0 0 0 20px;
+  /* padding: 0 0 0 20px; */
+  padding-left: 5px;
   margin: 0;
 }
 
@@ -885,6 +884,7 @@ label.control-label {
 
 /* RESULTS */
 .results-holder {
+  /* overflow-x: hidden; */
   margin: 0px;
   min-width: 100vw;
   left: -15px;
