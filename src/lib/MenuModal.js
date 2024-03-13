@@ -5,7 +5,11 @@ const MenuModal = ({ menuModalOpen, shareJourney, copyLink }) => {
         <li>Restart this guide</li>
         <li onClick={copyLink}>Copy link to continue later</li>
         <li onClick={shareJourney}>Share this guide</li>
-        <li className="manyways ">Powered by Manyways</li>
+        <li className="manyways">
+          <a className="manyways" href="https://www.manyways.io/">
+            Powered by Manyways
+          </a>
+        </li>
       </ul>
     </div>
   );

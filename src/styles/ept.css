@@ -763,9 +763,11 @@ label.control-label {
 }
 
 .manyways {
+  text-decoration: none;
+  color: white !important;
   font-size: 10px !important;
   margin-bottom: 0 !important;
-  opacity: 0.5 !important;
+  opacity: 0.7 !important;
   font-weight: 400 !important;
   text-transform: uppercase !important;
 }
@@ -1360,6 +1362,11 @@ label.control-label {
   line-height: 140%; /* 19.6px */
   letter-spacing: -0.14px;
   text-decoration-line: underline;
+  transition: all 0.1s ease-in;
+}
+
+.footer a:hover {
+  color: #008c93;
 }
 
 .logo-holder {
@@ -1369,11 +1376,18 @@ label.control-label {
 
 .logo-holder ul {
   margin-top: 0;
+  list-style: none;
 }
 
 .logo-holder ul li a {
   margin-left: 32px;
   margin-right: 0;
+  text-decoration: none;
+  transition: all 0.1s ease-in;
+}
+
+.logo-holder ul li a:hover {
+  color: #008c93;
 }
 
 .content-box {
