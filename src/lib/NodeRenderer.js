@@ -166,8 +166,7 @@ const NodeRenderer = (props) => {
         <div
           className={`fadetext-${textFade} universal-wrapper is-loading-${isLoading} background-node-${slugify(
             currentNode?.title
-          )}`}
-        >
+          )}`}>
           <div
             key={idx}
             className={`${classNamePrefix}-node
@@ -187,8 +186,7 @@ const NodeRenderer = (props) => {
                     backgroundImage: `url(${backgroundImage})`,
                   }
                 : {}
-            }
-          >
+            }>
             <div
               className={`background-shade node-transition-${slugify(
                 currentNode?.title
@@ -198,17 +196,12 @@ const NodeRenderer = (props) => {
             {currentNode?.title?.toLowerCase() == "results" && <EPTResults />}
             <div
               className={`${classNamePrefix}-container ${
-                currentNode?.title == "Parts of the world"
-                  ? "form-padding-top"
-                  : ""
+                currentNode?.title == "Parts of the world" ? "form-padding-top" : ""
               }`}
               style={{
                 display:
-                  currentNode?.title?.toLowerCase() == "results"
-                    ? "none"
-                    : "block",
-              }}
-            >
+                  currentNode?.title?.toLowerCase() == "results" ? "none" : "block",
+              }}>
               <Form
                 // disabled={!!hasNextNode}
                 formData={theResponse?.response || {}}
@@ -229,8 +222,7 @@ const NodeRenderer = (props) => {
                       { value: "Alberta", label: "Alberta" },
                     ];
                     const theOptions =
-                      !!options?.enumOptions &&
-                      !!options?.enumOptions?.length > 0
+                      !!options?.enumOptions && !!options?.enumOptions?.length > 0
                         ? options?.enumOptions
                         : temp_opts;
                     return (
@@ -260,13 +252,12 @@ const NodeRenderer = (props) => {
                 onSubmit={goForward}
                 schema={currentNode?.form_schema || {}}
                 validator={validator}
-                uiSchema={
-                  !!currentNode?.ui_schema ? currentNode?.ui_schema : {}
-                }
-              >
+                uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}>
                 <NextAndBack
                   currentNode={currentNode}
-                  className={`singleChoiceField-${singleChoiceField}`}
+                  className={`${
+                    currentNode?.id != 32 ? "next-and-back-holder" : ""
+                  } singleChoiceField-${singleChoiceField}`}
                 />
               </Form>
             </div>

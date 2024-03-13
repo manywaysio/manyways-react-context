@@ -7,6 +7,10 @@ const ProgressBar = ({ initialCurrentId }) => {
   const [showProgressBar, setShowProgressBar] = useState(false);
 
   useEffect(() => {
+    if (initialCurrentId < 34) {
+      setShowProgressBar(false);
+      setfadeout(true);
+    }
     if (typeof initialCurrentId === "number") {
       setCurrentId(initialCurrentId);
     }
