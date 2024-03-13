@@ -98,6 +98,15 @@ p {
   box-sizing: border-box !important;
 }
 
+.background-node-results {
+  display: block !important;
+  width: 100% !important;
+  /* max-width: 1700px !important; */
+  margin: 0 auto !important;
+  padding: 0 73px !important;
+  box-sizing: border-box !important;
+}
+
 @media (max-width: 1024px) {
   .universal-wrapper {
     padding: 0 30px !important;
@@ -581,7 +590,7 @@ label.control-label {
 
 .input-with-icon {
   padding-left: 40px;
-  color: rgba(0, 0, 0, 0.25);
+  color: black;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -928,15 +937,16 @@ label.control-label {
   .iternary-and-images {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 60px;
+    gap: 48px;
   }
   .iternary {
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
   }
   .iternary-images {
-    grid-column-start: 3;
+    grid-column-start: 4;
     grid-column-end: 6;
+    gap: 16px;
   }
 }
 
@@ -1137,19 +1147,25 @@ label.control-label {
   .vessel-info {
     margin: 32px 0;
   }
-}
 
-.viking-logo {
-  max-width: 160px;
+  .vessel-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 .vessel-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.viking-logo {
+  max-width: 160px;
+  grid-column-start: 1;
+  grid-column-end: 1;
 }
 
 .staterooms-holder {
-  grid-column-start: 2;
+  grid-column-start: 3;
   grid-column-end: 4;
 }
 
@@ -1340,6 +1356,7 @@ label.control-label {
 
 .content-box {
   margin-bottom: 32px;
+  max-width: 830px;
 }
 
 .content-box p {
@@ -1371,3 +1388,7 @@ label.control-label {
     margin-bottom: 0;
   }
 }
+
+/* .results-char {
+  
+} */

@@ -57,6 +57,7 @@ const SingleEPTResult = ({
   swiper,
 }) => {
   const thePackage = packages[0] || { price: {} };
+  console.log("the package", thePackage);
   const {
     price: { priceRange, prices },
     currency,
@@ -157,8 +158,8 @@ const SingleEPTResult = ({
             )}
             {mainEnlargedMap && <img src={mainEnlargedMap} />}
             <div className="vessel-info">
-              <img className="viking-logo" src="/viking.png" />
               <div className="vessel-grid">
+                <img className="viking-logo" src="/viking.png" />
                 <div>
                   <h4>Vessel</h4>
                   <p>{ship.name}</p>
@@ -194,11 +195,7 @@ const SingleEPTResult = ({
             below, and Charlotte will contact you to reserve your spot on the perfect
             journey.
           </p>
-          <form>
-            <p className="char-desc">
-              Please provide your phone number or email address below, and Charlotte will
-              contact you to assist you with any of your travel questions!
-            </p>
+          <form className="results-char">
             <div className="input-icon-container">
               <Phone className="input-icon" />
               <input
@@ -288,6 +285,7 @@ let EPTResults = () => {
         position: `relative`,
       }}>
       <Swiper
+        allowTouchMove={false}
         loop={true}
         autoHeight={true}
         onSwiper={(swiper) => {
@@ -314,8 +312,10 @@ let EPTResults = () => {
         <div
           style={{
             position: `absolute`,
-            top: 20,
-            right: 30,
+            top: "0%",
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
             zIndex: 1000,
           }}>
           <button className="s-nextprev" onClick={(e) => swiperRef.current.slidePrev()}>
