@@ -4,7 +4,13 @@ import Phone from "./../../icons/Phone";
 import Envelope from "./../../icons/Envelope";
 import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
 import { useManyways } from "../ManywaysContext";
-import { Navigation, EffectCreative, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Navigation,
+  EffectCreative,
+  Pagination,
+  Scrollbar,
+  A11y,
+} from "swiper/modules";
 
 import EPTResultsFooter from "./EPTResultsFooter";
 
@@ -21,15 +27,19 @@ const Price = ({ priceRange }) => {
         className={`fullprice ${discountApplied ? "applied" : ""}`}
         style={{
           textDecoration: discountApplied ? "line-through" : "none",
-        }}>
+        }}
+      >
         {priceRange}
       </div>
-      {discountApplied && <div className="discountedprice">{discountedPrice}</div>}
+      {discountApplied && (
+        <div className="discountedprice">{discountedPrice}</div>
+      )}
       <button
         className={`apply-price ${discountApplied ? "applied" : ""}`}
         onClick={() => {
           setDiscountApplied(true);
-        }}>
+        }}
+      >
         Apply Discount
       </button>
     </div>
@@ -97,7 +107,8 @@ const SingleEPTResult = ({
           className="single-result-background"
           style={{
             color: `white`,
-          }}>
+          }}
+        >
           <img src={featuredImage} className="result-image" />
           <div className="inner-bg">
             <div className="inner-bg-content">
@@ -107,13 +118,15 @@ const SingleEPTResult = ({
                   <div
                     dangerouslySetInnerHTML={{
                       __html: smallOverview,
-                    }}></div>
+                    }}
+                  ></div>
                   <a
                     onClick={(e) => {
                       e.preventDefault();
                       setCharlotteModalOpen(true);
                     }}
-                    className="big-button">
+                    className="big-button"
+                  >
                     Let's Sail
                   </a>
                 </div>
@@ -139,7 +152,8 @@ const SingleEPTResult = ({
           className="overview-content-mobile hide-on-tablet"
           dangerouslySetInnerHTML={{
             __html: smallOverview,
-          }}></div>
+          }}
+        ></div>
         <a className="big-button hide-on-tablet">Let's Sail</a>
       </div>
 
@@ -163,14 +177,18 @@ const SingleEPTResult = ({
                 idx
               ) => {
                 return (
-                  <div className="grid grid-cols-4 col-span-2 iter-item" key={idx}>
+                  <div
+                    className="grid grid-cols-4 col-span-2 iter-item"
+                    key={idx}
+                  >
                     <h4>
                       DAY {number} &mdash; {title}
                     </h4>
                     <div
                       dangerouslySetInnerHTML={{
                         __html: destinationDescription,
-                      }}></div>
+                      }}
+                    ></div>
                   </div>
                 );
               }
@@ -193,7 +211,8 @@ const SingleEPTResult = ({
                     return (
                       <div
                         key={idx}
-                        dangerouslySetInnerHTML={{ __html: room.name }}></div>
+                        dangerouslySetInnerHTML={{ __html: room.name }}
+                      ></div>
                     );
                   })}
                 </div>
@@ -214,9 +233,9 @@ const SingleEPTResult = ({
         <div className="results-char inner-content-container charlotte-modal-content show">
           <h2>Book this trip at a member-only price</h2>
           <p>
-            Turn this travel experience into reality; please provide your phone number or
-            email, and our cruise expert will help you to reserve a spot on the perfect
-            journey.
+            Turn this travel experience into reality; please provide your phone
+            number or email, and our cruise expert will help you to reserve a
+            spot on the perfect journey.
           </p>
           <form className="results-char">
             <div className="input-icon-container">
@@ -246,7 +265,8 @@ const SingleEPTResult = ({
         style={{
           textAlign: `center`,
           padding: `20px`,
-        }}>
+        }}
+      >
         Continue exploring your other recommendations
       </h2>
       <div className="otherresults">
@@ -264,7 +284,8 @@ const SingleEPTResult = ({
                     swiper.current.slideTo(i);
                   }, 800);
                 }}
-                className="otheresult">
+                className="otheresult"
+              >
                 <img className="otherresult-img" src={r.featuredImage} />
                 <div className="otherresult-title">
                   <div className="fake-button">
@@ -309,7 +330,8 @@ let EPTResults = () => {
         minHeight: `100vh`,
         zIndex: 1000,
         position: `relative`,
-      }}>
+      }}
+    >
       <Swiper
         allowTouchMove={false}
         loop={true}
@@ -334,21 +356,19 @@ let EPTResults = () => {
             translate: ["100%", 0, 0],
             opacity: 0,
           },
-        }}>
-        <div
-          style={{
-            position: `absolute`,
-            top: "0%",
-            right: 20,
-            display: "flex",
-            justifyContent: "end",
-            width: "100%",
-            zIndex: 1000,
-          }}>
-          <button className="s-nextprev" onClick={(e) => swiperRef.current.slidePrev()}>
+        }}
+      >
+        <div className="nextprev-holder-arrows">
+          <button
+            className="s-nextprev"
+            onClick={(e) => swiperRef.current.slidePrev()}
+          >
             &larr;
           </button>
-          <button className="s-nextprev" onClick={(e) => swiperRef.current.slideNext()}>
+          <button
+            className="s-nextprev"
+            onClick={(e) => swiperRef.current.slideNext()}
+          >
             &rarr;
           </button>
         </div>

@@ -40,7 +40,7 @@ img {
   
 
     .mw-node .field-group-images-false input[type=radio]:checked+label {
-      background-color: var(--color-select-light);
-      border-color: var(--color-select-light);
-      color: black;
+      background-color: black !important;
+      border-color: var(--color-select-light) !important;
+      color: white !important;
     }
