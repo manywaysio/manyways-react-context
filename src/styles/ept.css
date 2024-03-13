@@ -1174,8 +1174,59 @@ label.control-label {
 }
 
 .iternary .iter-item {
-  padding-bottom: 14px;
+  display: flex;
+  padding: 16px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.iter-item-flex {
+  display: flex;
+}
+
+.item-inner .day {
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  padding-top: 3px;
+}
+
+.day p {
+  font-family: Inter;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.14px;
+  margin-left: 48px;
+  margin: 0;
+  padding-left: 48px;
+}
+
+.item-inner .title {
+  font-family: Inter;
+  min-width: 100px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.18px;
+  margin-left: 48px;
+  margin: 0;
+  padding-left: 48px;
+}
+
+@media (max-width: 1024px) {
+  .iter-item {
+    flex-direction: column;
+  }
+
+  .day p {
+    padding-left: 0;
+    padding-top: 12px;
+  }
 }
 
 .vessel-info {
@@ -1552,30 +1603,29 @@ label.control-label {
   margin-bottom: 8px;
 }
 
-
 .nextprev-holder-arrows {
   position: absolute;
-    top: 0%;
-      right: 20px;
-    display: flex;
-    justify-content: end;
-    width: 100%;
-    z-index: 1000;
+  top: 0%;
+  right: 20px;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  z-index: 1000;
 }
 
 @media (min-width: 1024px) {
   .nextprev-holder-arrows {
-          position: fixed;
-            top: 38vh;
-            display: flex;
-            justify-content: space-between;
-            z-index: 1000;
-            left: 0;
-            right: unset;
-    }
+    position: fixed;
+    top: 38vh;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    left: 0;
+    right: unset;
+  }
 
-    .s-nextprev {
-      transform: scale(1.1);
-      margin: 10px;
-    }
+  .s-nextprev {
+    transform: scale(1.1);
+    margin: 10px;
+  }
 }
