@@ -762,6 +762,17 @@ label.control-label {
   cursor: pointer;
 }
 
+.menu-modal-container li a {
+  text-decoration: none;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: white;
+  transition: opacity 0.5s, visibility 0.5s;
+  opacity: 1;
+  font-weight: 400;
+  cursor: pointer;
+}
+
 .manyways {
   text-decoration: none;
   color: white !important;
