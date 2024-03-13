@@ -627,7 +627,7 @@ label.control-label {
 
 @media (max-width: 768px) {
   .char-image {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 }
 
@@ -788,8 +788,8 @@ label.control-label {
 
 @media (max-width: 768px) {
   .menu-modal-container {
-    top: 55px;
-    left: 16px;
+    top: 65px;
+    left: 25px;
   }
 }
 
@@ -869,12 +869,12 @@ label.control-label {
 }
 
 .char-page .char-image-container p {
-  margin-bottom: 0;
+  margin: 8px 0 0 0;
 }
 
 @media (max-width: 768px) {
   .char-page .char-image-container {
-    padding: 12px;
+    padding: 15px;
   }
 }
 
@@ -1074,7 +1074,7 @@ label.control-label {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-column-gap: 24px;
   width: 100%;
-  padding-bottom: 24px;
+  padding-bottom: 32px;
 }
 
 @media (max-width: 768px) {
@@ -1127,7 +1127,14 @@ label.control-label {
   font-size: 14px;
 }
 
+@media screen and (max-width: 1024px) {
+  .inner-content-container {
+    padding: 16px 24px 28px 24px;
+  }
+}
+
 .overview-content-mobile p {
+  margin-top: 0;
   font-size: 14px;
   line-height: 19.6px;
 }
@@ -1135,7 +1142,7 @@ label.control-label {
 .big-button {
   background-color: #fff;
   background-color: rgba(255, 255, 255, 0);
-  padding: 16px 24px !important;
+  padding: 16px 70px !important;
   color: white;
   border: 1px solid white;
   border-radius: 999px;
@@ -1225,7 +1232,19 @@ label.control-label {
 
   .day p {
     padding-left: 0;
-    padding-top: 12px;
+    /* padding-top: 12px; */
+    font-size: 12px;
+  }
+
+  .item-inner .title {
+    padding-left: 24px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .item-inner .day {
+    font-size: 12px;
   }
 }
 
@@ -1388,7 +1407,7 @@ label.control-label {
 }
 
 .results-holder {
-  margin-top: 56px;
+  margin-top: 72px;
 }
 
 @media screen and (min-width: 768px) {
@@ -1597,6 +1616,12 @@ label.control-label {
   width: 100%;
   max-width: 700px;
   justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .next-and-back-holder {
+    padding: 0 4px 24px 4px;
+  }
 }
 
 .ept-subtitle {
