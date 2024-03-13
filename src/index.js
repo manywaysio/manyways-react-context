@@ -33,7 +33,7 @@ window.exports = window.exports || {};
 window.manyways = {};
 window.manyways.restart = function (e) {
   !!e && e.preventDefault();
-  window.umami.track("reload");
+  window.umami.track("restart");
   window.location.reload();
 };
 
