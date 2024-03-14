@@ -649,10 +649,6 @@ ul.error-detail .text-danger {
   height: 100%;
 }
 
-.mw-node-rebate-results-form .mw-next-and-back {
-  display: none;
-}
-
 @media only screen and (min-width: 750px) {
 
   .results-container h2 {
@@ -734,7 +730,8 @@ ul.error-detail .text-danger {
 }
 
 .mw-node-province-territory-rebates .mw-next-and-back,
-.mw-rebate-results-ahri .mw-next-and-back {
+.mw-rebate-results-ahri .mw-next-and-back, 
+.mw-node-rebate-results-model-form .mw-next-and-back {
   display: none;
 }
 
