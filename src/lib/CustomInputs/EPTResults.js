@@ -70,29 +70,11 @@ const SingleEPTResult = ({
 
   console.log(ship);
 
-  const { charlotteModalOpen, setCharlotteModalOpen } = useManyways();
+  const { setCharlotteModalOpen } = useManyways();
+
   return (
     <div className="single-result" style={{ background: "black" }}>
       <div className="single-results-background-holder">
-        {/* <div
-          style={{
-            position: `absolute`,
-            top: "50%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            justifyContent: "space-between",
-            width: "100%",
-            maxWidth: "1200px", // Adjust this value based on your layout
-            zIndex: 1000,
-          }}>
-          <button className="s-nextprev" onClick={() => swiper.current.slidePrev()}>
-            &larr;
-          </button>
-          <button className="s-nextprev" onClick={() => swiper.current.slideNext()}>
-            &rarr;
-          </button>
-        </div> */}
         <div
           className="single-result-background"
           style={{
@@ -298,6 +280,7 @@ const SingleEPTResult = ({
 };
 
 let EPTResults = () => {
+  const { updateSwiperControls } = useManyways();
   const [results, setResults] = useState([]);
   const [init, setInit] = useState(false);
   const getResults = async () => {
@@ -314,6 +297,15 @@ let EPTResults = () => {
   }, []);
 
   const swiperRef = useRef();
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      updateSwiperControls({
+        slideNext: () => swiperRef.current.slideNext(),
+        slidePrev: () => swiperRef.current.slidePrev(),
+      });
+    }
+  }, [swiperRef.current]);
 
   return (
     <div

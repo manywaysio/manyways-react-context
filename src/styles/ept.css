@@ -1685,7 +1685,7 @@ label.control-label {
 @media (min-width: 1024px) {
   .nextprev-holder-arrows {
     position: fixed;
-    top: 38vh;
+    top: 42vh;
     display: flex;
     justify-content: space-between;
     z-index: 1000;
