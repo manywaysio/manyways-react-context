@@ -740,12 +740,17 @@ ul.error-detail .text-danger {
 
 
 /* Hide form when results show  */
+/* Hide form when results show  */
 .mw-journey-container.mw-rebate-results-ahri .mw-node-find-by,
 .mw-journey-container.mw-rebate-results-ahri .mw-node-model-number,
 .mw-journey-container.mw-rebate-results-ahri .mw-node-ahri-number-form,
 .mw-journey-container.mw-rebate-results-ahri .mw-node-province-or-territory-form,
 .mw-journey-container.mw-province-territory-rebates .mw-node-find-by,
-.mw-journey-container.mw-province-territory-rebates .mw-node-province-or-territory-form {
+.mw-journey-container.mw-province-territory-rebates .mw-node-province-or-territory-form, 
+.mw-journey-container.mw-rebate-results-model .mw-node-find-by, 
+.mw-journey-container.mw-rebate-results-model .mw-node-model-number, 
+.mw-journey-container.mw-rebate-results-model .mw-node-ahri-number-form, 
+.mw-journey-container.mw-rebate-results-model .mw-node-province-or-territory-form{
   display: none;
 }
 
