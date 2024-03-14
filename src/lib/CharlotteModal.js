@@ -10,7 +10,7 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
+    alert("Form submitted");
   };
 
   return (
@@ -43,8 +43,7 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
                 placeholder="Enter email address"
               />
             </div>
-            {/* Checkbox for contact permission */}
-            <div>
+            <div className="contact-permission-container">
               <input
                 id="contact-permission"
                 type="checkbox"
@@ -52,14 +51,20 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
                 onChange={() => setContactPermission(!contactPermission)}
               />
               <label htmlFor="contact-permission">
-                {/* I agree that CruiseIQ may contact me at the email address or phone number
+                I agree that CruiseIQ may contact me at the email address or phone number
                 provided for purposes related to my cruise travel inquiries. This may
                 include follow-up communications, support, or assistance with the services
-                offered by CruiseIQ. */}
+                offered by CruiseIQ.
               </label>
+              {/* <label htmlFor="contact-permission">I agree to the terms</label>
+              <div>
+                I agree that CruiseIQ may contact me at the email address or phone number
+                provided for purposes related to my cruise travel inquiries. This may
+                include follow-up communications, support, or assistance with the services
+                offered by CruiseIQ.
+              </div> */}
             </div>
-            {/* Checkbox for marketing consent */}
-            <div>
+            <div className="marketing-consent-container">
               <input
                 id="marketing-consent"
                 type="checkbox"
