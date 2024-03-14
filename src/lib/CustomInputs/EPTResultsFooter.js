@@ -8,27 +8,27 @@ const EPTResultsFooter = ({}) => {
   return (
     <div className="footer">
       <div className="flex logo-holder">
-        <div>
+        <div className="flex">
           <EptLogo />
         </div>
         <ul className="flex">
           <li>
-            <a href="/">
+            <a href="/" className="flex">
               <SvgLinkedin />
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="/" className="flex">
               <SvgInstagram />
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="/" className="flex">
               <SvgFacebook />
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="/" className="flex">
               <SvgTwitter />
             </a>
           </li>

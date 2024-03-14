@@ -87,6 +87,7 @@ p {
 
 .flex {
   display: flex;
+  align-items: center;
 }
 
 .universal-wrapper {
@@ -1283,6 +1284,7 @@ label.control-label {
 
 .vessel-content {
   grid-column: span 2 / span 2;
+  margin-left: 28px;
 }
 
 .vessel-content h4 {
@@ -1303,6 +1305,7 @@ label.control-label {
 @media (max-width: 1024px) {
   .vessel-content {
     display: flex;
+    margin-left: 0;
   }
 
   .vessel-content p {
@@ -1330,8 +1333,8 @@ label.control-label {
 }
 
 .staterooms-holder p {
-  margin-bottom: 12px;
-  margin-top: 12px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 @media (max-width: 1024px) {
