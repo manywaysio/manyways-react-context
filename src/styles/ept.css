@@ -1377,11 +1377,11 @@ label.control-label {
   transition: all 0.1s ease-in;
 }
 
-/* .s-nextprev:hover {
+.s-nextprev:hover {
   background-color: rgba(255, 255, 255, 0.05);
   color: #008c93;
   border: 1px solid #008c93;
-} */
+}
 
 .otherresults {
   padding: 0px 15px;
@@ -1682,10 +1682,27 @@ label.control-label {
   z-index: 1000;
 }
 
+.arrow-left {
+  margin-left: 23px;
+}
+
+.arrow-right {
+  margin-right: 23px;
+}
+
+.nextprev-holder-desktop {
+  display: none;
+}
+
 @media (min-width: 1024px) {
   .nextprev-holder-arrows {
-    position: fixed;
-    top: 42vh;
+    display: none;
+  }
+
+  .nextprev-holder-desktop {
+    position: absolute;
+    width: 100%;
+    top: 50vh;
     display: flex;
     justify-content: space-between;
     z-index: 1000;
