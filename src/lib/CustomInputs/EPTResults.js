@@ -126,7 +126,9 @@ const SingleEPTResult = ({
       </div>
 
       <div className="image-side-scene">
-        <img src={ship?.heroImage} />
+        <div>
+          <img src={ship?.heroImage} />
+        </div>
       </div>
       <div className="inner-content-container">
         <h2>Itinerary & Excursions</h2>
@@ -327,7 +329,7 @@ let EPTResults = () => {
         onAfterInit={(swiper) => {
           setInit(true);
         }}
-        speed={800}
+        speed={900}
         modules={[EffectCreative]}
         effect="creative"
         creativeEffect={{

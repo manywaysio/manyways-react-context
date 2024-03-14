@@ -167,9 +167,9 @@ const NodeRenderer = (props) => {
         //   currentNode={currentNode}
         //   isCurrent={currentNodeId === currentNode.id}>
         <div
-          className={`fadetext-${textFade} universal-wrapper is-loading-${isLoading} background-node-${slugify(
-            currentNode?.title
-          )}`}>
+          className={`universal-wrapper fadetext-${textFade} is-loading-${isLoading} ${
+            currentNode?.id == 47 ? "hide-overflow" : ""
+          } background-node-${slugify(currentNode?.title)}`}>
           <div
             key={idx}
             className={`${classNamePrefix}-node
