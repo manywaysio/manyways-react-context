@@ -11,7 +11,7 @@ import { slugify } from "./utils/helpers";
 import Select from "react-select";
 import EPTResults from "./CustomInputs/EPTResults";
 
-import NodeComponent from "./NodeComponent";
+// import NodeComponent from "./NodeComponent";
 import { useEffect } from "react";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
@@ -159,6 +159,8 @@ const NodeRenderer = (props) => {
         currentNode?.ui_schema
       );
 
+      const showArrows = currentNode?.id == 47;
+
       return (
         // <NodeComponent
         //   key={currentNode.id || idx}
@@ -193,18 +195,20 @@ const NodeRenderer = (props) => {
                 currentNode?.title
               )}`}
             />
-            <div className="nextprev-holder-desktop">
-              <div className="arrow-left">
-                <button className="s-nextprev" onClick={swiperControls.slidePrev}>
-                  &larr;
-                </button>
+            {showArrows && (
+              <div className="nextprev-holder-desktop">
+                <div className="arrow-left">
+                  <button className="s-nextprev" onClick={swiperControls.slidePrev}>
+                    &larr;
+                  </button>
+                </div>
+                <div className="arrow-right">
+                  <button className="s-nextprev" onClick={swiperControls.slideNext}>
+                    &rarr;
+                  </button>
+                </div>
               </div>
-              <div className="arrow-right">
-                <button className="s-nextprev" onClick={swiperControls.slideNext}>
-                  &rarr;
-                </button>
-              </div>
-            </div>
+            )}
             <div className={`background-blur-${slugify(currentNode?.title)}`} />
             {currentNode?.title?.toLowerCase() == "results" && <EPTResults />}
             <div

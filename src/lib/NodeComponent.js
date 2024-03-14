@@ -7,20 +7,16 @@ const NodeComponent = ({ isCurrent, children }) => {
 
   useEffect(() => {
     if (isCurrent) {
-      // Make the element visible and prepare for fade-in
       setDisplay("block");
       setVisibility("visible");
-      // Start fade-in after a very short delay to ensure display and visibility are applied
       const timeout = setTimeout(() => setOpacity(1), 10);
       return () => clearTimeout(timeout);
     } else {
-      // Start fade-out
       setOpacity(0);
-      // Set visibility and display to hidden and none after transition ends
       const timeout = setTimeout(() => {
         setVisibility("hidden");
         setDisplay("none");
-      }, 500); // Match your transition duration
+      }, 500); // match transition duration
       return () => clearTimeout(timeout);
     }
   }, [isCurrent]);
