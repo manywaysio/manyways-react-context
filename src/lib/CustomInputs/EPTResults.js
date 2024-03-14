@@ -191,8 +191,20 @@ const SingleEPTResult = ({
                   <img src="/viking.png" />
                 </div>
                 <div className="vessel-content">
-                  <h4>Vessel</h4>
-                  <p>{ship.name}</p>
+                  <div>
+                    <h4>Vessel</h4>
+                    <p>{ship.name}</p>
+                  </div>
+                  <div className="staterooms-holder-mobile">
+                    <h4>Staterooms</h4>
+                    {ship.stateRooms.map((room, idx) => {
+                      return (
+                        <div
+                          key={idx}
+                          dangerouslySetInnerHTML={{ __html: room.name }}></div>
+                      );
+                    })}
+                  </div>
                 </div>
                 <div className="staterooms-holder">
                   <h4>Staterooms</h4>
@@ -249,13 +261,9 @@ const SingleEPTResult = ({
           </form>
         </div>
       </div>
-      <h2
-        style={{
-          textAlign: `center`,
-          padding: `20px`,
-        }}>
-        Continue exploring your other recommendations
-      </h2>
+      <div className="grid-topper">
+        <h2>Continue exploring your other recommendations</h2>
+      </div>
       <div className="otherresults">
         {results.map((r, i) => {
           return (

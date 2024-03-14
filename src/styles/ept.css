@@ -938,6 +938,7 @@ label.control-label {
 .iternary-images > img {
   width: 100%;
   height: auto;
+  margin-bottom: 16px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -1129,12 +1130,16 @@ label.control-label {
 
 @media screen and (max-width: 1024px) {
   .inner-content-container {
-    padding: 16px 24px 28px 24px;
+    padding: 24px;
+  }
+
+  .inner-content-container h2 {
+    margin-top: 0;
   }
 }
 
 .overview-content-mobile p {
-  margin-top: 0;
+  margin: 0;
   font-size: 14px;
   line-height: 19.6px;
 }
@@ -1153,6 +1158,12 @@ label.control-label {
   display: inline-block;
   cursor: pointer;
   transition: all 0.1s ease-in;
+}
+
+@media screen and (max-width: 1024px) {
+  .big-button {
+    margin-bottom: 12px;
+  }
 }
 
 .big-button:hover {
@@ -1226,14 +1237,19 @@ label.control-label {
 }
 
 @media (max-width: 1024px) {
+  .iternary .iter-item {
+    padding: 12px 0;
+  }
+
   .iter-item {
     flex-direction: column;
   }
 
   .day p {
     padding-left: 0;
-    /* padding-top: 12px; */
+    padding-top: 10px;
     font-size: 12px;
+    line-height: 140%;
   }
 
   .item-inner .title {
@@ -1245,6 +1261,7 @@ label.control-label {
 
   .item-inner .day {
     font-size: 12px;
+    padding-top: 0;
   }
 }
 
@@ -1269,11 +1286,8 @@ label.control-label {
 }
 
 .vessel-content h4 {
-  margin-bottom: 8px;
-}
-
-.vessel-content p {
-  margin-top: 8px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
 }
 
 .staterooms-holder {
@@ -1282,13 +1296,42 @@ label.control-label {
   grid-column: span 3 / span 3;
 }
 
+.staterooms-holder-mobile {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .vessel-content {
+    display: flex;
+  }
+
+  .vessel-content p {
+    margin-top: 2px;
+  }
+
+  .staterooms-holder-mobile {
+    display: flex;
+    flex-direction: column;
+    margin-left: 48px;
+  }
+
+  .staterooms-holder-mobile p {
+    margin-bottom: 0;
+  }
+
+  .staterooms-holder {
+    display: none;
+  }
+}
+
 .staterooms-holder h4 {
   margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .staterooms-holder p {
-  margin-bottom: 0px;
-  margin-top: 0px;
+  margin-bottom: 12px;
+  margin-top: 12px;
 }
 
 @media (max-width: 1024px) {
@@ -1556,6 +1599,7 @@ label.control-label {
   .logo-holder {
     border-bottom: 2px solid white;
     margin-bottom: 33px;
+    padding-bottom: 8px;
   }
 
   .content-box {
@@ -1578,7 +1622,7 @@ label.control-label {
 }
 
 .results-char input {
-  max-width: 255px;
+  width: 255px !important;
 }
 
 .results-char {
@@ -1597,11 +1641,11 @@ label.control-label {
   padding-top: 20px;
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .results-char input {
     max-width: none;
   }
-}
+} */
 
 @media (max-width: 1024px) {
   .results-char.charlotte-modal-content.show {
@@ -1652,5 +1696,19 @@ label.control-label {
   .s-nextprev {
     transform: scale(1.1);
     margin: 10px;
+  }
+}
+
+.grid-topper {
+  padding: 16px;
+}
+
+.grid-topper h2 {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .grid-topper h2 {
+    font-size: 21px;
   }
 }
