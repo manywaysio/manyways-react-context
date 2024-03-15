@@ -1168,8 +1168,8 @@ ul.error-detail .text-danger {
 }
 
 /* Style non-searchable inputs in react select */
-.mw-node .form-group.field-string .select-mw__value-container .css-mohuvp-dummyInput-DummyInput, 
-.mw-node .form-group.field-string .select-mw__value-container .css-1hac4vs-dummyInput {
+.mw-node .form-group.field-string .select-mw__value-container input, 
+.mw-node .form-group.field-string .select-mw__value-container input {
   display: block;
   background-color: #fff;
   border: none;
