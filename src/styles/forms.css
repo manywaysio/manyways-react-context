@@ -457,7 +457,7 @@
   opacity: .6;
 }
 
-.select-mw__input-container, .css-mohuvp-dummyInput-DummyInput {
+.select-mw__input-container, .css-mohuvp-dummyInput-DummyInput, .css-1hac4vs-dummyInput  {
   box-sizing: border-box;
   display: inline-grid;
   flex: 1 1 auto;
@@ -469,7 +469,7 @@
   visibility: visible;
 }
 
-.css-mohuvp-dummyInput-DummyInput {
+.css-mohuvp-dummyInput-DummyInput, .css-1hac4vs-dummyInput  {
   background: 0px center;
   border: 0px;
   caret-color: transparent;
@@ -485,7 +485,7 @@
   transform: scale(0.01);
 }
 
-.select-mw__input-container:after, .css-mohuvp-dummyInput-DummyInput:after {
+.select-mw__input-container:after, .css-mohuvp-dummyInput-DummyInput:after, .css-1hac4vs-dummyInput:after  {
   border: 0;
   content: attr(data-value) "";
   grid-area: 1/2;
