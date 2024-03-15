@@ -29,7 +29,7 @@ const NextAndBack = ({ currentNode = {}, className }) => {
           goBack();
         }}
       >
-        {labels ? labels.back : "Back"}
+        {labels ? labels.back : "Change Search Category"}
       </button>
       <button className={`${classNamePrefix}-next`} type="submit">
         {labels ? labels.next : "Next"}

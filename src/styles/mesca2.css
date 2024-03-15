@@ -1161,3 +1161,8 @@ ul.error-detail .text-danger {
   white-space: nowrap;
   border-width: 0;
 }
+
+.mw-node-find-by-form.has-response-true .radio-inline.selected-false {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
