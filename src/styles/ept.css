@@ -353,6 +353,12 @@ label.control-label {
   border: none;
   cursor: pointer;
   margin-right: 8px;
+  color: white;
+  transition: all 0.2s ease-in;
+}
+
+.hamburger-button:hover {
+  color: #008c93;
 }
 
 .char-photo-header {
@@ -373,11 +379,18 @@ label.control-label {
   border-radius: 999px;
   padding: 9.25px 11px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.2s ease-in;
+  color: white;
 }
 
 .speaker-button:hover {
   background-color: black;
+  transition: all 0.2s ease-in;
+}
+
+.mw-results .speaker-button:hover {
+  color: #008c93;
+  border: 1px solid #008c93;
 }
 
 .char-button {
@@ -391,23 +404,33 @@ label.control-label {
   padding: 3px 11px;
   cursor: pointer;
   margin-right: 16px;
-  transition: background-color 0.3s ease-in;
-}
-
-.char-button:hover {
-  background-color: black;
-}
-
-@media (max-width: 768px) {
-  .char-button {
-    margin-right: 8px;
-  }
+  transition: all 0.2s ease-in;
 }
 
 .char-button p {
   margin: 0;
   padding-right: 10px;
   font-size: 14px;
+  transition: all 0.2s ease-in;
+}
+
+.char-button:hover {
+  background-color: black;
+}
+
+.mw-results .char-button:hover {
+  border: 1px solid #008c93;
+  color: #008c93;
+}
+
+.mw-results .char-button:hover p {
+  color: #008c93;
+}
+
+@media (max-width: 768px) {
+  .char-button {
+    margin-right: 8px;
+  }
 }
 
 @media (max-width: 768px) {
