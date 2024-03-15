@@ -1166,3 +1166,16 @@ ul.error-detail .text-danger {
   opacity: 0.3;
   cursor: not-allowed;
 }
+
+/* Style non-searchable inputs in react select */
+.mw-node .form-group.field-string .select-mw__value-container .css-mohuvp-dummyInput-DummyInput {
+  display: block;
+  background-color: #fff;
+  border: none;
+  border-radius: var(--border-radius-input);
+  padding: .5em .8em;
+  width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+}
+

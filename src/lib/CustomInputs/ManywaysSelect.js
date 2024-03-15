@@ -2,73 +2,73 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 
 const selectStyles = {
-  clearIndicator: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  container: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  control: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  dropdownIndicator: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  group: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  groupHeading: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  indicatorsContainer: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  indicatorSeparator: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  input: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  loadingIndicator: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  loadingMessage: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  menu: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  menuList: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  menuPortal: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  multiValue: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  multiValueLabel: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  multiValueRemove: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  noOptionsMessage: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  option: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  placeholder: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  singleValue: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-  valueContainer: (baseStyles, state) => {
-    return { ...baseStyles };
-  },
-};
+    clearIndicator: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    container: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    control: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    dropdownIndicator: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    group: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    groupHeading: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    indicatorsContainer: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    indicatorSeparator: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    input: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    loadingIndicator: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    loadingMessage: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    menu: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    menuList: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    menuPortal: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    multiValue: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    multiValueLabel: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    multiValueRemove: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    noOptionsMessage: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    option: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    placeholder: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    singleValue: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+    valueContainer: (baseStyles, state) => {
+      return { ...baseStyles };
+    },
+  };
 
 const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
   const { options } = props;
@@ -162,10 +162,12 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
         }}
         menuIsOpen={menuIsOpen}
         isDisabled={disabled}
+        isSearchable={false}
         value={theValue}
         placeholder={props.placeholder}
         options={theOptions}
         classNamePrefix="select-mw"
+        styles={selectStyles}
       />
     </>
   );
