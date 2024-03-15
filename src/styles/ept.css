@@ -294,7 +294,7 @@ label.control-label {
 
 @media (max-width: 768px) {
   .header-container {
-    padding: 16px;
+    padding: 16px 0;
   }
 }
 
@@ -513,25 +513,25 @@ label.control-label {
 }
 
 .charlotte-modal-container {
-  top: 0;
   z-index: 6;
-  height: 0;
-  width: 100%;
+  top: 0;
   left: 0;
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   transition: opacity 0.5s, visibility 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  overflow-y: scroll;
 }
 
 .charlotte-modal-container.show {
+  max-height: 90vh;
   min-height: 100vh;
+  overflow-y: auto;
   opacity: 1;
   visibility: visible;
   z-index: 100000;
