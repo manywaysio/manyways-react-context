@@ -81,7 +81,9 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
             <button
               className="submit-button"
               type="submit"
-              disabled={!contactPermission || !marketingConsent}>
+              disabled={!contactPermission}
+              // disabled={!contactPermission || !marketingConsent}
+            >
               Submit
             </button>
           </div>
