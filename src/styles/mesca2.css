@@ -1167,16 +1167,27 @@ ul.error-detail .text-danger {
   cursor: not-allowed;
 }
 
-/* Style non-searchable inputs in react select */
-.mw-node .form-group.field-string .select-mw__value-container input, 
+/**********************************************
+ Style non-searchable react select inputs. 
+ Hide when React Select Search is enabled 
+ **********************************************/
 .mw-node .form-group.field-string .select-mw__value-container input {
-  display: block;
-  background-color: #fff;
-  border: none;
-  border-radius: var(--border-radius-input);
   padding: .5em .8em;
-  width: 100%;
-  max-width: 100%;
-  font-size: 1rem;
 }
 
+.select-mw__value-container input  {
+  background: 0px center;
+  border: 0px;
+  caret-color: transparent;
+  font-size: inherit;
+  grid-area: 1 / 1 / 2 / 3;
+  outline: 0px;
+  padding: 0px;
+  width: 1px;
+  color: transparent;
+  left: -100px;
+  opacity: 0;
+  position: relative;
+  transform: scale(0.01);
+}
+/***************************************/

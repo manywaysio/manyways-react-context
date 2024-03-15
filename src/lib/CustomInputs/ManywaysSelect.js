@@ -167,7 +167,7 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
         placeholder={props.placeholder}
         options={theOptions}
         classNamePrefix="select-mw"
-        styles={selectStyles}
+        // styles={selectStyles}
       />
     </>
   );
