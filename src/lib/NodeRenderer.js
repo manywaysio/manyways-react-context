@@ -32,8 +32,6 @@ const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   return false;
 };
 
-
-
 const NodeRenderer = (props) => {
   const {
     nodes,
@@ -138,12 +136,13 @@ const NodeRenderer = (props) => {
                 RadioWidget: ManywaysRadioWidget,
                 CheckboxesWidget: ManywaysCheckboxWidget,
                 SelectWidget: ManywaysSelectWidget,
-                Select: ManywaysSelect
+                Select: ManywaysSelect,
               }}
               onChange={(e) => {
                 if (!!singleChoiceField) {
                   goForward(e);
                 }
+                // console.log(e, e.formData, theResponse?.response);
               }}
               fields={{
                 MediaContent: MediaContent,

@@ -19,7 +19,7 @@ class ManywaysWrapper extends HTMLElement {
     const mountPoint = document.createElement("div");
     this.attachShadow({ mode: "open" }).appendChild(mountPoint);
 
-    const slug = this.getAttribute("slug") || "rebates";
+    const slug = this.getAttribute("slug") || "rebates-2";
     const locale = this.getAttribute("locale");
     const root = ReactDOM.createRoot(mountPoint);
     root.render(<App locale={locale} slug={slug} />);
