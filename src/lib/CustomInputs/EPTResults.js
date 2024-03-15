@@ -63,6 +63,7 @@ const SingleEPTResult = ({
     discountCurrency,
     itineraryDays,
     duration,
+    guidedTours,
     itineraryImages,
     itineraryHeroImage,
     mainEnlargedMap,
@@ -99,16 +100,34 @@ const SingleEPTResult = ({
                     Let's Sail
                   </a>
                 </div>
-                <div className="countries">
-                  <h4 className="ept-subtitle">Countries</h4>
-                  {countries.map((c, i) => (
-                    <div key={i}>{c}</div>
-                  ))}
+                <div className="country-day">
+                  <div className="countries">
+                    <h4 className="ept-subtitle">Countries</h4>
+                    {countries.map((c, i) => (
+                      <p key={i}>{c}</p>
+                    ))}
+                  </div>
+                  <div className="duration mobile-show">
+                    <h4 className="ept-subtitle">Days</h4>
+                    <p>{duration}</p>
+                  </div>
+                </div>
+                <div className="country-day mobile-hide">
+                  <div className="duration">
+                    <h4 className="ept-subtitle">Days</h4>
+                    <p>{duration}</p>
+                  </div>
                 </div>
                 <div className="price">
                   <h4 className="ept-subtitle">Member Price</h4>
                   <Price priceRange={priceRange} />
                 </div>
+              </div>
+              <div className="full-width">
+                <p className="activities">
+                  <span className="strong">Activities:</span> Take part in one of the{" "}
+                  <span className="strong">{guidedTours}</span> guided tours offered.
+                </p>
               </div>
             </div>
           </div>
