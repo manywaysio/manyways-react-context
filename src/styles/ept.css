@@ -215,11 +215,9 @@ p {
   background-color: black;
 }
 
-.node-transition-which-seasons {
-  opacity: 35%;
-  background-color: black;
-  transition: all 10s ease-in-out;
-  transition-delay: 0s;
+.node-transition-which-seasons.fade-out {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
 .node-transition-results {
