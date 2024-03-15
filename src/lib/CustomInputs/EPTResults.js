@@ -4,7 +4,7 @@ import Phone from "./../../icons/Phone";
 import Envelope from "./../../icons/Envelope";
 import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
 import { useManyways } from "../ManywaysContext";
-import { Navigation, EffectCreative, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { EffectCreative, Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 import EPTResultsFooter from "./EPTResultsFooter";
 
@@ -40,33 +40,33 @@ const SingleEPTResult = ({
   featuredImage,
   id,
   name,
-  description,
-  overviewText,
-  largeOverview,
-  regions,
   countries,
-  cruiseType,
   ship,
   smallOverview,
-  years,
-  waterways,
   results = [],
   packages,
   swiper,
+  // years,
+  // waterways,
+  // cruiseType,
+  // description,
+  // overviewText,
+  // largeOverview,
+  // regions,
 }) => {
   const thePackage = packages[0] || { price: {} };
   console.log("the package", thePackage);
   const {
     price: { priceRange, prices },
-    currency,
-    discount,
-    discountCurrency,
     itineraryDays,
     duration,
     guidedTours,
     itineraryImages,
-    itineraryHeroImage,
     mainEnlargedMap,
+    // currency,
+    // discount,
+    // discountCurrency,
+    // itineraryHeroImage,
   } = thePackage;
 
   console.log(ship);
@@ -145,7 +145,7 @@ const SingleEPTResult = ({
       </div>
 
       <div className="image-side-scene">
-        <div>
+        <div className="image-side">
           <img src={ship?.heroImage} />
         </div>
       </div>
@@ -158,10 +158,10 @@ const SingleEPTResult = ({
                 {
                   number,
                   title,
-                  image,
-                  destinationName,
                   destinationDescription,
-                  description,
+                  // image,
+                  // destinationName,
+                  // description,
                 },
                 idx
               ) => {

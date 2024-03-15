@@ -1,4 +1,5 @@
 import { useManyways } from "./ManywaysContext";
+import { useState } from "react";
 import validator from "@rjsf/validator-ajv8";
 import Form from "@rjsf/core";
 import NextAndBack from "./NextAndBack";
@@ -6,7 +7,6 @@ import ManywaysRadioWidget from "./CustomInputs/ManywaysRadioWidget";
 import MediaContent from "./CustomInputs/MediaContent";
 import ManywaysCheckboxWidget from "./CustomInputs/ManywaysCheckboxWidget";
 import ManywaysSelectWidget from "./CustomInputs/ManywaysSelectWidget";
-import Footer from "./Footer";
 import { slugify } from "./utils/helpers";
 import Select from "react-select";
 import EPTResults from "./CustomInputs/EPTResults";
@@ -105,6 +105,7 @@ const selectStyles = {
 };
 
 const NodeRenderer = (props) => {
+  const [fadeOutWhichSeasons, setFadeOutWhichSeasons] = useState(false);
   const {
     nodes,
     goBack,
@@ -160,6 +161,8 @@ const NodeRenderer = (props) => {
       );
 
       const showArrows = currentNode?.id == 47;
+
+      console.log(currentNode?.title);
 
       return (
         // <NodeComponent
