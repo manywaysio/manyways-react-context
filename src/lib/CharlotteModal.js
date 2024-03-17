@@ -20,11 +20,11 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
           <button onClick={() => setCharlotteModalOpen(false)}>✕</button>
         </div>
         <h3>Speak to our cruise experts</h3>
+        <p className="char-desc">
+          Please provide your phone number or email address below, and Charlotte will
+          contact you to assist you with any of your travel questions!
+        </p>
         <form onSubmit={handleSubmit}>
-          <p className="char-desc">
-            Please provide your phone number or email address below, and Charlotte will
-            contact you to assist you with any of your travel questions!
-          </p>
           <div className="input-container">
             <div className="inputs-holder">
               <div className="input-icon-container">

@@ -1,12 +1,42 @@
 <div class=\"char-page\">
-  <h3>We’d be delighted to assist you in booking your luxury travel experience</h3>
+  <h3>We'd be delighted to assist you in booking your luxury travel experience</h3>
   <p>Please provide your phone number or email address below, and Charlotte will contact you to reserve your spot on the
     perfect journey.</p>
-  <form><input class=\"input-with-icon\" type=\"text\" placeholder=\"Enter phone number\"><span>OR</span><input
-      class=\"input-with-icon\" type=\"text\" placeholder=\"Enter email address\"><button
-      class=\"submit-button\">Submit</button></form>
-
-
+  <form>
+    <div class=\"input-container\">
+      <div class=\"inputs-holder\">
+        <div class=\"input-icon-container\">
+          <Phone class=\"input-icon\" />
+          <input type=\"text\" class=\"input-with-icon\" placeholder=\"Enter phone number\" />
+        </div>
+        <div class=\"input-icon-container\">
+          <Envelope class=\"input-icon\" />
+          <input type=\"text\" class=\"input-with-icon\" placeholder=\"Enter email address\" />
+        </div>
+      </div>
+      <div class=\"contact-permission-container\">
+        <input id=\"contact-permission\" type=\"checkbox\" />
+        <label htmlFor=\"contact-permission\">
+          I agree that CruiseIQ may contact me at the email address or phone number
+          provided for purposes related to my cruise travel inquiries. This may
+          include follow-up communications, support, or assistance with the services
+          offered by CruiseIQ.
+        </label>
+      </div>
+      <div class=\"marketing-consent-container\">
+        <input id=\"marketing-consent\" type=\"checkbox\" />
+        <label htmlFor=\"marketing-consent\">
+          I also consent to receive exclusive marketing and promotional messages
+          from CruiseIQ. These may include special offers, new cruise deals, and
+          personalized recommendations designed to enhance my cruise travel
+          experience.
+        </label>
+      </div>
+      <button class=\"submit-button\" type=\"submit\">
+        Submit
+      </button>
+    </div>
+  </form>
   <div class=\"char-image-container\"><img
       src=\"https://manyways.imgix.net/Organization_63a62279cc2652000f7a2499/char-v2.png\" class=\"char-image\"
       alt=\"Description\">
