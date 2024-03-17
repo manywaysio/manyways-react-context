@@ -156,18 +156,6 @@ p {
   background-size: cover;
 }
 
-/* .background-node-which-seasons .fadetext-true form.mw-form {
-  opacity: 1;
-  transition: all 6s ease-in-out;
-  transition-delay: 6s;
-}
-
-.background-node-results .fadetext-false form.mw-form {
-  opacity: 0;
-  transition: all 6s ease-in-out;
-  transition-delay: 6s;
-} */
-
 .fadetext-true form.mw-form {
   opacity: 0;
   transition: all 0.4s ease-in-out;
@@ -184,7 +172,7 @@ p {
   /* overflow-x: hidden; */
   top: 0;
   z-index: 1;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   left: 0;
   opacity: 0;
@@ -726,10 +714,23 @@ label[for="marketing-consent"] {
   padding: 24px;
 }
 
+.first-input {
+  margin-right: 12px;
+}
+
 @media (max-width: 768px) {
   .char-image-container {
     flex-direction: column;
     padding: 0;
+  }
+
+  .inputs-holder {
+    flex-direction: column;
+  }
+
+  .first-input {
+    margin-bottom: 32px;
+    margin-right: 0;
   }
 }
 
@@ -826,6 +827,8 @@ label[for="marketing-consent"] {
   letter-spacing: -0.18px;
   font-family: "Inter", sans-serif;
   margin: 12px 0;
+  /* width: 100%;
+  text-align: center; */
 }
 
 .charlotte-modal-content .submit-button {
@@ -951,6 +954,7 @@ label[for="marketing-consent"] {
 .char-page {
   display: flex;
   flex-direction: column;
+  margin-top: 90px;
 }
 
 .char-page form {
@@ -994,6 +998,10 @@ label[for="marketing-consent"] {
 }
 
 @media (max-width: 768px) {
+  .char-page {
+    margin-top: 50px;
+  }
+
   .char-page .char-image-container {
     padding: 15px;
   }
@@ -1312,6 +1320,7 @@ label[for="marketing-consent"] {
 
 .image-side {
   padding-left: 18%;
+  margin-right: -5%;
 }
 
 .iternary {
@@ -1400,6 +1409,10 @@ label[for="marketing-consent"] {
   .item-inner .day {
     font-size: 12px;
     padding-top: 0;
+  }
+
+  .image-side {
+    margin-right: 0;
   }
 }
 
@@ -1641,7 +1654,9 @@ label[for="marketing-consent"] {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
+    margin-right: -7%;
   }
+
   .inner-content-container.charlotte-modal-content {
     grid-column-start: 1;
     grid-column-end: 2;
@@ -1771,6 +1786,10 @@ label[for="marketing-consent"] {
   .enlarged-map {
     margin-top: 0;
   }
+
+  .image-final-scene {
+    margin-right: 0;
+  }
 }
 
 .results-char input {
@@ -1807,7 +1826,7 @@ label[for="marketing-consent"] {
 }
 
 .next-and-back-holder {
-  margin-top: 16px;
+  margin: 16px 0 32px 0;
   display: flex;
   width: 100%;
   max-width: 700px;

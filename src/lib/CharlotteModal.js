@@ -27,7 +27,7 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
         <form onSubmit={handleSubmit}>
           <div className="input-container">
             <div className="inputs-holder">
-              <div className="input-icon-container">
+              <div className="input-icon-container first-input">
                 <Phone className="input-icon" />
                 <input
                   type="text"
