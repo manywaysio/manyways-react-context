@@ -629,6 +629,7 @@ label.control-label {
 
 .input-container {
   /* width: 255px; */
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -636,10 +637,16 @@ label.control-label {
 }
 
 .input-icon-container {
-  width: 255px;
+  /* width: 255px; */
+  width: 100%;
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.inputs-holder {
+  width: 100%;
+  display: flex;
 }
 
 .input-icon {
@@ -682,13 +689,19 @@ label[for="marketing-consent"] {
 }
 
 .contact-permission-container {
-  max-width: 700px;
   margin-top: 32px;
 }
 
+.contact-permission-container label {
+  color: rgb(115, 115, 115);
+}
+
 .marketing-consent-container {
-  max-width: 700px;
   margin-top: 32px;
+}
+
+.marketing-consent-container label {
+  color: rgb(115, 115, 115);
 }
 
 #contact-permission {
@@ -698,15 +711,6 @@ label[for="marketing-consent"] {
 #marketing-consent {
   margin-right: 20px;
 }
-
-/* .hidden-info {
-  display: none;
-}
-
-.contact-permission-container label:hover + .hidden-info {
-  display: block;
-  position: absolute;
-} */
 
 .char-image-container {
   display: flex;
@@ -827,7 +831,7 @@ label[for="marketing-consent"] {
 } */
 
 .char-desc {
-  margin: 32px 0;
+  margin: 32px;
 }
 
 .menu-modal-container {
@@ -896,6 +900,10 @@ label[for="marketing-consent"] {
   .menu-modal-container {
     top: 65px;
     left: 25px;
+  }
+
+  .char-desc {
+    margin: 32px 0;
   }
 }
 

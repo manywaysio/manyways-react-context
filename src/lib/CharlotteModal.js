@@ -26,22 +26,23 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
             contact you to assist you with any of your travel questions!
           </p>
           <div className="input-container">
-            <div className="input-icon-container">
-              <Phone className="input-icon" />
-              <input
-                type="text"
-                className="input-with-icon"
-                placeholder="Enter phone number"
-              />
-            </div>
-            <span>OR</span>
-            <div className="input-icon-container">
-              <Envelope className="input-icon" />
-              <input
-                type="text"
-                className="input-with-icon"
-                placeholder="Enter email address"
-              />
+            <div className="inputs-holder">
+              <div className="input-icon-container">
+                <Phone className="input-icon" />
+                <input
+                  type="text"
+                  className="input-with-icon"
+                  placeholder="Enter phone number"
+                />
+              </div>
+              <div className="input-icon-container">
+                <Envelope className="input-icon" />
+                <input
+                  type="text"
+                  className="input-with-icon"
+                  placeholder="Enter email address"
+                />
+              </div>
             </div>
             <div className="contact-permission-container">
               <input
@@ -56,13 +57,6 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
                 include follow-up communications, support, or assistance with the services
                 offered by CruiseIQ.
               </label>
-              {/* <label htmlFor="contact-permission">I agree to the terms</label>
-              <div>
-                I agree that CruiseIQ may contact me at the email address or phone number
-                provided for purposes related to my cruise travel inquiries. This may
-                include follow-up communications, support, or assistance with the services
-                offered by CruiseIQ.
-              </div> */}
             </div>
             <div className="marketing-consent-container">
               <input
