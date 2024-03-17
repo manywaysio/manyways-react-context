@@ -215,8 +215,9 @@ p {
   background-color: black;
 }
 
-.node-transition-which-seasons.fade-out {
-  opacity: 0;
+.node-transition-which-seasons {
+  opacity: 35%;
+  background-color: black;
   transition: opacity 2s ease-in-out;
 }
 
@@ -1798,7 +1799,7 @@ label[for="marketing-consent"] {
 
 @media (max-width: 1024px) {
   .next-and-back-holder {
-    padding: 0 4px 24px 4px;
+    padding: 0 4px px 4px;
   }
 }
 

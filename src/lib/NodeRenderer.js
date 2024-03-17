@@ -105,7 +105,7 @@ const selectStyles = {
 };
 
 const NodeRenderer = (props) => {
-  const [fadeOutWhichSeasons, setFadeOutWhichSeasons] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const {
     nodes,
     goBack,
@@ -126,6 +126,21 @@ const NodeRenderer = (props) => {
       setTextFade(false);
     }, 500);
   }, [currentNodeId]);
+
+  // useEffect(() => {
+  //   if (currentNodeId === 46) {
+  //     // Detected "which-seasons", prepare for potential transition
+  //     setIsTransitioning(false);
+  //   } else if (currentNodeId === 47 && !isTransitioning) {
+  //     // Transitioning to "results"
+  //     setIsTransitioning(true);
+  //     setTimeout(() => {
+  //       setIsTransitioning(false); // Reset after transition completes
+  //     }, 3000); // Match your CSS transition duration
+  //   }
+  // }, [currentNodeId]);
+
+  // console.log(currentNodeId);
 
   return nodes
     .filter((n) => {
@@ -162,17 +177,22 @@ const NodeRenderer = (props) => {
 
       const showArrows = currentNode?.id == 47;
 
-      console.log(currentNode?.title);
-
       return (
         // <NodeComponent
         //   key={currentNode.id || idx}
         //   currentNode={currentNode}
         //   isCurrent={currentNodeId === currentNode.id}>
+
         <div
           className={`universal-wrapper fadetext-${textFade} is-loading-${isLoading} ${
-            currentNode?.id == 47 ? "hide-overflow" : ""
+            showArrows ? "hide-overflow" : ""
           } background-node-${slugify(currentNode?.title)}`}>
+          {/* <div
+          className={`universal-wrapper fadetext-${textFade} is-loading-${isLoading} ${
+            showArrows ? "hide-overflow" : ""
+          } background-node-${slugify(currentNode?.title)} node-transition ${
+            isTransitioning ? "node-transition-results" : "node-transition-which-seasons"
+          }`}> */}
           <div
             key={idx}
             className={`${classNamePrefix}-node
