@@ -232,10 +232,15 @@ const NodeRenderer = (props) => {
             )}
             <div className={`background-blur-${slugify(currentNode?.title)}`} />
             {showResults && <EPTResults />}
-            <div
+            {/* <div
               className={`${classNamePrefix}-container ${
                 currentNode?.title == "Parts of the world" ? "form-padding-top" : ""
               }`}
+              style={{
+                display: showResults ? "none" : "block",
+              }}> */}
+            <div
+              className={`${classNamePrefix}-container form-padding-top`}
               style={{
                 display: showResults ? "none" : "block",
               }}>
