@@ -946,6 +946,10 @@ label[for="marketing-consent"] {
   .form-padding-top {
     padding-top: 72px;
   }
+
+  .form-padding-bottom {
+    padding-bottom: 32px;
+  }
 }
 
 .char-page {

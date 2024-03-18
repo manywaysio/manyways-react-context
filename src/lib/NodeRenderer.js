@@ -294,7 +294,11 @@ const NodeRenderer = (props) => {
                   currentNode={currentNode}
                   className={`${
                     currentNode?.id != 32 ? "next-and-back-holder" : ""
-                  } singleChoiceField-${singleChoiceField}`}
+                  } singleChoiceField-${singleChoiceField}  ${
+                    currentNode?.title == "Parts of the world"
+                      ? "form-padding-bottom"
+                      : ""
+                  }`}
                 />
               </Form>
             </div>
