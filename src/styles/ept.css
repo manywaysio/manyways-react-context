@@ -701,13 +701,13 @@ label[for="marketing-consent"] {
 
 #contact-permission {
   height: 20px;
-  width: 35px;
+  /* width: 35px; */
   margin-right: 20px;
 }
 
 #marketing-consent {
   height: 20px;
-  width: 35px;
+  /* width: 35px; */
   margin-right: 20px;
 }
 
