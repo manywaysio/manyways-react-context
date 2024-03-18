@@ -700,13 +700,15 @@ label[for="marketing-consent"] {
 }
 
 #contact-permission {
-  height: 20px;
+  height: 13px;
+  max-width: 13px;
   /* width: 35px; */
   margin-right: 20px;
 }
 
 #marketing-consent {
-  height: 20px;
+  height: 13px;
+  max-width: 13px;
   /* width: 35px; */
   margin-right: 20px;
 }
@@ -799,7 +801,7 @@ label[for="marketing-consent"] {
 }
 
 .charlotte-modal-content button {
-  padding: 10px 12.4px;
+  padding: 11.5px 12px;
   border-radius: 999px;
   background-color: transparent;
   border: 1px solid white;
