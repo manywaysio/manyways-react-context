@@ -35,7 +35,7 @@ const ManywaysRadioWidget = ({
     [onFocus, id, enumOptions, emptyValue]
   );
 
-  console.log("enumOptions", enumOptions);
+  // console.log("enumOptions", enumOptions);
 
   return (
     <div

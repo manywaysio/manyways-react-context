@@ -55,7 +55,7 @@ const SingleEPTResult = ({
   // regions,
 }) => {
   const thePackage = packages[0] || { price: {} };
-  console.log("the package", thePackage);
+  // console.log("the package", thePackage);
   const {
     price: { priceRange, prices },
     itineraryDays,
@@ -69,7 +69,7 @@ const SingleEPTResult = ({
     // itineraryHeroImage,
   } = thePackage;
 
-  console.log(ship);
+  // console.log(ship);
 
   const { setCharlotteModalOpen } = useManyways();
 
@@ -311,7 +311,7 @@ let EPTResults = () => {
     // const data = await response.json();
     // setResults(data);
     setResults(_results.reverse());
-    console.log(_results);
+    // console.log(_results);
   };
   useEffect(() => {
     getResults();

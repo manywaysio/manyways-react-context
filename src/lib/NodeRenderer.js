@@ -15,7 +15,7 @@ import EPTResults from "./CustomInputs/EPTResults";
 import { useEffect } from "react";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
-  console.log(formSchema, uiSchema);
+  // console.log(formSchema, uiSchema);
   if (!!formSchema?.properties) {
     const properties = Object.keys(formSchema.properties).filter((key) => {
       return formSchema.properties[key].type !== "null" && key;
@@ -105,6 +105,7 @@ const selectStyles = {
 };
 
 const NodeRenderer = (props) => {
+  const [showResults, setShowResults] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const {
     nodes,
@@ -127,20 +128,19 @@ const NodeRenderer = (props) => {
     }, 500);
   }, [currentNodeId]);
 
-  // useEffect(() => {
-  //   if (currentNodeId === 46) {
-  //     // Detected "which-seasons", prepare for potential transition
-  //     setIsTransitioning(false);
-  //   } else if (currentNodeId === 47 && !isTransitioning) {
-  //     // Transitioning to "results"
-  //     setIsTransitioning(true);
-  //     setTimeout(() => {
-  //       setIsTransitioning(false); // Reset after transition completes
-  //     }, 3000); // Match your CSS transition duration
-  //   }
-  // }, [currentNodeId]);
-
-  // console.log(currentNodeId);
+  useEffect(() => {
+    if (currentNodeId === 46) {
+      setIsTransitioning(false);
+    } else if (currentNodeId === 47 && !isTransitioning) {
+      setIsTransitioning(true);
+      console.log("started");
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setShowResults(true);
+        console.log("ended");
+      }, 20000);
+    }
+  }, [currentNodeId]);
 
   return nodes
     .filter((n) => {
@@ -178,11 +178,6 @@ const NodeRenderer = (props) => {
       const showArrows = currentNode?.id == 47;
 
       return (
-        // <NodeComponent
-        //   key={currentNode.id || idx}
-        //   currentNode={currentNode}
-        //   isCurrent={currentNodeId === currentNode.id}>
-
         <div
           className={`fadetext-${textFade} is-loading-${isLoading} ${
             showArrows ? "hide-overflow" : "universal-wrapper"
@@ -233,14 +228,13 @@ const NodeRenderer = (props) => {
               </div>
             )}
             <div className={`background-blur-${slugify(currentNode?.title)}`} />
-            {currentNode?.title?.toLowerCase() == "results" && <EPTResults />}
+            {showResults && <EPTResults />}
             <div
               className={`${classNamePrefix}-container ${
                 currentNode?.title == "Parts of the world" ? "form-padding-top" : ""
               }`}
               style={{
-                display:
-                  currentNode?.title?.toLowerCase() == "results" ? "none" : "block",
+                display: showResults ? "none" : "block",
               }}>
               <Form
                 // disabled={!!hasNextNode}
@@ -301,10 +295,8 @@ const NodeRenderer = (props) => {
                 />
               </Form>
             </div>
-            {/* {mode === "slideshow" ? <Footer /> : null} */}
           </div>
         </div>
-        // </NodeComponent>
       );
     });
 };
