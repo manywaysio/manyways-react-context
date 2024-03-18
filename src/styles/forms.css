@@ -48,7 +48,7 @@
   background-color: #fff;
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius-input);
-  padding: 0.7em 0.8em;
+  /* padding: 0.7em 0.8em; */
   width: 100%;
   max-width: 100%;
   font-size: 1rem;
@@ -144,7 +144,7 @@
 .mw-node .field-group-images-false .checkbox,
 .mw-node .field-group-images-false .radio label {
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   min-width: 75px;
   padding: 19px 26px;
   justify-content: center;
