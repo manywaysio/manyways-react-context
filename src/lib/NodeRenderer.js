@@ -175,6 +175,7 @@ const NodeRenderer = (props) => {
       );
 
       const showArrows = currentNode?.id == 47;
+      console.log(currentNode?.title);
 
       return (
         <div
@@ -234,7 +235,12 @@ const NodeRenderer = (props) => {
             {showResults && <EPTResults />}
             <div
               className={`${classNamePrefix}-container ${
-                currentNode?.title == "Parts of the world" ? "form-padding-top" : ""
+                currentNode?.title == "Parts of the world" ||
+                "Traveling with" ||
+                "Traveling how long" ||
+                "Which seasons"
+                  ? "form-padding-top"
+                  : ""
               }`}
               style={{
                 display: showResults ? "none" : "block",
@@ -295,7 +301,10 @@ const NodeRenderer = (props) => {
                   className={`${
                     currentNode?.id != 32 ? "next-and-back-holder" : ""
                   } singleChoiceField-${singleChoiceField}  ${
-                    currentNode?.title == "Parts of the world"
+                    currentNode?.title == "Parts of the world" ||
+                    "Traveling with" ||
+                    "Traveling how long" ||
+                    "Which seasons"
                       ? "form-padding-bottom"
                       : ""
                   }`}
