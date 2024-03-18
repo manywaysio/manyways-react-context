@@ -179,8 +179,8 @@ const NodeRenderer = (props) => {
 
       return (
         <div
-          className={`fadetext-${textFade} is-loading-${isLoading} ${
-            showArrows ? "hide-overflow" : "universal-wrapper"
+          className={`universal-wrapper fadetext-${textFade} is-loading-${isLoading} ${
+            showArrows ? "hide-overflow" : ""
           } background-node-${slugify(currentNode?.title)} `}>
           {/* <div
           className={`universal-wrapper fadetext-${textFade} is-loading-${isLoading} ${
