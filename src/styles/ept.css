@@ -206,14 +206,13 @@ p {
 .node-transition-which-seasons {
   opacity: 35%;
   background-color: black;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .node-transition-results {
   opacity: 100%;
   background-color: black;
-  transition: all 10s ease-in-out;
-  transition-delay: 0.3s;
+  transition: opacity 1s ease-in-out;
 }
 
 .node-transition-when-it-comes-to-travel,
@@ -235,6 +234,20 @@ p {
   opacity: 65%;
   background-color: black;
 }
+
+/* .node-transition {
+  transition: opacity 5s ease-in-out, background-color 5s ease-in-out;
+}
+
+.node-transition-which-seasons {
+  opacity: 35%;
+  background-color: black;
+} */
+
+/* .node-transition-results {
+  opacity: 100%;
+  background-color: black;
+} */
 
 .mw-node .mw-container {
   z-index: 4;
@@ -351,7 +364,7 @@ label.control-label {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 140%; /* 19.6px */
+  line-height: 140%;
   letter-spacing: 1.4px;
   text-transform: uppercase;
 }
@@ -367,10 +380,6 @@ label.control-label {
   color: white;
   transition: all 0.2s ease-in;
 }
-
-/* .hamburger-button:hover {
-  color: #008c93;
-} */
 
 .char-photo-header {
   height: 32px;
@@ -611,12 +620,7 @@ label.control-label {
   transition: all 0.1s ease-in;
 }
 
-/* .char-button-hold button:hover {
-  border: 1px solid #026f75;
-} */
-
 .input-container {
-  /* width: 255px; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -625,7 +629,6 @@ label.control-label {
 }
 
 .input-icon-container {
-  /* width: 255px; */
   width: 100%;
   position: relative;
   display: flex;
@@ -791,7 +794,6 @@ label[for="marketing-consent"] {
 }
 
 .charlotte-modal-content input {
-  /* width: 190px; */
   padding: 13px 17px 13px 40px;
   border-radius: 6px;
 }
@@ -827,8 +829,6 @@ label[for="marketing-consent"] {
   letter-spacing: -0.18px;
   font-family: "Inter", sans-serif;
   margin: 12px 0;
-  /* width: 100%;
-  text-align: center; */
 }
 
 .charlotte-modal-content .submit-button {
@@ -836,10 +836,6 @@ label[for="marketing-consent"] {
   font-size: 18px;
   transition: all 0.1s ease-in;
 }
-
-/* .charlotte-modal-content .submit-button:hover {
-  color: #008c93;
-} */
 
 .char-desc {
   margin: 32px;
@@ -867,7 +863,6 @@ label[for="marketing-consent"] {
 .menu-modal-container ul {
   font-family: "Inter", sans-serif;
   list-style: none;
-  /* padding: 0 0 0 20px; */
   padding-left: 5px;
   margin: 0;
 }
@@ -932,11 +927,11 @@ label[for="marketing-consent"] {
 
 .progress-bar-container {
   transition: opacity 0.5s ease-in-out;
-  opacity: 0; /* Start hidden */
+  opacity: 0;
 }
 
 .progress-bar-container.show {
-  opacity: 1; /* Fully visible */
+  opacity: 1;
 }
 
 .mw-node .form-group {

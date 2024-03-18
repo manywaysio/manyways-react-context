@@ -133,12 +133,11 @@ const NodeRenderer = (props) => {
       setIsTransitioning(false);
     } else if (currentNodeId === 47 && !isTransitioning) {
       setIsTransitioning(true);
-      console.log("started");
+      setShowResults(true);
       setTimeout(() => {
         setIsTransitioning(false);
-        setShowResults(true);
         console.log("ended");
-      }, 20000);
+      }, 2000);
     }
   }, [currentNodeId]);
 
@@ -181,7 +180,7 @@ const NodeRenderer = (props) => {
         <div
           className={`fadetext-${textFade} is-loading-${isLoading} ${
             showArrows ? "hide-overflow" : "universal-wrapper"
-          } background-node-${slugify(currentNode?.title)}`}>
+          } background-node-${slugify(currentNode?.title)} `}>
           {/* <div
           className={`universal-wrapper fadetext-${textFade} is-loading-${isLoading} ${
             showArrows ? "hide-overflow" : ""
@@ -212,6 +211,10 @@ const NodeRenderer = (props) => {
               className={`background-shade node-transition-${slugify(
                 currentNode?.title
               )}`}
+              style={{
+                backgroundColor: "black",
+                transition: "opacity 1s ease-in-out",
+              }}
             />
             {showArrows && (
               <div className="nextprev-holder-desktop">
