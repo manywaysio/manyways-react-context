@@ -718,17 +718,23 @@ label[for="marketing-consent"] {
   font-family: Inter, sans-serif;
 }
 
-#contact-permission {
-  height: 16px;
+input#contact-permission {
   width: 16px;
   max-width: 16px !important;
+}
+
+#contact-permission {
+  height: 16px;
   margin-right: 12px;
+}
+
+input#marketing-consent {
+  width: 16px;
+  max-width: 16px !important;
 }
 
 #marketing-consent {
   height: 16px;
-  width: 16px;
-  max-width: 16px !important;
   margin-right: 12px;
 }
 
