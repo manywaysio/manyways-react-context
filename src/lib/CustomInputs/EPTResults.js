@@ -74,7 +74,9 @@ const SingleEPTResult = ({
   const { setCharlotteModalOpen } = useManyways();
 
   return (
-    <div className="single-result" style={{ background: "black" }}>
+    <div
+      className="single-result results-wrapper-desktop"
+      style={{ background: "black" }}>
       <div className="single-results-background-holder">
         <div
           className="single-result-background"

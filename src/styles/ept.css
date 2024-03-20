@@ -90,6 +90,10 @@ p {
   align-items: center;
 }
 
+.hide-overflow {
+  overflow-x: hidden;
+}
+
 .universal-wrapper {
   display: block !important;
   width: 100% !important;
@@ -99,23 +103,38 @@ p {
   box-sizing: border-box !important;
 }
 
-.hide-overflow {
-  overflow-x: hidden;
-}
-
-.background-node-results {
+/* .background-node-results {
   display: block !important;
   width: 100% !important;
   background: black;
-  /* max-width: 1700px !important; */
   margin: 0 auto !important;
   padding: 0 73px !important;
   box-sizing: border-box !important;
+} */
+
+@media (min-width: 1024px) {
+  .results-wrapper-desktop {
+    display: block !important;
+    width: 100% !important;
+    background: black;
+    margin: 0 auto !important;
+    padding: 0 86px;
+    box-sizing: border-box !important;
+  }
 }
 
 @media (max-width: 1024px) {
   .universal-wrapper {
     padding: 0 30px !important;
+  }
+
+  .results-wrapper-mobile {
+    display: block !important;
+    width: 100% !important;
+    background: black;
+    margin: 0 auto !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -1521,14 +1540,12 @@ label[for="marketing-consent"] {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin-top: 24px;
   background-color: transparent;
   border: 1px solid white;
-  width: 37px;
+  width: 27px;
   height: 37px;
   color: white;
   border-radius: 9999px;
-  margin-left: 8px;
   transition: all 0.1s ease-in;
 }
 
@@ -1856,11 +1873,11 @@ label[for="marketing-consent"] {
 }
 
 .arrow-left {
-  margin-left: 23px;
+  padding-left: 23px;
 }
 
 .arrow-right {
-  margin-right: 23px;
+  padding-right: 23px;
 }
 
 .nextprev-holder-desktop {
@@ -1878,14 +1895,14 @@ label[for="marketing-consent"] {
     top: 50vh;
     display: flex;
     justify-content: space-between;
-    z-index: 1000;
+    z-index: 10000;
     left: 0;
     right: unset;
   }
 
   .s-nextprev {
     transform: scale(1.1);
-    margin: 10px;
+    /* margin: 10px; */
   }
 }
 
@@ -1900,6 +1917,15 @@ label[for="marketing-consent"] {
 @media (max-width: 1024px) {
   .grid-topper h2 {
     font-size: 21px;
+  }
+
+  .nextprev-holder-arrows {
+    margin-top: 24px;
+  }
+
+  .s-nextprev {
+    width: 37px;
+    margin-left: 8px;
   }
 }
 
