@@ -162,7 +162,7 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
         }}
         menuIsOpen={menuIsOpen}
         isDisabled={disabled}
-        isSearchable={false}
+        isSearchable={true}
         value={theValue}
         placeholder={props.placeholder}
         options={theOptions}
