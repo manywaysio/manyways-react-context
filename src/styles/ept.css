@@ -829,11 +829,6 @@ input#marketing-consent {
   align-items: center;
 }
 
-/* .charlotte-modal-content input {
-  padding: 13px 17px 13px 40px;
-  border-radius: 6px;
-} */
-
 .charlotte-modal-content button {
   padding: 11.5px 12px;
   border-radius: 999px;
@@ -2079,4 +2074,20 @@ input#marketing-consent {
   padding: 10.5px 11px;
   cursor: pointer;
   transition: all 0.1s ease-in;
+}
+
+.submit-modal-content button {
+  padding: 11.5px 12px;
+  border-radius: 999px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  transition: all 0.1s ease-in;
+}
+
+.submit-modal-content button:not(:disabled):hover {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }

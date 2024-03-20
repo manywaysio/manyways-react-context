@@ -75,7 +75,7 @@ const SingleEPTResult = ({
     alert("Form submitted");
   };
 
-  const { setCharlotteModalOpen, setSubmitModalOpen, submitModalOpen } = useManyways();
+  const { setCharlotteModalOpen, setSubmitModalOpen } = useManyways();
 
   return (
     <div

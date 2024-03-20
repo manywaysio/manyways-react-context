@@ -1,6 +1,5 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import NodeRenderer from "./NodeRenderer";
-import Footer from "./Footer";
 import Header from "./Header";
 import { mergeNodetoLocaleNoSubNode, slugify } from "./utils/helpers";
 import labels from "./labels/index";
@@ -276,7 +275,7 @@ const ManywaysProvider = ({
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
           ?.run_mode?.logo} ${nodes.map((n) => `mw-${slugify(n.title)}`).join(" ")} ${
-          charlotteModalOpen ? "locked-scroll" : ""
+          charlotteModalOpen || submitModalOpen ? "locked-scroll" : ""
         }`}>
         {mode === "scroll" && treeConfig?.run_mode?.ui_variables?.backgroundImage ? (
           <div
