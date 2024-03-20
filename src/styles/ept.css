@@ -724,6 +724,7 @@ label[for="marketing-consent"] {
 }
 
 input#contact-permission {
+  padding: 16px;
   width: 16px;
   max-width: 16px !important;
 }
