@@ -677,6 +677,11 @@ label.control-label {
   letter-spacing: -0.18px;
 }
 
+input.input-with-icon {
+  padding: 13px 17px 13px 40px;
+  border-radius: 6px;
+}
+
 .input-with-icon::placeholder {
   color: rgba(0, 0, 0, 0.25);
   font-size: 18px;
@@ -820,10 +825,10 @@ input#marketing-consent {
   align-items: center;
 }
 
-.charlotte-modal-content input {
+/* .charlotte-modal-content input {
   padding: 13px 17px 13px 40px;
   border-radius: 6px;
-}
+} */
 
 .charlotte-modal-content button {
   padding: 11.5px 12px;
