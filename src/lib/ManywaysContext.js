@@ -7,6 +7,7 @@ import labels from "./labels/index";
 import Carp from "../icons/Carp";
 import ProgressBar from "./ProgressBar";
 import CharlotteModal from "./CharlotteModal";
+import SubmitModal from "./SubmitModal";
 import MenuModal from "./MenuModal";
 
 const ManywaysContext = createContext(null);
@@ -39,6 +40,7 @@ const ManywaysProvider = ({
   let [responses, setResponses] = useState([]);
   let [isLoading, setIsLoading] = useState(true);
   const [charlotteModalOpen, setCharlotteModalOpen] = useState(false);
+  const [submitModalOpen, setSubmitModalOpen] = useState(false);
   const [menuModalOpen, setMenuModalOpen] = useState(false);
   const [textFade, setTextFade] = useState(true);
 
@@ -268,6 +270,8 @@ const ManywaysProvider = ({
         setCharlotteModalOpen,
         swiperControls,
         updateSwiperControls,
+        submitModalOpen,
+        setSubmitModalOpen,
       }}>
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
@@ -297,6 +301,10 @@ const ManywaysProvider = ({
         <CharlotteModal
           charlotteModalOpen={charlotteModalOpen}
           setCharlotteModalOpen={setCharlotteModalOpen}
+        />
+        <SubmitModal
+          submitModalOpen={submitModalOpen}
+          setSubmitModalOpen={setSubmitModalOpen}
         />
         <NodeRenderer />
         {children}

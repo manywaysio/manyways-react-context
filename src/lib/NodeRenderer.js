@@ -175,7 +175,7 @@ const NodeRenderer = (props) => {
       );
 
       const showArrows = currentNode?.id == 47;
-      console.log(currentNode?.title);
+      // console.log(currentNode?.title);
 
       return (
         <div

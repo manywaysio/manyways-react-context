@@ -69,9 +69,13 @@ const SingleEPTResult = ({
     // itineraryHeroImage,
   } = thePackage;
 
-  // console.log(ship);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitModalOpen(true);
+    alert("Form submitted");
+  };
 
-  const { setCharlotteModalOpen } = useManyways();
+  const { setCharlotteModalOpen, setSubmitModalOpen, submitModalOpen } = useManyways();
 
   return (
     <div
@@ -242,7 +246,7 @@ const SingleEPTResult = ({
             email, and our cruise expert will help you to reserve a spot on the perfect
             journey.
           </p>
-          <form className="results-char">
+          <form className="results-char" onSubmit={handleSubmit}>
             <div className="input-icon-container">
               <Phone className="input-icon" />
               <input
