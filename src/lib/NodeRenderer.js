@@ -165,6 +165,7 @@ const NodeRenderer = (props) => {
       );
 
       const showArrows = currentNode?.id == 47;
+      console.log(slugify(currentNode?.title));
 
       return (
         <div
@@ -192,6 +193,15 @@ const NodeRenderer = (props) => {
                 : {}
             }>
             <div
+              className={`background-shade node-transition-${slugify(
+                currentNode?.title
+              )} ${isFadingOut ? "node-transition-results overlay-z-index" : ""}`}
+              style={{
+                backgroundColor: "black",
+                transition: "opacity 3s ease-in-out",
+              }}
+            />
+            {/* <div
               className={`background-shade ${
                 isFadingOut ? "node-transition-results" : "node-transition-which-seasons"
               }`}
@@ -199,7 +209,7 @@ const NodeRenderer = (props) => {
                 backgroundColor: "black",
                 transition: "opacity 3s ease-in-out",
               }}
-            />
+            /> */}
             {showArrows && (
               <div className="nextprev-holder-desktop">
                 <div className="arrow-left">
@@ -275,7 +285,7 @@ const NodeRenderer = (props) => {
                     setTimeout(() => {
                       goForward(e);
                       setIsFadingOut(false);
-                    }, 3000);
+                    }, 4000);
                   } else if (!!singleChoiceField) {
                     goForward(e);
                   }

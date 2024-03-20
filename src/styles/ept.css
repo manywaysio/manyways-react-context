@@ -187,6 +187,10 @@ p {
   transition-delay: 0.3s;
 }
 
+.overlay-z-index {
+  z-index: 10;
+}
+
 .background-shade {
   /* overflow-x: hidden; */
   top: 0;
@@ -214,24 +218,24 @@ p {
 
 .node-transition-start {
   opacity: 20%;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .node-transition-explanation {
   opacity: 50%;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .node-transition-which-seasons {
   opacity: 35%;
-  background-color: black;
-  transition: opacity 3s ease-in-out;
+  /* background-color: black; */
+  /* transition: opacity 3s ease-in-out; */
 }
 
 .node-transition-results {
   opacity: 100%;
-  background-color: black;
-  transition: opacity 3s ease-in-out;
+  /* background-color: black; */
+  /* transition: opacity 3s ease-in-out; */
 }
 
 .node-transition-when-it-comes-to-travel,
@@ -243,7 +247,7 @@ p {
 .node-transition-traveling-with,
 .node-transition-traveling-how-long {
   opacity: 35%;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .node-transition-relax-and-adventure,
@@ -251,22 +255,8 @@ p {
 .node-transition-charlotte,
 .node-transition-dont-worry {
   opacity: 65%;
-  background-color: black;
+  /* background-color: black; */
 }
-
-/* .node-transition {
-  transition: opacity 5s ease-in-out, background-color 5s ease-in-out;
-}
-
-.node-transition-which-seasons {
-  opacity: 35%;
-  background-color: black;
-} */
-
-/* .node-transition-results {
-  opacity: 100%;
-  background-color: black;
-} */
 
 .mw-node .mw-container {
   z-index: 4;
@@ -287,21 +277,6 @@ p {
   justify-content: center;
   align-items: center;
 }
-
-/* .is-current-node-true,
-.is-current-node-false {
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.is-current-node-true {
-  opacity: 1;
-  visibility: visible;
-}
-
-.is-current-node-false {
-  opacity: 0;
-  visibility: hidden;
-} */
 
 .is-current-node-false {
   display: none;
@@ -343,7 +318,7 @@ label.control-label {
 
 .header-item {
   display: flex;
-  width: 231px;
+  width: 223px;
   cursor: pointer;
 }
 
@@ -389,6 +364,7 @@ label.control-label {
 }
 
 .hamburger-button {
+  padding-left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
