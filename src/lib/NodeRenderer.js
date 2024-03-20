@@ -175,7 +175,6 @@ const NodeRenderer = (props) => {
       );
 
       const showArrows = currentNode?.id == 47;
-      // console.log(currentNode?.title);
 
       return (
         <div
@@ -284,7 +283,14 @@ const NodeRenderer = (props) => {
                   },
                 }}
                 onChange={(e) => {
-                  if (!!singleChoiceField) {
+                  if (
+                    !!singleChoiceField &&
+                    slugify(currentNode?.title) === "which-seasons"
+                  ) {
+                    setTimeout(() => {
+                      goForward(e);
+                    }, 3000);
+                  } else if (!!singleChoiceField) {
                     goForward(e);
                   }
                 }}
