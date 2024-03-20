@@ -1341,7 +1341,7 @@ label[for="marketing-consent"] {
 
 .image-side {
   padding-left: 18%;
-  margin-right: -5%;
+  margin-right: -15%;
 }
 
 .iternary {
@@ -1673,7 +1673,7 @@ label[for="marketing-consent"] {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    margin-right: -7%;
+    margin-right: -15%;
   }
 
   .inner-content-container.charlotte-modal-content {
