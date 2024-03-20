@@ -719,17 +719,17 @@ label[for="marketing-consent"] {
 }
 
 #contact-permission {
-  height: 13px;
-  max-width: 13px;
-  /* width: 35px; */
-  margin-right: 20px;
+  height: 16px;
+  width: 16px;
+  max-width: 16px !important;
+  margin-right: 12px;
 }
 
 #marketing-consent {
-  height: 13px;
-  max-width: 13px;
-  /* width: 35px; */
-  margin-right: 20px;
+  height: 16px;
+  width: 16px;
+  max-width: 16px !important;
+  margin-right: 12px;
 }
 
 .char-image-container {
