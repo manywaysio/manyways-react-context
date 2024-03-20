@@ -724,7 +724,7 @@ label[for="marketing-consent"] {
 }
 
 input#contact-permission {
-  margin-top: 2px !important;
+  margin-top: 4px !important;
   padding: 0px 9px;
   width: 16px;
   max-width: 16px !important;
@@ -736,7 +736,7 @@ input#contact-permission {
 }
 
 input#marketing-consent {
-  margin-top: 2px !important;
+  margin-top: 4px !important;
   padding: 0px 9px;
   width: 16px;
   max-width: 16px !important;
