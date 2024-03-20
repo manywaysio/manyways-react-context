@@ -104,6 +104,7 @@ const selectStyles = {
 const NodeRenderer = (props) => {
   const [showResults, setShowResults] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [zIndex, setZIndex] = useState(1);
   const {
     nodes,
     goBack,
@@ -195,21 +196,13 @@ const NodeRenderer = (props) => {
             <div
               className={`background-shade node-transition-${slugify(
                 currentNode?.title
-              )} ${isFadingOut ? "node-transition-results overlay-z-index" : ""}`}
+              )} ${isFadingOut ? "node-transition-results" : ""}`}
               style={{
+                zIndex: zIndex,
                 backgroundColor: "black",
-                transition: "opacity 3s ease-in-out",
+                transition: "opacity 2s ease-in-out",
               }}
             />
-            {/* <div
-              className={`background-shade ${
-                isFadingOut ? "node-transition-results" : "node-transition-which-seasons"
-              }`}
-              style={{
-                backgroundColor: "black",
-                transition: "opacity 3s ease-in-out",
-              }}
-            /> */}
             {showArrows && (
               <div className="nextprev-holder-desktop">
                 <div className="arrow-left">
@@ -281,11 +274,13 @@ const NodeRenderer = (props) => {
                     !!singleChoiceField &&
                     slugify(currentNode?.title) === "which-seasons"
                   ) {
+                    setZIndex(10);
                     setIsFadingOut(true);
                     setTimeout(() => {
                       goForward(e);
                       setIsFadingOut(false);
-                    }, 4000);
+                      setZIndex(null);
+                    }, 2000);
                   } else if (!!singleChoiceField) {
                     goForward(e);
                   }

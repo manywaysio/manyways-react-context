@@ -103,15 +103,6 @@ p {
   box-sizing: border-box !important;
 }
 
-/* .background-node-results {
-  display: block !important;
-  width: 100% !important;
-  background: black;
-  margin: 0 auto !important;
-  padding: 0 73px !important;
-  box-sizing: border-box !important;
-} */
-
 @media (min-width: 1024px) {
   .results-wrapper-desktop {
     display: block !important;
@@ -218,24 +209,18 @@ p {
 
 .node-transition-start {
   opacity: 20%;
-  /* background-color: black; */
 }
 
 .node-transition-explanation {
   opacity: 50%;
-  /* background-color: black; */
 }
 
 .node-transition-which-seasons {
   opacity: 35%;
-  /* background-color: black; */
-  /* transition: opacity 3s ease-in-out; */
 }
 
 .node-transition-results {
   opacity: 100%;
-  /* background-color: black; */
-  /* transition: opacity 3s ease-in-out; */
 }
 
 .node-transition-when-it-comes-to-travel,
@@ -247,7 +232,6 @@ p {
 .node-transition-traveling-with,
 .node-transition-traveling-how-long {
   opacity: 35%;
-  /* background-color: black; */
 }
 
 .node-transition-relax-and-adventure,
@@ -255,7 +239,6 @@ p {
 .node-transition-charlotte,
 .node-transition-dont-worry {
   opacity: 65%;
-  /* background-color: black; */
 }
 
 .mw-node .mw-container {
