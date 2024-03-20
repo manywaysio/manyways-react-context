@@ -1,5 +1,5 @@
 import { useManyways } from "./ManywaysContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import validator from "@rjsf/validator-ajv8";
 import Form from "@rjsf/core";
 import NextAndBack from "./NextAndBack";
@@ -10,9 +10,6 @@ import ManywaysSelectWidget from "./CustomInputs/ManywaysSelectWidget";
 import { slugify } from "./utils/helpers";
 import Select from "react-select";
 import EPTResults from "./CustomInputs/EPTResults";
-
-// import NodeComponent from "./NodeComponent";
-import { useEffect } from "react";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   // console.log(formSchema, uiSchema);
@@ -106,7 +103,7 @@ const selectStyles = {
 
 const NodeRenderer = (props) => {
   const [showResults, setShowResults] = useState(false);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
   const {
     nodes,
     goBack,
@@ -129,15 +126,8 @@ const NodeRenderer = (props) => {
   }, [currentNodeId]);
 
   useEffect(() => {
-    if (currentNodeId === 46) {
-      setIsTransitioning(false);
-    } else if (currentNodeId === 47 && !isTransitioning) {
-      setIsTransitioning(true);
+    if (currentNodeId === 47) {
       setShowResults(true);
-      setTimeout(() => {
-        setIsTransitioning(false);
-        console.log("ended");
-      }, 2000);
     }
   }, [currentNodeId]);
 
@@ -181,12 +171,6 @@ const NodeRenderer = (props) => {
           className={`fadetext-${textFade} is-loading-${isLoading} ${
             showArrows ? "hide-overflow results-wrapper-mobile" : "universal-wrapper"
           } background-node-${slugify(currentNode?.title)} `}>
-          {/* <div
-          className={`universal-wrapper fadetext-${textFade} is-loading-${isLoading} ${
-            showArrows ? "hide-overflow" : ""
-          } background-node-${slugify(currentNode?.title)} node-transition ${
-            isTransitioning ? "node-transition-results" : "node-transition-which-seasons"
-          }`}> */}
           <div
             key={idx}
             className={`${classNamePrefix}-node
@@ -208,12 +192,12 @@ const NodeRenderer = (props) => {
                 : {}
             }>
             <div
-              className={`background-shade node-transition-${slugify(
-                currentNode?.title
-              )}`}
+              className={`background-shade ${
+                isFadingOut ? "node-transition-results" : "node-transition-which-seasons"
+              }`}
               style={{
                 backgroundColor: "black",
-                transition: "opacity 1s ease-in-out",
+                transition: "opacity 3s ease-in-out",
               }}
             />
             {showArrows && (
@@ -287,8 +271,10 @@ const NodeRenderer = (props) => {
                     !!singleChoiceField &&
                     slugify(currentNode?.title) === "which-seasons"
                   ) {
+                    setIsFadingOut(true);
                     setTimeout(() => {
                       goForward(e);
+                      setIsFadingOut(false);
                     }, 3000);
                   } else if (!!singleChoiceField) {
                     goForward(e);

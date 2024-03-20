@@ -225,13 +225,13 @@ p {
 .node-transition-which-seasons {
   opacity: 35%;
   background-color: black;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 
 .node-transition-results {
   opacity: 100%;
   background-color: black;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 
 .node-transition-when-it-comes-to-travel,

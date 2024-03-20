@@ -90,7 +90,7 @@ const ManywaysRadioWidget = ({
           return (
             <>
               <div
-                key={i}
+                key={optionId(id, i)}
                 className={`${inline ? "radio-inline" : "radio"} selected-${checked}`}>
                 {radio}
               </div>
