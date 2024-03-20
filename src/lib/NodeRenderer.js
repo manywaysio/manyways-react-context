@@ -279,7 +279,6 @@ const NodeRenderer = (props) => {
                     setTimeout(() => {
                       goForward(e);
                       setIsFadingOut(false);
-                      setZIndex(null);
                     }, 2000);
                   } else if (!!singleChoiceField) {
                     goForward(e);

@@ -158,20 +158,6 @@ strong {
   margin-bottom: 0.5rem;
 }
 
-/* .mw-node .mw-container {
-  justify-content: flex-start;
-  margin-top: 0;
-} */
-
-.mw-journey-container header {
-  position: relative;
-  top: 0px;
-  padding: 0px 0 10px 0;
-  background-color: #fff;
-  height: auto;
-  z-index: 0;
-}
-
 .mesca-page-header {
   position: relative;
   height: 100%;
@@ -186,14 +172,6 @@ strong {
   height: 100%;
   z-index: 2;
 }
-
-/* .mesca-page-header>div {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-} */
 
 .mesca-page-header .image-container {
   position: absolute;

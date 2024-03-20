@@ -1603,9 +1603,9 @@ input#marketing-consent {
   padding: 8px 16px;
 }
 
-.results-holder {
+/* .results-holder {
   margin-top: 72px;
-}
+} */
 
 @media screen and (min-width: 768px) {
   .results-holder {
@@ -1851,7 +1851,8 @@ input#marketing-consent {
 }
 
 .nextprev-holder-desktop {
-  display: none;
+  opacity: 0;
+  transition: all 2s ease-in;
 }
 
 @media (min-width: 1024px) {
@@ -1860,6 +1861,7 @@ input#marketing-consent {
   }
 
   .nextprev-holder-desktop {
+    opacity: 100%;
     position: absolute;
     width: 100%;
     top: 50vh;
@@ -1872,7 +1874,6 @@ input#marketing-consent {
 
   .s-nextprev {
     transform: scale(1.1);
-    /* margin: 10px; */
   }
 }
 
