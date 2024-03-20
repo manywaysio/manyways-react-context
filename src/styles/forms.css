@@ -457,7 +457,7 @@
   opacity: .6;
 }
 
-.select-mw__input-container {
+.select-mw__input-container, .select-mw__value-container input {
   box-sizing: border-box;
   display: inline-grid;
   flex: 1 1 auto;
@@ -469,7 +469,7 @@
   visibility: visible;
 }
 
-.select-mw__input-container:after {
+.select-mw__input-container:after, .select-mw__value-container input:after  {
   border: 0;
   content: attr(data-value) "";
   grid-area: 1/2;

@@ -142,7 +142,9 @@ strong {
 /* sr only  */
 
 .mw-node-find-by .control-label,
-.mw-node-model-number .control-label {
+.mw-node-model-number .control-label[for="root_outdoor"], 
+.mw-node-model-number .control-label[for="root_indoor"]
+ {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -259,11 +261,17 @@ strong {
   margin-bottom: 0;
 }
 
-.mw-node-model-number-form .form-group.field-string:first-of-type {
+.mw-node-model-number-form .form-group.field-string:first-of-type, 
+.mw-node-ahri-number .form-group.field-string:first-of-type{
+  z-index: 3;
+}
+
+.mw-node-model-number-form .form-group.field-string:nth-of-type(2), 
+.mw-node-ahri-number .form-group.field-string:nth-of-type(2){
   z-index: 2;
 }
 
-.mw-node-model-number-form .form-group.field-string:nth-of-type(2) {
+.mw-node-model-number-form .form-group.field-string:nth-of-type(3) {
   z-index: 1;
 }
 
@@ -397,7 +405,8 @@ strong {
     margin-left: auto;
   }
 
-  .mw-node-model-number .form-group.field.field-string {
+  .mw-node-model-number .form-group.field.field-string:nth-of-type(2),  
+  .mw-node-model-number .form-group.field.field-string:nth-of-type(3) {
     display: inline-block;
     width: calc(100%/2 - 10px);
     position: relative;
@@ -408,7 +417,7 @@ strong {
     margin-left: 20px;
   }
 
-  .mw-node-model-number .form-group.field.field-string:nth-child(2) {
+  .mw-node-model-number .form-group.field.field-string:nth-child(3) {
     margin-left: 20px;
 
   }
@@ -1153,3 +1162,33 @@ ul.error-detail .text-danger {
   white-space: nowrap;
   border-width: 0;
 }
+
+.mw-node-find-by-form.has-response-true .radio-inline.selected-false {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/**********************************************
+ Style non-searchable react select inputs. 
+ Hide when React Select Search is enabled 
+ **********************************************/
+.mw-node .form-group.field-string .select-mw__value-container input {
+  padding: .5em .8em;
+}
+
+.select-mw__value-container input  {
+  background: 0px center;
+  border: 0px;
+  caret-color: transparent;
+  font-size: inherit;
+  grid-area: 1 / 1 / 2 / 3;
+  outline: 0px;
+  padding: 0px;
+  width: 1px;
+  color: transparent;
+  left: -100px;
+  opacity: 0;
+  position: relative;
+  transform: scale(0.01);
+}
+/***************************************/
