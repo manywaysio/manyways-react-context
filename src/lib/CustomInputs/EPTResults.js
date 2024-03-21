@@ -22,9 +22,9 @@ const Price = ({ priceRange }) => {
         style={{
           textDecoration: discountApplied ? "line-through" : "none",
         }}>
-        {priceRange}
+        ${priceRange}
       </div>
-      {discountApplied && <div className="discountedprice">{discountedPrice}</div>}
+      {discountApplied && <div className="discountedprice">${discountedPrice}</div>}
       <button
         className={`apply-price ${discountApplied ? "applied" : ""}`}
         onClick={() => {

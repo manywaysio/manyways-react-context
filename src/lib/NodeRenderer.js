@@ -166,7 +166,6 @@ const NodeRenderer = (props) => {
       );
 
       const showArrows = currentNode?.id == 47;
-      console.log(slugify(currentNode?.title));
 
       return (
         <div
@@ -277,8 +276,9 @@ const NodeRenderer = (props) => {
                     setZIndex(10);
                     setIsFadingOut(true);
                     setTimeout(() => {
-                      goForward(e);
                       setIsFadingOut(false);
+                      goForward(e);
+                      // setShowResults(true);
                     }, 2000);
                   } else if (!!singleChoiceField) {
                     goForward(e);
