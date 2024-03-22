@@ -104,7 +104,7 @@ const selectStyles = {
 const NodeRenderer = (props) => {
   const [showResults, setShowResults] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
-  const [clearBackgroundImage, setClearBackgroundImage] = useState(false);
+  const [blackBackground, setBlackBackground] = useState(false);
   const [zIndex, setZIndex] = useState(1);
   const {
     nodes,
@@ -173,7 +173,7 @@ const NodeRenderer = (props) => {
           className={`fadetext-${textFade} is-loading-${isLoading} ${
             showArrows ? "hide-overflow results-wrapper-mobile" : "universal-wrapper"
           } ${
-            clearBackgroundImage
+            blackBackground
               ? "background-black"
               : `background-node-${slugify(currentNode?.title || "")}`
           }`}>
@@ -281,7 +281,7 @@ const NodeRenderer = (props) => {
                     setZIndex(10);
                     setIsFadingOut(true);
                     setTimeout(() => {
-                      setClearBackgroundImage(true);
+                      setBlackBackground(true);
                       setIsFadingOut(false);
                       goForward(e);
                       // setShowResults(true);
