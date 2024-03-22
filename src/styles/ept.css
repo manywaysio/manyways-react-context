@@ -141,6 +141,10 @@ p {
   flex-direction: column;
 }
 
+.background-black {
+  background-color: black;
+}
+
 .background-node-start,
 .background-node-explanation {
   background-image: url("https://manyways-demo.imgix.net/Organization_6297b5a37fcaa3000655bf9c/__AdobeStock_203035795.jpeg?w=1800");
@@ -1002,13 +1006,13 @@ input#marketing-consent {
 
 /* RESULTS */
 .results-holder {
-  /* overflow-x: hidden; */
   margin: 0px;
   min-width: 100vw;
   left: -15px;
   position: relative;
   opacity: 0;
   transition: all 2s ease-in;
+  /* overflow-x: hidden; */
   /* transform: translateX(100vw); */
 }
 

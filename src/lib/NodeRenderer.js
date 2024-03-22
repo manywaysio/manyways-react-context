@@ -104,10 +104,11 @@ const selectStyles = {
 const NodeRenderer = (props) => {
   const [showResults, setShowResults] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [clearBackgroundImage, setClearBackgroundImage] = useState(false);
   const [zIndex, setZIndex] = useState(1);
   const {
     nodes,
-    goBack,
+    // goBack,
     responses,
     classNamePrefix,
     currentNodeId,
@@ -171,7 +172,11 @@ const NodeRenderer = (props) => {
         <div
           className={`fadetext-${textFade} is-loading-${isLoading} ${
             showArrows ? "hide-overflow results-wrapper-mobile" : "universal-wrapper"
-          } background-node-${slugify(currentNode?.title)} `}>
+          } ${
+            clearBackgroundImage
+              ? "background-black"
+              : `background-node-${slugify(currentNode?.title || "")}`
+          }`}>
           <div
             key={idx}
             className={`${classNamePrefix}-node
@@ -276,10 +281,11 @@ const NodeRenderer = (props) => {
                     setZIndex(10);
                     setIsFadingOut(true);
                     setTimeout(() => {
+                      setClearBackgroundImage(true);
                       setIsFadingOut(false);
                       goForward(e);
                       // setShowResults(true);
-                    }, 2000);
+                    }, 1500);
                   } else if (!!singleChoiceField) {
                     goForward(e);
                   }
