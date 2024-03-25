@@ -108,7 +108,7 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
                 setCharlotteModalOpen(false);
                 setFormSubmitted(false);
               }}>
-              Continue journey
+              Continue browsing
             </button>
             <button className="submit-button">
               <a href="https://www.manyways.io/" target="_blank">
