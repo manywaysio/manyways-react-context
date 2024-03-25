@@ -72,7 +72,7 @@ const SingleEPTResult = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitModalOpen(true);
-    alert("Form submitted");
+    // alert("Form submitted");
   };
 
   const { setCharlotteModalOpen, setSubmitModalOpen } = useManyways();

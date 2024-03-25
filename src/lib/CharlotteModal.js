@@ -12,21 +12,22 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
-    alert("Form submitted");
   };
 
   return (
     <div className={`charlotte-modal-container ${charlotteModalOpen ? "show" : ""}`}>
       <div className={`charlotte-modal-content ${charlotteModalOpen ? "show" : ""}`}>
-        <div className="char-button-hold">
-          <button
-            onClick={() => {
-              setCharlotteModalOpen(false);
-              setFormSubmitted(false);
-            }}>
-            <Close />
-          </button>
-        </div>
+        {!formSubmitted && (
+          <div className="char-button-hold">
+            <button
+              onClick={() => {
+                setCharlotteModalOpen(false);
+                setFormSubmitted(false);
+              }}>
+              <Close />
+            </button>
+          </div>
+        )}
         {formSubmitted ? (
           <div className="submission-confirmation">
             <h3>Received!</h3>
@@ -97,21 +98,40 @@ const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
                 </button>
               </div>
             </form>
-            <div className="char-image-container">
-              <img className="char-image" src={charlotte} alt="Charlotte" />
-
-              <div>
-                <h4>Meet your assigned agent</h4>
-                <p>
-                  Charlotte has 20+ years experience in luxury event planning and service,
-                  having worked for A-list celebrities and designer fashion brands
-                  throughout her career. A connoisseur of the world's hidden gems,
-                  Charlotte designs escapes that cater to the discerning traveler's quest
-                  for authenticity and adventure.
-                </p>
-              </div>
-            </div>
           </>
+        )}
+        {formSubmitted && (
+          <div className="char-cta-holder">
+            <button
+              className="submit-button"
+              onClick={() => {
+                setCharlotteModalOpen(false);
+                setFormSubmitted(false);
+              }}>
+              Continue journey
+            </button>
+            <button className="submit-button">
+              <a href="https://www.manyways.io/" target="_blank">
+                Visit our website
+              </a>
+            </button>
+          </div>
+        )}
+        {!formSubmitted && (
+          <div className="char-image-container">
+            <img className="char-image" src={charlotte} alt="Charlotte" />
+
+            <div>
+              <h4>Meet your assigned agent</h4>
+              <p>
+                Charlotte has 20+ years experience in luxury event planning and service,
+                having worked for A-list celebrities and designer fashion brands
+                throughout her career. A connoisseur of the world's hidden gems, Charlotte
+                designs escapes that cater to the discerning traveler's quest for
+                authenticity and adventure.
+              </p>
+            </div>
+          </div>
         )}
       </div>
     </div>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Close from "../icons/Close";
 
 const SubmitModal = ({ submitModalOpen, setSubmitModalOpen }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -7,18 +6,24 @@ const SubmitModal = ({ submitModalOpen, setSubmitModalOpen }) => {
   return (
     <div className={`submit-modal-container ${submitModalOpen ? "show" : ""}`}>
       <div className={`submit-modal-content ${submitModalOpen ? "show" : ""}`}>
-        <div className="submit-button-hold">
+        <div className="submission-confirmation">
+          <h3>Received!</h3>
+          <p>We will contact you shortly.</p>
+        </div>
+        <div className="char-cta-holder">
           <button
+            className="submit-button"
             onClick={() => {
               setSubmitModalOpen(false);
               setFormSubmitted(false);
             }}>
-            <Close />
+            Continue journey
           </button>
-        </div>
-        <div className="submission-confirmation">
-          <h3>Received!</h3>
-          <p>We will contact you shortly.</p>
+          <button className="submit-button">
+            <a href="https://www.manyways.io/" target="_blank">
+              Visit our website
+            </a>
+          </button>
         </div>
       </div>
     </div>

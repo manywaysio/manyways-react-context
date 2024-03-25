@@ -1981,10 +1981,6 @@ input#marketing-consent {
   font-weight: 700;
 }
 
-.submission-confirmation {
-  padding: 16px;
-}
-
 .submit-modal-container {
   z-index: 6;
   top: 0;
@@ -2054,4 +2050,33 @@ input#marketing-consent {
   background-color: white;
   color: black;
   cursor: pointer;
+}
+
+.submission-confirmation h3 {
+  margin: 0;
+}
+
+.char-cta-holder {
+  display: flex;
+}
+
+.char-cta-holder button {
+  font-size: 18px;
+  margin-bottom: 16px !important;
+  margin-top: 22px !important;
+}
+
+.char-cta-holder button:nth-child(2) {
+  margin-left: 16px !important;
+}
+
+.char-cta-holder a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s ease-in;
+}
+
+.char-cta-holder button:hover,
+.char-cta-holder button:hover a {
+  color: black;
 }
