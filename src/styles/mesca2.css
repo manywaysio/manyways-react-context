@@ -1072,14 +1072,13 @@ ul.error-detail .text-danger {
   display: none;
 }
 
+.mw-container-footer {
+  max-width: var(--content-width);
+  margin: auto;
+  padding: 0 var(--content-padding-x) 45px var(--content-padding-x);
+}
 
 @media only screen and (min-width: 750px) {
-
-  .mw-container-footer {
-    max-width: var(--content-width);
-    margin: auto;
-    padding: var(--content-padding-y) var(--content-padding-x);
-  }
 
   .mw-container-footer p,
   .mw-container-footer .powered-by {
@@ -1104,11 +1103,15 @@ ul.error-detail .text-danger {
   .footer button {
     width: auto;
   }
-
 }
 
 @media only screen and (min-width: 1025px) {
 
+  .mw-container-footer {
+    max-width: var(--content-width);
+    margin: auto;
+    padding: var(--content-padding-y) var(--content-padding-x);
+  }
 
   .results-container .result.grid-2 {
     grid-template-columns: 1fr 1fr 1fr;
