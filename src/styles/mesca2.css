@@ -797,9 +797,9 @@ ul.error-detail .text-danger {
 /* Footer  */
 
 .mw-container-footer {
-  max-width: 100%;
+  max-width: var(--content-width);
   margin: auto;
-  padding: 0;
+  padding: 0 var(--content-padding-x) 45px var(--content-padding-x);
 }
 
 .mw-container-footer p,
@@ -1073,12 +1073,6 @@ ul.error-detail .text-danger {
 
 
 @media only screen and (min-width: 750px) {
-
-  .mw-container-footer {
-    max-width: var(--content-width);
-    margin: auto;
-    padding: var(--content-padding-y) var(--content-padding-x);
-  }
 
   .mw-container-footer p,
   .mw-container-footer .powered-by {
