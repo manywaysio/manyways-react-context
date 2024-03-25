@@ -744,6 +744,17 @@ ul.error-detail .text-danger {
   display: none;
 }
 
+.mw-next-and-back button{
+  margin-bottom: .5rem;
+  width: 100%;
+}
+
+@media only screen and (min-width: 360px) {
+  .mw-next-and-back button{
+    margin-bottom: 0;
+    width: auto;
+  }
+}
 
 /* Hide form when results show  */
 /* Hide form when results show  */
