@@ -10,7 +10,6 @@ const CharlotteModal = ({
   setContactPermission,
   marketingConsent,
   setMarketingConsent,
-  charlotteFormSubmitted,
   setCharlotteFormSubmitted,
 }) => {
   return (

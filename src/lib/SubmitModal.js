@@ -3,51 +3,12 @@ import React, { useState } from "react";
 const SubmitModal = ({
   submitModalOpen,
   setSubmitModalOpen,
-  charlotteFormSubmitted,
   setCharlotteFormSubmitted,
   currentNode,
+  setCharlotteModalOpen,
+  setContactPermission,
+  setMarketingConsent,
 }) => {
-  {
-    /* {charlotteFormSubmitted && (
-          <div className="char-cta-holder">
-            <button
-              className="submit-button"
-              onClick={() => {
-                setCharlotteModalOpen(false);
-                setCharlotteFormSubmitted(false);
-              }}>
-              Continue browsing
-            </button>
-            <button className="submit-button">
-              <a href="https://www.manyways.io/" target="_blank">
-                Visit our website
-              </a>
-            </button>
-          </div>
-        )} */
-  }
-  {
-    /* {charlotteFormSubmitted && (
-          <div className="char-cta-holder">
-            <button
-              className="submit-button"
-              onClick={() => {
-                setCharlotteFormSubmitted(false);
-                setContactPermission(false);
-                setMarketingConsent(false);
-                window.manyways.restart();
-              }}>
-              Restart journey
-            </button>
-            <button className="submit-button">
-              <a href="https://www.manyways.io/" target="_blank">
-                Visit our website
-              </a>
-            </button>
-          </div>
-        )} */
-  }
-
   return (
     <div className={`submit-modal-container ${submitModalOpen ? "show" : ""}`}>
       <div className={`submit-modal-content ${submitModalOpen ? "show" : ""}`}>
@@ -59,10 +20,16 @@ const SubmitModal = ({
           <button
             className="submit-button"
             onClick={() => {
-              setSubmitModalOpen(false);
               setCharlotteFormSubmitted(false);
+              setSubmitModalOpen(false);
+              setCharlotteModalOpen(false);
+              setContactPermission(false);
+              setMarketingConsent(false);
+              if (currentNode?.title === "Charlotte") {
+                window.manyways.restart();
+              }
             }}>
-            Continue browsing
+            {currentNode?.title === "Charlotte" ? "Restart journey" : "Continue browsing"}
           </button>
           <button className="submit-button">
             <a href="https://www.manyways.io/" target="_blank">

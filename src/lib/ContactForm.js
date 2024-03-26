@@ -8,16 +8,16 @@ const ContactForm = ({
   setContactPermission,
   marketingConsent,
   setMarketingConsent,
-  setCharlotteFormSubmitted,
+  // setCharlotteFormSubmitted,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setCharlotteFormSubmitted(true);
     setSubmitModalOpen(true);
+    // setCharlotteFormSubmitted(true);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       {/* <form onSubmit={handleSubmit}> */}
       <div className={`input-container ${resultsPage ? "results-style" : ""}`}>
         <div className={`inputs-holder ${resultsPage ? "results-style" : ""}`}>
@@ -70,6 +70,7 @@ const ContactForm = ({
           className="submit-button"
           type="submit"
           disabled={!contactPermission}
+          onClick={handleSubmit}
           // disabled={!contactPermission || !marketingConsent}
         >
           Submit

@@ -11,20 +11,6 @@ import MenuModal from "./MenuModal";
 
 const ManywaysContext = createContext(null);
 
-// const restart = function (e) {
-//   !!e && e.preventDefault();
-//   window.umami.track("reload");
-//   window.location.reload();
-// };
-
-// const share = function (e) {
-//   !!e && e.preventDefault();
-//   window.umami.track("Share");
-//   navigator.share({
-//     url: window.location.href,
-//   });
-// };
-
 const ManywaysProvider = ({
   children,
   slug,
@@ -348,6 +334,10 @@ const ManywaysProvider = ({
           submitModalOpen={submitModalOpen}
           setSubmitModalOpen={setSubmitModalOpen}
           currentNode={currentNode}
+          setCharlotteFormSubmitted={setCharlotteFormSubmitted}
+          setCharlotteModalOpen={setCharlotteModalOpen}
+          setMarketingConsent={setMarketingConsent}
+          setContactPermission={setContactPermission}
         />
         <NodeRenderer />
         {children}
