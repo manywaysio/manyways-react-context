@@ -1,7 +1,52 @@
 import React, { useState } from "react";
 
-const SubmitModal = ({ submitModalOpen, setSubmitModalOpen, currentNode }) => {
-  const [charlotteFormSubmitted, setCharlotteFormSubmitted] = useState(false);
+const SubmitModal = ({
+  submitModalOpen,
+  setSubmitModalOpen,
+  charlotteFormSubmitted,
+  setCharlotteFormSubmitted,
+  currentNode,
+}) => {
+  {
+    /* {charlotteFormSubmitted && (
+          <div className="char-cta-holder">
+            <button
+              className="submit-button"
+              onClick={() => {
+                setCharlotteModalOpen(false);
+                setCharlotteFormSubmitted(false);
+              }}>
+              Continue browsing
+            </button>
+            <button className="submit-button">
+              <a href="https://www.manyways.io/" target="_blank">
+                Visit our website
+              </a>
+            </button>
+          </div>
+        )} */
+  }
+  {
+    /* {charlotteFormSubmitted && (
+          <div className="char-cta-holder">
+            <button
+              className="submit-button"
+              onClick={() => {
+                setCharlotteFormSubmitted(false);
+                setContactPermission(false);
+                setMarketingConsent(false);
+                window.manyways.restart();
+              }}>
+              Restart journey
+            </button>
+            <button className="submit-button">
+              <a href="https://www.manyways.io/" target="_blank">
+                Visit our website
+              </a>
+            </button>
+          </div>
+        )} */
+  }
 
   return (
     <div className={`submit-modal-container ${submitModalOpen ? "show" : ""}`}>

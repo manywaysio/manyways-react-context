@@ -70,12 +70,6 @@ const SingleEPTResult = ({
     // itineraryHeroImage,
   } = thePackage;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitModalOpen(true);
-    // alert("Form submitted");
-  };
-
   const {
     setCharlotteModalOpen,
     setSubmitModalOpen,
@@ -257,6 +251,7 @@ const SingleEPTResult = ({
           </p>
           <ContactForm
             resultsPage={true}
+            setSubmitModalOpen={setSubmitModalOpen}
             contactPermission={contactPermission}
             setContactPermission={setContactPermission}
             marketingConsent={marketingConsent}

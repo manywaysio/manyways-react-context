@@ -3,6 +3,7 @@ import Envelope from "../icons/Envelope";
 
 const ContactForm = ({
   resultsPage = false,
+  setSubmitModalOpen,
   contactPermission,
   setContactPermission,
   marketingConsent,
@@ -11,10 +12,13 @@ const ContactForm = ({
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    setCharlotteFormSubmitted(true);
+    // setCharlotteFormSubmitted(true);
+    setSubmitModalOpen(true);
   };
+
   return (
     <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}> */}
       <div className={`input-container ${resultsPage ? "results-style" : ""}`}>
         <div className={`inputs-holder ${resultsPage ? "results-style" : ""}`}>
           <div className="input-icon-container first-input">

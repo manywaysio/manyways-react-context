@@ -334,6 +334,7 @@ const ManywaysProvider = ({
           // copyLink={copyLink}
         />
         <CharlotteModal
+          setSubmitModalOpen={setSubmitModalOpen}
           charlotteModalOpen={charlotteModalOpen}
           setCharlotteModalOpen={setCharlotteModalOpen}
           contactPermission={contactPermission}

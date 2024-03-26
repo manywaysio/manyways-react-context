@@ -12,6 +12,8 @@ const MediaContent = ({ schema, ...props }) => {
     setContactPermission,
     marketingConsent,
     setMarketingConsent,
+    charlotteFormSubmitted,
+    setCharlotteFormSubmitted,
   } = useManyways();
 
   return (
@@ -23,12 +25,15 @@ const MediaContent = ({ schema, ...props }) => {
       {currentNode?.title === "Charlotte" && (
         <div className="charlotte-node-inset-holder">
           <CharlotteNodeInsert
+            setSubmitModalOpen={setSubmitModalOpen}
             charlotteModalOpen={charlotteModalOpen}
             setCharlotteModalOpen={setCharlotteModalOpen}
             contactPermission={contactPermission}
             setContactPermission={setContactPermission}
             marketingConsent={marketingConsent}
             setMarketingConsent={setMarketingConsent}
+            charlotteFormSubmitted={charlotteFormSubmitted}
+            setCharlotteFormSubmitted={setCharlotteFormSubmitted}
           />
         </div>
       )}
