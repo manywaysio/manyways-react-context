@@ -381,13 +381,12 @@ label.control-label {
   border-radius: 999px;
   padding: 9.25px 11px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in;
+  transition: background-color 0.1s ease-in;
   color: white;
 }
 
 .speaker-button:hover {
   background-color: black;
-  transition: all 0.2s ease-in;
 }
 
 .mw-results .speaker-button:hover {
@@ -407,14 +406,14 @@ label.control-label {
   padding: 3px 11px;
   cursor: pointer;
   margin-right: 16px;
-  transition: all 0.2s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .char-button p {
   margin: 0;
   padding-right: 10px;
   font-size: 14px;
-  transition: all 0.2s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .char-button:hover {
@@ -2126,4 +2125,17 @@ input.input-node {
   width: auto !important;
   height: 16px !important;
   vertical-align: middle !important;
+}
+
+.charlotte-modal-content-node {
+  display: flex;
+  flex-direction: column;
+}
+
+.node-insert {
+  background-color: black;
+}
+
+.charlotte-modal-content-node button {
+  margin: 32px 0;
 }
