@@ -1802,7 +1802,7 @@ input#marketing-consent {
 }
 
 .results-char.charlotte-modal-content.show {
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 /* @media (max-width: 1024px) {

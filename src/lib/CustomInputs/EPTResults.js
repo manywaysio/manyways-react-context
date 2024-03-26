@@ -54,6 +54,9 @@ const SingleEPTResult = ({
   // largeOverview,
   // regions,
 }) => {
+  const [contactPermission, setContactPermission] = useState(false);
+  const [marketingConsent, setMarketingConsent] = useState(false);
+
   const thePackage = packages[0] || { price: {} };
   // console.log("the package", thePackage);
   const {
@@ -264,7 +267,35 @@ const SingleEPTResult = ({
                 placeholder="Enter email address"
               />
             </div>
-            <button className="submit-button" type="submit">
+            <div className="contact-permission-container">
+              <input
+                id="contact-permission"
+                type="checkbox"
+                checked={contactPermission}
+                onChange={() => setContactPermission(!contactPermission)}
+              />
+              <label htmlFor="contact-permission">
+                I agree that CruiseIQ may contact me at the email address or phone number
+                provided for purposes related to my cruise travel inquiries. This may
+                include follow-up communications, support, or assistance with the services
+                offered by CruiseIQ.
+              </label>
+            </div>
+            <div className="marketing-consent-container">
+              <input
+                id="marketing-consent"
+                type="checkbox"
+                checked={marketingConsent}
+                onChange={() => setMarketingConsent(!marketingConsent)}
+              />
+              <label htmlFor="marketing-consent">
+                I also consent to receive exclusive marketing and promotional messages
+                from CruiseIQ. These may include special offers, new cruise deals, and
+                personalized recommendations designed to enhance my cruise travel
+                experience.
+              </label>
+            </div>
+            <button className="submit-button" type="submit" disabled={!contactPermission}>
               Submit
             </button>
           </form>
