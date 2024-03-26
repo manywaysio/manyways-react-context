@@ -2130,10 +2130,18 @@ input.input-node {
 .charlotte-modal-content-node {
   display: flex;
   flex-direction: column;
+  margin-top: 60px;
+}
+
+@media (max-width: 1024px) {
+  .charlotte-modal-content-node {
+    margin-top: -20px;
+  }
 }
 
 .node-insert {
   background-color: black;
+  padding: 24px;
 }
 
 .charlotte-modal-content-node button {

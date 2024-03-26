@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Close from "../icons/Close";
 import Phone from "../icons/Phone";
 import Envelope from "../icons/Envelope";
 import charlotte from "../pictures/charlotte.png";
 
-const CharlotteNodeInsert = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
+const CharlotteNodeInsert = () => {
   const [contactPermission, setContactPermission] = useState(false);
   const [marketingConsent, setMarketingConsent] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -30,7 +29,8 @@ const CharlotteNodeInsert = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
             Please provide your phone number or email address below, and Charlotte will
             contact you to assist you with any of your travel questions!
           </p>
-          <form onSubmit={handleSubmit}>
+          {/* <form onSubmit={handleSubmit}> */}
+          <form>
             <div className="input-container">
               <div className="inputs-holder">
                 <div className="input-icon-container first-input">
@@ -83,7 +83,7 @@ const CharlotteNodeInsert = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
                 type="submit"
                 disabled={!contactPermission}
                 // disabled={!contactPermission || !marketingConsent}
-              >
+                onClick={handleSubmit}>
                 Submit
               </button>
             </div>
@@ -95,7 +95,6 @@ const CharlotteNodeInsert = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
           <button
             className="submit-button"
             onClick={() => {
-              setCharlotteModalOpen(false);
               setFormSubmitted(false);
             }}>
             Continue browsing
