@@ -618,6 +618,7 @@ label.control-label {
   position: relative;
   display: flex;
   align-items: center;
+  z-index: 10;
 }
 
 .inputs-holder {
@@ -637,6 +638,7 @@ label.control-label {
   left: 10px;
   height: 20px;
   width: 20px;
+  z-index: 10;
 }
 
 .input-with-icon {
@@ -2180,4 +2182,58 @@ input.input-node {
   display: flex;
   flex-direction: column;
   /* max-width:350px; */
+}
+
+.input-outer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.width-full {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.PhoneInputCountry {
+  display: none;
+}
+
+input.PhoneInputInput {
+  border-radius: 6px;
+  padding: 13px 17px 13px 40px;
+  width: 100%;
+  color: black;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.18px;
+}
+
+input.PhoneInputInput::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.18px;
+  padding-top: 20px;
+}
+
+.PhoneInputInput {
+  flex: 1;
+  min-width: 0;
+}
+
+.error-text {
+  color: rgb(239, 68, 68);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+}
+
+.error-text-holder {
+  height: 24px;
 }

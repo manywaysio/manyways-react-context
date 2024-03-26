@@ -1,3 +1,6 @@
+import { useState, useRef } from "react";
+import PhoneInput from "react-phone-number-input";
+import { isValidPhoneNumber } from "react-phone-number-input";
 import Phone from "../icons/Phone";
 import Envelope from "../icons/Envelope";
 
@@ -10,10 +13,49 @@ const ContactForm = ({
   setMarketingConsent,
   // setCharlotteFormSubmitted,
 }) => {
+  const phoneInputRef = useRef(null);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  const isValidEmail = (email) => {
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (
+      phoneNumber &&
+      !isValidPhoneNumber(String(phoneNumber)) &&
+      (!email || (email && !isValidEmail(email)))
+    ) {
+      if (!isValidEmail(email) && email) setEmailError("Invalid email address");
+      return;
+    }
+
+    setEmailError("");
     setSubmitModalOpen(true);
-    // setCharlotteFormSubmitted(true);
+  };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setSubmitModalOpen(true);
+  //   // setCharlotteFormSubmitted(true);
+  // };
+
+  const handleCountryMouseDown = (e) => {
+    e.preventDefault();
+  };
+
+  const handleEmailChange = (e) => {
+    const inputEmail = e.target.value;
+    setEmail(inputEmail);
+    if (inputEmail && !isValidEmail(inputEmail)) {
+      setEmailError("Invalid email address");
+    } else {
+      setEmailError("");
+    }
   };
 
   return (
@@ -22,21 +64,57 @@ const ContactForm = ({
       <div className={`input-container ${resultsPage ? "results-style" : ""}`}>
         <div className={`inputs-holder ${resultsPage ? "results-style" : ""}`}>
           <div className="input-icon-container first-input">
-            <Phone className="input-icon" />
-            <input
-              type="text"
-              className="input-with-icon"
-              placeholder="Enter phone number"
-            />
+            <div className="input-outer-container">
+              <div className="error-text-holder">
+                {!isValidPhoneNumber(String(phoneNumber)) && phoneNumber && (
+                  <div className="error-text">Invalid phone number</div>
+                )}
+              </div>
+              <div className="width-full">
+                <Phone className="input-icon" />
+                <PhoneInput
+                  type="tel"
+                  ref={phoneInputRef}
+                  defaultCountry="CA"
+                  countries={["CA", "US"]}
+                  value={phoneNumber}
+                  onChange={setPhoneNumber}
+                  placeholder="Enter phone number"
+                  className="width-full"
+                  inputProps={{
+                    autoComplete: "off",
+                    autoCorrect: "off",
+                    autoCapitalize: "off",
+                  }}
+                  countrySelectProps={{
+                    onMouseDown: handleCountryMouseDown,
+                  }}
+                  error={
+                    phoneNumber
+                      ? isValidPhoneNumber(phoneNumber)
+                        ? undefined
+                        : "Invalid phone number"
+                      : "Phone number required"
+                  }
+                />
+              </div>
+            </div>
           </div>
           {resultsPage && <span>OR</span>}
-          <div className="input-icon-container">
-            <Envelope className="input-icon" />
-            <input
-              type="text"
-              className="input-with-icon"
-              placeholder="Enter email address"
-            />
+          <div className="input-outer-container">
+            <div className="error-text-holder">
+              {emailError && <div className="error-text">{emailError}</div>}
+            </div>
+            <div className="input-icon-container">
+              <Envelope className="input-icon" />
+              <input
+                type="email"
+                className="input-with-icon"
+                placeholder="Enter email address"
+                value={email}
+                onChange={handleEmailChange}
+              />
+            </div>
           </div>
         </div>
         <div className="contact-permission-container">
@@ -69,10 +147,12 @@ const ContactForm = ({
         <button
           className="submit-button"
           type="submit"
-          disabled={!contactPermission}
-          onClick={handleSubmit}
-          // disabled={!contactPermission || !marketingConsent}
-        >
+          disabled={
+            !contactPermission ||
+            (!isValidPhoneNumber(String(phoneNumber)) && !isValidEmail(email)) ||
+            (!phoneNumber && !email)
+          }
+          onClick={handleSubmit}>
           Submit
         </button>
       </div>
