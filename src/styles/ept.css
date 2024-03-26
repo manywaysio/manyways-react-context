@@ -2066,6 +2066,7 @@ input#marketing-consent {
 
 .char-cta-holder {
   display: flex;
+  justify-content: space-between;
 }
 
 .char-cta-holder button {
@@ -2127,6 +2128,11 @@ input.input-node {
   vertical-align: middle !important;
 }
 
+.charlotte-node-inset-holder {
+  display: flex;
+  justify-content: center;
+}
+
 .charlotte-modal-content-node {
   display: flex;
   flex-direction: column;
@@ -2146,4 +2152,16 @@ input.input-node {
 
 .charlotte-modal-content-node button {
   margin: 32px 0;
+}
+
+.charlotte-modal-content-node.show {
+  max-height: 100vh;
+  overflow-y: auto;
+  background-color: black;
+  color: white;
+  padding: 48px;
+  margin: 0 24px;
+  display: flex;
+  flex-direction: column;
+  /* max-width:350px; */
 }

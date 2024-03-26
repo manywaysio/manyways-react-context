@@ -16,9 +16,6 @@ const SubmitModal = ({ submitModalOpen, setSubmitModalOpen, currentNode }) => {
             onClick={() => {
               setSubmitModalOpen(false);
               setFormSubmitted(false);
-              if (currentNode?.title === "Charlotte") {
-                window.manyways.restart();
-              }
             }}>
             Continue browsing
           </button>

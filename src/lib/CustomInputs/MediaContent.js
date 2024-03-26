@@ -3,8 +3,16 @@ import CharlotteNodeInsert from "../CharlotteNodeInsert";
 import { useManyways } from "../ManywaysContext";
 
 const MediaContent = ({ schema, ...props }) => {
-  const { setSubmitModalOpen, charlotteModalOpen, setCharlotteModalOpen, currentNode } =
-    useManyways();
+  const {
+    setSubmitModalOpen,
+    charlotteModalOpen,
+    setCharlotteModalOpen,
+    currentNode,
+    contactPermission,
+    setContactPermission,
+    marketingConsent,
+    setMarketingConsent,
+  } = useManyways();
 
   return (
     <div className={`media-content ${schema?.customClassName}`}>
@@ -13,10 +21,16 @@ const MediaContent = ({ schema, ...props }) => {
         dangerouslySetInnerHTML={{ __html: schema?.text }}
       />
       {currentNode?.title === "Charlotte" && (
-        <CharlotteNodeInsert
-          charlotteModalOpen={charlotteModalOpen}
-          setCharlotteModalOpen={setCharlotteModalOpen}
-        />
+        <div className="charlotte-node-inset-holder">
+          <CharlotteNodeInsert
+            charlotteModalOpen={charlotteModalOpen}
+            setCharlotteModalOpen={setCharlotteModalOpen}
+            contactPermission={contactPermission}
+            setContactPermission={setContactPermission}
+            marketingConsent={marketingConsent}
+            setMarketingConsent={setMarketingConsent}
+          />
+        </div>
       )}
       {schema?.media && (
         <div className="image-container">

@@ -3,9 +3,12 @@ import Phone from "../icons/Phone";
 import Envelope from "../icons/Envelope";
 import charlotte from "../pictures/charlotte.png";
 
-const CharlotteNodeInsert = () => {
-  const [contactPermission, setContactPermission] = useState(false);
-  const [marketingConsent, setMarketingConsent] = useState(false);
+const CharlotteNodeInsert = ({
+  contactPermission,
+  setContactPermission,
+  marketingConsent,
+  setMarketingConsent,
+}) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
@@ -14,7 +17,7 @@ const CharlotteNodeInsert = () => {
   };
 
   return (
-    <div className={`charlotte-modal-content-node`}>
+    <div className={`charlotte-modal-content-node ${formSubmitted ? "show" : ""}`}>
       {formSubmitted ? (
         <div className="submission-confirmation">
           <h3>Received!</h3>
@@ -96,8 +99,9 @@ const CharlotteNodeInsert = () => {
             className="submit-button"
             onClick={() => {
               setFormSubmitted(false);
+              window.manyways.restart();
             }}>
-            Continue browsing
+            Restart journey
           </button>
           <button className="submit-button">
             <a href="https://www.manyways.io/" target="_blank">

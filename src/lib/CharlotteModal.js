@@ -4,9 +4,14 @@ import Phone from "../icons/Phone";
 import Envelope from "../icons/Envelope";
 import charlotte from "../pictures/charlotte.png";
 
-const CharlotteModal = ({ charlotteModalOpen, setCharlotteModalOpen }) => {
-  const [contactPermission, setContactPermission] = useState(false);
-  const [marketingConsent, setMarketingConsent] = useState(false);
+const CharlotteModal = ({
+  charlotteModalOpen,
+  setCharlotteModalOpen,
+  contactPermission,
+  setContactPermission,
+  marketingConsent,
+  setMarketingConsent,
+}) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = (e) => {

@@ -54,9 +54,6 @@ const SingleEPTResult = ({
   // largeOverview,
   // regions,
 }) => {
-  const [contactPermission, setContactPermission] = useState(false);
-  const [marketingConsent, setMarketingConsent] = useState(false);
-
   const thePackage = packages[0] || { price: {} };
   // console.log("the package", thePackage);
   const {
@@ -78,7 +75,14 @@ const SingleEPTResult = ({
     // alert("Form submitted");
   };
 
-  const { setCharlotteModalOpen, setSubmitModalOpen } = useManyways();
+  const {
+    setCharlotteModalOpen,
+    setSubmitModalOpen,
+    contactPermission,
+    setContactPermission,
+    marketingConsent,
+    setMarketingConsent,
+  } = useManyways();
 
   return (
     <div
