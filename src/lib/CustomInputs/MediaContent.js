@@ -26,6 +26,16 @@ const MediaContent = ({ schema, ...props }) => {
     };
   }, []);
 
+  // useEffect(() => {
+  //   const checkboxes = document.querySelectorAll(
+  //     '.contact-permission-container input[type="checkbox"], .marketing-consent-container input[type="checkbox"]'
+  //   );
+  //   checkboxes.forEach((checkbox) => {
+  //     checkbox.style.opacity = 1; // Adjust style as needed
+  //     checkbox.style.visibility = "visible"; // Adjust style as needed
+  //   });
+  // }, []);
+
   return (
     <div className={`media-content ${schema?.customClassName}`}>
       <div
