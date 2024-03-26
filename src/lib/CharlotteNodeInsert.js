@@ -99,6 +99,8 @@ const CharlotteNodeInsert = ({
             className="submit-button"
             onClick={() => {
               setFormSubmitted(false);
+              setContactPermission(false);
+              setMarketingConsent(false);
               window.manyways.restart();
             }}>
             Restart journey
