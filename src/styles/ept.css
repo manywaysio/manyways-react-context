@@ -839,7 +839,13 @@ input#marketing-consent {
   line-height: 140%;
   letter-spacing: -0.18px;
   font-family: "Inter", sans-serif;
-  margin: 12px 0;
+  margin: 28px 0 8px 0;
+}
+
+@media (max-width: 768px) {
+  .charlotte-modal-content span {
+    margin-top: 6px;
+  }
 }
 
 .charlotte-modal-content .submit-button {
@@ -849,7 +855,7 @@ input#marketing-consent {
 }
 
 .char-desc {
-  margin: 32px;
+  margin: 32px 32px 24px 32px;
 }
 
 .menu-modal-container {
@@ -1803,7 +1809,14 @@ input#marketing-consent {
 }
 
 .results-char input {
-  width: 255px !important;
+  width: 285px !important;
+  margin-right: 0;
+}
+
+@media (max-width: 1024px) {
+  .results-char input {
+    margin-right: 36px;
+  }
 }
 
 .results-char {
@@ -1815,18 +1828,12 @@ input#marketing-consent {
 }
 
 .results-char p {
-  margin: 32px 0;
+  margin: 32px 0 24px 0;
 }
 
 .results-char.charlotte-modal-content.show {
   padding-top: 0px;
 }
-
-/* @media (max-width: 1024px) {
-  .results-char input {
-    max-width: none;
-  }
-} */
 
 @media (max-width: 1024px) {
   .results-char.charlotte-modal-content.show {
@@ -2236,4 +2243,14 @@ input.PhoneInputInput::placeholder {
 
 .error-text-holder {
   height: 24px;
+}
+
+.result-input-width {
+  margin-right: 36px;
+}
+
+@media (min-width: 1024px) {
+  .result-input-width {
+    width: 285px;
+  }
 }

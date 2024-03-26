@@ -80,7 +80,7 @@ const ContactForm = ({
                   value={phoneNumber}
                   onChange={setPhoneNumber}
                   placeholder="Enter phone number"
-                  className="width-full"
+                  className={`width-full ${resultsPage ? "result-input-width" : ""}`}
                   inputProps={{
                     autoComplete: "off",
                     autoCorrect: "off",
