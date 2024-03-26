@@ -42,6 +42,7 @@ const ManywaysProvider = ({
   const [submitModalOpen, setSubmitModalOpen] = useState(false);
   const [menuModalOpen, setMenuModalOpen] = useState(false);
   const [textFade, setTextFade] = useState(true);
+  const [showResults, setShowResults] = useState(false);
 
   let currentNode =
     setCurrentNodeId !== false ? nodes.find((n) => n.id === currentNodeId) : false;
@@ -272,6 +273,8 @@ const ManywaysProvider = ({
         updateSwiperControls,
         submitModalOpen,
         setSubmitModalOpen,
+        showResults,
+        setShowResults,
       }}>
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
