@@ -2154,6 +2154,12 @@ input.input-node {
   margin: 32px 0;
 }
 
+.charlotte-modal-content-node button:hover,
+.charlotte-modal-content-node button:hover a {
+  color: black;
+  background-color: white;
+}
+
 .charlotte-modal-content-node.show {
   max-height: 100vh;
   overflow-y: auto;
