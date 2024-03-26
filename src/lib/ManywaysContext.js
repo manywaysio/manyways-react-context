@@ -305,6 +305,7 @@ const ManywaysProvider = ({
         <SubmitModal
           submitModalOpen={submitModalOpen}
           setSubmitModalOpen={setSubmitModalOpen}
+          currentNode={currentNode}
         />
         <NodeRenderer />
         {children}

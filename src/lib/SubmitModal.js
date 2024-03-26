@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SubmitModal = ({ submitModalOpen, setSubmitModalOpen }) => {
+const SubmitModal = ({ submitModalOpen, setSubmitModalOpen, currentNode }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   return (
@@ -16,6 +16,9 @@ const SubmitModal = ({ submitModalOpen, setSubmitModalOpen }) => {
             onClick={() => {
               setSubmitModalOpen(false);
               setFormSubmitted(false);
+              if (currentNode?.title === "Charlotte") {
+                window.manyways.restart();
+              }
             }}>
             Continue browsing
           </button>
