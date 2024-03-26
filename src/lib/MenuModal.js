@@ -15,7 +15,9 @@ const MenuModal = ({
           onClick={(e) => {
             window.manyways.restart();
             if (menuModalOpen) {
-              setMenuModalOpen(false);
+              setTimeout(() => {
+                setMenuModalOpen(false);
+              }, 100);
             }
             if (showResults) {
               setShowResults(false);
