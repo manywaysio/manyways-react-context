@@ -43,6 +43,8 @@ const ManywaysProvider = ({
   const [menuModalOpen, setMenuModalOpen] = useState(false);
   const [textFade, setTextFade] = useState(true);
   const [showResults, setShowResults] = useState(false);
+  const [blackBackground, setBlackBackground] = useState(false);
+  const [zIndex, setZIndex] = useState(1);
 
   let currentNode =
     setCurrentNodeId !== false ? nodes.find((n) => n.id === currentNodeId) : false;
@@ -243,6 +245,16 @@ const ManywaysProvider = ({
     setSwiperControls(controls);
   };
 
+  const handleMenuToggleModal = () => {
+    if (menuModalOpen) {
+      setTimeout(() => {
+        setMenuModalOpen(false);
+      }, 100);
+    } else {
+      setMenuModalOpen(true);
+    }
+  };
+
   const isFirstNode = currentNode?.title === "Start" ? true : false;
 
   return (
@@ -275,6 +287,10 @@ const ManywaysProvider = ({
         setSubmitModalOpen,
         showResults,
         setShowResults,
+        blackBackground,
+        setBlackBackground,
+        zIndex,
+        setZIndex,
       }}>
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
@@ -289,17 +305,24 @@ const ManywaysProvider = ({
             }}></div>
         ) : null}
         <Header
-          shareJourney={shareJourney}
-          copyLink={copyLink}
           charlotteModalOpen={charlotteModalOpen}
           setCharlotteModalOpen={setCharlotteModalOpen}
           menuModalOpen={menuModalOpen}
           setMenuModalOpen={setMenuModalOpen}
+          handleMenuToggleModal={handleMenuToggleModal}
+          // shareJourney={shareJourney}
+          // copyLink={copyLink}
         />
         <MenuModal
-          shareJourney={shareJourney}
-          copyLink={copyLink}
+          showResults={showResults}
+          setShowResults={setShowResults}
           menuModalOpen={menuModalOpen}
+          setBlackBackground={setBlackBackground}
+          setZIndex={setZIndex}
+          handleMenuToggleModal={handleMenuToggleModal}
+          setMenuModalOpen={setMenuModalOpen}
+          // shareJourney={shareJourney}
+          // copyLink={copyLink}
         />
         <CharlotteModal
           charlotteModalOpen={charlotteModalOpen}

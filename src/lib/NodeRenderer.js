@@ -103,11 +103,9 @@ const selectStyles = {
 
 const NodeRenderer = (props) => {
   const [isFadingOut, setIsFadingOut] = useState(false);
-  const [blackBackground, setBlackBackground] = useState(false);
-  const [zIndex, setZIndex] = useState(1);
   const {
-    nodes,
     // goBack,
+    nodes,
     responses,
     classNamePrefix,
     currentNodeId,
@@ -120,6 +118,10 @@ const NodeRenderer = (props) => {
     swiperControls,
     showResults,
     setShowResults,
+    blackBackground,
+    setBlackBackground,
+    zIndex,
+    setZIndex,
   } = useManyways();
 
   useEffect(() => {

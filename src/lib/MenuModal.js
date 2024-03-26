@@ -1,19 +1,34 @@
-const MenuModal = ({ menuModalOpen, shareJourney, copyLink }) => {
+const MenuModal = ({
+  showResults,
+  setShowResults,
+  setBlackBackground,
+  setZIndex,
+  menuModalOpen,
+  setMenuModalOpen,
+  // shareJourney,
+  // copyLink,
+}) => {
   return (
     <div className={`menu-modal-container ${menuModalOpen ? "show" : ""}`}>
       <ul>
         <li
           onClick={(e) => {
             window.manyways.restart();
-          }}
-        >
+            if (menuModalOpen) {
+              setMenuModalOpen(false);
+            }
+            if (showResults) {
+              setShowResults(false);
+              setBlackBackground(false);
+              setZIndex(1);
+            }
+          }}>
           Restart this guide
         </li>
         <li
           onClick={(e) => {
             window.manyways.share();
-          }}
-        >
+          }}>
           Share this guide
         </li>
         <li className="manyways">

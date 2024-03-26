@@ -9,10 +9,11 @@ import CloseLarge from "../icons/CloseLarge.js";
 const Header = ({
   // shareJourney,
   // copyLink,
+  setMenuModalOpen,
   charlotteModalOpen,
   setCharlotteModalOpen,
   menuModalOpen,
-  setMenuModalOpen,
+  handleMenuToggleModal,
 }) => {
   const [isMuted, setIsMuted] = useState(true);
 
@@ -36,16 +37,6 @@ const Header = ({
       }, 300);
     } else {
       setCharlotteModalOpen(true);
-    }
-  };
-
-  const handleMenuToggleModal = () => {
-    if (menuModalOpen) {
-      setTimeout(() => {
-        setMenuModalOpen(false);
-      }, 100);
-    } else {
-      setMenuModalOpen(true);
     }
   };
 
