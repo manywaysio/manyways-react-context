@@ -1505,7 +1505,7 @@ input#marketing-consent {
 }
 
 .inner-content-container .input-icon-container,
-.inner-content-container .input-with-icon {
+.inner-content-container .input-with-icon .input-node {
   width: 100%;
 }
 
@@ -2079,4 +2079,33 @@ input#marketing-consent {
 .char-cta-holder button:hover,
 .char-cta-holder button:hover a {
   color: black;
+}
+
+.input-node {
+  width: 100%;
+  padding-left: 40px;
+  color: black;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -0.18px;
+}
+
+input.input-node {
+  padding: 13px 17px;
+  border-radius: 6px;
+}
+
+.input-node::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.18px;
+  padding-top: 20px;
+}
+
+.input-node:nth-of-type(2) {
+  margin-left: 12px !important;
 }
