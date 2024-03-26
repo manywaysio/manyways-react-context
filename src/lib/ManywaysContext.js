@@ -47,6 +47,7 @@ const ManywaysProvider = ({
   const [zIndex, setZIndex] = useState(1);
   const [contactPermission, setContactPermission] = useState(false);
   const [marketingConsent, setMarketingConsent] = useState(false);
+  const [charlotteFormSubmitted, setCharlotteFormSubmitted] = useState(false);
 
   let currentNode =
     setCurrentNodeId !== false ? nodes.find((n) => n.id === currentNodeId) : false;
@@ -297,6 +298,8 @@ const ManywaysProvider = ({
         setContactPermission,
         marketingConsent,
         setMarketingConsent,
+        charlotteFormSubmitted,
+        setCharlotteFormSubmitted,
       }}>
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
@@ -337,6 +340,8 @@ const ManywaysProvider = ({
           setContactPermission={setContactPermission}
           marketingConsent={marketingConsent}
           setMarketingConsent={setMarketingConsent}
+          charlotteFormSubmitted={charlotteFormSubmitted}
+          setCharlotteFormSubmitted={setCharlotteFormSubmitted}
         />
         <SubmitModal
           submitModalOpen={submitModalOpen}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const SubmitModal = ({ submitModalOpen, setSubmitModalOpen, currentNode }) => {
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [charlotteFormSubmitted, setCharlotteFormSubmitted] = useState(false);
 
   return (
     <div className={`submit-modal-container ${submitModalOpen ? "show" : ""}`}>
@@ -15,7 +15,7 @@ const SubmitModal = ({ submitModalOpen, setSubmitModalOpen, currentNode }) => {
             className="submit-button"
             onClick={() => {
               setSubmitModalOpen(false);
-              setFormSubmitted(false);
+              setCharlotteFormSubmitted(false);
             }}>
             Continue browsing
           </button>

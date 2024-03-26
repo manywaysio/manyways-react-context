@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Phone from "../icons/Phone";
-import Envelope from "../icons/Envelope";
+import ContactForm from "./ContactForm";
 import charlotte from "../pictures/charlotte.png";
 
 const CharlotteNodeInsert = ({
@@ -9,16 +8,17 @@ const CharlotteNodeInsert = ({
   marketingConsent,
   setMarketingConsent,
 }) => {
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [charlotteFormSubmitted, setCharlotteFormSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setCharlotteFormSubmitted(true);
   };
 
   return (
-    <div className={`charlotte-modal-content-node ${formSubmitted ? "show" : ""}`}>
-      {formSubmitted ? (
+    <div
+      className={`charlotte-modal-content-node ${charlotteFormSubmitted ? "show" : ""}`}>
+      {charlotteFormSubmitted ? (
         <div className="submission-confirmation">
           <h3>Received!</h3>
           <p>We will contact you shortly.</p>
@@ -33,72 +33,21 @@ const CharlotteNodeInsert = ({
             contact you to assist you with any of your travel questions!
           </p>
           {/* <form onSubmit={handleSubmit}> */}
-          <form>
-            <div className="input-container">
-              <div className="inputs-holder">
-                <div className="input-icon-container first-input">
-                  <Phone className="input-icon" />
-                  <input
-                    type="text"
-                    className="input-with-icon"
-                    placeholder="Enter phone number"
-                  />
-                </div>
-                <div className="input-icon-container">
-                  <Envelope className="input-icon" />
-                  <input
-                    type="text"
-                    className="input-with-icon"
-                    placeholder="Enter email address"
-                  />
-                </div>
-              </div>
-              <div className="contact-permission-container">
-                <input
-                  id="contact-permission"
-                  type="checkbox"
-                  checked={contactPermission}
-                  onChange={() => setContactPermission(!contactPermission)}
-                />
-                <label htmlFor="contact-permission">
-                  I agree that CruiseIQ may contact me at the email address or phone
-                  number provided for purposes related to my cruise travel inquiries. This
-                  may include follow-up communications, support, or assistance with the
-                  services offered by CruiseIQ.
-                </label>
-              </div>
-              <div className="marketing-consent-container">
-                <input
-                  id="marketing-consent"
-                  type="checkbox"
-                  checked={marketingConsent}
-                  onChange={() => setMarketingConsent(!marketingConsent)}
-                />
-                <label htmlFor="marketing-consent">
-                  I also consent to receive exclusive marketing and promotional messages
-                  from CruiseIQ. These may include special offers, new cruise deals, and
-                  personalized recommendations designed to enhance my cruise travel
-                  experience.
-                </label>
-              </div>
-              <button
-                className="submit-button"
-                type="submit"
-                disabled={!contactPermission}
-                // disabled={!contactPermission || !marketingConsent}
-                onClick={handleSubmit}>
-                Submit
-              </button>
-            </div>
-          </form>
+          <ContactForm
+            contactPermission={contactPermission}
+            setContactPermission={setContactPermission}
+            marketingConsent={marketingConsent}
+            setMarketingConsent={setMarketingConsent}
+            setCharlotteFormSubmitted={setCharlotteFormSubmitted}
+          />
         </>
       )}
-      {formSubmitted && (
+      {charlotteFormSubmitted && (
         <div className="char-cta-holder">
           <button
             className="submit-button"
             onClick={() => {
-              setFormSubmitted(false);
+              setCharlotteFormSubmitted(false);
               setContactPermission(false);
               setMarketingConsent(false);
               window.manyways.restart();
@@ -112,7 +61,7 @@ const CharlotteNodeInsert = ({
           </button>
         </div>
       )}
-      {!formSubmitted && (
+      {!charlotteFormSubmitted && (
         <div className="char-image-container node-insert">
           <img className="char-image" src={charlotte} alt="Charlotte" />
 

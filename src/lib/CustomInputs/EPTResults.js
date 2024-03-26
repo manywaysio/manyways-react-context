@@ -5,6 +5,7 @@ import Envelope from "./../../icons/Envelope";
 import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
 import { useManyways } from "../ManywaysContext";
 import { EffectCreative, Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import ContactForm from "../ContactForm";
 
 import EPTResultsFooter from "./EPTResultsFooter";
 
@@ -82,6 +83,7 @@ const SingleEPTResult = ({
     setContactPermission,
     marketingConsent,
     setMarketingConsent,
+    setCharlotteFormSubmitted,
   } = useManyways();
 
   return (
@@ -253,56 +255,14 @@ const SingleEPTResult = ({
             email, and our cruise expert will help you to reserve a spot on the perfect
             journey.
           </p>
-          <form className="results-char" onSubmit={handleSubmit}>
-            <div className="input-icon-container">
-              <Phone className="input-icon" />
-              <input
-                type="text"
-                className="input-with-icon"
-                placeholder="Enter phone number"
-              />
-            </div>
-            <span>OR</span>
-            <div className="input-icon-container">
-              <Envelope className="input-icon" />
-              <input
-                type="text"
-                className="input-with-icon"
-                placeholder="Enter email address"
-              />
-            </div>
-            <div className="contact-permission-container">
-              <input
-                id="contact-permission"
-                type="checkbox"
-                checked={contactPermission}
-                onChange={() => setContactPermission(!contactPermission)}
-              />
-              <label htmlFor="contact-permission">
-                I agree that CruiseIQ may contact me at the email address or phone number
-                provided for purposes related to my cruise travel inquiries. This may
-                include follow-up communications, support, or assistance with the services
-                offered by CruiseIQ.
-              </label>
-            </div>
-            <div className="marketing-consent-container">
-              <input
-                id="marketing-consent"
-                type="checkbox"
-                checked={marketingConsent}
-                onChange={() => setMarketingConsent(!marketingConsent)}
-              />
-              <label htmlFor="marketing-consent">
-                I also consent to receive exclusive marketing and promotional messages
-                from CruiseIQ. These may include special offers, new cruise deals, and
-                personalized recommendations designed to enhance my cruise travel
-                experience.
-              </label>
-            </div>
-            <button className="submit-button" type="submit" disabled={!contactPermission}>
-              Submit
-            </button>
-          </form>
+          <ContactForm
+            resultsPage={true}
+            contactPermission={contactPermission}
+            setContactPermission={setContactPermission}
+            marketingConsent={marketingConsent}
+            setMarketingConsent={setMarketingConsent}
+            setCharlotteFormSubmitted={setCharlotteFormSubmitted}
+          />
         </div>
       </div>
       <div className="grid-topper">

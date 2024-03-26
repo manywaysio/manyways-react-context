@@ -609,6 +609,10 @@ label.control-label {
   align-items: center;
 }
 
+.input-container.results-style {
+  align-items: start;
+}
+
 .input-icon-container {
   width: 100%;
   position: relative;
@@ -619,6 +623,12 @@ label.control-label {
 .inputs-holder {
   width: 100%;
   display: flex;
+}
+
+.inputs-holder.results-style {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-icon {
