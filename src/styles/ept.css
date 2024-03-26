@@ -801,6 +801,12 @@ input#marketing-consent {
   transition: all 0.1s ease-in;
 }
 
+@media (max-width: 768px) {
+  .charlotte-modal-content button {
+    padding: 8px 12px;
+  }
+}
+
 .charlotte-modal-content button:not(:disabled):hover {
   border: 1px solid black;
   background-color: white;
@@ -1815,6 +1821,9 @@ input#marketing-consent {
   .results-char.charlotte-modal-content.show {
     padding-top: 60px;
     padding-bottom: 40px;
+    max-height: none;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
