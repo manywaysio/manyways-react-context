@@ -7,8 +7,8 @@ const CharlotteNodeInsert = ({
   setContactPermission,
   marketingConsent,
   setMarketingConsent,
-  charlotteFormSubmitted,
   setCharlotteFormSubmitted,
+  // charlotteFormSubmitted,
 }) => {
   return (
     <div className="charlotte-modal-content-node">

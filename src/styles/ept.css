@@ -2235,14 +2235,18 @@ input.PhoneInputInput::placeholder {
 
 .error-text {
   color: rgb(239, 68, 68);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  font-family: "Inter", sans-serif;
+}
+
+.valid-text {
+  color: rgb(107, 242, 94);
 }
 
 .error-text-holder {
   height: 24px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
 }
 
 .result-input-width {

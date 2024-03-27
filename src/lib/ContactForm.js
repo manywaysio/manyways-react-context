@@ -17,9 +17,12 @@ const ContactForm = ({
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [emailValid, setEmailValid] = useState(false);
 
   const isValidEmail = (email) => {
-    return /\S+@\S+\.\S+/.test(email);
+    const result = /\S+@\S+\.\S+/.test(email);
+    setEmailValid(result); // Update email valid state based on result
+    return result;
   };
 
   const handleSubmit = (e) => {
@@ -37,12 +40,6 @@ const ContactForm = ({
     setEmailError("");
     setSubmitModalOpen(true);
   };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setSubmitModalOpen(true);
-  //   // setCharlotteFormSubmitted(true);
-  // };
 
   const handleCountryMouseDown = (e) => {
     e.preventDefault();
@@ -68,6 +65,9 @@ const ContactForm = ({
               <div className="error-text-holder">
                 {!isValidPhoneNumber(String(phoneNumber)) && phoneNumber && (
                   <div className="error-text">Invalid phone number</div>
+                )}
+                {isValidPhoneNumber(String(phoneNumber)) && phoneNumber && (
+                  <div className="valid-text">Valid phone number!</div>
                 )}
               </div>
               <div className="width-full">
@@ -104,6 +104,9 @@ const ContactForm = ({
           <div className="input-outer-container">
             <div className="error-text-holder">
               {emailError && <div className="error-text">{emailError}</div>}
+              {!emailError && emailValid && (
+                <div className="valid-text">Valid email address!</div>
+              )}
             </div>
             <div className="input-icon-container">
               <Envelope className="input-icon" />
