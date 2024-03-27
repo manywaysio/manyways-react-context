@@ -742,7 +742,7 @@ input#marketing-consent {
   }
 
   .first-input {
-    margin-bottom: 32px;
+    margin-bottom: 26px;
     margin-right: 0;
   }
 }
@@ -814,7 +814,7 @@ input#marketing-consent {
 
 @media (max-width: 768px) {
   .charlotte-modal-content button {
-    padding: 8px 12px;
+    padding: 12px;
   }
 }
 
@@ -2158,7 +2158,7 @@ input.input-node {
   margin-top: 60px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .charlotte-modal-content-node {
     margin-top: -20px;
   }
