@@ -17,12 +17,9 @@ const ContactForm = ({
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [emailValid, setEmailValid] = useState(false);
 
   const isValidEmail = (email) => {
-    const result = /\S+@\S+\.\S+/.test(email);
-    setEmailValid(result); // Update email valid state based on result
-    return result;
+    return /\S+@\S+\.\S+/.test(email);
   };
 
   const handleSubmit = (e) => {
@@ -53,6 +50,15 @@ const ContactForm = ({
     } else {
       setEmailError("");
     }
+  };
+
+  const handleContactPermissionChange = () => {
+    setContactPermission((prevContactPermission) => !prevContactPermission);
+  };
+
+  // Handler for toggling marketing consent
+  const handleMarketingConsentChange = () => {
+    setMarketingConsent((prevMarketingConsent) => !prevMarketingConsent);
   };
 
   return (
@@ -104,7 +110,7 @@ const ContactForm = ({
           <div className="input-outer-container">
             <div className="error-text-holder">
               {emailError && <div className="error-text">{emailError}</div>}
-              {!emailError && emailValid && (
+              {!emailError && email != "" && (
                 <div className="valid-text">Valid email address!</div>
               )}
             </div>
@@ -125,7 +131,7 @@ const ContactForm = ({
             id="contact-permission"
             type="checkbox"
             checked={contactPermission}
-            onChange={() => setContactPermission(!contactPermission)}
+            onChange={handleContactPermissionChange}
           />
           <label htmlFor="contact-permission">
             I agree that CruiseIQ may contact me at the email address or phone number
@@ -139,7 +145,7 @@ const ContactForm = ({
             id="marketing-consent"
             type="checkbox"
             checked={marketingConsent}
-            onChange={() => setMarketingConsent(!marketingConsent)}
+            onChange={handleMarketingConsentChange}
           />
           <label htmlFor="marketing-consent">
             I also consent to receive exclusive marketing and promotional messages from
