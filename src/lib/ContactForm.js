@@ -56,7 +56,6 @@ const ContactForm = ({
     setContactPermission((prevContactPermission) => !prevContactPermission);
   };
 
-  // Handler for toggling marketing consent
   const handleMarketingConsentChange = () => {
     setMarketingConsent((prevMarketingConsent) => !prevMarketingConsent);
   };
