@@ -749,7 +749,7 @@ ul.error-detail .text-danger {
   width: 100%;
 }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-width: 576px) {
   .mw-next-and-back button{
     margin-bottom: 0;
     width: auto;
