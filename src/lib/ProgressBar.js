@@ -2,25 +2,25 @@ import React, { useState, useEffect } from "react";
 
 const ProgressBar = ({ initialCurrentId }) => {
   const [currentId, setCurrentId] = useState(initialCurrentId);
-  // const showProgressBar = initialCurrentId >= 34 && initialCurrentId <= 46;
-  const [fadeout, setfadeout] = useState(false);
   const [showProgressBar, setShowProgressBar] = useState(false);
+  // const showProgressBar = initialCurrentId >= 34 && initialCurrentId <= 46;
+  // const [fadeout, setfadeout] = useState(false);
 
   useEffect(() => {
     if (initialCurrentId < 34) {
       setShowProgressBar(false);
-      setfadeout(true);
+      // setfadeout(true);
     }
     if (typeof initialCurrentId === "number") {
       setCurrentId(initialCurrentId);
     }
     if (initialCurrentId === 47) {
       setShowProgressBar(false);
-      setfadeout(true);
+      // setfadeout(true);
     }
     if (initialCurrentId === 34) {
       setShowProgressBar(true);
-      setfadeout(false);
+      // setfadeout(false);
     }
   }, [initialCurrentId]);
 

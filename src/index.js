@@ -29,10 +29,18 @@ customElements.define("manyways-wrapper", ManywaysWrapper);
 window.exports = window.exports || {};
 
 window.manyways = {};
+
 window.manyways.restart = function (e) {
-  !!e && e.preventDefault();
-  !!window?.umami && !!window?.umami?.track && window.umami.track("restart");
-  window.location.reload();
+  if (e) e.preventDefault();
+
+  if (window?.umami?.track) {
+    window.umami.track("restart");
+  }
+
+  // Should a fade animation/opacity be added here?
+  // setTimeout(function () {
+  //   window.location.reload();
+  // }, 1000);
 };
 
 window.manyways.share = function (e) {
