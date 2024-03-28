@@ -1,7 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import _results from "./../../data-samples/results.json";
-import Phone from "./../../icons/Phone";
-import Envelope from "./../../icons/Envelope";
 import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
 import { useManyways } from "../ManywaysContext";
 import { EffectCreative, Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
@@ -10,12 +8,20 @@ import ContactForm from "../ContactForm";
 import EPTResultsFooter from "./EPTResultsFooter";
 
 const Price = ({ priceRange }) => {
+  const options = {
+    style: "currency",
+    currency: "CAD",
+  };
+
   const discountedPrice = priceRange
     .split(" - ")
-    .map((p) => parseInt(p))
+    .map((p) => parseFloat(p))
     .map((p) => p - (p * 10) / 100)
+    .map((discountedPrice) => discountedPrice.toLocaleString("en-CA", options))
     .join(" - ");
+
   const [discountApplied, setDiscountApplied] = useState(false);
+
   return (
     <div>
       <div
@@ -25,7 +31,7 @@ const Price = ({ priceRange }) => {
         }}>
         ${priceRange}
       </div>
-      {discountApplied && <div className="discountedprice">${discountedPrice}</div>}
+      {discountApplied && <div className="discountedprice">{discountedPrice}</div>}
       <button
         className={`apply-price ${discountApplied ? "applied" : ""}`}
         onClick={() => {
