@@ -13,11 +13,21 @@ const Price = ({ priceRange }) => {
     currency: "CAD",
   };
 
+  const formatPrice = (price) => {
+    return price.toLocaleString("en-CA", options);
+  };
+
   const discountedPrice = priceRange
     .split(" - ")
     .map((p) => parseFloat(p))
     .map((p) => p - (p * 10) / 100)
-    .map((discountedPrice) => discountedPrice.toLocaleString("en-CA", options))
+    .map(formatPrice)
+    .join(" - ");
+
+  const formattedPriceRange = priceRange
+    .split(" - ")
+    .map((p) => parseFloat(p))
+    .map(formatPrice)
     .join(" - ");
 
   const [discountApplied, setDiscountApplied] = useState(false);
@@ -29,7 +39,7 @@ const Price = ({ priceRange }) => {
         style={{
           textDecoration: discountApplied ? "line-through" : "none",
         }}>
-        ${priceRange}
+        {formattedPriceRange}
       </div>
       {discountApplied && <div className="discountedprice">{discountedPrice}</div>}
       <button
