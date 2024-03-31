@@ -5,7 +5,7 @@ import Speaker from "../icons/Speaker.js";
 import charlotte from "../pictures/charlotte.png";
 import backgroundAudio from "../assets/audio/waves.mp3";
 import CloseLarge from "../icons/CloseLarge.js";
-import Phone from "../icons/Phone.js";
+import PhoneWhite from "../icons/PhoneWhite.js";
 
 const Header = ({
   // shareJourney,
@@ -69,7 +69,7 @@ const Header = ({
           <button className="char-button" onClick={handleToggleModal}>
             <p className="char-button-text">Speak to agent</p>
             <img className="char-photo-header" src={charlotte} alt="Charlotte" />
-            <Phone />
+            <PhoneWhite />
           </button>
           <button className="speaker-button" onClick={toggleSound}>
             <Speaker />
