@@ -399,6 +399,12 @@ label.control-label {
   background-color: black;
 }
 
+@media (max-width: 768px) {
+  .speaker-button {
+    display: none;
+  }
+}
+
 .mw-results .speaker-button:hover {
   color: black;
   border: 1px solid black;
@@ -420,10 +426,28 @@ label.control-label {
 }
 
 .char-button p {
+  display: block;
   margin: 0;
   padding-right: 10px;
   font-size: 14px;
   transition: all 0.1s ease-in;
+}
+
+@media (max-width: 768px) {
+  .char-button p {
+    display: none;
+  }
+}
+
+.phone-container {
+  padding: 8px 0 5.5px 0;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .phone-container {
+    display: block;
+  }
 }
 
 .char-button:hover {
@@ -441,7 +465,7 @@ label.control-label {
 
 @media (max-width: 768px) {
   .char-button {
-    margin-right: 8px;
+    margin-right: 0;
   }
 }
 
@@ -462,7 +486,7 @@ label.control-label {
   }
 }
 
-.desktop-cruise {
+/* .desktop-cruise {
   display: block !important;
 }
 
@@ -470,7 +494,7 @@ label.control-label {
   .desktop-cruise {
     display: none !important;
   }
-}
+} */
 
 .progress-bar-container {
   position: absolute;

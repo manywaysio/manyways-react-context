@@ -5,6 +5,7 @@ import Speaker from "../icons/Speaker.js";
 import charlotte from "../pictures/charlotte.png";
 import backgroundAudio from "../assets/audio/waves.mp3";
 import CloseLarge from "../icons/CloseLarge.js";
+import Phone from "../icons/Phone.js";
 
 const Header = ({
   // shareJourney,
@@ -56,9 +57,9 @@ const Header = ({
           <button className="hamburger-button" onClick={handleMenuToggleModal}>
             {menuModalOpen ? <CloseLarge className="close-icon" /> : <Hamburger />}
           </button>
-          <div className="mobile-cruise">
+          {/* <div className="mobile-cruise">
             <CruiseIq />
-          </div>
+          </div> */}
         </div>
         <div className="desktop-cruise">
           <CruiseIq />
@@ -66,8 +67,9 @@ const Header = ({
 
         <div className="header-item">
           <button className="char-button" onClick={handleToggleModal}>
-            <p>Speak to agent</p>
+            <p className="char-button-text">Speak to agent</p>
             <img className="char-photo-header" src={charlotte} alt="Charlotte" />
+            <Phone />
           </button>
           <button className="speaker-button" onClick={toggleSound}>
             <Speaker />
