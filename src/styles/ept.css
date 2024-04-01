@@ -319,7 +319,7 @@ label.control-label {
   cursor: pointer;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .header-item {
     width: auto;
   }
@@ -440,7 +440,7 @@ label.control-label {
 }
 
 .phone-container {
-  padding: 8px 0 5.5px 0;
+  padding: 9px 0.5px 4.5px 0.5px;
   display: none;
 }
 
@@ -776,7 +776,7 @@ input#marketing-consent {
   }
 
   .first-input {
-    margin-bottom: 26px;
+    margin-bottom: 18px;
     margin-right: 0;
   }
 }
@@ -878,7 +878,7 @@ input#marketing-consent {
 
 @media (max-width: 768px) {
   .charlotte-modal-content span {
-    margin-top: 6px;
+    margin-top: 10px;
   }
 }
 
@@ -1844,14 +1844,8 @@ input#marketing-consent {
 }
 
 .results-char input {
-  width: 285px !important;
+  max-width: 285px !important;
   margin-right: 0;
-}
-
-@media (max-width: 1024px) {
-  .results-char input {
-    margin-right: 36px;
-  }
 }
 
 .results-char {
@@ -2285,11 +2279,11 @@ input.PhoneInputInput::placeholder {
 }
 
 .result-input-width {
-  margin-right: 36px;
+  max-width: 285px;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .result-input-width {
-    width: 285px;
+    max-width: 346px;
   }
 }
