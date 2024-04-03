@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useManyways } from "../ManywaysContext";
 import {
   ariaDescribedByIds,
@@ -22,6 +22,7 @@ const ManywaysRadioWidget = ({
 }) => {
   const { enumOptions, enumDisabled, inline, emptyValue, goBack } = options;
   const { currentNodeId, resetTrigger, clearResetTrigger } = useManyways();
+  const [selectedValue, setSelectedValue] = useState(value);
 
   const handleBlur = useCallback(
     ({ target: { value } }) =>
@@ -37,11 +38,15 @@ const ManywaysRadioWidget = ({
 
   useEffect(() => {
     if (resetTrigger) {
+      setSelectedValue("");
       clearResetTrigger();
     }
   }, [resetTrigger, clearResetTrigger]);
 
-  // console.log("enumOptions", enumOptions);
+  // const handleChange = (optionValue) => {
+  //   setSelectedValue(optionValue);
+  //   onChange(optionValue);
+  // };
 
   return (
     <div
@@ -53,7 +58,9 @@ const ManywaysRadioWidget = ({
       id={id}>
       {Array.isArray(enumOptions) &&
         enumOptions.map((option, i) => {
-          const checked = enumOptionsIsSelected(option.value, value);
+          const checked = option.value === selectedValue;
+          // const checked = enumOptionsIsSelected(option.value, value);
+          // console.log("is check", checked);
 
           const itemDisabled =
             Array.isArray(enumDisabled) && enumDisabled.indexOf(option.value) !== -1;
@@ -73,7 +80,8 @@ const ManywaysRadioWidget = ({
                 disabled={disabled || itemDisabled || readonly}
                 checked={checked}
                 autoFocus={autofocus && i === 0}
-                onChange={handleChange}
+                // onChange={handleChange}
+                onChange={() => handleChange(option.value)}
                 onBlur={handleBlur}
                 onFocus={handleFocus}
                 aria-describedby={ariaDescribedByIds(id)}
