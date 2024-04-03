@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { useManyways } from "../ManywaysContext";
 import {
   ariaDescribedByIds,
@@ -21,7 +21,7 @@ const ManywaysRadioWidget = ({
   id,
 }) => {
   const { enumOptions, enumDisabled, inline, emptyValue, goBack } = options;
-  const { currentNodeId } = useManyways();
+  const { currentNodeId, resetTrigger, clearResetTrigger } = useManyways();
 
   const handleBlur = useCallback(
     ({ target: { value } }) =>
@@ -34,6 +34,12 @@ const ManywaysRadioWidget = ({
       onFocus(id, enumOptionsValueForIndex(value, enumOptions, emptyValue)),
     [onFocus, id, enumOptions, emptyValue]
   );
+
+  useEffect(() => {
+    if (resetTrigger) {
+      clearResetTrigger();
+    }
+  }, [resetTrigger, clearResetTrigger]);
 
   // console.log("enumOptions", enumOptions);
 

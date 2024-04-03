@@ -1,8 +1,16 @@
 import { useManyways } from "./ManywaysContext";
 
 const NextAndBack = ({ currentNode = {}, className }) => {
-  const { goBack, currentNodeId, responses, classNamePrefix, mode, nodes, labels } =
-    useManyways();
+  const {
+    goBack,
+    currentNodeId,
+    responses,
+    classNamePrefix,
+    mode,
+    nodes,
+    labels,
+    triggerReset,
+  } = useManyways();
 
   let currentNodeIndex = nodes.findIndex((n) => n.id === currentNode?.id);
   let hasNextNode = !!nodes[currentNodeIndex + 1];
@@ -22,6 +30,7 @@ const NextAndBack = ({ currentNode = {}, className }) => {
               onClick={(e) => {
                 e.preventDefault();
                 goBack();
+                triggerReset();
               }}>
               {labels ? labels.back : "Back"}
             </button>

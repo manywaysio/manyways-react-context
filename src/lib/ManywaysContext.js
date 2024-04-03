@@ -34,6 +34,7 @@ const ManywaysProvider = ({
   const [contactPermission, setContactPermission] = useState(false);
   const [marketingConsent, setMarketingConsent] = useState(false);
   const [charlotteFormSubmitted, setCharlotteFormSubmitted] = useState(false);
+  const [resetTrigger, setResetTrigger] = useState(false);
 
   let currentNode =
     setCurrentNodeId !== false ? nodes.find((n) => n.id === currentNodeId) : false;
@@ -244,6 +245,14 @@ const ManywaysProvider = ({
     }
   };
 
+  const triggerReset = () => {
+    setResetTrigger(true);
+  };
+
+  const clearResetTrigger = () => {
+    setResetTrigger(false);
+  };
+
   const isFirstNode = currentNode?.title === "Start" ? true : false;
 
   return (
@@ -286,6 +295,9 @@ const ManywaysProvider = ({
         setMarketingConsent,
         charlotteFormSubmitted,
         setCharlotteFormSubmitted,
+        triggerReset,
+        clearResetTrigger,
+        resetTrigger,
       }}>
       <div
         className={`${classNamePrefix}-${slug} ${classNamePrefix}-${mode} ${classNamePrefix}-journey-container has-header-${!!treeConfig
