@@ -24,10 +24,10 @@ const CharlotteModal = ({
             <Close />
           </button>
         </div>
-        <h3>Speak to our cruise experts</h3>
+        <h3>Speak to our luxury travel specialist</h3>
         <p className="char-desc">
-          Please provide your phone number or email address below, and Charlotte will
-          contact you to assist you with any of your travel questions!
+          Please provide your phone number or email address below, and your luxury travel
+          expert <strong>Charlotte</strong>, will contact you.
         </p>
         <ContactForm
           setSubmitModalOpen={setSubmitModalOpen}
@@ -42,11 +42,11 @@ const CharlotteModal = ({
           <div>
             <h4>Meet your assigned agent</h4>
             <p>
-              Charlotte has 20+ years experience in luxury event planning and service,
-              having worked for A-list celebrities and designer fashion brands throughout
-              her career. A connoisseur of the world's hidden gems, Charlotte designs
-              escapes that cater to the discerning traveler's quest for authenticity and
-              adventure.
+              <strong>Charlotte</strong> has 20+ years experience in luxury event planning
+              and service, having worked for A-list celebrities and designer fashion
+              brands throughout her career. A connoisseur of the world's hidden gems,
+              <strong> Charlotte</strong> designs escapes that cater to the discerning
+              traveler's quest for authenticity and adventure.
             </p>
           </div>
         </div>

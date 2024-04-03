@@ -262,8 +262,8 @@ const SingleEPTResult = ({
           <h2>Book this trip at a member-only price</h2>
           <p>
             Turn this travel experience into reality; please provide your phone number or
-            email, and our cruise expert will help you to reserve a spot on the perfect
-            journey.
+            email, and our luxury travel specialist will help you to reserve a spot on the
+            perfect journey.
           </p>
           <ContactForm
             resultsPage={true}
