@@ -322,7 +322,7 @@ strong {
 
 @media only screen and (min-width: 750px) {
   .mw-node .field-group-images-true.field-layout-inline {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -417,11 +417,11 @@ strong {
 }
 
 #root_hvac_type {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 #root_cold_climate {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 #root_hvac_type label,
@@ -437,8 +437,6 @@ strong {
   opacity: .75;
   margin-bottom: 0;
 }
-
-
 
 
 @media only screen and (min-width: 750px) {
@@ -463,6 +461,14 @@ strong {
   #root_indoor {
     display: block;
     margin-left: 20px;
+  }
+
+  #root_hvac_type {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #root_cold_climate {
+    grid-template-columns: 1fr 1fr;
   }
 
   .mw-node-model-number .form-group.field.field-string:nth-child(3) {
@@ -873,7 +879,7 @@ tr {
 td,
 th {
   text-align: left;
-  padding: 20px;
+  padding: 16px 20px;
 
 }
 
@@ -917,7 +923,7 @@ tbody tr:nth-child(even) {
   background-color: #FFFFFF;
 }
 
-.card-list li h5{
+.card-list li h5 {
   margin: 0;
   font-size: 20px;
 }
@@ -933,8 +939,9 @@ tbody tr:nth-child(even) {
   grid-template-columns: 2fr 1fr;
   justify-content: space-between;
   align-items: center;
-  padding-top: 16px;
+  padding-top: 8px;
 }
+
 .card-list .rebate-list-item p {
   font-weight: 700;
   text-transform: uppercase;
@@ -950,9 +957,7 @@ tbody tr:nth-child(even) {
 }
 
 
-.card-list .available {
-
-}
+.card-list .available {}
 
 .card-list .available:before {
   content: ' ';
@@ -975,13 +980,13 @@ tbody tr:nth-child(even) {
 
 @media only screen and (min-width: 740px) {
   table {
-    display: block;
+    display: table;
   }
 
   .card-list {
     display: none;
   }
-  
+
 }
 
 /* Footer  */
@@ -1350,10 +1355,9 @@ tbody tr:nth-child(even) {
     display: none;
   }
 
-  .mw-rebate-results-product .footer .where-to-buy, 
-  .mw-province-territory-rebates .footer .where-to-buy
-   {
-    display:grid;
+  .mw-rebate-results-product .footer .where-to-buy,
+  .mw-province-territory-rebates .footer .where-to-buy {
+    display: grid;
   }
 
 }
