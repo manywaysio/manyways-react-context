@@ -847,7 +847,7 @@ ul.error-detail .text-danger {
 
 .mw-rebate-results-product .provice-rebates-header h2,
 .mw-rebate-results-product .provice-rebates-header span {
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 0;
 }
 
@@ -855,12 +855,15 @@ ul.error-detail .text-danger {
   margin-right: 5px;
 }
 
+
 /* Results table  */
 
 table {
   border-collapse: collapse;
   width: 100%;
+  display: none;
 }
+
 
 tr {
   gap: 20px;
@@ -887,13 +890,99 @@ thead th {
 
 
 tbody tr:nth-child(odd) {
-  background-color: #f2f2f2;
+  background-color: #F6F6F6;
 }
 
 tbody tr:nth-child(even) {
   background-color: #ffffff;
 }
 
+.card-list {
+  display: block;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.card-list li {
+  list-style: none;
+  margin-left: 0;
+  padding: 35px;
+}
+
+.card-list li:nth-child(odd) {
+  background-color: #F6F6F6;
+}
+
+.card-list li:nth-child(even) {
+  background-color: #FFFFFF;
+}
+
+.card-list li h5{
+  margin: 0;
+  font-size: 20px;
+}
+
+.card-list li p {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.card-list .rebate-list-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+}
+.card-list .rebate-list-item p {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card-list p.rebate-list-item-result {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 300;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+
+.card-list .available {
+
+}
+
+.card-list .available:before {
+  content: ' ';
+  position: relative;
+  font-size: 20px;
+  font-family: var(--font-family-bold);
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: #197b00;
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+  margin-top: 0px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" style="fill: %23197b00;" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 740px) {
+  table {
+    display: block;
+  }
+
+  .card-list {
+    display: none;
+  }
+  
+}
 
 /* Footer  */
 
@@ -1259,6 +1348,12 @@ tbody tr:nth-child(even) {
 
   .footer .where-to-buy {
     display: none;
+  }
+
+  .mw-rebate-results-product .footer .where-to-buy, 
+  .mw-province-territory-rebates .footer .where-to-buy
+   {
+    display:grid;
   }
 
 }
