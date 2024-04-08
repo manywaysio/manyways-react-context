@@ -142,9 +142,8 @@ strong {
 /* sr only  */
 
 .mw-node-find-by .control-label,
-.mw-node-model-number .control-label[for="root_outdoor"], 
-.mw-node-model-number .control-label[for="root_indoor"]
- {
+.mw-node-model-number .control-label[for="root_outdoor"],
+.mw-node-model-number .control-label[for="root_indoor"] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -261,13 +260,13 @@ strong {
   margin-bottom: 0;
 }
 
-.mw-node-model-number-form .form-group.field-string:first-of-type, 
-.mw-node-ahri-number .form-group.field-string:first-of-type{
+.mw-node-model-number-form .form-group.field-string:first-of-type,
+.mw-node-ahri-number .form-group.field-string:first-of-type {
   z-index: 3;
 }
 
-.mw-node-model-number-form .form-group.field-string:nth-of-type(2), 
-.mw-node-ahri-number .form-group.field-string:nth-of-type(2){
+.mw-node-model-number-form .form-group.field-string:nth-of-type(2),
+.mw-node-ahri-number .form-group.field-string:nth-of-type(2) {
   z-index: 2;
 }
 
@@ -320,6 +319,22 @@ strong {
 .mw-form .required {
   display: none;
 }
+
+@media only screen and (min-width: 750px) {
+  .mw-node .field-group-images-true.field-layout-inline {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .mw-node .field-group-images-true.field-layout-inline {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--grid-gap-default);
+    grid-gap: var(--grid-gap-default);
+  }
+}
+
+
 
 .mw-node .field-group-images-true.field-layout-inline label {
   text-align: left;
@@ -393,6 +408,39 @@ strong {
   transform: rotate(180deg);
 }
 
+/* what kind of hvac do you have */
+
+#root_hvac_type,
+#root_cold_climate {
+  display: grid;
+  gap: var(--grid-gap-small)
+}
+
+#root_hvac_type {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#root_cold_climate {
+  grid-template-columns: 1fr 1fr;
+}
+
+#root_hvac_type label,
+#root_cold_climate label {
+  font-size: 18px;
+  font-weight: 300;
+  padding: 20px;
+}
+
+#root_hvac_type .label-description,
+#root_cold_climate .label-description {
+  font-size: 14px;
+  opacity: .75;
+  margin-bottom: 0;
+}
+
+
+
+
 @media only screen and (min-width: 750px) {
 
   .mw-node .field-group-images-true.field-layout-inline label {
@@ -405,7 +453,7 @@ strong {
     margin-left: auto;
   }
 
-  .mw-node-model-number .form-group.field.field-string:nth-of-type(2),  
+  .mw-node-model-number .form-group.field.field-string:nth-of-type(2),
   .mw-node-model-number .form-group.field.field-string:nth-of-type(3) {
     display: inline-block;
     width: calc(100%/2 - 10px);
@@ -502,7 +550,7 @@ ul.error-detail .text-danger {
 .result-card {
   background-color: #f6f6f6;
   padding: 30px 30px;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
@@ -739,35 +787,37 @@ ul.error-detail .text-danger {
 }
 
 .mw-node-province-territory-rebates .mw-next-and-back,
-.mw-rebate-results-ahri .mw-next-and-back, 
-.mw-node-rebate-results-model-form .mw-next-and-back {
+.mw-rebate-results-ahri .mw-next-and-back,
+.mw-node-rebate-results-model-form .mw-next-and-back,
+.mw-node-rebate-results-product-form .mw-next-and-back {
   display: none;
 }
 
-.mw-next-and-back button{
+.mw-next-and-back button {
   margin-bottom: .5rem;
   width: 100%;
 }
 
 @media only screen and (min-width: 576px) {
-  .mw-next-and-back button{
+  .mw-next-and-back button {
     margin-bottom: 0;
     width: auto;
   }
 }
 
 /* Hide form when results show  */
-/* Hide form when results show  */
 .mw-journey-container.mw-rebate-results-ahri .mw-node-find-by,
 .mw-journey-container.mw-rebate-results-ahri .mw-node-model-number,
 .mw-journey-container.mw-rebate-results-ahri .mw-node-ahri-number-form,
 .mw-journey-container.mw-rebate-results-ahri .mw-node-province-or-territory-form,
 .mw-journey-container.mw-province-territory-rebates .mw-node-find-by,
-.mw-journey-container.mw-province-territory-rebates .mw-node-province-or-territory-form, 
-.mw-journey-container.mw-rebate-results-model .mw-node-find-by, 
-.mw-journey-container.mw-rebate-results-model .mw-node-model-number, 
-.mw-journey-container.mw-rebate-results-model .mw-node-ahri-number-form, 
-.mw-journey-container.mw-rebate-results-model .mw-node-province-or-territory-form{
+.mw-journey-container.mw-province-territory-rebates .mw-node-province-or-territory-form,
+.mw-journey-container.mw-rebate-results-model .mw-node-find-by,
+.mw-journey-container.mw-rebate-results-model .mw-node-model-number,
+.mw-journey-container.mw-rebate-results-model .mw-node-ahri-number-form,
+.mw-journey-container.mw-rebate-results-model .mw-node-province-or-territory-form,
+.mw-rebate-results-product .mw-node-find-by.has-response-true,
+.mw-rebate-results-product .mw-node-products-form.has-response-true {
   display: none;
 }
 
@@ -794,6 +844,56 @@ ul.error-detail .text-danger {
   }
 
 }
+
+.mw-rebate-results-product .provice-rebates-header h2,
+.mw-rebate-results-product .provice-rebates-header span {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+.mw-rebate-results-product .provice-rebates-header span {
+  margin-right: 5px;
+}
+
+/* Results table  */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  gap: 20px;
+  width: 100%;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 20px;
+
+}
+
+thead {
+  display: table-header-group;
+}
+
+thead th {
+  font-size: 12px;
+  text-transform: uppercase;
+  max-width: 220px;
+  vertical-align: bottom;
+}
+
+
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
 
 /* Footer  */
 
@@ -1008,12 +1108,14 @@ ul.error-detail .text-danger {
 }
 
 .findDealerForm input:focus {
-  outline: 2px solid #616161;;
+  outline: 2px solid #616161;
+  ;
   outline-offset: -2px;
 }
 
-.product-selection .findDealerForm input, .product-selection .findDealerForm button{
-  padding:.6em .5em .5em .5em;
+.product-selection .findDealerForm input,
+.product-selection .findDealerForm button {
+  padding: .6em .5em .5em .5em;
   height: 48px;
   font-size: 18px;
   width: 100%;
@@ -1190,7 +1292,7 @@ ul.error-detail .text-danger {
   padding: .5em .8em;
 }
 
-.select-mw__value-container input  {
+.select-mw__value-container input {
   background: 0px center;
   border: 0px;
   caret-color: transparent;
@@ -1205,4 +1307,5 @@ ul.error-detail .text-danger {
   position: relative;
   transform: scale(0.01);
 }
+
 /***************************************/

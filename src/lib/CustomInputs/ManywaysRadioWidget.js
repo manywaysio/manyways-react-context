@@ -81,6 +81,10 @@ const ManywaysRadioWidget = ({
                   <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} />
                 )}
                 {option.label}
+
+                {!!schema.enum_descriptions?.[i] && (
+                  <p className="label-description">{schema.enum_descriptions?.[i]}</p>
+                )}
               </label>
             </>
           );
