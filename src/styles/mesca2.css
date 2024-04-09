@@ -926,7 +926,10 @@ td,
 th {
   text-align: left;
   padding: 16px 20px;
+}
 
+td {
+  vertical-align:baseline
 }
 
 thead {
