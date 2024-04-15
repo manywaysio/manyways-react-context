@@ -85,7 +85,7 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
     // }
 
     // Only for mesca root_indoor
-    if (id === "root_indoor" && _theOptions?.length >= 1) {
+    if (id === "root_indoor" && _theOptions?.length === 1) {
       if (!value) {
         onChange(_theOptions[0].value);
       } else {
