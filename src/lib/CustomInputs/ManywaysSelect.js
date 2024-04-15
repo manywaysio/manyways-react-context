@@ -2,76 +2,76 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 
 const selectStyles = {
-    clearIndicator: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    container: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    control: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    dropdownIndicator: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    group: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    groupHeading: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    indicatorsContainer: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    indicatorSeparator: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    input: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    loadingIndicator: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    loadingMessage: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    menu: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    menuList: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    menuPortal: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    multiValue: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    multiValueLabel: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    multiValueRemove: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    noOptionsMessage: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    option: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    placeholder: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    singleValue: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-    valueContainer: (baseStyles, state) => {
-      return { ...baseStyles };
-    },
-  };
+  clearIndicator: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  container: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  control: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  dropdownIndicator: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  group: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  groupHeading: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  indicatorsContainer: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  indicatorSeparator: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  input: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  loadingIndicator: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  loadingMessage: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  menu: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  menuList: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  menuPortal: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  multiValue: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  multiValueLabel: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  multiValueRemove: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  noOptionsMessage: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  option: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  placeholder: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  singleValue: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+  valueContainer: (baseStyles, state) => {
+    return { ...baseStyles };
+  },
+};
 
 const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
-  const { options } = props;
+  const { options, id } = props;
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   useEffect(() => {
@@ -79,10 +79,23 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
       !!options?.enumOptions && !!options?.enumOptions?.length > 0
         ? options?.enumOptions
         : temp_opts;
-    if (_theOptions?.length === 1) {
-      onChange(_theOptions[0].value);
+    //Default
+    // if (_theOptions?.length === 1) {
+    //   onChange(_theOptions[0].value);
+    // }
+
+    // Only for mesca root_indoor
+    if (id === "root_indoor" && _theOptions?.length >= 1) {
+      if (!value) {
+        onChange(_theOptions[0].value);
+      } else {
+        const optionVals = _theOptions.find((item) => item?.value === value);
+        if (!optionVals) {
+          onChange(_theOptions[0].value);
+        }
+      }
     }
-  }, []);
+  }, [onChange]);
 
   let temp_opts = [
     { value: "xxx", label: "XXX" },
