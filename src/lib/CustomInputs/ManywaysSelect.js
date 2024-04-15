@@ -80,21 +80,22 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
         ? options?.enumOptions
         : temp_opts;
     //Default
-    // if (_theOptions?.length === 1) {
-    //   onChange(_theOptions[0].value);
-    // }
+    if (_theOptions?.length === 1) {
+      onChange(_theOptions[0].value);
+    }
 
     // Only for mesca root_indoor
-    if (id === "root_indoor" && _theOptions?.length >= 1) {
-      if (!value) {
-        onChange(_theOptions[0].value);
-      } else {
-        const optionVals = _theOptions.find((item) => item?.value === value);
-        if (!optionVals) {
-          onChange(_theOptions[0].value);
-        }
-      }
-    }
+    // if (id === "root_indoor" && _theOptions?.length === 1) {
+    //   onChange(_theOptions[0].value);
+    //   if (!value) {
+    //     onChange(_theOptions[0].value);
+    //   } else {
+    //     const optionVals = _theOptions.find((item) => item?.value === value);
+    //     if (!optionVals) {
+    //       onChange(_theOptions[0].value);
+    //     }
+    //   }
+    // }
   }, [onChange]);
 
   let temp_opts = [
