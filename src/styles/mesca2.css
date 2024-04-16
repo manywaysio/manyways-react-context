@@ -425,6 +425,8 @@ strong {
   content: '';
 }
 
+
+
 .mw__control--menu-is-open .mw__dropdown-indicator {
   transform: rotate(180deg);
 }
@@ -445,17 +447,44 @@ strong {
 }
 
 #root_hvac_type label,
-#root_cold_climate label {
+#root_cold_climate label,
+#root_energy_star_cert label {
   font-size: 18px;
   font-weight: 300;
-  padding: 20px;
+  padding: 21px;
+  text-align: left;
+
 }
 
 #root_hvac_type .label-description,
-#root_cold_climate .label-description {
+#root_cold_climate .label-description,
+#root_energy_star_cert .label-description {
   font-size: 14px;
   opacity: .75;
+  margin-top: 10px;
   margin-bottom: 0;
+  line-height: 1.5;
+  letter-spacing: 3%;
+  text-align: left;
+}
+
+
+@media only screen and (min-width: 768px) {
+  #root_energy_star_cert {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#root_energy_star_cert label {
+  flex-direction: row-reverse;
+}
+
+
+#root_energy_star_cert img {
+  max-height: 100px;
+  height: 100px;
+  margin-right: 0;
+  width: auto;
 }
 
 
@@ -830,7 +859,8 @@ ul.error-detail .text-danger {
   margin-top: 32px;
 }
 
-.singleChoiceField-true, .next-and-back-hidden-true {
+.singleChoiceField-true,
+.next-and-back-hidden-true {
   display: none;
 }
 
@@ -841,7 +871,7 @@ ul.error-detail .text-danger {
 }
 
 
-.mw-back{
+.mw-back {
   position: relative;
   display: flex;
   flex-wrap: wrap;
