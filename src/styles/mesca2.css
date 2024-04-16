@@ -435,7 +435,7 @@ strong {
 
 .field-radio-group {
   display: grid;
-  gap: var(--grid-gap-default)
+  gap: 3px;
 }
 
 #root_hvac_type {
@@ -487,6 +487,16 @@ strong {
   width: auto;
 }
 
+.mw-node .field-group-images-false .radio-inline label {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+/* #root_energy_star_cert label {
+  margin-right: .3rem;
+  margin-bottom: .3rem;
+} */
+
 
 @media only screen and (min-width: 768px) {
 
@@ -519,6 +529,7 @@ strong {
   #root_cold_climate {
     grid-template-columns: 1fr 1fr;
   }
+
 
   .mw-node-model-number .form-group.field.field-string:nth-child(3) {
     margin-left: 20px;
@@ -944,6 +955,7 @@ ul.error-detail .text-danger {
 
   .field-radio-group {
     margin-bottom: 35px;
+    gap: var(--grid-gap-default);
   }
 
 }
