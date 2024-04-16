@@ -22,6 +22,13 @@ const NextAndBack = ({ currentNode = {}, className }) => {
         mode === "scroll" && !!hasNextNode
       } ${classNamePrefix}-next-and-back`}
     >
+      <button className={`${classNamePrefix}-next`} type="submit">
+        {currentNode?.ui_variables?.custom_next_text
+          ? currentNode.ui_variables.custom_next_text
+          : labels
+            ? labels.next
+            : "Next"}
+      </button>
       <button
         className={`${classNamePrefix}-back`}
         onClick={(e) => {
@@ -29,10 +36,11 @@ const NextAndBack = ({ currentNode = {}, className }) => {
           goBack();
         }}
       >
-        {labels ? labels.back : "Change Search Category"}
-      </button>
-      <button className={`${classNamePrefix}-next`} type="submit">
-        {labels ? labels.next : "Next"}
+        {currentNode?.ui_variables?.custom_back_text
+          ? currentNode.ui_variables.custom_back_text
+          : labels
+            ? labels.back
+            : "Restart"}
       </button>
     </div>
   );

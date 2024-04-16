@@ -95,6 +95,7 @@ body {
   font-weight: 300;
   letter-spacing: .3px;
   line-height: 1.6;
+
 }
 
 h1,
@@ -102,7 +103,10 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+label,
+th,
+.field-description {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -427,10 +431,9 @@ strong {
 
 /* what kind of hvac do you have */
 
-#root_hvac_type,
-#root_cold_climate {
+.field-radio-group {
   display: grid;
-  gap: var(--grid-gap-small)
+  gap: var(--grid-gap-default)
 }
 
 #root_hvac_type {
@@ -810,17 +813,63 @@ ul.error-detail .text-danger {
 
 }
 
+
+
 .mw-node-province-territory-rebates .mw-next-and-back,
 .mw-rebate-results-ahri .mw-next-and-back,
 .mw-node-rebate-results-model-form .mw-next-and-back,
 .mw-node-rebate-results-product-form .mw-next-and-back {
   display: none;
+
 }
+
+.next-and-back-hidden-false {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.singleChoiceField-true, .next-and-back-hidden-true {
+  display: none;
+}
+
 
 .mw-next-and-back button {
   margin-bottom: .5rem;
   width: 100%;
 }
+
+
+.mw-back{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mw-back:after {
+  content: ' ';
+  position: relative;
+  height: 16px;
+  width: 16px;
+  margin-left: 8px;
+  background-color: black;
+  -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M94 187.1C120.8 124.1 183.3 80 256 80c39.7 0 77.8 15.8 105.9 43.9L414.1 176H360 336v48h24H472h24V200 88 64H448V88v54.1L395.9 89.9C358.8 52.8 308.5 32 256 32C163.4 32 83.9 88.2 49.8 168.3L94 187.1zM64 369.9l52.1 52.1C153.2 459.2 203.5 480 256 480c92.5 0 171.8-56 206-135.9l-44.1-18.9C391 388.1 328.6 432 256 432c-39.7 0-77.8-15.8-105.9-43.9L97.9 336H152h24V288H152 40 16v24V424v24H64V424 369.9z"/></svg>');
+  mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M94 187.1C120.8 124.1 183.3 80 256 80c39.7 0 77.8 15.8 105.9 43.9L414.1 176H360 336v48h24H472h24V200 88 64H448V88v54.1L395.9 89.9C358.8 52.8 308.5 32 256 32C163.4 32 83.9 88.2 49.8 168.3L94 187.1zM64 369.9l52.1 52.1C153.2 459.2 203.5 480 256 480c92.5 0 171.8-56 206-135.9l-44.1-18.9C391 388.1 328.6 432 256 432c-39.7 0-77.8-15.8-105.9-43.9L97.9 336H152h24V288H152 40 16v24V424v24H64V424 369.9z"/></svg>');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  /* transform: rotate(125deg); */
+  transition: ease-in-out 200ms all;
+}
+
+.mw-back:hover:after {
+  background-color: white;
+}
+
 
 @media only screen and (min-width: 576px) {
   .mw-next-and-back button {
@@ -913,7 +962,7 @@ ul.error-detail .text-danger {
   .table-rebates-header {
     align-items: center;
   }
-  
+
 
   .table-rebates-header .selected-rebate-group {
     margin-top: 0px;
@@ -946,7 +995,7 @@ th {
 }
 
 td {
-  vertical-align:baseline
+  vertical-align: baseline
 }
 
 thead {
@@ -956,8 +1005,14 @@ thead {
 thead th {
   font-size: 12px;
   text-transform: uppercase;
-  max-width: 220px;
+
   vertical-align: bottom;
+}
+
+@media only screen and (min-width:980px) {
+  thead th {
+    min-width: 140px;
+  }
 }
 
 
@@ -996,7 +1051,7 @@ table .available:before {
   background-repeat: no-repeat;
 }
 
-.unavail{
+.unavail {
   display: block;
   width: 16px;
   height: 1px;
@@ -1012,7 +1067,7 @@ table .available:before {
 .card-list li {
   list-style: none;
   margin-left: 0;
-  padding: 35px;
+  padding: 35px 25px;
 }
 
 .card-list li:nth-child(odd) {
@@ -1058,7 +1113,7 @@ table .available:before {
 
 
 
- .rebate-list-item .available {
+.rebate-list-item .available {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
