@@ -330,15 +330,13 @@ strong {
   }
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 980px) {
   .mw-node .field-group-images-true.field-layout-inline {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: var(--grid-gap-default);
     grid-gap: var(--grid-gap-default);
   }
 }
-
-
 
 .mw-node .field-group-images-true.field-layout-inline label {
   text-align: left;
@@ -539,7 +537,6 @@ strong {
   }
 
 }
-
 
 ul.error-detail {
   position: relative;
