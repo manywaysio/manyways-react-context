@@ -114,7 +114,7 @@ th,
 h1 {
   font-family: var(--font-family-bold);
   font-size: 48px;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
   letter-spacing: 0.01em;
   line-height: 1.2;
@@ -425,8 +425,6 @@ strong {
   content: '';
 }
 
-
-
 .mw__control--menu-is-open .mw__dropdown-indicator {
   transform: rotate(180deg);
 }
@@ -582,6 +580,9 @@ ul.error-detail .text-danger {
   padding: 3px 12px 3px 12px;
   margin-left: 0px;
   line-height: 1.2;
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 
 .provice-rebates-header {
@@ -589,6 +590,7 @@ ul.error-detail .text-danger {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  padding: 0 2rem;
 }
 
 .provice-rebates-header .button {
@@ -788,6 +790,7 @@ ul.error-detail .text-danger {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    padding: 0;
   }
 
   .provice-rebates-header .button {
@@ -865,9 +868,18 @@ ul.error-detail .text-danger {
 
 .next-and-back-hidden-false {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--grid-gap-small);
   margin-top: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .next-and-back-hidden-false {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    gap: 16px;
+  }
 }
 
 .singleChoiceField-true,
@@ -1132,11 +1144,13 @@ table .available:before {
 }
 
 .card-list .rebate-list-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 32px;
+  gap: var(--grid-gap-small);
 }
 
 .card-list .rebate-list-item p {
@@ -1146,14 +1160,13 @@ table .available:before {
 
 .card-list p.rebate-list-item-result {
   display: flex;
-  justify-content: flex-end;
+  gap: 10px;
+  justify-content: flex-start;
   align-items: center;
   font-weight: 300;
   text-transform: capitalize;
   font-size: 14px;
 }
-
-
 
 .rebate-list-item .available {
   display: flex;
@@ -1182,7 +1195,20 @@ table .available:before {
   background-repeat: no-repeat;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 576px) {
+  .card-list .rebate-list-item {
+    flex-direction: row;
+    gap: var(--grid-gap-large);
+    padding-top: 32px;
+  }
+
+  .card-list .rebate-list-item p {
+    width: 50%;
+  }
+}
+
+
+@media only screen and (min-width: 980px) {
   table {
     display: table;
   }
@@ -1191,6 +1217,16 @@ table .available:before {
     display: none;
   }
 
+}
+
+.no-results {
+  padding-left: var(--grid-gap-default);
+}
+
+@media only screen and (min-width: 980px) {
+  .no-results {
+    padding:var(--grid-gap-default) 0;
+  }
 }
 
 /* Footer  */

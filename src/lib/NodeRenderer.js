@@ -78,7 +78,7 @@ const NodeRenderer = (props) => {
 
       function transformErrors(errors) {
         return errors.map((error) => {
-          if (!translations[locale]) {
+          if (!translations || !translations[locale]) {
             return error;
           }
           if (!!translations[locale].errors?.[error.property]?.[error.name]) {
