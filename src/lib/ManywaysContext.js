@@ -21,7 +21,9 @@ const ManywaysProvider = ({
   let [currentNodeId, setCurrentNodeId] = useState(false);
   let [responses, setResponses] = useState([]);
   let [isLoading, setIsLoading] = useState(true);
-
+  let [slugAndRevisionParams, setSlugAndRevisionParams] = useState(
+    `${slug}/begin`
+  );
   let currentNode =
     setCurrentNodeId !== false
       ? nodes.find((n) => n.id === currentNodeId)
@@ -31,10 +33,50 @@ const ManywaysProvider = ({
     website: treeConfig?.analytics_config?.umami_id,
   };
 
+  const isPreview = () => {
+    // @TODO
+    // if (window.location.search.includes("revision")) {
+    //   let revisionId = window.location.search
+    //     .split("revision=")[1]
+    //     .split("&")[0];
+    //   setSlugAndRevisionParams(`${slug}/begin?revision=${revisionId}`);
+    // }
+    return window.location.search.includes("preview");
+  };
+
+  const postMessageHandler = (ev) => {
+    if (ev.data.type === "SCHEMA_UPDATED") {
+      console.log(
+        "from SDK - schema updated - I should update my ManywaysContext in SDK",
+        ev.data
+      );
+      setNodes([ev.data.node]);
+    }
+  };
+
+  useEffect(() => {
+    if (!isPreview()) {
+      return;
+    }
+    // listen for postmessage
+    window.addEventListener("message", postMessageHandler);
+
+    return () => {
+      window.removeEventListener("message", postMessageHandler);
+    };
+  }, []);
+
   const getInitialData = async (props = {}) => {
     const { callback = () => {}, callbackArgs = {} } = props;
+
+    if (isPreview()) {
+      return;
+    }
+
     setIsLoading(true);
-    await fetch(`https://mw-apiv2-prod.fly.dev/response_sessions/${slug}/begin`)
+    await fetch(
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${slugAndRevisionParams}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setNodes([data?.current_node]);
@@ -64,6 +106,9 @@ const ManywaysProvider = ({
   };
 
   const goForward = async ({ formData }) => {
+    if (isPreview()) {
+      return;
+    }
     if (!!isLoading) {
       console.log("is loading aborting go forward");
       return false;
@@ -128,6 +173,9 @@ const ManywaysProvider = ({
   };
 
   const goBack = async function () {
+    if (isPreview()) {
+      return;
+    }
     let currentNodeIndexInResponses = responses.findIndex(
       (r) => r.node_id === currentNodeId
     );
