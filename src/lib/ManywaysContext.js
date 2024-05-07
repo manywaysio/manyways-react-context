@@ -44,6 +44,10 @@ const ManywaysProvider = ({
     return window.location.search.includes("preview");
   };
 
+  const shouldContinue = () => {
+    return window.location.search.includes("continue");
+  };
+
   const postMessageHandler = (ev) => {
     if (ev.data.type === "SCHEMA_UPDATED") {
       console.log(
@@ -71,6 +75,11 @@ const ManywaysProvider = ({
 
     if (isPreview()) {
       return;
+    }
+
+    if (shouldContinue()) {
+      const sessionId = window.location.search.split("continue=")[1];
+      continueJourney(sessionId);
     }
 
     setIsLoading(true);
