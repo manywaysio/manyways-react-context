@@ -20,7 +20,7 @@ const ManywaysRadioWidget = ({
   id,
 }) => {
   const { enumOptions, enumDisabled, inline, emptyValue } = options;
-
+  console.log(enumOptions);
   const handleBlur = useCallback(
     ({ target: { value } }) =>
       onBlur(id, enumOptionsValueForIndex(value, enumOptions, emptyValue)),
@@ -33,10 +33,19 @@ const ManywaysRadioWidget = ({
     [onFocus, id, enumOptions, emptyValue]
   );
 
+  const hasImages = () => {
+    return (
+      enumOptions.find(
+        (item) =>
+          item && item.schema && item.schema.icon && item.schema.icon.url
+      ) !== undefined
+    );
+  };
+
   return (
     <div
       className={`field-radio-group 
-      field-group-images-${!!schema.enum_icons}
+      field-group-images-${!!schema.enum_icons || hasImages()} 
       ${inline ? "field-layout-inline" : "field-layout-block"}`}
       id={id}
     >
@@ -77,15 +86,20 @@ const ManywaysRadioWidget = ({
                   if (e.key === "Enter") handleChange();
                 }}
               >
-                {!!schema.enum_icons?.[i] && (
-                  <img src={schema?.enum_icons?.[i]} alt={`${option.label}`} />
+                {(!!schema.enum_icons?.[i] || !!option?.schema?.icon?.url) && (
+                  <img
+                    src={schema?.enum_icons?.[i] || option?.schema?.icon?.url}
+                    alt={option?.schema?.icon?.alt_text || `${option.label}`}
+                  />
                 )}
                 <div>
                   <div dangerouslySetInnerHTML={{ __html: option.label }} />
 
-                  {!!schema.enum_descriptions?.[i] && (
+                  {(!!schema.enum_descriptions?.[i] ||
+                    option?.schema?.description) && (
                     <p className="label-description">
-                      {schema.enum_descriptions?.[i]}
+                      {schema.enum_descriptions?.[i] ||
+                        option?.schema?.description}
                     </p>
                   )}
                 </div>

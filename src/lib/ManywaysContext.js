@@ -41,6 +41,7 @@ const ManywaysProvider = ({
     //     .split("&")[0];
     //   setSlugAndRevisionParams(`${slug}/begin?revision=${revisionId}`);
     // }
+
     return window.location.search.includes("preview");
   };
 
@@ -50,10 +51,10 @@ const ManywaysProvider = ({
 
   const postMessageHandler = (ev) => {
     if (ev.data.type === "SCHEMA_UPDATED") {
-      console.log(
-        "from SDK - schema updated - I should update my ManywaysContext in SDK",
-        ev.data
-      );
+      // console.log(
+      //   "from SDK - schema updated - I should update my ManywaysContext in SDK",
+      //   ev.data
+      // );
       setNodes([ev.data.node]);
     }
   };
@@ -62,6 +63,9 @@ const ManywaysProvider = ({
     if (!isPreview()) {
       return;
     }
+
+    window.parent.postMessage({ type: "IFRAME_READY" }, "*");
+
     // listen for postmessage
     window.addEventListener("message", postMessageHandler);
 
@@ -74,6 +78,7 @@ const ManywaysProvider = ({
     const { callback = () => {}, callbackArgs = {} } = props;
 
     if (isPreview()) {
+      setIsLoading(false);
       return;
     }
 

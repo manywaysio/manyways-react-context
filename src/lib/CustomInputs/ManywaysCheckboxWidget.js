@@ -38,10 +38,19 @@ const ManywaysCheckboxWidget = ({
     [onFocus, id]
   );
 
+  const hasImages = () => {
+    return (
+      enumOptions && enumOptions.find(
+        (item) =>
+          item && item.schema && item.schema.icon && item.schema.icon.url
+      ) !== undefined
+    );
+  };
+
   return (
     <div
       className={`field-checkbox-group 
-    field-group-images-${!!schema.enum_icons}
+    field-group-images-${!!schema.enum_icons || hasImages()}
     ${inline ? "field-layout-inline" : "field-layout-block"}`}
       id={id}
     >
@@ -82,15 +91,24 @@ const ManywaysCheckboxWidget = ({
                 aria-describedby={ariaDescribedByIds(id)}
               />
 
-              {!!schema.enum_icons?.[index] ? (
+              {!!schema.enum_icons?.[index] || !!option?.schema?.icon?.url ? (
                 <img
-                  src={schema?.enum_icons?.[index]}
-                  alt={`${option.label}`}
+                  src={schema?.enum_icons?.[index] || option?.schema.icon.url}
+                  alt={option?.schema.icon?.alt_text || `${option.label}`}
                 />
               ) : (
                 <div class="checkbox-checkmark"></div>
               )}
-              {option.label}
+              <div>
+                {option.label}
+                {(!!schema.enum_descriptions?.[index] ||
+                  option?.schema?.description) && (
+                  <p className="label-description">
+                    {schema.enum_descriptions?.[index] ||
+                      option?.schema?.description}
+                  </p>
+                )}
+              </div>
             </>
           );
 
