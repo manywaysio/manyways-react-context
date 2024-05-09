@@ -41,6 +41,7 @@ const ManywaysProvider = ({
     //     .split("&")[0];
     //   setSlugAndRevisionParams(`${slug}/begin?revision=${revisionId}`);
     // }
+
     return window.location.search.includes("preview");
   };
 
@@ -56,10 +57,10 @@ const ManywaysProvider = ({
 
   const postMessageHandler = (ev) => {
     if (ev.data.type === "SCHEMA_UPDATED") {
-      console.log(
-        "from SDK - schema updated - I should update my ManywaysContext in SDK",
-        ev.data
-      );
+      // console.log(
+      //   "from SDK - schema updated - I should update my ManywaysContext in SDK",
+      //   ev.data
+      // );
       setNodes([ev.data.node]);
     }
   };
@@ -68,23 +69,9 @@ const ManywaysProvider = ({
     if (!isPreview()) {
       return;
     }
-
-    // let parent iframe know that we are ready if exists
-    window.parent.postMessage(
-      {
-        type: "SDK_READY",
-        data: {
-          slug,
-          locale,
-          mode,
-        },
-      },
-      "*"
-    );
-
+    window.parent.postMessage({ type: "IFRAME_READY" }, "*");
     // listen for postmessage
     window.addEventListener("message", postMessageHandler);
-
     return () => {
       window.removeEventListener("message", postMessageHandler);
     };
@@ -98,44 +85,49 @@ const ManywaysProvider = ({
     const { callback = () => {}, callbackArgs = {} } = props;
 
     if (isPreview()) {
+      setIsLoading(false);
       return;
     }
 
     if (shouldContinue()) {
       const sessionId = window.location.search.split("continue=")[1];
       continueJourney(sessionId);
-    }
+    } else {
+      setIsLoading(true);
+      await fetch(
+        `https://mw-apiv2-prod.fly.dev/response_sessions/${slugAndRevisionParams}${getRevisionId()}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setNodes([data?.current_node]);
+          setCurrentNodeId(data?.node_id);
+          setResponseId(data?.id);
+          setTreeConfig(data?.revision);
+          setIsLoading(false);
+          callback({ data, nodes: [data?.current_node], callbackArgs });
 
-    setIsLoading(true);
-    await fetch(
-      `https://mw-apiv2-prod.fly.dev/response_sessions/${slugAndRevisionParams}${getRevisionId()}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setNodes([data?.current_node]);
-        setCurrentNodeId(data?.node_id);
-        setResponseId(data?.id);
-        setTreeConfig(data?.revision);
-        setIsLoading(false);
-        callback({ data, nodes: [data?.current_node], callbackArgs });
-
-        setTimeout(() => {
-          // hack for tabs
-          document
-            .querySelectorAll(".mw-node-find-by-form .field-radio-group label")
-            .forEach((el) => {
-              el.addEventListener("click", function () {
-                if (!!el.closest(".is-current-node-true")) {
-                  console.log("no response. should be forwarded");
-                  return false;
-                } else {
-                  console.log("response exists. should be restarted in queue");
-                  window.manyways.restartInQueue([{ result: el.innerText }]);
-                }
+          setTimeout(() => {
+            // hack for tabs
+            document
+              .querySelectorAll(
+                ".mw-node-find-by-form .field-radio-group label"
+              )
+              .forEach((el) => {
+                el.addEventListener("click", function () {
+                  if (!!el.closest(".is-current-node-true")) {
+                    console.log("no response. should be forwarded");
+                    return false;
+                  } else {
+                    console.log(
+                      "response exists. should be restarted in queue"
+                    );
+                    window.manyways.restartInQueue([{ result: el.innerText }]);
+                  }
+                });
               });
-            });
-        }, 400);
-      });
+          }, 400);
+        });
+    }
   };
 
   const goForward = async ({ formData }) => {

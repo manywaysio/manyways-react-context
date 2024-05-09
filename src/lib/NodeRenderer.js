@@ -135,6 +135,7 @@ const NodeRenderer = (props) => {
               widgets={{
                 RadioWidget: ManywaysRadioWidget,
                 CheckboxesWidget: ManywaysCheckboxWidget,
+                checkboxes: ManywaysCheckboxWidget,
                 SelectWidget: ManywaysSelectWidget,
                 Select: ManywaysSelect,
               }}
