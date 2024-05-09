@@ -136,7 +136,7 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
       )}
       <Select
         onChange={(v) => {
-          console.log(v);
+          // console.log(v);
           onChange(v.value);
           setMenuIsOpen(false);
         }}
@@ -149,15 +149,15 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
           // );
         }}
         onFocus={() => {
-          console.log("focus");
+          // console.log("focus");
           setMenuIsOpen(true);
         }}
         onDropdownClose={() => {
-          console.log("dd close");
+          // console.log("dd close");
         }}
         blurInputOnSelect={true}
         onBlur={() => {
-          console.log("blur");
+          // console.log("blur");
           // setMenuIsOpen(false);
         }}
         menuIsOpen={menuIsOpen}
