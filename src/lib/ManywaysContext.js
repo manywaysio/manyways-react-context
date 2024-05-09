@@ -145,23 +145,8 @@ const ManywaysProvider = ({
     };
 
     Object.keys(formData).forEach((key) => {
-      window.umami.track(formData[key]);
+      !isPreview() && !getRevisionId() && window.umami.track(formData[key]);
     });
-
-    // window.umami.track({
-    //   title: currentNode?.title,
-    //   data: {
-    //     nodeId: currentNode?.id,
-    //     response: JSON.stringify(formData),
-    //   },
-    //   hostname: window.location.hostname,
-    //   language: navigator.language,
-    //   referrer: document.referrer,
-    //   screen: `${window.screen.width}x${window.screen.height}`,
-    //   url: window.location.pathname,
-    //   website: treeConfig?.analytics_config?.umami_id,
-    //   name: "Node Response",
-    // });
 
     await fetch(
       `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}`,
@@ -175,11 +160,13 @@ const ManywaysProvider = ({
     )
       .then((response) => response.json())
       .then((data) => {
-        window.umami.track((props) => ({
-          ...props,
-          url: `/${slugify(data.title)}`,
-          title: data.title,
-        }));
+        !isPreview() &&
+          !getRevisionId() &&
+          window.umami.track((props) => ({
+            ...props,
+            url: `/${slugify(data.title)}`,
+            title: data.title,
+          }));
 
         let final_json = data?.form_schema;
         try {
