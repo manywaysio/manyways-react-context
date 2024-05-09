@@ -44,6 +44,12 @@ const ManywaysProvider = ({
     return window.location.search.includes("preview");
   };
 
+  const getRevisionId = () => {
+    let revisonID =
+      window?.location?.search?.split("revision=")?.[1]?.split("&")?.[0] || "";
+    return revisonID ? `?revision=${revisonID}` : "";
+  };
+
   const shouldContinue = () => {
     return window.location.search.includes("continue");
   };
@@ -62,6 +68,20 @@ const ManywaysProvider = ({
     if (!isPreview()) {
       return;
     }
+
+    // let parent iframe know that we are ready if exists
+    window.parent.postMessage(
+      {
+        type: "SDK_READY",
+        data: {
+          slug,
+          locale,
+          mode,
+        },
+      },
+      "*"
+    );
+
     // listen for postmessage
     window.addEventListener("message", postMessageHandler);
 
@@ -70,7 +90,11 @@ const ManywaysProvider = ({
     };
   }, []);
 
-  const getInitialData = async (props = {}) => {
+  const getInitialData = async (
+    props = {},
+    ignoreContinue = false,
+    ignorePreview = false
+  ) => {
     const { callback = () => {}, callbackArgs = {} } = props;
 
     if (isPreview()) {
@@ -84,7 +108,7 @@ const ManywaysProvider = ({
 
     setIsLoading(true);
     await fetch(
-      `https://mw-apiv2-prod.fly.dev/response_sessions/${slugAndRevisionParams}`
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${slugAndRevisionParams}${getRevisionId()}`
     )
       .then((response) => response.json())
       .then((data) => {
