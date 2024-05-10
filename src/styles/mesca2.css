@@ -337,13 +337,13 @@ button:focus-visible, a:focus-visible, .button:focus-visible, .button-primary:fo
 
 @media only screen and (min-width: 768px) {
   .mw-node .field-group-images-true.field-layout-inline {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media only screen and (min-width: 980px) {
   .mw-node .field-group-images-true.field-layout-inline {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
     gap: var(--grid-gap-default);
     grid-gap: var(--grid-gap-default);
   }
@@ -567,9 +567,9 @@ button:focus-visible, a:focus-visible, .button:focus-visible, .button-primary:fo
   width: 26px;
 }
 
-.mw-node .field-group-images-true .radio-inline .label-content {
+/* .mw-node .field-group-images-true .radio-inline .label-content {
   text-align: left;
-}
+} */
 
 @media only screen and (min-width: 768px) {
   #root_energy_star_cert {
