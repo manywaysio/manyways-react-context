@@ -1750,7 +1750,7 @@ table .available:before {
  Style non-searchable react select inputs. 
  Hide when React Select Search is enabled 
  **********************************************/
-.mw-node .form-group.field-string .select-mw__value-container input {
+/* .mw-node .form-group.field-string .select-mw__value-container input {
   padding: .5em .8em;
 }
 
@@ -1768,6 +1768,6 @@ table .available:before {
   opacity: 0;
   position: relative;
   transform: scale(0.01);
-}
+} */
 
 /***************************************/
