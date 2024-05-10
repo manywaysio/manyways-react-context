@@ -225,6 +225,8 @@ strong {
   align-items: flex-start;
 }
 
+.mesca-page-header .text-container h2,
+.mesca-page-header .text-container h3,
 .mesca-page-header .text-container h4,
 .mesca-page-header .text-container p {
   font-family: var(--font-family);
@@ -299,6 +301,9 @@ strong {
   line-height: 1.5;
   font-weight: 500;
   font-size: 18px;
+  transition: ease-in-out 100ms all;
+  outline: var(--border-outline) solid transparent;
+  outline-offset: calc(var(--border-outline) * -1);
 }
 
 .mw-container .button-primary {
@@ -312,6 +317,12 @@ strong {
 .button-primary:hover {
   border: 1px solid var(--color-dark);
   background-color: var(--color-dark);
+    }
+
+button:focus-visible, a:focus-visible, .button:focus-visible, .button-primary:focus-visible {
+  border-radius: 0;
+  outline: var(--border-outline) solid var(--color-select);
+  outline-offset: calc(var(--border-outline) * -1);
 }
 
 /* Form Fields */
@@ -339,25 +350,50 @@ strong {
 }
 
 .mw-node .field-group-images-true.field-layout-inline label {
-  text-align: left;
-  justify-content: flex-start;
+  text-align: center;
   padding: .3rem .5rem;
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 27px;
   font-size: 18px;
   transition: ease-in-out 150ms all;
+  display: flex;
+  gap: 0;
 }
 
-/* .mw-node .field-group-images-true.field-layout-inline label.disabled {
-  cursor: pointer;
-} */
+.mw-node .field-group-images-true.field-layout-inline label .label-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 
-.mw-node .field-group-images-false.field-layout-inline label {
+@media only screen and (min-width: 768px) {
+
+  .mw-node .field-group-images-true.field-layout-inline label .label-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+#root_energy_star_cert label {
+  text-align: left;
+  padding: .3rem .5rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 27px;
+  font-size: 18px;
   transition: ease-in-out 150ms all;
-  outline: var(--border-outline) solid transparent;
-  outline-offset: calc(var(--border-outline) * -1);
+  display: block;
 }
+
+#root_energy_star_cert .label-content {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
 
 .mw-node .field-layout-inline img {
   max-height: 48px;
@@ -367,34 +403,68 @@ strong {
   margin-left: 10px;
 }
 
-.mw-node input[type='radio']:hover+label {
+/* .mw-node .field-group-images-false label:not(.disabled):not(.selected-true):hover,
+.field-group-images-true label:not(.disabled):not(.selected-true):hover {
   background-color: var(--color-light);
   border-color: var(--color-select);
   outline: var(--border-outline) solid var(--color-select);
   outline-offset: calc(var(--border-outline) * -1);
-}
+  cursor: pointer;
+} */
 
-.mw-node input[type='radio']:hover+label.disabled {
+/* .mw-node input[type='radio']:hover+label.disabled {
   background-color: white;
   border-color: black;
   outline-color: transparent;
+} */
+
+.mw-node .field-radio-group label {
+  border-color: black;
+  outline: var(--border-outline) solid transparent;
+  outline-offset: calc(var(--border-outline) * -1);
+  transition: ease-in-out 100ms all; 
 }
 
-.mw-node input[type='radio']:checked:hover+label {
+.mw-node .field-radio-group label.selected-true {
+  border-color: var(--color-select);
+  outline: var(--border-outline) solid var(--color-select);
+  outline-offset: calc(var(--border-outline) * -1);
+  transition: ease-in-out 100ms all; 
+}
+
+.mw-node .field-radio-group label:hover, 
+.mw-node .field-radio-group label:focus {
+  border-color: var(--color-select);
+  outline: var(--border-outline) solid var(--color-select);
+  outline-offset: calc(var(--border-outline) * -1);
+  background-color: var(--color-light);
+  cursor: pointer;
+}
+
+
+.mw-node .field-radio-group label.selected-true:hover {
+  border-color: var(--color-select);
+  outline: var(--border-outline) solid var(--color-select);
+  outline-offset: calc(var(--border-outline) * -1);
+  background-color: transparent;
+}
+
+.mw-node .field-radio-group .selected-false.disabled:hover {
+  border-color: black;
+  outline: none;
+  background-color: transparent;
+}
+
+
+/* .mw-node .field-group-images-false label.selected-true {
   border-color: var(--color-select);
   outline: var(--border-outline) solid var(--color-select);
   outline-offset: calc(var(--border-outline) * -1);
 }
 
-.mw-node .field-group-images-false input[type=radio]:checked+label {
+.mw-node .field-group-images-false label:focus {
   border-color: var(--color-select);
-  outline: var(--border-outline) solid var(--color-select);
-  outline-offset: calc(var(--border-outline) * -1);
-}
-
-.mw-node .field-group-images-false input[type=radio]+label:focus {
-  border-color: var(--color-select);
-}
+} */
 
 .mw-node .form-group {
   margin-top: 0;
@@ -469,10 +539,6 @@ strong {
   #root_energy_star_cert {
     grid-template-columns: 1fr 1fr;
   }
-}
-
-#root_energy_star_cert label {
-  flex-direction: row-reverse;
 }
 
 
@@ -865,7 +931,7 @@ ul.error-detail .text-danger {
 
 .next-and-back-hidden-false {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   gap: var(--grid-gap-small);
   margin-top: 32px;
@@ -873,8 +939,8 @@ ul.error-detail .text-danger {
 
 @media only screen and (min-width: 768px) {
   .next-and-back-hidden-false {
-    justify-content: flex-start;
-    flex-direction: row-reverse;
+    justify-content: flex-end;
+    flex-direction: row;
     gap: 16px;
   }
 }
@@ -1222,7 +1288,7 @@ table .available:before {
 
 @media only screen and (min-width: 980px) {
   .no-results {
-    padding:var(--grid-gap-default) 0;
+    padding: var(--grid-gap-default) 0;
   }
 }
 
@@ -1438,9 +1504,8 @@ table .available:before {
   height: 50px;
 }
 
-.findDealerForm input:focus {
-  outline: 2px solid #616161;
-  ;
+.findDealerForm input:focus-visible {
+  outline: 2px solid var(--color-select);
   outline-offset: -2px;
 }
 
@@ -1477,8 +1542,8 @@ table .available:before {
 }
 
 .findDealerForm button:focus {
-  outline: 2px solid #616161;
-  outline-offset: -2px;
+  outline: 2px solid var(--color-select);
+  outline-offset: -2px; 
 }
 
 
@@ -1619,6 +1684,18 @@ table .available:before {
   opacity: 0.3;
   cursor: not-allowed;
 }
+.select-mw__control {
+  outline: var(--border-outline) solid transparent;
+  outline-offset: calc(var(--border-outline) * -1);
+  transition: ease-in-out 150ms all;
+}
+
+.select-mw__control--menu-is-open, .select-mw__control--is-focused  {
+  border: 1px solid var(--color-select) !important;
+  outline: var(--border-outline) solid var(--color-select) !important;
+  outline-offset: calc(var(--border-outline) * -1);
+}
+
 
 /**********************************************
  Style non-searchable react select inputs. 

@@ -44,6 +44,7 @@ const ManywaysRadioWidget = ({
 
   return (
     <div
+      role="radiogroup"
       className={`field-radio-group 
       field-group-images-${!!schema.enum_icons || hasImages()} 
       ${inline ? "field-layout-inline" : "field-layout-block"}`}
@@ -77,15 +78,9 @@ const ManywaysRadioWidget = ({
                 onBlur={handleBlur}
                 onFocus={handleFocus}
                 aria-describedby={ariaDescribedByIds(id)}
+                tabIndex={-1}
               />
-              <label
-                tabIndex={1}
-                htmlFor={optionId(id, i)}
-                className={`${disabledCls}`}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") handleChange();
-                }}
-              >
+              <div className="label-content">
                 {(!!schema.enum_icons?.[i] || !!option?.schema?.icon?.url) && (
                   <img
                     src={schema?.enum_icons?.[i] || option?.schema?.icon?.url}
@@ -93,7 +88,7 @@ const ManywaysRadioWidget = ({
                   />
                 )}
                 <div>
-                  <div dangerouslySetInnerHTML={{ __html: option.label }} />
+                  <span dangerouslySetInnerHTML={{ __html: option.label }} />
 
                   {(!!schema.enum_descriptions?.[i] ||
                     option?.schema?.description) && (
@@ -103,19 +98,25 @@ const ManywaysRadioWidget = ({
                     </p>
                   )}
                 </div>
-              </label>
+              </div>
             </>
           );
 
           return (
-            <div
+            <label
               key={i}
               className={`${
                 inline ? "radio-inline" : "radio"
-              } selected-${checked}`}
+              } selected-${checked} ${disabledCls}`}
+              tabIndex={disabled ? -1 : 0}
+              role="radio"
+              htmlFor={optionId(id, i)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleChange();
+              }}
             >
               {radio}
-            </div>
+            </label>
           );
         })}
     </div>

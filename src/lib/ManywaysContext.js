@@ -89,7 +89,9 @@ const ManywaysProvider = ({
       return;
     }
 
-    if (shouldContinue()) {
+    console.log(ignoreContinue);
+
+    if (shouldContinue() && !ignoreContinue) {
       const sessionId = window.location.search.split("continue=")[1];
       continueJourney(sessionId);
     } else {
@@ -283,7 +285,7 @@ const ManywaysProvider = ({
     setCurrentNodeId(false);
     setTreeConfig({});
     setIsLoading(true);
-    await getInitialData();
+    await getInitialData({}, { ignoreContinue: true });
   };
 
   const setUpUmami = () => {
