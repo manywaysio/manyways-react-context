@@ -81,6 +81,7 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
         ? options?.enumOptions
         : temp_opts;
     //Default
+
     // if (_theOptions?.length === 1) {
     //   onChange(_theOptions[0].value);
     // }
@@ -119,6 +120,7 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
       document.removeEventListener("keydown", handleEscKey);
     };
   }, []);
+
 
   let temp_opts = [
     { value: "xxx", label: "XXX" },

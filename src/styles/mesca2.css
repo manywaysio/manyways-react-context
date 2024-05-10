@@ -1011,6 +1011,7 @@ ul.error-detail .text-danger {
   text-align: center;
 }
 
+
 .mw-back:after {
   content: ' ';
   position: relative;
@@ -1344,9 +1345,9 @@ table .available:before {
 /* Footer  */
 
 .mw-container-footer {
-  max-width: 100%;
+  max-width: var(--content-width);
   margin: auto;
-  padding: 0;
+  padding: 0 var(--content-padding-x) 45px var(--content-padding-x);
 }
 
 .mw-container-footer p,
@@ -1624,6 +1625,7 @@ table .available:before {
   margin: auto;
   padding: 0 var(--content-padding-x) 45px var(--content-padding-x);
 }
+
 
 @media only screen and (min-width: 768px) {
 
