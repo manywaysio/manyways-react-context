@@ -6,7 +6,7 @@ const Header = () => {
 
   const content = mergeNodetoLocaleNoSubNode(treeConfig?.run_mode, locale);
 
-  console.log(treeConfig);
+  // console.log(treeConfig);
 
   return (
     <header>

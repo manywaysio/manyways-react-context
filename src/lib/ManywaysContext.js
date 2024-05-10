@@ -21,7 +21,9 @@ const ManywaysProvider = ({
   let [currentNodeId, setCurrentNodeId] = useState(false);
   let [responses, setResponses] = useState([]);
   let [isLoading, setIsLoading] = useState(true);
-
+  let [slugAndRevisionParams, setSlugAndRevisionParams] = useState(
+    `${slug}/begin`
+  );
   let currentNode =
     setCurrentNodeId !== false
       ? nodes.find((n) => n.id === currentNodeId)
@@ -31,39 +33,109 @@ const ManywaysProvider = ({
     website: treeConfig?.analytics_config?.umami_id,
   };
 
-  const getInitialData = async (props = {}) => {
-    const { callback = () => {}, callbackArgs = {} } = props;
-    setIsLoading(true);
-    await fetch(`https://mw-apiv2-prod.fly.dev/response_sessions/${slug}/begin`)
-      .then((response) => response.json())
-      .then((data) => {
-        setNodes([data?.current_node]);
-        setCurrentNodeId(data?.node_id);
-        setResponseId(data?.id);
-        setTreeConfig(data?.revision);
-        setIsLoading(false);
-        callback({ data, nodes: [data?.current_node], callbackArgs });
+  const isPreview = () => {
+    // @TODO
+    // if (window.location.search.includes("revision")) {
+    //   let revisionId = window.location.search
+    //     .split("revision=")[1]
+    //     .split("&")[0];
+    //   setSlugAndRevisionParams(`${slug}/begin?revision=${revisionId}`);
+    // }
 
-        setTimeout(() => {
-          // hack for tabs
-          document
-            .querySelectorAll(".mw-node-find-by-form .field-radio-group label")
-            .forEach((el) => {
-              el.addEventListener("click", function () {
-                if (!!el.closest(".is-current-node-true")) {
-                  console.log("no response. should be forwarded");
-                  return false;
-                } else {
-                  console.log("response exists. should be restarted in queue");
-                  window.manyways.restartInQueue([{ result: el.innerText }]);
-                }
+    return window.location.search.includes("preview");
+  };
+
+  const getRevisionId = () => {
+    let revisonID =
+      window?.location?.search?.split("revision=")?.[1]?.split("&")?.[0] || "";
+    return revisonID ? `?revision=${revisonID}` : "";
+  };
+
+  const shouldContinue = () => {
+    return window.location.search.includes("continue");
+  };
+
+  const postMessageHandler = (ev) => {
+    if (ev.data.type === "SCHEMA_UPDATED") {
+      // console.log(
+      //   "from SDK - schema updated - I should update my ManywaysContext in SDK",
+      //   ev.data
+      // );
+      setNodes([ev.data.node]);
+    }
+  };
+
+  useEffect(() => {
+    if (!isPreview()) {
+      return;
+    }
+    window.parent.postMessage({ type: "IFRAME_READY" }, "*");
+    // listen for postmessage
+    window.addEventListener("message", postMessageHandler);
+    return () => {
+      window.removeEventListener("message", postMessageHandler);
+    };
+  }, []);
+
+  const getInitialData = async (
+    props = {},
+    ignoreContinue = false,
+    ignorePreview = false
+  ) => {
+    const { callback = () => {}, callbackArgs = {} } = props;
+
+    if (isPreview()) {
+      setIsLoading(false);
+      return;
+    }
+
+    console.log(ignoreContinue);
+
+    if (shouldContinue() && !ignoreContinue) {
+      const sessionId = window.location.search.split("continue=")[1];
+      continueJourney(sessionId);
+    } else {
+      setIsLoading(true);
+      await fetch(
+        `https://mw-apiv2-prod.fly.dev/response_sessions/${slugAndRevisionParams}${getRevisionId()}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setNodes([data?.current_node]);
+          setCurrentNodeId(data?.node_id);
+          setResponseId(data?.id);
+          setTreeConfig(data?.revision);
+          setIsLoading(false);
+          callback({ data, nodes: [data?.current_node], callbackArgs });
+
+          setTimeout(() => {
+            // hack for tabs
+            document
+              .querySelectorAll(
+                ".mw-node-find-by-form .field-radio-group label"
+              )
+              .forEach((el) => {
+                el.addEventListener("click", function () {
+                  if (!!el.closest(".is-current-node-true")) {
+                    console.log("no response. should be forwarded");
+                    return false;
+                  } else {
+                    console.log(
+                      "response exists. should be restarted in queue"
+                    );
+                    window.manyways.restartInQueue([{ result: el.innerText }]);
+                  }
+                });
               });
-            });
-        }, 400);
-      });
+          }, 400);
+        });
+    }
   };
 
   const goForward = async ({ formData }) => {
+    if (isPreview()) {
+      return;
+    }
     if (!!isLoading) {
       console.log("is loading aborting go forward");
       return false;
@@ -75,23 +147,8 @@ const ManywaysProvider = ({
     };
 
     Object.keys(formData).forEach((key) => {
-      window.umami.track(formData[key]);
+      !isPreview() && !getRevisionId() && window.umami.track(formData[key]);
     });
-
-    // window.umami.track({
-    //   title: currentNode?.title,
-    //   data: {
-    //     nodeId: currentNode?.id,
-    //     response: JSON.stringify(formData),
-    //   },
-    //   hostname: window.location.hostname,
-    //   language: navigator.language,
-    //   referrer: document.referrer,
-    //   screen: `${window.screen.width}x${window.screen.height}`,
-    //   url: window.location.pathname,
-    //   website: treeConfig?.analytics_config?.umami_id,
-    //   name: "Node Response",
-    // });
 
     await fetch(
       `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}`,
@@ -105,11 +162,13 @@ const ManywaysProvider = ({
     )
       .then((response) => response.json())
       .then((data) => {
-        window.umami.track((props) => ({
-          ...props,
-          url: `/${slugify(data.title)}`,
-          title: data.title,
-        }));
+        !isPreview() &&
+          !getRevisionId() &&
+          window.umami.track((props) => ({
+            ...props,
+            url: `/${slugify(data.title)}`,
+            title: data.title,
+          }));
 
         let final_json = data?.form_schema;
         try {
@@ -128,6 +187,9 @@ const ManywaysProvider = ({
   };
 
   const goBack = async function () {
+    if (isPreview()) {
+      return;
+    }
     let currentNodeIndexInResponses = responses.findIndex(
       (r) => r.node_id === currentNodeId
     );
@@ -223,7 +285,7 @@ const ManywaysProvider = ({
     setCurrentNodeId(false);
     setTreeConfig({});
     setIsLoading(true);
-    await getInitialData();
+    await getInitialData({}, { ignoreContinue: true });
   };
 
   const setUpUmami = () => {

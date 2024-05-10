@@ -77,7 +77,7 @@ function ManywaysSelectWidget({
   );
 
   return (
-    <div class="select-wrapper">
+    <div className="select-wrapper">
       <select
         id={id}
         name={id}
