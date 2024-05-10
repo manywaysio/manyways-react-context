@@ -86,7 +86,6 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
   }, []);
 
 
-
   // close on escape
   useEffect(() => {
     const handleEscKey = (event) => {

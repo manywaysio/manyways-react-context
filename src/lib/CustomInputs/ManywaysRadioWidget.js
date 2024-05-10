@@ -34,6 +34,9 @@ const ManywaysRadioWidget = ({
   );
 
   const hasImages = () => {
+    if (!enumOptions) {
+      return false
+    }
     return (
       enumOptions.find(
         (item) =>

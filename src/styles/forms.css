@@ -197,11 +197,14 @@
   color: var(--color-dark);
 }
 
+.mw-node .radio input {
+  position: absolute;
+}
+
 .mw-node .field-group-images-true label {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  gap: var(--grid-gap-small);
   align-items: center;
   background-color: #fff;
   border: var(--border-width) solid var(--border-color);
@@ -210,13 +213,28 @@
   height: 100%;
 }
 
-.mw-node .field-group-images-true input[type='radio']+label {
+.mw-node .field-group-images-true .radio-inline .label-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gap-small);
+  text-align: center;
+}
+
+
+.mw-node .field-group-images-true .radio .label-content {
+  display: flex;
+  gap: var(--grid-gap-small);
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mw-node .field-group-images-true .selected-true label {
   transition: ease-in-out 200ms all;
   outline: var(--border-outline) solid transparent;
   outline-offset: calc(var(--border-outline) * -1);
 }
 
-.mw-node .field-group-images-true input[type='radio']:checked+label {
+.mw-node .field-group-images-true .selected-true label {
   background-color: var(--color-select-light);
   border-color: var(--color-select);
   outline: var(--border-outline) solid var(--color-select);
