@@ -34,7 +34,11 @@ window.manyways = {};
 window.manyways.restart = function (e) {
   !!e && e.preventDefault();
   window.umami.track("restart");
-  window.location.reload();
+  if (window.location.search.includes("continue") !== -1) {
+    window.location.href = window.location.href.split("?")[0];
+  } else {
+    window.location.reload();
+  }
 };
 
 window.manyways.dispatcher = (function () {

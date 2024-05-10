@@ -73,6 +73,7 @@ const selectStyles = {
 const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
   const { options, id } = props;
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const _theOptions =
@@ -80,23 +81,46 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
         ? options?.enumOptions
         : temp_opts;
     //Default
-    if (_theOptions?.length === 1) {
-      onChange(_theOptions[0].value);
-    }
+
+    // if (_theOptions?.length === 1) {
+    //   onChange(_theOptions[0].value);
+    // }
 
     // Only for mesca root_indoor
-    // if (id === "root_indoor" && _theOptions?.length === 1) {
-    //   onChange(_theOptions[0].value);
-    //   if (!value) {
-    //     onChange(_theOptions[0].value);
-    //   } else {
-    //     const optionVals = _theOptions.find((item) => item?.value === value);
-    //     if (!optionVals) {
-    //       onChange(_theOptions[0].value);
-    //     }
-    //   }
-    // }
+    if (id === "root_indoor" && _theOptions?.length === 1) {
+      if (!value) {
+        onChange(_theOptions[0].value);
+      } else {
+        const optionVals = _theOptions.find((item) => item?.value === value);
+        if (!optionVals) {
+          onChange(_theOptions[0].value);
+        }
+      }
+    }
   }, [onChange]);
+
+
+  // close on escape
+  useEffect(() => {
+    const handleEscKey = (event) => {
+      if (event.keyCode === 27) {
+        setMenuIsOpen(false);
+      }
+    };
+
+    const shiftTabKeyListener = (event) => {
+      if (event.keyCode === 9 && event.shiftKey) { // 9 is the keycode for Tab key
+        setMenuIsOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleEscKey);
+    document.addEventListener("keydown", shiftTabKeyListener);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscKey);
+    };
+  }, []);
+
 
   let temp_opts = [
     { value: "xxx", label: "XXX" },
@@ -123,7 +147,6 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
               width: "100%",
               height: "100%",
               zIndex: "1",
-              backgroundColor: "red",
               opacity: "0",
             }}
             onClick={(e) => {
@@ -138,7 +161,6 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
               width: "80px",
               height: "100%",
               zIndex: "20",
-              backgroundColor: "red",
               opacity: "0",
               cursor: "pointer",
             }}
@@ -150,7 +172,7 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
       )}
       <Select
         onChange={(v) => {
-          console.log(v);
+          // console.log(v);
           onChange(v.value);
           setMenuIsOpen(false);
         }}
@@ -163,16 +185,14 @@ const ManywaysSelect = ({ value, onChange, disabled, ...props }) => {
           // );
         }}
         onFocus={() => {
-          console.log("focus");
           setMenuIsOpen(true);
         }}
         onDropdownClose={() => {
-          console.log("dd close");
+          // console.log("dd close");
         }}
         blurInputOnSelect={true}
         onBlur={() => {
-          console.log("blur");
-          // setMenuIsOpen(false);
+          // !isMobile && setMenuIsOpen(false);
         }}
         menuIsOpen={menuIsOpen}
         isDisabled={disabled}
