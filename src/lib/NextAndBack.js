@@ -29,10 +29,18 @@ const NextAndBack = ({ currentNode = {}, className }) => {
           goBack();
         }}
       >
-        {labels ? labels.back : "Change Search Category"}
+        {currentNode?.ui_variables?.custom_back_text
+          ? currentNode.ui_variables.custom_back_text
+          : labels
+            ? labels.back
+            : "Restart"}
       </button>
       <button className={`${classNamePrefix}-next`} type="submit">
-        {labels ? labels.next : "Next"}
+        {currentNode?.ui_variables?.custom_next_text
+          ? currentNode.ui_variables.custom_next_text
+          : labels
+            ? labels.next
+            : "Next"}
       </button>
     </div>
   );

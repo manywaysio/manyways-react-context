@@ -1428,7 +1428,7 @@ body {
 }
 
 body {
-  border-top: 3px solid #d40000;
+  /* border-top: 3px solid #d40000; */
   font-weight: 400;
   box-sizing: border-box;
   font-size: 14px

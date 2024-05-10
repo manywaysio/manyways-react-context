@@ -25,7 +25,7 @@ function App({ locale, slug, mode = "scroll" }) {
   `;
 
   return (
-    <ManywaysProvider slug={slug} locale={locale} mode={mode}>
+    <ManywaysProvider slug={'rebates-2-copy'} locale={locale} mode={mode}>
       <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
     </ManywaysProvider>
   );
