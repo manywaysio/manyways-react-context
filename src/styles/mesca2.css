@@ -364,7 +364,9 @@ button:focus-visible, a:focus-visible, .button:focus-visible, .button-primary:fo
 .mw-node .field-group-images-true.field-layout-inline label .label-content {
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: flex-start;
+  text-align:left;
 }
 
 @media only screen and (min-width: 768px) {
@@ -374,6 +376,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible, .button-primary:fo
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    text-align:center;
   }
 }
 
