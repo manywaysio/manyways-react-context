@@ -370,11 +370,13 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
   font-size: 18px;
   transition: ease-in-out 150ms all;
   display: flex;
+  align-items:center;
   gap: 0;
 }
 
 .mw-node .field-group-images-true.field-layout-inline label .label-content {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
