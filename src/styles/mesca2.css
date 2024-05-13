@@ -370,6 +370,8 @@ button:focus-visible, a:focus-visible, .button:focus-visible, .button-primary:fo
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-direction: row;
+  text-align: left;
 }
 
 @media only screen and (min-width: 768px) {
@@ -379,6 +381,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible, .button-primary:fo
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    text-align: center;
   }
 }
 
