@@ -45,6 +45,32 @@ const NodeRenderer = (props) => {
     locale,
   } = useManyways();
 
+  const [transitioningNodes, setTransitioningNodes] = useState([]);
+
+  //add transitioning state to last two nodes
+  useEffect(() => {
+    if (nodes) {
+      const updatedNodes = nodes.map((node, index) => {
+        if (index === nodes.length - 1 || index === nodes.length - 2) {
+          return true;
+        }
+        return false;
+      });
+      setTransitioningNodes(updatedNodes);
+    }
+
+    const timeout = setTimeout(() => {
+      if (nodes) {
+        const updatedNodes = nodes.map(() => {
+          return false;
+        });
+        setTransitioningNodes(updatedNodes);
+      }
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, [nodes]);
+
   return nodes
     .filter((n) => {
       if (mode === "scroll") {
@@ -102,6 +128,7 @@ const NodeRenderer = (props) => {
           is-full-screen-${!!isFullScreen}
           has-background-${!!backgroundImage}
           has-foreground-${!!foregroundImage}
+          is-transitioning-${!!transitioningNodes[currentNodeIndex]}
           is-first-node-${isFirstNode}
           ${classNamePrefix}-node-${slugify(currentNode?.title)}
           `}
