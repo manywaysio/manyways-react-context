@@ -382,16 +382,6 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
   text-align: left;
 }
 
-@media only screen and (min-width: 768px) {
-
-  .mw-node .field-group-images-true.field-layout-inline label .label-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-  }
-}
 
 #root_energy_star_cert label {
   text-align: left;
@@ -403,6 +393,8 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
   transition: ease-in-out 150ms all;
   display: block;
 }
+
+
 
 .mw-form .mw-node-products-form .label-content {
   display: flex;
@@ -420,6 +412,21 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
   object-fit: contain;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .mw-node .field-group-images-true.field-layout-inline label .label-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+  #root_energy_star_cert label .label-content {
+    text-align: left;
+  }
 }
 
 /* .mw-node .field-group-images-false label:not(.disabled):not(.selected-true):hover,
