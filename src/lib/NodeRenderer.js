@@ -12,6 +12,7 @@ import Select from "react-select";
 import { useEffect, useState } from "react";
 import ManywaysSelect from "./CustomInputs/ManywaysSelect";
 import RightSizingLocationLookup from "./CustomInputs/RightSizingLocationLookup";
+import AHRILookup from "./CustomInputs/AHRILookup";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -192,6 +193,7 @@ const NodeRenderer = (props) => {
               }}
               fields={{
                 MediaContent: MediaContent,
+                AHRILookup,
               }}
               transformErrors={transformErrors}
               key={currentNode?.id || 1123456789}
