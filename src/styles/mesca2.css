@@ -573,7 +573,7 @@ a:focus-visible,
 
 .mw-form:not(.mw-node-find-by-form) .label-content {
   position: relative;
-  margin-top: -3px;
+  margin-top: -2px;
 }
 
 .mw-form:not(.mw-node-find-by-form) .label-content div {
@@ -584,8 +584,8 @@ a:focus-visible,
 
 .mw-form:not(.mw-node-find-by-form) .label-content:before {
   content: '';
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   border: 2px solid #E1E1E1;
   position: absolute;
@@ -1810,6 +1810,11 @@ table .available:before {
   grid-gap: 10px;
 }
 
+.field-layout-block {
+  gap: 10px;
+  grid-gap: 10px;
+}
+
 @media only screen and (min-width: 980px) {
   .mw-node-ashp-configuration-form .field-layout-inline {
     flex-direction: row;
@@ -1836,7 +1841,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6
 {
 transform: skewX(-3deg);
 }
@@ -1906,13 +1911,15 @@ blockquote p {
 
 } */
 
-.mw-node-indoor-unit-configuration-form .field-string {
-  box-sizing: border-box;
+
+.mw-node .form-group.field-string input {
+  padding: 1.1rem 1rem;
 }
 
 
 @media only screen and (min-width: 980px) {
-  .mw-node-indoor-unit-configuration-form .field-string {
+  .mw-node-indoor-unit-configuration-form .field-string, 
+  .mw-node-design-inputs-form .field-string {
     width: calc( 50% - 5px );
     position: relative;
     display: inline-block;
@@ -1920,7 +1927,8 @@ blockquote p {
 
   .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(2), 
   .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(4),
-  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(6)  {
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(6),
+  .mw-node-design-inputs-form .field-string:nth-of-type(2) {
     margin-right: 5px;
   }
   .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(1), 
@@ -1930,6 +1938,39 @@ blockquote p {
   }
 
 }
+
+.mw-node-location-form ul {
+  margin-top: 0;
+  padding-left: 0;
+  box-sizing: border-box;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  position: relative;
+  box-sizing: border-box;
+box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 11px rgba(0, 0, 0, .1);
+}
+
+
+
+.mw-node-location-form ul li {
+  padding: 8px 12px;
+  position: relative;
+  list-style: none;
+  margin-left: 0;
+
+}
+
+.mw-node-location-form ul li:hover,
+.select-mw__option--is-focused,
+.mw-node-location-form ul li:hover,
+.select-mw__option--is-selected, 
+.select-mw__option:hover  {
+  background-color: var(--color-light);
+  cursor: pointer;
+}
+
 
 .the-top {
   display: flex;
