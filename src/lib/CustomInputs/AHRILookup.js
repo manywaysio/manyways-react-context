@@ -36,9 +36,26 @@ const AHRILookup = ({
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        let highstageHeating = {};
+        let highstageCooling = {};
+        data?.ratings?.reduce((rating) => {
+          if (rating?.indoor_dry_bulb <= 47 && !!rating.capacity_rated) {
+            highstageHeating.capacity = rating.capacity_rated;
+            highstageHeating.power = rating.power_rated;
+            highstageHeating.cop = rating.cop;
+          }
+          if (rating?.indoor_dry_bulb >= 65 && !!rating.capacity_rated) {
+            highstageCooling.capacity = rating.capacity_rated;
+            highstageCooling.power = rating.power_rated;
+          }
+        });
+
+        setVal({ ...val, ...data, highstageHeating, highstageCooling });
+        onChange({ ...val, ...data, highstageHeating, highstageCooling });
       });
   };
+
+  console.log(val);
 
   return (
     <div>
@@ -80,13 +97,13 @@ const AHRILookup = ({
             aria-describedby="root_ahri__error root_ahri__description root_ahri__help"
             value={val.ahri}
             onChange={(e) => {
-              setVal({ ...val, ahri: e.target.value });
-              getBaseDataFromAHRINumber(e.target.value);
+              setVal({ ahri: e.target.value });
             }}
           />
           <button
             onClick={(e) => {
               e.preventDefault();
+              setVal({ ahri: e.target.value });
               getBaseDataFromAHRINumber(val.ahri);
             }}
             className="fetching-ahri"
@@ -94,6 +111,39 @@ const AHRILookup = ({
             LOOKUP
           </button>
         </div>
+        {val?.ahri_certificate_number && (
+          <div>
+            <div>BRAND: {val.brand}</div>
+            {val.indoor_unit_number && (
+              <div>Indoor Model : {val.indoor_unit_number}</div>
+            )}
+            {val.outdoor_unit_number && (
+              <div>Outdoor Model : {val.outdoor_unit_number}</div>
+            )}
+            {val.highstageHeating && (
+              <div>
+                <div>
+                  High Stage Heating Capacity: {val.highstageHeating.capacity}
+                </div>
+                <div>
+                  High Stage Heating Power: {val.highstageHeating.power}
+                </div>
+                <div>High Stage Heating COP: {val.highstageHeating.cop}</div>
+              </div>
+            )}
+            {val.highstageCooling && (
+              <div>
+                <div>
+                  High Stage Cooling Capacity: {val.highstageCooling.capacity}
+                </div>
+                <div>
+                  High Stage Cooling Power: {val.highstageCooling.power}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+        <div>{JSON.stringify(val)}</div>
       </div>
     </div>
   );
