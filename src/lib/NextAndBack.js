@@ -33,7 +33,7 @@ const NextAndBack = ({ currentNode = {}, className }) => {
           ? currentNode.ui_variables.custom_back_text
           : labels
             ? labels.back
-            : "Restart"}
+            : "Back"}
       </button>
       <button className={`${classNamePrefix}-next`} type="submit">
         {currentNode?.ui_variables?.custom_next_text
