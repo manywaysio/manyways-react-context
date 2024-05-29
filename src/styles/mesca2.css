@@ -1826,7 +1826,7 @@ h6,
   /* font-family: "Bebas Neue", sans-serif; */
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
-  font-style: norl;
+  font-style: normal;
   text-transform: uppercase;
   letter-spacing: -0.3px;
 }
@@ -1868,6 +1868,14 @@ h4:after {
   background-color: #000;
   content: '';
   display: block;
+}
+
+button.fetching-ahri {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #000;
+  color: WHITE;
 }
 
 .next-and-back-hidden-false {
@@ -1921,4 +1929,29 @@ blockquote p {
     margin-left: 5px;
   }
 
+}
+
+.the-top {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 4px solid var(--color-select);
+  z-index: 10;
+}
+
+.the-top-spacer {
+  height: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+    padding-left: 10px;
+  }
+    .the-top img {
+      max-width: 44px;
+    }
 }

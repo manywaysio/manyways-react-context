@@ -31,10 +31,8 @@ const AHRILookup = ({
   const getBaseDataFromAHRINumber = async (ahriNumber) => {
     // https://ashp.neep.org/api/products/?page=1&style=tile&brand=null&ahri_certificate_number=210404027&system_type=1&config=0&cap5min=0&cap5max=80000&capmin=0&capmax=80000
 
-    if (!ahriNumber || ahriNumber.length < 9) return;
-
     await fetch(
-      `https://ashp.neep.org/api/products/?page=1&style=tile&brand=null&ahri_certificate_number=${ahriNumber}&system_type=1&config=0&cap5min=0&cap5max=80000&capmin=0&capmax=80000`
+      `https://wayfinder.manyways.io/api/ahri?ahri_number=${ahriNumber}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -67,20 +65,35 @@ const AHRILookup = ({
         <label class="control-label" for="root_ahri">
           AHRI Number
         </label>
-        <input
-          id="root_ahri"
-          name="root_ahri"
-          class="form-control"
-          label="Percentage of savings possible by performing all recommend non-space heating upgrades"
-          placeholder=""
-          type="text"
-          aria-describedby="root_ahri__error root_ahri__description root_ahri__help"
-          value={val.ahri}
-          onChange={(e) => {
-            setVal({ ahri: e.target.value });
-            getBaseDataFromAHRINumber(e.target.value);
+        <div
+          style={{
+            display: "flex",
           }}
-        />
+        >
+          <input
+            id="root_ahri"
+            name="root_ahri"
+            class="form-control"
+            label="Percentage of savings possible by performing all recommend non-space heating upgrades"
+            placeholder=""
+            type="text"
+            aria-describedby="root_ahri__error root_ahri__description root_ahri__help"
+            value={val.ahri}
+            onChange={(e) => {
+              setVal({ ...val, ahri: e.target.value });
+              getBaseDataFromAHRINumber(e.target.value);
+            }}
+          />
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              getBaseDataFromAHRINumber(val.ahri);
+            }}
+            className="fetching-ahri"
+          >
+            LOOKUP
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { set } from "lodash";
+import React, { useEffect, useState } from "react";
 
 /*
 Based on where they are located, populate the Climate type and the HDD(metric).
@@ -78,13 +79,28 @@ const getClimateIndexes = async ({
     .then((data) => data.features[0]);
 };
 
-const RightSizingLocationLookup = ({ value, onChange }) => {
+const RightSizingLocationLookup = ({ value = "{}", onChange }) => {
+  console.log(JSON.parse(value));
+
   const [addressvalue, setAddressValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [selectedSuggestion, setSelectedSuggestion] = useState(null);
   const [candidateAddress, setCandidateAddress] = useState(null);
   const [climateIndexes, setClimateIndexes] = useState(null);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    try {
+      let xx = JSON.parse(value);
+      if (!!xx) {
+        setAddressValue(xx.text);
+        setClimateIndexes({ attributes: xx });
+        console.log("set climate to ", xx);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }, []);
 
   const handleAddressChange = async (address) => {
     setAddressValue(address);
@@ -157,9 +173,9 @@ const RightSizingLocationLookup = ({ value, onChange }) => {
           <p>{candidateAddress.address}</p>
         </div>
       )} */}
-      {climateIndexes && (
+      {!!climateIndexes && typeof climateIndexes === "object" && (
         <div>
-          <h3>Climate Indexes</h3>
+          <h3>Climate INDICES</h3>
           <div
             style={{
               display: "grid",
