@@ -157,9 +157,9 @@ const AHRILookup = (props) => {
                       <h4>
                         {rating.outdoor_dry_bulb}°F
                       </h4>
-                      <div>Heating Capacity: {rating.capacity_rated}</div>
-                      <div>Heating Power: {rating.power_rated}</div>
-                      <div>Heating COP: {rating.cop_rated}</div>
+                      <p><span className="label">Heating Capacity:</span> {rating.capacity_rated}</p>
+                      <p><span className="label">Heating Power: </span> {rating.power_rated}</p>
+                      <p><span className="label">Heating COP:</span> {rating.cop_rated}</p>
                     </div>
                   );
                 })}

@@ -2123,6 +2123,12 @@ input[disabled],
   font-size: 1.5em;
   font-weight: bold;
   color: var(--color-select);
+  margin-bottom: 10px;
+}
+
+.library-card p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .library-card strong {
@@ -2137,7 +2143,12 @@ input[disabled],
 }
 
 .rating {
-  margin-top: 15px;
+  margin-top: 5px; 
+}
+
+.library-card .label {
+  font-weight: 700;
+  margin-top: 10px;
 }
 
 @media only screen and (min-width: 400px) {
