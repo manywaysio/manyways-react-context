@@ -79,7 +79,7 @@ const getClimateIndexes = async ({
     .then((data) => data.features[0]);
 };
 
-const RightSizingLocationLookup = ({ value = "{}", onChange }) => {
+const RightSizingLocationLookup = ({ value = "{}", onChange, disabled }) => {
   console.log(JSON.parse(value));
 
   const [addressvalue, setAddressValue] = useState("");
@@ -142,6 +142,7 @@ const RightSizingLocationLookup = ({ value = "{}", onChange }) => {
       </button> */}
       <input
         type="text"
+        disabled={disabled}
         placeholder="Please input the first 3 characters of your postal code."
         value={selectedSuggestion?.text || addressvalue}
         onChange={(e) => {
@@ -175,15 +176,51 @@ const RightSizingLocationLookup = ({ value = "{}", onChange }) => {
       )} */}
       {!!climateIndexes && typeof climateIndexes === "object" && (
         <div>
-          <h3>Climate INDICES</h3>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr",
-              gap: "1rem",
-            }}
-          >
-            {Object.keys(climateIndexes.attributes)
+
+          {climateIndexes?.attributes?.Name && (
+            <>
+              <h3>Climate INDICES</h3>
+              <div className="index-card">
+                <h3>{climateIndexes?.attributes?.Name}</h3>
+                <p className="text">{climateIndexes?.attributes?.text }</p>
+                {climateIndexes?.attributes?.isCollection && (
+                  <span>Is Collection</span>
+                )}
+                {climateIndexes?.attributes?.magicKey && (
+                  <p className="magic-key">
+                    <span className="label">Magic Key:</span>{" "}
+                    {climateIndexes.attributes.magicKey}
+                  </p>
+                )}
+
+                <div className="index-details">
+                  <p>
+                    <span className="label">DCDBT:</span>
+                    <span>{climateIndexes?.attributes?.DCDBT}</span>
+                  </p>
+
+                  <p>
+                    <span className="label">DCWBT:</span>
+                    <span>{climateIndexes?.attributes?.DCWBT}</span>
+                  </p>
+
+                  <p>
+                    <span className="label">DHDBT:</span>
+                    <span>{climateIndexes?.attributes?.DHDBT}</span>
+                  </p>
+
+                  <p>
+                    <span className="label">HDD_Below_18C:</span>
+                    <span>{climateIndexes?.attributes?.HDD_Below_18C}</span>
+                  </p>
+
+                  <p>
+                    <span className="label">Latitude:</span>
+                    <span>{climateIndexes?.attributes?.Latitude}</span>
+                  </p>
+                </div>
+
+                {/* {Object.keys(climateIndexes.attributes)
               .filter((key) => key !== "OBJECTID" && key !== "Shape")
               .map((key) => (
                 <div
@@ -196,8 +233,10 @@ const RightSizingLocationLookup = ({ value = "{}", onChange }) => {
                 >
                   {key}: {climateIndexes.attributes[key]}
                 </div>
-              ))}
-          </div>
+              ))} */}
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>
