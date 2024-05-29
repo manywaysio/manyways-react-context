@@ -1895,7 +1895,8 @@ h4:after {
 .mw-node .field-integer .field-description,
 .mw-node .field-string .field-description,
 .mw-node .field-string .field-description {
-  margin-top: -10px;
+  margin-top: -5px;
+  margin-bottom: 10px;
 }
 
 button.fetching-ahri {
@@ -2044,6 +2045,7 @@ blockquote p {
 
 .the-top-spacer {
   height: 100px;
+  margin-bottom: 35px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2054,6 +2056,10 @@ blockquote p {
 
   .the-top img {
     max-width: 44px;
+  }
+
+  .the-top-spacer {
+    margin-bottom: 0;
   }
 }
 
