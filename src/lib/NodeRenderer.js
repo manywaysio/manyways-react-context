@@ -180,7 +180,7 @@ const NodeRenderer = (props) => {
                 RadioWidget: ManywaysRadioWidget,
                 CheckboxesWidget: ManywaysCheckboxWidget,
                 checkboxes: ManywaysCheckboxWidget,
-                SelectWidget: ManywaysSelectWidget,
+                SelectWidget: ManywaysSelect,
                 Select: ManywaysSelect,
                 Custom: ManywaysCustomWidget,
                 RightSizingLocationLookup: RightSizingLocationLookup,

@@ -1,5 +1,9 @@
 /* Form elements and inputs */
 
+.mw-node * {
+  box-sizing: border-box;
+}
+
 .mw-node fieldset {
   margin: 0;
 }
