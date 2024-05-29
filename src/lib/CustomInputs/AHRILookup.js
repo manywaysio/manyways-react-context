@@ -118,34 +118,20 @@ const AHRILookup = (props) => {
           </button>
         </div>
         {val?.ahri_certificate_number && (
-          <section
-            style={{
-              padding: "2em",
-              margin: "1em 0",
-              backgroundColor: "var(--color-light)",
-            }}
-          >
+          <section className="library-card">
             <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-              }}
+              className="header"
             >
               <div>
-                <h3 style={{ fontSize: "0.9em", margin: 0, padding: 0 }}>
+                <h3>
                   BRAND
                 </h3>
-                <h2 style={{ margin: 0, padding: 0 }}>{val.brand}</h2>
+                <h2>{val.brand}</h2>
               </div>
-              <div>
+              <div className="models">
                 {val.indoor_unit_number && (
                   <div>
-                    <strong
-                      style={{
-                        fontSize: "0.8rem",
-                        display: "block",
-                      }}
-                    >
+                    <strong>
                       Indoor Model
                     </strong>
                     {val.indoor_unit_number}
@@ -153,12 +139,7 @@ const AHRILookup = (props) => {
                 )}
                 {val.outdoor_unit_number && (
                   <div>
-                    <strong
-                      style={{
-                        fontSize: "0.8rem",
-                        display: "block",
-                      }}
-                    >
+                    <strong>
                       Outdoor Model
                     </strong>{" "}
                     {val.outdoor_unit_number}
@@ -172,14 +153,8 @@ const AHRILookup = (props) => {
                 )
                 .map((rating, idx) => {
                   return (
-                    <div key={idx}>
-                      <h4
-                        style={{
-                          fontSize: "1.5em",
-                          fontWeight: "bold",
-                          color: `var(--color-select)`,
-                        }}
-                      >
+                    <div key={idx} className="rating">
+                      <h4>
                         {rating.outdoor_dry_bulb}°F
                       </h4>
                       <div>Heating Capacity: {rating.capacity_rated}</div>
