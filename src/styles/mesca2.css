@@ -96,7 +96,7 @@ body {
   font-weight: 300;
   letter-spacing: .3px;
   line-height: 1.6;
-  font-family: "Manrope", sans-serif;
+  font-family: "PT Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 
@@ -1808,9 +1808,16 @@ table .available:before {
 
 h1, h2, h3, h4, h5, h6,
 .mw-next-and-back button {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
+  /* font-family: "Bebas Neue", sans-serif; */
+  font-family: "PT Sans Narrow", sans-serif;
+    font-weight: 700;
   font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: -0.3px;
+  transform: skewX(-3deg);
+}
+
+h1 {
 }
 
 h2 {
