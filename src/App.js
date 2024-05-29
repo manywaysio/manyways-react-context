@@ -12,8 +12,10 @@ import mescaStyles from "./styles/mesca2.css";
 
 import { ManywaysProvider } from "./lib/ManywaysContext";
 
-function App({ locale, slug, mode = "scroll" }) {
-  const stylesToString = `
+function App({ locale, slug, mode = "scroll", cssString = false }) {
+  const stylesToString =
+    cssString ||
+    `
   ${styles}  
   ${vars}
     ${layoutStyles}
@@ -25,7 +27,11 @@ function App({ locale, slug, mode = "scroll" }) {
   `;
 
   return (
-    <ManywaysProvider slug={'rebates-2-copy'} locale={locale} mode={mode}>
+    <ManywaysProvider
+      slug={"heat-pump-right-sizing-guide"}
+      locale={locale}
+      mode={mode}
+    >
       <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
     </ManywaysProvider>
   );

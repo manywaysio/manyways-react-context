@@ -11,6 +11,7 @@ import { slugify } from "./utils/helpers";
 import Select from "react-select";
 import { useEffect, useState } from "react";
 import ManywaysSelect from "./CustomInputs/ManywaysSelect";
+import RightSizingLocationLookup from "./CustomInputs/RightSizingLocationLookup";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -30,6 +31,21 @@ const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
     }
   }
   return false;
+};
+
+const ManywaysCustomWidget = (props) => {
+  const { schema, value, disabled, onChange, options } = props;
+  const { enumOptions, enumDisabled, emptyValue: optEmptyVal } = options;
+
+  return (
+    <div
+      onClick={(e) => {
+        console.log(props);
+      }}
+    >
+      {value} click
+    </div>
+  );
 };
 
 const NodeRenderer = (props) => {
@@ -165,6 +181,8 @@ const NodeRenderer = (props) => {
                 checkboxes: ManywaysCheckboxWidget,
                 SelectWidget: ManywaysSelectWidget,
                 Select: ManywaysSelect,
+                Custom: ManywaysCustomWidget,
+                RightSizingLocationLookup: RightSizingLocationLookup,
               }}
               onChange={(e) => {
                 if (!!singleChoiceField) {

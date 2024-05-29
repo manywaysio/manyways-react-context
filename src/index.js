@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 // import reportWebVitals from "./reportWebVitals";
 
-console.log("MANYWAYS! ");
+export { ManywaysProvider } from "./lib/ManywaysContext";
 
 try {
   const script = document.createElement("script");
@@ -19,7 +19,7 @@ class ManywaysWrapper extends HTMLElement {
     const mountPoint = document.createElement("div");
     this.attachShadow({ mode: "open" }).appendChild(mountPoint);
 
-    const slug = this.getAttribute("slug") || "rebates-2";
+    const slug = this.getAttribute("slug") || "heat-pump-right-sizing-guide";
     const locale = this.getAttribute("locale");
     const root = ReactDOM.createRoot(mountPoint);
     root.render(<App locale={locale} slug={slug} />);

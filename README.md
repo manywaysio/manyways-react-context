@@ -1,73 +1,45 @@
-#manyways
+# manyways
 
-## Running the SDK.
+## Ideal state to support
 
-#### Initialization
+```js
 
-```jsx
-import ManywaysProvider from "@manyways/run";
+npm i @manyways/run --save
 
-const MyApp = ({ children }) => {
-  return (
-    <>
-      <ManywaysRunProvider
-        slug="my-slug"
-        customComponents={{
-          choiceWithImage: MyComponent,
-        }}
-        disableRender={false}
-      >
-        {children}
-      </ManywaysRunProvider>
-    </>
-  );
-};
+1. Do whatever you want with the context. Do not use the node renderer or abything - everything is custom except the travelsal of nodes and analytics and common functions
+
+import useManyways {ManywaysContext} from '@manyways/run';
+
+
+const MyCustomRenderer = () => {
+  const {currentNode} = useManyways();
+}
+
+<ManywaysContext mode="slideshow">
+  <MyCustomRenderer />
+</ManywaysContext>
+
+2. Use with defaults
+
+import {ManywaysContext, NodeRenderer } from '@manyways/run'
+
+<ManywaysContext mode="scroll">
+  <NodeRenderer
+    customWidgets={{
+      RadioWidget: () => {  }
+    }} />
+</ManywaysContext>
+
+3. Just use default only. Add custom CSS via wayfinder.
+
+<script src="manyways.io/run/script.js">
+
+<manyways-wrapper></manyways-wrapper>
 ```
 
-#### <ManywaysRunProvider /> Props
+## Tasks
 
-| Prop             | Description                                                                                                                                                                                  |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| slug (required)  | Your Journey Slug                                                                                                                                                                            |
-| disableRender    | This causes the Provider not to render any components at all, ideally used when in pure headless mode                                                                                        |
-| customComponents | This is ignored if `disableRender` is true. Can provide a object mapped with name and value. Expects the value to be a react component. Full list of component names can be found here @todo |
-
-##### customComponents
-
-All Custom components will have `value` and `onChange` props passed to them.
-
-ChoiceWithImage
-Text
-Date
-DateTime
-Checkbox
-AutoComplete
-MapWithDynamicSource
-Slideshow
-Prose
-
-### useManyways hook
-
-This is the main way to utilize the various methods and journey states used by manyways.
-
-```jsx
-import { useManyways } from "@manyways/run";
-```
-
-##### Getters, setters and actions
-
-| Name                | Desc                                                                                          |
-| ------------------- | --------------------------------------------------------------------------------------------- |
-| currentNode         | The current node object from the api                                                          |
-| currentResponse     | The current user response to the current node if it exists. Will return null if unanswered    |
-| goBack              | Take the user to the previous node. Will return current node if the user is unable to go back |
-| setResponse         | Set the current response                                                                      |
-| goForward           | Go to the next node with the current response                                                 |
-| responseHistory     | An array of response objects with node ids and responses                                      |
-| getResponseByNodeID | Get response for node based on nodeID                                                         |
-| treeConfig          | Get tree config                                                                               |
-| journeyNodes        | Array of all journey nodes                                                                    |
-| locale              | Get the current language                                                                      |
-| setLocale           | Set the current language                                                                      |
-| shareJourney        | Open the share journey panel                                                                  |
-| copyLink            | Copies the link to continue later to the clipboard                                            |
+1. Do the stuff above so it works as an npm package
+2. Transition classes with NO transitions
+3. Document all props for exposed components (eg, ManwaysContext, NodeRenderer, etc) and contexts ( useManywaysContext )
+4. Add support for null field rendering
