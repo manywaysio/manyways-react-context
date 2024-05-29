@@ -1,32 +1,25 @@
 import { useState } from "react";
 
-const AHRILookup = ({
-  schema,
-  value = {
-    indoor_model_number: "",
-    outdoor_model_number: "",
-    heating_capacity_indoor: "",
-    high_stage_heating: "",
-    heating_capacity: "",
-    heating_power: "",
-    heating_cop: "",
-    high_stage_cooling: "",
-    cooling_capacity: "",
-    cooling_powe: "",
-  },
-  disabled,
-  onChange,
-  options,
-  required,
-  label,
-  name,
-  id,
-  readonly,
-  autofocus,
-  rawErrors,
-  ...rest
-}) => {
-  const [val, setVal] = useState(value);
+const AHRILookup = (props) => {
+  const {
+    schema,
+    value = {},
+    disabled,
+    onChange,
+    options,
+    required,
+    label,
+    name,
+    id,
+    formData,
+    readonly,
+    autofocus,
+    rawErrors,
+    ...rest
+  } = props;
+  const [val, setVal] = useState(formData);
+
+  console.log("AHRILookup", props);
 
   const getBaseDataFromAHRINumber = async (ahriNumber) => {
     // https://ashp.neep.org/api/products/?page=1&style=tile&brand=null&ahri_certificate_number=210404027&system_type=1&config=0&cap5min=0&cap5max=80000&capmin=0&capmax=80000
@@ -125,36 +118,78 @@ const AHRILookup = ({
           </button>
         </div>
         {val?.ahri_certificate_number && (
-          <div>
-            <div>BRAND: {val.brand}</div>
-            {val.indoor_unit_number && (
-              <div>Indoor Model : {val.indoor_unit_number}</div>
-            )}
-            {val.outdoor_unit_number && (
-              <div>Outdoor Model : {val.outdoor_unit_number}</div>
-            )}
-            {val.highstageHeating && (
+          <section
+            style={{
+              padding: "2em",
+              margin: "1em 0",
+              backgroundColor: "var(--color-light)",
+            }}
+          >
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+              }}
+            >
               <div>
-                <div>
-                  High Stage Heating Capacity: {val.highstageHeating.capacity}
-                </div>
-                <div>
-                  High Stage Heating Power: {val.highstageHeating.power}
-                </div>
-                <div>High Stage Heating COP: {val.highstageHeating.cop}</div>
+                <h3 style={{ fontSize: "0.9em", margin: 0, padding: 0 }}>
+                  BRAND
+                </h3>
+                <h2 style={{ margin: 0, padding: 0 }}>{val.brand}</h2>
               </div>
-            )}
-            {val.highstageCooling && (
               <div>
-                <div>
-                  High Stage Cooling Capacity: {val.highstageCooling.capacity}
-                </div>
-                <div>
-                  High Stage Cooling Power: {val.highstageCooling.power}
-                </div>
+                {val.indoor_unit_number && (
+                  <div>
+                    <strong
+                      style={{
+                        fontSize: "0.8rem",
+                        display: "block",
+                      }}
+                    >
+                      Indoor Model
+                    </strong>
+                    {val.indoor_unit_number}
+                  </div>
+                )}
+                {val.outdoor_unit_number && (
+                  <div>
+                    <strong
+                      style={{
+                        fontSize: "0.8rem",
+                        display: "block",
+                      }}
+                    >
+                      Outdoor Model
+                    </strong>{" "}
+                    {val.outdoor_unit_number}
+                  </div>
+                )}
               </div>
-            )}
-          </div>
+
+              {val.ratings
+                .filter(
+                  (x) => x.outdoor_dry_bulb == 17 || x.outdoor_dry_bulb == 47
+                )
+                .map((rating, idx) => {
+                  return (
+                    <div key={idx}>
+                      <h4
+                        style={{
+                          fontSize: "1.5em",
+                          fontWeight: "bold",
+                          color: `var(--color-select)`,
+                        }}
+                      >
+                        {rating.outdoor_dry_bulb}°F
+                      </h4>
+                      <div>Heating Capacity: {rating.capacity_rated}</div>
+                      <div>Heating Power: {rating.power_rated}</div>
+                      <div>Heating COP: {rating.cop_rated}</div>
+                    </div>
+                  );
+                })}
+            </div>
+          </section>
         )}
       </div>
     </div>
