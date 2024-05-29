@@ -99,7 +99,6 @@ body {
   font-family: "PT Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-
 }
 
 h1,
@@ -1811,7 +1810,7 @@ h1, h2, h3, h4, h5, h6,
   /* font-family: "Bebas Neue", sans-serif; */
   font-family: "PT Sans Narrow", sans-serif;
     font-weight: 700;
-  font-style: normal;
+  font-style: norl;
   text-transform: uppercase;
   letter-spacing: -0.3px;
 }
