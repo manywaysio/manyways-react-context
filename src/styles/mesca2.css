@@ -55,7 +55,7 @@
   --color-dark: #000000;
   --color-text: #000000;
   --color-medium: #e0ded1;
-  --color-light: rgba(162,104,176,.1019607843);
+  --color-light: rgba(162, 104, 176, .1019607843);
   --color-focus: #8d8d8d;
   --color-accent: #880ab9;
   --color-accent-dark: #880ab9;
@@ -461,7 +461,7 @@ a:focus-visible,
   outline: var(--border-outline) solid var(--color-select);
   outline-offset: calc(var(--border-outline) * -1);
   transition: ease-in-out 100ms all;
-  background:rgba(162,104,176,.1019607843); 
+  background: rgba(162, 104, 176, .1019607843);
 }
 
 .mw-node .field-radio-group label:hover,
@@ -478,7 +478,7 @@ a:focus-visible,
   border-color: var(--color-select);
   outline: var(--border-outline) solid var(--color-select);
   outline-offset: calc(var(--border-outline) * -1);
-  background:rgba(162,104,176,.1019607843); 
+  background: rgba(162, 104, 176, .1019607843);
 }
 
 .mw-node .field-radio-group .selected-false.disabled:hover {
@@ -576,7 +576,7 @@ a:focus-visible,
   margin-top: -3px;
 }
 
-.mw-form:not(.mw-node-find-by-form) .label-content div{
+.mw-form:not(.mw-node-find-by-form) .label-content div {
   position: relative;
   padding-left: 34px;
 
@@ -607,6 +607,7 @@ a:focus-visible,
 
 .mw-node .field-group-images-false label {
   padding: .7rem 1rem;
+  margin-bottom: 0;
 }
 
 .mw-node .field-group-images-true .radio-inline .label-content {
@@ -1858,6 +1859,7 @@ h2 {
 
 h4 {
   font-size: 20px;
+  margin: 0;
 }
 
 h4:after {
@@ -1885,5 +1887,38 @@ h4:after {
 blockquote {
   background: #a268b01a;
   margin: 0px;
-  padding: 20px;
+  padding: 25px;
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+/* #root_wall, #root_floor, #root_ceiling, #root_horizontal {
+
+} */
+
+.mw-node-indoor-unit-configuration-form .field-string {
+  box-sizing: border-box;
+}
+
+
+@media only screen and (min-width: 980px) {
+  .mw-node-indoor-unit-configuration-form .field-string {
+    width: calc( 50% - 5px );
+    position: relative;
+    display: inline-block;
+  }
+
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(2), 
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(4),
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(6)  {
+    margin-right: 5px;
+  }
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(1), 
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(3),
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(5)  {
+    margin-left: 5px;
+  }
+
 }
