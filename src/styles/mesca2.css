@@ -96,6 +96,9 @@ body {
   font-weight: 300;
   letter-spacing: .3px;
   line-height: 1.6;
+  font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 
 }
 
@@ -130,7 +133,7 @@ h1 {
 
 }
 
-p {
+p, ol li, ul li {
   font-size: var(--font-size-base);
 }
 
