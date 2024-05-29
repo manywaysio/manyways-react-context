@@ -38,24 +38,37 @@ const AHRILookup = ({
       .then((data) => {
         let highstageHeating = {};
         let highstageCooling = {};
-        data?.ratings?.reduce((rating) => {
-          if (rating?.indoor_dry_bulb <= 47 && !!rating.capacity_rated) {
-            highstageHeating.capacity = rating.capacity_rated;
-            highstageHeating.power = rating.power_rated;
-            highstageHeating.cop = rating.cop;
-          }
-          if (rating?.indoor_dry_bulb >= 65 && !!rating.capacity_rated) {
-            highstageCooling.capacity = rating.capacity_rated;
-            highstageCooling.power = rating.power_rated;
-          }
-        });
+
+        // @TODO : need to modify to grab all ratings based on outdoor_dry_bulb, looking for 17 & 47 for heating
+
+        let heatingCandidate = data?.ratings?.find(
+          (r) =>
+            r.heat_cool === "Heating" &&
+            !!r.capacity_rated &&
+            !!r.power_rated &&
+            !!r.cop_rated
+        );
+
+        highstageHeating = {
+          capacity: heatingCandidate?.capacity_rated,
+          power: heatingCandidate?.power_rated,
+          cop: heatingCandidate?.cop_rated,
+        };
+
+        let coolingCandidate = data?.ratings?.find(
+          (r) =>
+            r.heat_cool === "Cooling" && !!r.capacity_rated && !!r.power_rated
+        );
+
+        highstageCooling = {
+          capacity: coolingCandidate?.capacity_rated,
+          power: coolingCandidate?.power_rated,
+        };
 
         setVal({ ...val, ...data, highstageHeating, highstageCooling });
         onChange({ ...val, ...data, highstageHeating, highstageCooling });
       });
   };
-
-  console.log(val);
 
   return (
     <div>
@@ -97,7 +110,7 @@ const AHRILookup = ({
             aria-describedby="root_ahri__error root_ahri__description root_ahri__help"
             value={val.ahri}
             onChange={(e) => {
-              setVal({ ahri: e.target.value });
+              setVal({ ahri: e.target.value, ahri_number: e.target.value });
             }}
           />
           <button
@@ -143,7 +156,6 @@ const AHRILookup = ({
             )}
           </div>
         )}
-        <div>{JSON.stringify(val)}</div>
       </div>
     </div>
   );

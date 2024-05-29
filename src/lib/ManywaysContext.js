@@ -133,6 +133,7 @@ const ManywaysProvider = ({
   };
 
   const goForward = async ({ formData }) => {
+    console.log(formData);
     if (isPreview()) {
       return;
     }
