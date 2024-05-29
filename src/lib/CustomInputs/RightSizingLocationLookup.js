@@ -182,16 +182,7 @@ const RightSizingLocationLookup = ({ value = "{}", onChange, disabled }) => {
               <h3>Climate INDICES</h3>
               <div className="index-card">
                 <h3>{climateIndexes?.attributes?.Name}</h3>
-                <p className="text">{climateIndexes?.attributes?.text }</p>
-                {climateIndexes?.attributes?.isCollection && (
-                  <span>Is Collection</span>
-                )}
-                {climateIndexes?.attributes?.magicKey && (
-                  <p className="magic-key">
-                    <span className="label">Magic Key:</span>{" "}
-                    {climateIndexes.attributes.magicKey}
-                  </p>
-                )}
+                <p className="text">{climateIndexes?.attributes?.text ? climateIndexes?.attributes?.text : climateIndexes?.attributes?.Prov}</p>
 
                 <div className="index-details">
                   <p>

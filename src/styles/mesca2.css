@@ -573,7 +573,7 @@ a:focus-visible,
 
 .mw-form:not(.mw-node-find-by-form) .label-content {
   position: relative;
-  margin-top: -2px;
+  margin-top: -4px;
 }
 
 .mw-form:not(.mw-node-find-by-form) .label-content div {
@@ -606,7 +606,7 @@ a:focus-visible,
 }
 
 .mw-node .field-group-images-false label {
-  padding: .7rem 1rem;
+  padding: .9rem 1.1rem;
   margin-bottom: 0;
 }
 
@@ -1841,9 +1841,8 @@ h2,
 h3,
 h4,
 h5,
-h6
-{
-transform: skewX(-3deg);
+h6 {
+  transform: skewX(-3deg);
 }
 
 h1 {
@@ -1918,22 +1917,29 @@ blockquote p {
 
 
 @media only screen and (min-width: 980px) {
-  .mw-node-indoor-unit-configuration-form .field-string, 
-  .mw-node-design-inputs-form .field-string {
-    width: calc( 50% - 5px );
+
+  .mw-node-indoor-unit-configuration-form .field-string,
+  .mw-node-design-inputs-form .field-string:not(:nth-of-type(6)) {
+    width: calc(50% - 5px);
     position: relative;
     display: inline-block;
   }
 
-  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(2), 
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(2),
   .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(4),
   .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(6),
-  .mw-node-design-inputs-form .field-string:nth-of-type(2) {
+  .mw-node-design-inputs-form .field-string:nth-of-type(2),
+  .mw-node-design-inputs-form .field-string:nth-of-type(4),
+  .mw-node-design-inputs-form .field-string:nth-of-type(6)  {
     margin-right: 5px;
   }
-  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(1), 
+
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(1),
   .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(3),
-  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(5)  {
+  .mw-node-indoor-unit-configuration-form .field-string:nth-of-type(5), 
+  .mw-node-design-inputs-form .field-string:nth-of-type(1), 
+  .mw-node-design-inputs-form .field-string:nth-of-type(3), 
+  .mw-node-design-inputs-form .field-string:nth-of-type(5) {
     margin-left: 5px;
   }
 
@@ -1949,7 +1955,7 @@ blockquote p {
   padding-top: 4px;
   position: relative;
   box-sizing: border-box;
-box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 11px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 11px rgba(0, 0, 0, .1);
 }
 
 .mw-node-location-form ul:empty {
@@ -1967,8 +1973,8 @@ box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 11px rgba(0, 0, 0, .1);
 .mw-node-location-form ul li:hover,
 .select-mw__option--is-focused,
 .mw-node-location-form ul li:hover,
-.select-mw__option--is-selected, 
-.select-mw__option:hover  {
+.select-mw__option--is-selected,
+.select-mw__option:hover {
   background-color: var(--color-light);
   cursor: pointer;
 }
@@ -1994,9 +2000,10 @@ box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 11px rgba(0, 0, 0, .1);
     font-size: 24px;
     padding-left: 10px;
   }
-    .the-top img {
-      max-width: 44px;
-    }
+
+  .the-top img {
+    max-width: 44px;
+  }
 }
 
 .index-card {
@@ -2017,9 +2024,9 @@ box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 11px rgba(0, 0, 0, .1);
   margin-top: 20px;
   padding-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  border-top: 1px solid rgba(0,0,0,.2);
+  border-top: 1px solid rgba(0, 0, 0, .2);
 }
 
 .index-details p {
@@ -2051,13 +2058,33 @@ box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 4px 11px rgba(0, 0, 0, .1);
   font-weight: 700;
 }
 
+
+label.disabled,
+input[disabled],
+.select-mw__control--is-disabled {
+  opacity: .5;
+}
+
+.mw-node-heat-pump-specifications-form ul {
+  background-color: var(--color-light);
+  padding: 35px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.mw-node-heat-pump-specifications-form li {
+  list-style: none;
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .mw-node-heat-pump-specifications-form ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media only screen and (min-width: 980px) {
   .index-details {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-  
-}
-
-label.disabled, input[disabled], .select-mw__control--is-disabled{
-  opacity: .5;
 }
