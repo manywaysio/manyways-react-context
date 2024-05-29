@@ -52,7 +52,8 @@ p {
 /* Containers */
 .mw-journey-container {
   position: relative;
-  max-width: 100%;
+  max-width: 1024px;
+  padding: 20px auto;
   width: 100%;
 }
 

@@ -356,6 +356,9 @@ const ManywaysProvider = ({
           ?.run_mode?.logo} ${nodes
           .map((n) => `mw-${slugify(n.title)}`)
           .join(" ")}`}
+        style={{
+          padding: `20px auto`,
+        }}
       >
         {/* Renders when in scroll mode with a global background set */}
         {mode === "scroll" &&

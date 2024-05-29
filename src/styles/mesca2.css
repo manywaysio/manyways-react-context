@@ -340,7 +340,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
 /* Form Fields */
 
 .mw-form {
-  margin-top: 15px;
+  /* margin-top: 15px; */
 }
 
 .mw-form .required {
@@ -1801,4 +1801,28 @@ table .available:before {
   flex-wrap: wrap;
   gap: 10px;
   grid-gap: 10px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.mw-next-and-back button {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.next-and-back-hidden-false {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mw-next-and-back button {
+  font-size: 24px;
+}
+
+.mw-form {
+  padding: 0px 20px;
 }
