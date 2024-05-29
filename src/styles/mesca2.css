@@ -1828,12 +1828,12 @@ h4,
 h5,
 h6,
 .mw-next-and-back button {
-  /* font-family: "Bebas Neue", sans-serif; */
-  font-family: "PT Sans Narrow", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
+  /* font-family: "PT Sans Narrow", sans-serif; */
   font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.1px;
 }
 
 h1,
@@ -1846,7 +1846,14 @@ h6 {
 }
 
 h1 {
-  color: #880ab9;
+  /* color: #880ab9; */
+  font-family: "Bebas Neue", sans-serif;
+  transform: skewX(-12deg);
+  background: #7200CF;
+    background: linear-gradient(to right, #BC3FC3 0%, #2f407d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
 }
 
 h1:after {
