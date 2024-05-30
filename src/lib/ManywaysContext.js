@@ -344,11 +344,17 @@ const ManywaysProvider = ({
           responesByNodeTitle[n.title].location
         );
       }
+      if (n.title === "Heat Pump Specifications") {
+        delete responesByNodeTitle[n.title]?.highstageCooling;
+        delete responesByNodeTitle[n.title]?.highstageHeating;
+        delete responesByNodeTitle[n.title]?.manufacturer;
+      }
+      delete responesByNodeTitle[n.title]?.lookup_responses;
     }
     return { title: n.title, id: n.id, ...response };
   });
 
-  console.log(nodesWithResponses, responesByNodeTitle);
+  console.log(responesByNodeTitle);
 
   return (
     <ManywaysContext.Provider
@@ -368,6 +374,7 @@ const ManywaysProvider = ({
         shareJourney,
         copyLink,
         classNamePrefix,
+        responesByNodeTitle,
         mode,
       }}
     >

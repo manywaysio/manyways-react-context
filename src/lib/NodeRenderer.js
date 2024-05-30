@@ -34,6 +34,28 @@ const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   return false;
 };
 
+const Thanks = () => {
+  const { responesByNodeTitle } = useManyways();
+  return (
+    <div>
+      <h1>Thanks for your responses</h1>
+      <p>
+        The sizing calculation is now available in a pdf. Please click the
+        button below to open it in a new window and download.
+      </p>
+      <a
+        href={`https://wayfinder.manyways.io/right-size?s=${btoa(
+          JSON.stringify(responesByNodeTitle)
+        )}`}
+        target="_blank"
+        className="button"
+      >
+        View Summary
+      </a>
+    </div>
+  );
+};
+
 const ManywaysCustomWidget = (props) => {
   const { schema, value, disabled, onChange, options } = props;
   const { enumOptions, enumDisabled, emptyValue: optEmptyVal } = options;
@@ -194,6 +216,7 @@ const NodeRenderer = (props) => {
               fields={{
                 MediaContent: MediaContent,
                 AHRILookup,
+                Thanks,
               }}
               transformErrors={transformErrors}
               key={currentNode?.id || 1123456789}

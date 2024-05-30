@@ -2215,3 +2215,11 @@ input[disabled],
   }
 
 }
+
+.mw-node-summary-form .mw-next-and-back {
+  display: none;
+}
+
+.mw-heat-pump-right-sizing-guide {
+  margin-bottom: 100px;
+}
