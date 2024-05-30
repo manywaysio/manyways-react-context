@@ -69,6 +69,7 @@ const ManywaysProvider = ({
     if (!isPreview()) {
       return;
     }
+
     window.parent.postMessage({ type: "IFRAME_READY" }, "*");
     // listen for postmessage
     window.addEventListener("message", postMessageHandler);
@@ -133,7 +134,6 @@ const ManywaysProvider = ({
   };
 
   const goForward = async ({ formData }) => {
-    console.log(formData);
     if (isPreview()) {
       return;
     }
@@ -330,6 +330,25 @@ const ManywaysProvider = ({
     setLocale,
     shareJourney,
     copyLink;
+
+  let responesByNodeTitle = {};
+
+  let nodesWithResponses = nodes.map((n) => {
+    let response = responses.find((r) => r.node_id === n.id);
+    if (!!response && Object.keys(response.response).length > 0) {
+      responesByNodeTitle[n.title] = {
+        ...response.response,
+      };
+      if (n.title === "Location") {
+        responesByNodeTitle[n.title].location = JSON.parse(
+          responesByNodeTitle[n.title].location
+        );
+      }
+    }
+    return { title: n.title, id: n.id, ...response };
+  });
+
+  console.log(nodesWithResponses, responesByNodeTitle);
 
   return (
     <ManywaysContext.Provider
