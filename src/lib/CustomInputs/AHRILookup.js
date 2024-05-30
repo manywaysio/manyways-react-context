@@ -15,6 +15,7 @@ const AHRILookup = (props) => {
     readonly,
     autofocus,
     rawErrors,
+    uiSchema,
     ...rest
   } = props;
   const [val, setVal] = useState(formData);
@@ -88,6 +89,8 @@ const AHRILookup = (props) => {
         <label class="control-label" for="root_ahri">
           AHRI Number
         </label>
+
+        <p class="field-description">Eg. 210404027</p>
         <div
           style={{
             display: "flex",
