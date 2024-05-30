@@ -38,7 +38,7 @@ const Thanks = () => {
   const { responesByNodeTitle } = useManyways();
   return (
     <div>
-      <h1>Thanks for your responses</h1>
+      <h1>Your summary is ready</h1>
       <p>
         The sizing calculation is now available in a pdf. Please click the
         button below to open it in a new window and download.
