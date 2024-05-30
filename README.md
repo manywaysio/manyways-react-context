@@ -19,7 +19,7 @@ const MyCustomRenderer = () => {
   <MyCustomRenderer />
 </ManywaysContext>
 
-2. Use with defaults
+2. Use with defaultsx
 
 import {ManywaysContext, NodeRenderer } from '@manyways/run'
 
