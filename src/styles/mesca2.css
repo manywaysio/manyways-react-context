@@ -1802,7 +1802,8 @@ table .available:before {
 /***************************************/
 
 
-.mw-node-ashp-configuration-form .field-layout-inline {
+.mw-node-ashp-configuration-form .field-layout-inline, 
+.mw-node-design-inputs-form .field-layout-inline  {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -1816,7 +1817,8 @@ table .available:before {
 }
 
 @media only screen and (min-width: 980px) {
-  .mw-node-ashp-configuration-form .field-layout-inline {
+  .mw-node-ashp-configuration-form .field-layout-inline, 
+  .mw-node-design-inputs-form .field-layout-inline  {
     flex-direction: row;
   }
 }
