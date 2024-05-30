@@ -2223,3 +2223,7 @@ input[disabled],
 .mw-heat-pump-right-sizing-guide {
   margin-bottom: 100px;
 }
+
+.mw-node-welcome-form .mw-back {
+  display: none !important;
+}
