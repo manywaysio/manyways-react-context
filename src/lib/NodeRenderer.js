@@ -32,6 +32,20 @@ const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   return false;
 };
 
+function ErrorListTemplate(props: ErrorListProps) {
+  const { errors } = props;
+  return (
+    <div>
+      <h2>Please check your submission for:</h2>
+      <ul>
+        {errors.map((error) => (
+          <li key={error.stack}>{error.stack}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 const NodeRenderer = (props) => {
   const {
     nodes,
@@ -180,7 +194,9 @@ const NodeRenderer = (props) => {
               onSubmit={goForward}
               schema={currentNode?.form_schema || {}}
               validator={validator}
+              showErrorList="bottom"
               uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}
+              templates={{ ErrorListTemplate }}
             >
               <NextAndBack
                 currentNode={currentNode}

@@ -35,7 +35,7 @@ const ManywaysRadioWidget = ({
 
   const hasImages = () => {
     if (!enumOptions) {
-      return false
+      return false;
     }
     return (
       enumOptions.find(
@@ -72,7 +72,7 @@ const ManywaysRadioWidget = ({
                 type="radio"
                 id={optionId(id, i)}
                 name={id}
-                required={required}
+                // required={required}
                 value={String(i)}
                 disabled={disabled || itemDisabled || readonly}
                 checked={checked}
