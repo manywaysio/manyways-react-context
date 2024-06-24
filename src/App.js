@@ -12,6 +12,13 @@ import loaderStyles from "./styles/loader.css";
 import eptStyles from "./styles/ept.css";
 import swiperStyles from "./styles/swiperbundle.css";
 import { ManywaysProvider } from "./lib/ManywaysContext";
+import Appsignal from "@appsignal/javascript";
+
+import { ErrorBoundary } from "@appsignal/react";
+
+const appsignal = new Appsignal({
+  key: "5b26fa7c-ebca-4c0f-93bb-68767099a024",
+});
 
 function App({ locale, slug, mode = "scroll" }) {
   useEffect(() => {
@@ -44,9 +51,11 @@ function App({ locale, slug, mode = "scroll" }) {
   `;
 
   return (
-    <ManywaysProvider slug={slug} locale={locale} mode={mode}>
-      <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
-    </ManywaysProvider>
+    <ErrorBoundary instance={appsignal}>
+      <ManywaysProvider slug={slug} locale={locale} mode={mode}>
+        <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
+      </ManywaysProvider>
+    </ErrorBoundary>
   );
 }
 
