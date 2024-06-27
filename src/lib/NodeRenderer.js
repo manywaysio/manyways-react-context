@@ -11,6 +11,7 @@ import { slugify } from "./utils/helpers";
 import Select from "react-select";
 import { useEffect, useState } from "react";
 import ManywaysSelect from "./CustomInputs/ManywaysSelect";
+import CustomTable from "./CustomInputs/CustomTable";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -187,6 +188,7 @@ const NodeRenderer = (props) => {
                 // console.log(e, e.formData, theResponse?.response);
               }}
               fields={{
+                CustomTable: CustomTable,
                 MediaContent: MediaContent,
               }}
               transformErrors={transformErrors}
