@@ -1225,7 +1225,10 @@ tbody tr:nth-child(even) {
 .subheading .icon {
   width: 25px;
   height: 25px;
-  padding-top: 5px;
+  padding: 3px;
+  margin-top:5px;
+  background-color:#666666;
+  border-radius: 3px;
 }
 
 .subheading .no-unit-image {
@@ -1249,13 +1252,22 @@ tbody tr:nth-child(even) {
   padding-top:10px;
 }
 
-.subheading .unit-image-popover img {
+.subheading img, .unit-image-dropdown img {
   height: auto;
   width: 100%;
   object-fit: contain;
   padding: 10px;
   background-color: #fff;
   border: 1px solid black;
+}
+
+.unit-image-dropdown {
+  background-color: #F6F6F6;
+  padding: 16px;
+}
+
+.subheading .unit-image .icon:hover {
+  cursor: pointer;
 }
 
 .subheading .unit-image:hover .unit-image-popover {
