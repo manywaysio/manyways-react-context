@@ -70,7 +70,7 @@ const CustomTable = (props) => {
     )
       .then((r) => r.json())
       .then((r) => r?.responses);
-    let _lookupData = responses.find((r) => r.node_id === 74);
+    let _lookupData = responses.reverse().find((r) => r.node_id === 74);
     setLookupData(
       _lookupData?.response?.look_up_responses?.["TABLE BUILDER"]?.result || []
     );
