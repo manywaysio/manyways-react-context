@@ -1,5 +1,5 @@
 import { useManyways } from "../ManywaysContext";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { FaImage } from "react-icons/fa6";
 
 const images = {
@@ -55,14 +55,14 @@ const renderRebateValue = (value) => {
 };
 
 const CustomTable = (props) => {
-  const { journeyNodes, currentNode, responses } = useManyways();
+  const { journeyNodes, currentNode, responses, responseId } = useManyways();
   let [lookupData, setLookupData] = useState([]);
   const [unitsByCategory, setUnitsByCategory] = useState([]);
   const [province, setProvince] = useState([]);
 
   let getResponses = async () => {
     let responses = await fetch(
-      `https://mw-apiv2-prod.fly.dev/response_sessions/f7a89c3e-0d56-42ae-ad11-a511cf39d802?render_response_nodes=true`
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`
     )
       .then((r) => r.json())
       .then((r) => r?.responses);
@@ -114,7 +114,6 @@ const CustomTable = (props) => {
       return acc;
     }, {});
 
-    console.log(sortedUnitsByCategory, "sorted units by category");
     return sortedUnitsByCategory;
   };
 
@@ -133,11 +132,9 @@ const CustomTable = (props) => {
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
 
-  console.log(responses, "responses");
-  console.log(lookupData, "lookup data");
 
   return lookupData?.length < 1 ? (
-    <div class="no-results">
+    <div className="no-results">
       <p>No results found</p>
     </div>
   ) : (
@@ -160,8 +157,8 @@ const CustomTable = (props) => {
           </tr>
         </thead>
         <tbody>
-          {Object.entries(unitsByCategory).map(([key, items]) => (
-            <>
+          {Object.entries(unitsByCategory).map(([key, items], idx) => (
+            <Fragment key={idx}>
               <tr>
                 <th colSpan="6" className="subheading">
                   <div>
@@ -183,13 +180,13 @@ const CustomTable = (props) => {
               {items.map((row, rowIdx) => (
                 <TableRow row={row} key={rowIdx} province={province} />
               ))}
-            </>
+            </Fragment>
           ))}
         </tbody>
       </table>
-      <ul class="card-list">
-        {Object.entries(unitsByCategory).map(([key, items]) => (
-          <>
+      <ul className="card-list">
+        {Object.entries(unitsByCategory).map(([key, items], idx) => (
+          <Fragment key={idx}>
             <div className="subheading">
               <div>
                 {key}
@@ -209,7 +206,7 @@ const CustomTable = (props) => {
             {items.map((row, rowIdx) => (
               <ListItem row={row} key={rowIdx} province={province} />
             ))}
-          </>
+          </Fragment>
         ))}
       </ul>
     </>
@@ -249,7 +246,7 @@ const ListItem = ({ row, province }) => {
   const rebateValue = row[rebateKey];
 
   return (
-    <li class="card">
+    <li className="card">
       <h5 className="ahri-column">
         {" "}
         {row?.ahri_number}{" "}
@@ -263,29 +260,29 @@ const ListItem = ({ row, province }) => {
       <p>
         {row?.outdoor_unit_model_number} · {row?.idu_override}
       </p>
-      <div class="rebate-list-item">
+      <div className="rebate-list-item">
         <p>Provincial Rebate</p>
-        <p class="rebate-list-item-result">{renderRebateValue(rebateValue)}</p>
+        <p className="rebate-list-item-result">{renderRebateValue(rebateValue)}</p>
       </div>
       {province === "Ontario" ? (
-        <div class="rebate-list-item">
+        <div className="rebate-list-item">
           <p>HER+ Canada Greener Homes Grant</p>
-          <p class="rebate-list-item-result">
+          <p className="rebate-list-item-result">
             {renderRebateValue(row?.her_canada_greener_homes_grant)}
           </p>
         </div>
       ) : (
-        <div class="rebate-list-item">
+        <div className="rebate-list-item">
           <p>Federal - Canada Greener Homes Grant (CGHG)</p>
-          <p class="rebate-list-item-result">
+          <p className="rebate-list-item-result">
             {renderRebateValue(row?.federal_greener_homes_rebate)}
           </p>
         </div>
       )}
 
-      <div class="rebate-list-item">
+      <div className="rebate-list-item">
         <p>Federal - Oil to heat pump affordability program (OHPA)</p>
-        <p class="rebate-list-item-result">{renderRebateValue(row?.ohpa)}</p>
+        <p className="rebate-list-item-result">{renderRebateValue(row?.ohpa)}</p>
       </div>
     </li>
   );

@@ -348,6 +348,7 @@ const ManywaysProvider = ({
         shareJourney,
         copyLink,
         classNamePrefix,
+        responseId,
         mode,
       }}
     >

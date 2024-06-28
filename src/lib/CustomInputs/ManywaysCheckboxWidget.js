@@ -97,7 +97,7 @@ const ManywaysCheckboxWidget = ({
                   alt={option?.schema.icon?.alt_text || `${option.label}`}
                 />
               ) : (
-                <div class="checkbox-checkmark"></div>
+                <div className="checkbox-checkmark"></div>
               )}
               <div>
                 {option.label}
