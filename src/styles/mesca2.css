@@ -146,7 +146,7 @@ strong {
 
 /* sr only  */
 
-.mw-node-find-by .control-label,
+/* .mw-node-find-by .control-label, */
 .mw-node-model-number .control-label[for="root_outdoor"],
 .mw-node-model-number .control-label[for="root_indoor"] {
   position: absolute;
