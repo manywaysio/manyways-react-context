@@ -62,6 +62,8 @@ const CustomTable = (props) => {
   const [province, setProvince] = useState([]);
   const [collapsedCategories, setCollapsedCategories] = useState({});
 
+  console.log(responseId, "response Id");
+
   let getResponses = async (responseId) => {
     let responses = await fetch(
       `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`
@@ -75,8 +77,14 @@ const CustomTable = (props) => {
   };
 
   const sortUnits = () => {
+    if (lookupData.length < 1) {
+      return {};
+    }
     const units = lookupData.reduce((acc, item) => {
       const groupKey = (() => {
+        if (!item.indoor_unit_model_number) {
+          return "Others";
+        }
         if (item.indoor_unit_model_number.includes("MSZ"))
           return "Wall Mounted";
         if (item.indoor_unit_model_number.includes("MFZ"))
