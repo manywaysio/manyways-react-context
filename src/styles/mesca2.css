@@ -617,7 +617,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
 #root_energy_star_cert .label-content{
   display: flex;
   flex-direction: row-reverse;
-
+  justify-content: flex-end;
 }
 
 /* #root_energy_star_cert label {
@@ -1180,7 +1180,7 @@ th {
 }
 
 td {
-  vertical-align: baseline
+  vertical-align: top;
 }
 
 thead {
@@ -1218,6 +1218,7 @@ tbody tr:nth-child(even) {
   color: white;
   font-size: 18px;
   padding: 3px 18px;
+  font-weight: 700;
 }
 
 .subheading > div {

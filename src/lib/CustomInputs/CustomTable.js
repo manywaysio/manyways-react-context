@@ -37,6 +37,23 @@ const findProvincialRebateKey = (prov) => {
   else return "yukofalse";
 };
 
+const renderRebateValue = (value) => {
+  if (
+    value === "not eligible" ||
+    value === "not found" ||
+    value === "not listed"
+  ) {
+    return <span className="unavail"></span>;
+  }
+  if (value === "no provincial rebate available") {
+    return <span>{value}</span>;
+  }
+  const formattedValue = { __html: value.replace(/;/g, "<br />") };
+  return (
+    <span className="available" dangerouslySetInnerHTML={formattedValue}></span>
+  );
+};
+
 const CustomTable = (props) => {
   const { journeyNodes, currentNode, responses } = useManyways();
   let [lookupData, setLookupData] = useState([]);
@@ -99,7 +116,6 @@ const CustomTable = (props) => {
 
     console.log(sortedUnitsByCategory, "sorted units by category");
     return sortedUnitsByCategory;
-
   };
 
   useEffect(() => {
@@ -118,9 +134,13 @@ const CustomTable = (props) => {
   }, [lookupData]);
 
   console.log(responses, "responses");
-  console.log(unitsByCategory, "lookup data");
+  console.log(lookupData, "lookup data");
 
-  return (
+  return lookupData?.length < 1 ? (
+    <div class="no-results">
+      <p>No results found</p>
+    </div>
+  ) : (
     <>
       <table>
         <thead>
@@ -141,33 +161,57 @@ const CustomTable = (props) => {
         </thead>
         <tbody>
           {Object.entries(unitsByCategory).map(([key, items]) => (
-                <>
-                  <tr>
-                    <th colSpan="6" className="subheading">
-                      <div>
-                        {key}
-                        {images[key] ? (
-                          <div className="unit-image">
-                            <FaImage className="icon" />
-                            <div className="unit-image-popover">
-                              <img src={images[key]} alt={key} />
-                            </div>
-                          </div>
-                        ) : (
-                          <div className="no-unit-image"></div>
-                        )}
+            <>
+              <tr>
+                <th colSpan="6" className="subheading">
+                  <div>
+                    {key}
+                    {images[key] ? (
+                      <div className="unit-image">
+                        <FaImage className="icon" />
+                        <div className="unit-image-popover">
+                          <img src={images[key]} alt={key} />
+                        </div>
                       </div>
-                    </th>
-                  </tr>
+                    ) : (
+                      <div className="no-unit-image"></div>
+                    )}
+                  </div>
+                </th>
+              </tr>
 
-                  {items.map((row, rowIdx) => (
-                    <TableRow row={row} key={rowIdx} province={province} />
-                  ))}
-                </>
-              )
-          )}
+              {items.map((row, rowIdx) => (
+                <TableRow row={row} key={rowIdx} province={province} />
+              ))}
+            </>
+          ))}
         </tbody>
       </table>
+      <ul class="card-list">
+        {Object.entries(unitsByCategory).map(([key, items]) => (
+          <>
+            <div className="subheading">
+              <div>
+                {key}
+                {images[key] ? (
+                  <div className="unit-image">
+                    <FaImage className="icon" />
+                    <div className="unit-image-popover">
+                      <img src={images[key]} alt={key} />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="no-unit-image"></div>
+                )}
+              </div>
+            </div>
+
+            {items.map((row, rowIdx) => (
+              <ListItem row={row} key={rowIdx} province={province} />
+            ))}
+          </>
+        ))}
+      </ul>
     </>
   );
 };
@@ -175,20 +219,6 @@ const CustomTable = (props) => {
 const TableRow = ({ row, province }) => {
   const rebateKey = findProvincialRebateKey(province);
   const rebateValue = row[rebateKey];
-
-  const renderRebateValue = (value) => {
-    if (
-      value === "not eligible" ||
-      value === "not found" ||
-      value === "not listed"
-    ) {
-      return <span className="unavail"></span>;
-    }
-    if (value === "no provincial rebate available") {
-      return <span>{value}</span>;
-    }
-    return <span className="available">{value}</span>;
-  };
 
   return (
     <tr>
@@ -211,6 +241,53 @@ const TableRow = ({ row, province }) => {
       </td>
       <td>{renderRebateValue(row?.ohpa)}</td>
     </tr>
+  );
+};
+
+const ListItem = ({ row, province }) => {
+  const rebateKey = findProvincialRebateKey(province);
+  const rebateValue = row[rebateKey];
+
+  return (
+    <li class="card">
+      <h5 className="ahri-column">
+        {" "}
+        {row?.ahri_number}{" "}
+        {row?.energystar_6_1_qualified === "Yes" && (
+          <img
+            src="https://mwassets.imgix.net/Organization_3/energystar.png"
+            alt="energy star certified"
+          />
+        )}
+      </h5>
+      <p>
+        {row?.outdoor_unit_model_number} · {row?.idu_override}
+      </p>
+      <div class="rebate-list-item">
+        <p>Provincial Rebate</p>
+        <p class="rebate-list-item-result">{renderRebateValue(rebateValue)}</p>
+      </div>
+      {province === "Ontario" ? (
+        <div class="rebate-list-item">
+          <p>HER+ Canada Greener Homes Grant</p>
+          <p class="rebate-list-item-result">
+            {renderRebateValue(row?.her_canada_greener_homes_grant)}
+          </p>
+        </div>
+      ) : (
+        <div class="rebate-list-item">
+          <p>Federal - Canada Greener Homes Grant (CGHG)</p>
+          <p class="rebate-list-item-result">
+            {renderRebateValue(row?.federal_greener_homes_rebate)}
+          </p>
+        </div>
+      )}
+
+      <div class="rebate-list-item">
+        <p>Federal - Oil to heat pump affordability program (OHPA)</p>
+        <p class="rebate-list-item-result">{renderRebateValue(row?.ohpa)}</p>
+      </div>
+    </li>
   );
 };
 
