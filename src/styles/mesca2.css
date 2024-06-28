@@ -1227,7 +1227,7 @@ tbody tr:nth-child(even) {
   height: 25px;
   padding: 3px;
   margin-top:5px;
-  background-color:#666666;
+  background-color:transparent;
   border-radius: 3px;
 }
 
@@ -1268,6 +1268,11 @@ tbody tr:nth-child(even) {
 
 .subheading .unit-image .icon:hover {
   cursor: pointer;
+}
+
+.subheading .unit-image:hover .icon, 
+.card-item:has(.unit-image-dropdown) .icon {
+  background-color: #666666;
 }
 
 .subheading .unit-image:hover .unit-image-popover {

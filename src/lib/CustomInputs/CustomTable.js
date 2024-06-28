@@ -214,7 +214,7 @@ const CustomTable = (props) => {
       </table>
       <ul className="card-list">
         {Object.entries(unitsByCategory).map(([key, items], idx) => (
-          <Fragment key={idx}>
+          <div key={idx} class="card-item">
             <div className="subheading">
               <div className="category">
                 <div>
@@ -256,7 +256,7 @@ const CustomTable = (props) => {
               items.map((row, rowIdx) => (
                 <ListItem row={row} key={rowIdx} province={province} />
               ))}
-          </Fragment>
+          </div>
         ))}
       </ul>
     </>
