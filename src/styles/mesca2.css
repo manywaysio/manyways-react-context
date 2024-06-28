@@ -1213,6 +1213,69 @@ tbody tr:nth-child(even) {
   background-color: #ffffff;
 }
 
+.subheading {
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  padding: 3px 18px;
+}
+
+.subheading > div {
+  display: flex;
+  align-items: center;
+
+}
+
+.subheading .icon {
+  width: 25px;
+  height: 25px;
+  padding-top: 5px;
+}
+
+.subheading .no-unit-image {
+  height: 32px;
+}
+
+.subheading .unit-image {
+  padding: 2px  10px;
+  position: relative;
+}
+
+.subheading .unit-image-popover {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  width: 350px;
+  height: 240px;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.subheading .unit-image-popover img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+}
+
+.subheading .unit-image:hover .unit-image-popover {
+  display: block;
+}
+
+.ahri-column {
+  display: flex;
+  align-items: center;
+}
+
+.ahri-column img{
+  width: 24px;
+  height: 24px;
+  margin-left: 6px;
+  object-fit: contain;
+}
+
 table .available {
   display: grid;
   justify-content: flex-start;

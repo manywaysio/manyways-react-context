@@ -1,10 +1,48 @@
 import { useManyways } from "../ManywaysContext";
 import { useEffect, useState } from "react";
+import { FaImage } from "react-icons/fa6";
+
+const images = {
+  "Wall Mounted":
+    "https://mwassets.imgix.net/Organization_3/MESCA-wall-mounted.jpg",
+  "Floor Mounted":
+    "https://mwassets.imgix.net/Organization_3/MESCA-floor-mounted.jpg",
+  "4 Way Ceiling Cassette":
+    "https://mwassets.imgix.net/Organization_3/MESCA-4-way-ceiling-cassette.jpg",
+  "1 Way Ceiling Cassette":
+    "https://mwassets.imgix.net/Organization_3/MESCA-1-way-ceiling-cassette.jpg",
+  "Multi position AHU - Cooling":
+    "https://mwassets.imgix.net/Organization_3/MESCA-central-cooling-cycle.jpg",
+  "Multi position AHU - Heating":
+    "https://mwassets.imgix.net/Organization_3/MESCA-central-heating-cycle.jpg",
+  "Hybrid Heating & Cooling":
+    "https://mwassets.imgix.net/Organization_3/MESCA-a-coil.jpg",
+  "Ceiling concealed":
+    "https://mwassets.imgix.net/Organization_3/MESCA-4-way-ceiling-cassette.jpg",
+};
+
+const findProvincialRebateKey = (prov) => {
+  if (prov === "British Columbia") return "bc";
+  else if (prov === "Alberta") return "ab";
+  else if (prov === "Manitoba") return "mb";
+  else if (prov === "New Brunswick") return "nb";
+  else if (prov === "Newfoundland & Labrador") return "nl";
+  else if (prov === "Nova Scotia") return "ns";
+  else if (prov === "Ontario") return "ofalse";
+  else if (prov === "Saskatchewan") return "sk";
+  else if (prov === "Prince Edward Island") return "pei";
+  else if (prov === "Quebec") return "qc";
+  else if (prov === "Northwest Territories") return "nwt";
+  else if (prov === "Nunavut") return "nunavut";
+  else return "yukofalse";
+};
 
 const CustomTable = (props) => {
   const { journeyNodes, currentNode, responses } = useManyways();
   let [lookupData, setLookupData] = useState([]);
-  let [unitsByCategory, setUnitsByCategory] = useState([]);
+  const [unitsByCategory, setUnitsByCategory] = useState([]);
+  const [province, setProvince] = useState([]);
+
   let getResponses = async () => {
     let responses = await fetch(
       `https://mw-apiv2-prod.fly.dev/response_sessions/f7a89c3e-0d56-42ae-ad11-a511cf39d802?render_response_nodes=true`
@@ -16,15 +54,9 @@ const CustomTable = (props) => {
       _lookupData?.response?.look_up_responses?.["TABLE BUILDER"]?.result || []
     );
   };
-  useEffect(() => {
-    getResponses();
-  }, [currentNode]);
 
-  console.log(responses, "responses");
-  console.log(lookupData, "lookup data");
-
-  useEffect(() => {
-    const reducedData = lookupData.reduce((acc, item) => {
+  const sortUnits = () => {
+    const units = lookupData.reduce((acc, item) => {
       const groupKey = (() => {
         if (item.indoor_unit_model_number.includes("MSZ"))
           return "Wall Mounted";
@@ -35,16 +67,16 @@ const CustomTable = (props) => {
         if (item.indoor_unit_model_number.includes("MLZ"))
           return "1 Way Ceiling Cassette";
         if (item.indoor_unit_model_number.includes("SVZ"))
-          return "Multi position AHU";
+          return "Multi position AHU - Cooling";
         if (item.indoor_unit_model_number.includes("PVA"))
-          return "Multi position AHU";
+          return "Multi position AHU - Heating";
         if (item.indoor_unit_model_number.includes("PAA"))
           return "Hybrid Heating & Cooling";
         if (item.indoor_unit_model_number.includes("SEZ"))
           return "Ceiling concealed";
         if (item.indoor_unit_model_number.includes("PEAD"))
           return "Ceiling concealed";
-        return "others";
+        return "Others";
       })();
 
       if (!acc[groupKey]) {
@@ -53,8 +85,40 @@ const CustomTable = (props) => {
       acc[groupKey].push(item);
       return acc;
     }, {});
-    setUnitsByCategory(reducedData);
+
+    const sortedUnits = Object.keys(units).sort((a, b) => {
+      if (a === "Others") return 1;
+      if (b === "Others") return -1;
+      return a.localeCompare(b);
+    });
+
+    const sortedUnitsByCategory = sortedUnits.reduce((acc, key) => {
+      acc[key] = units[key];
+      return acc;
+    }, {});
+
+    console.log(sortedUnitsByCategory, "sorted units by category");
+    return sortedUnitsByCategory;
+
+  };
+
+  useEffect(() => {
+    getResponses();
+  }, [currentNode]);
+
+  useEffect(() => {
+    if (!lookupData || !responses) {
+      return;
+    }
+    const sorted = sortUnits();
+    setUnitsByCategory(sorted);
+
+    const lastResponse = responses[responses.length - 1];
+    setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
+
+  console.log(responses, "responses");
+  console.log(unitsByCategory, "lookup data");
 
   return (
     <>
@@ -65,50 +129,87 @@ const CustomTable = (props) => {
             <th>Outdoor Unit #</th>
             <th>Indoor Unit #</th>
             <th>Provincial Rebate</th>
-            <th>Federal - Canada Greener Homes Grant (CGHG)</th>
-            {/* <th>HER+ Canada Greener Homes Grant</th> */}
+            <th>
+              {province === "Ontario" ? (
+                <span>HER+ Canada Greener Homes Grant</span>
+              ) : (
+                <span>Federal - Canada Greener Homes Grant (CGHG)</span>
+              )}
+            </th>
             <th>Federal - Oil to heat pump affordability program (OHPA)</th>
           </tr>
         </thead>
         <tbody>
           {Object.entries(unitsByCategory).map(([key, items]) => (
-            <>
-              <tr>
-                <th colSpan="26" className="subheading">
-                  {key}
-                </th>
-              </tr>
+                <>
+                  <tr>
+                    <th colSpan="6" className="subheading">
+                      <div>
+                        {key}
+                        {images[key] ? (
+                          <div className="unit-image">
+                            <FaImage className="icon" />
+                            <div className="unit-image-popover">
+                              <img src={images[key]} alt={key} />
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="no-unit-image"></div>
+                        )}
+                      </div>
+                    </th>
+                  </tr>
 
-              {items.map((row, rowIdx) => (
-                <TableRow row={row} key={rowIdx} />
-              ))}
-            </>
-          ))}
+                  {items.map((row, rowIdx) => (
+                    <TableRow row={row} key={rowIdx} province={province} />
+                  ))}
+                </>
+              )
+          )}
         </tbody>
       </table>
     </>
   );
 };
 
-const TableRow = ({ row }) => {
+const TableRow = ({ row, province }) => {
+  const rebateKey = findProvincialRebateKey(province);
+  const rebateValue = row[rebateKey];
+
+  const renderRebateValue = (value) => {
+    if (
+      value === "not eligible" ||
+      value === "not found" ||
+      value === "not listed"
+    ) {
+      return <span className="unavail"></span>;
+    }
+    if (value === "no provincial rebate available") {
+      return <span>{value}</span>;
+    }
+    return <span className="available">{value}</span>;
+  };
+
   return (
     <tr>
-      <td>{row?.ahri_number}</td>
+      <td className="ahri-column">
+        {row?.ahri_number}{" "}
+        {row?.energystar_6_1_qualified === "Yes" && (
+          <img
+            src="https://mwassets.imgix.net/Organization_3/energystar.png"
+            alt="energy star certified"
+          />
+        )}
+      </td>
       <td>{row?.outdoor_unit_model_number}</td>
       <td>{row?.idu_override}</td>
+      <td>{renderRebateValue(rebateValue)}</td>
       <td>
-        {/* province  */}
-        <span className="available"></span>
-        <span></span>
+        {province === "Ontario"
+          ? renderRebateValue(row?.her_canada_greener_homes_grant)
+          : renderRebateValue(row?.federal_greener_homes_rebate)}
       </td>
-      <td>
-        <span className="unavail"></span>
-        {/* greener homes */}
-      </td>
-      <td>
-        <span className="unavail"></span>
-        {/* greener homes */}
-      </td>
+      <td>{renderRebateValue(row?.ohpa)}</td>
     </tr>
   );
 };
