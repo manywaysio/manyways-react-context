@@ -1,6 +1,6 @@
 import { useManyways } from "../ManywaysContext";
 import { Fragment, useEffect, useState } from "react";
-import { FaImage } from "react-icons/fa6";
+import { FaImage, FaMinus, FaPlus } from "react-icons/fa6";
 
 const images = {
   "Wall Mounted":
@@ -60,6 +60,7 @@ const CustomTable = (props) => {
   let [lookupData, setLookupData] = useState([]);
   const [unitsByCategory, setUnitsByCategory] = useState([]);
   const [province, setProvince] = useState([]);
+  const [collapsedCategories, setCollapsedCategories] = useState({});
 
   let getResponses = async (responseId) => {
     let responses = await fetch(
@@ -133,6 +134,14 @@ const CustomTable = (props) => {
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
 
+  const toggleCollapse = (e, category) => {
+    e.preventDefault();
+    setCollapsedCategories((prev) => ({
+      ...prev,
+      [category]: !prev[category],
+    }));
+  };
+
   return lookupData?.length < 1 ? (
     <div className="no-results">
       <p>No results found</p>
@@ -161,25 +170,35 @@ const CustomTable = (props) => {
             <Fragment key={idx}>
               <tr>
                 <th colSpan="6" className="subheading">
-                  <div>
-                    {key}
-                    {images[key] ? (
-                      <div className="unit-image">
-                        <FaImage className="icon" />
-                        <div className="unit-image-popover">
-                          <img src={images[key]} alt={key} />
+                  <div className="category">
+                    <div>
+                      {key}
+                      {images[key] ? (
+                        <div className="unit-image">
+                          <FaImage className="icon" />
+                          <div className="unit-image-popover">
+                            <img src={images[key]} alt={key} />
+                          </div>
                         </div>
-                      </div>
-                    ) : (
-                      <div className="no-unit-image"></div>
-                    )}
+                      ) : (
+                        <div className="no-unit-image"></div>
+                      )}
+                    </div>
+                    <button
+                      onClick={(e) => toggleCollapse(e, key)}
+                      class="toggle-category"
+                    >
+                      <span className="sr-only">Toggle</span>
+                      {collapsedCategories[key] ? <FaPlus /> : <FaMinus />}
+                    </button>
                   </div>
                 </th>
               </tr>
 
-              {items.map((row, rowIdx) => (
-                <TableRow row={row} key={rowIdx} province={province} />
-              ))}
+              {!collapsedCategories[key] &&
+                items.map((row, rowIdx) => (
+                  <TableRow row={row} key={rowIdx} province={province} />
+                ))}
             </Fragment>
           ))}
         </tbody>

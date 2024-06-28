@@ -1200,7 +1200,7 @@ thead th {
 
 @media only screen and (min-width:980px) {
   thead th {
-    min-width: 140px;
+    width: 140px;
   }
 }
 
@@ -1219,12 +1219,7 @@ tbody tr:nth-child(even) {
   font-size: 18px;
   padding: 3px 18px;
   font-weight: 700;
-}
-
-.subheading > div {
-  display: flex;
-  align-items: center;
-
+  border-bottom: 1px solid white;
 }
 
 .subheading .icon {
@@ -1276,6 +1271,23 @@ tbody tr:nth-child(even) {
   height: 24px;
   margin-left: 6px;
   object-fit: contain;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category > div {
+  display: flex;
+  align-items: center;
+}
+
+.category button {
+  padding: 5px;
+  background-color: transparent;
+  color: white;
 }
 
 table .available {
