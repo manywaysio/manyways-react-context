@@ -48,7 +48,8 @@ const renderRebateValue = (value) => {
   if (value === "no provincial rebate available") {
     return <span>{value}</span>;
   }
-  const formattedValue = { __html: value.replace(/;/g, "<br />") };
+  // const formattedValue = { __html: value.replace(/;/g, "<br />") };
+  const formattedValue = { __html: "" };
   return (
     <span className="available" dangerouslySetInnerHTML={formattedValue}></span>
   );
@@ -60,7 +61,7 @@ const CustomTable = (props) => {
   const [unitsByCategory, setUnitsByCategory] = useState([]);
   const [province, setProvince] = useState([]);
 
-  let getResponses = async () => {
+  let getResponses = async (responseId) => {
     let responses = await fetch(
       `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`
     )
@@ -118,8 +119,9 @@ const CustomTable = (props) => {
   };
 
   useEffect(() => {
-    getResponses();
-  }, [currentNode]);
+    getResponses(responseId);
+    alert("changed responseID");
+  }, [currentNode, responseId]);
 
   useEffect(() => {
     if (!lookupData || !responses) {
@@ -131,7 +133,6 @@ const CustomTable = (props) => {
     const lastResponse = responses[responses.length - 1];
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
-
 
   return lookupData?.length < 1 ? (
     <div className="no-results">
@@ -262,7 +263,9 @@ const ListItem = ({ row, province }) => {
       </p>
       <div className="rebate-list-item">
         <p>Provincial Rebate</p>
-        <p className="rebate-list-item-result">{renderRebateValue(rebateValue)}</p>
+        <p className="rebate-list-item-result">
+          {renderRebateValue(rebateValue)}
+        </p>
       </div>
       {province === "Ontario" ? (
         <div className="rebate-list-item">
@@ -282,7 +285,9 @@ const ListItem = ({ row, province }) => {
 
       <div className="rebate-list-item">
         <p>Federal - Oil to heat pump affordability program (OHPA)</p>
-        <p className="rebate-list-item-result">{renderRebateValue(row?.ohpa)}</p>
+        <p className="rebate-list-item-result">
+          {renderRebateValue(row?.ohpa)}
+        </p>
       </div>
     </li>
   );
