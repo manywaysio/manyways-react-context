@@ -120,7 +120,6 @@ const CustomTable = (props) => {
 
   useEffect(() => {
     getResponses(responseId);
-    alert("changed responseID");
   }, [currentNode, responseId]);
 
   useEffect(() => {
