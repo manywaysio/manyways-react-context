@@ -157,6 +157,14 @@ const CustomTable = (props) => {
     </div>
   ) : (
     <>
+      {" "}
+      <div className="es-legend">
+        <img
+          src="https://mwassets.imgix.net/Organization_3/energystar.png"
+          alt="energy star certified"
+        />{" "}
+        <p>ENERGY STAR® certified</p>
+      </div>
       <table>
         <thead>
           <tr>
@@ -194,7 +202,9 @@ const CustomTable = (props) => {
                       )}
                     </div>
                     <button
-                      onClick={(e) => {toggleCollapse(e, key)}}
+                      onClick={(e) => {
+                        toggleCollapse(e, key);
+                      }}
                       class="toggle-category"
                     >
                       <span className="sr-only">Toggle</span>

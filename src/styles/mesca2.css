@@ -614,10 +614,18 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
   margin-bottom: 0;
 }
 
-#root_energy_star_cert .label-content{
+#root_energy_star_cert .label-content:has(img){
   display: flex;
   flex-direction: row-reverse;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 768px) {
+  #root_energy_star_cert .label-content{
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  
 }
 
 /* #root_energy_star_cert label {
@@ -1165,6 +1173,9 @@ table {
   border-collapse: collapse;
   width: 100%;
   display: none;
+  position: relative;
+  margin-top: -20px;
+  z-index: 0;
 }
 
 
@@ -1176,7 +1187,7 @@ tr {
 td,
 th {
   text-align: left;
-  padding: 16px 20px;
+  padding: 16px 20px 16px 20px;
 }
 
 td {
@@ -1194,7 +1205,6 @@ thead {
 thead th {
   font-size: 12px;
   text-transform: uppercase;
-
   vertical-align: bottom;
 }
 
@@ -1220,6 +1230,8 @@ tbody tr:nth-child(even) {
   padding: 3px 18px;
   font-weight: 700;
   border-bottom: 1px solid white;
+  position: relative;
+  z-index: 2;
 }
 
 .subheading .icon {
@@ -1261,10 +1273,25 @@ tbody tr:nth-child(even) {
   border: 1px solid black;
 }
 
+
 .unit-image-dropdown {
   background-color: #F6F6F6;
   padding: 16px;
+  /* position: sticky;
+  top: 48px;
+  left: 0;
+  z-index: 1; */
 }
+
+.card-item {
+  position: relative;
+}
+
+/* .card-item .subheading{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+} */
 
 .subheading .unit-image .icon:hover {
   cursor: pointer;
@@ -1306,6 +1333,35 @@ tbody tr:nth-child(even) {
   padding: 5px;
   background-color: transparent;
   color: white;
+}
+
+.es-legend {
+  display: flex;
+  align-items:center;
+  justify-content: flex-start;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.es-legend img {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
+  overflow:hidden;
+  margin-right: 10px;
+
+}
+
+.es-legend p {
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+  .es-legend {
+    padding: 0;
+  }
+  
 }
 
 table .available {
