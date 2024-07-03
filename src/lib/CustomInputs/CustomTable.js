@@ -38,6 +38,9 @@ const findProvincialRebateKey = (prov) => {
 };
 
 const renderRebateValue = (value) => {
+  if (!value) {
+    return;
+  }
   if (
     value === "not eligible" ||
     value === "not found" ||
@@ -48,22 +51,21 @@ const renderRebateValue = (value) => {
   if (value === "no provincial rebate available") {
     return <span>{value}</span>;
   }
-  // const formattedValue = { __html: value.replace(/;/g, "<br />") };
-  const formattedValue = { __html: "" };
+  const formattedValue = { __html: value.replace(/;/g, "<br />") };
+  // const formattedValue = { __html: "" };
   return (
     <span className="available" dangerouslySetInnerHTML={formattedValue}></span>
   );
 };
 
 const CustomTable = (props) => {
-  const { journeyNodes, currentNode, responses, responseId } = useManyways();
+  const { journeyNodes, currentNode, responses, responseId, locale } =
+    useManyways();
   let [lookupData, setLookupData] = useState([]);
   const [unitsByCategory, setUnitsByCategory] = useState([]);
   const [province, setProvince] = useState([]);
   const [collapsedCategories, setCollapsedCategories] = useState({});
   const [toggleImage, setToggleImage] = useState(null);
-
-  console.log(responseId, "response Id");
 
   let getResponses = async (responseId) => {
     let responses = await fetch(
@@ -94,6 +96,8 @@ const CustomTable = (props) => {
         }
         if (item.indoor_unit_model_number.includes("MSZ"))
           return "Wall Mounted";
+          if (item.indoor_unit_model_number.includes("PKA"))
+          return "Wall Mounted";
         if (item.indoor_unit_model_number.includes("MFZ"))
           return "Floor Mounted";
         if (item.indoor_unit_model_number.includes("SLZ"))
@@ -110,7 +114,7 @@ const CustomTable = (props) => {
           return "Ceiling concealed";
         if (item.indoor_unit_model_number.includes("PEAD"))
           return "Ceiling concealed";
-        return "Others";
+        return "Other";
       })();
 
       if (!acc[groupKey]) {
@@ -121,8 +125,8 @@ const CustomTable = (props) => {
     }, {});
 
     const sortedUnits = Object.keys(units).sort((a, b) => {
-      if (a === "Others") return 1;
-      if (b === "Others") return -1;
+      if (a === "Other") return 1;
+      if (b === "Other") return -1;
       return a.localeCompare(b);
     });
 
@@ -169,23 +173,29 @@ const CustomTable = (props) => {
           src="https://mwassets.imgix.net/Organization_3/energystar.png"
           alt="energy star certified"
         />{" "}
-        <p>ENERGY STAR® certified</p>
+        <p>
+          {locale === "fr"
+            ? "Homologués ENERGY STAR®"
+            : "ENERGY STAR® certified"}
+        </p>
       </div>
       <table>
         <thead>
           <tr>
             <th>AHRI</th>
-            <th>Outdoor Unit #</th>
-            <th>Indoor Unit #</th>
-            <th>Provincial Rebate</th>
+            <th>{locale === "fr" ? "Modèle Extérieur" : "Outdoor Unit # "}</th>
+            <th>{locale === "fr" ? "Modèle Intérieur" : "Indoor Unit # "}</th>
+            <th>{locale === "fr" ? "Provincial" : "Provincial Rebate"}</th>
             <th>
-              {province === "Ontario" ? (
-                <span>HER+ Canada Greener Homes Grant</span>
-              ) : (
-                <span>Federal - Canada Greener Homes Grant (CGHG)</span>
-              )}
+              {locale === "fr"
+                ? "FÉDÉRAL - SUBVENTION CANADIENNE POUR DES MAISONS PLUS VERTES"
+                : "Federal - Canada Greener Homes Grant (CGHG)"}
             </th>
-            <th>Federal - Oil to heat pump affordability program (OHPA)</th>
+            <th>
+              {locale === "fr"
+                ? "FÉDÉRAL - PROGRAMME POUR LA CONVERSION ABORDABLE DU MAZOUT À LA THERMOPOMPE"
+                : "Federal - Oil to heat pump affordability program (OHPA)"}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -280,8 +290,8 @@ const CustomTable = (props) => {
 };
 
 const TableRow = ({ row, province }) => {
-  const rebateKey = findProvincialRebateKey(province);
-  const rebateValue = row[rebateKey];
+  const provKey = findProvincialRebateKey(province);
+  const provRebateValue = row[provKey];
 
   return (
     <tr>
@@ -296,20 +306,27 @@ const TableRow = ({ row, province }) => {
       </td>
       <td>{row?.outdoor_unit_model_number}</td>
       <td>{row?.idu_override}</td>
-      <td>{renderRebateValue(rebateValue)}</td>
+      <td>{renderRebateValue(provRebateValue)}</td>
       <td>
-        {province === "Ontario"
-          ? renderRebateValue(row?.her_canada_greener_homes_grant)
+        {province === "Quebec" || province === "Nova Scotia"
+          ? renderRebateValue(row?.federal_qcns)
           : renderRebateValue(row?.federal_greener_homes_rebate)}
       </td>
-      <td>{renderRebateValue(row?.ohpa)}</td>
+      <td>
+        {" "}
+        {province === "British Columbia"
+          ? renderRebateValue(row?.ohpa_bc)
+          : province === "Nova Scotia"
+            ? renderRebateValue(row?.ohpa_ns)
+            : renderRebateValue(row?.ohpa_roc)}
+      </td>
     </tr>
   );
 };
 
 const ListItem = ({ row, province }) => {
-  const rebateKey = findProvincialRebateKey(province);
-  const rebateValue = row[rebateKey];
+  const provKey = findProvincialRebateKey(province);
+  const provRebateValue = row[provKey];
 
   return (
     <li className="card">
@@ -329,29 +346,27 @@ const ListItem = ({ row, province }) => {
       <div className="rebate-list-item">
         <p>Provincial Rebate</p>
         <p className="rebate-list-item-result">
-          {renderRebateValue(rebateValue)}
+          {renderRebateValue(provRebateValue)}
         </p>
       </div>
-      {province === "Ontario" ? (
-        <div className="rebate-list-item">
-          <p>HER+ Canada Greener Homes Grant</p>
-          <p className="rebate-list-item-result">
-            {renderRebateValue(row?.her_canada_greener_homes_grant)}
-          </p>
-        </div>
-      ) : (
-        <div className="rebate-list-item">
-          <p>Federal - Canada Greener Homes Grant (CGHG)</p>
-          <p className="rebate-list-item-result">
-            {renderRebateValue(row?.federal_greener_homes_rebate)}
-          </p>
-        </div>
-      )}
+
+      <div className="rebate-list-item">
+        <p>Federal - Canada Greener Homes Grant (CGHG)</p>
+        <p className="rebate-list-item-result">
+          {province === "Quebec" || province === "Nova Scotia"
+            ? renderRebateValue(row?.federal_qcns)
+            : renderRebateValue(row?.federal_greener_homes_rebate)}
+        </p>
+      </div>
 
       <div className="rebate-list-item">
         <p>Federal - Oil to heat pump affordability program (OHPA)</p>
         <p className="rebate-list-item-result">
-          {renderRebateValue(row?.ohpa)}
+          {province === "British Columbia"
+            ? renderRebateValue(row?.ohpa_bc)
+            : province === "Nova Scotia"
+              ? renderRebateValue(row?.ohpa_ns)
+              : renderRebateValue(row?.ohpa_roc)}
         </p>
       </div>
     </li>
