@@ -44,7 +44,8 @@ const renderRebateValue = (value) => {
   if (
     value === "not eligible" ||
     value === "not found" ||
-    value === "not listed"
+    value === "not listed" || 
+    value === 'kNotElgible'
   ) {
     return <span className="unavail"></span>;
   }
