@@ -1231,7 +1231,7 @@ tbody tr:nth-child(even) {
   font-weight: 700;
   border-bottom: 1px solid white;
   position: relative;
-  z-index: 2;
+
 }
 
 .subheading .icon {
@@ -1255,7 +1255,7 @@ tbody tr:nth-child(even) {
 .subheading .unit-image-popover {
   display: none;
   position: absolute;
-  z-index: 10;
+  z-index: 100;
   left: 0;
   top: 35px;
   width: 350px;
@@ -1271,6 +1271,7 @@ tbody tr:nth-child(even) {
   padding: 10px;
   background-color: #fff;
   border: 1px solid black;
+
 }
 
 

@@ -18,7 +18,7 @@ const images = {
   "Hybrid Heating & Cooling":
     "https://mwassets.imgix.net/Organization_3/MESCA-a-coil.jpg",
   "Ceiling concealed":
-    "https://mwassets.imgix.net/Organization_3/MESCA-4-way-ceiling-cassette.jpg",
+    "https://mwassets.imgix.net/Organization_3/PCA-CE~1.jpeg",
 };
 
 const findProvincialRebateKey = (prov) => {
