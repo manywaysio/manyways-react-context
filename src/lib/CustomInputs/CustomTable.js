@@ -73,7 +73,8 @@ const CustomTable = (props) => {
       .then((r) => r?.responses);
     let _lookupData = responses.reverse().find((r) => r.node_id === 74);
     setLookupData(
-      _lookupData?.response?.look_up_responses?.["TABLE BUILDER"]?.result || []
+      _lookupData?.response?.look_up_responses?.["July 3 2024 - table builder"]
+        ?.result || []
     );
   };
 
