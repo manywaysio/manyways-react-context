@@ -17,6 +17,8 @@ const images = {
     "https://mwassets.imgix.net/Organization_3/MESCA-central-heating-cycle.jpg",
   "Hybrid Heating & Cooling":
     "https://mwassets.imgix.net/Organization_3/MESCA-a-coil.jpg",
+  "Ceiling suspended":
+    "https://mwassets.imgix.net/Organization_3/PCA-CE~1.jpeg",
   "Ceiling concealed":
     "https://mwassets.imgix.net/Organization_3/PCA-CE~1.jpeg",
 };
@@ -31,7 +33,7 @@ const categoryTranslations = {
   "Hybrid Heating & Cooling": "Unité de plafond encastrable",
   "Ceiling suspended": "Ceiling suspended",
   "Ceiling concealed": "Subventions dans mon secteur",
-  "Other": "Autre",
+  Other: "Autre",
 };
 
 const findProvincialRebateKey = (prov) => {
@@ -106,7 +108,7 @@ const CustomTable = (props) => {
     const units = lookupData.reduce((acc, item) => {
       const groupKey = (() => {
         if (!item.indoor_unit_model_number) {
-          return "Others";
+          return "Other";
         }
         if (item.indoor_unit_model_number.includes("MSZ"))
           return "Wall Mounted";
