@@ -21,6 +21,19 @@ const images = {
     "https://mwassets.imgix.net/Organization_3/PCA-CE~1.jpeg",
 };
 
+const categoryTranslations = {
+  "Wall Mounted": "Unité murale",
+  "Floor Mounted": "Unité console",
+  "4 Way Ceiling Cassette": "Unité cassette de plafond à 4 voies",
+  "1 Way Ceiling Cassette": "Unité cassette de plafond à 1 voie",
+  "Multi position AHU - Cooling": "Unité de traitement d'air multiposition",
+  "Multi position AHU - Heating": "Chauffage hybride et climatisation",
+  "Hybrid Heating & Cooling": "Unité de plafond encastrable",
+  "Ceiling suspended": "Ceiling suspended",
+  "Ceiling concealed": "Subventions dans mon secteur",
+  "Other": "Autre",
+};
+
 const findProvincialRebateKey = (prov) => {
   if (prov === "British Columbia") return "bc";
   else if (prov === "Alberta") return "ab";
@@ -44,8 +57,8 @@ const renderRebateValue = (value) => {
   if (
     value === "not eligible" ||
     value === "not found" ||
-    value === "not listed" || 
-    value === 'kNotElgible'
+    value === "not listed" ||
+    value === "kNotElgible"
   ) {
     return <span className="unavail"></span>;
   }
@@ -97,11 +110,13 @@ const CustomTable = (props) => {
         }
         if (item.indoor_unit_model_number.includes("MSZ"))
           return "Wall Mounted";
-          if (item.indoor_unit_model_number.includes("PKA"))
+        if (item.indoor_unit_model_number.includes("PKA"))
           return "Wall Mounted";
         if (item.indoor_unit_model_number.includes("MFZ"))
           return "Floor Mounted";
         if (item.indoor_unit_model_number.includes("SLZ"))
+          return "4 Way Ceiling Cassette";
+        if (item.indoor_unit_model_number.includes("PLA"))
           return "4 Way Ceiling Cassette";
         if (item.indoor_unit_model_number.includes("MLZ"))
           return "1 Way Ceiling Cassette";
@@ -111,6 +126,8 @@ const CustomTable = (props) => {
           return "Multi position AHU - Heating";
         if (item.indoor_unit_model_number.includes("PAA"))
           return "Hybrid Heating & Cooling";
+        if (item.indoor_unit_model_number.includes("PCA"))
+          return "Ceiling suspended";
         if (item.indoor_unit_model_number.includes("SEZ"))
           return "Ceiling concealed";
         if (item.indoor_unit_model_number.includes("PEAD"))
@@ -206,7 +223,7 @@ const CustomTable = (props) => {
                 <th colSpan="6" className="subheading">
                   <div className="category">
                     <div>
-                      {key}
+                      {locale === "fr" ? categoryTranslations[key] : key}
                       {images[key] ? (
                         <div className="unit-image">
                           <FaImage className="icon" />
@@ -245,7 +262,7 @@ const CustomTable = (props) => {
             <div className="subheading">
               <div className="category">
                 <div>
-                  {key}
+                  {locale === "fr" ? categoryTranslations[key] : key}
                   {images[key] ? (
                     <>
                       <div
