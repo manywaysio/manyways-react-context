@@ -239,7 +239,7 @@ const CustomTable = (props) => {
                       onClick={(e) => {
                         toggleCollapse(e, key);
                       }}
-                      class="toggle-category"
+                      className="toggle-category"
                     >
                       <span className="sr-only">Toggle</span>
                       {collapsedCategories[key] ? <FaPlus /> : <FaMinus />}
@@ -258,7 +258,7 @@ const CustomTable = (props) => {
       </table>
       <ul className="card-list">
         {Object.entries(unitsByCategory).map(([key, items], idx) => (
-          <div key={idx} class="card-item">
+          <div key={idx} className="card-item">
             <div className="subheading">
               <div className="category">
                 <div>
@@ -283,7 +283,7 @@ const CustomTable = (props) => {
 
                 <button
                   onClick={(e) => toggleCollapse(e, key)}
-                  class="toggle-category"
+                  className="toggle-category"
                 >
                   <span className="sr-only">Toggle Category</span>
                   {collapsedCategories[key] ? <FaPlus /> : <FaMinus />}

@@ -182,8 +182,10 @@ const ManywaysProvider = ({
           { node_id: currentNode?.id, ...theResponse },
         ]);
         setCurrentNodeId(data?.id);
+        window.scrollTo(0, 0);
         setIsLoading(false);
       });
+
   };
 
   const goBack = async function () {
