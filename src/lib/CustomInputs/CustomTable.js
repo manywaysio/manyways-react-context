@@ -2,6 +2,9 @@ import { useManyways } from "../ManywaysContext";
 import { Fragment, useEffect, useState } from "react";
 import { FaImage, FaMinus, FaPlus } from "react-icons/fa6";
 
+const RESIDENTIAL = ["MFZ", "SLZ", "MLZ", "SVZ", "PVA", "PAA", "SEZ", "PEAD"];
+const LIGHT_COMMERCIAL = ["PKA", "MFZ", "PL", "PVA", "PC", "PA", "PEAD"];
+
 const images = {
   "Wall Mounted":
     "https://mwassets.imgix.net/Organization_3/MESCA-wall-mounted.jpg",
@@ -77,6 +80,7 @@ const renderRebateValue = (value) => {
 const CustomTable = (props) => {
   const { journeyNodes, currentNode, responses, responseId, locale } =
     useManyways();
+  const [applicationType, setApplicationType] = useState("residential");
   let [lookupData, setLookupData] = useState([]);
   const [unitsByCategory, setUnitsByCategory] = useState([]);
   const [province, setProvince] = useState([]);
@@ -89,12 +93,16 @@ const CustomTable = (props) => {
     )
       .then((r) => r.json())
       .then((r) => r?.responses);
+
     let _lookupData = responses.reverse().find((r) => {
       return (
         !!r?.response?.look_up_responses?.["July 3 2024 - table builder"] ||
         !!r?.response?.look_up_responses?.["TABLE BUILDER"]
       );
     });
+    setApplicationType(
+      _lookupData?.response?.application_type || "residential"
+    );
     setLookupData(
       _lookupData?.response?.look_up_responses?.["July 3 2024 - table builder"]
         ?.result || []
@@ -105,46 +113,51 @@ const CustomTable = (props) => {
     if (lookupData.length < 1) {
       return {};
     }
-    const units = lookupData.reduce((acc, item) => {
-      const groupKey = (() => {
-        if (!item.indoor_unit_model_number) {
+    const units = lookupData
+      .filter((row) => {
+        // filter here by the app type
+        return !!row;
+      })
+      .reduce((acc, item) => {
+        const groupKey = (() => {
+          if (!item.indoor_unit_model_number) {
+            return "Other";
+          }
+          if (item.indoor_unit_model_number.includes("MSZ"))
+            return "Wall Mounted";
+          if (item.indoor_unit_model_number.includes("PKA"))
+            return "Wall Mounted";
+          if (item.indoor_unit_model_number.includes("MFZ"))
+            return "Floor Mounted";
+          if (item.indoor_unit_model_number.includes("SLZ"))
+            return "4 Way Ceiling Cassette";
+          if (item.indoor_unit_model_number.includes("PLA"))
+            return "4 Way Ceiling Cassette";
+          if (item.indoor_unit_model_number.includes("MLZ"))
+            return "1 Way Ceiling Cassette";
+          if (item.indoor_unit_model_number.includes("SVZ"))
+            return "Multi position AHU - Cooling";
+          if (item.indoor_unit_model_number.includes("PVA"))
+            return "Multi position AHU - Heating";
+          if (item.indoor_unit_model_number.includes("PAA"))
+            return "Hybrid Heating & Cooling";
+          if (item.indoor_unit_model_number.includes("PCA"))
+            return "Ceiling suspended";
+          if (item.indoor_unit_model_number.includes("SEZ"))
+            return "Ceiling Concealed";
+          if (item.indoor_unit_model_number.includes("PCA"))
+            return "Ceiling Suspended";
+          if (item.indoor_unit_model_number.includes("PEAD"))
+            return "Ceiling Concealed";
           return "Other";
-        }
-        if (item.indoor_unit_model_number.includes("MSZ"))
-          return "Wall Mounted";
-        if (item.indoor_unit_model_number.includes("PKA"))
-          return "Wall Mounted";
-        if (item.indoor_unit_model_number.includes("MFZ"))
-          return "Floor Mounted";
-        if (item.indoor_unit_model_number.includes("SLZ"))
-          return "4 Way Ceiling Cassette";
-        if (item.indoor_unit_model_number.includes("PLA"))
-          return "4 Way Ceiling Cassette";
-        if (item.indoor_unit_model_number.includes("MLZ"))
-          return "1 Way Ceiling Cassette";
-        if (item.indoor_unit_model_number.includes("SVZ"))
-          return "Multi position AHU - Cooling";
-        if (item.indoor_unit_model_number.includes("PVA"))
-          return "Multi position AHU - Heating";
-        if (item.indoor_unit_model_number.includes("PAA"))
-          return "Hybrid Heating & Cooling";
-        if (item.indoor_unit_model_number.includes("PCA"))
-          return "Ceiling suspended";
-        if (item.indoor_unit_model_number.includes("SEZ"))
-          return "Ceiling Concealed";
-        if (item.indoor_unit_model_number.includes("PCA"))
-          return "Ceiling Suspended";
-        if (item.indoor_unit_model_number.includes("PEAD"))
-          return "Ceiling Concealed";
-        return "Other";
-      })();
+        })();
 
-      if (!acc[groupKey]) {
-        acc[groupKey] = [];
-      }
-      acc[groupKey].push(item);
-      return acc;
-    }, {});
+        if (!acc[groupKey]) {
+          acc[groupKey] = [];
+        }
+        acc[groupKey].push(item);
+        return acc;
+      }, {});
 
     const sortedUnits = Object.keys(units).sort((a, b) => {
       if (a === "Other") return 1;
