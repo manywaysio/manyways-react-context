@@ -428,6 +428,15 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
   #root_energy_star_cert label .label-content {
     text-align: left;
   }
+
+  #root_application_type label .label-content {
+    margin-top: 0px;
+    margin-left: 40px;
+  }
+  #root_application_type label .label-content:before {
+    top: 0px;
+    left: -40px;
+  }
 }
 
 /* .mw-node .field-group-images-false label:not(.disabled):not(.selected-true):hover,
@@ -767,7 +776,7 @@ ul.error-detail .text-danger {
 
 
 .product-details.result-card p {
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 0px;
 }
 
