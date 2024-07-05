@@ -382,7 +382,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
   text-align: left;
 }
 
-
+#root_application_type label,
 #root_energy_star_cert label {
   text-align: left;
   padding: .3rem .5rem;
@@ -424,6 +424,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
     text-align: center;
   }
 
+  #root_application_type label .label-content,
   #root_energy_star_cert label .label-content {
     text-align: left;
   }
@@ -540,6 +541,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
 
 #root_hvac_type label,
 #root_cold_climate label,
+#root_application_type label,
 #root_energy_star_cert label {
   font-size: 18px;
   font-weight: 300;
@@ -550,6 +552,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
 
 #root_hvac_type .label-description,
 #root_cold_climate .label-description,
+#root_application_type .label-description,
 #root_energy_star_cert .label-description {
   font-size: 14px;
   opacity: .75;
@@ -595,12 +598,13 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
 }
 
 @media only screen and (min-width: 768px) {
-  #root_energy_star_cert {
+  #root_application_type, #root_energy_star_cert {
     grid-template-columns: 1fr 1fr;
   }
+  
 }
 
-
+#root_application_type img,
 #root_energy_star_cert img {
   max-height: 100px;
   height: 100px;
@@ -613,7 +617,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
   margin-right: 0;
   margin-bottom: 0;
 }
-
+#root_application_type .label-content:has(img),
 #root_energy_star_cert .label-content:has(img){
   display: flex;
   flex-direction: row-reverse;
@@ -621,6 +625,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
 }
 
 @media only screen and (min-width: 768px) {
+  #root_application_type .label-content,
   #root_energy_star_cert .label-content{
     flex-direction: row-reverse;
     justify-content: flex-end;
