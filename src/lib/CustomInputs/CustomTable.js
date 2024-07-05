@@ -94,9 +94,13 @@ const CustomTable = (props) => {
         }
         if (item.indoor_unit_model_number.includes("MSZ"))
           return "Wall Mounted";
+        if (item.indoor_unit_model_number.includes("PKA"))
+          return "Wall Mounted";
         if (item.indoor_unit_model_number.includes("MFZ"))
           return "Floor Mounted";
         if (item.indoor_unit_model_number.includes("SLZ"))
+          return "4 Way Ceiling Cassette";
+        if (item.indoor_unit_model_number.includes("PLA"))
           return "4 Way Ceiling Cassette";
         if (item.indoor_unit_model_number.includes("MLZ"))
           return "1 Way Ceiling Cassette";
@@ -107,9 +111,11 @@ const CustomTable = (props) => {
         if (item.indoor_unit_model_number.includes("PAA"))
           return "Hybrid Heating & Cooling";
         if (item.indoor_unit_model_number.includes("SEZ"))
-          return "Ceiling concealed";
+          return "Ceiling Concealed";
+        if (item.indoor_unit_model_number.includes("PCA"))
+          return "Ceiling Suspended";
         if (item.indoor_unit_model_number.includes("PEAD"))
-          return "Ceiling concealed";
+          return "Ceiling Concealed";
         return "Others";
       })();
 
