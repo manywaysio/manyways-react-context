@@ -1,6 +1,10 @@
 import { useManyways } from "../ManywaysContext";
 import { Fragment, useEffect, useState } from "react";
-import { FaImage, FaMinus, FaPlus } from "react-icons/fa6";
+import { FaCircleInfo, FaImage, FaMinus, FaPlus } from "react-icons/fa6";
+import { MdInfo } from "react-icons/md";
+import { IoInformationCircleOutline } from "react-icons/io5";
+import { IoIosInformationCircle } from "react-icons/io";
+
 
 const RESIDENTIAL = ["MFZ", "SLZ", "MLZ", "SVZ", "PVA", "PAA", "SEZ", "PEAD"];
 const LIGHT_COMMERCIAL = ["PKA", "MFZ", "PL", "PVA", "PC", "PA", "PEAD"];
@@ -254,7 +258,7 @@ const CustomTable = (props) => {
                       {locale === "fr" ? categoryTranslations[key] : key}
                       {images[key] ? (
                         <div className="unit-image">
-                          <FaImage className="icon" />
+                          <MdInfo className="icon" />
                           <div className="unit-image-popover">
                             <img src={images[key]} alt={key} />
                           </div>
@@ -301,7 +305,7 @@ const CustomTable = (props) => {
                             : setToggleImage(images[key]);
                         }}
                       >
-                        <FaImage className="icon" />
+                        <MdInfo className="icon" />
                       </div>
                     </>
                   ) : (
