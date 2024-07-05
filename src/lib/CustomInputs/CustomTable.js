@@ -128,7 +128,7 @@ const CustomTable = (props) => {
           return true;
         }
         return false;
-      })
+      }) 
       .reduce((acc, item) => {
         const groupKey = (() => {
           if (!item.indoor_unit_model_number) {

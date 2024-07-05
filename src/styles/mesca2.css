@@ -1356,7 +1356,7 @@ tbody tr:nth-child(even) {
   justify-content: flex-start;
   padding: 0 2rem;
   position: relative;
-  z-index: 1;
+  z-index: 11;
 }
 
 .es-legend img {
