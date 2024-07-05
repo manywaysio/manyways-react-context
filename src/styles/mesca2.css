@@ -1394,9 +1394,10 @@ table .available:before {
 
 .unavail {
   display: block;
-  width: 16px;
+  width: 14px;
   height: 1px;
   background-color: black;
+  margin-top: 10px;
 }
 
 .card-list {

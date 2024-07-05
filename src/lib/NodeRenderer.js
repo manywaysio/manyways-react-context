@@ -95,7 +95,7 @@ const NodeRenderer = (props) => {
       }
     })
     .map((currentNode, idx) => {
-      let theResponse = responses.find((r) => r.node_id === currentNode?.id);
+      let theResponse = responses.slice().reverse().find((r) => r.node_id === currentNode?.id);
 
       // UI VARIABLES
       let UIVariables = currentNode?.ui_variables || {};

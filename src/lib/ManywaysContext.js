@@ -89,8 +89,6 @@ const ManywaysProvider = ({
       return;
     }
 
-    console.log(ignoreContinue);
-
     if (shouldContinue() && !ignoreContinue) {
       const sessionId = window.location.search.split("continue=")[1];
       continueJourney(sessionId);
@@ -182,8 +180,10 @@ const ManywaysProvider = ({
           { node_id: currentNode?.id, ...theResponse },
         ]);
         setCurrentNodeId(data?.id);
+        window.scrollTo(0, 0);
         setIsLoading(false);
       });
+
   };
 
   const goBack = async function () {
