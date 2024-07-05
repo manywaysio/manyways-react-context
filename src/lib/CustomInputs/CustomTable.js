@@ -22,7 +22,7 @@ const images = {
     "https://mwassets.imgix.net/Organization_3/MESCA-a-coil.jpg",
   "Ceiling suspended":
     "https://mwassets.imgix.net/Organization_3/PCA-CE~1.jpeg",
-  "Ceiling concealed":
+  "Ceiling Concealed":
     "https://mwassets.imgix.net/Organization_3/PCA-CE~1.jpeg",
 };
 
@@ -35,7 +35,7 @@ const categoryTranslations = {
   "Multi position AHU - Heating": "Chauffage hybride et climatisation",
   "Hybrid Heating & Cooling": "Unité de plafond encastrable",
   "Ceiling suspended": "Ceiling suspended",
-  "Ceiling concealed": "Subventions dans mon secteur",
+  "Ceiling Concealed": "Subventions dans mon secteur",
   Other: "Autre",
 };
 

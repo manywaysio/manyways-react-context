@@ -1189,7 +1189,7 @@ table {
   display: none;
   position: relative;
   margin-top: -20px;
-  z-index: 0;
+  z-index: 10;
 }
 
 
