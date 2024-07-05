@@ -94,15 +94,11 @@ const CustomTable = (props) => {
       .then((r) => r.json())
       .then((r) => r?.responses);
 
-    let _lookupData = responses.reverse().find((r) => {
-      return (
-        !!r?.response?.look_up_responses?.["July 3 2024 - table builder"] ||
-        !!r?.response?.look_up_responses?.["TABLE BUILDER"]
-      );
-    });
+    let _lookupData = responses.reverse().find((r) => r.node_id === 541);
     setApplicationType(
       _lookupData?.response?.application_type || "residential"
     );
+
     setLookupData(
       _lookupData?.response?.look_up_responses?.["July 3 2024 - table builder"]
         ?.result || []
@@ -115,8 +111,23 @@ const CustomTable = (props) => {
     }
     const units = lookupData
       .filter((row) => {
-        // filter here by the app type
-        return !!row;
+        if (
+          applicationType === "Residential" &&
+          RESIDENTIAL.some((prefix) =>
+            row.indoor_unit_model_number.includes(prefix)
+          )
+        ) {
+          return true;
+        }
+        if (
+          applicationType === "Light Commercial" &&
+          LIGHT_COMMERCIAL.some((prefix) =>
+            row.indoor_unit_model_number.includes(prefix)
+          )
+        ) {
+          return true;
+        }
+        return false;
       })
       .reduce((acc, item) => {
         const groupKey = (() => {
@@ -196,7 +207,7 @@ const CustomTable = (props) => {
     }));
   };
 
-  return lookupData?.length < 1 ? (
+  return Object.keys(unitsByCategory)?.length < 1 ? (
     <div className="no-results">
       <p>No results found</p>
     </div>
@@ -352,8 +363,8 @@ const TableRow = ({ row, province }) => {
         {province === "British Columbia"
           ? renderRebateValue(row?.ohpa_bc)
           : province === "Nova Scotia"
-          ? renderRebateValue(row?.ohpa_ns)
-          : renderRebateValue(row?.ohpa_roc)}
+            ? renderRebateValue(row?.ohpa_ns)
+            : renderRebateValue(row?.ohpa_roc)}
       </td>
     </tr>
   );
@@ -400,8 +411,8 @@ const ListItem = ({ row, province }) => {
           {province === "British Columbia"
             ? renderRebateValue(row?.ohpa_bc)
             : province === "Nova Scotia"
-            ? renderRebateValue(row?.ohpa_ns)
-            : renderRebateValue(row?.ohpa_roc)}
+              ? renderRebateValue(row?.ohpa_ns)
+              : renderRebateValue(row?.ohpa_roc)}
         </p>
       </div>
     </li>
