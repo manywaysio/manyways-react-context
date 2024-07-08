@@ -38,9 +38,9 @@ const categoryTranslations = {
   "Multi position AHU - Cooling": "Unité de traitement d'air multiposition",
   "Multi position AHU - Heating": "Chauffage hybride et climatisation",
   "Hybrid Heating & Cooling": "Unité de plafond encastrable",
-  "Ceiling suspended": "Ceiling suspended",
+  "Ceiling suspended": "Unité suspendue au plafond",
   "Ceiling Concealed": "Subventions dans mon secteur",
-  Other: "Autre",
+  "Other": "Autre",
 };
 
 const findProvincialRebateKey = (prov) => {
