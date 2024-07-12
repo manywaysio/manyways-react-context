@@ -24,7 +24,7 @@ const images = {
   "Ceiling suspended":
     "https://mwassets.imgix.net/Organization_3/PCA-CE~1.jpeg",
   "Ceiling Concealed":
-    "https://mwassets.imgix.net/Organization_3/PCA-CE~1.jpeg",
+    "https://mwassets.imgix.net/Organization_3/Ceiling_concealed.jpg",
 };
 
 const categoryTranslations = {
