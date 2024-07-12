@@ -112,7 +112,7 @@ const CustomTable = (props) => {
     }
     const units = lookupData
       .filter((row) => {
-        if (!row.indoor_unit_model_number) {
+        if (!row.multi_zone === "Y") {
           return true;
         }
         if (
