@@ -694,12 +694,28 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
 
 ul.error-detail {
   position: relative;
+  margin-top: -20px;
+  margin-bottom: 40px;
+
 }
 
 ul.error-detail .text-danger {
   color: var(--button-background);
   font-size: 14px;
 }
+
+.error-box {
+  margin-top: 25px;
+  border: 2px solid #C40001;
+  background-color: rgba(196, 0, 1, .1);
+  padding: 10px 30px 20px 30px;
+}
+
+.error-box h2 {
+  color: #C40001;
+}
+
+
 
 @media only screen and (min-width: 768px) {
   #root_indoor__error {

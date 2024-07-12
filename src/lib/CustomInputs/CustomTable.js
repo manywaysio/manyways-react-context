@@ -1,10 +1,7 @@
 import { useManyways } from "../ManywaysContext";
 import { Fragment, useEffect, useState } from "react";
-import { FaCircleInfo, FaImage, FaMinus, FaPlus } from "react-icons/fa6";
+import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
-import { IoInformationCircleOutline } from "react-icons/io5";
-import { IoIosInformationCircle } from "react-icons/io";
-
 
 const RESIDENTIAL = ["MFZ", "SLZ", "MLZ", "SVZ", "PVA", "PAA", "SEZ", "PEAD"];
 const LIGHT_COMMERCIAL = ["PKA", "MFZ", "PL", "PVA", "PC", "PA", "PEAD"];
@@ -116,7 +113,7 @@ const CustomTable = (props) => {
     const units = lookupData
       .filter((row) => {
         if (!row.indoor_unit_model_number) {
-          return true
+          return true;
         }
         if (
           applicationType === "Residential" &&
@@ -135,7 +132,7 @@ const CustomTable = (props) => {
           return true;
         }
         return false;
-      }) 
+      })
       .reduce((acc, item) => {
         const groupKey = (() => {
           if (!item.indoor_unit_model_number) {

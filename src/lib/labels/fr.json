@@ -7,6 +7,7 @@
   "poweredBy": "réalisé avec Manyways",
   "restart": "Redémarrer",
   "loading": "Chargement",
+  "formErrorMessage": "Veuillez vérifier votre soumission pour:",
   "validEmail": "Une adresse email valide est requise",
   "en": "Anglais",
   "fr": "Français",

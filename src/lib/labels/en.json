@@ -7,6 +7,7 @@
   "poweredBy": "powered by Manyways",
   "restart": "Restart",
   "loading": "Loading",
+  "formErrorMessage": "Please check your submission for:",
   "validEmail": "Valid email address is required",
   "en": "English",
   "fr": "French",

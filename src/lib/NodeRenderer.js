@@ -33,20 +33,6 @@ const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   return false;
 };
 
-function ErrorListTemplate(props: ErrorListProps) {
-  const { errors } = props;
-  return (
-    <div>
-      <h2>Please check your submission for:</h2>
-      <ul>
-        {errors.map((error) => (
-          <li key={error.stack}>{error.stack}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 const NodeRenderer = (props) => {
   const {
     nodes,
@@ -58,9 +44,36 @@ const NodeRenderer = (props) => {
     mode,
     treeConfig,
     locale,
+    labels,
   } = useManyways();
 
   const [transitioningNodes, setTransitioningNodes] = useState([]);
+
+  function ErrorListTemplate(props) {
+    const { errors } = props;
+    console.log(errors, "errors");
+    return (
+      <div class="error-box">
+        <h2>
+          {labels?.formErrorMessage
+            ? labels?.formErrorMessage
+            : "Please check your submission for:"}{" "}
+        </h2>
+        <ul>
+          {errors.map((error) => (
+            <li key={error.stack}>
+              {locale === "fr"
+                ? error.stack.replace(
+                    /must have required property/g,
+                    "Champ obligatoire : "
+                  )
+                : error.stack}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 
   //add transitioning state to last two nodes
   useEffect(() => {
@@ -95,7 +108,10 @@ const NodeRenderer = (props) => {
       }
     })
     .map((currentNode, idx) => {
-      let theResponse = responses.slice().reverse().find((r) => r.node_id === currentNode?.id);
+      let theResponse = responses
+        .slice()
+        .reverse()
+        .find((r) => r.node_id === currentNode?.id);
 
       // UI VARIABLES
       let UIVariables = currentNode?.ui_variables || {};
