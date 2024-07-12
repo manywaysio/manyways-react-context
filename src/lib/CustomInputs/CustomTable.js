@@ -135,7 +135,7 @@ const CustomTable = (props) => {
       })
       .reduce((acc, item) => {
         const groupKey = (() => {
-          if (!item.indoor_unit_model_number) {
+          if (item.multi_zone == "Y") {
             return "Multi Zone";
           }
           if (item.indoor_unit_model_number.includes("MSZ"))
@@ -367,8 +367,8 @@ const TableRow = ({ row, province }) => {
         {province === "British Columbia"
           ? renderRebateValue(row?.ohpa_bc)
           : province === "Nova Scotia"
-            ? renderRebateValue(row?.ohpa_ns)
-            : renderRebateValue(row?.ohpa_roc)}
+          ? renderRebateValue(row?.ohpa_ns)
+          : renderRebateValue(row?.ohpa_roc)}
       </td>
     </tr>
   );
@@ -415,8 +415,8 @@ const ListItem = ({ row, province }) => {
           {province === "British Columbia"
             ? renderRebateValue(row?.ohpa_bc)
             : province === "Nova Scotia"
-              ? renderRebateValue(row?.ohpa_ns)
-              : renderRebateValue(row?.ohpa_roc)}
+            ? renderRebateValue(row?.ohpa_ns)
+            : renderRebateValue(row?.ohpa_roc)}
         </p>
       </div>
     </li>
