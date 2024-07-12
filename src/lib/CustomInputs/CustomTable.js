@@ -40,7 +40,7 @@ const categoryTranslations = {
   "Hybrid Heating & Cooling": "Unité de plafond encastrable",
   "Ceiling suspended": "Unité suspendue au plafond",
   "Ceiling Concealed": "Subventions dans mon secteur",
-  "Other": "Autre",
+  "Multi Zone": "Multizone",
 };
 
 const findProvincialRebateKey = (prov) => {
@@ -115,6 +115,9 @@ const CustomTable = (props) => {
     }
     const units = lookupData
       .filter((row) => {
+        if (!row.indoor_unit_model_number) {
+          return true
+        }
         if (
           applicationType === "Residential" &&
           RESIDENTIAL.some((prefix) =>
@@ -136,7 +139,7 @@ const CustomTable = (props) => {
       .reduce((acc, item) => {
         const groupKey = (() => {
           if (!item.indoor_unit_model_number) {
-            return "Other";
+            return "Multi Zone";
           }
           if (item.indoor_unit_model_number.includes("MSZ"))
             return "Wall Mounted";
@@ -164,7 +167,7 @@ const CustomTable = (props) => {
             return "Ceiling Suspended";
           if (item.indoor_unit_model_number.includes("PEAD"))
             return "Ceiling Concealed";
-          return "Other";
+          return "Multi Zone";
         })();
 
         if (!acc[groupKey]) {
@@ -175,8 +178,8 @@ const CustomTable = (props) => {
       }, {});
 
     const sortedUnits = Object.keys(units).sort((a, b) => {
-      if (a === "Other") return 1;
-      if (b === "Other") return -1;
+      if (a === "Multi Zone") return 1;
+      if (b === "Multi Zone") return -1;
       return a.localeCompare(b);
     });
 
