@@ -65,7 +65,7 @@ const NodeRenderer = (props) => {
               {locale === "fr"
                 ? error.stack.replace(
                     /must have required property/g,
-                    "Champ obligatoire : "
+                    "Doit avoir la propriété requise:"
                   )
                 : error.stack}
             </li>
