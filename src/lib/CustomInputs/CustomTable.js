@@ -32,11 +32,11 @@ const categoryTranslations = {
   "Floor Mounted": "Unité console",
   "4 Way Ceiling Cassette": "Unité cassette de plafond à 4 voies",
   "1 Way Ceiling Cassette": "Unité cassette de plafond à 1 voie",
-  "Multi position AHU - Cooling": "Unité de traitement d'air multiposition",
-  "Multi position AHU - Heating": "Chauffage hybride et climatisation",
-  "Hybrid Heating & Cooling": "Unité de plafond encastrable",
+  "Multi position AHU - Cooling": "Unité de traitement d'air multiposition - climatisation",
+  "Multi position AHU - Heating": "Unité de traitement d'air multiposition - chauffage",
+  "Hybrid Heating & Cooling": "Chauffage hybride et climatisation",
   "Ceiling suspended": "Unité suspendue au plafond",
-  "Ceiling Concealed": "Subventions dans mon secteur",
+  "Ceiling Concealed": "Unité de plafond encastrable",
   "Multi Zone": "Multizone",
 };
 
