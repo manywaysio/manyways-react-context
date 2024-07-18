@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
 
-const RESIDENTIAL = ["MFZ", "SLZ", "MLZ", "SVZ", "PVA", "PAA", "SEZ", "PEAD"];
+const RESIDENTIAL = ["MSZ", "MFZ", "SLZ", "MLZ", "SVZ", "PVA", "PAA", "SEZ", "PEAD"];
 const LIGHT_COMMERCIAL = ["PKA", "MFZ", "PL", "PVA", "PC", "PA", "PEAD"];
 
 const images = {
@@ -15,9 +15,9 @@ const images = {
     "https://mwassets.imgix.net/Organization_3/MESCA-4-way-ceiling-cassette.jpg",
   "1 Way Ceiling Cassette":
     "https://mwassets.imgix.net/Organization_3/MESCA-1-way-ceiling-cassette.jpg",
-  "Multi position AHU - Cooling":
-    "https://mwassets.imgix.net/Organization_3/MESCA-central-cooling-cycle.jpg",
-  "Multi position AHU - Heating":
+  // "Multi position AHU - cooling":
+  //   "https://mwassets.imgix.net/Organization_3/MESCA-central-cooling-cycle.jpg",
+  "Multi position AHU":
     "https://mwassets.imgix.net/Organization_3/MESCA-central-heating-cycle.jpg",
   "Hybrid Heating & Cooling":
     "https://mwassets.imgix.net/Organization_3/MESCA-a-coil.jpg",
@@ -32,8 +32,7 @@ const categoryTranslations = {
   "Floor Mounted": "Unité console",
   "4 Way Ceiling Cassette": "Unité cassette de plafond à 4 voies",
   "1 Way Ceiling Cassette": "Unité cassette de plafond à 1 voie",
-  "Multi position AHU - Cooling": "Unité de traitement d'air multiposition - climatisation",
-  "Multi position AHU - Heating": "Unité de traitement d'air multiposition - chauffage",
+  "Multi position AHU": "Unité de traitement d'air multiposition",
   "Hybrid Heating & Cooling": "Chauffage hybride et climatisation",
   "Ceiling suspended": "Unité suspendue au plafond",
   "Ceiling Concealed": "Unité de plafond encastrable",
@@ -79,7 +78,7 @@ const renderRebateValue = (value) => {
 };
 
 const CustomTable = (props) => {
-  const { journeyNodes, currentNode, responses, responseId, locale } =
+  const { currentNode, responses, responseId, locale } =
     useManyways();
   const [applicationType, setApplicationType] = useState("residential");
   let [lookupData, setLookupData] = useState([]);
@@ -104,6 +103,7 @@ const CustomTable = (props) => {
       _lookupData?.response?.look_up_responses?.["July 3 2024 - table builder"]
         ?.result || []
     );
+
   };
 
   const sortUnits = () => {
@@ -135,7 +135,7 @@ const CustomTable = (props) => {
       })
       .reduce((acc, item) => {
         const groupKey = (() => {
-          if (item.multi_zone == "Y") {
+          if (item.multi_zone === "Y") {
             return "Multi Zone";
           }
           if (item.indoor_unit_model_number.includes("MSZ"))
@@ -151,9 +151,9 @@ const CustomTable = (props) => {
           if (item.indoor_unit_model_number.includes("MLZ"))
             return "1 Way Ceiling Cassette";
           if (item.indoor_unit_model_number.includes("SVZ"))
-            return "Multi position AHU - Cooling";
+            return "Multi position AHU";
           if (item.indoor_unit_model_number.includes("PVA"))
-            return "Multi position AHU - Heating";
+            return "Multi position AHU";
           if (item.indoor_unit_model_number.includes("PAA"))
             return "Hybrid Heating & Cooling";
           if (item.indoor_unit_model_number.includes("PCA"))
@@ -190,6 +190,7 @@ const CustomTable = (props) => {
 
   useEffect(() => {
     getResponses(responseId);
+
   }, [currentNode, responseId]);
 
   useEffect(() => {
@@ -198,7 +199,7 @@ const CustomTable = (props) => {
     }
     const sorted = sortUnits();
     setUnitsByCategory(sorted);
-
+    console.log(lookupData)
     const lastResponse = responses[responses.length - 1];
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
