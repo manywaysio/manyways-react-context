@@ -4,7 +4,7 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
 
 const RESIDENTIAL = ["MSZ", "MFZ", "SLZ", "MLZ", "SVZ", "PVA", "PAA", "SEZ", "PEAD"];
-const LIGHT_COMMERCIAL = ["PKA", "MFZ", "PL", "PVA", "PC", "PA", "PEAD"];
+const LIGHT_COMMERCIAL = ["PKA", "PL", "PVA", "PC", "PA", "PEAD"];
 
 const images = {
   "Wall Mounted":
