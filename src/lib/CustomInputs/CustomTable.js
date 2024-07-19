@@ -3,7 +3,17 @@ import { Fragment, useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
 
-const RESIDENTIAL = ["MSZ", "MFZ", "SLZ", "MLZ", "SVZ", "PVA", "PAA", "SEZ", "PEAD"];
+const RESIDENTIAL = [
+  "MSZ",
+  "MFZ",
+  "SLZ",
+  "MLZ",
+  "SVZ",
+  "PVA",
+  "PAA",
+  "SEZ",
+  "PEAD",
+];
 const LIGHT_COMMERCIAL = ["PKA", "PL", "PVA", "PC", "PA", "PEAD"];
 
 const images = {
@@ -55,7 +65,7 @@ const findProvincialRebateKey = (prov) => {
   else return "yukofalse";
 };
 
-const renderRebateValue = (value) => {
+const renderRebateValue = (value, locale, override) => {
   if (!value) {
     return;
   }
@@ -70,6 +80,14 @@ const renderRebateValue = (value) => {
   if (value === "no provincial rebate available") {
     return <span>{value}</span>;
   }
+  if ((override = "ohpa")) {
+    const textBefore = locale === "fr" ? "jusqu'à" : "Up to";
+    const overrideVal =
+      value === "$15,000" || value === "$10,000"
+        ? `${textBefore} ${value} `
+        : value;
+    return <span>{overrideVal}</span>;
+  }
   const formattedValue = { __html: value.replace(/;/g, "<br />") };
   // const formattedValue = { __html: "" };
   return (
@@ -78,8 +96,7 @@ const renderRebateValue = (value) => {
 };
 
 const CustomTable = (props) => {
-  const { currentNode, responses, responseId, locale } =
-    useManyways();
+  const { currentNode, responses, responseId, locale } = useManyways();
   const [applicationType, setApplicationType] = useState("residential");
   const [categoryApplicationType, setCategoryApplicationType] = useState("");
   let [lookupData, setLookupData] = useState([]);
@@ -87,13 +104,11 @@ const CustomTable = (props) => {
   const [province, setProvince] = useState([]);
   const [collapsedCategories, setCollapsedCategories] = useState({});
   const [toggleImage, setToggleImage] = useState(null);
-  const [sortBy, setSortBy] = useState('Heat Pump Size');
-  
+  const [sortBy, setSortBy] = useState("Heat Pump Size");
 
-
-  let nodeSelection = responses.reverse().find(r => !!r.response?.application_type);
-
-  console.log(responses, nodeSelection?.response);
+  let nodeSelection = responses
+    .reverse()
+    .find((r) => !!r.response?.application_type);
 
   let getResponses = async (responseId) => {
     let responses = await fetch(
@@ -115,7 +130,6 @@ const CustomTable = (props) => {
       _lookupData?.response?.look_up_responses?.["July 3 2024 - table builder"]
         ?.result || []
     );
-
   };
 
   const sortUnits = () => {
@@ -202,7 +216,6 @@ const CustomTable = (props) => {
 
   useEffect(() => {
     getResponses(responseId);
-
   }, [currentNode, responseId]);
 
   useEffect(() => {
@@ -211,7 +224,7 @@ const CustomTable = (props) => {
     }
     const sorted = sortUnits();
     setUnitsByCategory(sorted);
-    console.log(lookupData)
+    console.log(lookupData);
     const lastResponse = responses[responses.length - 1];
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
@@ -226,7 +239,7 @@ const CustomTable = (props) => {
 
   let indoorUnitTypeLabel =
     locale === "fr" ? "Modèle Intérieur" : "Indoor Unit # ";
-  
+
   if (categoryApplicationType === "Multi Zone") {
     indoorUnitTypeLabel =
       locale === "fr" ? "Type de Modèle Intérieur" : "Indoor Unit Type ";
@@ -359,7 +372,12 @@ const CustomTable = (props) => {
                     }
                   })
                   .map((row, rowIdx) => (
-                    <TableRow row={row} key={rowIdx} province={province} />
+                    <TableRow
+                      row={row}
+                      key={rowIdx}
+                      province={province}
+                      locale={locale}
+                    />
                   ))}
             </Fragment>
           ))}
@@ -407,7 +425,12 @@ const CustomTable = (props) => {
 
             {!collapsedCategories[key] &&
               items.map((row, rowIdx) => (
-                <ListItem row={row} key={rowIdx} province={province} />
+                <ListItem
+                  row={row}
+                  key={rowIdx}
+                  province={province}
+                  locale={locale}
+                />
               ))}
           </div>
         ))}
@@ -416,7 +439,7 @@ const CustomTable = (props) => {
   );
 };
 
-const TableRow = ({ row, province }) => {
+const TableRow = ({ row, province, locale }) => {
   const provKey = findProvincialRebateKey(province);
   const provRebateValue = row[provKey];
 
@@ -433,25 +456,25 @@ const TableRow = ({ row, province }) => {
       </td>
       <td>{row?.outdoor_unit_model_number}</td>
       <td>{row?.idu_override}</td>
-      <td>{renderRebateValue(provRebateValue)}</td>
+      <td>{renderRebateValue(provRebateValue, locale)}</td>
       <td>
         {province === "Quebec" || province === "Nova Scotia"
-          ? renderRebateValue(row?.federal_qcns)
-          : renderRebateValue(row?.federal_greener_homes_rebate)}
+          ? renderRebateValue(row?.federal_qcns, locale)
+          : renderRebateValue(row?.federal_greener_homes_rebate, locale)}
       </td>
       <td>
         {" "}
         {province === "British Columbia"
-          ? renderRebateValue(row?.ohpa_bc)
+          ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
           : province === "Nova Scotia"
-          ? renderRebateValue(row?.ohpa_ns)
-          : renderRebateValue(row?.ohpa_roc)}
+            ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
+            : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
       </td>
     </tr>
   );
 };
 
-const ListItem = ({ row, province }) => {
+const ListItem = ({ row, province, locale }) => {
   const provKey = findProvincialRebateKey(province);
   const provRebateValue = row[provKey];
 
@@ -490,10 +513,10 @@ const ListItem = ({ row, province }) => {
         <p>Federal - Oil to heat pump affordability program (OHPA)</p>
         <p className="rebate-list-item-result">
           {province === "British Columbia"
-            ? renderRebateValue(row?.ohpa_bc)
+            ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
             : province === "Nova Scotia"
-            ? renderRebateValue(row?.ohpa_ns)
-            : renderRebateValue(row?.ohpa_roc)}
+              ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
+              : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
         </p>
       </div>
     </li>
