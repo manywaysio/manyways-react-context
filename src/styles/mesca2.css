@@ -1991,6 +1991,16 @@ table .available:before {
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .legend-and-sorts {
+    display: block;
+  }
+  .sort-holder {
+    display: none;
+  }
+  
+}
+
 .mw-container .sort-holder button {
   font-size: 12px;
   display: block;
