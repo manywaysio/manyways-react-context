@@ -86,6 +86,7 @@ const CustomTable = (props) => {
   const [province, setProvince] = useState([]);
   const [collapsedCategories, setCollapsedCategories] = useState({});
   const [toggleImage, setToggleImage] = useState(null);
+  const [sortBy, setSortBy] = useState('Heat Pump Size');
 
   let getResponses = async (responseId) => {
     let responses = await fetch(
@@ -218,17 +219,33 @@ const CustomTable = (props) => {
     </div>
   ) : (
     <>
-      {" "}
-      <div className="es-legend">
-        <img
-          src="https://mwassets.imgix.net/Organization_3/energystar.png"
-          alt="energy star certified"
-        />{" "}
-        <p>
-          {locale === "fr"
-            ? "Homologués ENERGY STAR®"
-            : "ENERGY STAR® certified"}
-        </p>
+      <div className="legend-and-sorts">
+        <div className="es-legend">
+          <img
+            src="https://mwassets.imgix.net/Organization_3/energystar.png"
+            alt="energy star certified"
+          />{" "}
+          <p>
+            {locale === "fr"
+              ? "Homologués ENERGY STAR®"
+              : "ENERGY STAR® certified"}
+          </p>
+        </div>
+        <div className="sort-holder">
+          <button className={sortBy === "Heat Pump Size" ? 'selected' : ''} onClick={e => {
+            setSortBy('Heat Pump Size');
+          }}>Heat Pump Size</button>
+          <button className={sortBy === "Outdoor Unit" ? 'selected' : ''} onClick={e => {
+            setSortBy('Outdoor Unit');
+          }}>Outdoor Unit</button>
+          <button className={sortBy === "Indoor Unit" ? 'selected' : ''} onClick={e => {
+            setSortBy('Indoor Unit');
+          }}>Indoor Unit</button>
+          <button className={sortBy === "AHRI Number" ? 'selected' : ''} onClick={e => {
+            setSortBy('AHRI Number');
+          }}>AHRI Number</button>
+          <label>SORT BY</label>
+        </div>
       </div>
       <table>
         <thead>
@@ -282,7 +299,19 @@ const CustomTable = (props) => {
               </tr>
 
               {!collapsedCategories[key] &&
-                items.map((row, rowIdx) => (
+                items.sort((a, b) => {
+                  if (sortBy === 'Heat Pump Size') {
+                    let aSize = a.outdoor_unit_model_number.match(/\d+/)[0];
+                    let bSize = b.outdoor_unit_model_number.match(/\d+/)[0];
+                    return aSize - bSize;
+                  } else if (sortBy === 'Outdoor Unit') {
+                    return a.outdoor_unit_model_number.localeCompare(b.outdoor_unit_model_number);
+                  } else if (sortBy === 'Indoor Unit') {
+                    return a.idu_override.localeCompare(b.idu_override);
+                  } else if (sortBy === 'AHRI Number') {
+                    return a.ahri_number.localeCompare(b.ahri_number);
+                  }
+                }).map((row, rowIdx) => (
                   <TableRow row={row} key={rowIdx} province={province} />
                 ))}
             </Fragment>
