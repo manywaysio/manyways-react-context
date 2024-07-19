@@ -12,6 +12,8 @@ import Select from "react-select";
 import { useEffect, useState } from "react";
 import ManywaysSelect from "./CustomInputs/ManywaysSelect";
 import CustomTable from "./CustomInputs/CustomTable";
+import IndoorUnitWidget from "./CustomInputs/IndoorUnitWidget";
+import OutdoorUnitWidget from "./CustomInputs/OutdoorUnitWidget";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -195,6 +197,8 @@ const NodeRenderer = (props) => {
                 CheckboxesWidget: ManywaysCheckboxWidget,
                 checkboxes: ManywaysCheckboxWidget,
                 SelectWidget: ManywaysSelectWidget,
+                CustomOutdoorModel: OutdoorUnitWidget,
+                CustomIndoorModel: IndoorUnitWidget,
                 Select: ManywaysSelect,
               }}
               onChange={(e) => {
