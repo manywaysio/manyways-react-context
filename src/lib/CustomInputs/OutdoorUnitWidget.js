@@ -71,6 +71,8 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     };
   }, []);
 
+  console.log(window.manyways.dispatcher);
+
   let temp_opts = [
     { value: "xxx", label: "XXX" },
     { value: "Alberta", label: "Alberta" },
@@ -121,6 +123,10 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
         onChange={(v) => {
           // console.log(v);
           onChange(v.value);
+          window.manyways.dispatcher.publish(
+            "mesca/outdoor-unit-selected",
+            v.value
+          );
           setMenuIsOpen(false);
         }}
         onMenuOpen={() => {

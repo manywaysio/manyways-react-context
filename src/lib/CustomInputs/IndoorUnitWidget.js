@@ -5,6 +5,7 @@ import { useManyways } from "../ManywaysContext";
 const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const { responseId } = useManyways();
   const { options } = props;
+  const [__options, setOptions] = useState([]);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [units, setUnits] = useState();
@@ -34,6 +35,15 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
 
     getResponses();
   }, []);
+
+  useEffect(() => {
+    window.manyways.dispatcher.subscribe(
+      "mesca/outdoor-unit-selected",
+      function (data) {
+        console.log("i am inside indoor. but outdoor said : outdoor unit selected", data);
+      }
+    );
+  }, [options]);
 
   useEffect(() => {
     if (units) {
