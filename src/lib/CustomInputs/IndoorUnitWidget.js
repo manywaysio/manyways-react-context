@@ -10,7 +10,14 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [units, setUnits] = useState();
   const [indoorUnitNumbers, setIndoorUnitNumbers] = useState();
+  const [selectedOutdoor, setSelectedOutdoor] = useState();
 
+  const theOptions = indoorUnitNumbers?.length > 0 ? indoorUnitNumbers : [];
+
+  let theValue = theOptions.find((o) => o.value === value);
+  if (!theValue) {
+    theValue = false;
+  }
 
   let getResponses = async () => {
     let responses = await fetch(
@@ -28,32 +35,38 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   };
 
   useEffect(() => {
-    const _theOptions = indoorUnitNumbers ? indoorUnitNumbers : temp_opts;
-    if (_theOptions?.length === 1) {
-      onChange(_theOptions[0].value);
-    }
-
     getResponses();
   }, []);
+
+  useEffect(() => {
+    if (indoorUnitNumbers?.length === 1) {
+      theValue = indoorUnitNumbers[0].value;
+      onChange(indoorUnitNumbers[0].value);
+    }
+  }, [selectedOutdoor, indoorUnitNumbers]);
 
   useEffect(() => {
     window.manyways.dispatcher.subscribe(
       "mesca/outdoor-unit-selected",
       function (data) {
-        console.log("i am inside indoor. but outdoor said : outdoor unit selected", data);
+        setSelectedOutdoor(data);
+        // console.log("i am inside indoor. but outdoor said : outdoor unit selected", data);
       }
     );
   }, [options]);
 
   useEffect(() => {
     if (units) {
-      const filteredIndoorUnits = units.filter(
-        (unit) => unit.outdoor_unit_model_number === "MUZ-FH06NAH"
-      ).map(unit => ({ value: unit.idu_override, label: unit.idu_override }));;
-  
+      const filteredIndoorUnits = units
+        .filter((unit) => unit.outdoor_unit_model_number === selectedOutdoor)
+        .map((unit) => ({
+          value: unit.idu_override,
+          label: unit.idu_override,
+        }));
+
       setIndoorUnitNumbers(filteredIndoorUnits);
     }
-  }, [units]);
+  }, [units, selectedOutdoor]);
 
   // close on escape
   useEffect(() => {
@@ -77,17 +90,6 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     };
   }, []);
 
-  let temp_opts = [
-    { value: "xxx", label: "XXX" },
-    { value: "Alberta", label: "Alberta" },
-  ];
-  const theOptions =
-    indoorUnitNumbers?.length > 0 ? indoorUnitNumbers : temp_opts;
-
-  let theValue = theOptions.find((o) => o.value === value);
-  if (!theValue) {
-    theValue = false;
-  }
   return (
     <>
       {!!menuIsOpen && (
