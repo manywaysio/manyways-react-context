@@ -26,6 +26,7 @@ class ManywaysWrapper extends HTMLElement {
   }
 }
 
+
 customElements.define("manyways-wrapper", ManywaysWrapper);
 
 window.exports = window.exports || {};
