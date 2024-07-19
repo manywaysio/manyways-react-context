@@ -81,12 +81,14 @@ const CustomTable = (props) => {
   const { currentNode, responses, responseId, locale } =
     useManyways();
   const [applicationType, setApplicationType] = useState("residential");
+  const [categoryApplicationType, setCategoryApplicationType] = useState("");
   let [lookupData, setLookupData] = useState([]);
   const [unitsByCategory, setUnitsByCategory] = useState([]);
   const [province, setProvince] = useState([]);
   const [collapsedCategories, setCollapsedCategories] = useState({});
   const [toggleImage, setToggleImage] = useState(null);
   const [sortBy, setSortBy] = useState('Heat Pump Size');
+  
 
 
   let nodeSelection = responses.reverse().find(r => !!r.response?.application_type);
@@ -103,6 +105,10 @@ const CustomTable = (props) => {
     let _lookupData = responses.reverse().find((r) => r.node_id === 541);
     setApplicationType(
       _lookupData?.response?.application_type || "residential"
+    );
+
+    setCategoryApplicationType(
+      _lookupData?.response?.hvac_type || "Single Zone"
     );
 
     setLookupData(
@@ -221,7 +227,7 @@ const CustomTable = (props) => {
   let indoorUnitTypeLabel =
     locale === "fr" ? "Modèle Intérieur" : "Indoor Unit # ";
   
-  if (nodeSelection?.response?.hvac_type === "Multi Zone") {
+  if (categoryApplicationType === "Multi Zone") {
     indoorUnitTypeLabel =
       locale === "fr" ? "Type de Modèle Intérieur" : "Indoor Unit Type ";
   }
