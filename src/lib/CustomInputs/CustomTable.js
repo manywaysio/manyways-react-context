@@ -136,9 +136,10 @@ const CustomTable = (props) => {
     if (lookupData.length < 1) {
       return {};
     }
+
     const units = lookupData
       .filter((row) => {
-        if (!row.multi_zone === "Y") {
+        if (row.multi_zone === "Y") {
           return true;
         }
         if (
@@ -224,7 +225,6 @@ const CustomTable = (props) => {
     }
     const sorted = sortUnits();
     setUnitsByCategory(sorted);
-    console.log(lookupData);
     const lastResponse = responses[responses.length - 1];
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
