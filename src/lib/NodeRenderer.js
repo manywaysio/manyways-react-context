@@ -78,28 +78,28 @@ const NodeRenderer = (props) => {
   }
 
   //add transitioning state to last two nodes
-  useEffect(() => {
-    if (nodes) {
-      const updatedNodes = nodes.map((node, index) => {
-        if (index === nodes.length - 1 || index === nodes.length - 2) {
-          return true;
-        }
-        return false;
-      });
-      setTransitioningNodes(updatedNodes);
-    }
+  // useEffect(() => {
+  //   if (nodes) {
+  //     const updatedNodes = nodes.map((node, index) => {
+  //       if (index === nodes.length - 1 || index === nodes.length - 2) {
+  //         return true;
+  //       }
+  //       return false;
+  //     });
+  //     setTransitioningNodes(updatedNodes);
+  //   }
 
-    const timeout = setTimeout(() => {
-      if (nodes) {
-        const updatedNodes = nodes.map(() => {
-          return false;
-        });
-        setTransitioningNodes(updatedNodes);
-      }
-    }, 2000);
+  //   const timeout = setTimeout(() => {
+  //     if (nodes) {
+  //       const updatedNodes = nodes.map(() => {
+  //         return false;
+  //       });
+  //       setTransitioningNodes(updatedNodes);
+  //     }
+  //   }, 2000);
 
-    return () => clearTimeout(timeout);
-  }, [nodes]);
+  //   return () => clearTimeout(timeout);
+  // }, [nodes]);
 
   return nodes
     .filter((n) => {
