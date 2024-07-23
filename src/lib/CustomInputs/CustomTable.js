@@ -14,7 +14,24 @@ const RESIDENTIAL = [
   "SEZ",
   "PEAD",
 ];
-const LIGHT_COMMERCIAL = ["PKA", "PL", "PVA", "PC", "PA", "PEAD"];
+const LIGHT_COMMERCIAL = [
+  "PKFY",
+  "MFZ",
+  "PFFY",
+  "PKA",
+  "PLA",
+  "PLFY",
+  "PVFY",
+  "PEFY",
+  "MLZ",
+  "PMFY",
+  "PKA",
+  "PL",
+  "PVA",
+  "PC",
+  "PA",
+  "PEAD",
+];
 
 const images = {
   "Wall Mounted":
@@ -237,6 +254,7 @@ const CustomTable = (props) => {
     }));
   };
 
+  console.log(lookupData, 'data')
   let indoorUnitTypeLabel =
     locale === "fr" ? "Modèle Intérieur" : "Indoor Unit # ";
 
