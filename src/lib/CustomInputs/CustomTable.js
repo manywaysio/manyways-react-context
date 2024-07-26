@@ -98,7 +98,7 @@ const renderRebateValue = (value, locale, override) => {
     return <span>{value}</span>;
   }
   if ((override = "ohpa")) {
-    const textBefore = locale === "fr" ? "jusqu'à" : "Up to";
+    const textBefore = locale === "fr" ? "Jusqu'à" : "Up to";
     const overrideVal =
       value === "$15,000" || value === "$10,000"
         ? `${textBefore} ${value} `
@@ -265,7 +265,7 @@ const CustomTable = (props) => {
 
   return Object.keys(unitsByCategory)?.length < 1 ? (
     <div className="no-results">
-      <p>No results found</p>
+      <p>{locale === 'fr' ? "Aucun résultat trouvé" : "No results found"}</p>
     </div>
   ) : (
     <>
