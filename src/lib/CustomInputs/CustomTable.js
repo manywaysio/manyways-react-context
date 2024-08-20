@@ -242,7 +242,8 @@ const CustomTable = (props) => {
     }
     const sorted = sortUnits();
     setUnitsByCategory(sorted);
-    const lastResponse = responses[responses.length - 1];
+    const lastResponse = responses[0];
+    console.log("last resp", lastResponse, responses);
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
 
@@ -254,7 +255,6 @@ const CustomTable = (props) => {
     }));
   };
 
-  console.log(lookupData, 'data')
   let indoorUnitTypeLabel =
     locale === "fr" ? "Modèle Intérieur" : "Indoor Unit # ";
 
@@ -265,7 +265,7 @@ const CustomTable = (props) => {
 
   return Object.keys(unitsByCategory)?.length < 1 ? (
     <div className="no-results">
-      <p>{locale === 'fr' ? "Aucun résultat trouvé" : "No results found"}</p>
+      <p>{locale === "fr" ? "Aucun résultat trouvé" : "No results found"}</p>
     </div>
   ) : (
     <>
@@ -462,7 +462,11 @@ const TableRow = ({ row, province, locale }) => {
   const provRebateValue = row[provKey];
 
   return (
-    <tr>
+    <tr
+      onClick={(e) => {
+        console.log(row, provKey, province);
+      }}
+    >
       <td className="ahri-column">
         {row?.ahri_number}{" "}
         {row?.energystar_6_1_qualified === "Yes" && (
@@ -485,8 +489,8 @@ const TableRow = ({ row, province, locale }) => {
         {province === "British Columbia"
           ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
           : province === "Nova Scotia"
-            ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
-            : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
+          ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
+          : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
       </td>
     </tr>
   );
@@ -533,8 +537,8 @@ const ListItem = ({ row, province, locale }) => {
           {province === "British Columbia"
             ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
             : province === "Nova Scotia"
-              ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
-              : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
+            ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
+            : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
         </p>
       </div>
     </li>
