@@ -16,20 +16,17 @@ const RESIDENTIAL = [
 ];
 const LIGHT_COMMERCIAL = [
   "PKFY",
-  "MFZ",
   "PFFY",
   "PKA",
   "PLA",
   "PLFY",
   "PVFY",
   "PEFY",
-  "MLZ",
   "PMFY",
   "PKA",
-  "PL",
   "PVA",
-  "PC",
-  "PA",
+  "PCA",
+  "PAA",
   "PEAD",
 ];
 
