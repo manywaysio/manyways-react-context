@@ -27,7 +27,7 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       .then((r) => r?.responses);
 
     let _lookupData = responses.reverse().find((r) => r.node_id === 543);
-
+  
     const _units =
       _lookupData?.response?.look_up_responses?.["indoor-outdoor-units"]
         ?.result || [];

@@ -120,9 +120,10 @@ const CustomTable = (props) => {
   const [toggleImage, setToggleImage] = useState(null);
   const [sortBy, setSortBy] = useState("Heat Pump Size");
 
-  let nodeSelection = responses
-    .reverse()
-    .find((r) => !!r.response?.application_type);
+  // let nodeSelection = responses
+  //   .slice()
+  //   .reverse()
+  //   .find((r) => !!r.response?.application_type);
 
   let getResponses = async (responseId) => {
     let responses = await fetch(
@@ -240,7 +241,7 @@ const CustomTable = (props) => {
     const sorted = sortUnits();
     setUnitsByCategory(sorted);
     const lastResponse = responses[0];
-    console.log("last resp", lastResponse, responses);
+    // console.log("last resp", lastResponse, responses);
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
 
