@@ -2004,6 +2004,11 @@ table .available:before {
 .mw-container .sort-holder button {
   font-size: 12px;
   display: block;
+  border-right: 0;
+}
+
+.mw-container .sort-holder button:first-of-type {
+  border-right: 1px solid black;
 }
 
 .mw-container .sort-holder button.selected {
