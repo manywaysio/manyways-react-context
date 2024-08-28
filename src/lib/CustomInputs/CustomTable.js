@@ -418,7 +418,7 @@ const formattedDateFR = formatDate(lastUpdatedDate, 'fr-FR');
             <td colSpan="6" className="last-updated">
               {locale === "fr"
                 ? `Base de données et règles mises à jour le ${formattedDateFR}`
-                : `Last Updated: ${formattedDateEN}`}
+                : `Last updated: ${formattedDateEN}`}
             </td>
           </tr>
         </tfoot>
