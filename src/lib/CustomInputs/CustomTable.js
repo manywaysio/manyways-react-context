@@ -110,7 +110,8 @@ const renderRebateValue = (value, locale, override) => {
 };
 
 const CustomTable = (props) => {
-  const { currentNode, responses, responseId, locale } = useManyways();
+  const { currentNode, responses, responseId, locale, treeConfig } =
+    useManyways();
   const [applicationType, setApplicationType] = useState("residential");
   const [categoryApplicationType, setCategoryApplicationType] = useState("");
   let [lookupData, setLookupData] = useState([]);
@@ -119,6 +120,20 @@ const CustomTable = (props) => {
   const [collapsedCategories, setCollapsedCategories] = useState({});
   const [toggleImage, setToggleImage] = useState(null);
   const [sortBy, setSortBy] = useState("Heat Pump Size");
+
+const formatDate = (date, locale) => {
+  return new Intl.DateTimeFormat(locale, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC'
+  }).format(date);
+};
+
+const lastUpdatedDate = new Date(treeConfig?.run_mode.last_updated_data);
+
+const formattedDateEN = formatDate(lastUpdatedDate, 'en-US');
+const formattedDateFR = formatDate(lastUpdatedDate, 'fr-FR');
 
   // let nodeSelection = responses
   //   .slice()
@@ -398,7 +413,17 @@ const CustomTable = (props) => {
             </Fragment>
           ))}
         </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan="6" className="last-updated">
+              {locale === "fr"
+                ? `Base de données et règles mises à jour le ${formattedDateFR}`
+                : `Last Updated: ${formattedDateEN}`}
+            </td>
+          </tr>
+        </tfoot>
       </table>
+
       <ul className="card-list">
         {Object.entries(unitsByCategory).map(([key, items], idx) => (
           <div key={idx} className="card-item">
@@ -487,8 +512,8 @@ const TableRow = ({ row, province, locale }) => {
         {province === "British Columbia"
           ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
           : province === "Nova Scotia"
-          ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
-          : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
+            ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
+            : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
       </td>
     </tr>
   );
@@ -535,8 +560,8 @@ const ListItem = ({ row, province, locale }) => {
           {province === "British Columbia"
             ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
             : province === "Nova Scotia"
-            ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
-            : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
+              ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
+              : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
         </p>
       </div>
     </li>

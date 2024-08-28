@@ -2020,3 +2020,6 @@ table .available:before {
   padding-right: 10px;
   font-weight: bold;
 }
+.last-updated {
+  text-align:right;
+}
