@@ -121,19 +121,19 @@ const CustomTable = (props) => {
   const [toggleImage, setToggleImage] = useState(null);
   const [sortBy, setSortBy] = useState("Heat Pump Size");
 
-const formatDate = (date, locale) => {
-  return new Intl.DateTimeFormat(locale, {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    timeZone: 'UTC'
-  }).format(date);
-};
+  const formatDate = (date, locale) => {
+    return new Intl.DateTimeFormat(locale, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      timeZone: "UTC",
+    }).format(date);
+  };
 
-const lastUpdatedDate = new Date(treeConfig?.run_mode.last_updated_data);
+  const lastUpdatedDate = new Date(treeConfig?.run_mode.last_updated_data);
 
-const formattedDateEN = formatDate(lastUpdatedDate, 'en-US');
-const formattedDateFR = formatDate(lastUpdatedDate, 'fr-FR');
+  const formattedDateEN = formatDate(lastUpdatedDate, "en-US");
+  const formattedDateFR = formatDate(lastUpdatedDate, "fr-FR");
 
   // let nodeSelection = responses
   //   .slice()
@@ -475,6 +475,11 @@ const formattedDateFR = formatDate(lastUpdatedDate, 'fr-FR');
               ))}
           </div>
         ))}
+        <p className="last-updated">
+          {locale === "fr"
+            ? `Base de données et règles mises à jour le ${formattedDateFR}`
+            : `Last updated: ${formattedDateEN}`}
+        </p>
       </ul>
     </>
   );

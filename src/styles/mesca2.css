@@ -2022,4 +2022,5 @@ table .available:before {
 }
 .last-updated {
   text-align:right;
+  padding-right: 10px;
 }
