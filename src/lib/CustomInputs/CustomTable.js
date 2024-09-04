@@ -302,7 +302,7 @@ const CustomTable = (props) => {
               setSortBy("Heat Pump Size");
             }}
           >
-            Heat Pump Size
+            {locale === "fr" ? "Taille de Thermopompe" : "Heat Pump Size"}
           </button>
           <button
             className={sortBy === "Outdoor Unit" ? "selected" : ""}
@@ -311,7 +311,7 @@ const CustomTable = (props) => {
               setSortBy("Outdoor Unit");
             }}
           >
-            Outdoor Unit
+            {locale === "fr" ? "Modèle Extérieur" : "Outdoor Unit"}
           </button>
           <button
             className={sortBy === "Indoor Unit" ? "selected" : ""}
@@ -320,7 +320,7 @@ const CustomTable = (props) => {
               setSortBy("Indoor Unit");
             }}
           >
-            Indoor Unit
+            {locale === "fr" ? "Modèle Intérieur" : "Indoor Unit"}
           </button>
           <button
             className={sortBy === "AHRI Number" ? "selected" : ""}
@@ -329,9 +329,9 @@ const CustomTable = (props) => {
               setSortBy("AHRI Number");
             }}
           >
-            AHRI Number
+            {locale === "fr" ? "AHRI" : "AHRI Number"}
           </button>
-          <label>SORT BY</label>
+          <label>{locale === "fr" ? "TRIER PAR" : "SORT BY"}</label>
         </div>
       </div>
       <table>
