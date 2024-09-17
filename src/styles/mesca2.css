@@ -2033,8 +2033,11 @@ table .available:before {
   padding-right: 10px;
   font-weight: bold;
 }
-.last-updated p{
+.last-updated {
   text-align:right;
   padding-right: 10px;
+}
+
+.last-updated p{
   font-size: 14px;
 }
