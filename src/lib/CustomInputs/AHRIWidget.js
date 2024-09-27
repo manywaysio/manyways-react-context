@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 import { useManyways } from "../ManywaysContext";
 
-const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
+const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
   const { responseId } = useManyways();
   const { options } = props;
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [units, setUnits] = useState();
-  const [outdoorUnitNumbers, setOutdoorUnitNubmers] = useState();
+  const [ ahriUnits, setAHRIUnits ] = useState()
 
   let getResponses = async () => {
     let responses = await fetch(
@@ -18,9 +18,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       .then((r) => r?.responses);
 
     let _lookupData = responses.reverse().find((r) => r.node_id === 803);
-
-    console.log(responses)
-
+    console.log(_lookupData, 'ahri')
     const _units =
       _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
         ?.result || [];
@@ -28,7 +26,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   };
 
   useEffect(() => {
-    const _theOptions = outdoorUnitNumbers ? outdoorUnitNumbers : temp_opts;
+    const _theOptions = units ? units : temp_opts;
     if (_theOptions?.length === 1) {
       onChange(_theOptions[0].value);
     }
@@ -36,20 +34,17 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     getResponses();
   }, []);
 
+
   useEffect(() => {
     if (units) {
-      const uniqueOutdoorUnitModelNumbers = units.reduce((acc, unit) => {
-        if (!acc.includes(unit.outdoor_unit_model_number)) {
-          acc.push({
-            label: unit.outdoor_unit_model_number,
-            value: unit.outdoor_unit_model_number,
-          });
-        }
-        return acc;
-      }, []);
-      setOutdoorUnitNubmers(uniqueOutdoorUnitModelNumbers);
+      const filteredUnits = units.map((unit) => ({
+          value: unit.ahri_number,
+          label: unit.ahri_number,
+        }));
+      setAHRIUnits(filteredUnits);
     }
   }, [units]);
+
 
   // close on escape
   useEffect(() => {
@@ -73,14 +68,13 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     };
   }, []);
 
-  console.log(window.manyways.dispatcher);
 
   let temp_opts = [
     { value: "xxx", label: "XXX" },
     { value: "Alberta", label: "Alberta" },
   ];
   const theOptions =
-    outdoorUnitNumbers?.length > 0 ? outdoorUnitNumbers : temp_opts;
+    ahriUnits?.length > 0 ? ahriUnits : temp_opts;
 
   let theValue = theOptions.find((o) => o.value === value);
   if (!theValue) {
@@ -125,10 +119,6 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
         onChange={(v) => {
           // console.log(v);
           onChange(v.value);
-          window.manyways.dispatcher.publish(
-            "mesca/outdoor-unit-selected",
-            v.value
-          );
           setMenuIsOpen(false);
         }}
         onMenuOpen={() => {
@@ -162,4 +152,4 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   );
 };
 
-export default OutdoorUnitWidget;
+export default AHRIWidget;

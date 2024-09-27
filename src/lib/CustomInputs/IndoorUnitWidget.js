@@ -26,10 +26,10 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       .then((r) => r.json())
       .then((r) => r?.responses);
 
-    let _lookupData = responses.reverse().find((r) => r.node_id === 543);
+    let _lookupData = responses.reverse().find((r) => r.node_id === 803);
   
     const _units =
-      _lookupData?.response?.look_up_responses?.["indoor-outdoor-units"]
+      _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
         ?.result || [];
     setUnits(_units);
   };

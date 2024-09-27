@@ -14,6 +14,8 @@ import ManywaysSelect from "./CustomInputs/ManywaysSelect";
 import CustomTable from "./CustomInputs/CustomTable";
 import IndoorUnitWidget from "./CustomInputs/IndoorUnitWidget";
 import OutdoorUnitWidget from "./CustomInputs/OutdoorUnitWidget";
+import AHRIWidget from "./CustomInputs/AHRIWidget";
+import ModelNumberField from "./CustomInputs/ModelNumberField";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -199,6 +201,7 @@ const NodeRenderer = (props) => {
                 SelectWidget: ManywaysSelectWidget,
                 CustomOutdoorModel: OutdoorUnitWidget,
                 CustomIndoorModel: IndoorUnitWidget,
+                CustomAHRIModel: AHRIWidget,
                 Select: ManywaysSelect,
               }}
               onChange={(e) => {
@@ -210,6 +213,7 @@ const NodeRenderer = (props) => {
               fields={{
                 CustomTable: CustomTable,
                 MediaContent: MediaContent,
+                ModelNumberField: ModelNumberField
               }}
               transformErrors={transformErrors}
               key={currentNode?.id || 1123456789}
