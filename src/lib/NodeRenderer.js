@@ -15,7 +15,6 @@ import CustomTable from "./CustomInputs/CustomTable";
 import IndoorUnitWidget from "./CustomInputs/IndoorUnitWidget";
 import OutdoorUnitWidget from "./CustomInputs/OutdoorUnitWidget";
 import AHRIWidget from "./CustomInputs/AHRIWidget";
-import ModelNumberField from "./CustomInputs/ModelNumberField";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -153,6 +152,25 @@ const NodeRenderer = (props) => {
       let currentNodeIndex = nodes.findIndex((n) => n.id === currentNode?.id);
       let hasNextNode = !!nodes[currentNodeIndex + 1];
 
+      function customValidate(formData, errors, uiSchema) {
+        console.log(formData, errors, uiSchema);
+        let keys = Object.keys(formData);
+        if (
+          keys.includes("ahri") &&
+          keys.includes("indoor") &&
+          keys.includes("outdoor") &&
+          keys.includes("province_name")
+        ) {
+          if (!formData?.ahri && (!formData?.indoor || !formData?.outdoor)) {
+            errors.ahri.addError(
+              "Please select an AHRI number or Indoor and Outdoor model."
+            );
+          }
+        }
+
+        return errors;
+      }
+
       return (
         <div
           key={currentNode?.id}
@@ -213,13 +231,13 @@ const NodeRenderer = (props) => {
               fields={{
                 CustomTable: CustomTable,
                 MediaContent: MediaContent,
-                ModelNumberField: ModelNumberField
               }}
               transformErrors={transformErrors}
               key={currentNode?.id || 1123456789}
               onSubmit={goForward}
               schema={currentNode?.form_schema || {}}
               validator={validator}
+              customValidate={customValidate}
               showErrorList="bottom"
               uiSchema={!!currentNode?.ui_schema ? currentNode?.ui_schema : {}}
               templates={{ ErrorListTemplate }}
