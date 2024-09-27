@@ -8,7 +8,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [units, setUnits] = useState();
-  const [outdoorUnitNumbers, setOutdoorUnitNubmers] = useState();
+  const [outdoorUnitNumbers, setOutdoorUnitNumbers] = useState();
 
   let getResponses = async () => {
     let responses = await fetch(
@@ -19,7 +19,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
 
     let _lookupData = responses.reverse().find((r) => r.node_id === 803);
 
-    console.log(responses)
+    console.log(responses);
 
     const _units =
       _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
@@ -38,16 +38,34 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
 
   useEffect(() => {
     if (units) {
-      const uniqueOutdoorUnitModelNumbers = units.reduce((acc, unit) => {
-        if (!acc.includes(unit.outdoor_unit_model_number)) {
-          acc.push({
-            label: unit.outdoor_unit_model_number,
-            value: unit.outdoor_unit_model_number,
-          });
-        }
-        return acc;
-      }, []);
-      setOutdoorUnitNubmers(uniqueOutdoorUnitModelNumbers);
+      const uniqueOutdoorUnitModelNumbers = units
+        .reduce((acc = [], unit) => {
+          if (!acc.includes(unit.outdoor_unit_model_number)) {
+            acc.push(unit.outdoor_unit_model_number);
+          }
+          return acc;
+        }, [])
+        .map((o) => {
+          let clean = `${o}`.replace(/\*+$/, "");
+          // remove all numbers from the end of the strint
+          clean = clean.replace(/\d+$/, "");
+          // remove all dashes from the string
+          clean = clean.replace(/-/g, "");
+          // remove all instances of U at the end of the string
+          clean = clean.replace(/U+$/, "");
+          return { outdoor_unit_model_number: o, clean };
+        })
+        .reduce((acc = [], o) => {
+          // remove duplicates
+          if (!acc.find((a) => a.clean === o.clean)) {
+            acc.push(o);
+          }
+          return acc;
+        }, [])
+        .map((o) => {
+          return { value: o.outdoor_unit_model_number, label: o.clean };
+        });
+      setOutdoorUnitNumbers(uniqueOutdoorUnitModelNumbers);
     }
   }, [units]);
 

@@ -27,7 +27,7 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       .then((r) => r?.responses);
 
     let _lookupData = responses.reverse().find((r) => r.node_id === 803);
-  
+
     const _units =
       _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
         ?.result || [];
@@ -59,10 +59,32 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     if (units) {
       const filteredIndoorUnits = units
         .filter((unit) => unit.outdoor_unit_model_number === selectedOutdoor)
-        .map((unit) => ({
-          value: unit.idu_override,
-          label: unit.idu_override,
-        }));
+        .reduce((acc = [], unit) => {
+          if (!acc.includes(unit.idu_override)) {
+            acc.push(unit.idu_override);
+          }
+          return acc;
+        }, [])
+        .map((o) => {
+          let clean = `${o}`.replace(/\*+$/, "");
+          // remove all numbers from the end of the strint
+          clean = clean.replace(/\d+$/, "");
+          // remove all dashes from the string
+          clean = clean.replace(/-/g, "");
+          // remove all instances of U at the end of the string
+          clean = clean.replace(/U+$/, "");
+          return { idu_override: o, clean };
+        })
+        .reduce((acc = [], o) => {
+          // remove duplicates
+          if (!acc.find((a) => a.clean === o.clean)) {
+            acc.push(o);
+          }
+          return acc;
+        }, [])
+        .map((o) => {
+          return { value: o.idu_override, label: o.clean };
+        });
 
       setIndoorUnitNumbers(filteredIndoorUnits);
     }

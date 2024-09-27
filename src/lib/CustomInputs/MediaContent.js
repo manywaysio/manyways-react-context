@@ -1,4 +1,5 @@
 const MediaContent = ({ schema, ...props }) => {
+  console.log("text", schema.text);
   return (
     <div className={`media-content ${schema?.customClassName}`}>
       <div
