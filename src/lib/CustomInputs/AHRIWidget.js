@@ -81,7 +81,7 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
     theValue = false;
   }
   return (
-    <>
+    <div className="ahri-widget">
       {!!menuIsOpen && (
         <>
           <div
@@ -148,7 +148,7 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
         classNamePrefix="select-mw"
         // styles={selectStyles}
       />
-    </>
+    </div>
   );
 };
 
