@@ -231,6 +231,7 @@ const NodeRenderer = (props) => {
               fields={{
                 CustomTable: CustomTable,
                 MediaContent: MediaContent,
+                OrField: MediaContent
               }}
               transformErrors={transformErrors}
               key={currentNode?.id || 1123456789}
