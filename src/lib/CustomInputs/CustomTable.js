@@ -147,7 +147,7 @@ const CustomTable = (props) => {
       .then((r) => r.json())
       .then((r) => r?.responses);
 
-    let _lookupData = responses.reverse().find((r) => r.node_id === 541);
+    let _lookupData = responses.reverse().find((r) => r.node_id === 808);
     setApplicationType(
       _lookupData?.response?.application_type || "residential"
     );
@@ -517,8 +517,8 @@ const TableRow = ({ row, province, locale }) => {
         {province === "British Columbia"
           ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
           : province === "Nova Scotia"
-            ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
-            : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
+          ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
+          : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
       </td>
     </tr>
   );
@@ -565,8 +565,8 @@ const ListItem = ({ row, province, locale }) => {
           {province === "British Columbia"
             ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
             : province === "Nova Scotia"
-              ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
-              : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
+            ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
+            : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
         </p>
       </div>
     </li>
