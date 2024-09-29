@@ -1,5 +1,5 @@
 const MediaContent = ({ schema, ...props }) => {
-  console.log("text", schema.text);
+  // console.log("text", schema.text);
   // find tag of <indoor></indoor> and relace contents with IndoorUnitWidget
   // find tag of <outdoor></outdoor> and remove spaces at the end of the content
   const cleanUp = (str) => {

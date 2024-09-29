@@ -8,7 +8,8 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [units, setUnits] = useState();
-  const [ ahriUnits, setAHRIUnits ] = useState()
+  const [ahriUnits, setAHRIUnits] = useState();
+  const [selectedValue, setSelectedValue] = useState(null); 
 
   let getResponses = async () => {
     let responses = await fetch(
@@ -18,7 +19,7 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
       .then((r) => r?.responses);
 
     let _lookupData = responses.reverse().find((r) => r.node_id === 803);
-    console.log(_lookupData, 'ahri')
+    // console.log(_lookupData, "ahri");
     const _units =
       _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
         ?.result || [];
@@ -29,22 +30,37 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
     const _theOptions = units ? units : temp_opts;
     if (_theOptions?.length === 1) {
       onChange(_theOptions[0].value);
+      setSelectedValue(_theOptions[0]); 
     }
 
     getResponses();
   }, []);
 
-
   useEffect(() => {
     if (units) {
       const filteredUnits = units.map((unit) => ({
-          value: unit.ahri_number,
-          label: unit.ahri_number,
-        }));
+        value: unit.ahri_number,
+        label: unit.ahri_number,
+      }));
       setAHRIUnits(filteredUnits);
     }
   }, [units]);
 
+  useEffect(() => {
+    window.manyways.dispatcher.subscribe(
+      "mesca/outdoor-unit-selected",
+      function () {
+        setSelectedValue(null)
+
+      }
+    );
+    window.manyways.dispatcher.subscribe(
+      "mesca/indoor-unit-selected",
+      function () {
+        setSelectedValue(null)
+      }
+    );
+  }, []);
 
   // close on escape
   useEffect(() => {
@@ -65,21 +81,29 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
 
     return () => {
       document.removeEventListener("keydown", handleEscKey);
+      document.removeEventListener("keydown", shiftTabKeyListener);
     };
   }, []);
-
 
   let temp_opts = [
     { value: "xxx", label: "XXX" },
     { value: "Alberta", label: "Alberta" },
   ];
-  const theOptions =
-    ahriUnits?.length > 0 ? ahriUnits : temp_opts;
 
-  let theValue = theOptions.find((o) => o.value === value);
-  if (!theValue) {
-    theValue = false;
-  }
+  const theOptions = ahriUnits?.length > 0 ? ahriUnits : temp_opts;
+
+  useEffect(() => {
+    const newValue = theOptions.find((o) => o.value === value) || null;
+    setSelectedValue(newValue); 
+  }, [theOptions, value]);
+
+  useEffect(() => {
+    if (!selectedValue) {
+      onChange('')
+    }
+  }, [selectedValue])
+
+
   return (
     <div className="ahri-widget">
       {!!menuIsOpen && (
@@ -117,36 +141,27 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
       )}
       <Select
         onChange={(v) => {
-          // console.log(v);
           onChange(v.value);
+          setSelectedValue(v); 
+          window.manyways.dispatcher.publish(
+            "mesca/ahri-unit-selected",
+            v.value
+          );
           setMenuIsOpen(false);
         }}
         onMenuOpen={() => {
-          // onChange(null);
-          // console.log(
-          //   document
-          //     .querySelector("manyways-wrapper")
-          //     .shadowRoot.getElementById("react-select-2-listbox")
-          // );
+          setMenuIsOpen(true);
         }}
         onFocus={() => {
           setMenuIsOpen(true);
         }}
-        onDropdownClose={() => {
-          // console.log("dd close");
-        }}
-        blurInputOnSelect={true}
-        onBlur={() => {
-          // !isMobile && setMenuIsOpen(false);
-        }}
         menuIsOpen={menuIsOpen}
         isDisabled={disabled}
         isSearchable={true}
-        value={theValue}
+        value={selectedValue} 
         placeholder={props.placeholder}
         options={theOptions}
         classNamePrefix="select-mw"
-        // styles={selectStyles}
       />
     </div>
   );
