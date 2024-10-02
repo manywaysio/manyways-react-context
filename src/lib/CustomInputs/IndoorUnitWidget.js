@@ -11,17 +11,20 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const [units, setUnits] = useState();
   const [indoorUnitNumbers, setIndoorUnitNumbers] = useState();
   const [selectedOutdoor, setSelectedOutdoor] = useState();
+  const [selectedValue, setSelectedValue] = useState(value);
+  const [theValue, setTheValue] = useState(null);
 
   const theOptions = indoorUnitNumbers?.length > 0 ? indoorUnitNumbers : [];
 
-  console.log("indoor", props);
+  useEffect(() => {
+    let foundValue = theOptions.find((o) => o.value === selectedValue);
+    if (!foundValue) {
+      foundValue = false;
+    }
+    setTheValue(foundValue);
+  }, [theOptions, selectedValue]);
 
-  let theValue = theOptions.find((o) => o.value === value);
-  if (!theValue) {
-    theValue = false;
-  }
-
-  let getResponses = async () => {
+  const getResponses = async () => {
     let responses = await fetch(
       `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`
     )
@@ -44,7 +47,7 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
 
   useEffect(() => {
     if (indoorUnitNumbers?.length === 1) {
-      theValue = indoorUnitNumbers[0].value;
+      setSelectedValue(indoorUnitNumbers[0].value);
       onChange(indoorUnitNumbers[0].value);
     }
   }, [selectedOutdoor, indoorUnitNumbers]);
@@ -54,10 +57,24 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       "mesca/outdoor-unit-selected",
       function (data) {
         setSelectedOutdoor(data);
-        // console.log("i am inside indoor. but outdoor said : outdoor unit selected", data);
       }
     );
   }, [options]);
+
+  useEffect(() => {
+    window.manyways.dispatcher.subscribe(
+      "mesca/ahri-unit-selected",
+      function () {
+        setSelectedValue(null);
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    if (!selectedValue) {
+      onChange("");
+    }
+  }, [selectedValue]);
 
   useEffect(() => {
     if (units) {
@@ -71,16 +88,12 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
         }, [])
         .map((o) => {
           let clean = `${o}`.replace(/\*+$/, "");
-          // remove all numbers from the end of the strint
           clean = clean.replace(/\d+$/, "");
-          // remove all dashes from the string
           clean = clean.replace(/-/g, "");
-          // remove all instances of U at the end of the string
           clean = clean.replace(/U+$/, "");
           return { idu_override: o, clean };
         })
         .reduce((acc = [], o) => {
-          // remove duplicates
           if (!acc.find((a) => a.clean === o.clean)) {
             acc.push(o);
           }
@@ -104,7 +117,6 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
 
     const shiftTabKeyListener = (event) => {
       if (event.keyCode === 9 && event.shiftKey) {
-        // 9 is the keycode for Tab key
         setMenuIsOpen(false);
       }
     };
@@ -153,27 +165,23 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       )}
       <Select
         onChange={(v) => {
-          // console.log(v);
+          setSelectedValue(v.value);
           onChange(v.value);
+          window.manyways.dispatcher.publish(
+            "mesca/indoor-unit-selected",
+            v.value
+          );
           setMenuIsOpen(false);
         }}
         onMenuOpen={() => {
-          // onChange(null);
-          // console.log(
-          //   document
-          //     .querySelector("manyways-wrapper")
-          //     .shadowRoot.getElementById("react-select-2-listbox")
-          // );
+          setMenuIsOpen(true);
         }}
         onFocus={() => {
           setMenuIsOpen(true);
         }}
-        onDropdownClose={() => {
-          // console.log("dd close");
-        }}
         blurInputOnSelect={true}
         onBlur={() => {
-          // !isMobile && setMenuIsOpen(false);
+          !isMobile && setMenuIsOpen(false);
         }}
         menuIsOpen={menuIsOpen}
         isDisabled={disabled}

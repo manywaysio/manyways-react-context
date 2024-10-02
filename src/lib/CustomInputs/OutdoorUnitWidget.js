@@ -9,6 +9,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [units, setUnits] = useState();
   const [outdoorUnitNumbers, setOutdoorUnitNumbers] = useState();
+  const [selectedValue, setSelectedValue] = useState(null); 
 
   let getResponses = async () => {
     let responses = await fetch(
@@ -21,7 +22,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       .reverse()
       .find((r) => r.node_id === props?.uiSchema?.lookup_node_id);
 
-    console.log(responses);
+    // console.log(responses);
 
     const _units =
       _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
@@ -32,6 +33,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   useEffect(() => {
     const _theOptions = outdoorUnitNumbers ? outdoorUnitNumbers : temp_opts;
     if (_theOptions?.length === 1) {
+      setSelectedValue(_theOptions[0]);
       onChange(_theOptions[0].value);
     }
 
@@ -49,16 +51,12 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
         }, [])
         .map((o) => {
           let clean = `${o}`.replace(/\*+$/, "");
-          // remove all numbers from the end of the strint
           clean = clean.replace(/\d+$/, "");
-          // remove all dashes from the string
           clean = clean.replace(/-/g, "");
-          // remove all instances of U at the end of the string
           clean = clean.replace(/U+$/, "");
           return { outdoor_unit_model_number: o, clean };
         })
         .reduce((acc = [], o) => {
-          // remove duplicates
           if (!acc.find((a) => a.clean === o.clean)) {
             acc.push(o);
           }
@@ -81,7 +79,6 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
 
     const shiftTabKeyListener = (event) => {
       if (event.keyCode === 9 && event.shiftKey) {
-        // 9 is the keycode for Tab key
         setMenuIsOpen(false);
       }
     };
@@ -93,7 +90,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     };
   }, []);
 
-  console.log(window.manyways.dispatcher);
+  // console.log(window.manyways.dispatcher);
 
   let temp_opts = [
     { value: "xxx", label: "XXX" },
@@ -102,10 +99,28 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const theOptions =
     outdoorUnitNumbers?.length > 0 ? outdoorUnitNumbers : temp_opts;
 
-  let theValue = theOptions.find((o) => o.value === value);
-  if (!theValue) {
-    theValue = false;
-  }
+  useEffect(() => {
+    if (value) {
+      const selected = theOptions.find((o) => o.value === value);
+      setSelectedValue(selected); 
+    }
+  }, [value, theOptions]);
+
+  useEffect(() => {
+    window.manyways.dispatcher.subscribe(
+      "mesca/ahri-unit-selected",
+      function () {
+        setSelectedValue(null)
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    if (!selectedValue) {
+      onChange('')
+    }
+  }, [selectedValue])
+
   return (
     <>
       {!!menuIsOpen && (
@@ -120,7 +135,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
               zIndex: "1",
               opacity: "0",
             }}
-            onClick={(e) => {
+            onClick={() => {
               setMenuIsOpen(false);
             }}
           ></div>
@@ -135,7 +150,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
               opacity: "0",
               cursor: "pointer",
             }}
-            onClick={(e) => {
+            onClick={() => {
               setMenuIsOpen(false);
             }}
           ></div>
@@ -143,7 +158,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       )}
       <Select
         onChange={(v) => {
-          // console.log(v);
+          setSelectedValue(v); 
           onChange(v.value);
           window.manyways.dispatcher.publish(
             "mesca/outdoor-unit-selected",
@@ -151,32 +166,16 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
           );
           setMenuIsOpen(false);
         }}
-        onMenuOpen={() => {
-          // onChange(null);
-          // console.log(
-          //   document
-          //     .querySelector("manyways-wrapper")
-          //     .shadowRoot.getElementById("react-select-2-listbox")
-          // );
-        }}
         onFocus={() => {
           setMenuIsOpen(true);
-        }}
-        onDropdownClose={() => {
-          // console.log("dd close");
-        }}
-        blurInputOnSelect={true}
-        onBlur={() => {
-          // !isMobile && setMenuIsOpen(false);
         }}
         menuIsOpen={menuIsOpen}
         isDisabled={disabled}
         isSearchable={true}
-        value={theValue}
+        value={selectedValue} 
         placeholder={props.placeholder}
         options={theOptions}
         classNamePrefix="select-mw"
-        // styles={selectStyles}
       />
     </>
   );

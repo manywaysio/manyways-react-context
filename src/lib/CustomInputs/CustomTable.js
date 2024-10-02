@@ -491,9 +491,9 @@ const TableRow = ({ row, province, locale }) => {
 
   return (
     <tr
-      onClick={(e) => {
-        console.log(row, provKey, province);
-      }}
+      // onClick={(e) => {
+      //   console.log(row, provKey, province);
+      // }}
     >
       <td className="ahri-column">
         {row?.ahri_number}{" "}

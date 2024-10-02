@@ -223,6 +223,7 @@ const NodeRenderer = (props) => {
                 Select: ManywaysSelect,
               }}
               onChange={(e) => {
+
                 if (!!singleChoiceField) {
                   goForward(e);
                 }

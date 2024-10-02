@@ -269,16 +269,16 @@ strong {
 
 .mw-node-model-number-form .form-group.field-string:first-of-type,
 .mw-node-ahri-number .form-group.field-string:first-of-type {
-  z-index: 3;
+  z-index: 4;
 }
 
 .mw-node-model-number-form .form-group.field-string:nth-of-type(2),
 .mw-node-ahri-number .form-group.field-string:nth-of-type(2) {
-  z-index: 2;
+  z-index: 3;
 }
 
 .mw-node-model-number-form .form-group.field-string:nth-of-type(3) {
-  z-index: 1;
+  z-index: 2;
 }
 
 .mw-node-province-or-territory {
