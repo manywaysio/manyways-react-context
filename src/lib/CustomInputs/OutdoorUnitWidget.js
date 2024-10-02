@@ -17,7 +17,9 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       .then((r) => r.json())
       .then((r) => r?.responses);
 
-    let _lookupData = responses.reverse().find((r) => r.node_id === 803);
+    let _lookupData = responses
+      .reverse()
+      .find((r) => r.node_id === props?.uiSchema?.lookup_node_id);
 
     console.log(responses);
 

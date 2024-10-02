@@ -8,7 +8,7 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [units, setUnits] = useState();
-  const [ ahriUnits, setAHRIUnits ] = useState()
+  const [ahriUnits, setAHRIUnits] = useState();
 
   let getResponses = async () => {
     let responses = await fetch(
@@ -17,8 +17,10 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
       .then((r) => r.json())
       .then((r) => r?.responses);
 
-    let _lookupData = responses.reverse().find((r) => r.node_id === 803);
-    console.log(_lookupData, 'ahri')
+    let _lookupData = responses
+      .reverse()
+      .find((r) => r.node_id === props?.uiSchema?.lookup_node_id);
+    console.log(_lookupData, "ahri");
     const _units =
       _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
         ?.result || [];
@@ -34,17 +36,15 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
     getResponses();
   }, []);
 
-
   useEffect(() => {
     if (units) {
       const filteredUnits = units.map((unit) => ({
-          value: unit.ahri_number,
-          label: unit.ahri_number,
-        }));
+        value: unit.ahri_number,
+        label: unit.ahri_number,
+      }));
       setAHRIUnits(filteredUnits);
     }
   }, [units]);
-
 
   // close on escape
   useEffect(() => {
@@ -68,13 +68,11 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
     };
   }, []);
 
-
   let temp_opts = [
     { value: "xxx", label: "XXX" },
     { value: "Alberta", label: "Alberta" },
   ];
-  const theOptions =
-    ahriUnits?.length > 0 ? ahriUnits : temp_opts;
+  const theOptions = ahriUnits?.length > 0 ? ahriUnits : temp_opts;
 
   let theValue = theOptions.find((o) => o.value === value);
   if (!theValue) {
