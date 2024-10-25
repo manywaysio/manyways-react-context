@@ -87,6 +87,9 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
           return acc;
         }, [])
         .map((o) => {
+          if (o.indexOf("Unit") > -1) {
+            return { idu_override: o, clean: o };
+          }
           let clean = `${o}`.replace(/\*+$/, "");
           clean = clean.replace(/\d+$/, "");
           clean = clean.replace(/-/g, "");
