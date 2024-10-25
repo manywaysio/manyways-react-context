@@ -119,7 +119,7 @@ const CustomTable = (props) => {
   const [province, setProvince] = useState([]);
   const [collapsedCategories, setCollapsedCategories] = useState({});
   const [toggleImage, setToggleImage] = useState(null);
-  const [sortBy, setSortBy] = useState("Heat Pump Size");
+  const [sortBy, setSortBy] = useState("Outdoor Unit");
 
   const formatDate = (date, locale) => {
     return new Intl.DateTimeFormat(locale, {
@@ -311,7 +311,7 @@ const CustomTable = (props) => {
               setSortBy("Outdoor Unit");
             }}
           >
-            {locale === "fr" ? "Modèle Extérieur" : "Outdoor Unit"}
+            {locale === "fr" ? "Modèle Extérieur (A-Z)" : "Outdoor Unit (A-Z)"}
           </button>
           <button
             className={sortBy === "Indoor Unit" ? "selected" : ""}
@@ -320,7 +320,7 @@ const CustomTable = (props) => {
               setSortBy("Indoor Unit");
             }}
           >
-            {locale === "fr" ? "Modèle Intérieur" : "Indoor Unit"}
+            {locale === "fr" ? "Modèle Intérieur (A-Z)" : "Indoor Unit (A-Z)"}
           </button>
           <button
             className={sortBy === "AHRI Number" ? "selected" : ""}
@@ -400,6 +400,10 @@ const CustomTable = (props) => {
                       return a.idu_override.localeCompare(b.idu_override);
                     } else if (sortBy === "AHRI Number") {
                       return a.ahri_number.localeCompare(b.ahri_number);
+                    } else if (sortBy === "A-Z") {
+                      return a.outdoor_unit_model_number.localeCompare(
+                        b.ahri_number
+                      );
                     }
                   })
                   .map((row, rowIdx) => (
@@ -491,9 +495,9 @@ const TableRow = ({ row, province, locale }) => {
 
   return (
     <tr
-      // onClick={(e) => {
-      //   console.log(row, provKey, province);
-      // }}
+    // onClick={(e) => {
+    //   console.log(row, provKey, province);
+    // }}
     >
       <td className="ahri-column">
         {row?.ahri_number}{" "}
