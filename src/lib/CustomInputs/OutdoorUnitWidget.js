@@ -9,7 +9,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [units, setUnits] = useState();
   const [outdoorUnitNumbers, setOutdoorUnitNumbers] = useState();
-  const [selectedValue, setSelectedValue] = useState(null); 
+  const [selectedValue, setSelectedValue] = useState(null);
 
   let getResponses = async () => {
     let responses = await fetch(
@@ -52,8 +52,10 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
         .map((o) => {
           let clean = `${o}`.replace(/\*+$/, "");
           clean = clean.replace(/\d+$/, "");
-          clean = clean.replace(/-/g, "");
+          // clean = clean.replace(/-/g, "");
           clean = clean.replace(/U+$/, "");
+          // remove any dashes at the end of the string
+          clean = clean.replace(/-+$/, "");
           return { outdoor_unit_model_number: o, clean };
         })
         .reduce((acc = [], o) => {
@@ -102,7 +104,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   useEffect(() => {
     if (value) {
       const selected = theOptions.find((o) => o.value === value);
-      setSelectedValue(selected); 
+      setSelectedValue(selected);
     }
   }, [value, theOptions]);
 
@@ -110,16 +112,16 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     window.manyways.dispatcher.subscribe(
       "mesca/ahri-unit-selected",
       function () {
-        setSelectedValue(null)
+        setSelectedValue(null);
       }
     );
   }, []);
 
   useEffect(() => {
     if (!selectedValue) {
-      onChange('')
+      onChange("");
     }
-  }, [selectedValue])
+  }, [selectedValue]);
 
   return (
     <>
@@ -158,7 +160,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       )}
       <Select
         onChange={(v) => {
-          setSelectedValue(v); 
+          setSelectedValue(v);
           onChange(v.value);
           window.manyways.dispatcher.publish(
             "mesca/outdoor-unit-selected",
@@ -172,7 +174,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
         menuIsOpen={menuIsOpen}
         isDisabled={disabled}
         isSearchable={true}
-        value={selectedValue} 
+        value={selectedValue}
         placeholder={props.placeholder}
         options={theOptions}
         classNamePrefix="select-mw"

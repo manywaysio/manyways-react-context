@@ -92,7 +92,7 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
           }
           let clean = `${o}`.replace(/\*+$/, "");
           clean = clean.replace(/\d+$/, "");
-          clean = clean.replace(/-/g, "");
+          // clean = clean.replace(/-/g, "");
           clean = clean.replace(/U+$/, "");
           return { idu_override: o, clean };
         })
