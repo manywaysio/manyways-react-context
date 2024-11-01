@@ -16,6 +16,7 @@ import IndoorUnitWidget from "./CustomInputs/IndoorUnitWidget";
 import OutdoorUnitWidget from "./CustomInputs/OutdoorUnitWidget";
 import AHRIWidget from "./CustomInputs/AHRIWidget";
 import ComboResult from "./CustomInputs/ComboResult";
+import CustomProvinceResult from "./CustomInputs/CustomProvinceResult";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -234,6 +235,7 @@ const NodeRenderer = (props) => {
                 MediaContent: MediaContent,
                 OrField: MediaContent,
                 data: ComboResult,
+                CustomProvinceResult,
               }}
               transformErrors={transformErrors}
               key={currentNode?.id || 1123456789}

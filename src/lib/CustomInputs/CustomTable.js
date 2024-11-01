@@ -261,7 +261,6 @@ const CustomTable = (props) => {
   };
 
   const getProvincialRebates = async ({ lookupData }) => {
-    console.log("province", theProvince);
     let d = await fetch("https://wayfinder.manyways.io/api/hvac-rebate", {
       method: "POST",
       headers: {
@@ -269,8 +268,6 @@ const CustomTable = (props) => {
       },
       body: JSON.stringify({ province: theProvince, lookupData }),
     }).then((r) => r.json());
-
-    console.log(d);
 
     let rebateNames = [];
     d?.d?.validProducts.forEach((product) => {
@@ -576,10 +573,29 @@ const ListItem = ({ row, province, locale }) => {
       <p>
         {row?.outdoor_unit_model_number} · {row?.idu_override}
       </p>
-      <div className="rebate-list-item">
-        <p>reabtes</p>
-        <p className="rebate-list-item-result">{JSON.stringify(row.rebates)}</p>
-      </div>
+
+      {row.rebates.map((rebate) => {
+        return (
+          <div className="rebate-list-item">
+            <p>
+              <strong>{rebate?.program_name}</strong>
+            </p>
+            <p className="rebate-list-item-result">
+              <span>{rebate?.rebate_amount}</span>
+            </p>
+            <a
+              href={rebate.link}
+              target="_blank"
+              className="button external-link"
+              style={{
+                fontSize: "12px",
+              }}
+            >
+              Learn more
+            </a>
+          </div>
+        );
+      })}
     </li>
   );
 };
