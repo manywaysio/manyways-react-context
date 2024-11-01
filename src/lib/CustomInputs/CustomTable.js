@@ -112,6 +112,7 @@ const renderRebateValue = (value, locale, override) => {
 const CustomTable = (props) => {
   const { currentNode, responses, responseId, locale, treeConfig } =
     useManyways();
+  const { schema } = props;
   const [applicationType, setApplicationType] = useState("residential");
   const [categoryApplicationType, setCategoryApplicationType] = useState("");
   let [lookupData, setLookupData] = useState([]);
@@ -148,8 +149,6 @@ const CustomTable = (props) => {
     )
       .then((r) => r.json())
       .then((r) => r?.responses);
-
-    console.log(responses);
 
     let _provinceName = responses.reverse().find((r) => r.node_id === 808);
     setTheProvince(_provinceName?.response?.province_name);
@@ -260,6 +259,36 @@ const CustomTable = (props) => {
     return sortedUnitsByCategory;
   };
 
+  function createFilterFunction(node) {
+    return function (item) {
+      // HVAC Type conditions
+      let hvacTypeCondition = true;
+      if (node.hvac_type === "Multi Zone") {
+        hvacTypeCondition = item.multi_zone === "Y";
+      } else if (node.hvac_type === "Single Zone") {
+        hvacTypeCondition =
+          item.multi_zone !== "Y" && item.ducted_or_ductless === "Y";
+      } else if (node.hvac_type === "Centrally ducted") {
+        hvacTypeCondition = item.ducted_or_ductless !== "Y";
+      }
+
+      // Cold climate condition
+      const coldClimateCondition =
+        node.cold_climate === "Cold climate"
+          ? item.cold_climate === "Y"
+          : item.cold_climate !== "Y";
+
+      // Energy Star certification condition
+      const energyStarCondition =
+        node.energy_star_cert === "Energy Star Certified"
+          ? item.energystar_6_1_qualified === "Yes"
+          : true;
+
+      // Combine all conditions
+      return hvacTypeCondition && coldClimateCondition && energyStarCondition;
+    };
+  }
+
   const getProvincialRebates = async ({ lookupData }) => {
     let d = await fetch("https://wayfinder.manyways.io/api/hvac-rebate", {
       method: "POST",
@@ -278,10 +307,14 @@ const CustomTable = (props) => {
       });
     });
 
+    let nodeItem = JSON.parse(schema?.text);
+
     setRebateTypes(rebateNames);
     console.log("rebate names", rebateNames);
 
-    const sorted = sortUnits(d?.d?.validProducts);
+    const sorted = sortUnits(
+      d?.d?.validProducts.filter(createFilterFunction(nodeItem))
+    );
     console.log("sorted", sorted);
     setUnitsByCategory(sorted);
 
