@@ -43,7 +43,7 @@ const CustomProvinceResult = ({ schema, ...props }) => {
         })}
       </div>
       <div class="last-updated">
-        <p>Last Updated: Aug 21, 2024</p>
+        <p>Last Updated: Oct 24, 2024</p>
       </div>
     </div>
   );
