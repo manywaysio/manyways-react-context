@@ -5,7 +5,7 @@ const CustomProvinceResult = ({ schema, ...props }) => {
   const [data, setData] = useState([]);
   const [locale, setLocale] = useState("en");
   const getData = async () => {
-    let d = await fetch("http://localhost:3000/api/hvac-rebate", {
+    let d = await fetch("https://wayfinder.manyways.io/api/hvac-rebate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

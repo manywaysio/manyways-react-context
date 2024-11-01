@@ -17,7 +17,7 @@ const ComboResult = (props) => {
 
   const getResults = async (data) => {
     setResults([]);
-    await fetch("http://localhost:3000/api/hvac-rebate", {
+    await fetch("https://wayfinder.manyways.io/api/hvac-rebate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
