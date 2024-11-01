@@ -23,6 +23,10 @@ body {
   font-weight: 400;
 }
 
+.old-results {
+  display: none;
+}
+
 a {
   overflow-wrap: break-word;
   word-wrap: break-word;

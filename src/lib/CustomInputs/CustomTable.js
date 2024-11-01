@@ -117,9 +117,11 @@ const CustomTable = (props) => {
   let [lookupData, setLookupData] = useState([]);
   const [unitsByCategory, setUnitsByCategory] = useState([]);
   const [province, setProvince] = useState([]);
+  const [theProvince, setTheProvince] = useState("");
   const [collapsedCategories, setCollapsedCategories] = useState({});
   const [toggleImage, setToggleImage] = useState(null);
   const [sortBy, setSortBy] = useState("Outdoor Unit");
+  const [rebateTypes, setRebateTypes] = useState([]);
 
   const formatDate = (date, locale) => {
     return new Intl.DateTimeFormat(locale, {
@@ -147,6 +149,11 @@ const CustomTable = (props) => {
       .then((r) => r.json())
       .then((r) => r?.responses);
 
+    console.log(responses);
+
+    let _provinceName = responses.reverse().find((r) => r.node_id === 808);
+    setTheProvince(_provinceName?.response?.province_name);
+
     let _lookupData = responses.reverse().find((r) => r.node_id === 808);
     setApplicationType(
       _lookupData?.response?.application_type || "residential"
@@ -156,16 +163,24 @@ const CustomTable = (props) => {
       _lookupData?.response?.hvac_type || "Single Zone"
     );
 
-    setLookupData(
-      _lookupData?.response?.look_up_responses?.["July 3 2024 - table builder"]
-        ?.result || []
-    );
+    // setLookupData(
+    //   _lookupData?.response?.look_up_responses?.["July 3 2024 - table builder"]
+    //     ?.result || []
+    // );
+
+    // getProvincialRebates({ lookupData: _lookupData, province: _provinceName });
   };
 
-  const sortUnits = () => {
+  useEffect(() => {
+    getProvincialRebates({ province: theProvince });
+  }, [categoryApplicationType]);
+
+  const sortUnits = (lookupData) => {
     if (lookupData.length < 1) {
       return {};
     }
+
+    console.log(lookupData);
 
     const units = lookupData
       .filter((row) => {
@@ -245,6 +260,37 @@ const CustomTable = (props) => {
     return sortedUnitsByCategory;
   };
 
+  const getProvincialRebates = async ({ lookupData }) => {
+    console.log("province", theProvince);
+    let d = await fetch("https://wayfinder.manyways.io/api/hvac-rebate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ province: theProvince, lookupData }),
+    }).then((r) => r.json());
+
+    console.log(d);
+
+    let rebateNames = [];
+    d?.d?.validProducts.forEach((product) => {
+      product.rebates.forEach((rebate) => {
+        if (!rebateNames.includes(rebate?.program_name)) {
+          rebateNames.push(rebate?.program_name);
+        }
+      });
+    });
+
+    setRebateTypes(rebateNames);
+    console.log("rebate names", rebateNames);
+
+    const sorted = sortUnits(d?.d?.validProducts);
+    console.log("sorted", sorted);
+    setUnitsByCategory(sorted);
+
+    console.log(d);
+  };
+
   useEffect(() => {
     getResponses(responseId);
   }, [currentNode, responseId]);
@@ -253,10 +299,8 @@ const CustomTable = (props) => {
     if (!lookupData || !responses) {
       return;
     }
-    const sorted = sortUnits();
-    setUnitsByCategory(sorted);
     const lastResponse = responses[0];
-    // console.log("last resp", lastResponse, responses);
+    console.log("province", lastResponse?.response?.province_name);
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
 
@@ -340,24 +384,17 @@ const CustomTable = (props) => {
             <th>AHRI</th>
             <th>{locale === "fr" ? "Modèle Extérieur" : "Outdoor Unit # "}</th>
             <th>{indoorUnitTypeLabel}</th>
-            <th>{locale === "fr" ? "Provincial" : "Provincial Rebate"}</th>
-            <th>
-              {locale === "fr"
-                ? "FÉDÉRAL - SUBVENTION CANADIENNE POUR DES MAISONS PLUS VERTES"
-                : "Federal - Canada Greener Homes Grant (CGHG)"}
-            </th>
-            <th>
-              {locale === "fr"
-                ? "FÉDÉRAL - PROGRAMME POUR LA CONVERSION ABORDABLE DU MAZOUT À LA THERMOPOMPE"
-                : "Federal - Oil to heat pump affordability program (OHPA)"}
-            </th>
+
+            {rebateTypes?.map((name) => {
+              return <th>{name}</th>;
+            })}
           </tr>
         </thead>
         <tbody>
           {Object.entries(unitsByCategory).map(([key, items], idx) => (
             <Fragment key={idx}>
               <tr>
-                <th colSpan="6" className="subheading">
+                <th colSpan={3 + rebateTypes.length} className="subheading">
                   <div className="category">
                     <div>
                       {locale === "fr" ? categoryTranslations[key] : key}
@@ -412,6 +449,7 @@ const CustomTable = (props) => {
                       key={rowIdx}
                       province={province}
                       locale={locale}
+                      rebateTypes={rebateTypes}
                     />
                   ))}
             </Fragment>
@@ -489,7 +527,7 @@ const CustomTable = (props) => {
   );
 };
 
-const TableRow = ({ row, province, locale }) => {
+const TableRow = ({ row, province, locale = "en", rebateTypes = [] }) => {
   const provKey = findProvincialRebateKey(province);
   const provRebateValue = row[provKey];
 
@@ -510,20 +548,11 @@ const TableRow = ({ row, province, locale }) => {
       </td>
       <td>{row?.outdoor_unit_model_number}</td>
       <td>{row?.idu_override}</td>
-      <td>{renderRebateValue(provRebateValue, locale)}</td>
-      <td>
-        {province === "Quebec" || province === "Nova Scotia"
-          ? renderRebateValue(row?.federal_qcns, locale)
-          : renderRebateValue(row?.federal_greener_homes_rebate, locale)}
-      </td>
-      <td>
-        {" "}
-        {province === "British Columbia"
-          ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
-          : province === "Nova Scotia"
-          ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
-          : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
-      </td>
+      {rebateTypes.map((name) => {
+        let theRebate = row.rebates?.find((r) => r.program_name === name);
+        let theAmount = theRebate?.rebate_amount;
+        return <td key={name}>{theAmount || "-"}</td>;
+      })}
     </tr>
   );
 };
@@ -548,30 +577,8 @@ const ListItem = ({ row, province, locale }) => {
         {row?.outdoor_unit_model_number} · {row?.idu_override}
       </p>
       <div className="rebate-list-item">
-        <p>Provincial Rebate</p>
-        <p className="rebate-list-item-result">
-          {renderRebateValue(provRebateValue)}
-        </p>
-      </div>
-
-      <div className="rebate-list-item">
-        <p>Federal - Canada Greener Homes Grant (CGHG)</p>
-        <p className="rebate-list-item-result">
-          {province === "Quebec" || province === "Nova Scotia"
-            ? renderRebateValue(row?.federal_qcns)
-            : renderRebateValue(row?.federal_greener_homes_rebate)}
-        </p>
-      </div>
-
-      <div className="rebate-list-item">
-        <p>Federal - Oil to heat pump affordability program (OHPA)</p>
-        <p className="rebate-list-item-result">
-          {province === "British Columbia"
-            ? renderRebateValue(row?.ohpa_bc, locale, "ohpa")
-            : province === "Nova Scotia"
-            ? renderRebateValue(row?.ohpa_ns, locale, "ohpa")
-            : renderRebateValue(row?.ohpa_roc, locale, "ohpa")}
-        </p>
+        <p>reabtes</p>
+        <p className="rebate-list-item-result">{JSON.stringify(row.rebates)}</p>
       </div>
     </li>
   );

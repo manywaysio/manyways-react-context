@@ -15,6 +15,7 @@ import CustomTable from "./CustomInputs/CustomTable";
 import IndoorUnitWidget from "./CustomInputs/IndoorUnitWidget";
 import OutdoorUnitWidget from "./CustomInputs/OutdoorUnitWidget";
 import AHRIWidget from "./CustomInputs/AHRIWidget";
+import ComboResult from "./CustomInputs/ComboResult";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -223,7 +224,6 @@ const NodeRenderer = (props) => {
                 Select: ManywaysSelect,
               }}
               onChange={(e) => {
-
                 if (!!singleChoiceField) {
                   goForward(e);
                 }
@@ -232,7 +232,8 @@ const NodeRenderer = (props) => {
               fields={{
                 CustomTable: CustomTable,
                 MediaContent: MediaContent,
-                OrField: MediaContent
+                OrField: MediaContent,
+                data: ComboResult,
               }}
               transformErrors={transformErrors}
               key={currentNode?.id || 1123456789}

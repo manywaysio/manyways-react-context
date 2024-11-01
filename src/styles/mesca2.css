@@ -777,6 +777,10 @@ ul.error-detail .text-danger {
   margin-top: 20px;
 }
 
+.old-results {
+  display: none !important;
+}
+
 
 .results-container .result.grid-2 {
   display: grid;
