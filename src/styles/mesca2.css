@@ -57,11 +57,15 @@
   --color-medium: #e0ded1;
   --color-light: #F6F6F6;
   --color-focus: #8d8d8d;
-  --color-accent: #C40001;
+
+  --color-accent: #f00f00;
+  --color-accent-dark: #f00f00;
+  --color-select: #f00f00;
+  /* --color-accent: #C40001;
   --color-accent-dark: #C40001;
-  --color-select: #C40001;
+  --color-select: #C40001; */
   --color-select-light: #ffffff;
-  --color-select-dark: #C40001;
+  /* --color-select-dark: #C40001; */
 
   /* Grid spacing */
   --grid-gap-large: 3rem;
@@ -82,8 +86,10 @@
 
   /* Buttons */
   --button-text: #000000;
-  --button-background: #C40001;
-  --button-bacgkround-hover: #C40001;
+  --button-background: #f00f00;
+  --button-bacgkround-hover: #f00f00;
+  /* --button-background: #C40001;
+  --button-bacgkround-hover: #C40001; */
   --button-text-hover: #FFFFFF;
 }
 
@@ -594,7 +600,7 @@ button:focus-visible, a:focus-visible, .button:focus-visible{
 
 .mw-form:not(.mw-node-find-by-form) .selected-true .label-content:before{
   border: 2px solid var(--color-select);
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" style="fill: %23C40001;" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>');
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" style="fill: %23f00f00;" viewBox="0 0 512 512"><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>');
   background-repeat: no-repeat;
   background-size: cover;
   border: 0;
@@ -706,13 +712,13 @@ ul.error-detail .text-danger {
 
 .error-box {
   margin-top: 25px;
-  border: 2px solid #C40001;
+  border: 2px solid #f00f00;
   background-color: rgba(196, 0, 1, .1);
   padding: 10px 30px 20px 30px;
 }
 
 .error-box h2 {
-  color: #C40001;
+  color: #f00f00;
 }
 
 
