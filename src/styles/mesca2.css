@@ -65,7 +65,7 @@
   --color-accent-dark: #C40001;
   --color-select: #C40001; */
   --color-select-light: #ffffff;
-  /* --color-select-dark: #C40001; */
+  --color-select-dark: #f00f00;
 
   /* Grid spacing */
   --grid-gap-large: 3rem;
