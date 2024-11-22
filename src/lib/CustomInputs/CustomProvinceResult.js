@@ -11,7 +11,12 @@ const AutoLink = ({ text }) => {
         if (match) {
           const url = match[0];
           return (
-            <a href={url.startsWith("http") ? url : `http://${url}`}>{url}</a>
+            <a
+              target="_blank"
+              href={url.startsWith("http") ? url : `http://${url}`}
+            >
+              {url}
+            </a>
           );
         }
         return word;
