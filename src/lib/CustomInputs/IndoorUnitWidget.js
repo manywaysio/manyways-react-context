@@ -14,7 +14,18 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const [selectedValue, setSelectedValue] = useState(value);
   const [theValue, setTheValue] = useState(null);
 
-  const theOptions = indoorUnitNumbers?.length > 0 ? indoorUnitNumbers : [];
+  const theOptions =
+    indoorUnitNumbers?.length > 0
+      ? indoorUnitNumbers.sort((a, b) => {
+          if (a.label < b.label) {
+            return -1;
+          }
+          if (a.label > b.label) {
+            return 1;
+          }
+          return 0;
+        })
+      : [];
 
   useEffect(() => {
     let foundValue = theOptions.find((o) => o.value === selectedValue);

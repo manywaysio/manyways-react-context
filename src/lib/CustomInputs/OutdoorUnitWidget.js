@@ -67,6 +67,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
         .map((o) => {
           return { value: o.outdoor_unit_model_number, label: o.clean };
         });
+
       setOutdoorUnitNumbers(uniqueOutdoorUnitModelNumbers);
     }
   }, [units]);
@@ -99,7 +100,17 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     { value: "Alberta", label: "Alberta" },
   ];
   const theOptions =
-    outdoorUnitNumbers?.length > 0 ? outdoorUnitNumbers : temp_opts;
+    outdoorUnitNumbers?.length > 0
+      ? outdoorUnitNumbers.sort((a, b) => {
+          if (a.label < b.label) {
+            return -1;
+          }
+          if (a.label > b.label) {
+            return 1;
+          }
+          return 0;
+        })
+      : temp_opts;
 
   useEffect(() => {
     if (value) {
@@ -158,6 +169,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
           ></div>
         </>
       )}
+
       <Select
         onChange={(v) => {
           setSelectedValue(v);
