@@ -194,9 +194,6 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
           setMenuIsOpen(true);
         }}
         blurInputOnSelect={true}
-        onBlur={() => {
-          !isMobile && setMenuIsOpen(false);
-        }}
         menuIsOpen={menuIsOpen}
         isDisabled={disabled}
         isSearchable={true}
