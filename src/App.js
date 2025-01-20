@@ -8,6 +8,8 @@ import formStyles from "./styles/forms.css";
 import loaderStyles from "./styles/loader.css";
 import mescaStyles from "./styles/mesca2.css";
 
+import { usState, useEffect } from "react";
+
 // import all styles as a var called css
 
 import { ManywaysProvider } from "./lib/ManywaysContext";
@@ -24,8 +26,17 @@ function App({ locale, slug, mode = "scroll" }) {
     ${mescaStyles}
   `;
 
+  const [slug, setSlug] = useState("");
+
+  useEffect(() => {
+    // get slug query param from url and set to state
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get("slug");
+    setSlug(!!slug ? slug : "rebates-2-copy");
+  }, []);
+
   return (
-    <ManywaysProvider slug={'rebates-2-copy'} locale={locale} mode={mode}>
+    <ManywaysProvider slug={slug} locale={locale} mode={mode}>
       <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
     </ManywaysProvider>
   );
