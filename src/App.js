@@ -8,7 +8,7 @@ import formStyles from "./styles/forms.css";
 import loaderStyles from "./styles/loader.css";
 import mescaStyles from "./styles/mesca2.css";
 
-import { usState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 // import all styles as a var called css
 
