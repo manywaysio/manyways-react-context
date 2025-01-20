@@ -36,9 +36,11 @@ function App({ locale, slug, mode = "scroll" }) {
   }, []);
 
   return (
-    <ManywaysProvider slug={slug} locale={locale} mode={mode}>
-      <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
-    </ManywaysProvider>
+    !!slug && (
+      <ManywaysProvider slug={slug} locale={locale} mode={mode}>
+        <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
+      </ManywaysProvider>
+    )
   );
 }
 
