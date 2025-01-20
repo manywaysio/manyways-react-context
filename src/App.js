@@ -32,11 +32,12 @@ function App({ locale, slug, mode = "scroll" }) {
     // get slug query param from url and set to state
     const urlParams = new URLSearchParams(window.location.search);
     const __slug = urlParams.get("slug");
+    console.log("setting slug", __slug);
     _setSlug(!!__slug ? __slug : slug);
   }, []);
 
   return (
-    !!slug && (
+    !!_slug && (
       <ManywaysProvider slug={_slug} locale={locale} mode={mode}>
         <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
       </ManywaysProvider>
