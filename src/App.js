@@ -26,18 +26,18 @@ function App({ locale, slug, mode = "scroll" }) {
     ${mescaStyles}
   `;
 
-  const [slug, setSlug] = useState("");
+  const [_slug, _setSlug] = useState("");
 
   useEffect(() => {
     // get slug query param from url and set to state
     const urlParams = new URLSearchParams(window.location.search);
-    const slug = urlParams.get("slug");
-    setSlug(!!slug ? slug : "rebates-2-copy");
+    const __slug = urlParams.get("slug");
+    _setSlug(!!__slug ? __slug : slug);
   }, []);
 
   return (
     !!slug && (
-      <ManywaysProvider slug={slug} locale={locale} mode={mode}>
+      <ManywaysProvider slug={_slug} locale={locale} mode={mode}>
         <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
       </ManywaysProvider>
     )
