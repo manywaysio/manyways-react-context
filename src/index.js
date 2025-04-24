@@ -92,14 +92,15 @@ window.manyways.share = function (e) {
 
 //For google analytics
 
-window.manyways.pushAnalytics = function (eventName) {
+window.manyways.pushAnalytics = function (eventName, finderType) {
   if (window.dataLayer && typeof window.dataLayer.push === "function") {
     window.dataLayer.push({
       event: eventName,
+      finderType: finderType || "Rebates",
     });
-    console.log("Event:", eventName);
+    console.log("Event:", eventName, finderType);
   } else {
-    console.log("No dataLayer available for analytics:", eventName);
+    console.log("No dataLayer available for analytics:", eventName, finderType);
   }
 };
 

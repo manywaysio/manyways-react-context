@@ -79,7 +79,10 @@ const ComboResult = (props) => {
                       target="_blank"
                       className="button external-link"
                       onClick={() =>
-                        window.manyways.pushAnalytics("RebateFinder_CTAClick")
+                        window.manyways.pushAnalytics(
+                          "RebateFinder_CTAClick",
+                          "By Model Number",
+                        )
                       }
                     >
                       Learn more

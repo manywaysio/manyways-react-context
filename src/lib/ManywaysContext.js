@@ -136,10 +136,10 @@ const ManywaysProvider = ({
 
     switch (formData.result) {
       case "Rebates in my area":
-        window.manyways.pushAnalytics("Form_Start");
+        window.manyways.pushAnalytics("Form_Start", "Rebates in my area");
         break;
       case "By model number":
-        window.manyways.pushAnalytics("Form_Start");
+        window.manyways.pushAnalytics("Form_Start", "By model number");
         break;
 
       default:

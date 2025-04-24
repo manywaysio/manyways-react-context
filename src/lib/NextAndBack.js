@@ -19,13 +19,13 @@ const NextAndBack = ({ currentNode = {}, className }) => {
   const handleSubmitAnalytics = (e) => {
     switch (currentNode?.title) {
       case "Province or Territory":
-        window.manyways.pushAnalytics("Form_Submit");
+        window.manyways.pushAnalytics("Form_Submit", "Rebates in my area");
         break;
       case "Model Number":
-        window.manyways.pushAnalytics("Form_Submit");
+        window.manyways.pushAnalytics("Form_Submit", "By Model Number");
         break;
       case "Products":
-        window.manyways.pushAnalytics("Form_Submit");
+        window.manyways.pushAnalytics("Form_Submit", "Advanced Search");
         break;
       default:
         break;

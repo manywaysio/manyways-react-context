@@ -86,13 +86,16 @@ const NodeRenderer = (props) => {
       //  landing the result nodes
       switch (currentNode.title) {
         case "Province & Territory Rebates":
-          window.manyways.pushAnalytics("RebateResults_VPV");
+          window.manyways.pushAnalytics(
+            "RebateResults_VPV",
+            "Rebates in my area",
+          );
           break;
         case "Rebate Results - Model":
-          window.manyways.pushAnalytics("RebateResults_VPV");
+          window.manyways.pushAnalytics("RebateResults_VPV", "By Model Number");
           break;
         case "Rebate results - product":
-          window.manyways.pushAnalytics("RebateResults_VPV");
+          window.manyways.pushAnalytics("RebateResults_VPV", "Advanced Search");
           break;
       }
     }
