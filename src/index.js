@@ -93,6 +93,7 @@ window.manyways.pushAnalytics = function (eventName) {
     window.dataLayer.push({
       event: eventName,
     });
+    console.log("Event:", eventName);
   } else {
     console.log("No dataLayer available for analytics:", eventName);
   }
