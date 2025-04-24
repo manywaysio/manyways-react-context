@@ -143,7 +143,7 @@ const ManywaysProvider = ({
         break;
 
       default:
-        console.log(formData);
+        // console.log(formData);
         break;
     }
   };

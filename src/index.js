@@ -83,6 +83,10 @@ window.manyways.share = function (e) {
       title: "MESCA - Rebate Finder",
       url: window.location.href,
     });
+    //google analytics
+    window.dataLayer.push({
+      event: "RebateFinder_CTAClick",
+    });
   }
 };
 
