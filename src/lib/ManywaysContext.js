@@ -22,7 +22,7 @@ const ManywaysProvider = ({
   let [responses, setResponses] = useState([]);
   let [isLoading, setIsLoading] = useState(true);
   let [slugAndRevisionParams, setSlugAndRevisionParams] = useState(
-    `${slug}/begin`
+    `${slug}/begin`,
   );
   let currentNode =
     setCurrentNodeId !== false
@@ -80,7 +80,7 @@ const ManywaysProvider = ({
   const getInitialData = async (
     props = {},
     ignoreContinue = false,
-    ignorePreview = false
+    ignorePreview = false,
   ) => {
     const { callback = () => {}, callbackArgs = {} } = props;
 
@@ -95,7 +95,7 @@ const ManywaysProvider = ({
     } else {
       setIsLoading(true);
       await fetch(
-        `https://mw-apiv2-prod.fly.dev/response_sessions/${slugAndRevisionParams}${getRevisionId()}`
+        `https://mw-apiv2-prod.fly.dev/response_sessions/${slugAndRevisionParams}${getRevisionId()}`,
       )
         .then((response) => response.json())
         .then((data) => {
@@ -110,7 +110,7 @@ const ManywaysProvider = ({
             // hack for tabs
             document
               .querySelectorAll(
-                ".mw-node-find-by-form .field-radio-group label"
+                ".mw-node-find-by-form .field-radio-group label",
               )
               .forEach((el) => {
                 el.addEventListener("click", function () {
@@ -119,7 +119,7 @@ const ManywaysProvider = ({
                     return false;
                   } else {
                     console.log(
-                      "response exists. should be restarted in queue"
+                      "response exists. should be restarted in queue",
                     );
                     window.manyways.restartInQueue([{ result: el.innerText }]);
                   }
@@ -127,6 +127,24 @@ const ManywaysProvider = ({
               });
           }, 400);
         });
+    }
+  };
+
+  //GA EVENTS
+  const handleAnalytics = (formData) => {
+    if (!formData) return;
+
+    switch (formData.result) {
+      case "Rebates in my area":
+        window.manyways.pushAnalytics("Form_Start");
+        break;
+      case "By model number":
+        window.manyways.pushAnalytics("Form_Start");
+        break;
+
+      default:
+        console.log(formData);
+        break;
     }
   };
 
@@ -144,6 +162,8 @@ const ManywaysProvider = ({
       response: formData,
     };
 
+    handleAnalytics(formData);
+
     Object.keys(formData).forEach((key) => {
       !isPreview() && !getRevisionId() && window.umami.track(formData[key]);
     });
@@ -156,7 +176,7 @@ const ManywaysProvider = ({
           "Content-Type": "application/json",
         },
         body: JSON.stringify(theResponse),
-      }
+      },
     )
       .then((response) => response.json())
       .then((data) => {
@@ -183,7 +203,6 @@ const ManywaysProvider = ({
         window.scrollTo(0, 0);
         setIsLoading(false);
       });
-
   };
 
   const goBack = async function () {
@@ -191,7 +210,7 @@ const ManywaysProvider = ({
       return;
     }
     let currentNodeIndexInResponses = responses.findIndex(
-      (r) => r.node_id === currentNodeId
+      (r) => r.node_id === currentNodeId,
     );
     currentNodeIndexInResponses =
       currentNodeIndexInResponses > -1
@@ -217,7 +236,7 @@ const ManywaysProvider = ({
   const continueJourney = async (sessionId) => {
     setIsLoading(true);
     await fetch(
-      `https://mw-apiv2-prod.fly.dev/response_sessions/${sessionId}?render_response_nodes=true`
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${sessionId}?render_response_nodes=true`,
     )
       .then((response) => response.json())
       .then((data) => {
@@ -293,11 +312,11 @@ const ManywaysProvider = ({
       var el = document.createElement("script");
       el.setAttribute(
         "src",
-        "https://umami-analytics-nine-xi.vercel.app/script.js"
+        "https://umami-analytics-nine-xi.vercel.app/script.js",
       );
       el.setAttribute(
         "data-website-id",
-        treeConfig?.analytics_config?.umami_id
+        treeConfig?.analytics_config?.umami_id,
       );
       document.body.appendChild(el);
     }
@@ -315,7 +334,7 @@ const ManywaysProvider = ({
       "graph/back",
       function (obj) {
         goBack();
-      }
+      },
     );
   }, [currentNodeId]);
 

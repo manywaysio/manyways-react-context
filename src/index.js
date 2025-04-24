@@ -26,11 +26,9 @@ class ManywaysWrapper extends HTMLElement {
   }
 }
 
-
 customElements.define("manyways-wrapper", ManywaysWrapper);
 
 window.exports = window.exports || {};
-
 window.manyways = {};
 window.manyways.restart = function (e) {
   !!e && e.preventDefault();
@@ -85,6 +83,18 @@ window.manyways.share = function (e) {
       title: "MESCA - Rebate Finder",
       url: window.location.href,
     });
+  }
+};
+
+//For google analytics
+
+window.manyways.pushAnalytics = function (eventName) {
+  if (window.dataLayer && typeof window.dataLayer.push === "function") {
+    window.dataLayer.push({
+      event: eventName,
+    });
+  } else {
+    console.log("No dataLayer available for analytics:", eventName);
   }
 };
 

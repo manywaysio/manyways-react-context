@@ -16,7 +16,7 @@ import { ManywaysProvider } from "./lib/ManywaysContext";
 
 function App({ locale, slug, mode = "scroll" }) {
   const stylesToString = `
-  ${styles}  
+  ${styles}
   ${vars}
     ${layoutStyles}
     ${buttonStyles}
@@ -27,6 +27,13 @@ function App({ locale, slug, mode = "scroll" }) {
   `;
 
   const [_slug, _setSlug] = useState("");
+
+  useEffect(() => {
+    if (window.manyways && window.manyways.pushAnalytics) {
+      window.manyways.pushAnalytics("RebateFinder_VPV");
+      window.manyways.pushAnalytics("Rebate_LPV");
+    }
+  }, []);
 
   useEffect(() => {
     // get slug query param from url and set to state

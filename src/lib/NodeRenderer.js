@@ -70,7 +70,7 @@ const NodeRenderer = (props) => {
               {locale === "fr"
                 ? error.stack.replace(
                     /must have required property/g,
-                    "Doit avoir la propriété requise:"
+                    "Doit avoir la propriété requise:",
                   )
                 : error.stack}
             </li>
@@ -79,6 +79,24 @@ const NodeRenderer = (props) => {
       </div>
     );
   }
+
+  useEffect(() => {
+    const currentNode = nodes.find((node) => node.id === currentNodeId);
+    if (currentNode) {
+      //  landing the result nodes
+      switch (currentNode.title) {
+        case "Province & Territory Rebates":
+          window.manyways.pushAnalytics("RebateResults_VPV");
+          break;
+        case "Rebate Results - Model":
+          window.manyways.pushAnalytics("RebateResults_VPV");
+          break;
+        case "Rebate results - product":
+          window.manyways.pushAnalytics("RebateResults_VPV");
+          break;
+      }
+    }
+  }, [currentNodeId, nodes]);
 
   //add transitioning state to last two nodes
   // useEffect(() => {
@@ -135,7 +153,7 @@ const NodeRenderer = (props) => {
 
       const singleChoiceField = isFormWithOneChoiceFieldOnly(
         currentNode?.form_schema,
-        currentNode?.ui_schema
+        currentNode?.ui_schema,
       );
 
       function transformErrors(errors) {
@@ -165,7 +183,7 @@ const NodeRenderer = (props) => {
         ) {
           if (!formData?.ahri && (!formData?.indoor || !formData?.outdoor)) {
             errors.ahri.addError(
-              "Please select an AHRI number or Indoor and Outdoor model."
+              "Please select an AHRI number or Indoor and Outdoor model.",
             );
           }
         }
@@ -177,7 +195,7 @@ const NodeRenderer = (props) => {
         <div
           key={currentNode?.id}
           className={`${classNamePrefix}-node
-          is-current-node-${currentNodeId === currentNode?.id} 
+          is-current-node-${currentNodeId === currentNode?.id}
           has-response-${!!theResponse}
           layout-${nodeLayout || "center"}
           is-full-screen-${!!isFullScreen}
@@ -210,7 +228,7 @@ const NodeRenderer = (props) => {
               disabled={!!hasNextNode}
               formData={theResponse?.response || {}}
               className={`${classNamePrefix}-form ${classNamePrefix}-node-${slugify(
-                currentNode?.title
+                currentNode?.title,
               )}-form
           has-response-${!!theResponse}
           `}
