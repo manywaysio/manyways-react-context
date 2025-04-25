@@ -91,9 +91,6 @@ const ComboResult = (props) => {
                     >
                       Learn more
                     </a>
-                    {
-                    manyways.pushAnalyticsClick(\"rebate_form_click\", \"model_number\", \"{{responses['Model Number'].province_name}}\", \"Find a dealer near you\", \"https://www.mitsubishielectric.ca/en/hvac/where-to-buy\"  )
-                    }
                   </div>
                 </div>
               );
