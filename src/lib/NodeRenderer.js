@@ -138,8 +138,8 @@ const NodeRenderer = (props) => {
       case "Rebate Results - Model":
         provinceResponse = getNodeResponseByTitle("Model Number");
         window.manyways.pushAnalyticsClick(
-          "RebateResults_VPV",
-          "By Model Number",
+          "rebate_form_submit",
+          "model_number",
           provinceResponse?.province_name,
         );
         window.manyways.pushAnalyticsPageView(
@@ -152,8 +152,8 @@ const NodeRenderer = (props) => {
       case "Rebate results - product":
         provinceResponse = getNodeResponseByTitle("Products");
         window.manyways.pushAnalyticsClick(
-          "RebateResults_VPV",
-          "Advanced Search",
+          "rebate_form_submit",
+          "advanced_search",
           provinceResponse?.province_name,
         );
         window.manyways.pushAnalyticsPageView(
