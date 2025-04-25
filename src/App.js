@@ -29,9 +29,12 @@ function App({ locale, slug, mode = "scroll" }) {
   const [_slug, _setSlug] = useState("");
 
   useEffect(() => {
-    if (window.manyways && window.manyways.pushAnalytics) {
-      window.manyways.pushAnalytics("RebateFinder_VPV");
-      window.manyways.pushAnalytics("Rebate_LPV");
+    if (window.manyways && window.manyways.pushAnalyticsPageView) {
+      window.manyways.pushAnalyticsPageView(
+        "virtual_pageview",
+        "https://mitsubishielectric.ca/en/rebate-finder/landing",
+        "Rebate finder landing | MESCA",
+      );
     }
   }, []);
 

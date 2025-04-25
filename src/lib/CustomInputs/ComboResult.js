@@ -74,19 +74,26 @@ const ComboResult = (props) => {
                         ))}
                       </div>
                     )}
+
                     <a
                       href={rebate.link}
                       target="_blank"
                       className="button external-link"
                       onClick={() =>
-                        window.manyways.pushAnalytics(
-                          "RebateFinder_CTAClick",
-                          "By Model Number",
+                        window.manyways.pushAnalyticsClick(
+                          "rebate_form_click",
+                          "model_number",
+                          results?.province,
+                          "Learn more",
+                          rebate.link,
                         )
                       }
                     >
                       Learn more
                     </a>
+                    {
+                    manyways.pushAnalyticsClick(\"rebate_form_click\", \"model_number\", \"{{responses['Model Number'].province_name}}\", \"Find a dealer near you\", \"https://www.mitsubishielectric.ca/en/hvac/where-to-buy\"  )
+                    }
                   </div>
                 </div>
               );

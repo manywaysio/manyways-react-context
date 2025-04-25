@@ -80,26 +80,93 @@ const NodeRenderer = (props) => {
     );
   }
 
+  const getNodeResponseByTitle = (nodeTitle) => {
+    const node = nodes.find((node) => node.title === nodeTitle);
+    if (!node) return null;
+
+    const response = responses.find((r) => r.node_id === node.id);
+    return response?.response;
+  };
+
   useEffect(() => {
     const currentNode = nodes.find((node) => node.id === currentNodeId);
-    if (currentNode) {
-      //  landing the result nodes
-      switch (currentNode.title) {
-        case "Province & Territory Rebates":
-          window.manyways.pushAnalytics(
-            "RebateResults_VPV",
-            "Rebates in my area",
-          );
-          break;
-        case "Rebate Results - Model":
-          window.manyways.pushAnalytics("RebateResults_VPV", "By Model Number");
-          break;
-        case "Rebate results - product":
-          window.manyways.pushAnalytics("RebateResults_VPV", "Advanced Search");
-          break;
-      }
+    if (!currentNode) return;
+
+    let provinceResponse = {};
+
+    switch (currentNode.title) {
+      // After initial Selection
+      case "Province or Territory":
+        window.manyways.pushAnalyticsPageView(
+          "virtual_pageview",
+          "https://mitsubishielectric.ca/en/rebate-finder/start/rebates-in-my-area",
+          "Rebate finder | Start | Rebate in my area",
+        );
+        break;
+
+      case "Model Number":
+        window.manyways.pushAnalyticsPageView(
+          "virtual_pageview",
+          "https://mitsubishielectric.ca/en/rebate-finder/start/model-number",
+          "Rebate finder | Start | Model Number",
+        );
+        break;
+
+      case "Products":
+        window.manyways.pushAnalyticsPageView(
+          "virtual_pageview",
+          "https://mitsubishielectric.ca/en/rebate-finder/start/advanced-search",
+          "Rebate finder | Start | Advanced Search",
+        );
+        break;
+
+      // RESULTS pages
+      case "Province & Territory Rebates":
+        provinceResponse = getNodeResponseByTitle("Province or Territory");
+        window.manyways.pushAnalyticsClick(
+          "rebate_form_submit",
+          "rebates_in_my_area",
+          provinceResponse?.province_name,
+        );
+        window.manyways.pushAnalyticsPageView(
+          "virtual_pageview",
+          "https://mitsubishielectric.ca/en/rebate-finder/submit/rebates-in-my-area",
+          "Rebate finder | Submission | Rebate in my area",
+        );
+        break;
+
+      case "Rebate Results - Model":
+        provinceResponse = getNodeResponseByTitle("Model Number");
+        window.manyways.pushAnalyticsClick(
+          "RebateResults_VPV",
+          "By Model Number",
+          provinceResponse?.province_name,
+        );
+        window.manyways.pushAnalyticsPageView(
+          "virtual_pageview",
+          "https://mitsubishielectric.ca/en/rebate-finder/submit/model-number",
+          "Rebate finder | Submission | Model Number",
+        );
+        break;
+
+      case "Rebate results - product":
+        provinceResponse = getNodeResponseByTitle("Products");
+        window.manyways.pushAnalyticsClick(
+          "RebateResults_VPV",
+          "Advanced Search",
+          provinceResponse?.province_name,
+        );
+        window.manyways.pushAnalyticsPageView(
+          "virtual_pageview",
+          "https://mitsubishielectric.ca/en/rebate-finder/submit/advanced-search",
+          "Rebate finder | Submission | Advanced Search",
+        );
+        break;
+
+      default:
+        break;
     }
-  }, [currentNodeId, nodes]);
+  }, [currentNodeId, nodes, responses]);
 
   //add transitioning state to last two nodes
   // useEffect(() => {

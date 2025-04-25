@@ -136,12 +136,20 @@ const ManywaysProvider = ({
 
     switch (formData.result) {
       case "Rebates in my area":
-        window.manyways.pushAnalytics("Form_Start", "Rebates in my area");
+        window.manyways.pushAnalyticsClick(
+          "rebate_form_start",
+          "rebates_in_my_area",
+        );
         break;
       case "By model number":
-        window.manyways.pushAnalytics("Form_Start", "By model number");
+        window.manyways.pushAnalyticsClick("rebate_form_start", "model_number");
         break;
-
+      case "Find products":
+        window.manyways.pushAnalyticsClick(
+          "rebate_form_start",
+          "advanced_search",
+        );
+        break;
       default:
         // console.log(formData);
         break;

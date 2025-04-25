@@ -16,22 +16,6 @@ const NextAndBack = ({ currentNode = {}, className }) => {
 
   let theResponse = responses.find((r) => r.node_id === currentNode?.id);
 
-  const handleSubmitAnalytics = (e) => {
-    switch (currentNode?.title) {
-      case "Province or Territory":
-        window.manyways.pushAnalytics("Form_Submit", "Rebates in my area");
-        break;
-      case "Model Number":
-        window.manyways.pushAnalytics("Form_Submit", "By Model Number");
-        break;
-      case "Products":
-        window.manyways.pushAnalytics("Form_Submit", "Advanced Search");
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
     <div
       className={`${className} next-and-back-hidden-${
@@ -51,11 +35,7 @@ const NextAndBack = ({ currentNode = {}, className }) => {
             ? labels.back
             : "Restart"}
       </button>
-      <button
-        className={`${classNamePrefix}-next`}
-        type="submit"
-        onClick={handleSubmitAnalytics}
-      >
+      <button className={`${classNamePrefix}-next`} type="submit">
         {currentNode?.ui_variables?.custom_next_text
           ? currentNode.ui_variables.custom_next_text
           : labels
