@@ -243,7 +243,7 @@ const NodeRenderer = (props) => {
       let hasNextNode = !!nodes[currentNodeIndex + 1];
 
       function customValidate(formData, errors, uiSchema) {
-        console.log(formData, errors, uiSchema);
+        // console.log(formData, errors, uiSchema);
         let keys = Object.keys(formData);
         if (
           keys.includes("ahri") &&

@@ -26,7 +26,7 @@ const ComboResult = (props) => {
     })
       .then((res) => res.json())
       .then((dd) => {
-        console.log("data", dd);
+        // console.log("data", dd);
         setResults(dd);
       })
       .catch((error) => {
