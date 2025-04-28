@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const AutoLink = ({ text }) => {
+const AutoLink = ({ text, province }) => {
   const delimiter =
     /((?:https?:\/\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\-]{1,61}[a-z0-9])?\.[^\.|\s])+[a-z\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\d{1,5})*[a-z0-9.,_\/~#&=;%+?\-\\(\\)]*)/gi;
 
@@ -14,6 +14,15 @@ const AutoLink = ({ text }) => {
             <a
               target="_blank"
               href={url.startsWith("http") ? url : `http://${url}`}
+              onClick={() =>
+                window.manyways.pushAnalyticsClick(
+                  "rebate_form_click",
+                  "rebates_in_my_area",
+                  province,
+                  url,
+                  url,
+                )
+              }
             >
               {url}
             </a>
@@ -25,7 +34,6 @@ const AutoLink = ({ text }) => {
   );
 };
 const CustomProvinceResult = ({ schema, ...props }) => {
-  console.log(props);
   const [data, setData] = useState([]);
   const [locale, setLocale] = useState("en");
   const getData = async () => {
@@ -40,6 +48,7 @@ const CustomProvinceResult = ({ schema, ...props }) => {
     if (window.location.href.split("/").indexOf("fr") > -1) {
       setLocale("fr");
     }
+
     setData(d?.d);
   };
   useEffect(() => {
@@ -56,7 +65,10 @@ const CustomProvinceResult = ({ schema, ...props }) => {
                   <strong>{d.program_name}</strong>
                 </p>
                 <p>
-                  <AutoLink text={d[`summary_${locale}`]} />
+                  <AutoLink
+                    text={d[`summary_${locale}`]}
+                    province={schema?.text}
+                  />
                   {/* <a href={d?.link} target="_blank">
                   {d?.link}
                 </a> */}
