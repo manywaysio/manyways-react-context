@@ -45,6 +45,7 @@ window.manyways.pushAnalytics = function (eventName) {
     console.log("no datalayer defined");
   }
 };
+
 window.manyways.restart = function (e) {
   !!e && e.preventDefault();
   window.umami.track("restart");
@@ -98,6 +99,49 @@ window.manyways.share = function (e) {
       title: "MESCA - Rebate Finder",
       url: window.location.href,
     });
+  }
+};
+
+//For google analytics
+
+window.manyways.pushAnalyticsClick = function (
+  eventName,
+  finderType,
+  finderRegion,
+  linkText,
+  linkUrl
+) {
+  const data = {
+    event: eventName,
+    finder_type: finderType,
+    ...(finderRegion && { finder_region: finderRegion }),
+    ...(linkText && { link_text: linkText }),
+    ...(linkUrl && { link_url: linkUrl }),
+  };
+
+  if (window.dataLayer && typeof window.dataLayer.push === "function") {
+    window.dataLayer.push(data);
+    console.log("Event Click Data:", data);
+  } else {
+    console.log("No dataLayer available for analytics:", data);
+  }
+};
+
+window.manyways.pushAnalyticsPageView = function (
+  eventName,
+  pageUrl,
+  pageTitle
+) {
+  const data = {
+    event: eventName,
+    page_url: pageUrl,
+    page_title: pageTitle,
+  };
+  if (window.dataLayer && typeof window.dataLayer.push === "function") {
+    window.dataLayer.push(data);
+    console.log("Page View Event:", data);
+  } else {
+    console.log("No dataLayer available for analytics - page view:", data);
   }
 };
 

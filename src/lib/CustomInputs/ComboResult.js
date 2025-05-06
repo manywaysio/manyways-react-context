@@ -26,7 +26,7 @@ const ComboResult = (props) => {
     })
       .then((res) => res.json())
       .then((dd) => {
-        console.log("data", dd);
+        // console.log("data", dd);
         setResults(dd);
       })
       .catch((error) => {
@@ -74,10 +74,20 @@ const ComboResult = (props) => {
                         ))}
                       </div>
                     )}
+
                     <a
                       href={rebate.link}
                       target="_blank"
                       className="button external-link"
+                      onClick={() =>
+                        window.manyways.pushAnalyticsClick(
+                          "rebate_form_click",
+                          "model_number",
+                          results?.province,
+                          "Learn more",
+                          rebate.link,
+                        )
+                      }
                     >
                       Learn more
                     </a>

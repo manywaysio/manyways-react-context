@@ -145,7 +145,7 @@ const CustomTable = (props) => {
 
   let getResponses = async (responseId) => {
     let responses = await fetch(
-      `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`,
     )
       .then((r) => r.json())
       .then((r) => r?.responses);
@@ -155,11 +155,11 @@ const CustomTable = (props) => {
 
     let _lookupData = responses.reverse().find((r) => r.node_id === 808);
     setApplicationType(
-      _lookupData?.response?.application_type || "residential"
+      _lookupData?.response?.application_type || "residential",
     );
 
     setCategoryApplicationType(
-      _lookupData?.response?.hvac_type || "Single Zone"
+      _lookupData?.response?.hvac_type || "Single Zone",
     );
 
     // setLookupData(
@@ -179,7 +179,7 @@ const CustomTable = (props) => {
       return {};
     }
 
-    console.log(lookupData);
+    // console.log(lookupData);
 
     const units = lookupData
       .filter((row) => {
@@ -189,7 +189,7 @@ const CustomTable = (props) => {
         if (
           applicationType === "Residential" &&
           RESIDENTIAL.some((prefix) =>
-            row.indoor_unit_model_number.includes(prefix)
+            row.indoor_unit_model_number.includes(prefix),
           )
         ) {
           return true;
@@ -197,7 +197,7 @@ const CustomTable = (props) => {
         if (
           applicationType === "Light Commercial" &&
           LIGHT_COMMERCIAL.some((prefix) =>
-            row.indoor_unit_model_number.includes(prefix)
+            row.indoor_unit_model_number.includes(prefix),
           )
         ) {
           return true;
@@ -310,15 +310,13 @@ const CustomTable = (props) => {
     let nodeItem = JSON.parse(schema?.text);
 
     setRebateTypes(rebateNames);
-    console.log("rebate names", rebateNames);
+    // console.log("rebate names", rebateNames);
 
     const sorted = sortUnits(
-      d?.d?.validProducts.filter(createFilterFunction(nodeItem))
+      d?.d?.validProducts.filter(createFilterFunction(nodeItem)),
     );
-    console.log("sorted", sorted);
+    // console.log("sorted", sorted);
     setUnitsByCategory(sorted);
-
-    console.log(d);
   };
 
   useEffect(() => {
@@ -330,7 +328,7 @@ const CustomTable = (props) => {
       return;
     }
     const lastResponse = responses[0];
-    console.log("province", lastResponse?.response?.province_name);
+    // console.log("province", lastResponse?.response?.province_name);
     setProvince(lastResponse?.response?.province_name);
   }, [lookupData]);
 
@@ -374,6 +372,13 @@ const CustomTable = (props) => {
             onClick={(e) => {
               e.preventDefault();
               setSortBy("Heat Pump Size");
+              window.manyways.pushAnalyticsClick(
+                "rebate_form_click",
+                "advanced_search",
+                theProvince,
+                "Heat Pump Size",
+                "https://mitsubishielectric.ca/en/rebate-finder/submit/advanced-search",
+              );
             }}
           >
             {locale === "fr" ? "Taille de Thermopompe" : "Heat Pump Size"}
@@ -383,6 +388,13 @@ const CustomTable = (props) => {
             onClick={(e) => {
               e.preventDefault();
               setSortBy("Outdoor Unit");
+              window.manyways.pushAnalyticsClick(
+                "rebate_form_click",
+                "advanced_search",
+                theProvince,
+                "Ourdoor Unit (A-Z)",
+                "https://mitsubishielectric.ca/en/rebate-finder/submit/advanced-search",
+              );
             }}
           >
             {locale === "fr" ? "Modèle Extérieur (A-Z)" : "Outdoor Unit (A-Z)"}
@@ -392,6 +404,14 @@ const CustomTable = (props) => {
             onClick={(e) => {
               e.preventDefault();
               setSortBy("Indoor Unit");
+
+              window.manyways.pushAnalyticsClick(
+                "rebate_form_click",
+                "advanced_search",
+                theProvince,
+                "Indoor Unit (A-Z)",
+                "https://mitsubishielectric.ca/en/rebate-finder/submit/advanced-search",
+              );
             }}
           >
             {locale === "fr" ? "Modèle Intérieur (A-Z)" : "Indoor Unit (A-Z)"}
@@ -401,6 +421,13 @@ const CustomTable = (props) => {
             onClick={(e) => {
               e.preventDefault();
               setSortBy("AHRI Number");
+              window.manyways.pushAnalyticsClick(
+                "rebate_form_click",
+                "advanced_search",
+                theProvince,
+                "AHRI Number",
+                "https://mitsubishielectric.ca/en/rebate-finder/submit/advanced-search",
+              );
             }}
           >
             {locale === "fr" ? "AHRI" : "AHRI Number"}
@@ -461,7 +488,7 @@ const CustomTable = (props) => {
                       return aSize - bSize;
                     } else if (sortBy === "Outdoor Unit") {
                       return a.outdoor_unit_model_number.localeCompare(
-                        b.outdoor_unit_model_number
+                        b.outdoor_unit_model_number,
                       );
                     } else if (sortBy === "Indoor Unit") {
                       return a.idu_override.localeCompare(b.idu_override);
@@ -469,7 +496,7 @@ const CustomTable = (props) => {
                       return a.ahri_number.localeCompare(b.ahri_number);
                     } else if (sortBy === "A-Z") {
                       return a.outdoor_unit_model_number.localeCompare(
-                        b.ahri_number
+                        b.ahri_number,
                       );
                     }
                   })

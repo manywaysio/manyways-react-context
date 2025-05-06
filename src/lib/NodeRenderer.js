@@ -17,6 +17,7 @@ import OutdoorUnitWidget from "./CustomInputs/OutdoorUnitWidget";
 import AHRIWidget from "./CustomInputs/AHRIWidget";
 import ComboResult from "./CustomInputs/ComboResult";
 import CustomProvinceResult from "./CustomInputs/CustomProvinceResult";
+import { useRef } from "react";
 
 const isFormWithOneChoiceFieldOnly = (formSchema, uiSchema) => {
   if (!!formSchema?.properties) {
@@ -51,6 +52,14 @@ const NodeRenderer = (props) => {
     locale,
     labels,
   } = useManyways();
+  const analyticsFlags = useRef({
+    provinceTerritory: false,
+    modelNumber: false,
+    products: false,
+    provinceRebates: false,
+    rebateResultsModel: false,
+    rebateResultsProduct: false,
+  });
 
   const [transitioningNodes, setTransitioningNodes] = useState([]);
 
@@ -70,7 +79,7 @@ const NodeRenderer = (props) => {
               {locale === "fr"
                 ? error.stack.replace(
                     /must have required property/g,
-                    "Doit avoir la propriété requise:"
+                    "Doit avoir la propriété requise:",
                   )
                 : error.stack}
             </li>
@@ -79,6 +88,110 @@ const NodeRenderer = (props) => {
       </div>
     );
   }
+
+  const getNodeResponseByTitle = (nodeTitle) => {
+    const node = nodes.find((node) => node.title === nodeTitle);
+    if (!node) return null;
+
+    const response = responses.find((r) => r.node_id === node.id);
+    return response?.response;
+  };
+
+  useEffect(() => {
+    const currentNode = nodes.find((node) => node.id === currentNodeId);
+    if (!currentNode) return;
+
+    let provinceResponse = {};
+
+    switch (currentNode.title) {
+      case "Province or Territory":
+        if (!analyticsFlags.current.provinceTerritory) {
+          window.manyways.pushAnalyticsPageView(
+            "virtual_pageview",
+            "https://mitsubishielectric.ca/en/rebate-finder/start/rebates-in-my-area",
+            "Rebate finder | Start | Rebate in my area",
+          );
+          analyticsFlags.current.provinceTerritory = true;
+        }
+        break;
+
+      case "Model Number":
+        if (!analyticsFlags.current.modelNumber) {
+          window.manyways.pushAnalyticsPageView(
+            "virtual_pageview",
+            "https://mitsubishielectric.ca/en/rebate-finder/start/model-number",
+            "Rebate finder | Start | Model Number",
+          );
+          analyticsFlags.current.modelNumber = true;
+        }
+        break;
+
+      case "Products":
+        if (!analyticsFlags.current.products) {
+          window.manyways.pushAnalyticsPageView(
+            "virtual_pageview",
+            "https://mitsubishielectric.ca/en/rebate-finder/start/advanced-search",
+            "Rebate finder | Start | Advanced Search",
+          );
+          analyticsFlags.current.products = true;
+        }
+        break;
+
+      case "Province & Territory Rebates":
+        if (!analyticsFlags.current.provinceRebates) {
+          provinceResponse = getNodeResponseByTitle("Province or Territory");
+          window.manyways.pushAnalyticsClick(
+            "rebate_form_submit",
+            "rebates_in_my_area",
+            provinceResponse?.province_name,
+          );
+          window.manyways.pushAnalyticsPageView(
+            "virtual_pageview",
+            "https://mitsubishielectric.ca/en/rebate-finder/submit/rebates-in-my-area",
+            "Rebate finder | Submission | Rebate in my area",
+          );
+          analyticsFlags.current.provinceRebates = true;
+        }
+        break;
+
+      case "Rebate Results - Model":
+        if (!analyticsFlags.current.rebateResultsModel) {
+          provinceResponse = getNodeResponseByTitle("Model Number");
+          window.manyways.pushAnalyticsClick(
+            "rebate_form_submit",
+            "model_number",
+            provinceResponse?.province_name,
+          );
+          window.manyways.pushAnalyticsPageView(
+            "virtual_pageview",
+            "https://mitsubishielectric.ca/en/rebate-finder/submit/model-number",
+            "Rebate finder | Submission | Model Number",
+          );
+          analyticsFlags.current.rebateResultsModel = true;
+        }
+        break;
+
+      case "Rebate results - product":
+        if (!analyticsFlags.current.rebateResultsProduct) {
+          provinceResponse = getNodeResponseByTitle("Products");
+          window.manyways.pushAnalyticsClick(
+            "rebate_form_submit",
+            "advanced_search",
+            provinceResponse?.province_name,
+          );
+          window.manyways.pushAnalyticsPageView(
+            "virtual_pageview",
+            "https://mitsubishielectric.ca/en/rebate-finder/submit/advanced-search",
+            "Rebate finder | Submission | Advanced Search",
+          );
+          analyticsFlags.current.rebateResultsProduct = true;
+        }
+        break;
+
+      default:
+        break;
+    }
+  }, [currentNodeId, nodes, responses]);
 
   //add transitioning state to last two nodes
   // useEffect(() => {
@@ -135,7 +248,7 @@ const NodeRenderer = (props) => {
 
       const singleChoiceField = isFormWithOneChoiceFieldOnly(
         currentNode?.form_schema,
-        currentNode?.ui_schema
+        currentNode?.ui_schema,
       );
 
       function transformErrors(errors) {
@@ -155,7 +268,7 @@ const NodeRenderer = (props) => {
       let hasNextNode = !!nodes[currentNodeIndex + 1];
 
       function customValidate(formData, errors, uiSchema) {
-        console.log(formData, errors, uiSchema);
+        // console.log(formData, errors, uiSchema);
         let keys = Object.keys(formData);
         if (
           keys.includes("ahri") &&
@@ -165,7 +278,7 @@ const NodeRenderer = (props) => {
         ) {
           if (!formData?.ahri && (!formData?.indoor || !formData?.outdoor)) {
             errors.ahri.addError(
-              "Please select an AHRI number or Indoor and Outdoor model."
+              "Please select an AHRI number or Indoor and Outdoor model.",
             );
           }
         }
@@ -177,7 +290,7 @@ const NodeRenderer = (props) => {
         <div
           key={currentNode?.id}
           className={`${classNamePrefix}-node
-          is-current-node-${currentNodeId === currentNode?.id} 
+          is-current-node-${currentNodeId === currentNode?.id}
           has-response-${!!theResponse}
           layout-${nodeLayout || "center"}
           is-full-screen-${!!isFullScreen}
@@ -210,7 +323,7 @@ const NodeRenderer = (props) => {
               disabled={!!hasNextNode}
               formData={theResponse?.response || {}}
               className={`${classNamePrefix}-form ${classNamePrefix}-node-${slugify(
-                currentNode?.title
+                currentNode?.title,
               )}-form
           has-response-${!!theResponse}
           `}

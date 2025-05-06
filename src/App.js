@@ -13,10 +13,11 @@ import { useState, useEffect } from "react";
 // import all styles as a var called css
 
 import { ManywaysProvider } from "./lib/ManywaysContext";
+import { useRef } from "react";
 
 function App({ locale, slug, mode = "scroll" }) {
   const stylesToString = `
-  ${styles}  
+  ${styles}
   ${vars}
     ${layoutStyles}
     ${buttonStyles}
@@ -27,6 +28,22 @@ function App({ locale, slug, mode = "scroll" }) {
   `;
 
   const [_slug, _setSlug] = useState("");
+  const analyticsHasFired = useRef(false);
+
+  useEffect(() => {
+    if (
+      !analyticsHasFired.current &&
+      window.manyways &&
+      window.manyways.pushAnalyticsPageView
+    ) {
+      window.manyways.pushAnalyticsPageView(
+        "virtual_pageview",
+        "https://mitsubishielectric.ca/en/rebate-finder/landing",
+        "Rebate finder landing | MESCA",
+      );
+      analyticsHasFired.current = true;
+    }
+  }, []);
 
   useEffect(() => {
     // get slug query param from url and set to state
