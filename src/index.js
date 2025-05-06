@@ -30,7 +30,7 @@ class ManywaysWrapper extends HTMLElement {
 
     console.log(slug, locale, root, manyways);
 
-    if (slug && !manyways.isMounted) {
+    if (slug && !window?.manyways?.isMounted) {
       root.render(<App locale={locale} slug={slug} />);
       window.manyways.isMounted = true;
     }
