@@ -19,19 +19,32 @@ class ManywaysWrapper extends HTMLElement {
     const mountPoint = document.createElement("div");
     this.attachShadow({ mode: "open" }).appendChild(mountPoint);
 
-    const slug = this.getAttribute("slug") || "rebates-2";
+    const slug = this.getAttribute("slug") || "rebates-2-copy";
     const locale = this.getAttribute("locale");
     const root = ReactDOM.createRoot(mountPoint);
-    root.render(<App locale={locale} slug={slug} />);
+    if (!window.manyways?.isMounted) {
+      root.render(<App locale={locale} slug={slug} />);
+      window.manyways.isMounted = true;
+    }
   }
 }
-
 
 customElements.define("manyways-wrapper", ManywaysWrapper);
 
 window.exports = window.exports || {};
 
-window.manyways = {};
+window.manyways = {
+  isMounted: false,
+};
+window.manyways.pushAnalytics = function (eventName) {
+  if (window.dataLayer && window.dataLayer.push) {
+    window.dataLayer.push({
+      event: eventName,
+    });
+  } else {
+    console.log("no datalayer defined");
+  }
+};
 window.manyways.restart = function (e) {
   !!e && e.preventDefault();
   window.umami.track("restart");
