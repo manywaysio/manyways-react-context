@@ -5,6 +5,10 @@ import App from "./App";
 
 console.log("MANYWAYS! ");
 
+window.manyways = window.manyways || {
+  isMounted: false,
+};
+
 try {
   const script = document.createElement("script");
   script.src = "https://unpkg.com/share-api-polyfill/dist/share-min.js";
@@ -37,9 +41,6 @@ customElements.define("manyways-wrapper", ManywaysWrapper);
 
 window.exports = window.exports || {};
 
-window.manyways = {
-  isMounted: false,
-};
 window.manyways.pushAnalytics = function (eventName) {
   if (window.dataLayer && window.dataLayer.push) {
     window.dataLayer.push({
