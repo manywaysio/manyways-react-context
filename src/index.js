@@ -28,7 +28,7 @@ class ManywaysWrapper extends HTMLElement {
     const locale = this.getAttribute("locale");
     const root = ReactDOM.createRoot(mountPoint);
 
-    console.log(slug, locale, root, manyways);
+    console.log(slug, locale, root, window?.manyways);
 
     if (slug && !window?.manyways?.isMounted) {
       root.render(<App locale={locale} slug={slug} />);
