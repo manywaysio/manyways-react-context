@@ -22,7 +22,7 @@ class ManywaysWrapper extends HTMLElement {
     const slug = this.getAttribute("slug") || "rebates-2-copy";
     const locale = this.getAttribute("locale");
     const root = ReactDOM.createRoot(mountPoint);
-    if (!window.manyways?.isMounted) {
+    if (slug && !manyways.isMounted) {
       root.render(<App locale={locale} slug={slug} />);
       window.manyways.isMounted = true;
     }
