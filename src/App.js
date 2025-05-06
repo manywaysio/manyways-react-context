@@ -39,7 +39,7 @@ function App({ locale, slug, mode = "scroll" }) {
       window.manyways.pushAnalyticsPageView(
         "virtual_pageview",
         "https://mitsubishielectric.ca/en/rebate-finder/landing",
-        "Rebate finder landing | MESCA",
+        "Rebate finder landing | MESCA"
       );
       analyticsHasFired.current = true;
     }
@@ -47,15 +47,15 @@ function App({ locale, slug, mode = "scroll" }) {
 
   useEffect(() => {
     // get slug query param from url and set to state
-    const urlParams = new URLSearchParams(window.location.search);
-    const __slug = urlParams.get("slug");
-    console.log("setting slug", __slug);
-    _setSlug(!!__slug ? __slug : slug);
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const __slug = urlParams.get("slug");
+    // console.log("setting slug", __slug);
+    // _setSlug(!!__slug ? __slug : slug);
   }, []);
 
   return (
     !!_slug && (
-      <ManywaysProvider slug={_slug} locale={locale} mode={mode}>
+      <ManywaysProvider slug={slug} locale={locale} mode={mode}>
         <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
       </ManywaysProvider>
     )
