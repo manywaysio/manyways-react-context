@@ -28,7 +28,6 @@ class ManywaysWrapper extends HTMLElement {
     const locale = this.getAttribute("locale");
     const root = ReactDOM.createRoot(mountPoint);
 
-    console.log(slug, locale, root, window?.manyways);
     root.render(<App locale={locale} slug={slug} />);
   }
 }
@@ -132,7 +131,19 @@ window.manyways.pushAnalyticsPageView = function (
   eventName,
   pageUrl,
   pageTitle
-) {};
+) {
+  const data = {
+    event: eventName,
+    page_url: pageUrl,
+    page_title: pageTitle,
+  };
+  if (window.dataLayer && typeof window.dataLayer.push === "function") {
+    window.dataLayer.push(data);
+    console.log("Page View Event:", data);
+  } else {
+    console.log("No dataLayer available for analytics - page view:", data);
+  }
+};
 
 // var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
 // var eventer = window[eventMethod];

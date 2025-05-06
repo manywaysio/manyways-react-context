@@ -34,8 +34,10 @@ function App({ locale, slug, mode = "scroll" }) {
     if (
       !analyticsHasFired.current &&
       window.manyways &&
-      window.manyways.pushAnalyticsPageView
+      window.manyways.pushAnalyticsPageView &&
+      !window.manyways.pageViewPushed
     ) {
+      window.manyways.pageViewPushed = true;
       window.manyways.pushAnalyticsPageView(
         "virtual_pageview",
         "https://mitsubishielectric.ca/en/rebate-finder/landing",
