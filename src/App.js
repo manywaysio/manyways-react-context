@@ -53,18 +53,6 @@ function App({ locale, slug, mode = "scroll" }) {
     const __slug = urlParams.get("slug");
     console.log("setting slug", __slug);
     _setSlug(!!__slug ? __slug : slug);
-
-    const data = {
-      event: eventName,
-      page_url: pageUrl,
-      page_title: pageTitle,
-    };
-    if (window.dataLayer && typeof window.dataLayer.push === "function") {
-      window.dataLayer.push(data);
-      console.log("Page View Event:", data);
-    } else {
-      console.log("No dataLayer available for analytics - page view:", data);
-    }
   }, []);
 
   return (
