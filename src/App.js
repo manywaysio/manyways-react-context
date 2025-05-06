@@ -47,15 +47,27 @@ function App({ locale, slug, mode = "scroll" }) {
 
   useEffect(() => {
     // get slug query param from url and set to state
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const __slug = urlParams.get("slug");
-    // console.log("setting slug", __slug);
-    // _setSlug(!!__slug ? __slug : slug);
+    const urlParams = new URLSearchParams(window.location.search);
+    const __slug = urlParams.get("slug");
+    console.log("setting slug", __slug);
+    _setSlug(!!__slug ? __slug : slug);
+
+    const data = {
+      event: eventName,
+      page_url: pageUrl,
+      page_title: pageTitle,
+    };
+    if (window.dataLayer && typeof window.dataLayer.push === "function") {
+      window.dataLayer.push(data);
+      console.log("Page View Event:", data);
+    } else {
+      console.log("No dataLayer available for analytics - page view:", data);
+    }
   }, []);
 
   return (
     !!_slug && (
-      <ManywaysProvider slug={slug} locale={locale} mode={mode}>
+      <ManywaysProvider slug={_slug} locale={locale} mode={mode}>
         <style dangerouslySetInnerHTML={{ __html: stylesToString }}></style>
       </ManywaysProvider>
     )
