@@ -16,6 +16,7 @@ try {
 
 class ManywaysWrapper extends HTMLElement {
   connectedCallback() {
+    console.log("connectedCallback");
     const mountPoint = document.createElement("div");
     this.attachShadow({ mode: "open" }).appendChild(mountPoint);
 
