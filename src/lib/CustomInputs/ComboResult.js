@@ -1,9 +1,25 @@
 import { useState, useEffect } from "react";
+import { useManyways } from "../ManywaysContext";
 
 const ComboResult = (props) => {
   const { schema } = props;
+  const { locale, treeConfig } = useManyways();
   const [data, setData] = useState({});
   const [results, setResults] = useState([]);
+
+  const formatDate = (date, locale) => {
+    return new Intl.DateTimeFormat(locale, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      timeZone: "UTC",
+    }).format(date);
+  };
+
+  const lastUpdatedDate = new Date(treeConfig?.run_mode.last_updated_data);
+
+  const formattedDateEN = formatDate(lastUpdatedDate, "en-US");
+  const formattedDateFR = formatDate(lastUpdatedDate, "fr-FR");
 
   useEffect(() => {
     try {
@@ -96,6 +112,11 @@ const ComboResult = (props) => {
               );
             })}
         </div>
+      </div>
+      <div class="last-updated">
+        <p>
+          Last Updated: {locale === "fr" ? formattedDateFR : formattedDateEN}
+        </p>
       </div>
     </div>
   );

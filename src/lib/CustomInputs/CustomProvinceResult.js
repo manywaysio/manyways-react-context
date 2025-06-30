@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useManyways } from "../ManywaysContext";
 
 const AutoLink = ({ text, province }) => {
   const delimiter =
@@ -36,6 +37,8 @@ const AutoLink = ({ text, province }) => {
 const CustomProvinceResult = ({ schema, ...props }) => {
   const [data, setData] = useState([]);
   const [locale, setLocale] = useState("en");
+  const { treeConfig } = useManyways();
+
   const getData = async () => {
     let d = await fetch("https://wayfinder.manyways.io/api/hvac-rebate", {
       method: "POST",
@@ -54,6 +57,21 @@ const CustomProvinceResult = ({ schema, ...props }) => {
   useEffect(() => {
     getData();
   }, []);
+
+  const formatDate = (date, locale) => {
+    return new Intl.DateTimeFormat(locale, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      timeZone: "UTC",
+    }).format(date);
+  };
+
+  const lastUpdatedDate = new Date(treeConfig?.run_mode.last_updated_data);
+
+  const formattedDateEN = formatDate(lastUpdatedDate, "en-US");
+  const formattedDateFR = formatDate(lastUpdatedDate, "fr-FR");
+
   return (
     <div>
       <div>
@@ -79,7 +97,9 @@ const CustomProvinceResult = ({ schema, ...props }) => {
         })}
       </div>
       <div class="last-updated">
-        <p>Last Updated: Oct 24, 2024</p>
+        <p>
+          Last Updated: {locale === "fr" ? formattedDateFR : formattedDateEN}
+        </p>
       </div>
     </div>
   );
