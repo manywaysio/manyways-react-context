@@ -566,6 +566,7 @@ const CustomTable = (props) => {
                   key={rowIdx}
                   province={province}
                   locale={locale}
+                  rebateTypes={rebateTypes}
                 />
               ))}
           </div>
@@ -607,7 +608,7 @@ const TableRow = ({ row, province, locale = "en", rebateTypes = [] }) => {
   );
 };
 
-const ListItem = ({ row, province, locale }) => {
+const ListItem = ({ row, province, rebateTypes, locale }) => {
   const provKey = findProvincialRebateKey(province);
   const provRebateValue = row[provKey];
   console.log(row, "ROW ");
@@ -623,31 +624,32 @@ const ListItem = ({ row, province, locale }) => {
         )}
       </h5>
       <p>
-        {row?.outdoorUnitModelNumber} · {row?.iduOverride}
+        {row?.outdoorUnitModelNumber} · {row?.indoorUnitModelNumber}
       </p>
-
-      {/* {row.rebates.map((rebate) => {
+      {rebateTypes.map((rebate) => {
+        let theRebate = rebateTypes?.find((r) => r.name === rebate?.name);
+        let theAmount = theRebate?.rebateAmount;
         return (
           <div className="rebate-list-item">
             <p>
-              <strong>{rebate?.program_name}</strong>
+              <strong>{rebate?.name}</strong>
             </p>
             <p className="rebate-list-item-result">
-              <span>{rebate?.rebate_amount}</span>
+              <span>{theAmount}</span>
             </p>
-            <a
-              href={rebate.link}
-              target="_blank"
-              className="button external-link"
-              style={{
-                fontSize: "12px",
-              }}
-            >
-              Learn more
-            </a>
+            {/* <a
+            href={rebate?.link}
+            target="_blank"
+            className="button external-link"
+            style={{
+              fontSize: "12px",
+            }}
+          >
+            Learn more
+          </a>*/}
           </div>
         );
-      })}*/}
+      })}
     </li>
   );
 };
