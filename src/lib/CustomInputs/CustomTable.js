@@ -637,16 +637,18 @@ const ListItem = ({ row, province, rebateTypes, locale }) => {
             <p className="rebate-list-item-result">
               <span>{theAmount}</span>
             </p>
-            {/* <a
-            href={rebate?.link}
-            target="_blank"
-            className="button external-link"
-            style={{
-              fontSize: "12px",
-            }}
-          >
-            Learn more
-          </a>*/}
+            {theRebate?.link && (
+              <a
+                href={rebate?.link}
+                target="_blank"
+                className="button external-link"
+                style={{
+                  fontSize: "12px",
+                }}
+              >
+                Learn more
+              </a>
+            )}
           </div>
         );
       })}

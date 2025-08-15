@@ -6,6 +6,8 @@ const ComboResult = (props) => {
   const { locale, treeConfig } = useManyways();
   const [data, setData] = useState({});
   const [results, setResults] = useState([]);
+  const [rebateTypes, setRebateTypes] = useState();
+  const [province, setProvince] = useState();
 
   const formatDate = (date, locale) => {
     return new Intl.DateTimeFormat(locale, {
@@ -25,6 +27,7 @@ const ComboResult = (props) => {
     try {
       let d = JSON.parse(schema.text);
       setData(d);
+      setProvince(d?.province);
       getResults(d);
     } catch (e) {
       console.error("Error parsing schema", e);
@@ -33,17 +36,25 @@ const ComboResult = (props) => {
 
   const getResults = async (data) => {
     setResults([]);
-    await fetch("https://wayfinder.manyways.io/api/hvac-rebate", {
-      method: "POST",
+
+    const params = new URLSearchParams();
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        params.append(key, data[key]);
+      }
+    }
+
+    await fetch(`http://localhost:3333/api/rebates/mock?${params.toString()}`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((dd) => {
-        // console.log("data", dd);
-        setResults(dd);
+        console.log("data", dd);
+        setResults(dd?.products[0]?.rebatesAvailable);
+        setRebateTypes(dd?.rebates);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -63,8 +74,11 @@ const ComboResult = (props) => {
       </button> */}
       <div className="results-container text-container">
         <div className="result grid-2">
-          {!!results?.d?.items &&
-            results.d.items.map((rebate) => {
+          {!!results &&
+            results.map((rebate) => {
+              const theRebate = rebateTypes?.find(
+                (r) => r.name === rebate?.name,
+              );
               return (
                 <div>
                   <div
@@ -73,40 +87,38 @@ const ComboResult = (props) => {
                       height: "100%",
                     }}
                   >
-                    <h6>
-                      {rebate.area_type}
-                      {rebate.program_name && <br />}
-                      {rebate.program_name}
-                    </h6>
-                    {!!rebate.rebate_amount ? (
+                    <h6>{rebate.name}</h6>
+                    {!!theRebate.rebateAmount ? (
                       <p className="rebate-status available">Available</p>
                     ) : (
                       <p className="rebate-status unavailable">Unavailable</p>
                     )}
-                    {rebate?.rebate_amount && (
+                    {theRebate?.rebateAmount && (
                       <div className="rebate-details">
-                        {rebate?.rebate_amount.split(";").map((s, i) => (
+                        {theRebate?.rebateAmount}
+                        {/* {theRebate?.rebateAmount.split(";").map((s, i) => (
                           <p>{s}</p>
-                        ))}
+                        ))}*/}
                       </div>
                     )}
-
-                    <a
-                      href={rebate.link}
-                      target="_blank"
-                      className="button external-link"
-                      onClick={() =>
-                        window.manyways.pushAnalyticsClick(
-                          "rebate_form_click",
-                          "model_number",
-                          results?.province,
-                          "Learn more",
-                          rebate.link,
-                        )
-                      }
-                    >
-                      Learn more
-                    </a>
+                    {theRebate?.link && (
+                      <a
+                        href={theRebate.link}
+                        target="_blank"
+                        className="button external-link"
+                        onClick={() =>
+                          window.manyways.pushAnalyticsClick(
+                            "rebate_form_click",
+                            "model_number",
+                            province,
+                            "Learn more",
+                            theRebate.link,
+                          )
+                        }
+                      >
+                        Learn more
+                      </a>
+                    )}
                   </div>
                 </div>
               );
