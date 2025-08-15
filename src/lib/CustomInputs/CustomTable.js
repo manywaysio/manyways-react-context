@@ -238,9 +238,9 @@ const CustomTable = (props) => {
       if (node.hvac_type === "Multi Zone") {
         hvacTypeCondition = item.multiZone;
       } else if (node.hvac_type === "Single Zone") {
-        hvacTypeCondition = !item.multiZone && item.ductedOrDuctless;
+        hvacTypeCondition = !item.multiZone && item.isDucted;
       } else if (node.hvac_type === "Centrally ducted") {
-        hvacTypeCondition = !item.ductedOrDuctless;
+        hvacTypeCondition = !item.isDucted;
       }
 
       // Cold climate condition
@@ -252,7 +252,7 @@ const CustomTable = (props) => {
       // Energy Star certification condition
       const energyStarCondition =
         node.energy_star_cert === "Energy Star Certified"
-          ? item.energyStarCertified
+          ? item.isEnergyStar
           : true;
 
       // Combine all conditions
@@ -278,7 +278,6 @@ const CustomTable = (props) => {
       d?.products.filter(createFilterFunction(nodeItem)),
     );
 
-    console.log(d.products, sorted);
     setUnitsByCategory(sorted);
   };
 
@@ -558,7 +557,7 @@ const TableRow = ({ row, province, locale = "en", rebateTypes = [] }) => {
     >
       <td className="ahri-column">
         {row?.ahri}{" "}
-        {row?.energyStarCertified && (
+        {row?.isEnergyStar && (
           <img
             src="https://mwassets.imgix.net/Organization_3/energystar.png"
             alt="energy star certified"
@@ -567,9 +566,12 @@ const TableRow = ({ row, province, locale = "en", rebateTypes = [] }) => {
       </td>
       <td>{row?.outdoorUnitModelNumber}</td>
       <td>{row?.indoorUnitModelNumber}</td>
+
       {rebateTypes.map((rebate) => {
-        let theRebate = rebateTypes?.find((r) => r.name === rebate?.name);
-        let theAmount = theRebate?.rebateAmount;
+        let theRebate = row?.rebatesAvailable?.find(
+          (r) => r.name === rebate?.name,
+        );
+        let theAmount = theRebate?.amount;
         return <td key={rebate?.name}>{theAmount || "-"}</td>;
       })}
     </tr>
@@ -579,12 +581,12 @@ const TableRow = ({ row, province, locale = "en", rebateTypes = [] }) => {
 const ListItem = ({ row, province, rebateTypes, locale }) => {
   const provKey = findProvincialRebateKey(province);
   const provRebateValue = row[provKey];
-  console.log(row, "ROW ");
+
   return (
     <li className="card">
       <h5 className="ahri-column">
         {row?.ahri}{" "}
-        {row?.energyStarCertified && (
+        {row?.isEnergyStar && (
           <img
             src="https://mwassets.imgix.net/Organization_3/energystar.png"
             alt="energy star certified"
@@ -596,7 +598,7 @@ const ListItem = ({ row, province, rebateTypes, locale }) => {
       </p>
       {rebateTypes.map((rebate) => {
         let theRebate = rebateTypes?.find((r) => r.name === rebate?.name);
-        let theAmount = theRebate?.rebateAmount;
+        let theAmount = theRebate?.amount;
         return (
           <div className="rebate-list-item">
             <p>
