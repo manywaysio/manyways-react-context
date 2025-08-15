@@ -3,6 +3,8 @@ import { Fragment, useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
 
+const baseUrl = "http://localhost:3333";
+
 const RESIDENTIAL = [
   "MSZ",
   "MFZ",
@@ -291,16 +293,13 @@ const CustomTable = (props) => {
 
   const getProvincialRebates = async ({ province }) => {
     if (!province) return;
-    let d = await fetch(
-      `http://localhost:3333/api/rebates/mock?province=${province}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        // body: JSON.stringify({ province: theProvince, lookupData }),
+    let d = await fetch(`${baseUrl}/api/rebates/mock?province=${province}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
       },
-    ).then((r) => r.json());
+      // body: JSON.stringify({ province: theProvince, lookupData }),
+    }).then((r) => r.json());
 
     let nodeItem = JSON.parse(schema?.text);
 

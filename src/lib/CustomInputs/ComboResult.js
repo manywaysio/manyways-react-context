@@ -9,6 +9,10 @@ const ComboResult = (props) => {
   const [rebateTypes, setRebateTypes] = useState();
   const [province, setProvince] = useState();
 
+  // const baseUrl =
+  //   process.env.REACT_APP_MESCA_API_BASE_URL || "http://localhost:3333";
+  const baseUrl = "http://localhost:3333";
+
   const formatDate = (date, locale) => {
     return new Intl.DateTimeFormat(locale, {
       year: "numeric",
@@ -44,7 +48,7 @@ const ComboResult = (props) => {
       }
     }
 
-    await fetch(`http://localhost:3333/api/rebates/mock?${params.toString()}`, {
+    await fetch(`${baseUrl}/api/rebates/mock?${params.toString()}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +56,6 @@ const ComboResult = (props) => {
     })
       .then((res) => res.json())
       .then((dd) => {
-        console.log("data", dd);
         setResults(dd?.products[0]?.rebatesAvailable);
         setRebateTypes(dd?.rebates);
       })
