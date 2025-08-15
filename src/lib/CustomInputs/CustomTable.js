@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
 
-const baseUrl = "http://localhost:3333";
+const baseUrl = "http://localhost:3333/api/rebate-programs/lookup";
 
 const RESIDENTIAL = [
   "MSZ",
@@ -81,36 +81,6 @@ const findProvincialRebateKey = (prov) => {
   else return "yukofalse";
 };
 
-const renderRebateValue = (value, locale, override) => {
-  if (!value) {
-    return;
-  }
-  if (
-    value === "not eligible" ||
-    value === "not found" ||
-    value === "not listed" ||
-    value === "kNotElgible"
-  ) {
-    return <span className="unavail"></span>;
-  }
-  if (value === "no provincial rebate available") {
-    return <span>{value}</span>;
-  }
-  if ((override = "ohpa")) {
-    const textBefore = locale === "fr" ? "Jusqu'à" : "Up to";
-    const overrideVal =
-      value === "$15,000" || value === "$10,000"
-        ? `${textBefore} ${value} `
-        : value;
-    return <span>{overrideVal}</span>;
-  }
-  const formattedValue = { __html: value.replace(/;/g, "<br />") };
-  // const formattedValue = { __html: "" };
-  return (
-    <span className="available" dangerouslySetInnerHTML={formattedValue}></span>
-  );
-};
-
 const CustomTable = (props) => {
   const { currentNode, responses, responseId, locale, treeConfig } =
     useManyways();
@@ -179,7 +149,6 @@ const CustomTable = (props) => {
   }, [categoryApplicationType, province]);
 
   const sortUnits = (lookupData) => {
-    console.log(lookupData, "lookup data");
     if (lookupData.length < 1) {
       return {};
     }
@@ -293,7 +262,7 @@ const CustomTable = (props) => {
 
   const getProvincialRebates = async ({ province }) => {
     if (!province) return;
-    let d = await fetch(`${baseUrl}/api/rebates/mock?province=${province}`, {
+    let d = await fetch(`${baseUrl}?province=${province}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

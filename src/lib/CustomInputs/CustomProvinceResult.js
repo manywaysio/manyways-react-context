@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useManyways } from "../ManywaysContext";
 
+const baseUrl = "http://localhost:3333/api/rebate-programs/lookup";
+
 const AutoLink = ({ text, province }) => {
   const delimiter =
     /((?:https?:\/\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\-]{1,61}[a-z0-9])?\.[^\.|\s])+[a-z\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\d{1,5})*[a-z0-9.,_\/~#&=;%+?\-\\(\\)]*)/gi;
@@ -36,16 +38,16 @@ const AutoLink = ({ text, province }) => {
 };
 const CustomProvinceResult = ({ schema, ...props }) => {
   const [data, setData] = useState([]);
+  const [rebates, setRebates] = useState([]);
   const [locale, setLocale] = useState("en");
   const { treeConfig } = useManyways();
 
   const getData = async () => {
-    let d = await fetch("https://wayfinder.manyways.io/api/hvac-rebate", {
-      method: "POST",
+    let d = await fetch(`${baseUrl}?province=${schema?.text}`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ provinceText: schema?.text }),
     }).then((r) => r.json());
 
     if (window.location.href.split("/").indexOf("fr") > -1) {
@@ -53,6 +55,7 @@ const CustomProvinceResult = ({ schema, ...props }) => {
     }
 
     setData(d?.d);
+    setRebates(d?.rebates);
   };
   useEffect(() => {
     getData();
@@ -75,21 +78,22 @@ const CustomProvinceResult = ({ schema, ...props }) => {
   return (
     <div>
       <div>
-        {data?.map((d) => {
+        {rebates?.map((rebate) => {
           return (
             <div className="results-by-province">
               <div>
                 <p>
-                  <strong>{d.program_name}</strong>
+                  <strong>{rebate.name}</strong>
                 </p>
                 <p>
                   <AutoLink
-                    text={d[`summary_${locale}`]}
+                    // text={d[`summary_${locale}`]}
+                    text={rebate?.summary}
                     province={schema?.text}
                   />
-                  {/* <a href={d?.link} target="_blank">
-                  {d?.link}
-                </a> */}
+                  {/* <a href={rebate?.rebateKey} target="_blank">
+                    {rebate?.link}
+                  </a>*/}
                 </p>
               </div>
             </div>

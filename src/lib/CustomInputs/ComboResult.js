@@ -11,7 +11,7 @@ const ComboResult = (props) => {
 
   // const baseUrl =
   //   process.env.REACT_APP_MESCA_API_BASE_URL || "http://localhost:3333";
-  const baseUrl = "http://localhost:3333";
+  const baseUrl = "http://localhost:3333/api/rebate-programs/lookup";
 
   const formatDate = (date, locale) => {
     return new Intl.DateTimeFormat(locale, {
@@ -48,7 +48,7 @@ const ComboResult = (props) => {
       }
     }
 
-    await fetch(`${baseUrl}/api/rebates/mock?${params.toString()}`, {
+    await fetch(`${baseUrl}?${params.toString()}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -79,9 +79,9 @@ const ComboResult = (props) => {
         <div className="result grid-2">
           {!!results &&
             results.map((rebate) => {
-              const theRebate = rebateTypes?.find(
-                (r) => r.name === rebate?.name,
-              );
+              // const theRebate = rebateTypes?.find(
+              //   (r) => r.name === rebate?.name,
+              // );
               return (
                 <div>
                   <div
@@ -91,22 +91,22 @@ const ComboResult = (props) => {
                     }}
                   >
                     <h6>{rebate.name}</h6>
-                    {!!theRebate.rebateAmount ? (
+                    {!!rebate.amount ? (
                       <p className="rebate-status available">Available</p>
                     ) : (
                       <p className="rebate-status unavailable">Unavailable</p>
                     )}
-                    {theRebate?.rebateAmount && (
+                    {rebate?.amount && (
                       <div className="rebate-details">
-                        {theRebate?.rebateAmount}
+                        {rebate?.amount}
                         {/* {theRebate?.rebateAmount.split(";").map((s, i) => (
                           <p>{s}</p>
                         ))}*/}
                       </div>
                     )}
-                    {theRebate?.link && (
+                    {rebate?.link && (
                       <a
-                        href={theRebate.link}
+                        href={rebate.link}
                         target="_blank"
                         className="button external-link"
                         onClick={() =>
@@ -115,7 +115,7 @@ const ComboResult = (props) => {
                             "model_number",
                             province,
                             "Learn more",
-                            theRebate.link,
+                            rebate.link,
                           )
                         }
                       >
