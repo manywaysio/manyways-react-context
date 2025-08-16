@@ -11,7 +11,8 @@ const ComboResult = (props) => {
 
   // const baseUrl =
   //   process.env.REACT_APP_MESCA_API_BASE_URL || "http://localhost:3333";
-  const baseUrl = "http://localhost:3333/api/rebate-programs/lookup";
+  const baseUrl =
+    "https://mesca-submittal.onrender.com/api/rebate-programs/lookup";
 
   const formatDate = (date, locale) => {
     return new Intl.DateTimeFormat(locale, {
@@ -66,6 +67,14 @@ const ComboResult = (props) => {
 
   return (
     <div>
+      {results?.length < 1 && (
+        <div className="no-results">
+          <p>
+            {locale === "fr" ? "Aucun résultat trouvé" : "No rebates found"}
+          </p>
+        </div>
+      )}
+
       {/* <button
         onClick={(e) => {
           e.preventDefault();
@@ -75,6 +84,7 @@ const ComboResult = (props) => {
       >
         combo result: {JSON.stringify(data)}
       </button> */}
+
       <div className="results-container text-container">
         <div className="result grid-2">
           {!!results &&
