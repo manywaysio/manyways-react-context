@@ -3,7 +3,8 @@ import { Fragment, useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
 
-const baseUrl = "https://mesca-docgen.onrender.com/api/rebate-programs/lookup";
+const baseUrl =
+  "https://mesca-submittal.onrender.com/api/rebate-programs/lookup";
 
 const RESIDENTIAL = [
   "MSZ",

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useManyways } from "../ManywaysContext";
 
-const baseUrl = "https://mesca-docgen.onrender.com/api/rebate-programs/lookup";
+const baseUrl =
+  "https://mesca-submittal.onrender.com/api/rebate-programs/lookup";
 
 const AutoLink = ({ text, province }) => {
   const delimiter =
