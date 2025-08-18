@@ -13,7 +13,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
 
   let getResponses = async () => {
     let responses = await fetch(
-      `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`,
     )
       .then((r) => r.json())
       .then((r) => r?.responses);
@@ -25,8 +25,9 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     // console.log(responses);
 
     const _units =
-      _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
+      _lookupData?.response?.look_up_responses?.["docgen-indoor-outdoor"]
         ?.result || [];
+    console.log("units", _units);
     setUnits(_units);
   };
 
@@ -124,7 +125,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       "mesca/ahri-unit-selected",
       function () {
         setSelectedValue(null);
-      }
+      },
     );
   }, []);
 
@@ -176,7 +177,7 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
           onChange(v.value);
           window.manyways.dispatcher.publish(
             "mesca/outdoor-unit-selected",
-            v.value
+            v.value,
           );
           setMenuIsOpen(false);
         }}

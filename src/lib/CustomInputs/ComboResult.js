@@ -10,8 +10,9 @@ const ComboResult = (props) => {
   const [province, setProvince] = useState();
 
   // const baseUrl =
-  //   process.env.REACT_APP_MESCA_API_BASE_URL || "http://localhost:3333";
-  const baseUrl = "https://localhost:3000/api/rebate-programs/lookup";
+  //   process.env.REACT_APP_MESCA_API_BASE_URL || "https://mesca-docgen.onrender.com";
+  const baseUrl =
+    "https://mesca-docgen.onrender.com/api/rebate-programs/lookup";
 
   const formatDate = (date, locale) => {
     return new Intl.DateTimeFormat(locale, {

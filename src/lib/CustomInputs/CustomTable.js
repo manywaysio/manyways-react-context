@@ -3,8 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
 
-const baseUrl =
-  "https://mesca-submittal.onrender.com/api/rebate-programs/lookup";
+const baseUrl = "https://mesca-docgen.onrender.com/api/rebate-programs/lookup";
 
 const RESIDENTIAL = [
   "MSZ",
@@ -122,10 +121,10 @@ const CustomTable = (props) => {
       .then((r) => r.json())
       .then((r) => r?.responses);
 
-    let _provinceName = responses.reverse().find((r) => r.node_id === 808);
+    let _provinceName = responses.reverse().find((r) => r.node_id === 1873);
     setTheProvince(_provinceName?.response?.province_name);
 
-    let _lookupData = responses.reverse().find((r) => r.node_id === 808);
+    let _lookupData = responses.reverse().find((r) => r.node_id === 1873);
     setApplicationType(
       _lookupData?.response?.application_type || "residential",
     );

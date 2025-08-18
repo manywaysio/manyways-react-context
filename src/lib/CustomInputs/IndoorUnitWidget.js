@@ -37,7 +37,7 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
 
   const getResponses = async () => {
     let responses = await fetch(
-      `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`
+      `https://mw-apiv2-prod.fly.dev/response_sessions/${responseId}?render_response_nodes=true`,
     )
       .then((r) => r.json())
       .then((r) => r?.responses);
@@ -47,7 +47,7 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       .find((r) => r.node_id === props?.uiSchema?.lookup_node_id);
 
     const _units =
-      _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
+      _lookupData?.response?.look_up_responses?.["docgen-indoor-outdoor"]
         ?.result || [];
     setUnits(_units);
   };
@@ -68,7 +68,7 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       "mesca/outdoor-unit-selected",
       function (data) {
         setSelectedOutdoor(data);
-      }
+      },
     );
   }, [options]);
 
@@ -77,7 +77,7 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       "mesca/ahri-unit-selected",
       function () {
         setSelectedValue(null);
-      }
+      },
     );
   }, []);
 
@@ -183,7 +183,7 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
           onChange(v.value);
           window.manyways.dispatcher.publish(
             "mesca/indoor-unit-selected",
-            v.value
+            v.value,
           );
           setMenuIsOpen(false);
         }}
