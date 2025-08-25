@@ -123,6 +123,7 @@ const CustomTable = (props) => {
       .then((r) => r?.responses);
 
     let _provinceName = responses.reverse().find((r) => r.node_id === 1873);
+    console.log("NODEID RESPONSE", responses);
     setTheProvince(_provinceName?.response?.province_name);
 
     let _lookupData = responses.reverse().find((r) => r.node_id === 1873);
@@ -573,7 +574,12 @@ const TableRow = ({ row, province, locale = "en", rebateTypes = [] }) => {
           (r) => r.name === rebate?.name,
         );
         let theAmount = theRebate?.amount;
-        return <td key={rebate?.name}>{theAmount || "-"}</td>;
+        return (
+          <td
+            key={rebate?.name}
+            dangerouslySetInnerHTML={{ __html: theAmount || "-" }}
+          ></td>
+        );
       })}
     </tr>
   );
