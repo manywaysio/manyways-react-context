@@ -407,7 +407,9 @@ const CustomTable = (props) => {
             <th>{indoorUnitTypeLabel}</th>
 
             {rebateTypes?.map((rebate) => {
-              return <th>{rebate?.name}</th>;
+              return (
+                <th dangerouslySetInnerHTML={{ __html: rebate?.name }}></th>
+              );
             })}
           </tr>
         </thead>
