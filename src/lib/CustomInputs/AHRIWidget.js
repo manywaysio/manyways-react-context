@@ -23,7 +23,7 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
       .find((r) => r.node_id === props?.uiSchema?.lookup_node_id);
     // console.log(_lookupData, "ahri");
     const _units =
-      _lookupData?.response?.look_up_responses?.["model-num-and-ahri"]
+      _lookupData?.response?.look_up_responses?.["docgen-indoor-outdoor"]
         ?.result || [];
     setUnits(_units);
   };

@@ -3,6 +3,9 @@ import { Fragment, useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
 
+const baseUrl =
+  "https://mesca-submittal.onrender.com/api/rebate-programs/lookup";
+
 const RESIDENTIAL = [
   "MSZ",
   "MFZ",
@@ -79,45 +82,14 @@ const findProvincialRebateKey = (prov) => {
   else return "yukofalse";
 };
 
-const renderRebateValue = (value, locale, override) => {
-  if (!value) {
-    return;
-  }
-  if (
-    value === "not eligible" ||
-    value === "not found" ||
-    value === "not listed" ||
-    value === "kNotElgible"
-  ) {
-    return <span className="unavail"></span>;
-  }
-  if (value === "no provincial rebate available") {
-    return <span>{value}</span>;
-  }
-  if ((override = "ohpa")) {
-    const textBefore = locale === "fr" ? "Jusqu'à" : "Up to";
-    const overrideVal =
-      value === "$15,000" || value === "$10,000"
-        ? `${textBefore} ${value} `
-        : value;
-    return <span>{overrideVal}</span>;
-  }
-  const formattedValue = { __html: value.replace(/;/g, "<br />") };
-  // const formattedValue = { __html: "" };
-  return (
-    <span className="available" dangerouslySetInnerHTML={formattedValue}></span>
-  );
-};
-
 const CustomTable = (props) => {
   const { currentNode, responses, responseId, locale, treeConfig } =
     useManyways();
   const { schema } = props;
   const [applicationType, setApplicationType] = useState("residential");
   const [categoryApplicationType, setCategoryApplicationType] = useState("");
-  let [lookupData, setLookupData] = useState([]);
   const [unitsByCategory, setUnitsByCategory] = useState([]);
-  const [province, setProvince] = useState([]);
+  const [province, setProvince] = useState(null);
   const [theProvince, setTheProvince] = useState("");
   const [collapsedCategories, setCollapsedCategories] = useState({});
   const [toggleImage, setToggleImage] = useState(null);
@@ -150,10 +122,11 @@ const CustomTable = (props) => {
       .then((r) => r.json())
       .then((r) => r?.responses);
 
-    let _provinceName = responses.reverse().find((r) => r.node_id === 808);
+    let _provinceName = responses.reverse().find((r) => r.node_id === 1873);
+    console.log("NODEID RESPONSE", responses);
     setTheProvince(_provinceName?.response?.province_name);
 
-    let _lookupData = responses.reverse().find((r) => r.node_id === 808);
+    let _lookupData = responses.reverse().find((r) => r.node_id === 1873);
     setApplicationType(
       _lookupData?.response?.application_type || "residential",
     );
@@ -171,8 +144,11 @@ const CustomTable = (props) => {
   };
 
   useEffect(() => {
+    if (!province) {
+      return;
+    }
     getProvincialRebates({ province: theProvince });
-  }, [categoryApplicationType]);
+  }, [categoryApplicationType, province]);
 
   const sortUnits = (lookupData) => {
     if (lookupData.length < 1) {
@@ -183,13 +159,13 @@ const CustomTable = (props) => {
 
     const units = lookupData
       .filter((row) => {
-        if (row.multi_zone === "Y") {
+        if (row.multiZone) {
           return true;
         }
         if (
           applicationType === "Residential" &&
           RESIDENTIAL.some((prefix) =>
-            row.indoor_unit_model_number.includes(prefix),
+            row.indoorUnitModelNumber.includes(prefix),
           )
         ) {
           return true;
@@ -197,7 +173,7 @@ const CustomTable = (props) => {
         if (
           applicationType === "Light Commercial" &&
           LIGHT_COMMERCIAL.some((prefix) =>
-            row.indoor_unit_model_number.includes(prefix),
+            row.indoorUnitModelNumber.includes(prefix),
           )
         ) {
           return true;
@@ -206,34 +182,32 @@ const CustomTable = (props) => {
       })
       .reduce((acc, item) => {
         const groupKey = (() => {
-          if (item.multi_zone === "Y") {
+          if (item.multiZone) {
             return "Multi Zone";
           }
-          if (item.indoor_unit_model_number.includes("MSZ"))
-            return "Wall Mounted";
-          if (item.indoor_unit_model_number.includes("PKA"))
-            return "Wall Mounted";
-          if (item.indoor_unit_model_number.includes("MFZ"))
+          if (item.indoorUnitModelNumber.includes("MSZ")) return "Wall Mounted";
+          if (item.indoorUnitModelNumber.includes("PKA")) return "Wall Mounted";
+          if (item.indoorUnitModelNumber.includes("MFZ"))
             return "Floor Mounted";
-          if (item.indoor_unit_model_number.includes("SLZ"))
+          if (item.indoorUnitModelNumber.includes("SLZ"))
             return "4 Way Ceiling Cassette";
-          if (item.indoor_unit_model_number.includes("PLA"))
+          if (item.indoorUnitModelNumber.includes("PLA"))
             return "4 Way Ceiling Cassette";
-          if (item.indoor_unit_model_number.includes("MLZ"))
+          if (item.indoorUnitModelNumber.includes("MLZ"))
             return "1 Way Ceiling Cassette";
-          if (item.indoor_unit_model_number.includes("SVZ"))
+          if (item.indoorUnitModelNumber.includes("SVZ"))
             return "Multi position AHU";
-          if (item.indoor_unit_model_number.includes("PVA"))
+          if (item.indoorUnitModelNumber.includes("PVA"))
             return "Multi position AHU";
-          if (item.indoor_unit_model_number.includes("PAA"))
+          if (item.indoorUnitModelNumber.includes("PAA"))
             return "Hybrid Heating & Cooling";
-          if (item.indoor_unit_model_number.includes("PCA"))
+          if (item.indoorUnitModelNumber.includes("PCA"))
             return "Ceiling suspended";
-          if (item.indoor_unit_model_number.includes("SEZ"))
+          if (item.indoorUnitModelNumber.includes("SEZ"))
             return "Ceiling Concealed";
-          if (item.indoor_unit_model_number.includes("PCA"))
+          if (item.indoorUnitModelNumber.includes("PCA"))
             return "Ceiling Suspended";
-          if (item.indoor_unit_model_number.includes("PEAD"))
+          if (item.indoorUnitModelNumber.includes("PEAD"))
             return "Ceiling Concealed";
           return "Multi Zone";
         })();
@@ -264,24 +238,23 @@ const CustomTable = (props) => {
       // HVAC Type conditions
       let hvacTypeCondition = true;
       if (node.hvac_type === "Multi Zone") {
-        hvacTypeCondition = item.multi_zone === "Y";
+        hvacTypeCondition = item.multiZone;
       } else if (node.hvac_type === "Single Zone") {
-        hvacTypeCondition =
-          item.multi_zone !== "Y" && item.ducted_or_ductless === "Y";
+        hvacTypeCondition = !item.multiZone && item.isDucted;
       } else if (node.hvac_type === "Centrally ducted") {
-        hvacTypeCondition = item.ducted_or_ductless !== "Y";
+        hvacTypeCondition = !item.isDucted;
       }
 
       // Cold climate condition
       const coldClimateCondition =
         node.cold_climate === "Cold climate"
-          ? item.cold_climate === "Y"
-          : item.cold_climate !== "Y";
+          ? item.isColdClimate
+          : !item.isColdClimate;
 
       // Energy Star certification condition
       const energyStarCondition =
         node.energy_star_cert === "Energy Star Certified"
-          ? item.energystar_6_1_qualified === "Yes"
+          ? item.isEnergyStar
           : true;
 
       // Combine all conditions
@@ -289,33 +262,24 @@ const CustomTable = (props) => {
     };
   }
 
-  const getProvincialRebates = async ({ lookupData }) => {
-    let d = await fetch("https://wayfinder.manyways.io/api/hvac-rebate", {
-      method: "POST",
+  const getProvincialRebates = async ({ province }) => {
+    if (!province) return;
+    let d = await fetch(`${baseUrl}?province=${province}`, {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ province: theProvince, lookupData }),
+      // body: JSON.stringify({ province: theProvince, lookupData }),
     }).then((r) => r.json());
-
-    let rebateNames = [];
-    d?.d?.validProducts.forEach((product) => {
-      product.rebates.forEach((rebate) => {
-        if (!rebateNames.includes(rebate?.program_name)) {
-          rebateNames.push(rebate?.program_name);
-        }
-      });
-    });
 
     let nodeItem = JSON.parse(schema?.text);
 
-    setRebateTypes(rebateNames);
-    // console.log("rebate names", rebateNames);
+    setRebateTypes(d?.rebates);
 
     const sorted = sortUnits(
-      d?.d?.validProducts.filter(createFilterFunction(nodeItem)),
+      d?.products.filter(createFilterFunction(nodeItem)),
     );
-    // console.log("sorted", sorted);
+
     setUnitsByCategory(sorted);
   };
 
@@ -324,13 +288,13 @@ const CustomTable = (props) => {
   }, [currentNode, responseId]);
 
   useEffect(() => {
-    if (!lookupData || !responses) {
+    if (!responses) {
       return;
     }
-    const lastResponse = responses[0];
+    const lastResponse = responses[responses?.length - 1];
     // console.log("province", lastResponse?.response?.province_name);
     setProvince(lastResponse?.response?.province_name);
-  }, [lookupData]);
+  }, [responses]);
 
   const toggleCollapse = (e, category) => {
     e.preventDefault();
@@ -442,8 +406,10 @@ const CustomTable = (props) => {
             <th>{locale === "fr" ? "Modèle Extérieur" : "Outdoor Unit # "}</th>
             <th>{indoorUnitTypeLabel}</th>
 
-            {rebateTypes?.map((name) => {
-              return <th>{name}</th>;
+            {rebateTypes?.map((rebate) => {
+              return (
+                <th dangerouslySetInnerHTML={{ __html: rebate?.name }}></th>
+              );
             })}
           </tr>
         </thead>
@@ -451,7 +417,7 @@ const CustomTable = (props) => {
           {Object.entries(unitsByCategory).map(([key, items], idx) => (
             <Fragment key={idx}>
               <tr>
-                <th colSpan={3 + rebateTypes.length} className="subheading">
+                <th colSpan={3 + rebateTypes?.length} className="subheading">
                   <div className="category">
                     <div>
                       {locale === "fr" ? categoryTranslations[key] : key}
@@ -483,21 +449,21 @@ const CustomTable = (props) => {
                 items
                   .sort((a, b) => {
                     if (sortBy === "Heat Pump Size") {
-                      let aSize = a.outdoor_unit_model_number.match(/\d+/)[0];
-                      let bSize = b.outdoor_unit_model_number.match(/\d+/)[0];
+                      let aSize = a.outdoorUnitModelNumber.match(/\d+/)[0];
+                      let bSize = b.outdoorUnitModelNumber.match(/\d+/)[0];
                       return aSize - bSize;
                     } else if (sortBy === "Outdoor Unit") {
-                      return a.outdoor_unit_model_number.localeCompare(
-                        b.outdoor_unit_model_number,
+                      return a.outdoorUnitModelNumber.localeCompare(
+                        b.outdoorUnitModelNumber,
                       );
                     } else if (sortBy === "Indoor Unit") {
-                      return a.idu_override.localeCompare(b.idu_override);
-                    } else if (sortBy === "AHRI Number") {
-                      return a.ahri_number.localeCompare(b.ahri_number);
-                    } else if (sortBy === "A-Z") {
-                      return a.outdoor_unit_model_number.localeCompare(
-                        b.ahri_number,
+                      return a.indoorUnitModelNumber.localeCompare(
+                        b.indoorUnitModelNumber,
                       );
+                    } else if (sortBy === "AHRI Number") {
+                      return a.ahri.localeCompare(b.ahri);
+                    } else if (sortBy === "A-Z") {
+                      return a.outdoorUnitModelNumber.localeCompare(b.ahri);
                     }
                   })
                   .map((row, rowIdx) => (
@@ -564,12 +530,14 @@ const CustomTable = (props) => {
             )}
 
             {!collapsedCategories[key] &&
+              items?.length > 0 &&
               items.map((row, rowIdx) => (
                 <ListItem
                   row={row}
                   key={rowIdx}
                   province={province}
                   locale={locale}
+                  rebateTypes={rebateTypes}
                 />
               ))}
           </div>
@@ -585,9 +553,6 @@ const CustomTable = (props) => {
 };
 
 const TableRow = ({ row, province, locale = "en", rebateTypes = [] }) => {
-  const provKey = findProvincialRebateKey(province);
-  const provRebateValue = row[provKey];
-
   return (
     <tr
     // onClick={(e) => {
@@ -595,35 +560,42 @@ const TableRow = ({ row, province, locale = "en", rebateTypes = [] }) => {
     // }}
     >
       <td className="ahri-column">
-        {row?.ahri_number}{" "}
-        {row?.energystar_6_1_qualified === "Yes" && (
+        {row?.ahri}{" "}
+        {row?.isEnergyStar && (
           <img
             src="https://mwassets.imgix.net/Organization_3/energystar.png"
             alt="energy star certified"
           />
         )}
       </td>
-      <td>{row?.outdoor_unit_model_number}</td>
-      <td>{row?.idu_override}</td>
-      {rebateTypes.map((name) => {
-        let theRebate = row.rebates?.find((r) => r.program_name === name);
-        let theAmount = theRebate?.rebate_amount;
-        return <td key={name}>{theAmount || "-"}</td>;
+      <td>{row?.outdoorUnitModelNumber}</td>
+      <td>{row?.indoorUnitModelNumber}</td>
+
+      {rebateTypes.map((rebate) => {
+        let theRebate = row?.rebatesAvailable?.find(
+          (r) => r.name === rebate?.name,
+        );
+        let theAmount = theRebate?.amount;
+        return (
+          <td
+            key={rebate?.name}
+            dangerouslySetInnerHTML={{ __html: theAmount || "-" }}
+          ></td>
+        );
       })}
     </tr>
   );
 };
 
-const ListItem = ({ row, province, locale }) => {
+const ListItem = ({ row, province, rebateTypes, locale }) => {
   const provKey = findProvincialRebateKey(province);
   const provRebateValue = row[provKey];
 
   return (
     <li className="card">
       <h5 className="ahri-column">
-        {" "}
-        {row?.ahri_number}{" "}
-        {row?.energystar_6_1_qualified === "Yes" && (
+        {row?.ahri}{" "}
+        {row?.isEnergyStar && (
           <img
             src="https://mwassets.imgix.net/Organization_3/energystar.png"
             alt="energy star certified"
@@ -631,28 +603,31 @@ const ListItem = ({ row, province, locale }) => {
         )}
       </h5>
       <p>
-        {row?.outdoor_unit_model_number} · {row?.idu_override}
+        {row?.outdoorUnitModelNumber} · {row?.indoorUnitModelNumber}
       </p>
-
-      {row.rebates.map((rebate) => {
+      {rebateTypes.map((rebate) => {
+        let theRebate = rebateTypes?.find((r) => r.name === rebate?.name);
+        let theAmount = theRebate?.amount;
         return (
           <div className="rebate-list-item">
             <p>
-              <strong>{rebate?.program_name}</strong>
+              <strong>{rebate?.name}</strong>
             </p>
             <p className="rebate-list-item-result">
-              <span>{rebate?.rebate_amount}</span>
+              <span>{theAmount}</span>
             </p>
-            <a
-              href={rebate.link}
-              target="_blank"
-              className="button external-link"
-              style={{
-                fontSize: "12px",
-              }}
-            >
-              Learn more
-            </a>
+            {theRebate?.link && (
+              <a
+                href={rebate?.link}
+                target="_blank"
+                className="button external-link"
+                style={{
+                  fontSize: "12px",
+                }}
+              >
+                Learn more
+              </a>
+            )}
           </div>
         );
       })}
