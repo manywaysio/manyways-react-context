@@ -101,15 +101,17 @@ const ComboResult = (props) => {
                       height: "100%",
                     }}
                   >
-                    <h6>{rebate.name}</h6>
+                    <h6 dangerouslySetInnerHTML={{ __html: rebate.name }}></h6>
                     {!!rebate.amount ? (
                       <p className="rebate-status available">Available</p>
                     ) : (
                       <p className="rebate-status unavailable">Unavailable</p>
                     )}
                     {rebate?.amount && (
-                      <div className="rebate-details">
-                        {rebate?.amount}
+                      <div
+                        className="rebate-details"
+                        dangerouslySetInnerHTML={{ __html: rebate?.amount }}
+                      >
                         {/* {theRebate?.rebateAmount.split(";").map((s, i) => (
                           <p>{s}</p>
                         ))}*/}
