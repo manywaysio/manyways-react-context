@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Select from "react-select";
 import { useManyways } from "../ManywaysContext";
+import indoorOutdoor from "./../indoor-outdoor.json";
 
 const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const { responseId } = useManyways();
@@ -49,7 +50,9 @@ const IndoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
     const _units =
       _lookupData?.response?.look_up_responses?.["docgen-indoor-outdoor"]
         ?.result || [];
-    setUnits(_units);
+    // temp remove as stargate is broken
+    // setUnits(_units);
+    setUnits(indoorOutdoor);
   };
 
   useEffect(() => {

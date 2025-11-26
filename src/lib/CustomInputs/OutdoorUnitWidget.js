@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Select from "react-select";
 import { useManyways } from "../ManywaysContext";
+import indoorOutdoor from "./../indoor-outdoor.json";
 
 const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
   const { responseId } = useManyways();
@@ -28,7 +29,9 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
       _lookupData?.response?.look_up_responses?.["docgen-indoor-outdoor"]
         ?.result || [];
     console.log("units", _units);
-    setUnits(_units);
+    // temp remove as stargate is broken
+    // setUnits(_units);
+    setUnits(indoorOutdoor);
   };
 
   useEffect(() => {
@@ -96,10 +99,10 @@ const OutdoorUnitWidget = ({ value, onChange, disabled, ...props }) => {
 
   // console.log(window.manyways.dispatcher);
 
-  let temp_opts = [
-    { value: "xxx", label: "XXX" },
-    { value: "Alberta", label: "Alberta" },
-  ];
+  let temp_opts = indoorOutdoor.map((i) => ({
+    value: i.outdoor_unit_model_number,
+    label: i.outdoor_unit_model_number,
+  }));
   const theOptions =
     outdoorUnitNumbers?.length > 0
       ? outdoorUnitNumbers.sort((a, b) => {
