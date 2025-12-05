@@ -1553,7 +1553,7 @@ table .available:before {
 
 .mw-container-footer p,
 .mw-container-footer .powered-by {
-  max-width: var(--content-width);
+  max-width: var(--content-width-form);
   padding: var(--content-padding-y) var(--content-padding-x);
 }
 
@@ -1817,7 +1817,7 @@ table .available:before {
 }
 
 .mw-container-footer {
-  max-width: var(--content-width);
+  max-width: var(--content-width-form);
   margin: auto;
   padding: 0 var(--content-padding-x) 45px var(--content-padding-x);
 }
@@ -1825,7 +1825,8 @@ table .available:before {
 @media only screen and (min-width: 768px) {
   .mw-container-footer p,
   .mw-container-footer .powered-by {
-    max-width: 100%;
+    max-width: var(--content-width-form);
+    margin: auto;
     padding: 0;
   }
 
