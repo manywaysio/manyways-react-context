@@ -200,10 +200,80 @@ strong {
   z-index: 0;
 }
 
+.mesca-header {
+  background-color: black;
+  height: 400px;
+  color: white;
+  margin-bottom: 32px;
+}
+
+.mesca-header .text-container {
+  max-width: 600px;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 64px 16px;
+}
+
+.mesca-header p {
+  color: white;
+}
+
+.mesca-header-with-svg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mesca-svg-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  padding: 16px;
+}
+
+.mesca-svg {
+  opacity: 0.3;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  filter: brightness(0) invert(1);
+}
+
+/* Ensure content stays above SVG */
+.mesca-header-with-svg .text-container,
+.mesca-header-with-svg img:not(.mesca-svg) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .mesca-svg {
+    height: 80%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: auto;
+  }
+
+  .mesca-svg-container {
+    padding: 8px;
+  }
+
+  .mesca-header .text-container {
+    padding-bottom: 8px;
+  }
+}
+
 .mesca-page-header {
   position: relative;
   height: 100%;
   max-width: var(--content-width);
+  background-color: black;
 }
 
 .mesca-page-header:before {
