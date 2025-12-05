@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Select from "react-select";
 import { useManyways } from "../ManywaysContext";
+import indoorOutdoor from "./../indoor-outdoor.json";
 
 const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
   const { responseId } = useManyways();
@@ -25,7 +26,9 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
     const _units =
       _lookupData?.response?.look_up_responses?.["docgen-indoor-outdoor"]
         ?.result || [];
-    setUnits(_units);
+    // temp remove as stargate is broken
+    // setUnits(_units);
+    setUnits(indoorOutdoor);
   };
 
   useEffect(() => {
@@ -86,12 +89,12 @@ const AHRIWidget = ({ value, onChange, disabled, ...props }) => {
     };
   }, []);
 
-  let temp_opts = [
-    { value: "xxx", label: "XXX" },
-    { value: "Alberta", label: "Alberta" },
-  ];
+  let temp_opts = indoorOutdoor.map((i) => ({
+    value: i.ahri,
+    label: i.ahri,
+  }));
 
-  const theOptions = ahriUnits?.length > 0 ? ahriUnits : temp_opts;
+  const theOptions = temp_opts;
 
   useEffect(() => {
     const newValue = theOptions.find((o) => o.value === value) || null;

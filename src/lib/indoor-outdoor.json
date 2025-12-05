@@ -1,0 +1,2021 @@
+[{
+  "indoor_unit_model_number": "MSZ-JX12WL",
+  "idu_override": "MSZ-JX12WL",
+  "outdoor_unit_model_number": "MUZ-JX12WL",
+  "ahri": "216626293"
+}, {
+  "indoor_unit_model_number": "MSZ-JX09WL",
+  "idu_override": "MSZ-JX09WL",
+  "outdoor_unit_model_number": "MUZ-JX09WL",
+  "ahri": "216626292"
+}, {
+  "indoor_unit_model_number": "PVA-AA42NL",
+  "idu_override": "PVA-AA42NL",
+  "outdoor_unit_model_number": "PUZ-AK42NLHZ",
+  "ahri": "215712221"
+}, {
+  "indoor_unit_model_number": "PVA-AA36NL",
+  "idu_override": "PVA-AA36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NLHZ",
+  "ahri": "215712216"
+}, {
+  "indoor_unit_model_number": "PVA-AA30NL",
+  "idu_override": "PVA-AA30NL",
+  "outdoor_unit_model_number": "PUZ-AK30NLHZ",
+  "ahri": "215712209"
+}, {
+  "indoor_unit_model_number": "PVA-AA24NL",
+  "idu_override": "PVA-AA24NL",
+  "outdoor_unit_model_number": "PUZ-AK24NLHZ",
+  "ahri": "215712200"
+}, {
+  "indoor_unit_model_number": "PVA-AA42NL",
+  "idu_override": "PVA-AA42NL",
+  "outdoor_unit_model_number": "PUZ-AK42NL",
+  "ahri": "215712232"
+}, {
+  "indoor_unit_model_number": "PVA-AA36NL",
+  "idu_override": "PVA-AA36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NL",
+  "ahri": "215712192"
+}, {
+  "indoor_unit_model_number": "PVA-AA30NL",
+  "idu_override": "PVA-AA30NL",
+  "outdoor_unit_model_number": "PUZ-AH30NL",
+  "ahri": "215712229"
+}, {
+  "indoor_unit_model_number": "PVA-AA24NL",
+  "idu_override": "PVA-AA24NL",
+  "outdoor_unit_model_number": "PUZ-AH24NL",
+  "ahri": "215712182"
+}, {
+  "indoor_unit_model_number": "PVA-AA18NL",
+  "idu_override": "PVA-AA18NL",
+  "outdoor_unit_model_number": "PUZ-AK18NL",
+  "ahri": "215712177"
+}, {
+  "indoor_unit_model_number": "PVA-AA12NL",
+  "idu_override": "PVA-AA12NL",
+  "outdoor_unit_model_number": "PUZ-AK12NL",
+  "ahri": "215712174"
+}, {
+  "indoor_unit_model_number": "SVZ-AP36NL",
+  "idu_override": "SVZ-AP36NL",
+  "outdoor_unit_model_number": "SUZ-AK36NLHZ",
+  "ahri": "215712242"
+}, {
+  "indoor_unit_model_number": "SVZ-AP30NL",
+  "idu_override": "SVZ-AP30NL",
+  "outdoor_unit_model_number": "SUZ-AK30NLHZ",
+  "ahri": "215712240"
+}, {
+  "indoor_unit_model_number": "SVZ-AP24NL",
+  "idu_override": "SVZ-AP24NL",
+  "outdoor_unit_model_number": "SUZ-AK24NLHZ",
+  "ahri": "215712238"
+}, {
+  "indoor_unit_model_number": "SVZ-AP18NL",
+  "idu_override": "SVZ-AP18NL",
+  "outdoor_unit_model_number": "SUZ-AA18NLHZ",
+  "ahri": "215734923"
+}, {
+  "indoor_unit_model_number": "SVZ-AP12NL",
+  "idu_override": "SVZ-AP12NL",
+  "outdoor_unit_model_number": "SUZ-AA12NLHZ",
+  "ahri": "215734915"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-5D42NL",
+  "ahri": "216505932"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3D24NL",
+  "ahri": "216505926"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4D30NL",
+  "ahri": "216505927"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2D20NLHZ",
+  "ahri": "216505928"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3D24NL",
+  "ahri": "216505929"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4D30NL",
+  "ahri": "216505930"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2D20NLHZ",
+  "ahri": "216505931"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2D20NL",
+  "ahri": "216498925"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-5D36NL",
+  "ahri": "216498927"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4D30NL",
+  "ahri": "216498926"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3D24NL",
+  "ahri": "216505924"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3D24NLHZ",
+  "ahri": "216505933"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2D20NLHZ",
+  "ahri": "216505925"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3D30NLHZ",
+  "ahri": "216505934"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2D20NL",
+  "ahri": "216505922"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3D30NLHZ",
+  "ahri": "216505942"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3D24NLHZ",
+  "ahri": "216505941"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2D20NL",
+  "ahri": "216505923"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3D30NLHZ",
+  "ahri": "216505938"
+}, {
+  "indoor_unit_model_number": "MSZ-FX12NL",
+  "idu_override": "MSZ-FX12NL",
+  "outdoor_unit_model_number": "MUZ-FX12NLHZ2",
+  "ahri": "216798016"
+}, {
+  "indoor_unit_model_number": "MSZ-GX24NL",
+  "idu_override": "MSZ-GX24NL",
+  "outdoor_unit_model_number": "MUZ-GX24NLHZ",
+  "ahri": "215862741"
+}, {
+  "indoor_unit_model_number": "MSZ-GX18NL",
+  "idu_override": "MSZ-GX18NL",
+  "outdoor_unit_model_number": "MUZ-GX18NLHZ",
+  "ahri": "215862740"
+}, {
+  "indoor_unit_model_number": "MSZ-GX15NL",
+  "idu_override": "MSZ-GX15NL",
+  "outdoor_unit_model_number": "MUZ-GX15NLHZ",
+  "ahri": "216626289"
+}, {
+  "indoor_unit_model_number": "MSZ-GX12NL",
+  "idu_override": "MSZ-GX12NL",
+  "outdoor_unit_model_number": "MUZ-GX12NLHZ",
+  "ahri": "216626288"
+}, {
+  "indoor_unit_model_number": "MSZ-GX09NL",
+  "idu_override": "MSZ-GX09NL",
+  "outdoor_unit_model_number": "MUZ-GX09NLHZ",
+  "ahri": "216626287"
+}, {
+  "indoor_unit_model_number": "MSZ-FX24NL",
+  "idu_override": "MSZ-FX24NL",
+  "outdoor_unit_model_number": "MUZ-FX24NLHZ",
+  "ahri": "215912359"
+}, {
+  "indoor_unit_model_number": "MSZ-FX18NL",
+  "idu_override": "MSZ-FX18NL",
+  "outdoor_unit_model_number": "MUZ-FX18NLHZ",
+  "ahri": "215611128"
+}, {
+  "indoor_unit_model_number": "MSZ-FX15NL",
+  "idu_override": "MSZ-FX15NL",
+  "outdoor_unit_model_number": "MUZ-FX15NLHZ",
+  "ahri": "215611127"
+}, {
+  "indoor_unit_model_number": "MSZ-FX12NL",
+  "idu_override": "MSZ-FX12NL",
+  "outdoor_unit_model_number": "MUZ-FX12NLHZ",
+  "ahri": "215611126"
+}, {
+  "indoor_unit_model_number": "MSZ-FX09NL",
+  "idu_override": "MSZ-FX09NL",
+  "outdoor_unit_model_number": "MUZ-FX09NLHZ",
+  "ahri": "215611125"
+}, {
+  "indoor_unit_model_number": "MSZ-FX06NL",
+  "idu_override": "MSZ-FX06NL",
+  "outdoor_unit_model_number": "MUZ-FX06NLHZ",
+  "ahri": "215611124"
+}, {
+  "indoor_unit_model_number": "PLA-AE48NL",
+  "idu_override": "PLA-AE48NL",
+  "outdoor_unit_model_number": "PUZ-AK48NLHZ",
+  "ahri": "215712224"
+}, {
+  "indoor_unit_model_number": "PLA-AE48NL",
+  "idu_override": "PLA-AE48NL",
+  "outdoor_unit_model_number": "PUZ-AK48NL",
+  "ahri": "215712235"
+}, {
+  "indoor_unit_model_number": "PEAD-AA42NL",
+  "idu_override": "PEAD-AA42NL",
+  "outdoor_unit_model_number": "PUZ-AK42NL",
+  "ahri": "215712231"
+}, {
+  "indoor_unit_model_number": "PEAD-AA36NL",
+  "idu_override": "PEAD-AA36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NL",
+  "ahri": "215712191"
+}, {
+  "indoor_unit_model_number": "PEAD-AA30NL",
+  "idu_override": "PEAD-AA30NL",
+  "outdoor_unit_model_number": "PUZ-AH30NL",
+  "ahri": "215712228"
+}, {
+  "indoor_unit_model_number": "PEAD-AA24NL",
+  "idu_override": "PEAD-AA24NL",
+  "outdoor_unit_model_number": "PUZ-AH24NL",
+  "ahri": "215712181"
+}, {
+  "indoor_unit_model_number": "PEAD-AA18NL",
+  "idu_override": "PEAD-AA18NL",
+  "outdoor_unit_model_number": "PUZ-AK18NL",
+  "ahri": "215712176"
+}, {
+  "indoor_unit_model_number": "PEAD-AA12NL",
+  "idu_override": "PEAD-AA12NL",
+  "outdoor_unit_model_number": "PUZ-AK12NL",
+  "ahri": "215712173"
+}, {
+  "indoor_unit_model_number": "PEAD-AA42NL",
+  "idu_override": "PEAD-AA42NL",
+  "outdoor_unit_model_number": "PUZ-AK42NLHZ",
+  "ahri": "215712220"
+}, {
+  "indoor_unit_model_number": "PEAD-AA36NL",
+  "idu_override": "PEAD-AA36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NLHZ",
+  "ahri": "215712215"
+}, {
+  "indoor_unit_model_number": "PEAD-AA30NL",
+  "idu_override": "PEAD-AA30NL",
+  "outdoor_unit_model_number": "PUZ-AK30NLHZ",
+  "ahri": "215712208"
+}, {
+  "indoor_unit_model_number": "PEAD-AA24NL",
+  "idu_override": "PEAD-AA24NL",
+  "outdoor_unit_model_number": "PUZ-AK24NLHZ",
+  "ahri": "215712199"
+}, {
+  "indoor_unit_model_number": "PEAD-AA36NL",
+  "idu_override": "PEAD-AA36NL",
+  "outdoor_unit_model_number": "SUZ-AK36NLHZ",
+  "ahri": "215712241"
+}, {
+  "indoor_unit_model_number": "PEAD-AA30NL",
+  "idu_override": "PEAD-AA30NL",
+  "outdoor_unit_model_number": "SUZ-AK30NLHZ",
+  "ahri": "215712239"
+}, {
+  "indoor_unit_model_number": "MSZ-GS18NA",
+  "idu_override": "MSZ-GS18NA",
+  "outdoor_unit_model_number": "MUZ-GS18NAHZ",
+  "ahri": "207679255"
+}, {
+  "indoor_unit_model_number": "MSZ-GS15NA",
+  "idu_override": "MSZ-GS15NA",
+  "outdoor_unit_model_number": "MUZ-GS15NAH",
+  "ahri": "207679249"
+}, {
+  "indoor_unit_model_number": "MSZ-GS12NA",
+  "idu_override": "MSZ-GS12NA",
+  "outdoor_unit_model_number": "MUZ-GS12NAH",
+  "ahri": "207679248"
+}, {
+  "indoor_unit_model_number": "PCA-A30KA",
+  "idu_override": "PCA-A30KA",
+  "outdoor_unit_model_number": "PUZ-HA30NKA",
+  "ahri": "211259273"
+}, {
+  "indoor_unit_model_number": "MSZ-FS06NA",
+  "idu_override": "MSZ-FS06NA",
+  "outdoor_unit_model_number": "MUZ-FS06NA",
+  "ahri": "209832199"
+}, {
+  "indoor_unit_model_number": "MSZ-FS06NA",
+  "idu_override": "MSZ-FS06NA",
+  "outdoor_unit_model_number": "MUZ-FS06NAH",
+  "ahri": "209832200"
+}, {
+  "indoor_unit_model_number": "MSZ-FS09NA",
+  "idu_override": "MSZ-FS09NA",
+  "outdoor_unit_model_number": "MUZ-FS09NA",
+  "ahri": "209832201"
+}, {
+  "indoor_unit_model_number": "MSZ-FS09NA",
+  "idu_override": "MSZ-FS09NA",
+  "outdoor_unit_model_number": "MUZ-FS09NAH",
+  "ahri": "209832202"
+}, {
+  "indoor_unit_model_number": "MSZ-FS12NA",
+  "idu_override": "MSZ-FS12NA",
+  "outdoor_unit_model_number": "MUZ-FS12NA",
+  "ahri": "209832203"
+}, {
+  "indoor_unit_model_number": "MSZ-FS12NA",
+  "idu_override": "MSZ-FS12NA",
+  "outdoor_unit_model_number": "MUZ-FS12NAH",
+  "ahri": "209832204"
+}, {
+  "indoor_unit_model_number": "MSZ-FS15NA",
+  "idu_override": "MSZ-FS15NA",
+  "outdoor_unit_model_number": "MUZ-FS15NA",
+  "ahri": "209832205"
+}, {
+  "indoor_unit_model_number": "MSZ-FS15NA",
+  "idu_override": "MSZ-FS15NA",
+  "outdoor_unit_model_number": "MUZ-FS15NAH",
+  "ahri": "209832206"
+}, {
+  "indoor_unit_model_number": "MSZ-FS18NA",
+  "idu_override": "MSZ-FS18NA",
+  "outdoor_unit_model_number": "MUZ-FS18NA",
+  "ahri": "209832207"
+}, {
+  "indoor_unit_model_number": "MSZ-FS18NA",
+  "idu_override": "MSZ-FS18NA",
+  "outdoor_unit_model_number": "MUZ-FS18NAH",
+  "ahri": "209832208"
+}, {
+  "indoor_unit_model_number": "MSZ-GS09NA",
+  "idu_override": "MSZ-GS09NA",
+  "outdoor_unit_model_number": "MUZ-GS09NAH",
+  "ahri": "207679247"
+}, {
+  "indoor_unit_model_number": "MSZ-GS09NA",
+  "idu_override": "MSZ-GS09NA",
+  "outdoor_unit_model_number": "MUZ-GS09NAHZ",
+  "ahri": "207679252"
+}, {
+  "indoor_unit_model_number": "MSZ-GS12NA",
+  "idu_override": "MSZ-GS12NA",
+  "outdoor_unit_model_number": "MUZ-GS12NAHZ",
+  "ahri": "207679253"
+}, {
+  "indoor_unit_model_number": "MSZ-GS15NA",
+  "idu_override": "MSZ-GS15NA",
+  "outdoor_unit_model_number": "MUZ-GS15NAHZ",
+  "ahri": "207679254"
+}, {
+  "indoor_unit_model_number": "MSZ-GS24NA",
+  "idu_override": "MSZ-GS24NA",
+  "outdoor_unit_model_number": "MUZ-GS24NAH",
+  "ahri": "207679251"
+}, {
+  "indoor_unit_model_number": "MSZ-GS24NA",
+  "idu_override": "MSZ-GS24NA",
+  "outdoor_unit_model_number": "MUZ-GS24NAHZ",
+  "ahri": "207679256"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NAHZ3",
+  "ahri": "209836186"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NAHZ3",
+  "ahri": "209836203"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NAHZ3",
+  "ahri": "209836204"
+}, {
+  "indoor_unit_model_number": "PCA-A24KA",
+  "idu_override": "PCA-A24KA",
+  "outdoor_unit_model_number": "PUZ-HA24NHA1",
+  "ahri": "211259270"
+}, {
+  "indoor_unit_model_number": "PKA-A24KA",
+  "idu_override": "PKA-A24KA",
+  "outdoor_unit_model_number": "PUZ-HA24NHA1",
+  "ahri": "211259269"
+}, {
+  "indoor_unit_model_number": "PLA-A24EA",
+  "idu_override": "PLA-A24EA",
+  "outdoor_unit_model_number": "PUZ-HA24NHA1",
+  "ahri": "211273264"
+}, {
+  "indoor_unit_model_number": "PEAD-A24AA",
+  "idu_override": "PEAD-A24AA",
+  "outdoor_unit_model_number": "PUZ-HA24NHA1",
+  "ahri": "207702686"
+}, {
+  "indoor_unit_model_number": "PVA-A30AA",
+  "idu_override": "PVA-A30AA",
+  "outdoor_unit_model_number": "PUZ-HA30NKA",
+  "ahri": "211259274"
+}, {
+  "indoor_unit_model_number": "PEAD-A30AA",
+  "idu_override": "PEAD-A30AA",
+  "outdoor_unit_model_number": "PUZ-HA30NKA",
+  "ahri": "207702688"
+}, {
+  "indoor_unit_model_number": "PAA-A30BA1",
+  "idu_override": "PAA-A30BA1",
+  "outdoor_unit_model_number": "PUZ-HA30NKA",
+  "ahri": "210435438"
+}, {
+  "indoor_unit_model_number": "PAA-A30AA1",
+  "idu_override": "PAA-A30AA1",
+  "outdoor_unit_model_number": "PUZ-HA30NKA",
+  "ahri": "210435437"
+}, {
+  "indoor_unit_model_number": "PVA-A36AA",
+  "idu_override": "PVA-A36AA",
+  "outdoor_unit_model_number": "PUZ-HA36NKA",
+  "ahri": "211259279"
+}, {
+  "indoor_unit_model_number": "PCA-A36KA",
+  "idu_override": "PCA-A36KA",
+  "outdoor_unit_model_number": "PUZ-HA36NKA",
+  "ahri": "211259278"
+}, {
+  "indoor_unit_model_number": "PKA-A36KA",
+  "idu_override": "PKA-A36KA",
+  "outdoor_unit_model_number": "PUZ-HA36NKA",
+  "ahri": "211259276"
+}, {
+  "indoor_unit_model_number": "PLA-A36EA",
+  "idu_override": "PLA-A36EA",
+  "outdoor_unit_model_number": "PUZ-HA36NKA",
+  "ahri": "211259275"
+}, {
+  "indoor_unit_model_number": "PEAD-A36AA",
+  "idu_override": "PEAD-A36AA",
+  "outdoor_unit_model_number": "PUZ-HA36NKA",
+  "ahri": "207702691"
+}, {
+  "indoor_unit_model_number": "PEAD-A12AA",
+  "idu_override": "PEAD-A12AA",
+  "outdoor_unit_model_number": "SUZ-KA12NAHZ",
+  "ahri": "207702706"
+}, {
+  "indoor_unit_model_number": "SLZ-KF12NA",
+  "idu_override": "SLZ-KF12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NAHZ",
+  "ahri": "211289249"
+}, {
+  "indoor_unit_model_number": "SVZ-KP18NA",
+  "idu_override": "SVZ-KP18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NAHZ",
+  "ahri": "211289256"
+}, {
+  "indoor_unit_model_number": "PEAD-A24AA",
+  "idu_override": "PEAD-A24AA",
+  "outdoor_unit_model_number": "SUZ-KA24NAHZ",
+  "ahri": "207702716"
+}, {
+  "indoor_unit_model_number": "PEAD-A30AA",
+  "idu_override": "PEAD-A30AA",
+  "outdoor_unit_model_number": "SUZ-KA30NAHZ",
+  "ahri": "207702722"
+}, {
+  "indoor_unit_model_number": "PVA-A24AA",
+  "idu_override": "PVA-A24AA",
+  "outdoor_unit_model_number": "PUZ-HA24NHA1",
+  "ahri": "211259272"
+}, {
+  "indoor_unit_model_number": "SVZ-AP36NL",
+  "idu_override": "SVZ-AP36NL",
+  "outdoor_unit_model_number": "SUZ-CA36NLH",
+  "ahri": "216800257"
+}, {
+  "indoor_unit_model_number": "SVZ-AP30NL",
+  "idu_override": "SVZ-AP30NL",
+  "outdoor_unit_model_number": "SUZ-CA30NLH",
+  "ahri": "216800255"
+}, {
+  "indoor_unit_model_number": "SVZ-AP24NL",
+  "idu_override": "SVZ-AP24NL",
+  "outdoor_unit_model_number": "SUZ-CA24NLH",
+  "ahri": "216800238"
+}, {
+  "indoor_unit_model_number": "SVZ-AP18NL",
+  "idu_override": "SVZ-AP18NL",
+  "outdoor_unit_model_number": "SUZ-CA18NLH",
+  "ahri": "216800236"
+}, {
+  "indoor_unit_model_number": "SVZ-AP12NL",
+  "idu_override": "SVZ-AP12NL",
+  "outdoor_unit_model_number": "SUZ-CA12NLH",
+  "ahri": "216800248"
+}, {
+  "indoor_unit_model_number": "MSZ-HX24NL",
+  "idu_override": "MSZ-HX24NL",
+  "outdoor_unit_model_number": "MUZ-HX24NL",
+  "ahri": "215862743"
+}, {
+  "indoor_unit_model_number": "MSZ-HX18NL",
+  "idu_override": "MSZ-HX18NL",
+  "outdoor_unit_model_number": "MUZ-HX18NL",
+  "ahri": "215862742"
+}, {
+  "indoor_unit_model_number": "MSZ-HX12NL",
+  "idu_override": "MSZ-HX12NL",
+  "outdoor_unit_model_number": "MUZ-HX12NL",
+  "ahri": "216626291"
+}, {
+  "indoor_unit_model_number": "MSZ-HX09NL",
+  "idu_override": "MSZ-HX09NL",
+  "outdoor_unit_model_number": "MUZ-HX09NL",
+  "ahri": "216626290"
+}, {
+  "indoor_unit_model_number": "MSZ-GX36NL",
+  "idu_override": "MSZ-GX36NL",
+  "outdoor_unit_model_number": "MUZ-GX36NL",
+  "ahri": "215862739"
+}, {
+  "indoor_unit_model_number": "MSZ-GX30NL",
+  "idu_override": "MSZ-GX30NL",
+  "outdoor_unit_model_number": "MUZ-GX30NL",
+  "ahri": "215862738"
+}, {
+  "indoor_unit_model_number": "MSZ-GX24NL",
+  "idu_override": "MSZ-GX24NL",
+  "outdoor_unit_model_number": "MUZ-GX24NL",
+  "ahri": "215862737"
+}, {
+  "indoor_unit_model_number": "MSZ-GX18NL",
+  "idu_override": "MSZ-GX18NL",
+  "outdoor_unit_model_number": "MUZ-GX18NL",
+  "ahri": "215862736"
+}, {
+  "indoor_unit_model_number": "MSZ-GX15NL",
+  "idu_override": "MSZ-GX15NL",
+  "outdoor_unit_model_number": "MUZ-GX15NL",
+  "ahri": "216626286"
+}, {
+  "indoor_unit_model_number": "MSZ-GX12NL",
+  "idu_override": "MSZ-GX12NL",
+  "outdoor_unit_model_number": "MUZ-GX12NL",
+  "ahri": "216626285"
+}, {
+  "indoor_unit_model_number": "MSZ-GX09NL",
+  "idu_override": "MSZ-GX09NL",
+  "outdoor_unit_model_number": "MUZ-GX09NL",
+  "ahri": "216626284"
+}, {
+  "indoor_unit_model_number": "SLZ-AF15NL",
+  "idu_override": "SLZ-AF15NL",
+  "outdoor_unit_model_number": "SUZ-AA15NLHZ",
+  "ahri": "215734916"
+}, {
+  "indoor_unit_model_number": "SLZ-AF12NL",
+  "idu_override": "SLZ-AF12NL",
+  "outdoor_unit_model_number": "SUZ-AA12NLHZ",
+  "ahri": "215734911"
+}, {
+  "indoor_unit_model_number": "SLZ-AF09NL",
+  "idu_override": "SLZ-AF09NL",
+  "outdoor_unit_model_number": "SUZ-AA09NLHZ",
+  "ahri": "215734907"
+}, {
+  "indoor_unit_model_number": "MSZ-GX36NL",
+  "idu_override": "MSZ-GX36NL",
+  "outdoor_unit_model_number": "MUZ-GX36NLH2",
+  "ahri": "216801487"
+}, {
+  "indoor_unit_model_number": "MSZ-GX30NL",
+  "idu_override": "MSZ-GX30NL",
+  "outdoor_unit_model_number": "MUZ-GX30NLH2",
+  "ahri": "216801486"
+}, {
+  "indoor_unit_model_number": "MSZ-GX24NL",
+  "idu_override": "MSZ-GX24NL",
+  "outdoor_unit_model_number": "MUZ-GX24NLH2",
+  "ahri": "216801485"
+}, {
+  "indoor_unit_model_number": "MSZ-GX18NL",
+  "idu_override": "MSZ-GX18NL",
+  "outdoor_unit_model_number": "MUZ-GX18NLH2",
+  "ahri": "216801484"
+}, {
+  "indoor_unit_model_number": "MSZ-GX15NL",
+  "idu_override": "MSZ-GX15NL",
+  "outdoor_unit_model_number": "MUZ-GX15NLH2",
+  "ahri": "216801483"
+}, {
+  "indoor_unit_model_number": "MSZ-GX12NL",
+  "idu_override": "MSZ-GX12NL",
+  "outdoor_unit_model_number": "MUZ-GX12NLH2",
+  "ahri": "216801482"
+}, {
+  "indoor_unit_model_number": "MSZ-GX09NL",
+  "idu_override": "MSZ-GX09NL",
+  "outdoor_unit_model_number": "MUZ-GX09NLH2",
+  "ahri": "216801481"
+}, {
+  "indoor_unit_model_number": "MSZ-GX24NL",
+  "idu_override": "MSZ-GX24NL",
+  "outdoor_unit_model_number": "MUZ-GX24NLHZ2",
+  "ahri": "216801492"
+}, {
+  "indoor_unit_model_number": "MSZ-GX18NL",
+  "idu_override": "MSZ-GX18NL",
+  "outdoor_unit_model_number": "MUZ-GX18NLHZ2",
+  "ahri": "216801491"
+}, {
+  "indoor_unit_model_number": "MSZ-GX15NL",
+  "idu_override": "MSZ-GX15NL",
+  "outdoor_unit_model_number": "MUZ-GX15NLHZ2",
+  "ahri": "216801490"
+}, {
+  "indoor_unit_model_number": "MSZ-GX12NL",
+  "idu_override": "MSZ-GX12NL",
+  "outdoor_unit_model_number": "MUZ-GX12NLHZ2",
+  "ahri": "216801489"
+}, {
+  "indoor_unit_model_number": "MSZ-GX09NL",
+  "idu_override": "MSZ-GX09NL",
+  "outdoor_unit_model_number": "MUZ-GX09NLHZ2",
+  "ahri": "216801488"
+}, {
+  "indoor_unit_model_number": "MSZ-FX24NL",
+  "idu_override": "MSZ-FX24NL",
+  "outdoor_unit_model_number": "MUZ-FX24NLHZ2",
+  "ahri": "216798019"
+}, {
+  "indoor_unit_model_number": "MSZ-FX18NL",
+  "idu_override": "MSZ-FX18NL",
+  "outdoor_unit_model_number": "MUZ-FX18NLHZ2",
+  "ahri": "216798018"
+}, {
+  "indoor_unit_model_number": "MSZ-FX15NL",
+  "idu_override": "MSZ-FX15NL",
+  "outdoor_unit_model_number": "MUZ-FX15NLHZ2",
+  "ahri": "216798017"
+}, {
+  "indoor_unit_model_number": "MSZ-FX09NL",
+  "idu_override": "MSZ-FX09NL",
+  "outdoor_unit_model_number": "MUZ-FX09NLHZ2",
+  "ahri": "216798015"
+}, {
+  "indoor_unit_model_number": "MSZ-FX06NL",
+  "idu_override": "MSZ-FX06NL",
+  "outdoor_unit_model_number": "MUZ-FX06NLHZ2",
+  "ahri": "216798014"
+}, {
+  "indoor_unit_model_number": "PKA-AK36NL",
+  "idu_override": "PKA-AK36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NLHZ",
+  "ahri": "215712213"
+}, {
+  "indoor_unit_model_number": "PKA-AK30NL",
+  "idu_override": "PKA-AK30NL",
+  "outdoor_unit_model_number": "PUZ-AK30NLHZ",
+  "ahri": "215712206"
+}, {
+  "indoor_unit_model_number": "PKA-AK24NL",
+  "idu_override": "PKA-AK24NL",
+  "outdoor_unit_model_number": "PUZ-AK24NLHZ",
+  "ahri": "215712197"
+}, {
+  "indoor_unit_model_number": "PKA-AK36NL",
+  "idu_override": "PKA-AK36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NL",
+  "ahri": "215712189"
+}, {
+  "indoor_unit_model_number": "PKA-AK30NL",
+  "idu_override": "PKA-AK30NL",
+  "outdoor_unit_model_number": "PUZ-AH30NL",
+  "ahri": "215712226"
+}, {
+  "indoor_unit_model_number": "PKA-AK24NL",
+  "idu_override": "PKA-AK24NL",
+  "outdoor_unit_model_number": "PUZ-AH24NL",
+  "ahri": "215712179"
+}, {
+  "indoor_unit_model_number": "PKA-AL18NL",
+  "idu_override": "PKA-AL18NL",
+  "outdoor_unit_model_number": "PUZ-AK18NL",
+  "ahri": "215712225"
+}, {
+  "indoor_unit_model_number": "PKA-AL12NL",
+  "idu_override": "PKA-AL12NL",
+  "outdoor_unit_model_number": "PUZ-AK12NL",
+  "ahri": "215712172"
+}, {
+  "indoor_unit_model_number": "PLA-AE42NL",
+  "idu_override": "PLA-AE42NL",
+  "outdoor_unit_model_number": "PUZ-AK42NLHZ",
+  "ahri": "215712219"
+}, {
+  "indoor_unit_model_number": "PLA-AE36NL",
+  "idu_override": "PLA-AE36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NLHZ",
+  "ahri": "215712212"
+}, {
+  "indoor_unit_model_number": "PLA-AE30NL",
+  "idu_override": "PLA-AE30NL",
+  "outdoor_unit_model_number": "PUZ-AK30NLHZ",
+  "ahri": "215712205"
+}, {
+  "indoor_unit_model_number": "PLA-AE24NL",
+  "idu_override": "PLA-AE24NL",
+  "outdoor_unit_model_number": "PUZ-AK24NLHZ",
+  "ahri": "215712196"
+}, {
+  "indoor_unit_model_number": "PLA-AE42NL",
+  "idu_override": "PLA-AE42NL",
+  "outdoor_unit_model_number": "PUZ-AK42NL",
+  "ahri": "215712195"
+}, {
+  "indoor_unit_model_number": "PLA-AE36NL",
+  "idu_override": "PLA-AE36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NL",
+  "ahri": "215712188"
+}, {
+  "indoor_unit_model_number": "PLA-AE30NL",
+  "idu_override": "PLA-AE30NL",
+  "outdoor_unit_model_number": "PUZ-AH30NL",
+  "ahri": "215712187"
+}, {
+  "indoor_unit_model_number": "PLA-AE24NL",
+  "idu_override": "PLA-AE24NL",
+  "outdoor_unit_model_number": "PUZ-AH24NL",
+  "ahri": "215712178"
+}, {
+  "indoor_unit_model_number": "PLA-AE18NL",
+  "idu_override": "PLA-AE18NL",
+  "outdoor_unit_model_number": "PUZ-AK18NL",
+  "ahri": "215712175"
+}, {
+  "indoor_unit_model_number": "PLA-AE12NL",
+  "idu_override": "PLA-AE12NL",
+  "outdoor_unit_model_number": "PUZ-AK12NL",
+  "ahri": "215712171"
+}, {
+  "indoor_unit_model_number": "PCA-AK36NL",
+  "idu_override": "PCA-AK36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NLHZ",
+  "ahri": "215712214"
+}, {
+  "indoor_unit_model_number": "PCA-AK30NL",
+  "idu_override": "PCA-AK30NL",
+  "outdoor_unit_model_number": "PUZ-AK30NLHZ",
+  "ahri": "215712207"
+}, {
+  "indoor_unit_model_number": "PCA-AK24NL",
+  "idu_override": "PCA-AK24NL",
+  "outdoor_unit_model_number": "PUZ-AK24NLHZ",
+  "ahri": "215712198"
+}, {
+  "indoor_unit_model_number": "PCA-AK42NL",
+  "idu_override": "PCA-AK42NL",
+  "outdoor_unit_model_number": "PUZ-AK42NL",
+  "ahri": "215712230"
+}, {
+  "indoor_unit_model_number": "PCA-AK36NL",
+  "idu_override": "PCA-AK36NL",
+  "outdoor_unit_model_number": "PUZ-AK36NL",
+  "ahri": "215712190"
+}, {
+  "indoor_unit_model_number": "PCA-AK30NL",
+  "idu_override": "PCA-AK30NL",
+  "outdoor_unit_model_number": "PUZ-AH30NL",
+  "ahri": "215712227"
+}, {
+  "indoor_unit_model_number": "PCA-AK24NL",
+  "idu_override": "PCA-AK24NL",
+  "outdoor_unit_model_number": "PUZ-AH24NL",
+  "ahri": "215712180"
+}, {
+  "indoor_unit_model_number": "PEAD-A36AA",
+  "idu_override": "PEAD-A36AA",
+  "outdoor_unit_model_number": "SUZ-KA36NAHZ",
+  "ahri": "207702726"
+}, {
+  "indoor_unit_model_number": "SVZ-KP30NA",
+  "idu_override": "SVZ-KP30NA",
+  "outdoor_unit_model_number": "SUZ-KA30NAHZ1",
+  "ahri": "213617714"
+}, {
+  "indoor_unit_model_number": "SVZ-KP30NA",
+  "idu_override": "SVZ-KP30NA",
+  "outdoor_unit_model_number": "SUZ-KA30NAHZ",
+  "ahri": "211273652"
+}, {
+  "indoor_unit_model_number": "PVA-A42AA",
+  "idu_override": "PVA-A42AA",
+  "outdoor_unit_model_number": "PUZ-HA42NKA2",
+  "ahri": "213617713"
+}, {
+  "indoor_unit_model_number": "PCA-A42KA",
+  "idu_override": "PCA-A42KA",
+  "outdoor_unit_model_number": "PUZ-HA42NKA1",
+  "ahri": "211259280"
+}, {
+  "indoor_unit_model_number": "PVA-A42AA",
+  "idu_override": "PVA-A42AA",
+  "outdoor_unit_model_number": "PUZ-HA42NKA1",
+  "ahri": "211259282"
+}, {
+  "indoor_unit_model_number": "PEAD-A42AA",
+  "idu_override": "PEAD-A42AA",
+  "outdoor_unit_model_number": "PUZ-HA42NKA1",
+  "ahri": "207702694"
+}, {
+  "indoor_unit_model_number": "PVA-A36AA",
+  "idu_override": "PVA-A36AA",
+  "outdoor_unit_model_number": "PUZ-HA36NKA1",
+  "ahri": "213617710"
+}, {
+  "indoor_unit_model_number": "PAA-A36BA1",
+  "idu_override": "PAA-A36BA1",
+  "outdoor_unit_model_number": "PUZ-HA36NKA",
+  "ahri": "209484153"
+}, {
+  "indoor_unit_model_number": "PAA-A36CA1",
+  "idu_override": "PAA-A36CA1",
+  "outdoor_unit_model_number": "PUZ-HA36NKA",
+  "ahri": "210435439"
+}, {
+  "indoor_unit_model_number": "PAA-A24AA1",
+  "idu_override": "PAA-A24AA1",
+  "outdoor_unit_model_number": "PUZ-HA24NHA",
+  "ahri": "209447988"
+}, {
+  "indoor_unit_model_number": "PAA-A24BA1",
+  "idu_override": "PAA-A24BA1",
+  "outdoor_unit_model_number": "PUZ-HA24NHA",
+  "ahri": "209447989"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NAHZ4-",
+  "ahri": "212925868"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NAHZ4-",
+  "ahri": "212925475"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NAHZ4-",
+  "ahri": "212925882"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NAHZ4-",
+  "ahri": "212925537"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NAHZ4-",
+  "ahri": "212925474"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NAHZ4-",
+  "ahri": "212925538"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NA4-",
+  "ahri": "212925880"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NAHZ4-",
+  "ahri": "212925867"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NAHZ4-",
+  "ahri": "212925473"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NAHZ4-",
+  "ahri": "212925881"
+}, {
+  "indoor_unit_model_number": "MSZ-GL15NA",
+  "idu_override": "MSZ-GL15NA",
+  "outdoor_unit_model_number": "MUZ-GL15NAH",
+  "ahri": "202680599"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NA3",
+  "ahri": "209949001"
+}, {
+  "indoor_unit_model_number": "PAA-A36CA1",
+  "idu_override": "PAA-A36CA1",
+  "outdoor_unit_model_number": "PUZ-A36NKA7",
+  "ahri": "209447985"
+}, {
+  "indoor_unit_model_number": "PAA-A36BA1",
+  "idu_override": "PAA-A36BA1",
+  "outdoor_unit_model_number": "PUZ-A36NKA7",
+  "ahri": "209447984"
+}, {
+  "indoor_unit_model_number": "PAA-A24AA1",
+  "idu_override": "PAA-A24AA1",
+  "outdoor_unit_model_number": "PUZ-A24NHA7",
+  "ahri": "209447980"
+}, {
+  "indoor_unit_model_number": "PAA-A18AA1",
+  "idu_override": "PAA-A18AA1",
+  "outdoor_unit_model_number": "PUZ-A24NHA7",
+  "ahri": "209447978"
+}, {
+  "indoor_unit_model_number": "PVA-A36AA",
+  "idu_override": "PVA-A36AA",
+  "outdoor_unit_model_number": "PUZ-A36NKA7",
+  "ahri": "201754547"
+}, {
+  "indoor_unit_model_number": "PEAD-A36AA",
+  "idu_override": "PEAD-A36AA",
+  "outdoor_unit_model_number": "PUZ-A36NKA7",
+  "ahri": "201754475"
+}, {
+  "indoor_unit_model_number": "PLA-A30EA",
+  "idu_override": "PLA-A30EA",
+  "outdoor_unit_model_number": "PUZ-A30NHA7",
+  "ahri": "201754470"
+}, {
+  "indoor_unit_model_number": "PEAD-A30AA",
+  "idu_override": "PEAD-A30AA",
+  "outdoor_unit_model_number": "PUZ-A30NHA7",
+  "ahri": "201754468"
+}, {
+  "indoor_unit_model_number": "PVA-A24AA",
+  "idu_override": "PVA-A24AA",
+  "outdoor_unit_model_number": "PUZ-A24NHA7",
+  "ahri": "201754463"
+}, {
+  "indoor_unit_model_number": "PEAD-A24AA",
+  "idu_override": "PEAD-A24AA",
+  "outdoor_unit_model_number": "PUZ-A24NHA7",
+  "ahri": "201754461"
+}, {
+  "indoor_unit_model_number": "PCA-A24KA",
+  "idu_override": "PCA-A24KA",
+  "outdoor_unit_model_number": "PUZ-A24NHA7",
+  "ahri": "201754460"
+}, {
+  "indoor_unit_model_number": "PLA-A24EA",
+  "idu_override": "PLA-A24EA",
+  "outdoor_unit_model_number": "PUZ-A24NHA7",
+  "ahri": "201754318"
+}, {
+  "indoor_unit_model_number": "PAA-A42CA1",
+  "idu_override": "PAA-A42CA1",
+  "outdoor_unit_model_number": "PUZ-A42NKA7",
+  "ahri": "209447987"
+}, {
+  "indoor_unit_model_number": "PAA-A18BA1",
+  "idu_override": "PAA-A18BA1",
+  "outdoor_unit_model_number": "PUZ-A24NHA7",
+  "ahri": "209447979"
+}, {
+  "indoor_unit_model_number": "PEAD-A42AA",
+  "idu_override": "PEAD-A42AA",
+  "outdoor_unit_model_number": "PUZ-A42NKA7",
+  "ahri": "201754481"
+}, {
+  "indoor_unit_model_number": "PCA-A36KA",
+  "idu_override": "PCA-A36KA",
+  "outdoor_unit_model_number": "PUZ-A36NKA7",
+  "ahri": "201754474"
+}, {
+  "indoor_unit_model_number": "PKA-A24KA",
+  "idu_override": "PKA-A24KA",
+  "outdoor_unit_model_number": "PUZ-A24NHA7",
+  "ahri": "201754462"
+}, {
+  "indoor_unit_model_number": "PAA-A30BA1",
+  "idu_override": "PAA-A30BA1",
+  "outdoor_unit_model_number": "PUZ-A30NHA7",
+  "ahri": "209447983"
+}, {
+  "indoor_unit_model_number": "PCA-A30KA",
+  "idu_override": "PCA-A30KA",
+  "outdoor_unit_model_number": "PUZ-A30NHA7",
+  "ahri": "201754545"
+}, {
+  "indoor_unit_model_number": "PVA-A42AA",
+  "idu_override": "PVA-A42AA",
+  "outdoor_unit_model_number": "PUZ-A42NKA7",
+  "ahri": "201754483"
+}, {
+  "indoor_unit_model_number": "PAA-A42BA1",
+  "idu_override": "PAA-A42BA1",
+  "outdoor_unit_model_number": "PUZ-A42NKA7",
+  "ahri": "209447986"
+}, {
+  "indoor_unit_model_number": "PAA-A30AA1",
+  "idu_override": "PAA-A30AA1",
+  "outdoor_unit_model_number": "PUZ-A30NHA7",
+  "ahri": "209447982"
+}, {
+  "indoor_unit_model_number": "PAA-A24BA1",
+  "idu_override": "PAA-A24BA1",
+  "outdoor_unit_model_number": "PUZ-A24NHA7",
+  "ahri": "209447981"
+}, {
+  "indoor_unit_model_number": "PVA-A30AA",
+  "idu_override": "PVA-A30AA",
+  "outdoor_unit_model_number": "PUZ-A30NHA7",
+  "ahri": "201754546"
+}, {
+  "indoor_unit_model_number": "PCA-A42KA",
+  "idu_override": "PCA-A42KA",
+  "outdoor_unit_model_number": "PUZ-A42NKA7",
+  "ahri": "201754480"
+}, {
+  "indoor_unit_model_number": "MSZ-GL24NA",
+  "idu_override": "MSZ-GL24NA",
+  "outdoor_unit_model_number": "MUZ-GL24NAH",
+  "ahri": "201755029"
+}, {
+  "indoor_unit_model_number": "MFZ-KJ09NA",
+  "idu_override": "MFZ-KJ09NA",
+  "outdoor_unit_model_number": "MUFZ-KJ09NAHZ",
+  "ahri": "210819459"
+}, {
+  "indoor_unit_model_number": "MFZ-KJ15NA",
+  "idu_override": "MFZ-KJ15NA",
+  "outdoor_unit_model_number": "MUFZ-KJ15NAHZ",
+  "ahri": "210819447"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU4",
+  "ahri": "211016663"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU4",
+  "ahri": "211016658"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP42NKMU2",
+  "ahri": "211016660"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP36NKMU2",
+  "ahri": "211016659"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA3",
+  "ahri": "209948999"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA3",
+  "ahri": "209836181"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NA4",
+  "ahri": "209310455"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NA3",
+  "ahri": "209949000"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NA3",
+  "ahri": "209949002"
+}, {
+  "indoor_unit_model_number": "MSZ-HM24NA",
+  "idu_override": "MSZ-HM24NA",
+  "outdoor_unit_model_number": "MUZ-HM24NA",
+  "ahri": "209832269"
+}, {
+  "indoor_unit_model_number": "MSZ-FH18NA",
+  "idu_override": "MSZ-FH18NA",
+  "outdoor_unit_model_number": "MUZ-FH18NAH2",
+  "ahri": "201754303"
+}, {
+  "indoor_unit_model_number": "MSZ-FH15NA",
+  "idu_override": "MSZ-FH15NA",
+  "outdoor_unit_model_number": "MUZ-FH15NAH",
+  "ahri": "201754301"
+}, {
+  "indoor_unit_model_number": "PVA-A30AA",
+  "idu_override": "PVA-A30AA",
+  "outdoor_unit_model_number": "PUZ-HA30NKA1",
+  "ahri": "213617706"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-8C60NA2",
+  "ahri": "204926518"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU2",
+  "ahri": "202411913"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU4",
+  "ahri": "211016661"
+}, {
+  "indoor_unit_model_number": "SVZ-KP18NA",
+  "idu_override": "SVZ-KP18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NAH2",
+  "ahri": "211289260"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA4",
+  "ahri": "209424920"
+}, {
+  "indoor_unit_model_number": "SLZ-KF09NA",
+  "idu_override": "SLZ-KF09NA",
+  "outdoor_unit_model_number": "SUZ-KA09NA2",
+  "ahri": "211289244"
+}, {
+  "indoor_unit_model_number": "SLZ-KF12NA",
+  "idu_override": "SLZ-KF12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NA2",
+  "ahri": "211289247"
+}, {
+  "indoor_unit_model_number": "PEAD-A18AA",
+  "idu_override": "PEAD-A18AA",
+  "outdoor_unit_model_number": "SUZ-KA18NA2",
+  "ahri": "207702711"
+}, {
+  "indoor_unit_model_number": "SVZ-KP18NA",
+  "idu_override": "SVZ-KP18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NA2",
+  "ahri": "211289259"
+}, {
+  "indoor_unit_model_number": "SVZ-KP12NA",
+  "idu_override": "SVZ-KP12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NA2",
+  "ahri": "211289257"
+}, {
+  "indoor_unit_model_number": "SLZ-KF18NA",
+  "idu_override": "SLZ-KF18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NA2",
+  "ahri": "211289254"
+}, {
+  "indoor_unit_model_number": "MLZ-KP18NA",
+  "idu_override": "MLZ-KP18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NA2",
+  "ahri": "207699125"
+}, {
+  "indoor_unit_model_number": "MLZ-KP12NA",
+  "idu_override": "MLZ-KP12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NA2",
+  "ahri": "207699122"
+}, {
+  "indoor_unit_model_number": "PEAD-A15AA",
+  "idu_override": "PEAD-A15AA",
+  "outdoor_unit_model_number": "SUZ-KA15NA2",
+  "ahri": "207702707"
+}, {
+  "indoor_unit_model_number": "PEAD-A12AA",
+  "idu_override": "PEAD-A12AA",
+  "outdoor_unit_model_number": "SUZ-KA12NA2",
+  "ahri": "207702701"
+}, {
+  "indoor_unit_model_number": "PEAD-A09AA",
+  "idu_override": "PEAD-A09AA",
+  "outdoor_unit_model_number": "SUZ-KA09NA2",
+  "ahri": "207702695"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA2",
+  "ahri": "201754643"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA2",
+  "ahri": "201755013"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU2",
+  "ahri": "202412084"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU2",
+  "ahri": "202412087"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA3",
+  "ahri": "209836197"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NA3",
+  "ahri": "209836199"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NA3",
+  "ahri": "209836200"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NAHZ3",
+  "ahri": "209949005"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NAHZ3",
+  "ahri": "209949006"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NA4-",
+  "ahri": "212925454"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NA4-",
+  "ahri": "212925462"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NA4-",
+  "ahri": "212925460"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA4-",
+  "ahri": "212925453"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP42NKMU2",
+  "ahri": "211016651"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NA4-",
+  "ahri": "212925477"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NA4-",
+  "ahri": "212925464"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NA4-",
+  "ahri": "212925524"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NA4-",
+  "ahri": "212925883"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA4-",
+  "ahri": "212927579"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA4-",
+  "ahri": "212927578"
+}, {
+  "indoor_unit_model_number": "SLZ-KF15NA",
+  "idu_override": "SLZ-KF15NA",
+  "outdoor_unit_model_number": "SUZ-KA15NA2",
+  "ahri": "211289251"
+}, {
+  "indoor_unit_model_number": "MSZ-GS18NA",
+  "idu_override": "MSZ-GS18NA",
+  "outdoor_unit_model_number": "MUZ-GS18NAH",
+  "ahri": "207679250"
+}, {
+  "indoor_unit_model_number": "PEAD-A15AA",
+  "idu_override": "PEAD-A15AA",
+  "outdoor_unit_model_number": "SUZ-KA15NAH2",
+  "ahri": "202392045"
+}, {
+  "indoor_unit_model_number": "SLZ-KF15NA",
+  "idu_override": "SLZ-KF15NA",
+  "outdoor_unit_model_number": "SUZ-KA15NAH2",
+  "ahri": "202392063"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU2",
+  "ahri": "202426339"
+}, {
+  "indoor_unit_model_number": "SEZ-KD12NA",
+  "idu_override": "SEZ-KD12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NA2",
+  "ahri": "202392028"
+}, {
+  "indoor_unit_model_number": "SEZ-KD15NA",
+  "idu_override": "SEZ-KD15NA",
+  "outdoor_unit_model_number": "SUZ-KA15NA2",
+  "ahri": "202392029"
+}, {
+  "indoor_unit_model_number": "SEZ-KD18NA",
+  "idu_override": "SEZ-KD18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NA2",
+  "ahri": "202392030"
+}, {
+  "indoor_unit_model_number": "SEZ-KD12NA",
+  "idu_override": "SEZ-KD12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NAH2",
+  "ahri": "202392032"
+}, {
+  "indoor_unit_model_number": "SEZ-KD09NA",
+  "idu_override": "SEZ-KD09NA",
+  "outdoor_unit_model_number": "SUZ-KA09NAH2",
+  "ahri": "202392031"
+}, {
+  "indoor_unit_model_number": "SEZ-KD15NA",
+  "idu_override": "SEZ-KD15NA",
+  "outdoor_unit_model_number": "SUZ-KA15NAH2",
+  "ahri": "202392033"
+}, {
+  "indoor_unit_model_number": "SEZ-KD18NA",
+  "idu_override": "SEZ-KD18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NAH2",
+  "ahri": "202392034"
+}, {
+  "indoor_unit_model_number": "MLZ-KP18NA",
+  "idu_override": "MLZ-KP18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NAH2",
+  "ahri": "202392037"
+}, {
+  "indoor_unit_model_number": "SLZ-KF09NA",
+  "idu_override": "SLZ-KF09NA",
+  "outdoor_unit_model_number": "SUZ-KA09NAH2",
+  "ahri": "202392050"
+}, {
+  "indoor_unit_model_number": "SLZ-KF12NA",
+  "idu_override": "SLZ-KF12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NAH2",
+  "ahri": "202392051"
+}, {
+  "indoor_unit_model_number": "SVZ-KP12NA",
+  "idu_override": "SVZ-KP12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NAH2",
+  "ahri": "202392055"
+}, {
+  "indoor_unit_model_number": "SVZ-KP18NA",
+  "idu_override": "SVZ-KP18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NAH2",
+  "ahri": "202392056"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP36NKMU",
+  "ahri": "202426335"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU2",
+  "ahri": "202426337"
+}, {
+  "indoor_unit_model_number": "MLZ-KP12NA",
+  "idu_override": "MLZ-KP12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NAH2",
+  "ahri": "202392036"
+}, {
+  "indoor_unit_model_number": "SEZ-KD09NA",
+  "idu_override": "SEZ-KD09NA",
+  "outdoor_unit_model_number": "SUZ-KA09NA2",
+  "ahri": "202392027"
+}, {
+  "indoor_unit_model_number": "MLZ-KP09NA",
+  "idu_override": "MLZ-KP09NA",
+  "outdoor_unit_model_number": "SUZ-KA09NAH2",
+  "ahri": "202392035"
+}, {
+  "indoor_unit_model_number": "SEZ-KD18NA4",
+  "idu_override": "SEZ-KD18NA4",
+  "outdoor_unit_model_number": "SUZ-KA18NAHZ",
+  "ahri": "204627022"
+}, {
+  "indoor_unit_model_number": "SEZ-KD15NA4",
+  "idu_override": "SEZ-KD15NA4",
+  "outdoor_unit_model_number": "SUZ-KA15NAHZ",
+  "ahri": "204627021"
+}, {
+  "indoor_unit_model_number": "SEZ-KD12NA4",
+  "idu_override": "SEZ-KD12NA4",
+  "outdoor_unit_model_number": "SUZ-KA12NAHZ",
+  "ahri": "204627020"
+}, {
+  "indoor_unit_model_number": "PKA-A24KA7",
+  "idu_override": "PKA-A24KA7",
+  "outdoor_unit_model_number": "PUZ-HA24NHA",
+  "ahri": "204276761"
+}, {
+  "indoor_unit_model_number": "PEAD-A24AA7",
+  "idu_override": "PEAD-A24AA7",
+  "outdoor_unit_model_number": "PUZ-HA24NHA",
+  "ahri": "204276767"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU2",
+  "ahri": "202426338"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP48NKMU",
+  "ahri": "202426336"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP36NKMU",
+  "ahri": "202423533"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP48NKMU",
+  "ahri": "202423535"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-8C48NAHZ2",
+  "ahri": "204926517"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-5C42NAHZ2",
+  "ahri": "204926514"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-8C48NA2",
+  "ahri": "204926515"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NAHZ2",
+  "ahri": "204926512"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-8C48NAHZ2",
+  "ahri": "204834268"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-5C42NAHZ2",
+  "ahri": "204834266"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NAHZ2",
+  "ahri": "204834293"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-8C48NA2",
+  "ahri": "204834265"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-5C42NAHZ2",
+  "ahri": "204834294"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NAHZ2",
+  "ahri": "204834292"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-8C48NAHZ2",
+  "ahri": "204834267"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-8C48NA2",
+  "ahri": "204834264"
+}, {
+  "indoor_unit_model_number": "PLA-A24EA7",
+  "idu_override": "PLA-A24EA7",
+  "outdoor_unit_model_number": "PUZ-HA24NHA",
+  "ahri": "204276538"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU2",
+  "ahri": "202423532"
+}, {
+  "indoor_unit_model_number": "PVA-A24AA7",
+  "idu_override": "PVA-A24AA7",
+  "outdoor_unit_model_number": "PUZ-HA24NHA",
+  "ahri": "204281760"
+}, {
+  "indoor_unit_model_number": "PCA-A24KA7",
+  "idu_override": "PCA-A24KA7",
+  "outdoor_unit_model_number": "PUZ-HA24NHA",
+  "ahri": "204276762"
+}, {
+  "indoor_unit_model_number": "PVA-A30AA7",
+  "idu_override": "PVA-A30AA7",
+  "outdoor_unit_model_number": "PUZ-HA30NKA",
+  "ahri": "206223048"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NA2",
+  "ahri": "201754642"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-8C60NA2",
+  "ahri": "204834269"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-8C60NA2",
+  "ahri": "204834295"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU",
+  "ahri": "201755026"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU",
+  "ahri": "201754639"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU",
+  "ahri": "201755028"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU",
+  "ahri": "201754447"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU",
+  "ahri": "201754444"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU1",
+  "ahri": "201754640"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU",
+  "ahri": "201755027"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU",
+  "ahri": "201754446"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU",
+  "ahri": "201754445"
+}, {
+  "indoor_unit_model_number": "PLA-A36BA",
+  "idu_override": "PLA-A36BA",
+  "outdoor_unit_model_number": "PUZ-HA36NHA5",
+  "ahri": "201754490"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NAHZ2",
+  "ahri": "206908464"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NAHZ2",
+  "ahri": "206908463"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NAHZ2",
+  "ahri": "206908469"
+}, {
+  "indoor_unit_model_number": "PEAD-A18AA",
+  "idu_override": "PEAD-A18AA",
+  "outdoor_unit_model_number": "SUZ-KA18NAH2",
+  "ahri": "207702712"
+}, {
+  "indoor_unit_model_number": "MSZ-FH09NAMSZ-FH09NA",
+  "idu_override": "MSZ-FH09NAMSZ-FH09NA",
+  "outdoor_unit_model_number": "MXZ-2C20NAHZ2",
+  "ahri": "202732309"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU2",
+  "ahri": "202412089"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP48NKMU",
+  "ahri": "202412088"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP36NKMU",
+  "ahri": "202412085"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NA3",
+  "ahri": "209836198"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP36NKMU1",
+  "ahri": "204834273"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP36NKMU1",
+  "ahri": "204926535"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP36NKMU1",
+  "ahri": "204834272"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP48NKMU1",
+  "ahri": "204834216"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP48NKMU1",
+  "ahri": "204926537"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP48NKMU1",
+  "ahri": "204834275"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU3",
+  "ahri": "204834271"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU3",
+  "ahri": "204926538"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU3",
+  "ahri": "204834270"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU3",
+  "ahri": "204834215"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU3",
+  "ahri": "204926540"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU3",
+  "ahri": "204834274"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU3",
+  "ahri": "204834276"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU3",
+  "ahri": "204834217"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU3",
+  "ahri": "204926542"
+}, {
+  "indoor_unit_model_number": "PLA-A36EA",
+  "idu_override": "PLA-A36EA",
+  "outdoor_unit_model_number": "PUZ-A36NKA7",
+  "ahri": "201754319"
+}, {
+  "indoor_unit_model_number": "MLZ-KP09NA",
+  "idu_override": "MLZ-KP09NA",
+  "outdoor_unit_model_number": "SUZ-KA09NA2",
+  "ahri": "207699119"
+}, {
+  "indoor_unit_model_number": "PEAD-A15AA",
+  "idu_override": "PEAD-A15AA",
+  "outdoor_unit_model_number": "SUZ-KA15NAHZ",
+  "ahri": "207702709"
+}, {
+  "indoor_unit_model_number": "MFZ-KJ12NA",
+  "idu_override": "MFZ-KJ12NA",
+  "outdoor_unit_model_number": "MUFZ-KJ12NAHZ",
+  "ahri": "210819460"
+}, {
+  "indoor_unit_model_number": "MFZ-KJ18NA",
+  "idu_override": "MFZ-KJ18NA",
+  "outdoor_unit_model_number": "MUFZ-KJ18NAHZ",
+  "ahri": "210819448"
+}, {
+  "indoor_unit_model_number": "MSZ-FH06NA",
+  "idu_override": "MSZ-FH06NA",
+  "outdoor_unit_model_number": "MUZ-FH06NAH",
+  "ahri": "201754427"
+}, {
+  "indoor_unit_model_number": "MSZ-FH09NA",
+  "idu_override": "MSZ-FH09NA",
+  "outdoor_unit_model_number": "MUZ-FH09NAH",
+  "ahri": "201754297"
+}, {
+  "indoor_unit_model_number": "MSZ-FH12NA",
+  "idu_override": "MSZ-FH12NA",
+  "outdoor_unit_model_number": "MUZ-FH12NAH",
+  "ahri": "201754299"
+}, {
+  "indoor_unit_model_number": "MSZ-GL09NA",
+  "idu_override": "MSZ-GL09NA",
+  "outdoor_unit_model_number": "MUZ-GL09NA",
+  "ahri": "202680594"
+}, {
+  "indoor_unit_model_number": "MSZ-GL09NA",
+  "idu_override": "MSZ-GL09NA",
+  "outdoor_unit_model_number": "MUZ-GL09NAH",
+  "ahri": "202680597"
+}, {
+  "indoor_unit_model_number": "MSZ-GL12NA",
+  "idu_override": "MSZ-GL12NA",
+  "outdoor_unit_model_number": "MUZ-GL12NA",
+  "ahri": "202680595"
+}, {
+  "indoor_unit_model_number": "MSZ-GL12NA",
+  "idu_override": "MSZ-GL12NA",
+  "outdoor_unit_model_number": "MUZ-GL12NAH",
+  "ahri": "202680598"
+}, {
+  "indoor_unit_model_number": "MSZ-GL15NA",
+  "idu_override": "MSZ-GL15NA",
+  "outdoor_unit_model_number": "MUZ-GL15NA",
+  "ahri": "202680596"
+}, {
+  "indoor_unit_model_number": "MSZ-HM09NA",
+  "idu_override": "MSZ-HM09NA",
+  "outdoor_unit_model_number": "MUZ-HM09NA",
+  "ahri": "202680600"
+}, {
+  "indoor_unit_model_number": "MSZ-HM09NA",
+  "idu_override": "MSZ-HM09NA",
+  "outdoor_unit_model_number": "MUZ-HM09NAH",
+  "ahri": "202680604"
+}, {
+  "indoor_unit_model_number": "MSZ-HM12NA",
+  "idu_override": "MSZ-HM12NA",
+  "outdoor_unit_model_number": "MUZ-HM12NA",
+  "ahri": "202680601"
+}, {
+  "indoor_unit_model_number": "MSZ-HM12NA",
+  "idu_override": "MSZ-HM12NA",
+  "outdoor_unit_model_number": "MUZ-HM12NAH",
+  "ahri": "202680605"
+}, {
+  "indoor_unit_model_number": "MSZ-HM15NA",
+  "idu_override": "MSZ-HM15NA",
+  "outdoor_unit_model_number": "MUZ-HM15NAH",
+  "ahri": "202680606"
+}, {
+  "indoor_unit_model_number": "MSZ-HM18NA",
+  "idu_override": "MSZ-HM18NA",
+  "outdoor_unit_model_number": "MUZ-HM18NAH",
+  "ahri": "202680607"
+}, {
+  "indoor_unit_model_number": "MSZ-HM24NA",
+  "idu_override": "MSZ-HM24NA",
+  "outdoor_unit_model_number": "MUZ-HM24NAH",
+  "ahri": "202680608"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NA4",
+  "ahri": "209310453"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NA4",
+  "ahri": "209310457"
+}, {
+  "indoor_unit_model_number": "MLZ-KP09NA",
+  "idu_override": "MLZ-KP09NA",
+  "outdoor_unit_model_number": "SUZ-KA09NAH2",
+  "ahri": "207699120"
+}, {
+  "indoor_unit_model_number": "SLZ-KF09NA",
+  "idu_override": "SLZ-KF09NA",
+  "outdoor_unit_model_number": "SUZ-KA09NAH2",
+  "ahri": "211289245"
+}, {
+  "indoor_unit_model_number": "MLZ-KP12NA",
+  "idu_override": "MLZ-KP12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NAH2",
+  "ahri": "207699123"
+}, {
+  "indoor_unit_model_number": "SVZ-KP12NA",
+  "idu_override": "SVZ-KP12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NAH2",
+  "ahri": "211289258"
+}, {
+  "indoor_unit_model_number": "SLZ-KF12NA",
+  "idu_override": "SLZ-KF12NA",
+  "outdoor_unit_model_number": "SUZ-KA12NAH2",
+  "ahri": "211289248"
+}, {
+  "indoor_unit_model_number": "SLZ-KF15NA",
+  "idu_override": "SLZ-KF15NA",
+  "outdoor_unit_model_number": "SUZ-KA15NAH2",
+  "ahri": "211289252"
+}, {
+  "indoor_unit_model_number": "PEAD-A15AA",
+  "idu_override": "PEAD-A15AA",
+  "outdoor_unit_model_number": "SUZ-KA15NAH2",
+  "ahri": "207702708"
+}, {
+  "indoor_unit_model_number": "SLZ-KF18NA",
+  "idu_override": "SLZ-KF18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NAH2",
+  "ahri": "211580586"
+}, {
+  "indoor_unit_model_number": "MLZ-KP18NA",
+  "idu_override": "MLZ-KP18NA",
+  "outdoor_unit_model_number": "SUZ-KA18NAH2",
+  "ahri": "207699126"
+}, {
+  "indoor_unit_model_number": "PEAD-A30AA7",
+  "idu_override": "PEAD-A30AA7",
+  "outdoor_unit_model_number": "PUZ-HA30NKA",
+  "ahri": "206223050"
+}, {
+  "indoor_unit_model_number": "MSZ-HM15NA",
+  "idu_override": "MSZ-HM15NA",
+  "outdoor_unit_model_number": "MUZ-HM15NA",
+  "ahri": "202680602"
+}, {
+  "indoor_unit_model_number": "MSZ-HM18NA",
+  "idu_override": "MSZ-HM18NA",
+  "outdoor_unit_model_number": "MUZ-HM18NA",
+  "ahri": "202680603"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C24NA3",
+  "ahri": "209836182"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NA3",
+  "ahri": "209836183"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-4C36NA3",
+  "ahri": "209836184"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-2C20NAHZ3",
+  "ahri": "209949004"
+}, {
+  "indoor_unit_model_number": "PEAD-A12AA",
+  "idu_override": "PEAD-A12AA",
+  "outdoor_unit_model_number": "SUZ-KA12NAH2",
+  "ahri": "207702704"
+}, {
+  "indoor_unit_model_number": "PEAD-A09AA",
+  "idu_override": "PEAD-A09AA",
+  "outdoor_unit_model_number": "SUZ-KA09NAH2",
+  "ahri": "207702698"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU4",
+  "ahri": "211016646"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP36NKMU2",
+  "ahri": "211016648"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP42NKMU2",
+  "ahri": "211016650"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU4",
+  "ahri": "211016652"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP48NKMU2",
+  "ahri": "211016654"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU4",
+  "ahri": "211016656"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P36NKMU4",
+  "ahri": "211016647"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP36NKMU2",
+  "ahri": "211016649"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P48NKMU4",
+  "ahri": "211016653"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP48NKMU2",
+  "ahri": "211016655"
+}, {
+  "indoor_unit_model_number": "Ducted Indoor Units",
+  "idu_override": "Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-P60NKMU4",
+  "ahri": "211016657"
+}, {
+  "indoor_unit_model_number": "Mixed Ducted and Non-Ducted Indoor Units",
+  "idu_override": "Mixed Ducted and Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "PUMY-HP48NKMU2",
+  "ahri": "211016662"
+}, {
+  "indoor_unit_model_number": "Non-Ducted Indoor Units",
+  "idu_override": "Non-Ducted Indoor Units",
+  "outdoor_unit_model_number": "MXZ-3C30NAHZ2",
+  "ahri": "201754908"
+}]
