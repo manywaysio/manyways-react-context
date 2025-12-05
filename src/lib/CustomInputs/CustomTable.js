@@ -122,11 +122,11 @@ const CustomTable = (props) => {
       .then((r) => r.json())
       .then((r) => r?.responses);
 
-    let _provinceName = responses.reverse().find((r) => r.node_id === 1873);
+    let _provinceName = responses.reverse().find((r) => r.node_id === 2132);
     console.log("NODEID RESPONSE", responses);
     setTheProvince(_provinceName?.response?.province_name);
 
-    let _lookupData = responses.reverse().find((r) => r.node_id === 1873);
+    let _lookupData = responses.reverse().find((r) => r.node_id === 2132);
     setApplicationType(
       _lookupData?.response?.application_type || "residential",
     );

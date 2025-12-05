@@ -1,17 +1,16 @@
 /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 /* @import url('https://fonts.cdnfonts.com/css/nimbus-sans-l'); */
 
 /* Variables */
 .mw-journey-container {
-  --content-width: 980px;
-  --content-width-form: 980px;
+  --content-width: 1440px;
+  --content-width-form: 1200px;
   --header-height: 250px;
   --font-size-base: 18px;
   --font-size-base-mobile: 18px;
-  --font-family: "Roboto", Helvetica, Arial, sans-serif;
-  --font-family-bold: "Roboto", Helvetica, Arial, sans-serif;
+  --font-family: "Roboto", Arial, sans-serif;
+  --font-family-bold: "Roboto", Arial, sans-serif;
 
   /* Colors */
   --color-dark: #000000;
@@ -64,6 +63,11 @@ body {
   font-weight: 300;
   letter-spacing: 0.3px;
   line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 h1,
@@ -129,7 +133,7 @@ strong {
 .mw-node .form-group > label {
   font-size: 18px;
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 27px;
   letter-spacing: 0.01em;
   margin-bottom: 0.5rem;
@@ -162,7 +166,7 @@ strong {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  padding: 64px 16px;
+  padding: 48px 32px;
 }
 
 .mesca-header p {
@@ -269,7 +273,7 @@ strong {
   color: #fff;
   margin-bottom: 10px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 27px;
   letter-spacing: 0.03em;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
@@ -552,7 +556,7 @@ a:focus-visible,
 
 #root_outdoor__description {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-text);
   opacity: 1;
 }
@@ -749,7 +753,7 @@ ul.error-detail .text-danger {
 
 .results-container h2 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -761,7 +765,7 @@ ul.error-detail .text-danger {
 
 .results-container h2 .selected-rebate {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   border-radius: 4px;
   border: 1.5px solid #dedede;
   padding: 3px 12px 3px 12px;
@@ -878,11 +882,10 @@ ul.error-detail .text-danger {
 
 .result-card h6 {
   font-family: var(--font-family-bold);
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
   text-transform: uppercase;
   font-size: 14px;
-
   letter-spacing: 0.03em;
 }
 
@@ -910,7 +913,7 @@ ul.error-detail .text-danger {
 .result-card .rebate-status.available {
   font-family: var(--font-family-bold);
   font-size: 21px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 26px;
   letter-spacing: 0.01em;
   color: #197b00;
@@ -935,7 +938,7 @@ ul.error-detail .text-danger {
 
 .text-container h3 {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 30px;
 }
@@ -1176,7 +1179,7 @@ ul.error-detail .text-danger {
   margin-bottom: 5px;
   margin-top: 5px;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .table-rebates-header .button {
@@ -1257,7 +1260,7 @@ tbody tr:nth-child(even) {
   color: white;
   font-size: 18px;
   padding: 3px 18px;
-  font-weight: 700;
+  font-weight: 500;
   border-bottom: 1px solid white;
   position: relative;
 }
@@ -1467,7 +1470,7 @@ table .available:before {
 }
 
 .card-list .rebate-list-item p {
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -1711,7 +1714,7 @@ table .available:before {
   /* font-family: 'HelveticaNeueCondensedBold', "Helvetica Neue", "Helvetica", sans-serif; */
   color: #fff;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 29px;
   margin: 0;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
@@ -1722,7 +1725,7 @@ table .available:before {
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
-  letter-spacing: 0.01em;
+
   color: #fff;
 }
 

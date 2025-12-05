@@ -11,7 +11,9 @@ const Header = () => {
 
   return (
     <div>
-      <div className={`mesca-header mesca-header-with-svg`}>
+      <div
+        className={`mesca-header mesca-header-with-svg  ${classNamePrefix}-container`}
+      >
         {/* SVG positioned absolutely */}
         <div className="mesca-svg-container">
           <img src={mescaGraphic} alt="Mesca graphic" className="mesca-svg" />
