@@ -1,56 +1,5 @@
 /* Fonts */
-@font-face {
-  font-family: "HelveticaNeue-Regular";
-  src: url("https://cdn.agilitycms.com/mesca/helveticaneue.eot");
-  src:
-    url("https://cdn.agilitycms.com/mesca/helveticaneue.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue.woff") format("woff"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HelveticaNeue-Bold";
-  src: url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot");
-  src:
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.woff")
-      format("woff"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.ttf")
-      format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HelveticaNeueCondensedBold";
-  src: url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot");
-  src:
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.woff")
-      format("woff"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.ttf")
-      format("truetype");
-}
-
-@font-face {
-  font-family: "icomoon";
-  src: url("https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l");
-  src:
-    url("https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.agilitycms.com/mesca/icomoon.ttf?yzo55l")
-      format("truetype"),
-    url("https://cdn.agilitycms.com/mesca/icomoon.woff?yzo55l") format("woff"),
-    url("https://cdn.agilitycms.com/mesca/icomoon.svg?yzo55l#icomoon")
-      format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /* @import url('https://fonts.cdnfonts.com/css/nimbus-sans-l'); */
 
@@ -61,8 +10,8 @@
   --header-height: 250px;
   --font-size-base: 18px;
   --font-size-base-mobile: 18px;
-  --font-family: "HelveticaNeue-Regular", Helvetica, Arial, sans-serif;
-  --font-family-bold: "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+  --font-family: "Roboto", Helvetica, Arial, sans-serif;
+  --font-family-bold: "Roboto", Helvetica, Arial, sans-serif;
 
   /* Colors */
   --color-dark: #000000;
@@ -133,7 +82,7 @@ th,
 h1 {
   font-family: var(--font-family-bold);
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   margin: 0;
   letter-spacing: 0.01em;
   line-height: 1.2;
@@ -929,7 +878,7 @@ ul.error-detail .text-danger {
 
 .result-card h6 {
   font-family: var(--font-family-bold);
-  font-weight: 700;
+  font-weight: 500;
   margin: 0;
   text-transform: uppercase;
   font-size: 14px;
