@@ -116,29 +116,58 @@ strong {
 
 /* sr only  */
 
-.button.where-to-buy-header {
-  background-color: #f00f00;
-  color: #fff;
-  border-color: #f00f00;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
+.where-to-buy-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin-bottom: 20px;
+  margin-top: 14px;
 }
 
-.button.where-to-buy-header:hover {
+.where-to-buy-header label {
+  font-family: var(--font-family-bold);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.where-to-buy-header .findDealerForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+}
+
+.where-to-buy-header .findDealerForm button {
+  background-color: var(--color-select-dark);
+  color: #fff;
+  border: 1px solid var(--color-select-dark);
+  padding: 0.5em 1em;
+  font-family: var(--font-family-bold);
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.where-to-buy-header .findDealerForm button:hover {
   background-color: #000;
   border-color: #000;
 }
 
-.button.where-to-buy-header::after {
+.where-to-buy-header .findDealerForm button::after {
   content: "";
   display: inline-block;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 6px 0 6px 10px;
-  border-color: transparent transparent transparent #000;
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #fff;
 }
 
 /* .mw-node-find-by .control-label, */
