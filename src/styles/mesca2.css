@@ -117,9 +117,9 @@ strong {
 /* sr only  */
 
 .button.where-to-buy-header {
-  background-color: #c00;
+  background-color: #f00f00;
   color: #fff;
-  border-color: #c00;
+  border-color: #f00f00;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -127,8 +127,8 @@ strong {
 }
 
 .button.where-to-buy-header:hover {
-  background-color: #a00;
-  border-color: #a00;
+  background-color: #000;
+  border-color: #000;
 }
 
 .button.where-to-buy-header::after {
