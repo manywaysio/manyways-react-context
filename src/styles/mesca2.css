@@ -162,6 +162,7 @@ strong {
   gap: 4px;
   white-space: nowrap;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .where-to-buy-header .findDealerForm button:hover {
