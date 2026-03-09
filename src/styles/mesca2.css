@@ -134,10 +134,19 @@ strong {
 
 .where-to-buy-header .findDealerForm {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   gap: 8px;
   margin-top: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .where-to-buy-header .findDealerForm {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
 }
 
 .where-to-buy-header .findDealerForm button {
