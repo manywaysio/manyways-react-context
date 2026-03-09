@@ -10,7 +10,7 @@ const Header = () => {
   // console.log(treeConfig);
 
   return (
-    <div className={`${classNamePrefix}-container`}>
+    <div className={`${classNamePrefix}-container `}>
       <a
         href={
           locale === "fr"
