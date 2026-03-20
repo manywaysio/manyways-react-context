@@ -1,68 +1,16 @@
 /* Fonts */
-@font-face {
-  font-family: "HelveticaNeue-Regular";
-  src: url("https://cdn.agilitycms.com/mesca/helveticaneue.eot");
-  src:
-    url("https://cdn.agilitycms.com/mesca/helveticaneue.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue.woff") format("woff"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HelveticaNeue-Bold";
-  src: url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot");
-  src:
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.woff")
-      format("woff"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-bold.ttf")
-      format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "HelveticaNeueCondensedBold";
-  src: url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot");
-  src:
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.woff")
-      format("woff"),
-    url("https://cdn.agilitycms.com/mesca/helveticaneue-condensedbold.ttf")
-      format("truetype");
-}
-
-@font-face {
-  font-family: "icomoon";
-  src: url("https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l");
-  src:
-    url("https://cdn.agilitycms.com/mesca/icomoon.eot?yzo55l#iefix")
-      format("embedded-opentype"),
-    url("https://cdn.agilitycms.com/mesca/icomoon.ttf?yzo55l")
-      format("truetype"),
-    url("https://cdn.agilitycms.com/mesca/icomoon.woff?yzo55l") format("woff"),
-    url("https://cdn.agilitycms.com/mesca/icomoon.svg?yzo55l#icomoon")
-      format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 /* @import url('https://fonts.cdnfonts.com/css/nimbus-sans-l'); */
 
 /* Variables */
 .mw-journey-container {
-  --content-width: 980px;
-  --content-width-form: 980px;
+  --content-width: 1440px;
+  --content-width-form: 1200px;
   --header-height: 250px;
   --font-size-base: 18px;
   --font-size-base-mobile: 18px;
-  --font-family: "HelveticaNeue-Regular", Helvetica, Arial, sans-serif;
-  --font-family-bold: "HelveticaNeue-Bold", Helvetica, Arial, sans-serif;
+  --font-family: "Roboto", Arial, sans-serif;
+  --font-family-bold: "Roboto", Arial, sans-serif;
 
   /* Colors */
   --color-dark: #000000;
@@ -115,6 +63,11 @@ body {
   font-weight: 300;
   letter-spacing: 0.3px;
   line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
 }
 
 h1,
@@ -133,7 +86,7 @@ th,
 h1 {
   font-family: var(--font-family-bold);
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 500;
   margin: 0;
   letter-spacing: 0.01em;
   line-height: 1.2;
@@ -163,6 +116,154 @@ strong {
 
 /* sr only  */
 
+.where-to-buy-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.where-to-buy-header label {
+  font-family: var(--font-family-bold);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.where-to-buy-header .findDealerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  margin-top: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .where-to-buy-header .findDealerForm {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+}
+
+.where-to-buy-header .findDealerForm button {
+  background-color: var(--color-select-dark);
+  color: #fff;
+  border: 1px solid var(--color-select-dark);
+  padding: 0.5em 1em;
+  font-family: var(--font-family-bold);
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.where-to-buy-header .findDealerForm button:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+.where-to-buy-header .findDealerForm button::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.header-actions-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  margin-bottom: 20px;
+  margin-top: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-actions-row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+.header-buttons-divider {
+  width: 1px;
+  background-color: #dddddd;
+  align-self: center;
+  height: 32px;
+  margin: auto 6px 8px 6px;
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-buttons-divider {
+    display: block;
+  }
+}
+
+.heat-pump-solutions-btn {
+  background-color: var(--color-select-dark);
+  color: #fff;
+  border: 1px solid var(--color-select-dark);
+  padding: 9px 18px;
+  font-family: var(--font-family-bold);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap;
+  margin: 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-sizing: border-box;
+  height: 50px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .heat-pump-solutions-btn {
+    width: auto;
+  }
+}
+
+.heat-pump-solutions-btn:hover {
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.heat-pump-solutions-btn::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 8px;
+}
+
+.heat-pump-solutions-btn:visited {
+  color: #fff;
+}
+
 /* .mw-node-find-by .control-label, */
 .mw-node-model-number .control-label[for="root_outdoor"],
 .mw-node-model-number .control-label[for="root_indoor"] {
@@ -180,7 +281,7 @@ strong {
 .mw-node .form-group > label {
   font-size: 18px;
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 27px;
   letter-spacing: 0.01em;
   margin-bottom: 0.5rem;
@@ -200,10 +301,80 @@ strong {
   z-index: 0;
 }
 
+.mesca-header {
+  background-color: black;
+  height: 400px;
+  color: white;
+  margin-bottom: 32px;
+}
+
+.mesca-header .text-container {
+  max-width: 600px;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 48px 32px;
+}
+
+.mesca-header p {
+  color: white;
+}
+
+.mesca-header-with-svg {
+  position: relative;
+  overflow: hidden;
+}
+
+.mesca-svg-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  padding: 16px;
+}
+
+.mesca-svg {
+  opacity: 0.3;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  filter: brightness(0) invert(1);
+}
+
+/* Ensure content stays above SVG */
+.mesca-header-with-svg .text-container,
+.mesca-header-with-svg img:not(.mesca-svg) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile responsive adjustments */
+@media only screen and (max-width: 768px) {
+  .mesca-svg {
+    height: 80%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: auto;
+  }
+
+  .mesca-svg-container {
+    padding: 8px;
+  }
+
+  .mesca-header .text-container {
+    padding-bottom: 8px;
+  }
+}
+
 .mesca-page-header {
   position: relative;
   height: 100%;
   max-width: var(--content-width);
+  background-color: black;
 }
 
 .mesca-page-header:before {
@@ -250,7 +421,7 @@ strong {
   color: #fff;
   margin-bottom: 10px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 27px;
   letter-spacing: 0.03em;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
@@ -533,7 +704,7 @@ a:focus-visible,
 
 #root_outdoor__description {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-text);
   opacity: 1;
 }
@@ -730,7 +901,7 @@ ul.error-detail .text-danger {
 
 .results-container h2 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -742,7 +913,7 @@ ul.error-detail .text-danger {
 
 .results-container h2 .selected-rebate {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   border-radius: 4px;
   border: 1.5px solid #dedede;
   padding: 3px 12px 3px 12px;
@@ -863,7 +1034,6 @@ ul.error-detail .text-danger {
   margin: 0;
   text-transform: uppercase;
   font-size: 14px;
-
   letter-spacing: 0.03em;
 }
 
@@ -891,7 +1061,7 @@ ul.error-detail .text-danger {
 .result-card .rebate-status.available {
   font-family: var(--font-family-bold);
   font-size: 21px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 26px;
   letter-spacing: 0.01em;
   color: #197b00;
@@ -916,7 +1086,7 @@ ul.error-detail .text-danger {
 
 .text-container h3 {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 30px;
 }
@@ -1157,7 +1327,7 @@ ul.error-detail .text-danger {
   margin-bottom: 5px;
   margin-top: 5px;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .table-rebates-header .button {
@@ -1238,7 +1408,7 @@ tbody tr:nth-child(even) {
   color: white;
   font-size: 18px;
   padding: 3px 18px;
-  font-weight: 700;
+  font-weight: 500;
   border-bottom: 1px solid white;
   position: relative;
 }
@@ -1448,7 +1618,7 @@ table .available:before {
 }
 
 .card-list .rebate-list-item p {
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -1531,7 +1701,7 @@ table .available:before {
 
 .mw-container-footer p,
 .mw-container-footer .powered-by {
-  max-width: var(--content-width);
+  max-width: var(--content-width-form);
   padding: var(--content-padding-y) var(--content-padding-x);
 }
 
@@ -1692,7 +1862,7 @@ table .available:before {
   /* font-family: 'HelveticaNeueCondensedBold', "Helvetica Neue", "Helvetica", sans-serif; */
   color: #fff;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 29px;
   margin: 0;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
@@ -1703,7 +1873,7 @@ table .available:before {
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
-  letter-spacing: 0.01em;
+
   color: #fff;
 }
 
@@ -1795,7 +1965,7 @@ table .available:before {
 }
 
 .mw-container-footer {
-  max-width: var(--content-width);
+  max-width: var(--content-width-form);
   margin: auto;
   padding: 0 var(--content-padding-x) 45px var(--content-padding-x);
 }
@@ -1803,7 +1973,8 @@ table .available:before {
 @media only screen and (min-width: 768px) {
   .mw-container-footer p,
   .mw-container-footer .powered-by {
-    max-width: 100%;
+    max-width: var(--content-width-form);
+    margin: auto;
     padding: 0;
   }
 
