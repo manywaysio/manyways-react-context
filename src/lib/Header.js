@@ -1,6 +1,5 @@
 import { useManyways } from "./ManywaysContext";
 import { mergeNodetoLocaleNoSubNode } from "./utils/helpers";
-import mescaGraphic from "../assets/icons/mesca_graphic.png";
 
 const Header = () => {
   const { classNamePrefix, treeConfig, locale } = useManyways();
@@ -71,7 +70,7 @@ const Header = () => {
       <div className={`mesca-header mesca-header-with-svg  `}>
         {/* SVG positioned absolutely */}
         <div className="mesca-svg-container">
-          <img src={mescaGraphic} alt="Mesca graphic" className="mesca-svg" />
+          <img src="https://mwassets.imgix.net/Organization_3/mesca_graphic.png" alt="Mesca graphic" className="mesca-svg" />
         </div>
 
         {/* Existing header content */}
