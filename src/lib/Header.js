@@ -1,6 +1,6 @@
 import { useManyways } from "./ManywaysContext";
 import { mergeNodetoLocaleNoSubNode } from "./utils/helpers";
-import mescaGraphic from "../assets/icons/mesca.svg";
+import mescaGraphic from "../assets/icons/mesca_graphic.png";
 
 const Header = () => {
   const { classNamePrefix, treeConfig, locale } = useManyways();
