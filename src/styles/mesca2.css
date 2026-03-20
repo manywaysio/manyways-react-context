@@ -251,6 +251,10 @@ strong {
   margin-left: 8px;
 }
 
+.heat-pump-solutions-btn:visited {
+  color: #fff;
+}
+
 /* .mw-node-find-by .control-label, */
 .mw-node-model-number .control-label[for="root_outdoor"],
 .mw-node-model-number .control-label[for="root_indoor"] {
