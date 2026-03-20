@@ -159,6 +159,7 @@ strong {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   white-space: nowrap;
   margin: 0;
@@ -183,7 +184,7 @@ strong {
 .header-actions-row {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 8px;
   margin-bottom: 20px;
   margin-top: 14px;
@@ -225,6 +226,7 @@ strong {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   white-space: nowrap;
   margin: 0;
@@ -232,6 +234,13 @@ strong {
   text-decoration: none;
   box-sizing: border-box;
   height: 50px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .heat-pump-solutions-btn {
+    width: auto;
+  }
 }
 
 .heat-pump-solutions-btn:hover {
