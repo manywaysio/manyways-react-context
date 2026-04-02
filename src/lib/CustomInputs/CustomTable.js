@@ -4,7 +4,7 @@ import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdInfo } from "react-icons/md";
 
 const baseUrl =
-  "https://mesca-submittal.onrender.com/api/rebate-programs/lookup";
+  "https://mesca-submittal-rebate-tic.manyways.io/api/rebate-programs/lookup";
 
 const RESIDENTIAL = [
   "MSZ",
