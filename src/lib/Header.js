@@ -63,14 +63,18 @@ const Header = () => {
           rel="noopener noreferrer"
         >
           {locale === "fr"
-            ? "SOLUTIONS DE POMPES À CHALEUR"
-            : "HEAT PUMP SOLUTIONS"}
+            ? "SOLUTIONS DE REFROIDISSEMENT ET DE CHAUFFAGE"
+            : "COOLING AND HEATING SOLUTIONS"}
         </a>
       </div>
       <div className={`mesca-header mesca-header-with-svg  `}>
         {/* SVG positioned absolutely */}
         <div className="mesca-svg-container">
-          <img src="https://mwassets.imgix.net/Organization_3/mesca_graphic.png" alt="Mesca graphic" className="mesca-svg" />
+          <img
+            src="https://mwassets.imgix.net/Organization_3/mesca_graphic.png"
+            alt="Mesca graphic"
+            className="mesca-svg"
+          />
         </div>
 
         {/* Existing header content */}
