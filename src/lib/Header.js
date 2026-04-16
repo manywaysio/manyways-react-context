@@ -21,6 +21,10 @@ const Header = () => {
           }
           method="get"
           className="where-to-buy where-to-buy-header"
+          onSubmit={(e) => {
+            const postalCode = e.target.elements.postal_code?.value;
+            window.umami?.track("WHERE_TO_BUY_CLICK", { postal_code: postalCode });
+          }}
         >
           <label htmlFor="postal_code_header">
             {locale === "fr" ? "Où Acheter" : "Where to buy"}
@@ -61,6 +65,7 @@ const Header = () => {
           }
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => window.umami?.track("COOLING_AND_HEATING_CLICK")}
         >
           {locale === "fr"
             ? "SOLUTIONS DE REFROIDISSEMENT ET DE CHAUFFAGE"
